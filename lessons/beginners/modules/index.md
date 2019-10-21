@@ -112,9 +112,17 @@ a zadej v něm:
 ```
 
 Výpis se objeví jen poprvé.
+Co víc, když teď soubor `louka.py` změníš, změny se do naimportovaného modulu
+nepromítnou.
+Aby se promítly, musíš Python zavřít a spustit znovu.
+(I proto je dobré pouštět programy ze souborů – při každém spuštění se
+znovu načte aktuální verze modulů.)
 
-Když takhle modul při importu „dělá“ něco víc, než jen nastavuje proměnné
-a funkce, říká se, že má *vedlejší efekt* (angl. *side effect*).
+Ale zpátky k volání `print`.
+Přijde ti trochu divné, že příkaz `import louka` něco vypíše na obrazovku?
+
+Když takhle modul při importu „dělá“ něco víc než jen nastavení proměnných
+a funkcí, říká se, že má *vedlejší efekt* (angl. *side effect*).
 Vedlejší efekt může být vypsání něčeho na obrazovku nebo do souboru,
 vykreslení okýnka na obrazovku, otázka na uživatele pomocí `input`, atp.
 
