@@ -5,7 +5,9 @@ který si můžeš vytisknout.
 # Seznamy
 
 Dnes si ukážeme, jak pracovat se *seznamy* (angl. *lists*).
-Zapisují se hranatými závorkami:
+
+Začneme prakticky.
+Vytvoř si seznam pomocí následujícího kódu:
 
 ```python
 zviratka = ['pes', 'kočka', 'králík']
@@ -18,30 +20,32 @@ print(zviratka)
 
 Seznam je hodnota, která může obsahovat spoustu dalších hodnot.
 Tak jako řetězec obsahuje sekvenci znaků,
-seznam obsahuje sekvenci... čehokoliv. Třeba slov (řetězců).
-A tak jako můžeme pomocí cyklu `for`
-procházet řetězec po znacích,
-seznam můžeme procházet po jednotlivých prvcích:
+seznam obsahuje sekvenci jakýchkoli hodnot.
+V našem případě obsahuje sekvenci řetězců.
+
+A tak jako můžeš pomocí cyklu `for` procházet řetězec po znacích,
+seznam můžeš procházet po jednotlivých prvcích:
 
 ```python
 for zviratko in zviratka:
     print(zviratko)
 ```
 
-Seznamy se v programech vyskytují velice často:
-soubor se dá načíst jako seznam řetězců
-s jednotlivými řádky,
-seznam řetězců jako `'7♥'`
-a `'K♣'` může posloužit jako balíček karet,
-matematika je plná číselných řad,
-každá online služba má seznam uživatelů.
+Seznamy se v programech vyskytují často:
+soubor se dá načíst jako seznam řetězců s jednotlivými řádky,
+seznam řetězců jako `'7♥'` a `'K♣'` může posloužit jako balíček karet,
+matematika je plná číselných řad, e-shopy pracují se seznamy zboží.
 
+Hodnoty v seznamu můžou být jakéhokoli typu:
 
-Hodnoty v seznamu můžou být jakéhokoli typu.
-Dokonce můžeme různé typy míchat v jednom seznamu
-(i když s takovými namixovanými seznamy se
-příliš často nesetkáme – více se různé typy hodnot
-používají v <var>n</var>-ticích, o kterých si povíme později):
+```python
+prvni_prvocisla = [2, 3, 5, 7, 11]
+```
+
+Dokonce můžeš různé typy míchat v jednom seznamu.
+(S takovými namixovanými seznamy se ovšem příliš často nesetkáš.
+Různé typy hodnot se používají spíš v <var>n</var>-ticích, o kterých si povíme
+později):
 
 ```python
 seznam = [1, 'abc', True, None, range(10), len]
@@ -65,18 +69,18 @@ print(kamaradka)
 ```
 
 Proměnná `kamaradka` obsahuje řetězec `'Žaneta'` (který se už nedá změnit).
-Metoda `upper()` vytvoří a vrátí *nový* řetězec.
+Metoda `upper()` vytvoří a vrátí *nový* řetězec `'ŽANETA'`.
 Výsledná hodnota se ale v našem programu nevyužije – Python ji vypočítá,
-ale pak na ni „zapomene“.
+ale pak ji „zahodí“.
 
 Oprava je snadná: výsledek uložit do proměnné.
-Často budeš chtít takový výsledek uložit do původní proměnné:
+Často budeš chtít takový výsledek uložit zpátky do původní proměnné:
 
 ```python
 kamaradka = kamaradka.upper()
 ```
 
-Tímto přiřazením Python „zapomene“ na původní hodnotu,
+Tímto přiřazením Python „zahodí“ původní hodnotu,
 a od tohoto příkazu dál bude proměnná `kamaradka` označovat nový řetězec.
 
 Podobně by se dala proměnná přenastavit na jakoukoli jinou hodnotu:
@@ -97,7 +101,7 @@ Ty se měnit dají.
 Základní způsob, jak změnit seznam, je přidání
 prvku na konec pomocí metody `append`.
 Ta *nic nevrací* (resp. vrací `None`), ale „na místě” (angl. *in place*) změní
-seznam, na kterém pracuje. Vyzkoušej si to:
+seznam, se kterým pracuje. Vyzkoušej si to:
 
 ```pycon
 >>> zviratka = ['pes', 'kočka', 'králík']
@@ -109,37 +113,39 @@ seznam, na kterém pracuje. Vyzkoušej si to:
 ```
 
 Všimni si, že proměnná `zviratka` se nastavuje jen na začátku.
-V celém programu výše jen jeden seznam – na začátku má tři prvky, pak
-mu jeden přibude, ale stále je to jeden a ten samý seznam.
+V rámci celého běhu programu výše existuje jen jeden seznam.
+Na začátku má tři prvky, pak mu jeden přibude, ale stále je to jeden a ten
+samý seznam.
 
 Takové měnění může být občas překvapující,
 protože stejná hodnota může být přiřazená ve více proměnných.
 Protože se mění hodnota samotná, může to vypadat,
-že se „mění proměnná, aniž na ni sáhneme”:
+že se „mění proměnná, aniž na ni sáhneš”:
 
 ```python
 a = [1, 2, 3]   # Vytvoření seznamu
 b = a           # Tady se nový seznam nevytváří!
 
 # seznam vytvořený v prvním řádku má teď dvě jména: "a" a "b",
-# ale stále pracujeme jenom s jedním seznamem
+# ale stále pracuješ jenom s jedním seznamem
 
 print(b)
 a.append(4)
 print(b)
 ```
 
+
 ## Další způsoby, jak měnit seznamy
 
 Kromě metody `append`, která přidává jediný prvek na konec, existuje
-spousta metod, které mění seznamy.
-Všechny udělají přímo v daném seznamu, a (kromě `pop`) vrací `None`:
+spousta dalších metod, které seznamy mění.
+Všechny udělají změny přímo v daném seznamu a (kromě `pop`) vrací `None`:
 
 * `extend()` přidá více prvků najednou,
 * `insert()` přidá prvek na danou pozici,
 * `pop()` odebere *a vrátí* poslední prvek,
 * `remove()` odstraní první výskyt daného prvku,
-* `sort()` seznam seřadí (řetězce “podle abecedy”, čísla vzestupně),
+* `sort()` seznam seřadí (řetězce „podle abecedy”, čísla vzestupně),
 * `reverse()` obrátí pořadí prvků,
 * `clear()` odstraní všechny prvky.
 
@@ -162,8 +168,7 @@ zviratka.clear()              # []
 
 Často budeš ze seznamu chtít vybrat prvek na určité pozici.
 To funguje jako u řetězců: do hranatých závorek dáš číslo prvku.
-Stejně jako u řetězců se čísluje od nuly a záporná čísla označují prvky
-od konce.
+Stejně jako u řetězců se čísluje od nuly a záporná čísla číslují od konce.
 
 ```python
 zviratka = ['pes', 'kočka', 'králík']
@@ -171,16 +176,15 @@ print(zviratka[2])
 ```
 
 Hranatými závorkami můžeš získat i podseznam.
-[Diagram z materiálů k řetězcům]({{ lesson_url('beginners/str')}}#slicing-diagram)
+[Diagram z materiálů k řetězcům]({{ lesson_url('beginners/str')}}#slicing-diagram)
 ukazuje, jak u takového „sekání” číslovat:
-funguje to stejně, jen místo menšího řetězce
-dostaneš menší seznam.
+funguje to stejně, jen místo menšího řetězce dostaneš menší seznam.
 
 ```python
 print(zviratka[2:-3])
 ```
 
-„Sekáním“ vzniká nový seznam – když pak ten původní změníš, v podseznamu se
+„Sekáním“ vzniká nový seznam – když pak ten původní změníš, v novém menším seznamu se
 to neprojeví.
 
 
@@ -202,29 +206,30 @@ co přiřadíš.
 
 ```python
 zviratka = ['pes', 'kočka', 'králík', 'had', 'andulka']
-print([1:-1])
+print(zviratka[1:-1])
 zviratka[1:-1] = ['koťátko', 'králíček', 'hádě']
 print(zviratka)
 ```
 
 ### Mazání prvků
 
-Přiřazením do podseznamu se dá i změnit délka
-seznamu, nebo některé prvky úplně odstranit:
+Přiřazením do podseznamu můžeš i změnit délku
+seznamu nebo některé prvky úplně odstranit:
 
 ```python
 zviratka = ['pes', 'kočka', 'králík']
 zviratka[1:-1] = ['had', 'ještěrka', 'drak']
 print(zviratka)
-cisla[1:-1] = []
+zviratka[1:-1] = []
 print(zviratka)
 ```
 
-Tenhle zápis pro mazání prvků je ale docela
-nepřehledný, a proto na to máme zvláštní příkaz jménem `del`.
+Tenhle zápis pro mazání prvků je ale docela nepřehledný.
+Proto na to existuje zvláštní příkaz jménem `del`.
 Jak už jeho název (z angl. *delete*, smazat)
 napovídá, smaže, co mu přijde pod ruku – jednotlivé
 prvky seznamů, podseznamy, … a dokonce i proměnné!
+Zkus si:
 
 ```python
 zviratka = ['pes', 'kočka', 'králík', 'had', 'ještěrka', 'andulka']
@@ -241,10 +246,10 @@ del zviratka
 print(zviratka)
 ```
 
-Nebo můžeš použít mazací metody zmíněné výše:
-* `pop`, která odstraní *a vrátí* poslední prvek v seznamu,
-* `remove`, která najde v seznamu první výskyt daného prvku a odstraní ho,
-* `clear`, která vyprázdní celý seznam.
+Na mazání prvků můžeš použít i metody zmíněné výše:
+* `pop` odstraní poslední prvek v seznamu a *vrátí* ho,
+* `remove` najde v seznamu první výskyt daného prvku a odstraní ho,
+* `clear` vyprázdní celý seznam.
 
 ```python
 balicek = ['eso', 'sedma', 'svršek', 'sedma', 'král']
@@ -261,7 +266,7 @@ print(balicek)
 
 ## Řazení
 
-A taky tu máme metodu `sort`, která prvky seznamu seřadí.
+Metoda `sort` seřadí prvky seznamu.
 
 ```python
 seznam = [4, 7, 8, 3, 5, 2, 4, 8, 5]
@@ -270,13 +275,11 @@ print(seznam)
 ```
 
 Aby se daly seřadit, musí být prvky seznamu vzájemně
-*porovnatelné* – konktrétně na ně musí fungovat
-operátor `<`.
+*porovnatelné* – konktrétně na ně musí fungovat operátor `<`.
 Seznam s mixem čísel a řetězců tedy seřadit nepůjde.
-Operátor `<` definuje i
-jak přesně se řadí (např. čísla podle velikosti;
+Operátor `<` definuje i jak přesně `sort` řadí: čísla podle velikosti;
 řetězce podle speciální „abecedy” která řadí
-velká písmena za malá, česká až za anglická, atd.).
+velká písmena za malá, česká až za anglická, atd.
 
 Metoda `sort` zná pojmenovaný argument
 `reverse`. Pokud ho nastavíš na *True*, řadí se „naopak”.
@@ -289,7 +292,7 @@ print(seznam)
 
 ## Známé operace se seznamy
 
-Spousta toho, co můžeme dělat s řetězci, má stejný
+Spousta toho, co můžeš dělat s řetězci, má stejný
 účinek i u seznamů.
 Třeba sečítání a násobení číslem:
 
@@ -298,7 +301,7 @@ melodie = ['C', 'E', 'G'] * 2 + ['E', 'E', 'D', 'E', 'F', 'D'] * 2 + ['E', 'D', 
 print(melodie)
 ```
 
-Stejně jako u řetězců, sečítat jde jen seznam
+Stejně jako u řetězců jde sečítat jen seznam
 se seznamem – ne třeba seznam s řetězcem.
 
 Další staří známí jsou funkce `len`,
@@ -314,7 +317,7 @@ print('D' in melodie)       # Je 'D' v seznamu?
 Poslední tři se ale přece jen chovají kapku jinak:
 u řetězců pracují s *podřetězci*,
 u seznamů jen s *jednotlivými* prvky.
-Takže ačkoliv naše melodie obsahuje prvky
+Takže ačkoliv melodie výše obsahuje prvky
 `'D'` a `'E'` vedle sebe, `'DE'` v seznamu není:
 
 ```python
@@ -325,7 +328,7 @@ print(melodie.index('DE'))
 
 ## Seznam jako podmínka
 
-Seznam se dá použít v příkazu `if` (nebo `while`) jako podmínka,
+Seznam můžeš použít v příkazu `if` (nebo `while`) jako podmínka,
 která platí, když v tom seznamu něco je.
 Jinými slovy, `seznam` je tu „zkratka“ pro `len(seznam) > 0`.
 
@@ -336,7 +339,7 @@ else:
     print('Seznam je prázdný!')
 ```
 
-Podobně se dají v podmínce použít i řetězce.
+Podobně můžeš v podmínce použít i řetězce.
 A dokonce i čísla – ta jako podmínka platí, pokud jsou nenulová.
 
 ## Tvoření seznamů
@@ -344,11 +347,10 @@ A dokonce i čísla – ta jako podmínka platí, pokud jsou nenulová.
 Tak jako funkce `int` převádí na
 celá čísla a `str` na řetězce,
 funkce `list` (angl. *seznam*) převádí na seznam.
-Jako argument jí předáme jakoukoli hodnotu,
+Jako argument jí můžeš předat jakoukoli hodnotu,
 kterou umí zpracovat příkaz `for`.
 Z řetězců udělá seznam znaků, z otevřeného souboru
-udělá seznam řádků, z `range` udělá
-seznam čísel.
+udělá seznam řádků, z `range` udělá seznam čísel.
 
 ```python
 abeceda = list('abcdefghijklmnopqrstuvwxyz')
@@ -358,8 +360,7 @@ print(cisla)
 ```
 
 I ze seznamu udělá funkce `list` seznam.
-To může znít zbytečně, ale není – vytvoří se
-totiž *nový* seznam.
+To může znít zbytečně, ale není – vytvoří se totiž *nový* seznam.
 Bude mít sice stejné prvky ve stejném pořadí,
 ale nebude to ten samý seznam:
 měnit se bude nezávisle na tom starém.
@@ -371,13 +372,14 @@ b = list(a)
 print(b)
 a.append(4)
 print(b)
+print(a)
 ```
 
 Další způsob, jak tvořit seznamy
 (zvláště složitější), je nejdřív udělat prázdný
 seznam a pak ho postupně naplnit pomocí funkce `append`.
 Třeba pokud z nějakého důvodu chceš seznam
-mocnin dvou, projdi čísla, kterými chceme mocnit,
+mocnin dvou, projdi čísla, kterými chceš mocnit,
 cyklem `for` a pro každé z nich
 do seznamu přidej příslušnou mocninu:
 
@@ -388,12 +390,22 @@ for cislo in range(10):
 print(mocniny_dvou)
 ```
 
+Podobným způsobem získáš seznam seznam `matka`, `babička`, `prababička`,
+`praprababička`, atd.:
+
+```python
+predkove = ['matka']
+for pocet_pra in range(10):
+    predkove.append('pra' * pocet_pra + 'babička')
+print(predkove)
+```
+
 Chceš-li seznam, který reprezentuje balíček karet,
-zavolej `append` pro všechny kombinace barev a hodnot.
+zavolej `append` pro všechny kombinace barev a hodnot:
 
 ```python
 balicek = []
-for barva in '♠', '♥', '♦', '♣':  # (Na Windows použij textová jména)
+for barva in '♠', '♥', '♦', '♣':
     for hodnota in list(range(2, 11)) + ['J', 'Q', 'K', 'A']:
         balicek.append(str(hodnota) + barva)
 print(balicek)
@@ -401,11 +413,11 @@ print(balicek)
 
 ## Seznamy a řetězce
 
-Seznamy a řetězce jsou druhy „sekvencí”,
-takže snad nepřekvapí, že se dá různě převádět
-z jednoho typu na druhý.
+Seznamy a řetězce jsou druhy *sekvencí*.
+Můžeš různě převádět z jednoho typu na druhý.
+
 Funkce `list` vytvoří z řetězce seznam znaků.
-Když chceme dostat seznam slov, použijeme
+Když chceš dostat seznam slov, použij
 na řetězci metodu `split` (angl. *rozdělit*):
 
 ```python
@@ -414,8 +426,8 @@ print(slova)
 ```
 
 Metoda `split` umí brát i argument.
-Pokud ho předáme, místo mezer (a nových řádků)
-se řetězec „rozseká” daným oddělovačem.
+Pokud ho předáš, řetězec „rozseká” daným oddělovačem
+(místo mezer a nových řádků).
 Takže když máš nějaká data oddělená čárkami,
 použíj `split` s čárkou:
 
@@ -427,9 +439,8 @@ print(zaznamy)
 Chceš-li spojit seznam řetězců zase dohromady
 do jediného řetězce, použij metodu `join` (angl. *spojit*).
 Pozor, tahle metoda se volá na *oddělovači*,
-tedy řetězci, kterým se jednotlivé kousky „slepí”
-dohromady; a jako argument bere seznam jednotlivých
-řetězců.
+tedy na řetězci, kterým se jednotlivé kousky „slepí” dohromady.
+Seznam jednotlivých řetězců bere jako argument.
 
 ```python
 veta = ' '.join(slova)
@@ -438,12 +449,12 @@ print(veta)
 
 ## Seznamy a náhoda
 
-Modul `random` obsahuje dvě funkce, které se hodí k seznamům.
-Jako `random.randrange`, obě mají něco
-společného s náhodou.
+Modul `random` obsahuje funkce, které mají něco společného s náhodou:
+třeba nám už známou `random.randrange`.
+Podívejme se na dvě další, které se hodí k seznamům.
 
 Funkce `shuffle` seznam „zamíchá” – všechny prvky náhodně popřehází.
-Jako metoda `sort` i funkce `shuffle` nic nevrací.
+Seznam změní „na místě“ a nic nevrací – podobně jako metoda `sort`.
 
 ```python
 import random
@@ -459,13 +470,14 @@ print(balicek)
 ```
 
 A funkce `choice` ze seznamu vybere jeden náhodný prvek.
-S použitím seznamu tak můžeš třeba jednoduše vybrat tah pro hru
+S použitím seznamu tak můžeš třeba jednoduše vybrat tah pro hru
 kámen/nůžky/papír:
 
 ```python
 import random
 mozne_tahy = ['kámen', 'nůžky', 'papír']
 tah_pocitace = random.choice(mozne_tahy)
+print(tah_pocitace)
 ```
 
 ## Vnořené seznamy
