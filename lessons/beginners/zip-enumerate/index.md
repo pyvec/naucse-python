@@ -17,7 +17,7 @@ Spousta těchto typů umí něco navíc: zjistit jestli obsahují nějaký prvek
 (`'abc'.upper()`).
 Nic z toho ale není potřeba, aby byl objekt iterovatelný.
 
-Podívejme se na dva dalších iterovatelné objekty: `enumerate` a `zip`.
+Podívejme se na dva další iterovatelné objekty: `enumerate` a `zip`.
 
 
 ## Enumerate: očíslování sekvence
@@ -61,18 +61,20 @@ jejíž prvky jsou dvojice.
 
 ## Rozbalování v cyklu for
 
-„Trpasličí“ cyklus se dá rozepsat takto:
+Cyklus `for` umíme rozepsat: opakuje se v něm nastavení proměnné (které dělá
+`for` za tebe), pak tělo cyklu, a znovu nastavení proměnné, tělo cyklu, atd.
+Pro „trpasličí“ cyklus to je:
 
 ```python
-dvojice = 0, 'Prófa'    # toto dělá `for`
+dvojice = 0, 'Prófa'    # nastavení proměnné dělá `for`
 index, trpaslik = dvojice
 print(f'Na pozici {index} je {trpaslik}!')
 
-dvojice = 1, 'Stydlín'  # toto dělá `for`
+dvojice = 1, 'Stydlín'  # nastavení proměnné dělá `for`
 index, trpaslik = dvojice
 print(f'Na pozici {index} je {trpaslik}!')
 
-dvojice = 2, 'Dřímal'  # toto dělá `for`
+dvojice = 2, 'Dřímal'   # nastavení proměnné dělá `for`
 index, trpaslik = dvojice
 print(f'Na pozici {index} je {trpaslik}!')
 
@@ -83,13 +85,13 @@ Kdybys to psal{{a}} ručně, lze to zjednodušit – přiřadit do dvou proměnn
 najedno, bez pomocné `dvojice`:
 
 ```python
-index, trpaslik = 0, 'Prófa'    # toto by mohl dělat `for`
+index, trpaslik = 0, 'Prófa'    # nastavení proměnných
 print(f'Na pozici {index} je {trpaslik}!')
 
-index, trpaslik = 1, 'Stydlín'  # toto by mohl dělat `for`
+index, trpaslik = 1, 'Stydlín'  # nastavení proměnných
 print(f'Na pozici {index} je {trpaslik}!')
 
-index, trpaslik = 2, 'Dřímal'  # toto by mohl dělat `for`
+index, trpaslik = 2, 'Dřímal'   # nastavení proměnných
 print(f'Na pozici {index} je {trpaslik}!')
 
 # A tak dále
@@ -134,7 +136,8 @@ for index, den in enumerate(dny):
     print(f'{cislo}. {den}')
 ```
 
-To je trošku kostrbaté, ale dá se to zjednodušit: funkce `enumerate` zná
+To je trošku kostrbaté, ale dá se to zjednodušit: buď jako
+`f'{cislo + 1}. {den}'`, nebo můžeš funkci `enumerate` předat
 pojmenovaný argument `start`, pomocí kterého umí sama
 počítat od jiného začátku než od nuly:
 
@@ -153,7 +156,7 @@ Další iterátor <var>n</var>-tic je funkce `zip`, která umí projít dvě sek
 naráz.
 Řekněme že máš seznam věcí a k nim příslušných barev:
 
-``` python
+```python
 veci = ['tráva', 'slunce', 'mrkev', 'řeka']
 barvy = ['zelená', 'žluté', 'oranžová', 'modrá']
 ```
@@ -162,9 +165,9 @@ Kdtyž tyto dva seznamy dáš funkci `zip`, dostaneš iterátor který příslu�
 hodnoty spáruje.
 Bude tedy obsahovat:
 
-* Dvojici prvních prvků obou seznamů
-* Dvojici druhých prvků obou seznamů
-* Dvojici třetích prvků obou seznamů
+* Dvojici prvních prvků obou seznamů: (`tráva`, `zelená`)
+* Dvojici druhých prvků obou seznamů: (`slunce`, `žluté`)
+* Dvojici třetích prvků obou seznamů: (`mrkev`, `oranžová`)
 * ...
 
 ``` python
@@ -190,8 +193,15 @@ Když si ale vypíšeš samotný objekt `zip`, zjistíš že o sobě nic moc ne�
 – podobně jako `enumerate`:
 
 ```pycon
->>> zip(veci, barvy, mista, cisla)
+>>> zip(veci, barvy, cisla)
 <zip object at 0x7f0db61b1f48>
+```
+
+Po převedení na seznam se ale seznam <var>n</var>-tic „ukáže”:
+
+```pycon
+>>> list(zip(veci, barvy, cisla))
+[('tráva', 'zelená', 0), ('slunce', 'žluté', 1), ('mrkev', 'oranžová', 2), ('řeka', 'modrá', 3)]
 ```
 
 
