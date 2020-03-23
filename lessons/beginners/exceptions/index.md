@@ -60,7 +60,7 @@ A dokonce nám to dá vědět – chybou, kterou můžeš *zachytit*.
 >   vyláme zuby stejně jako na `'abc'`.
 > * Řetězcová metoda `isdecimal` vrací `True` pokud řetězec obsahuje arabské
 >   číslice 0-9. To už je lepší, ale stejně to úplně nesedí: `int` si poradí
->   s mezerou na začátku, např. s `' 3'`, ale funkce `isdecimal` takový řetězec
+>   s mezerou na začátku, např. s `' 3'`. Funkce `isdecimal` ale takový řetězec
 >   odmítne.
 >
 > Chceš-li zjistit jestli funkce `int` umí daný řetězec převést na číslo,
