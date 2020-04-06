@@ -346,11 +346,10 @@ A dokonce i čísla – ta jako podmínka platí, pokud jsou nenulová.
 
 Tak jako funkce `int` převádí na
 celá čísla a `str` na řetězce,
-funkce `list` (angl. *seznam*) převádí na seznam.
+funkce `list` převádí na seznam.
 Jako argument jí můžeš předat jakoukoli hodnotu,
 kterou umí zpracovat příkaz `for`.
-Z řetězců udělá seznam znaků, z otevřeného souboru
-udělá seznam řádků, z `range` udělá seznam čísel.
+Z řetězců udělá seznam znaků, z `range` udělá seznam čísel.
 
 ```python
 abeceda = list('abcdefghijklmnopqrstuvwxyz')
@@ -454,7 +453,7 @@ třeba nám už známou `random.randrange`.
 Podívejme se na dvě další, které se hodí k seznamům.
 
 Funkce `shuffle` seznam „zamíchá” – všechny prvky náhodně popřehází.
-Seznam změní „na místě“ a nic nevrací – podobně jako metoda `sort`.
+Seznam změní „na místě“ a nic nevrací (podobně jako metoda `sort`).
 
 ```python
 import random
