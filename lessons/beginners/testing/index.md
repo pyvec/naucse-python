@@ -250,6 +250,14 @@ import piskvorky
 piskvorky.piskvorky1d()
 ```
 
+Nebo lepší varianta `if __main__ == '__name__'` statement 
+na konci souboru `piskvorky.py`.
+
+```python
+if __main__ == '__name__':
+    piskvorky1d()
+```
+
 Tenhle modul nebudeš moci testovat (protože nepřímo volá funkci `input`),
 ale můžeš ho spustit, když si budeš chtít zahrát.
 Protože k němu nemáš napsané testy, nepoznáš
