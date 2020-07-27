@@ -27,8 +27,8 @@ musíš je *zakódovat* – převést na řetězec.
 > Doopravdy se do souborů zapisují (a po síti posílají)
 > sekvence *bytů* (čísel od 0 do 255).
 > Python řetězce na byty ale převádí automaticky (pomocí kódování
-> `UTF-8`, nastaveného pomocí `encoding='utf-8'`.
-> Vystačíme si proto s převáděním na řetězce, se kterými – na rozdíl od bytů
+> `UTF-8` nastaveného pomocí `encoding='utf-8'` při otevření souboru).
+> Vystačíš si proto s převáděním na řetězce, se kterými – na rozdíl od bytů
 > – už umíš pracovat.
 
 
@@ -38,7 +38,7 @@ Když budeš informace ukládat nebo posílat po internetu,
 je dobré zařídit, aby je uměly přečít i jiné programy než ten tvůj.
 A ty jiné programy nemusí být napsané v Pythonu.
 
-Ostatní jazyky často neumí přímopracovat s pythonními hodnotami – seznamy,
+Ostatní jazyky často neumí přímo pracovat s pythonními hodnotami – seznamy,
 slovníky, `range`, nebo funkcemi.
 Budeš-li se chtít s takovými programy „domluvit” –
 předat jim nějaké informace ke zpracování
@@ -64,7 +64,7 @@ Existuje spousta způsobů, jak zakódovat data do textu.
 Každý způsob se snaží najít vhodnou rovnováhu mezi
 čitelností pro lidi/počítače, délkou zápisu,
 bezpečností, možnostmi a rozšiřitelností.
-Už známe syntaxi Pythonu; která jak už název napovídá, funguje jen pro Python:
+Už znáš syntaxi Pythonu, kterou můžeš použít jen pro Python:
 
 ```python
 {
@@ -75,7 +75,7 @@ Už známe syntaxi Pythonu; která jak už název napovídá, funguje jen pro Py
 }
 ```
 
-Jiný způsob zápisu dat je třeba [YAML](http://www.yaml.org/):
+Jiný způsob kódování dat je [YAML](http://www.yaml.org/):
 
 ```yaml
 jméno: Anna
@@ -173,8 +173,7 @@ se kterým můžeš dál pracovat:
 ### Typy
 
 JSON neumožňuje věrně zakódovat jakýkoli Pythonní objekt.
-Zaměřuje se na výměnu informací mezi různými programy – a to i programy
-napsanými v jiných programovacích jazycích než v Pythonu.
+Zaměřuje se na výměnu informací mezi různými programy a programovacími jazyky.
 
 Jiné jazyky často neumí pracovat s Pthonními hodnotami
 a informace je jim potřeba předávat v nějaké společné, zjednodušené podobě.
@@ -187,8 +186,9 @@ Dále má spousta jazyků způsob, jak zapsat
 
 Tyhle základní typy většinou stačí na předání
 jakékoli informace v rozumně čitelné podobě,
-i když ne všechny jazyky mají přesné ekvivalenty
-(třeba Python má dva základní druhy sekvencí – seznamy a <var>n</var>-tice).
+i když ne všechny jazyky mají přesné ekvivalenty.
+Třeba Python má dva základní druhy sekvencí – seznamy a <var>n</var>-tice – a
+dva druhy čísel – celá (`int`) a reálná (`float`).
 
 Převod na JSON je proto „ztrátový“: po rozkódování nedostaneš přesně stejný
 objekt jako ten, který jsi zakódoval{{a}}, ale nějaký podobný.
@@ -246,7 +246,7 @@ jen se trochu líp čte lidem.
 > čárky a uvozovky.
 
 > [note]
-> kompletní popis modulu `json` –
+> Kompletní popis modulu `json` –
 > včetně funkcí na zápis/čtení přímo do/ze souborů –
 > je v příslušné [dokumentaci](https://docs.python.org/3/library/json.html).
 
