@@ -190,7 +190,7 @@ to neprojeví.
 
 ### Měnění prvků
 
-Na rozdíl od řetězců (které se nedají měnit) můžeš u existujících seznamů
+Na rozdíl od řetězců (které se měnit nedají) můžeš u existujících seznamů
 nastavovat konkrétní prvky – a to tak, že do prvku přiřadíš jako by to byla
 proměnná:
 
