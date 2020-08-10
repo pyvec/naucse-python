@@ -214,8 +214,6 @@ print(popisy_funkci['len'])
 > Například takhle nejde zadat jako klíč řetězec
 > `"def"` nebo `"propan-butan"`.
 
-Pojmenované argumenty jde kombinovat s ostatními
-způsoby vytvoření `dict`.
 
 ### Zaplň prázdný slovník
 
@@ -286,7 +284,9 @@ kontakty['Verča'] = '1019103'
 A ve výsledku bude mít `'Jirka'` uložené jen jedno číslo.
 Python tohle nebere jako chybu, ačkoli to často není to, co chceš.
 
-Jak to udělat? Každému kontaktu můžeš přiřadit *seznam* čísel:
+Protože ve slovníku může být každému klíči přiřazena jen jedna hodnota,
+bude potřeba více hodnot směstnat do jedné.
+Každému kontaktu můžeš přiřadit *seznam* čísel:
 
 ```python
 kontakty = {'Katka': ['4925219'], 'Jirka': ['7477058', '3251156'], 'Verča': ['1019103']}

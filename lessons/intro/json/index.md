@@ -16,8 +16,8 @@ data['jazyky'].append('Python')
 ```
 
 Taková data ale nejdou přímo zapsat na disk nebo přenést přes Internet.
-Python si je „pamatuje“ tak, aby s nimi mohl jednoduše pracovat;
-když Python vypneš, stuktura informací se ztratí.
+Python si je „pamatuje“ tak, aby s nimi mohl jednoduše pracovat.
+Když ale Python vypneš, informace se ztratí.
 
 Abys mohl{{a}} informace zapsat, uložit nebo dokonce přenést na jiný počítač,
 musíš je *zakódovat* – převést na řetězec.
@@ -27,35 +27,9 @@ musíš je *zakódovat* – převést na řetězec.
 > Doopravdy se do souborů zapisují (a po síti posílají)
 > sekvence *bytů* (čísel od 0 do 255).
 > Python řetězce na byty ale převádí automaticky (pomocí kódování
-> `UTF-8` nastaveného pomocí `encoding='utf-8'` při otevření souboru).
+> nastaveného pomocí `encoding` při otevření souboru).
 > Vystačíš si proto s převáděním na řetězce, se kterými – na rozdíl od bytů
 > – už umíš pracovat.
-
-
-## Typy
-
-Když budeš informace ukládat nebo posílat po internetu,
-je dobré zařídit, aby je uměly přečít i jiné programy než ten tvůj.
-A ty jiné programy nemusí být napsané v Pythonu.
-
-Ostatní jazyky často neumí přímo pracovat s pythonními hodnotami – seznamy,
-slovníky, `range`, nebo funkcemi.
-Budeš-li se chtít s takovými programy „domluvit” –
-předat jim nějaké informace ke zpracování
-nebo od nich dostat výsledky –
-musíš informace předávat v nějaké zjednodušené podobě.
-
-Většina programovacích jazyků má nějaká čísla, nějaký druh seznamů,
-nějakou odrůdu řetězců a nějakou variaci na slovníky
-(nebo několik způsobů jak slovníky vytvořit).
-Dále má spousta jazyků způsob, jak zapsat
-`True`, `False` a `None`.
-
-Tyhle základní typy většinou stačí na předání
-jakékoli informace v rozumně čitelné podobě,
-i když ne ve všech jazycích mají přesné ekvivalenty
-(třeba Python má dva základní druhy čísel – `int` a `float`).
-Často se proto v komunikaci omezíme na ně.
 
 
 ## Kódování
@@ -170,39 +144,6 @@ se kterým můžeš dál pracovat:
 ```
 
 
-### Typy
-
-JSON neumožňuje věrně zakódovat jakýkoli Pythonní objekt.
-Zaměřuje se na výměnu informací mezi různými programy a programovacími jazyky.
-
-Jiné jazyky často neumí pracovat s Pthonními hodnotami
-a informace je jim potřeba předávat v nějaké společné, zjednodušené podobě.
-
-Většina programovacích jazyků má nějaká čísla, nějaký druh seznamů,
-nějakou odrůdu řetězců a nějakou variaci na slovníky
-(často jen s řetězcovými klíči).
-Dále má spousta jazyků způsob, jak zapsat
-`True`, `False` a `None`.
-
-Tyhle základní typy většinou stačí na předání
-jakékoli informace v rozumně čitelné podobě,
-i když ne všechny jazyky mají přesné ekvivalenty.
-Třeba Python má dva základní druhy sekvencí – seznamy a <var>n</var>-tice – a
-dva druhy čísel – celá (`int`) a reálná (`float`).
-
-Převod na JSON je proto „ztrátový“: po rozkódování nedostaneš přesně stejný
-objekt jako ten, který jsi zakódoval{{a}}, ale nějaký podobný.
-Konkrétně modul `json` převádí <var>n</var>-tice na seznamy
-a klíče slovníků převádí na řetězce:
-
-```python
->>> data = {'dvojice': (1, 2), 'seznam': [3, 4], 2: 'dva', 11: 'jedenáct'}
->>> kod = json.dumps(data)
->>> json.loads(kod)
-{'dvojice': [1, 2], 'seznam': [3, 4], '2': 'dva', '11': 'jedenáct'}
-```
-
-
 ### Hezký výstup
 
 To, co vrací `json.dumps`, je vhodné pro počítačové zpracování:
@@ -251,6 +192,43 @@ jen se trochu líp čte lidem.
 > je v příslušné [dokumentaci](https://docs.python.org/3/library/json.html).
 
 
+## Typy
+
+
+JSON neumožňuje věrně zakódovat jakýkoli Pythonní objekt.
+Zaměřuje se na výměnu informací mezi různými programy a programovacími jazyky.
+
+Ostatní jazyky často neumí přímo pracovat s pythonními hodnotami – seznamy,
+slovníky, `range`, nebo funkcemi.
+Budeš-li se chtít s takovými programy „domluvit” –
+předat jim nějaké informace ke zpracování
+nebo od nich dostat výsledky –
+musíš informace předávat ve zjednodušené podobě.
+
+Většina programovacích jazyků má nějaká čísla, nějaký druh seznamů,
+nějakou odrůdu řetězců a nějakou variaci na slovníky
+(často jen s řetězcovými klíči).
+Dále má spousta jazyků způsob, jak zapsat
+`True`, `False` a `None`.
+
+Tyhle základní typy většinou stačí na předání
+jakékoli informace v rozumně čitelné podobě.
+A tak se v komunikaci často omezíme na ně,
+i když ne všechny jazyky mají přesné ekvivalenty.
+Třeba Python má dva základní druhy sekvencí – seznamy a <var>n</var>-tice – a
+dva druhy čísel – celá (`int`) a reálná (`float`).
+
+Převod na JSON je proto „ztrátový“: po rozkódování nedostaneš přesně stejný
+objekt jako ten, který jsi zakódoval{{a}}, ale nějaký podobný.
+Konkrétně modul `json` převádí <var>n</var>-tice na seznamy
+a klíče slovníků převádí na řetězce:
+
+```python
+>>> data = {'dvojice': (1, 2), 'seznam': [3, 4], 2: 'dva', 11: 'jedenáct'}
+>>> kod = json.dumps(data)
+>>> json.loads(kod)
+{'dvojice': [1, 2], 'seznam': [3, 4], '2': 'dva', '11': 'jedenáct'}
+```
 
 
 ## Jiná kódování
