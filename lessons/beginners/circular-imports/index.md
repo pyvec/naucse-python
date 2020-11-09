@@ -37,7 +37,7 @@ Můžeš importovat `ai` z `piskvorky` a zároveň
                       └───────────────┘  
 ```
 
-Můžeme se na to podívat z hlediska Pythonu,
+Můžeš se na to podívat z pohledu Pythonu,
 který příkazy v souborech vykonává.
 Když má importovat soubor `piskvorky.py`, začne ho
 zpracovávat řádek po řádku,
@@ -49,7 +49,7 @@ Brzy narazí na příkaz `import piskvorky`. Co teď?
 Aby nenastala situace podobná nekonečné smyčce –
 jeden soubor by importoval druhý, druhý zase první,
 a tak stále dokola –
-udělá Python taková malý „podvod“:
+udělá Python takový malý „podvod“:
 když zjistí, že soubor `piskvorky.py`
 už importuje, zpřístupní v modulu `ai`
 modul `piskvorky` tak, jak ho
