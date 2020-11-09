@@ -15,16 +15,6 @@ Výsledek bude vypadat třeba nějak takhle:
 └──────────────────┘  │ def tah_hrace │  └──────────────────┘
                       │               │
                       └───────────────┘
-                          ▲
-                          │
-                          │ ┌───────────────────╮
-                          │ │ test_piskvorky.py │
-                          │ ├───────────────────┤
-                          └─│ import piskvorky  │
-                            ├───────────────────┤
-                            │ def test_...      │
-                            │                   │
-                            └───────────────────┘
 ```
 
 Jenže funkce `tah_pocitace`
