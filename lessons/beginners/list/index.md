@@ -32,9 +32,9 @@ for zviratko in zviratka:
 ```
 
 Seznamy se v programech vyskytují často:
-soubor se dá načíst jako seznam řetězců s jednotlivými řádky,
-seznam řetězců jako `'7♥'` a `'K♣'` může posloužit jako balíček karet,
-matematika je plná číselných řad, e-shopy pracují se seznamy zboží.
+soubor se dá načíst jako seznam jednotlivých řádků,
+matematika je plná číselných řad, e-shopy pracují se seznamy zboží,
+seznam řetězců jako `'7♥'` a `'K♣'` může posloužit jako balíček karet.
 
 Hodnoty v seznamu můžou být jakéhokoli typu:
 
@@ -57,7 +57,7 @@ print(seznam)
 Důležitá vlastnost seznamů je, že se dají *měnit*.
 
 Než vysvětlíme o co jde, připomeňme si jak fungují hodnoty, které se měnit
-nedají – např. čísla, řetězce, `True`/`False`/`None`.
+nedají – např. čísla, řetězce, `True`, `False`, `None`.
 
 Vyzkoušej si následující kousek kódu. Co je na něm „špatně“?
 
@@ -70,7 +70,7 @@ print(kamaradka)
 
 Proměnná `kamaradka` obsahuje řetězec `'Žaneta'` (který se už nedá změnit).
 Metoda `upper()` vytvoří a vrátí *nový* řetězec `'ŽANETA'`.
-Výsledná hodnota se ale v našem programu nevyužije – Python ji vypočítá,
+Výsledná hodnota se ale v našem programu nevyužije – Python ji vytvoří,
 ale pak ji „zahodí“.
 
 Oprava je snadná: výsledek si ulož do proměnné.
@@ -142,12 +142,12 @@ spousta dalších metod, které seznamy mění.
 Všechny udělají změny přímo v daném seznamu a (kromě `pop`) vrací `None`:
 
 * `extend()` přidá více prvků najednou,
-* `insert()` přidá prvek na danou pozici,
 * `pop()` odebere poslední prvek a *vrátí ho* (jako návratovou hodnotu),
+* `insert()` přidá prvek na danou pozici,
 * `remove()` odstraní první výskyt daného prvku,
 * `sort()` seznam seřadí (řetězce „podle abecedy”, čísla vzestupně),
-* `reverse()` obrátí pořadí prvků,
 * `clear()` odstraní všechny prvky.
+* `reverse()` obrátí pořadí prvků,
 
 {{ figure(img=static('methods.svg'), alt="Tahák") }}
 
@@ -184,7 +184,7 @@ funguje to stejně, jen místo menšího řetězce dostaneš menší seznam.
 print(zviratka[2:-3])
 ```
 
-„Sekáním“ vzniká nový seznam – když pak ten původní změníš, v novém menším seznamu se
+„Sekáním“ vzniká nový seznam – když pak původní seznam změníš, v novém menším seznamu se
 to neprojeví.
 
 
@@ -234,17 +234,29 @@ Zkus si:
 ```python
 zviratka = ['pes', 'kočka', 'králík', 'had', 'ještěrka', 'andulka']
 
+# Smazání prvku seznamu
 print(zviratka[-1])
 del zviratka[-1]
 print(zviratka)
 
+# Smazání podseznamu
 print(zviratka[1:-1])
 del zviratka[1:-1]
 print(zviratka)
-
-del zviratka
-print(zviratka)
 ```
+
+> [note]
+> Příkaz `del` umí mazat i proměnné.
+> Po takovém smazání se proměnná chová jako kdyby do ní nikdo nikdy nic
+> nepřiřadil:
+>
+> ```python
+> del zviratka
+> print(zviratka)
+> ```
+>
+> V praxi se ale `del` na proměnné příliš často nepoužívá.
+
 
 Na mazání prvků můžeš použít i metody zmíněné výše:
 * `pop` odstraní poslední prvek v seznamu a *vrátí* ho,
@@ -292,8 +304,7 @@ print(seznam)
 
 ## Známé operace se seznamy
 
-Spousta toho, co můžeš dělat s řetězci, má stejný
-účinek i u seznamů.
+Spousta toho, co můžeš dělat s řetězci, má stejný účinek i u seznamů.
 Třeba sečítání a násobení číslem:
 
 ```python
@@ -301,8 +312,8 @@ melodie = ['C', 'E', 'G'] * 2 + ['E', 'E', 'D', 'E', 'F', 'D'] * 2 + ['E', 'D', 
 print(melodie)
 ```
 
-Stejně jako u řetězců jde sečítat jen seznam
-se seznamem – ne třeba seznam s řetězcem.
+Stejně jako u řetězců jde se seznamem sečíst jen další seznam.
+Nemůžeš sečítat třeba seznam s řetězcem.
 
 Další staří známí jsou funkce `len`,
 metody `count` a `index`, a operátor `in`.
@@ -400,7 +411,25 @@ print(predkove)
 ```
 
 Chceš-li seznam, který reprezentuje balíček karet,
-zavolej `append` pro všechny kombinace barev a hodnot:
+zavolej `append` pro všechny kombinace barev a hodnot.
+Neboli česky:
+
+* Začni s prázdným **balíčkem**.
+* Pro každou ze čtyř **barev** (*přidáme 13 karet té barvy, a to následovně*):
+  * Pro každou ze 13 **hodnot**, 2-10 a 4 karty s obrázkem:
+    * Přidej do **balíčku** kartu s danou **barvou** a **hodnotou**.
+* **Balíček** je hotový, vypiš ho.
+
+Takový program může být trochu složitější vymyslet.
+Začít můžeš programem, který všechny karty jen vypíše:
+
+```python
+for barva in '♠', '♥', '♦', '♣':
+    for hodnota in ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']:
+        print(hodnota, barva)
+```
+
+A pak program změň tak, aby každou kartu místo vypsání přidal do seznamu:
 
 ```python
 balicek = []
@@ -409,6 +438,9 @@ for barva in '♠', '♥', '♦', '♣':
         balicek.append(hodnota + barva)
 print(balicek)
 ```
+
+Výsledný program porovnej s českým „překladem“ výše.
+
 
 > [note] Jde to líp?
 > Psát do programu výčet po sobě jdoucích čísel,
@@ -445,7 +477,7 @@ print(slova)
 ```
 
 Metoda `split` umí brát i argument.
-Pokud ho předáš, řetězec „rozseká” daným oddělovačem
+Pokud ho předáš, řetězec „rozseká” podle daného oddělovače
 (místo mezer a nových řádků).
 Takže když máš nějaká data oddělená čárkami,
 použíj `split` s čárkou:
@@ -473,7 +505,7 @@ třeba nám už známou `random.randrange`.
 Podívejme se na dvě další, které se hodí k seznamům.
 
 Funkce `shuffle` seznam „zamíchá” – všechny prvky náhodně popřehází.
-Seznam změní „na místě“ a nic nevrací (podobně jako metoda `sort`).
+Seznam změní „na místě“ a nic nevrací, podobně jako metoda `sort`.
 
 ```python
 import random
