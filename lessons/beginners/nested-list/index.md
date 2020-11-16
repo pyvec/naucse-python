@@ -50,16 +50,22 @@ Stejně jako vnořené cykly `for` ti umožnily vypsat tabulku, vnořené seznam
 ti umožní si tabulku „zapamatovat”.
 
 ```python
-def vytvor_tabulku(velikost=11):
+def vytvor_radek_tabulky(cislo_radku, velikost):
+    """Vrátí seznam – daný řádek tabulky s násobilkou"""
+    radek = []
+    for cislo_sloupce in range(velikost):
+        radek.append(cislo_radku * cislo_sloupce)
+    return radek
+
+def vytvor_tabulku(velikost):
+    """Vrátí seznam seznamů – tabulku s násobilkou"""
     seznam_radku = []
-    for a in range(velikost):
-        radek = []
-        for b in range(velikost):
-            radek.append(a * b)
+    for cislo_radku in range(velikost):
+        radek = vytvor_radek_tabulky(cislo_radku, velikost)
         seznam_radku.append(radek)
     return seznam_radku
 
-nasobilka = vytvor_tabulku()
+nasobilka = vytvor_tabulku(11)
 
 print(nasobilka[2][3])  # dva krát tři
 print(nasobilka[5][2])  # pět krát dva
