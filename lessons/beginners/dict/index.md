@@ -24,7 +24,7 @@ V Pythonu by se takový slovník napsal následovně:
 {'Jablko': 'Apple', 'Knoflík': 'Button', 'Myš': 'Mouse'}
 ```
 Pozor na všechny ty symboly!
-V ttomhle slovníku jsou klíče i hodnoty řetězce, a jsou tedy v uvozovkách.
+V tomhle slovníku jsou klíče i hodnoty řetězce, a jsou tedy v uvozovkách.
 Každý klíč je od své hodnoty oddělený dvojtečkou;
 jednotlivé dvojice jsou od sebe oddělené čárkou.
 A celý slovník je uzavřený ve složených závorkách.
@@ -218,7 +218,7 @@ print(popisy_funkci['len'])
 ### Zaplň prázdný slovník
 
 Nejobecnější způsob vytváření slovníků je podobný tomu, co znáš u seznamů:
-vytvoř prázdný slovník a postupně do něj přidávej záznamy, jeden po druhým.
+vytvoř prázdný slovník a postupně do něj přidávej záznamy, jeden za druhým.
 
 Řekněme, že máš slovník který přiřazuje ovoci jeho barvu:
 
@@ -238,8 +238,9 @@ Následující kód vytvoří slovník se změněnými barvami:
 
 ```python
 barvy_po_tydnu = {}
-for ovoce, barva in barvy_po_tydnu:
+for ovoce, barva in barvy.items():
     barvy_po_tydnu[ovoce] = 'černo-hnědo-' + barva
+
 print(barvy_po_tydnu['jablko'])
 ```
 
@@ -289,7 +290,11 @@ bude potřeba více hodnot směstnat do jedné.
 Každému kontaktu můžeš přiřadit *seznam* čísel:
 
 ```python
-kontakty = {'Katka': ['4925219'], 'Jirka': ['7477058', '3251156'], 'Verča': ['1019103']}
+kontakty = {
+    'Katka': ['4925219'],
+    'Jirka': ['7477058', '3251156'],
+    'Verča': ['1019103'],
+}
 ```
 
 Výraz jako `kontakty['Katka']` pak označuje seznam, 
@@ -321,7 +326,10 @@ A to nejsou všechny. Řetězce a čísla použít jdou:
 jmena_cisel = {2: 'dva', 3: 'tři'}
 ```
 
-Ale seznamy nebo jiné slovníky ne:
+Ale seznamy nebo jiné slovníky ne.
+Typy které se dají použít jako klíč ve slovníku se techicky označují jako
+„*hashovatelné*“ (angl. *hashable*).
+Tento termín se objevuje v chybových hláškách:
 
 ```pycon
 >>> jmena_seznamu = {[1, 2, 3]: 'čísla', ['a', 'b', 'c']: 'řetězce'}
@@ -330,15 +338,12 @@ Traceback (most recent call last):
 TypeError: unhashable type: 'list'
 ```
 
-Tyto typy nejsou „*hashovatelné*“ (angl. *hashable*).
-To v principu znamená, že se nedají použít jako klíč ve slovníku.
-
 <var>N</var>-tice jsou hashovatelné, pokud obsahují jen hashovatelné hodnoty:
 
 ```pycon
->>> figurky = {('c', 1): 'střelec', ('e', 8): 'král'}
+>>> figurky = {('c', 1): 'bílý střelec', ('e', 8): 'černý král'}
 >>> figurky['c', 1]
-'střelec'
+'bílý střelec'
 ```
 
 ```pycon

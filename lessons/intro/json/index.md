@@ -67,7 +67,7 @@ Nebo třeba [Bencode](http://en.wikipedia.org/wiki/Bencode):
 d6:jazykyl9:čeština11:angličtina6:Pythone4:věki26e6:město4:Brno6:jméno4:Annae
 ```
 
-Existují i netextové formáty, jako
+Existují i netextové formáty jako
 [Pickle 3](https://docs.python.org/3/library/pickle.html).
 Převedením do textu bys dostal{{a}} „guláš“ jako:
 
@@ -218,7 +218,7 @@ i když ne všechny jazyky mají přesné ekvivalenty.
 Třeba Python má dva základní druhy sekvencí – seznamy a <var>n</var>-tice – a
 dva druhy čísel – celá (`int`) a reálná (`float`).
 
-Převod na JSON je proto „ztrátový“: po rozkódování nedostaneš přesně stejný
+Převod na JSON je proto „ztrátový“: po dekódování nedostaneš přesně stejný
 objekt jako ten, který jsi zakódoval{{a}}, ale nějaký podobný.
 Konkrétně modul `json` převádí <var>n</var>-tice na seznamy
 a klíče slovníků převádí na řetězce:
@@ -244,7 +244,10 @@ se často používají formáty [TOML] nebo [YAML].
 
 ### TOML
 
-Knihovnu pro TOML potřeba si nainstalovat:
+Knihovnu pro TOML potřeba si nainstalovat.
+Dělá se to příkazem, který znáš z instalace knihovny Pytestu.
+Pozor ve jméně `toml` neudělej překlep, jinak nainstaluješ něco jiného
+(a možná nebezpečného!):
 
 ```console
 (venv)$ python -m pip install toml
@@ -265,7 +268,8 @@ jazyky = ["čeština", "angličtina", "Python"]
 
 ### YAML
 
-Knihovnu pro YAML, je také potřeba doinstalovat:
+Knihovnu pro YAML je také potřeba doinstalovat.
+Opět – ve jméně `pyyaml` neudělej překlep!
 
 ```console
 (venv)$ python -m pip install pyyaml
