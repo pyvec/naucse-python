@@ -297,13 +297,13 @@ C:\Users\helena\Desktop\zkouska
 ### Kopírování z příkazové řádky
 
 Na **Linuxu** vyber text myší a pak buď:
-* pravým tlačítkem myši otevři menu a vyber *Kopírovat* nebo *Paste*, nebo
+* pravým tlačítkem myši otevři menu a vyber *Kopírovat* nebo *Copy*, nebo
 * zmáčkni <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>.
   (Pozor, v příkazové řádce musíš použít navíc Shift.)
 
 Na **macOS** vyber text myší a pak stiskni <kbd>⌘ Command</kbd>+<kbd>C</kbd>.
 
-Na **Windows** v manu příkazové řádky (ikonce vlevo nahoře) vyber
+Na **Windows** v menu příkazové řádky (ikonce vlevo nahoře) vyber
 *Edit* → *Mark*, text vyber myší a zkopíruj pomocí <kbd>Enter</kbd>.
 
 ### Otevření v prohlížeče souborů
@@ -397,7 +397,7 @@ příkladu `helena`.
 
 Příkazů existuje samozřejmě daleko víc.
 
-Když se je naučíš, můžeš z příkazové řádky plnohodnotně ovladat
+Když se je naučíš, můžeš z příkazové řádky plnohodnotně ovládat
 počítač: vytvářet soubory, mazat je, pouštět programy, měnit nastavení
 a podobně.
 Vydalo by to ale vydalo na samostatný na kurz, a tak tady skončíme.
