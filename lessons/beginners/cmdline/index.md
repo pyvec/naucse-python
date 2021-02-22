@@ -13,31 +13,6 @@
     </div>
 {%- endmacro -%}
 
-> [warning] Operační systémy
-> Tato lekce funguje pro různé operační systémy jinak.
-> A k tomu ji navíc stále vylepšujeme.
-> Tato verze by měla fungovat, ale ještě nebyla důkladně ověřena na všech
-> operačních systémech.
-> Kdyby něco nefungovalo nebo nebylo jasné, prosím, ozvi se a vyřešíme to
-> individuálně!
->
-> ---
->
-> Kouče a pokročilé prosím o kontrolu a případné zaslání snímků obrazovky
-> (a chcete-li pomoct víc, o nahrání videa).
->
-> Vyzkoušeno:
-> * Linux – GNOME – angličtina
->
-> K vyzkoušení:
-> * Linux – GNOME – čeština
-> * Linux – KDE – čeština
-> * Linux – KDE – angličtina
-> * macOS – čeština
-> * macOS – angličtina
-> * Windows – čeština
-> * Windows – angličtina
-
 
 # Příkazová řádka
 
