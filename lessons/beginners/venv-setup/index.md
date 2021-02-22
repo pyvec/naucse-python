@@ -124,13 +124,18 @@ zvlášť pro Windows a zvlášť pro macOS.
 Jak na to?
 Na každém systému jinak!
 
-* normální **Linux** (pokud jsi přeskočil{{a}} instalaci Virtualenv):
+* **Linux**:
+
+   Podle toho jak máš Python nainstalovaný bude fungovat jeden z následujících
+   příkazů.
+   Bude je rychlejší vyzkoušet než popsat kdy je který správný,
+   takže nejdřív zkus:
 
    ```console
    $ python3 -m venv venv
    ```
 
-* starší **Linux** (pokud sis musel{{a}} instalovat Virtualenv):
+   A jestli dostaneš chybu `No module named venv`, zkus místo toho:
 
    ```console
    $ virtualenv -p python3 venv
@@ -144,8 +149,19 @@ Na každém systému jinak!
 
 * **Windows**:
 
+   Podle toho jak máš Python nainstalovaný bude fungovat jeden z následujících
+   příkazů.
+   Bude je rychlejší vyzkoušet než popsat kdy je který správný,
+   takže nejdřív zkus:
+
    ```doscon
    > py -3 -m venv venv
+   ```
+
+   A jestli dostaneš chybu `'py' is not recognized`, zkus místo toho:
+
+   ```doscon
+   > python3 -m venv venv
    ```
 
 Tím se ti vytvořil adresář `venv`, který virtuální prostředí obsahuje.
