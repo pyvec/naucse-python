@@ -1,7 +1,10 @@
 ## Cyklické importy
 
-V domácích projektech budeš rozdělovat 1D Piškvorky na několik modulů.
-Výsledek bude vypadat třeba nějak takhle:
+V domácích úkolech budeš rozdělovat piškvorkový projekt na několik modulů.
+Tento text si doporučuju číst až když narazíš na příslušný úkol,
+abys věděl{{a}} o čem tu je řeč.
+
+Po rozdělení bude projekt vypadat třeba nějak takhle:
 (Šipky mezi moduly znázorňují importování.)
 
 ```plain

@@ -11,8 +11,9 @@ print(sqrt(2))
 
 Kromě importování jednotlivých proměnných z modulu
 můžeš importovat i celý modul najednou.
-K tomu, co modul nabízí, se pak dostaneš pomocí tečky,
-podobně jako se pomocí `'Ahoj'.upper` dostaneš k metodě kterou nabízí řetězec.
+K tomu, co modul nabízí, se pak dostaneš pomocí
+tečky – podobně jako se pomocí `'Ahoj'.upper` dostaneš k metodě, kterou nabízí
+řetězec.
 
 Například:
 
