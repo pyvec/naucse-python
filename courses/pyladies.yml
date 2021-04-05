@@ -82,6 +82,7 @@ plan:
   - lesson: beginners/circular-imports
   - lesson: beginners/interfaces
   - lesson: beginners/testing
+  - lesson: beginners/main-module
   - title: Výjimkový tahák
     url: https://pyvec.github.io/cheatsheets/exceptions/exceptions-cs.pdf
     type: cheatsheet

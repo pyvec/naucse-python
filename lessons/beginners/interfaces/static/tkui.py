@@ -10,7 +10,7 @@ print(argument0, argument1, argument2, ..., argument_n, sep='')
 
 """
 
-from tkinter import Tk, LEFT, RIGHT, BOTTOM, W
+from tkinter import Tk, LEFT, RIGHT, BOTTOM, TOP, W
 from tkinter.ttk import Label, Button, Spinbox, Entry
 
 
@@ -26,8 +26,8 @@ from tkinter.ttk import Label, Button, Spinbox, Entry
 # s ním vytvořená nevypadají příliš profesionálně.
 # Budeš-li chtít začít psát "okýnkové" programy, doporučuji začít rovnou
 # s knihovnou jako Qt nebo GTK.
-# Na Qt máme mimochodem lekci v pokročilém kurzu:
-#    viz https://naucse.python.cz/course/mi-pyt/intro/pyqt/
+# Na Qt máme mimochodem lekci v pokročilém kurzu, viz:
+#    https://naucse.python.cz/course/mi-pyt/intro/pyqt/
 
 
 def input(otazka='odpověz'):
@@ -85,12 +85,14 @@ def nacti_cislo(otazka='Zadej číslo'):
 def ano_nebo_ne(otazka='Ano nebo ne?'):
     """Dá uživateli na výběr Ano/Ne a vrátí odpověď True nebo False."""
     root = Tk()
-    root.title(otazka)
+    root.title("Ano nebo ne?")
 
     value = False
 
     # Předbíháme: "nonlocal" umožňuje *měnit*
     # lokální proměnnou z vnější funkce.
+    # (A definujeme tady funkci v rámci jiné funkce, takže problematika
+    # lokálních proměnných je tu ještě složitější než na kurzu.)
 
     def yes():
         nonlocal value
@@ -102,11 +104,14 @@ def ano_nebo_ne(otazka='Ano nebo ne?'):
         value = False
         root.quit()
 
+    label = Label(root, text=otazka)
+    label.pack(side=TOP, expand=True, padx=20, pady=10)
+
     button = Button(root, text="Ano", command=yes)
-    button.pack(side=LEFT)
+    button.pack(side=LEFT, expand=True, padx=10, pady=10)
 
     button = Button(root, text="Ne", command=no)
-    button.pack(side=RIGHT)
+    button.pack(side=RIGHT, expand=True, padx=10, pady=10)
 
     root.mainloop()
     root.destroy()
@@ -126,8 +131,8 @@ def print(*args, sep=' ', end='', file=None, flush=False):
     for arg in args:
         str_args = str_args + sep + str(arg)
 
-    button = Label(root, text=str_args[len(sep):] + end)
-    button.pack(anchor=W)
+    label = Label(root, text=str_args[len(sep):] + end)
+    label.pack(anchor=W)
 
     button = Button(root, text="OK", command=root.quit)
     button.pack(side=BOTTOM)
