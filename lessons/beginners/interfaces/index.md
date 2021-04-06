@@ -74,6 +74,10 @@ které mají (téměř) stejné rozhraní – jen dělají něco trochu jinak.
 Případné vlastní definice funkcí `nacti_cislo` a `ano_nebo_ne` pak z programu
 vyndej, aby se použily ty naimportované.
 
+> [note]
+> Funkce `tkui.nacti_cislo` potřebuje Python verze 3.7 nebo vyšší.
+> Používáš-li Python 3.6, `nacti_cislo` nenahrazuj.
+
 Program by měl fungovat stejně jako dřív!
 
 Je to tím, že tyto funkce mají stejné rozhraní jako jejich dřívější protějšky,

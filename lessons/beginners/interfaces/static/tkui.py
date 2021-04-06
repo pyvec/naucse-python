@@ -11,7 +11,13 @@ print(argument0, argument1, argument2, ..., argument_n, sep='')
 """
 
 from tkinter import Tk, LEFT, RIGHT, BOTTOM, TOP, W
-from tkinter.ttk import Label, Button, Spinbox, Entry
+from tkinter.ttk import Label, Button, Entry
+
+# Spinbox byl přidán v Pythonu 3.7
+try:
+    from tkinter.ttk import Spinbox
+except ImportError:
+    Spinbox = None
 
 
 # Následující kód používá několik pokročilejších technik.
@@ -51,6 +57,11 @@ def input(otazka='odpověz'):
 
 def nacti_cislo(otazka='Zadej číslo'):
     """Zeptá se uživatele na otázku a vrátí odpověď jako celé číslo."""
+    if Spinbox == None:
+        raise NotImplementedError(
+            "nacti_cislo bohužel potřebuje Python verze 3.7 a výš"
+        )
+
     root = Tk()
     root.title(otazka)
 
@@ -146,6 +157,6 @@ def print(*args, sep=' ', end='', file=None, flush=False):
 # Pro opravdové programy ale doporučuji spouštěcí modul, viz kurz.
 if __name__ == '__main__':
     print(input())
-    print(nacti_cislo())
     print(ano_nebo_ne())
     print('a', 'b', 'c', sep='; ', end='-')
+    print(nacti_cislo())
