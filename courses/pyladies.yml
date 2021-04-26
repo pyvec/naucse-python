@@ -129,6 +129,7 @@ plan:
   - lesson: beginners/dict
   - lesson: intro/json
   - lesson: projects/github-api
+  - lesson: beginners/dict-with-list-values
   - title: Slovníkový tahák
     url: https://pyvec.github.io/cheatsheets/dicts/dicts-cs.pdf
     type: cheatsheet
