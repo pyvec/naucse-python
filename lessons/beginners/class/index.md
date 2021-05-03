@@ -157,16 +157,16 @@ Ten si ale vysvětlíme později – napřed zkus zamňoukat:
 
 ```python
 # Vytvoření konkrétního objektu
-kotatko = Kotatko()
+mourek = Kotatko()
 
 # Volání metody
-kotatko.zamnoukej()
+mourek.zamnoukej()
 ```
 
 V tomhle příkladu si dej pozor na velikost písmen:
 `Kotatko` (s velkým K) je třída – popis, jak
 se koťátka chovají.
-`kotatko` (s malým k)
+`mourek` (s malým m)
 je konkrétní objekt (angl. *instance*) té třídy:
 hodnota, která reprezentuje kotě.
 
