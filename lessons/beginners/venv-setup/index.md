@@ -74,7 +74,7 @@ Adresář `00` si vytvoř už teď.
 ### Přepnutí
 
 Pak otevři příkazovou řádku a příkazem `cd` přepni do adresáře,
-ve kterém jsi právě vytvořila `00` (t.j. ne přímo do `00`).
+ve kterém jsi právě vytvořil{{a}} `00` (t.j. ne přímo do `00`).
 Například:
 
 ```console
@@ -118,7 +118,7 @@ zvlášť pro Windows a zvlášť pro macOS.
 > V budoucnu využiješ i druhou výhodu: každé virtuální prostředí je oddělené od
 > ostatních, takže když doinstaluješ nějakou knihovnu (rozšíření pro Python),
 > projeví se to jen v jednom virtuálním prostředí.
-> Když by se pak při práci na projektu něco pokazilo, neohrozí to další
+> Kdyby se pak při práci na projektu něco pokazilo, neohrozí to další
 > projekty ve tvém počítači.
 
 Jak na to?
