@@ -40,7 +40,7 @@ se na různých systémech otevírá různě:
 * Windows (české): Start → napsat na klávesnici „cmd“ → Příkazový řádek
 * Windows (anglické): Start → napsat na klávesnici „cmd“ → Command Prompt
 * macOS (anglický): Applications → Utilities → Terminal
-* Linux (GNOME, čeština): Aktivitys → hledat Terminál
+* Linux (GNOME, čeština): Aktivity → hledat Terminál
 * Linux (GNOME, angličtina): Activities → hledat Terminál
 * Linux (KDE): Hlavní Menu → hledat Konsole
 
@@ -132,7 +132,7 @@ ukazuje něco jiného.
 Něco jako aktuální adresář možná znáš z grafických programů,
 kterými vybíráš soubory: typicky mají v horní (nebo na Macu dolní)
 části uvedeno který adresář zrovna ukazují.
-Příkazová umí soubory ukazovat taky – ale musíš si o to říct.
+Příkazová řádka umí soubory ukazovat taky – ale musíš si o to říct.
 
 
 ## Co v tom adresáři je?
@@ -336,7 +336,7 @@ Pak se pomocí příkazu `ls` nebo `dir` podívej, že se opravdu vytvořil.
 Potom ho v grafickém programu smaž – a v příkazové řádce se ujisti,
 že je opravdu smazaný.
 
-Na počítači máš jen jednu sadu souborů, kterou umí manipulovat jak grafické
+Na počítači máš jen jednu sadu souborů, se kterou umí manipulovat jak grafické
 programy tak příkazová řádka.
 
 
@@ -375,7 +375,7 @@ Příkazů existuje samozřejmě daleko víc.
 Když se je naučíš, můžeš z příkazové řádky plnohodnotně ovládat
 počítač: vytvářet soubory, mazat je, pouštět programy, měnit nastavení
 a podobně.
-Vydalo by to ale vydalo na samostatný na kurz, a tak tady skončíme.
+Vydalo by to ale vydalo na samostatný kurz, a tak tady skončíme.
 
 Vyzkoušej si ještě jeden příkaz, ten, který příkazovou řádku zavírá: `exit`.
 
