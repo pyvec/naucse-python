@@ -40,7 +40,7 @@ se na různých systémech otevírá různě:
 * Windows (české): Start → napsat na klávesnici „cmd“ → Příkazový řádek
 * Windows (anglické): Start → napsat na klávesnici „cmd“ → Command Prompt
 * macOS (anglický): Applications → Utilities → Terminal
-* Linux (GNOME, čeština): Aktivity → hledat Terminál
+* Linux (GNOME, čeština): Činnosti → hledat Terminál
 * Linux (GNOME, angličtina): Activities → hledat Terminál
 * Linux (KDE): Hlavní Menu → hledat Konsole
 
