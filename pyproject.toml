@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "naucse-course"
+version = "0"
+description = "Python course for beginners"
+authors = ["Petr Viktorin <encukou@gmail.com>"]
+license = "CC-BY-SA-4.0"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pygments-pytest = "^2.2.0"
+naucse = "^0.4.0"
+naucse-render = "^1.5"
+
+[tool.poetry.scripts]
+compile = "naucse_render.cli:compile"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
