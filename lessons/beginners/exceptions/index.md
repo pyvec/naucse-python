@@ -86,7 +86,7 @@ def nacti_cislo():
 
 Jak to funguje?
 Příkazy v bloku uvozeném příkazem `try` se normálně provádějí, ale když
-nastane uvedená výjimka, Python přeskočí zbytek bloku `try` a provede všechno 
+nastane uvedená výjimka, Python přeskočí zbytek bloku `try` a provede všechno
 v bloku `except`.
 Pokud výjimka nenastala, přeskočí se celý blok `except`.
 
@@ -144,10 +144,10 @@ V našem příkladu to platí pro `ValueError` z funkce `int`: víš že uživ
 nemusí vždy zadat číslo ve správném formátu a víš že správná
 reakce na tuhle situaci je problém vysvětlit a zeptat se znovu.
 
-Co ale dělat, kdyš uživatel chce ukončit program a zmáčkne
+Co ale dělat, když uživatel chce ukončit program a zmáčkne
 <kbd>Ctrl</kbd>+<kbd>C</kbd>?
 Nebo když se mu porouchá klávesnice a selže funkce `input`?
-Nejlepší reakce na takovou nečekanou situaci ukončit program a informovat
+Nejlepší reakce na takovou nečekanou situaci je ukončit program a informovat
 uživatele (nebo lépe, programátora), že (a kde) je něco špatně.
 Neboli vypsat chybovou hlášku.
 A to se stane normálně, bez `try`.
