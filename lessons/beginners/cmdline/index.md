@@ -314,7 +314,7 @@ je ale občas jiné než v ostatních pogramech:
 * Windows: Menu *Edit* → *Paste*
 
 > [note]
-> Pkud jsou ve jménu mezery nebo jiné speciální znaky jako `*#$%^()><;"?`,
+> Pokud jsou ve jménu mezery nebo jiné speciální znaky jako `*#$%^()><;"?`,
 > musíš ho v příkazové řádce ještě uzavřít do uvozovek: před a za jméno napiš
 > `"`, např:
 >
