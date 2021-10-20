@@ -3,7 +3,7 @@
 Už víš že funkce ti umožňují kousek kódu:
 
 * použít (zavolat) na více místech v programu, i když definice je jen jedna,
-* vyčlenit, aby detail (jako načtení čísla od uživatele) „nezavazel“ ve větším 
+* vyčlenit, aby detail (jako načtení čísla od uživatele) „nezavazel“ ve větším
   programu, který tak může být přehlednější, a
 * pojmenovat, aby bylo jasné co kód dělá i bez toho, abys musel{{a}} číst
   samotné tělo funkce.
@@ -33,7 +33,7 @@ def ano_nebo_ne(otazka):
     """Zeptá se uživatele na otázku a vrátí True nebo False dle odpovědi"""
 ```
 
-Podobnou funkci už jsi napsala; víš že „vevnitř“ volá `input` a ptá se na
+Podobnou funkci už jsi napsal{{a}}; víš že „vevnitř“ volá `input` a ptá se na
 příkazové řádce.
 
 Co kdybys ale měla následující funkci?
@@ -85,13 +85,13 @@ tedy:
 
 * jméno, kterým se funkce volá,
 * argumenty, které bere (např. `input` bere otázku jako řetězec; `print`
-  může bere více argumentů k vypsání), a
-* návratovou hodnotu, se kterou program pracuje dál (např `input` vrací
-  řetězec; u `print` nevrací nic smysluplného).
+  může brát více argumentů k vypsání), a
+* návratovou hodnotu, se kterou program pracuje dál (např. `input` vrací
+  řetězec; `print` nevrací nic smysluplného).
 
 Většina z těchto informací je přímo v hlavičce funkce.
 Ty ostatní je dobré popsat v dokumentačním řetězci, aby ten, kdo chce funkci
-použít, věděl jako na to.
+použít, věděl jak na to.
 
 
 # Je to dobrý nápad?
