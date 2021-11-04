@@ -291,7 +291,7 @@ Aby se daly seřadit, musí být prvky seznamu vzájemně
 Seznam s mixem čísel a řetězců tedy seřadit nepůjde.
 Operátor `<` definuje i jak přesně `sort` řadí: čísla vzestupně podle
 velikosti; řetězce podle speciální „abecedy” která řadí
-velká písmena za malá, česká až za anglická, atd.
+malá písmena za velká, česká až za anglická, atd.
 
 Metoda `sort` zná pojmenovaný argument `reverse`.
 Pokud ho nastavíš na *True*, řadí se naopak – od největšího prvku po nejmenší.
@@ -480,7 +480,7 @@ Metoda `split` umí brát i argument.
 Pokud ho předáš, řetězec „rozseká” podle daného oddělovače
 (místo mezer a nových řádků).
 Takže když máš nějaká data oddělená čárkami,
-použíj `split` s čárkou:
+použij `split` s čárkou:
 
 ```python
 zaznamy = '3A,8B,2E,9D'.split(',')
