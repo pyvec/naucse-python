@@ -152,7 +152,7 @@ for index, den in enumerate(dny):
 ```
 
 To je trošku kostrbaté, ale dá se to zjednodušit: buď jako
-`f'{cislo + 1}. {den}'`, nebo můžeš funkci `enumerate` předat
+`f'{index + 1}. {den}'`, nebo můžeš funkci `enumerate` předat
 pojmenovaný argument `start`, pomocí kterého umí sama
 počítat od jiného začátku než od nuly:
 
