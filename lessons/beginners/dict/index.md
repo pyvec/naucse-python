@@ -125,7 +125,7 @@ Kdybys chtěl{{a}} projít místo klíčů hoodnoty, použij metodu `values`,
 která vrací iterátor hodnot:
 
 ```pycon
->>> for hodnota in popisy_funkci.values():
+>>> for hodnota in slovnik.values():
 ...     print(hodnota)
 Apple
 Button
@@ -138,7 +138,7 @@ K tomu mají slovníky metodu `items`, která vrací iterátor dvojic.
 `zip` nebo `enumerate`:
 
 ```pycon
->>> for klic, hodnota in popisy_funkci.items():
+>>> for klic, hodnota in slovnik.items():
 ...     print('{}: {}'.format(klic, hodnota))
 Jablko: Apple
 Knoflík: Button
@@ -158,8 +158,8 @@ V průběhu iterace (tedy v rámci `for` cyklu) nesmíš
 do slovníku přidávat záznamy, ani záznamy odebírat:
 
 ```python
->>> for klic in popisy_funkci:
-...     del popisy_funkci[klic]
+>>> for klic in slovnik:
+...     del slovnik[klic]
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 RuntimeError: dictionary changed size during iteration
