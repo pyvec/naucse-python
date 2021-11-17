@@ -2,7 +2,7 @@
 
 V Pythonu informace spravuješ v seznamech, slovnících a jiných datových
 strukturách.
-Když si vytvoříš nějaký slovník slovník plný seznamů, řetězců a čísel,
+Když si vytvoříš nějaký slovník plný seznamů, řetězců a čísel,
 můžeš s ním v Pythonu dál pracovat. Třeba:
 
 ```python
@@ -234,7 +234,7 @@ a klíče slovníků převádí na řetězce:
 ## Jiná kódování
 
 Jak už bylo řečeno, JSON je jen jeden ze způsobů, kterými lze data zakódovat.
-Jiná kódování mají své pro a proti, ale v podstatě fungují stejně:
+Jiná kódování mají svá pro a proti, ale v podstatě fungují stejně:
 jedna funkce (často `dumps`) zakóduje Pythonní objekt do řetězce a druhá
 (často `loads`) dekóduje řetězec na původní (nebo podobný) Pythonní objekt.
 
@@ -245,7 +245,7 @@ se často používají formáty [TOML] nebo [YAML].
 ### TOML
 
 Knihovnu pro TOML potřeba si nainstalovat.
-Dělá se to příkazem, který znáš z instalace knihovny Pytestu.
+Dělá se to příkazem, který znáš z instalace knihovny Pytest.
 Pozor ve jméně `toml` neudělej překlep, jinak nainstaluješ něco jiného
 (a možná nebezpečného!):
 
