@@ -73,7 +73,7 @@ Nový záznam vytvoříš takhle:
 > Není to potřeba, počítač umí rychle vyhledávat i bez seřazení.
 
 Kdybys potřeboval{{a}} změnit už existující záznam, použij stejný příkaz.
-K jednomu klíči může patřit jen jedna hodnota.
+K jednomu klíči může být přiřazena jen jedna hodnota.
 
 ``` pycon
 >>> slovnik['Pes'] = 'Power strip'
@@ -81,7 +81,7 @@ K jednomu klíči může patřit jen jedna hodnota.
 {'Jablko': 'Apple', 'Knoflík': 'Button', 'Myš': 'Mouse', 'Pes': 'Power strip'}
 ```
 
-Chceš-li ze zlovníku nějaký záznam smazat, dělá se to podobně jako
+Chceš-li ze slovníku nějaký záznam smazat, dělá se to podobně jako
 u seznamů – příkazem `del`:
 
 ``` pycon
@@ -121,7 +121,7 @@ Knoflík
 Myš
 ```
 
-Když bys chtěl{{a}} projít místo klíčů hoodnoty, použij metodu `values`,
+Kdybys chtěl{{a}} projít místo klíčů hoodnoty, použij metodu `values`,
 která vrací iterátor hodnot:
 
 ```pycon
@@ -262,7 +262,7 @@ jmena_cisel = {2: 'dva', 3: 'tři'}
 ```
 
 Ale seznamy nebo jiné slovníky ne.
-Typy které se dají použít jako klíč ve slovníku se techicky označují jako
+Typy které se dají použít jako klíč ve slovníku se technicky označují jako
 „*hashovatelné*“ (angl. *hashable*).
 Tento termín se objevuje v chybových hláškách:
 
