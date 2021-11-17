@@ -192,7 +192,7 @@ nazvy_cisel = dict(data)
 nebo jiný iterovatelný objekt:
 
 ```python
-data = enumerate(['jedna', 'dva' 'tři'])
+data = enumerate(['nula', 'jedna', 'dva'])
 nazvy_cisel = dict(data)
 ```
 
