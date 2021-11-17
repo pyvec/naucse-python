@@ -1,7 +1,7 @@
 # Více hodnot v jednom záznamu slovníku
 
 Ke každému klíči může patřit jen jedna hodnota.
-Jak bys zařídil{{a}}, aby hodnot víc?
+Jak bys zařídil{{a}}, aby hodnot bylo víc?
 
 Řekněme, že bys chtěl{{a}} do slovníku uložit tyto telefonní kontakty:
 
@@ -25,7 +25,7 @@ kontakty = {
 }
 ```
 
-Python v tomto případě jednotlivé záznamy uloží postupně,jako kdybys napasl{{a}}:
+Python v tomto případě jednotlivé záznamy uloží postupně, jako kdybys napasl{{a}}:
 
 ```python
 kontakty = {}
@@ -50,8 +50,8 @@ kontakty = {
 }
 ```
 
-Výraz jako `kontakty['Katka']` pak označuje seznam, 
-Pokus se Katka se přestěhuje do zahraničí a pořídí si nové číslo,
+Výraz jako `kontakty['Katka']` pak označuje seznam,
+pokud se Katka přestěhuje do zahraničí a pořídí si nové číslo,
 můžeš napsat:
 
 ```python
