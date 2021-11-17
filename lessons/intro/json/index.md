@@ -178,15 +178,6 @@ Tenhle kód lze taky zapsat do souboru nebo načíst zpět pomocí `json.loads`,
 jen se trochu líp čte lidem.
 
 > [note]
-> Pozor na to, že ačkoli „hezký“ JSON vypadá podobně jako zápis
-> v Pythonu, je to jiný formát s vlastními pravidly.
-> Nezaměňuj je!
->
-> Aspoň ze začátku nedoporučuji JSON psát ručně;
-> nech na počítači, aby dal na správné místo správné
-> čárky a uvozovky.
-
-> [note]
 > Kompletní popis modulu `json` –
 > včetně funkcí na zápis/čtení přímo do/ze souborů –
 > je v příslušné [dokumentaci](https://docs.python.org/3/library/json.html).
