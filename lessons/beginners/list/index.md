@@ -265,7 +265,7 @@ Na mazání prvků můžeš použít i metody zmíněné výše:
 
 ```python
 balicek = ['eso', 'sedma', 'svršek', 'sedma', 'král']
-liznuta_karta = karty.pop()
+liznuta_karta = balicek.pop()
 print(liznuta_karta)
 print(balicek)
 
