@@ -79,3 +79,10 @@ plan:
   slug: upy
   materials:
   - lesson: intro/micropython
+
+extra_lessons:
+- beginners/install
+- beginners/cmdline
+- beginners/testing
+- fast-track/http
+- git/git-collaboration-2in1

@@ -15,3 +15,11 @@ plan:
   - lesson: meta/installing-naucse
   - lesson: meta/local-run
   - lesson: meta/submitting-a-run
+
+extra_lessons:
+- git/install
+- git/branching
+- git/git-collaboration-2in1
+- beginners/install
+- beginners/cmdline
+- intro/notebook
