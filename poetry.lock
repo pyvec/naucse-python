@@ -811,10 +811,13 @@ python-versions = ">=3.6"
 [package.extras]
 watchdog = ["watchdog"]
 
+[extras]
+ghp-compiled = []
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "dbe9e266280aa1343d35867bc4f68f6a7aedc4a26f2810130311bbfba26f4c38"
+content-hash = "100271ef00c260f76b46545ec313658204a749c1859b10bd6a996e24745013b1"
 
 [metadata.files]
 ansi2html = [
