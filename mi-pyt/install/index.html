@@ -1,0 +1,62 @@
+<p>V tomto kurzu budeme používat <em>virtuální prostředí</em>.
+Jedná se o oddělené prostředí pro Python, kam se dají instalovat jednotlivé
+knihovny, které jsou potom aktivní jen uvnitř.
+Použití prostředí má dvě hlavní výhody:</p>
+<ul>
+<li><p>Je-li prostředí aktivované,
+příkaz <code>python</code> spustí verzi Pythonu, se kterou bylo prostředí nainstalováno.
+Takže pak např. v materiálech nemusíme mít speciální instrukce pro
+Linux (<code>python3</code>) a Windows (<code>py -3</code>).</p>
+</li>
+<li><p>Instalace knihoven nezasahuje do systémového nastavení, ani do jiných
+virtuálních prostředí.
+Můžeš tak oddělit jednotlivé projekty; v každém prostředí můžou být
+nainstalované jiné verze knihoven.
+A když se něco pokazí, adresář s virtuálním prostředím můžeš prostě smazat
+a vytvořit znovu.</p>
+</li>
+</ul>
+<p>Následují zrychlené instrukce; předpokládám, že Python (3.6 a vyšší)
+už máš nainstalovaný a že znáš základy práce
+s <a href="naucse:page?lesson=beginners/cmdline">příkazovou řádkou</a>.</p>
+<p>Podrobný postup instalace Pythonu a vytvoření prostředí je je popsán
+v příslušné <a href="naucse:page?lesson=beginners/install">lekci pro začátečníky</a>.
+Modul <code>venv</code> je součást <a href="https://docs.python.org/3/library/venv.html">standardní knihovny</a>.</p>
+<h2>Unix (Linux, macOS)</h2>
+<p>Zkontroluj, že máš modul <code>ensurepip</code>:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python3.7 -m ensurepip --version
+<span class="go">pip 18.0 (nebo i jiná verze)</span>
+</pre></div><p>Jestli ne, postupuj podle <a href="naucse:page?lesson=beginners/install">lekce pro začátečníky</a> –
+jsou tam podrobnější instrukce.
+Jinak použij:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir project
+<span class="gp">$ </span><span class="nb">cd</span> project
+<span class="gp">$ </span>python3.7 -m venv __venv__  <span class="c1"># vytvoření virtualenvu -- použij Python 3 dle systému</span>
+<span class="gp">$ </span>. __venv__/bin/activate  <span class="c1"># aktivace</span>
+<span class="gp gp-VirtualEnv">(__venv__)</span><span class="gp">$ </span>python -m pip install requests  <span class="c1"># příkaz na instalaci balíčků puštěný ve virtualenvu</span>
+<span class="gp gp-VirtualEnv">(__venv__)</span><span class="gp">$ </span>...  <span class="c1"># práce &quot;uvnitř&quot;</span>
+<span class="gp gp-VirtualEnv">(__venv__)</span><span class="gp">$ </span>deactivate  <span class="c1"># vypnutí virtualenvu</span>
+</pre></div><p>V tomto kurzu lze případně využít i Python 3.6. Pokud máš 3.5 nebo ještě nižší,
+doporučujeme aktualizovat.</p>
+<h2>Windows</h2>
+<div class="highlight"><pre><span></span><span class="gp">&gt; </span>mkdir project<span class="gp"></span>
+<span class="gp">&gt; </span>cd project<span class="gp"></span>
+<span class="gp">&gt; </span>py -3 -m venv __venv__<span class="gp"></span>
+<span class="gp">&gt; </span>__venv__\Scripts\activate
+<span class="gp">(__venv__)&gt; </span>python -m pip install requests  <span class="c"># příkaz na instalaci balíčků puštěný ve virtualenvu</span>
+<span class="gp">(__venv__)&gt; </span>...  <span class="c"># práce &quot;uvnitř&quot;</span>
+<span class="gp">(__venv__)&gt; </span>deactivate  <span class="c"># vypnutí virtualenvu</span>
+</pre></div><h2>Poznámky</h2>
+<p>Příkaz <code>. __venv__/bin/activate</code> budeš muset zadat vždy, než začneš na projektu
+pracovat.</p>
+<p>Ono <code>__venv__</code> je jen jméno adresáře. Můžeš si ho pojmenovat jak chceš; dokonce
+nemusí být v rámci adresáře s projektem.
+Někteří lidé mají všechny virtuální prostředí na jednom místě; dokonce existuje
+nástroj <a href="https://virtualenvwrapper.readthedocs.io/en/latest/">virtualenvwrapper</a> na správu takového řešení, případně <a href="https://pipenv.readthedocs.io/en/latest/">pipenv</a>,
+který <em>Python Packaging Authority</em> <a href="https://packaging.python.org/tutorials/managing-dependencies/">doporučuje</a> pro vývoj aplikací (my ale
+budeme vyvíjet i knihovny).</p>
+<p>Autoři tohoto textu tedy doporučují <code>__venv__</code> v adresáři s projektem.
+Při použití v kombinaci s Gitem nezapomeň tento adresář přidat do souboru
+<code>.gitignore</code>.</p>
+<p>Příkaz <code>python -m pip install</code> nainstaluje danou knihovnu – může to být i jiná
+než <code>requests</code> jako výše.</p>

@@ -1,0 +1,71 @@
+<h1>Přidání kurzu na Nauč se Python</h1>
+<p>Když už máme nadefinováný vlastní kurz, zbývá nám jen ho dostat na <a href="https://naucse.python.cz/">naucse.python.cz</a>.
+Budeme k tomu potřebovat jen pár příkazu v Gitu a trochu trpělivosti.</p>
+<h2>Nahrání do vlastního forku</h2>
+<p>První věc, kterou budeš potřebovat, je vlastní účet na <a href="https://github.com/">GitHubu</a>.</p>
+<p>Přihlaš se na GitHub a vytvoř „fork” <a href="https://github.com/pyvec/naucse.python.cz">repozitáře pyvec/naucse.python.cz</a>.
+Na stránce repozitáře vpravo nahoře na to je tlačítko <em>Fork</em>.</p>
+<div style="text-align: center">
+<span class="figure"><a href="naucse:static?filename=naucse_fork.png"><img src="naucse:static?filename=naucse_fork.png" alt="Tlačítko na vytvoření forku repozitáře s Nauč se Python"></a></span>
+</div><p>Jsi-li na GitHubu v nějaké organizaci (např. PyLadiesCZ), můžeš vybrat,
+jestli <em>fork</em> bude pod tvým účtem nebo pod organizací.
+Děláš-li kurz pro organizaci, použij tu,
+abyste do materiálů mohli přispívat všichni.
+Jinak udělej kurz pod vlastním účtem.</p>
+<p>Vytvoření chvilku trvá.
+To, že je fork vytvořen, poznáš tak, že tě GitHub přesměruje na stránku, která bude skoro stejná, ale v hlavičce bude jiné uživatelské jméno (tvoje nebo tvé
+organizace) a pod tím text <code>forked from pyvec/naucse.python.cz</code>.</p>
+<p>Tvůj fork si teď potřebuješ přidat do lokálního repozitáře jako <em>referenci</em>, abys tam pak mohl/a poslat svůj kurz.
+To uděláš pomocí příkazu (nahraď obě <code>uzivatelskejmeno</code> za uživatelské jméno,
+pod kterým fork je):</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git remote add uzivatelskejmeno https://github.com/uzivatelskejmeno/naucse.python.cz.git
+</pre></div><p>Dále potřebuješ vytvořit commit se svým kurzem a případně se změnami v materiálech.
+Je dobré změny dělat v zvláštní větvi, ne v <code>master</code>.
+Vymysli si název větve (např. <code>podzim-2016</code>) a pusť příkazy</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git branch nazevvetve
+<span class="gp">$ </span>git checkout nazevvetve
+</pre></div><p>Jak vytvořit commit, se dozvíš například v <a href="naucse:page?lesson=git/git-collaboration-2in1">návodu na používání Gitu</a>.
+Více o větvích se můžeš dozvědět v <a href="naucse:page?lesson=git/branching">návodu na větvení v Gitu</a>.</p>
+<p>Svůj commit teď potřebuješ dostat do svého forku na GitHubu.
+To uděláš příkazem (<code>uzivatelskejmeno</code> nahraď za uživatelské jméno, pod kterým fork
+je):</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git push uzivatelskejmeno
+</pre></div><h2>Informace o forku pro Nauč se Python</h2>
+<p>Teď potřebuješ dostat informaci o tvém forku do základního repozitáře.
+To se dělá pomocí souboru <code>link.yml</code>, se kterým se udělá <em>Pull Request</em> do základního repozitáře.</p>
+<p>Nejdřív si vytvoř novou větev odvozenou od původního repozitáře, ve které vytvoříš soubor <code>link.yml</code>.
+To uděláš tímto příkazem (<code>pridanikurzu</code> můžeš změnit, je to název nové větve):</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git checkout -b pridanikurzu origin/master
+</pre></div><p>Možná sis všiml/a, že tvoje změny jsou najednou pryč, ale neboj, ony jsou uloženy na tvém počítači i na GitHubu, jen zrovna nejsou vidět.</p>
+<p>Teď potřebuješ vytvořit stejnou složku jako jsi vytvořil/a pro soubor <code>info.yml</code> – musí se jmenovat úplně stejně.
+V té složce vytvoř soubor, který se tentokrát bude jmenovat <code>link.yml</code>.
+Bude zase ve formátu YAML, ale tentokrát bude jednoduchý.
+Jedinou povinou informací je klíč <code>repo</code>, do kterého musíš dát odkaz na tvůj fork.
+Jméno větve pak napiš do klíče <code>branch</code>.
+Pozor, jedná se o větev s kurzem, ne o větev, ze které kurz přidáváš na Nauč se Python (tedy <strong>ne</strong> <code>pridanikurzu</code> z příkladu výše).</p>
+<p>Výsledný soubor pak vypadá následovně:</p>
+<div class="highlight"><pre><span></span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/uzivatelskejmeno/naucse.python.cz.git</span><span class="w"></span>
+<span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nazevvetve</span><span class="w"></span>
+</pre></div><p>Vytvoř s tímto souborem (a jen tímto souborem) commit a zase odešli změnu na GitHub.</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git push uzivatelskejmeno
+</pre></div><p>Teď už potřebuješ udělat <em>Pull Request</em> (dále jen jako PR) se souborem <code>link.yml</code>.
+Jak udělat PR je popsáno v <a href="naucse:page?lesson=git/git-collaboration-2in1">návodu na používání Gitu</a>.
+Ideálně do popisku napiš, kdo jsi a co organizuješ za kurz, ať to správci nemusí zjišťovat například z popisku v <code>info.yml</code>.</p>
+<p>Po tom, co správci PR schválí a sloučí tvoje změny do základního repozitáře, stačí počkat pár minut a tvůj kurz se objeví na <a href="https://naucse.python.cz/">naucse.python.cz</a>.</p>
+<h2>Upravování kurzu</h2>
+<p>Pokud budeš chtít na svém kurzu něco změnit, musíš se nejdřív zpátky přepnout do větve, ve které ten kurz je.
+To uděláš následujícím příkazem.
+<code>nazevvetve</code> nahraď za větev, ve které kurz máš.</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git checkout nazevvetve
+</pre></div><p>S každou změnou pak musíš udělat commit a odeslat commit na GitHub.</p>
+<p>Už naprosto poslední věc, kterou je potřeba zařídit, je aby se změny ve tvém kurzu u tebe ve forku projevily na Nauč se.
+To se dělá pomocí tzv. webhooků, webových adres, které reagují na nějaké akce.
+Musíš tedy nastavit svůj fork, aby posílal akce na webhook, který vyvolá nové nasazení webové stránky <a href="https://naucse.python.cz/">naucse.python.cz</a>.</p>
+<p>Pro instalaci webhooků máme speciální aplikaci, která je umí sama nastavit.
+Běží na adrese <a href="https://hooks.nauc.se">hooks.nauc.se</a>.
+Když se v té aplikaci přihlásíš, uvidíš tam svůj fork repozitáře naucse.python.cz (a všechny ostatní forky Nauč se, do kterých máš přístup).
+Poté už jen stačí kliknout na tlačítko <em>Aktivovat</em> u správného repozitáře a webhook se nainstaluje.
+A to je všechno! Přidal/a jsi kurz na Nauč se Python!</p>
+<div class="admonition note"><p>Pokud to umíš a chceš, můžeš si webhook nainstalovat sám/sama manuálně.
+Adresa webhooku je <code>https://hooks.nauc.se/hooks/push</code>, je potřeba <code>Content-Type</code> <code>application/json</code> a secret není potřeba zadávat.</p>
+</div>

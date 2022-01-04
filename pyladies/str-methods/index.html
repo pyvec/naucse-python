@@ -1,0 +1,83 @@
+<h1>Řetězcové funkce a metody</h1>
+<p>Řetězce umí všelijaké triky.
+Funkcí <code>len()</code> můžeš zjistit, jak je řetězec dlouhý;
+operátorem <code>in</code> pak jestli v sobě obsahuje daný podřetězec.</p>
+<table class="table">
+    <tr>
+        <th>Zápis</th>
+        <th>Popis</th>
+        <th>Příklad</th>
+    </tr>
+    <tr>
+        <td><code>len(r)</code></td>
+        <td>Délka řetězce</td>
+        <td><code>len('čokoláda')</code></td>
+    </tr>
+    <tr>
+        <td><code>x&nbsp;in&nbsp;r</code></td>
+        <td>True pokud je řetězec <code>x</code> obsažen v <code>r</code></td>
+        <td><code>'oko' in 'čokoláda'</code></td>
+    </tr>
+    <tr>
+        <td><code>x&nbsp;not&nbsp;in&nbsp;r</code></td>
+        <td>Opak <code>x in r</code></td>
+        <td><code>'dub' not in 'čokoláda</code></td>
+    </tr>
+</table><p>Řetězce vždy berou v potaz velikost písmen,
+takže např. <code>'ČOKO' in 'čokoláda'</code> je <code>False</code>.
+Kdybys chtěl/a porovnávat bez ohledu na velikost písmen,
+musel/a bys oba řetězce převést třeba na malá písmena
+a pak je porovnat.</p>
+<p>A jak se převádí na malá písmena?
+K tomu budeme potřebovat další novou vlastnost Pythonu: metody.</p>
+<h2>Metody</h2>
+<p><em>Metoda</em> (angl. <em>method</em>) je jako funkce – něco, co se dá zavolat.
+Na rozdíl od funkce je svázaná s nějakým <em>objektem</em> (hodnotou).
+Volá se tak, že se za objekt napíše tečka,
+za ní jméno metody a za to celé se, jako u funkcí, připojí závorky
+s případnými argumenty.</p>
+<p>Řetězcové metody <code>upper()</code> a <code>lower()</code>
+převádí text na velká, respektive malá písmena.
+Zkus si to!</p>
+<div class="highlight"><pre><span></span><span class="n">retezec</span> <span class="o">=</span> <span class="s1">&#39;Ahoj&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">retezec</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">retezec</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">retezec</span><span class="p">)</span>
+</pre></div><div class="admonition note"><p>Všimni si, že původní řetězec se nemění; metoda vrátí nový řetězec, ten
+starý zůstává.</p>
+<p>To je obecná vlastnost řetězců v Pythonu: jednou existující řetězec se už
+nedá změnit, dá se jen vytvořit nějaký odvozený.
+S touto vlastností už ses mohl/a setkat při psaní funkce <code>zamen</code>.</p>
+</div><h3>Iniciály</h3>
+<p>Pro procvičení metod a vybírání znaků si zkus napsat program,
+který se zeptá na jméno, pak na příjmení
+a pak vypíše iniciály – první písmena zadaných jmen.</p>
+<p>Iniciály jsou vždycky velkými písmeny
+(i kdyby byl uživatel líný mačkat Shift).</p>
+<div class="solution" id="solution-0">
+    <h3>Řešení</h3>
+    <div class="solution-cover">
+        <a href="naucse:solution?solution=0"><span class="link-text">Ukázat řešení</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <div class="highlight"><pre><span></span><span class="n">jmeno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej jméno: &#39;</span><span class="p">)</span>
+<span class="n">prijmeni</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej příjmení &#39;</span><span class="p">)</span>
+<span class="n">inicialy</span> <span class="o">=</span> <span class="n">jmeno</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">prijmeni</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Iniciály:&#39;</span><span class="p">,</span> <span class="n">inicialy</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div><p>Způsobů, jak takový program napsat, je více.
+Lze například zavolat <code>upper()</code> dvakrát – zvlášť na jméno a zvlášť na příjmení.</p>
+<p>Nebo to jde zapsat i takto –
+metoda se dá volat na výsledku jakéhokoli výrazu:</p>
+<div class="highlight"><pre><span></span><span class="n">jmeno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej jméno: &#39;</span><span class="p">)</span>
+<span class="n">prijmeni</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej příjmení &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Iniciály:&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">jmeno</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">prijmeni</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div><p>Doporučuji spíš první způsob, ten se smysluplnými názvy proměnných.
+Je sice delší, ale mnohem přehlednější.</p>
+    </div>
+</div><h3>A další</h3>
+<p>Řetězcových metod je celá řada.
+Nejužitečnější z nich najdeš v <a href="https://pyvec.github.io/cheatsheets/strings/strings-cs.pdf">taháku</a>, který si můžeš stáhnout či vytisknout.
+Podívej se na ně a zjisti, co dělají.</p>
+<p>A úplně všechny řetězcové metody jsou popsány v <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">dokumentaci Pythonu</a> (anglicky; plné věcí, které ještě neznáš).</p>
+<p>Všimni si, že <code>len</code> není metoda, ale funkce; píše se <code>len(r)</code>, ne <code>r.len()</code>.
+Proč tomu tak je, to za nějakou dobu poznáš.</p>

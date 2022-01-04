@@ -1,0 +1,116 @@
+{
+    "api_version": [
+        0,
+        3
+    ],
+    "course": {
+        "description": "Návod na přidání kurzu na Nauč se Python",
+        "edit_info": {
+            "branch": "main",
+            "url": "https://github.com/encukou/naucse-python"
+        },
+        "lessons": {
+            "meta/installing-naucse": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Napsal Mikuláš Poul, 2018"
+                        ],
+                        "content": {
+                            "path": "installing-naucse/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "license_code": "cc0",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/meta/installing-naucse/index.md",
+                        "title": "Lokální instalace Nauč se Python",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/meta/installing-naucse/info.yml",
+                "static_files": {},
+                "title": "Lokální instalace Nauč se Python"
+            },
+            "meta/local-run": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Napsal Mikuláš Poul, 2018"
+                        ],
+                        "content": {
+                            "path": "local-run/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "license_code": "cc0",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/meta/local-run/index.md",
+                        "title": "Vytvoření lokálního kurzu",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/meta/local-run/info.yml",
+                "static_files": {
+                    "info.yml": {
+                        "path": "local-run/info.yml"
+                    }
+                },
+                "title": "Vytvoření lokálního kurzu"
+            },
+            "meta/submitting-a-run": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Napsal Mikuláš Poul, 2018"
+                        ],
+                        "content": {
+                            "path": "submitting-a-run/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "license_code": "cc0",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/meta/submitting-a-run/index.md",
+                        "title": "Přidání kurzu na Nauč se Python",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/meta/submitting-a-run/info.yml",
+                "static_files": {
+                    "naucse_fork.png": {
+                        "path": "submitting-a-run/naucse_fork.png"
+                    }
+                },
+                "title": "Přidání kurzu na Nauč se Python"
+            }
+        },
+        "long_description": "<p>V tomto meta-kurzu je kompletní návod na přidávání kurzů na Nauč se Python.</p>\n<p>Kurz je určený pro organizátory a k přidání kurzu jsou potřeba jen základní znalosti práce\ns gitem a GitHubem.</p>",
+        "sessions": [
+            {
+                "materials": [
+                    {
+                        "lesson_slug": "meta/installing-naucse",
+                        "title": "Lokální instalace Nauč se Python",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "meta/local-run",
+                        "title": "Vytvoření lokálního kurzu",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "meta/submitting-a-run",
+                        "title": "Přidání kurzu na Nauč se Python",
+                        "type": "lesson"
+                    }
+                ],
+                "slug": "adding-a-run",
+                "source_file": "courses/meta/info.yml",
+                "title": "Přidání kurzu"
+            }
+        ],
+        "source_file": "courses/meta/info.yml",
+        "title": "Jak přidat kurz na Nauč se Python"
+    }
+}

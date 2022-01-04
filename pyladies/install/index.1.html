@@ -1,0 +1,80 @@
+<h1>Git</h1>
+<p>Další program, který budeme později potřebovat,
+nám později umožní (mimojiné) spolupracovat
+na vznikajících programech s ostatními.
+Jmenuje se Git.
+Pojďme si ho nainstalovat a nastavit.</p>
+<p>Instalace je různá pro různé operační systémy, vyber ten svůj.</p>
+<h2>Linux</h2>
+<p>Instalaci na Linux zvládneme jedním příkazem:</p>
+<p><strong>Fedora, RHEL</strong>:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo dnf install git gitk git-gui nano
+</pre></div><p><strong>Ubuntu, Debian</strong>:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo apt-get install git gitk git-gui nano
+</pre></div><p>U jiných Linuxů předpokládám, že instalovat umíš; nainstaluj si <em>git</em>,
+<em>gitk</em>, <em>git gui</em> a <em>nano</em>.</p>
+<p>Jestli máš nainstalováno, ještě nastav Gitu editor.
+Pokud nemáš rád/a Vim (nebo nevíš co to je),
+zadej tento příkaz:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git config --global core.editor nano
+</pre></div><p>Dál pokračuj obecným <a href="#config">nastavením</a> níže.</p>
+<h2>Windows</h2>
+<p>Jdi na stránku <a href="https://git-scm.org">git-scm.org</a>, stáhni si
+Git a nainstaluj si ho.</p>
+<p>Při instalaci se ujisti, že jsou vybrány tyto volby:</p>
+<ul>
+<li>Adjusting your PATH enviroment: Git from the command line and also from 3rd-party software</li>
+<li>Configuring the line ending conversions: Checkout Windows-style, commit Unix-style line endings</li>
+</ul>
+<p>Ostatní možnosti neměň.</p>
+<p>Potom Gitu nastav editor.
+Máš-li otevřenou příkazovou řádku, zavři ji a otevři novou.
+(Instalace mění systémové nastavení, které se musí načíst znovu.)
+V nové příkazové řádce zadej:</p>
+<div class="highlight"><pre><span></span><span class="go">&gt; git config --global core.editor notepad</span>
+<span class="go">&gt; git config --global format.commitMessageColumns 80</span>
+<span class="go">&gt; git config --global gui.encoding utf-8</span>
+</pre></div><p>A teď pokračuj v sekci <a href="#config">Nastavení</a> níže – macOS přeskoč.</p>
+<h2>macOS</h2>
+<p>Spusť v příkazové řádce <code>git</code>.
+Je-li už nainstalovaný, dozvíš se, jak ho používat
+(výpis začíná <code>usage</code>).
+Jinak ho nainstaluj pomocí Homebrew:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>brew install git git-gui
+</pre></div><p>Nainstalovanému Gitu je ještě potřeba nastavit editor (zadej <code>nano</code>,
+i když sis v rámci instalace editoru nainstaloval/a např. Atom).
+Dělá se to tímto příkazem:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git config --global core.editor nano
+</pre></div><p>Dál pokračuj obecným nastavením:</p>
+<p><a id="config"></a></p>
+<h2>Nastavení</h2>
+<p>Na projektu, který bude uložen v Gitu, může
+spolupracovat více lidí.
+Aby šlo dohledat, kdo udělal kterou změnu, je Gitu
+potřeba říct jméno a e-mail.
+Do příkazové řádky zadej následující příkazy, změň v nich ale
+jméno a adresu:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git config --global user.name <span class="s2">&quot;Adéla Novotná&quot;</span>
+<span class="gp">$ </span>git config --global user.email adela.novotna@example.cz
+</pre></div><p>Můžeš samozřejmě použít i přezdívku, nebo dokonce
+falešný e-mail, ale v takovém případě bude složitější se
+zapojit do týmových projektů.
+Každopádně, jméno i e-mail jdou kdykoli změnit
+tím, že konfigurační příkazy zadáš znovu.</p>
+<div class="admonition note"><p>Pokud se bojíš spamu, neboj: nezačneš ho dostávat víc
+než při normálním používání e-mailu.
+Adresa se zobrazí jen lidem, kteří si stáhnou projekt,
+do kterého jsi přispíval/a.
+Spammeři se většinou zaměřují na méně technicky zdatné
+lidi, než jsou uživatelé Gitu. :)</p>
+</div><p>Dále si můžeš nastavit barevné výpisy – pokud si tedy
+(jako někteří autoři Gitu) nemyslíš, že příkazová
+řádka má být černobílá:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git config --global color.ui <span class="nb">true</span>
+</pre></div><div class="admonition note"><p>Spuštění <code>git config</code> nevypíše žádnou hlášku, že se operace povedla.
+To je normální; stejně se chová spousta dalších příkazů, např. <code>cd</code>.</p>
+<p>Aktuální konfiguraci gitu si můžeš zkontrolovat příkazem:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git config --global --list
+<span class="go">user.name=Adéla Novotná</span>
+<span class="go">user.email=adela.novotna@example.cz</span>
+</pre></div></div><p>A to je vše! Git máš nainstalovaný. Gratuluji!</p>
