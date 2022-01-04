@@ -1,0 +1,45 @@
+name: Compile course
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Poetry cache
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pypoetry
+        key: poetry-cache-${{ runner.os }}-${{ hashFiles('poetry.lock') }}-${{ hashFiles('.github/workflows/*.yml') }}
+    - name: Pip cache
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: pip-cache-${{ runner.os }}-${{ hashFiles('.github/workflows/*.yml') }}
+    - name: Install dependencies
+      run: |
+        python -m pip install poetry
+        poetry install -E ghp-compiled
+    - name: Compile the courses
+      run: |
+        for slug in pyladies mi-pyt meta; do
+          poetry run python -m naucse_render compile _compiled/$slug --slug $slug\
+            --edit-repo-url https://github.com/${{ github.repository }} \
+            --edit-repo-branch main
+        done
+    - if: ${{ github.ref == 'refs/heads/main' }}
+      name: Publish compiled courses
+      run: |
+        git fetch origin compiled || :
+        poetry run python -m ghp_import -m "Compiled" -b compiled --push _compiled/
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GIT_AUTHOR_NAME: ghp_import
+        GIT_COMMITTER_NAME: ghp_import
+        EMAIL: none@invalid
