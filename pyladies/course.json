@@ -7,7 +7,7 @@
         "description": "Naučte se Python vážně od začátku. Žádné předchozí znalosti nejsou potřeba.",
         "edit_info": {
             "branch": "main",
-            "url": "https://github.com/encukou/naucse-python"
+            "url": "https://github.com/pyvec/naucse-python"
         },
         "lessons": {
             "beginners/and-or": {

@@ -7,8 +7,15 @@
         "description": "Základy již znáte a chcete se dozvědět o dalších možnostech využití Pythonu.",
         "edit_info": {
             "branch": "main",
-            "url": "https://github.com/encukou/naucse-python"
+            "url": "https://github.com/pyvec/naucse-python"
         },
+        "extra_lessons": [
+            "beginners/install",
+            "beginners/cmdline",
+            "beginners/testing",
+            "fast-track/http",
+            "git/git-collaboration-2in1"
+        ],
         "lessons": {
             "advanced/generators": {
                 "pages": {
@@ -34,6 +41,177 @@
                 "static_files": {},
                 "title": "Generátory"
             },
+            "beginners/cmdline": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017.",
+                            "Založeno na tutoriálu <a href=\"https://tutorial.djangogirls.org/en/intro_to_command_line/\">Django Girls</a>."
+                        ],
+                        "content": {
+                            "path": "cmdline/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [
+                            {
+                                "content": "<div class=\"row side-by-side-commands\"><div class=\"col\">\n                <h4>Unix</h4><div class=\"highlight\"><pre><span></span><span class=\"gp\">$ </span><span class=\"nb\">cd</span> naucse-python\n<span class=\"gp\">$ </span>mkdir <span class=\"nb\">test</span>\n<span class=\"gp\">$ </span>ls\n<span class=\"go\">test</span>\n</pre></div></div><div class=\"col\">\n                <h4>Windows</h4><div class=\"highlight\"><pre><span></span><span class=\"gp\">&gt; </span>cd naucse-python<span class=\"gp\"></span>\n<span class=\"gp\">&gt; </span>mkdir test<span class=\"gp\"></span>\n<span class=\"gp\">&gt; </span>dir\n<span class=\"go\">05/08/2014 07:28 PM &lt;DIR&gt;  test</span>\n</pre></div></div></div>"
+                            }
+                        ],
+                        "source_file": "lessons/beginners/cmdline/index.md",
+                        "title": "Úvod do příkazové řádky",
+                        "vars": {
+                            "coach-present": false,
+                            "mi-pyt": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/cmdline/info.yml",
+                "static_files": {
+                    "windows-cmd-properties.png": {
+                        "path": "cmdline/windows-cmd-properties.png"
+                    }
+                },
+                "title": "Úvod do příkazové řádky"
+            },
+            "beginners/install": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "install/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install/index.md",
+                        "title": "Instalace Pythonu",
+                        "vars": {
+                            "coach-present": false,
+                            "mi-pyt": true
+                        }
+                    },
+                    "linux": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "install/linux.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "linux",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install/linux.md",
+                        "subtitle": "Linux",
+                        "title": "Instalace Pythonu – Linux",
+                        "vars": {
+                            "coach-present": false,
+                            "mi-pyt": true
+                        }
+                    },
+                    "macos": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "install/macos.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "macos",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install/macos.md",
+                        "subtitle": "macOS",
+                        "title": "Instalace Pythonu – macOS",
+                        "vars": {
+                            "coach-present": false,
+                            "mi-pyt": true
+                        }
+                    },
+                    "windows": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "install/windows.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "windows",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install/windows.md",
+                        "subtitle": "Windows",
+                        "title": "Instalace Pythonu – Windows",
+                        "vars": {
+                            "coach-present": false,
+                            "mi-pyt": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/install/info.yml",
+                "static_files": {
+                    "windows_32v64-bit.png": {
+                        "path": "install/windows_32v64-bit.png"
+                    },
+                    "windows_add_python_to_path.png": {
+                        "path": "install/windows_add_python_to_path.png"
+                    }
+                },
+                "title": "Instalace Pythonu"
+            },
+            "beginners/testing": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "testing/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/testing/index.md",
+                        "title": "Testování",
+                        "vars": {
+                            "coach-present": false,
+                            "mi-pyt": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/testing/info.yml",
+                "static_files": {},
+                "title": "Testování"
+            },
+            "fast-track/http": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro naucse.python.cz napsal Petr Viktorin, 2018.",
+                            "Inspirováno tutoriálem <a href=\"https://tutorial.djangogirls.org/en/how_the_internet_works/\">Django Girls</a>"
+                        ],
+                        "content": {
+                            "path": "http/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/fast-track/http/index.md",
+                        "title": "HTTP – Jak funguje Internet",
+                        "vars": {
+                            "coach-present": false,
+                            "mi-pyt": true
+                        }
+                    }
+                },
+                "source_file": "lessons/fast-track/http/info.yml",
+                "static_files": {
+                    "url-anatomy.svg": {
+                        "path": "http/url-anatomy.svg"
+                    }
+                },
+                "title": "HTTP – Jak funguje Internet"
+            },
             "fast-track/install": {
                 "pages": {
                     "index": {
@@ -41,7 +219,7 @@
                             "Pro kurz MI-PYT na ČVUT napsali Miro Hrončok a Petr Viktorin, 2016-2017."
                         ],
                         "content": {
-                            "path": "install/index.html"
+                            "path": "install/index.1.html"
                         },
                         "license": "cc-by-sa-40",
                         "slug": "index",
@@ -57,6 +235,37 @@
                 "source_file": "lessons/fast-track/install/info.yml",
                 "static_files": {},
                 "title": "Vytvoření virtuáního prostředí"
+            },
+            "git/git-collaboration-2in1": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies CZ napsali Petr Viktorin a Oskar Hollman, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "git-collaboration-2in1/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/git-collaboration-2in1/index.md",
+                        "title": "Spolupráce a Git",
+                        "vars": {
+                            "coach-present": false,
+                            "mi-pyt": true
+                        }
+                    }
+                },
+                "source_file": "lessons/git/git-collaboration-2in1/info.yml",
+                "static_files": {
+                    "diagram.png": {
+                        "path": "git-collaboration-2in1/diagram.png"
+                    },
+                    "gh-workflow-diagram.svg": {
+                        "path": "git-collaboration-2in1/gh-workflow-diagram.svg"
+                    }
+                },
+                "title": "Spolupráce a Git"
             },
             "intro/async": {
                 "pages": {
@@ -555,7 +764,7 @@
                             "Pro kurz MI-PYT na ČVUT napsali Miro Hrončok, Petr Viktorin a další, 2016-2017."
                         ],
                         "content": {
-                            "path": "testing/index.html"
+                            "path": "testing/index.1.html"
                         },
                         "license": "cc-by-sa-40",
                         "slug": "index",

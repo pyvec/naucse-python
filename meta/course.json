@@ -7,9 +7,225 @@
         "description": "Návod na přidání kurzu na Nauč se Python",
         "edit_info": {
             "branch": "main",
-            "url": "https://github.com/encukou/naucse-python"
+            "url": "https://github.com/pyvec/naucse-python"
         },
+        "extra_lessons": [
+            "git/install",
+            "git/branching",
+            "git/git-collaboration-2in1",
+            "beginners/install",
+            "beginners/cmdline",
+            "intro/notebook"
+        ],
         "lessons": {
+            "beginners/cmdline": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017.",
+                            "Založeno na tutoriálu <a href=\"https://tutorial.djangogirls.org/en/intro_to_command_line/\">Django Girls</a>."
+                        ],
+                        "content": {
+                            "path": "cmdline/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [
+                            {
+                                "content": "<div class=\"row side-by-side-commands\"><div class=\"col\">\n                <h4>Unix</h4><div class=\"highlight\"><pre><span></span><span class=\"gp\">$ </span><span class=\"nb\">cd</span> naucse-python\n<span class=\"gp\">$ </span>mkdir <span class=\"nb\">test</span>\n<span class=\"gp\">$ </span>ls\n<span class=\"go\">test</span>\n</pre></div></div><div class=\"col\">\n                <h4>Windows</h4><div class=\"highlight\"><pre><span></span><span class=\"gp\">&gt; </span>cd naucse-python<span class=\"gp\"></span>\n<span class=\"gp\">&gt; </span>mkdir test<span class=\"gp\"></span>\n<span class=\"gp\">&gt; </span>dir\n<span class=\"go\">05/08/2014 07:28 PM &lt;DIR&gt;  test</span>\n</pre></div></div></div>"
+                            }
+                        ],
+                        "source_file": "lessons/beginners/cmdline/index.md",
+                        "title": "Úvod do příkazové řádky",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/beginners/cmdline/info.yml",
+                "static_files": {
+                    "windows-cmd-properties.png": {
+                        "path": "cmdline/windows-cmd-properties.png"
+                    }
+                },
+                "title": "Úvod do příkazové řádky"
+            },
+            "beginners/install": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "install/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install/index.md",
+                        "title": "Instalace Pythonu",
+                        "vars": {}
+                    },
+                    "linux": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "install/linux.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "linux",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install/linux.md",
+                        "subtitle": "Linux",
+                        "title": "Instalace Pythonu – Linux",
+                        "vars": {}
+                    },
+                    "macos": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "install/macos.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "macos",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install/macos.md",
+                        "subtitle": "macOS",
+                        "title": "Instalace Pythonu – macOS",
+                        "vars": {}
+                    },
+                    "windows": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "install/windows.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "windows",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install/windows.md",
+                        "subtitle": "Windows",
+                        "title": "Instalace Pythonu – Windows",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/beginners/install/info.yml",
+                "static_files": {
+                    "windows_32v64-bit.png": {
+                        "path": "install/windows_32v64-bit.png"
+                    },
+                    "windows_add_python_to_path.png": {
+                        "path": "install/windows_add_python_to_path.png"
+                    }
+                },
+                "title": "Instalace Pythonu"
+            },
+            "git/branching": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "branching/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/branching/index.md",
+                        "title": "Větvení v Gitu",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/git/branching/info.yml",
+                "static_files": {
+                    "branch1.png": {
+                        "path": "branching/branch1.png"
+                    },
+                    "branches.png": {
+                        "path": "branching/branches.png"
+                    },
+                    "merge.png": {
+                        "path": "branching/merge.png"
+                    }
+                },
+                "title": "Větvení v Gitu"
+            },
+            "git/git-collaboration-2in1": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies CZ napsali Petr Viktorin a Oskar Hollman, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "git-collaboration-2in1/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/git-collaboration-2in1/index.md",
+                        "title": "Spolupráce a Git",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/git/git-collaboration-2in1/info.yml",
+                "static_files": {
+                    "diagram.png": {
+                        "path": "git-collaboration-2in1/diagram.png"
+                    },
+                    "gh-workflow-diagram.svg": {
+                        "path": "git-collaboration-2in1/gh-workflow-diagram.svg"
+                    }
+                },
+                "title": "Spolupráce a Git"
+            },
+            "git/install": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017"
+                        ],
+                        "content": {
+                            "path": "install/index.1.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/install/index.md",
+                        "title": "Instalace Gitu",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/git/install/info.yml",
+                "static_files": {},
+                "title": "Instalace Gitu"
+            },
+            "intro/notebook": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro kurz MI-PYT na ČVUT napsali Petr Viktorin, Miro Hrončok a další, 2016-2017."
+                        ],
+                        "content": {
+                            "path": "notebook/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "license_code": "cc0",
+                        "modules": {
+                            "katex": "0.7.1"
+                        },
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/intro/notebook/index.ipynb",
+                        "title": "Notebook",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/intro/notebook/info.yml",
+                "static_files": {},
+                "title": "Notebook"
+            },
             "meta/installing-naucse": {
                 "pages": {
                     "index": {
