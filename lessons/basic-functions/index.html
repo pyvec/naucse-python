@@ -1,0 +1,146 @@
+<h1>Užitečné funkce</h1>
+<p>Ukažme si pár základních funkcí, které Python nabízí.</p>
+<p>Tato kapitola ukazuje výběr z nástrojů, které jsou ti v Pythonu k dispozici.
+Tvůj cíl není naučit se vše nazpaměť, ale mít přehled o tom, co je zhruba
+možné.
+Detaily můžeš vždycky dohledat – ať už na taháku (které jsou, na rozdíl od
+školy, vždycky povoleny!), v těchto materiálech, nebo v oficiální
+dokumentaci či jinde na Internetu.</p>
+<p>Můžeš si stáhnout i
+<a href="https://github.com/pyvec/cheatsheets/raw/master/basic-functions/basic-functions-cs.pdf">tahák</a>,
+který se rozdává na srazech.
+Doporučuji mít ho ze začátku při ruce.
+Když narazíš na úkol, se kterým si nevíš rady, projdi si tahák a zamysli se,
+která z funkcí by se dala použít.</p>
+<h2>Vstup a výstup</h2>
+<p>Tyhle funkce už známe.
+<code>print</code> vypíše nepojmenované argumenty, oddělené mezerou.
+Pojmenovaný argument <code>end</code> určuje, co se vypíše na konci (místo přechodu
+na nový řádek);
+<code>sep</code> udává, co se vypíše mezi jednotlivými argumenty (místo mezery).</p>
+<div class="admonition note"><p>Příklad opět spusť ze souboru, ne interaktivně:</p>
+</div><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;dvě&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+</pre></div><p>Základní funkce pro načtení vstupu, <code>input</code>,
+vypíše otázku, počká na text od uživatele a ten vrátí jako řetězec.</p>
+<div class="highlight"><pre><span></span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;zadej vstup: &#39;</span><span class="p">)</span>
+</pre></div><p>Kontrolní otázky:</p>
+<ul>
+<li>Je <code>input</code> „normální“ funkce, nebo procedura?</li>
+<li>Co bere funkce <code>input</code> jako argument?</li>
+<li>Jaká je návratová hodnota funkce <code>input</code>?</li>
+</ul>
+<div class="solution" id="solution-0">
+    <h3>Řešení</h3>
+    <div class="solution-cover">
+        <a href="naucse:solution?solution=0"><span class="link-text">Ukázat řešení</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <p>Funkce <code>input</code> vrací hodnotu, se kterou může program dál pracovat.
+Zařadil bych ji tedy mezi „normální“ funkce.</p>
+<p>Jako argument bere <code>input</code> otázku, na kterou se uživatele zeptá.</p>
+<p>Návratová hodnota funkce <code>input</code> je řetězec s odpovědí uživatele.</p>
+    </div>
+</div><h2>Převádění typů</h2>
+<p>Co ale když nechceme pracovat s řetězcem, ale třeba s číslem?
+Tady nám pomůže skupina funkcí, které umí převádět čísla na řetězce a zpátky.
+Každý ze tří <em>typů</em> (angl. <em>types</em>) proměnných, které zatím známe,
+má funkci, která vezme nějakou hodnotu a vrátí podobnou hodnotu „svého“ typu.
+Na celá čísla je funkce <code>int</code> (z angl. <em>integer</em>), na reálná čísla je <code>float</code>
+(z angl. <em>floating-point</em>), a pro řetězce <code>str</code> (z angl. <em>string</em>).</p>
+<div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>              <span class="c1"># převod na celé číslo</span>
+<span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>            <span class="c1"># převod na reálné číslo</span>
+<span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>              <span class="c1"># převod na řetězec</span>
+</pre></div><p>Příklady:</p>
+<div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="mf">3.141</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="mf">8.12</span> <span class="o">==</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;8.12&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">(</span><span class="mf">8.12</span><span class="p">)</span>
+<span class="mf">8.0</span> <span class="o">==</span> <span class="nb">float</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;8&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">(</span><span class="mf">8.0</span><span class="p">)</span>
+<span class="s1">&#39;3&#39;</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">)</span>
+<span class="s1">&#39;3.141&#39;</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="mf">3.141</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39;3.141&#39;</span><span class="p">)</span>
+</pre></div><p>Ne všechny převody jsou možné:</p>
+<div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;blablabla&#39;</span><span class="p">)</span>    <span class="c1"># chyba!</span>
+<span class="nb">float</span><span class="p">(</span><span class="s1">&#39;blablabla&#39;</span><span class="p">)</span>  <span class="c1"># chyba!</span>
+<span class="nb">int</span><span class="p">(</span><span class="s1">&#39;8.9&#39;</span><span class="p">)</span>          <span class="c1"># chyba!</span>
+</pre></div><p>…a jak si poradit s chybou, která nastane,
+když použiješ špatnou hodnotu, si řekneme později.</p>
+<h3>Převádění a <code>input</code></h3>
+<p>Převádění typů se často používá při načítání vstupu, třeba takto:</p>
+<div class="highlight"><pre><span></span><span class="n">cislo</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej číslo: &#39;</span><span class="p">))</span>
+</pre></div><p>Jak Python vyhodnotí tento výraz?
+Zadá-li uživatel <kbd>4</kbd><kbd>2</kbd><kbd>Enter</kbd>,
+funkce <code>input</code> vrátí řetězec<code>'42'</code>.
+Ten pak funkce <code>int</code> vezme jako argument, udělá podle něj číslo a to
+číslo vrátí:</p>
+<div class="highlight"><pre><span></span><span class="n">cislo</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej číslo: &#39;</span><span class="p">))</span>
+      <span class="c1">#     ╰─────────┬─────────╯</span>
+<span class="n">cislo</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>        <span class="s1">&#39;42&#39;</span>          <span class="p">)</span>
+      <span class="c1"># ╰────────────┬────────────╯</span>
+<span class="n">cislo</span> <span class="o">=</span>             <span class="mi">42</span>
+</pre></div><h2>Matematické funkce</h2>
+<p>Matematika je občas potřeba, takže se pojďme
+podívat, jak v Pythonu pracovat s čísly.</p>
+<p>Jedna zajímavá matematická funkce je k dispozici vždy:</p>
+<div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="n">cislo</span><span class="p">)</span>    <span class="c1"># zaokrouhlení</span>
+</pre></div><p>Spousta dalších není k dispozici od začátku programu.
+Ne každý má rád matematiku, a ne ve všech druzích programu jsou takové operace
+potřeba.
+Proto musíš předem – typicky na začátku souboru – říct, že je budeš používat.
+To se dělá <em>naimportováním</em> z modulu <code>math</code>:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">floor</span><span class="p">,</span> <span class="n">ceil</span>
+</pre></div><p>Naimportované funkce pak můžeš použít:</p>
+<div class="highlight"><pre><span></span><span class="n">sqrt</span><span class="p">(</span><span class="n">cislo</span><span class="p">)</span>                 <span class="c1"># druhá odmocnina</span>
+
+<span class="n">floor</span><span class="p">(</span><span class="n">cislo</span><span class="p">)</span>                <span class="c1"># zaokrouhlení dolů</span>
+<span class="n">ceil</span><span class="p">(</span><span class="n">cislo</span><span class="p">)</span>                 <span class="c1"># zaokrouhlení nahoru</span>
+</pre></div><p>Kdybys potřeboval/a goniometrické funkce jako sinus, jsou k dispozici taky.
+Jen pozor na to, že počítají pro úhly v <a href="https://cs.wikipedia.org/wiki/Radi%C3%A1n">radiánech</a>.
+Hodnoty ve stupních je potřeba na radiány převést.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">tan</span><span class="p">,</span> <span class="n">degrees</span><span class="p">,</span> <span class="n">radians</span>
+
+<span class="n">sin</span><span class="p">(</span><span class="n">uhel</span><span class="p">)</span>       <span class="c1"># sinus</span>
+<span class="n">cos</span><span class="p">(</span><span class="n">uhel</span><span class="p">)</span>       <span class="c1"># kosinus</span>
+<span class="n">tan</span><span class="p">(</span><span class="n">uhel</span><span class="p">)</span>       <span class="c1"># tangens</span>
+
+<span class="n">degrees</span><span class="p">(</span><span class="n">uhel</span><span class="p">)</span>   <span class="c1"># převod z radiánů na stupně</span>
+<span class="n">radians</span><span class="p">(</span><span class="n">uhel</span><span class="p">)</span>   <span class="c1"># převod ze stupňů na radiány</span>
+</pre></div><div class="admonition warning"><p class="admonition-title">Import a pojmenování souborů</p>
+<p>Při importování je potřeba si dávat pozor na pojmenování souborů:
+importuješ-li <code>from math</code>, nesmí se tvůj program jmenovat <code>math.py</code>.</p>
+<p>Proč? Když Python v adresáři, ze kterého program pouštíš, najde soubor
+<code>math.py</code>, bude se snažit importovat <code>sin</code> z něho místo
+z předpřipravené sady matematických funkcí.</p>
+</div><h2>Náhoda</h2>
+<p>Nakonec si ukážeme dvě funkce, které vrací náhodná čísla.
+Jsou užitečné třeba pro hry, ve kterých se hází kostkou nebo tahají
+náhodné karty.</p>
+<p>Opět nejsou potřeba tak často a je potřeba je <em>naimportovat</em>.
+Tentokrát z modulu <code>random</code>:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span><span class="p">,</span> <span class="n">uniform</span>
+</pre></div><p>Pak už se dají použít:</p>
+<div class="highlight"><pre><span></span><span class="n">randrange</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># náhodné celé číslo od a do b-1</span>
+<span class="n">uniform</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>     <span class="c1"># náhodné reálné číslo od a do b</span>
+</pre></div><p>Pozor na to, že <code>randrange(a, b)</code>
+nikdy nevrátí samotné <code>b</code>.
+Pokud potřebuješ náhodně vybrat ze tří možností,
+použij <code>randrange(0, 3)</code>,
+což vrátí <code>0</code>, <code>1</code>, nebo
+<code>2</code>:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span>
+
+<span class="n">cislo</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># číslo je 0, 1, nebo 2</span>
+<span class="k">if</span> <span class="n">cislo</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kolečko&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">cislo</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Čtvereček&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>  <span class="c1"># tady musí být číslo 2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Trojúhelníček&#39;</span><span class="p">)</span>
+</pre></div><div class="admonition note"><p>Pamatuj, když importuješ z modulu <code>random</code>, nesmí se tvůj soubor
+jmenovat <code>random.py</code>.</p>
+</div><h2>A další</h2>
+<p>Python dává k dispozici obrovské množství dalších
+funkcí a modulů, i když ne všem budeš ze začátku
+rozumět.
+Všechny jsou – anglicky – popsány v dokumentaci Pythonu, např.
+<a href="https://docs.python.org/3/library/functions.html">vestavěné funkce</a>,
+<a href="https://docs.python.org/3/library/math.html">matematika</a>.</p>

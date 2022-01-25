@@ -1,0 +1,98 @@
+<h1>While</h1>
+<p>Kromě cyklu <code>for</code> máme ještě druhý typ cyklu: <code>while</code> (angl. <em>dokud</em>).
+Na rozdíl od <code>for</code>, kde <em>předem známe počet opakování</em>,
+se while používá, když cyklus závisí na nějaké podmínce.
+Tělo cyklu se opakuje, dokud je podmínka splněna.
+Zkus si naprogramovat následující postup pro zubaře:</p>
+<ul>
+<li>Řekni, aby pacient řekl „Ááá“, a počkej na odpověď</li>
+<li>Dokud pacient <em>ne</em>řekl „Ááá“:<ul>
+<li>Vynadej pacientovi</li>
+<li>Znovu počkej na odpověď</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Řekni Ááá! &#39;</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">odpoved</span> <span class="o">!=</span> <span class="s1">&#39;Ááá&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Špatně, zkus to znovu&#39;</span><span class="p">)</span>
+    <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Řekni Ááá! &#39;</span><span class="p">)</span>
+</pre></div><p>Ale pozor! Je velice jednoduché napsat cyklus,
+jehož podmínka bude splněna vždycky.
+Takový cyklus se bude opakovat donekonečna.</p>
+<ul>
+<li>Dokud je pravda pravdivá:<ul>
+<li>Napiš náhodné číslo</li>
+<li>Napiš hlášku</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Číslo je&#39;</span><span class="p">,</span> <span class="n">randrange</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(Počkej, než se počítač unaví...)&#39;</span><span class="p">)</span>
+</pre></div><p>Program se dá přerušit zmáčknutím
+<kbd>Ctrl</kbd>+<kbd>C</kbd>.</p>
+<div class="admonition note"><p>Tahle klávesová zkratka vyvolá v programu chybu
+a program se – jako po každé chybě – ukončí.</p>
+</div><p>A nakonec, existuje příkaz <code>break</code>, který z cyklu „vyskočí“:
+začnou se hned vykonávat příkazy za cyklem.</p>
+<div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Řekni Ááá! &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">odpoved</span> <span class="o">==</span> <span class="s1">&#39;Ááá&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bééé&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Špatně, zkus to znovu&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hotovo, ani to nebolelo.&#39;</span><span class="p">)</span>
+</pre></div><p>Příkaz <code>break</code> se dá použít jenom v cyklu (<code>while</code> nebo <code>for</code>)
+a pokud máš víc cyklů zanořených v sobě, vyskočí jen z toho vnitřního.</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>  <span class="c1"># Vnější cyklus</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>  <span class="c1"># Vnitřní cyklus</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">j</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">j</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div><p>Ale zpátky k <code>while</code>!
+Dokážeš napsat tenhle program?</p>
+<h2>Oko bere</h2>
+<ul>
+<li>Začínáš s 0 body.</li>
+<li>Počítač v každém kole vypíše, kolik máš bodů,
+a zeptá se tě, jestli chceš pokračovat.</li>
+<li>Pokud odpovíš „ne“, hra končí.</li>
+<li>Pokud odpovíš „ano“, počítač „otočí kartu“
+(náhodně vybere číslo od 2 do 10), vypíše její hodnotu a přičte ji k bodům.</li>
+<li>Pokud máš víc než 21 bodů, prohráváš.</li>
+<li>Cílem hry je získat co nejvíc bodů, ideálně 21.</li>
+</ul>
+<div class="solution" id="solution-0">
+    <h3>Řešení</h3>
+    <div class="solution-cover">
+        <a href="naucse:solution?solution=0"><span class="link-text">Ukázat řešení</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span>
+
+<span class="n">soucet</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">soucet</span> <span class="o">&lt;</span> <span class="mi">21</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Máš&#39;</span><span class="p">,</span> <span class="n">soucet</span><span class="p">,</span> <span class="s1">&#39;bodů&#39;</span><span class="p">)</span>
+    <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Otočit kartu? &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">odpoved</span> <span class="o">==</span> <span class="s1">&#39;ano&#39;</span><span class="p">:</span>
+        <span class="n">karta</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Otočil/a jsi&#39;</span><span class="p">,</span> <span class="n">karta</span><span class="p">)</span>
+        <span class="n">soucet</span> <span class="o">=</span> <span class="n">soucet</span> <span class="o">+</span> <span class="n">karta</span>
+    <span class="k">elif</span> <span class="n">odpoved</span> <span class="o">==</span> <span class="s1">&#39;ne&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nerozumím! Odpovídej &quot;ano&quot;, nebo &quot;ne&quot;&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">soucet</span> <span class="o">==</span> <span class="mi">21</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gratuluji! Vyhrál/a jsi!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">soucet</span> <span class="o">&gt;</span> <span class="mi">21</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Smůla!&#39;</span><span class="p">,</span> <span class="n">soucet</span><span class="p">,</span> <span class="s1">&#39;bodů je moc!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Chybělo jen&#39;</span><span class="p">,</span> <span class="mi">21</span> <span class="o">-</span> <span class="n">soucet</span><span class="p">,</span> <span class="s1">&#39;bodů!&#39;</span><span class="p">)</span>
+</pre></div>
+    </div>
+</div>

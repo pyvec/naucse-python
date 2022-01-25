@@ -1,0 +1,92 @@
+<h1>Přepisování proměnných</h1>
+<p>Už víš, že hodnota proměnné se může v čase měnit:
+když přiřadíš do už existující proměnné, stará hodnota se zahodí
+a použije se nová.</p>
+<div class="highlight"><pre><span></span><span class="n">oblibena_barva</span> <span class="o">=</span> <span class="s1">&#39;modrá&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">oblibena_barva</span><span class="p">)</span>
+
+<span class="n">oblibena_barva</span> <span class="o">=</span> <span class="s1">&#39;žlutá&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">oblibena_barva</span><span class="p">)</span>
+
+<span class="c1"># Na tomhle místě programu už se k řetězci &#39;modrá&#39; nedostaneš...</span>
+</pre></div><p>Trošku zajímavější (nebo složitější?) je situace, kdy hodnotu proměnné
+přepíšeš výrazem, který používá tu stejnou proměnnou.
+Zkus si to:</p>
+<div class="highlight"><pre><span></span><span class="n">oblibene_cislo</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">oblibene_cislo</span><span class="p">)</span>
+
+<span class="n">oblibene_cislo</span> <span class="o">=</span> <span class="n">oblibene_cislo</span> <span class="o">*</span> <span class="mi">6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">oblibene_cislo</span><span class="p">)</span>
+</pre></div><p>Co se tady děje?
+Python vyhodnotí výraz za <code>=</code> se <em>starou</em> hodnotou proměnné, a teprve když
+zná výsledek, přiřadí ho (a na starou hodnotu zapomene).
+V našem příkladu postupuje takhle:</p>
+<div class="highlight"><pre><span></span><span class="n">oblibene_cislo</span> <span class="o">=</span> <span class="n">oblibene_cislo</span> <span class="o">*</span> <span class="mi">6</span>
+<span class="c1">#                ╰──────────┬─╯</span>
+<span class="n">oblibene_cislo</span> <span class="o">=</span>            <span class="mi">7</span>   <span class="o">*</span> <span class="mi">6</span>
+<span class="c1">#                           ╰─┬───╯</span>
+<span class="n">oblibene_cislo</span> <span class="o">=</span>             <span class="mi">42</span>
+<span class="c1">#         ▲                  |</span>
+<span class="c1">#         ╰──────────────────╯</span>
+</pre></div><h2>Přepisování v cyklu</h2>
+<p>Ještě „zajímavější“ je použít podobné přepisování v cyklu.</p>
+<p>Zopakuj si, že <code>for</code> cyklus jako:</p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tady je pár čísel:&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">cislo</span> <span class="ow">in</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">21</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cislo</span><span class="p">)</span>
+</pre></div><p>opakuje <em>přiřazení do proměnné</em> a <em>tělo cyklu</em>; můžeš si ho rozepsat jako:</p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tady je pár čísel:&quot;</span><span class="p">)</span>
+
+<span class="n">cislo</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cislo</span><span class="p">)</span>
+
+<span class="n">cislo</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cislo</span><span class="p">)</span>
+
+<span class="n">cislo</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cislo</span><span class="p">)</span>
+
+<span class="n">cislo</span> <span class="o">=</span> <span class="mi">21</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cislo</span><span class="p">)</span>
+</pre></div><p>Zkus podobně rozepsat cyklus v následujícím programu
+a popsat, co se děje:</p>
+<div class="highlight"><pre><span></span><span class="n">celkem</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">delka_trasy</span> <span class="ow">in</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">21</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jdu&#39;</span><span class="p">,</span> <span class="n">delka_trasy</span><span class="p">,</span> <span class="s1">&#39;km do další vesnice.&#39;</span><span class="p">)</span>
+    <span class="n">celkem</span> <span class="o">=</span> <span class="n">celkem</span> <span class="o">+</span> <span class="n">delka_trasy</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Celkem jsem ušla&#39;</span><span class="p">,</span> <span class="n">celkem</span><span class="p">,</span> <span class="s1">&#39;km&#39;</span><span class="p">)</span>
+</pre></div><div class="solution" id="solution-0">
+    <h3>Řešení</h3>
+    <div class="solution-cover">
+        <a href="naucse:solution?solution=0"><span class="link-text">Ukázat řešení</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <div class="highlight"><pre><span></span><span class="n">celkem</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">delka_trasy</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jdu&#39;</span><span class="p">,</span> <span class="n">delka_trasy</span><span class="p">,</span> <span class="s1">&#39;km do další vesnice.&#39;</span><span class="p">)</span>
+<span class="n">celkem</span> <span class="o">=</span> <span class="n">celkem</span> <span class="o">+</span> <span class="n">delka_trasy</span>
+
+<span class="n">delka_trasy</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jdu&#39;</span><span class="p">,</span> <span class="n">delka_trasy</span><span class="p">,</span> <span class="s1">&#39;km do další vesnice.&#39;</span><span class="p">)</span>
+<span class="n">celkem</span> <span class="o">=</span> <span class="n">celkem</span> <span class="o">+</span> <span class="n">delka_trasy</span>
+
+<span class="n">delka_trasy</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jdu&#39;</span><span class="p">,</span> <span class="n">delka_trasy</span><span class="p">,</span> <span class="s1">&#39;km do další vesnice.&#39;</span><span class="p">)</span>
+<span class="n">celkem</span> <span class="o">=</span> <span class="n">celkem</span> <span class="o">+</span> <span class="n">delka_trasy</span>
+
+<span class="n">delka_trasy</span> <span class="o">=</span> <span class="mi">21</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jdu&#39;</span><span class="p">,</span> <span class="n">delka_trasy</span><span class="p">,</span> <span class="s1">&#39;km do další vesnice.&#39;</span><span class="p">)</span>
+<span class="n">celkem</span> <span class="o">=</span> <span class="n">celkem</span> <span class="o">+</span> <span class="n">delka_trasy</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Celkem jsem ušla&#39;</span><span class="p">,</span> <span class="n">celkem</span><span class="p">,</span> <span class="s1">&#39;km&#39;</span><span class="p">)</span>
+</pre></div><p>Příkaz <code>celkem = celkem + delka_trasy</code> vypočítá hodnotu
+<code>celkem + delka_trasy</code>, tedy přičte aktuální číslo k součtu.
+Výsledek uloží opět do proměnné <code>celkem</code>.
+Nová hodnota <code>celkem</code> se pak použije v dalším průchodu cyklem.</p>
+<p>Na začátku je <code>celkem</code> 0 a na konci se celkový součet všech čísel vypíše.</p>
+    </div>
+</div>

@@ -1,0 +1,184 @@
+<h1>Porovnávání</h1>
+<p>Pamatuješ si ještě, co je to <em>operátor</em>?</p>
+<p>V domácím projektu jsme si ukázali základní aritmetické operátory.
+Přidáme-li jeden další (<code>//</code>), jsou to tyhle:</p>
+<table class="table">
+    <tr>
+        <th>Symbol</th>
+        <th>Příklad</th>
+        <th>Popis</th>
+    </tr>
+    <tr>
+        <td><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code></td>
+        <td><code>1 + 1</code></td>
+        <td>Základní aritmetika</td>
+    </tr>
+    <tr>
+        <td><code>-</code></td>
+        <td><code>-5</code></td>
+        <td>Negace</td>
+    </tr>
+    <tr>
+        <td><code>//</code>; <code>%</code></td>
+        <td><code>7 // 2</code>; <code>7 % 2</code></td>
+        <td>Dělení se zbytkem (<em>celočíselné dělení</em>); zbytek po dělení</td>
+    </tr>
+    <tr>
+        <td><code>**</code></td>
+        <td><code>3 ** 2</code></td>
+        <td>Umocnění (3 na druhou)</td>
+    </tr>
+</table><p>Python ale zná i další druhy operátorů.
+Důležité jsou operátory <em>porovnávací</em>.
+Zkus si co dělají!
+(Buď z programu pomocí <code>print</code>,
+nebo pusť <code>python</code> z příkazové řádky.)</p>
+<table class="table">
+    <tr>
+        <th>Symbol</th>
+        <th>Příklad</th>
+        <th>Popis</th>
+    </tr>
+    <tr>
+        <td><code>==</code>, <code>!=</code></td>
+        <td><code>1 == 1</code>, <code>1 != 1</code></td>
+        <td>Je rovno, není rovno</td>
+    </tr>
+    <tr>
+        <td><code>&lt;</code>, <code>&gt;</code></td>
+        <td><code>3 &lt; 5</code>, <code>3 &gt; 5</code></td>
+        <td>Menší než, větší než</td>
+    </tr>
+    <tr>
+        <td><code>&lt;=</code>, <code>&gt;=</code></td>
+        <td><code>3 &lt;= 5</code>, <code>3 &gt;= 5</code></td>
+        <td>Menší nebo rovno, větší nebo rovno</td>
+    </tr>
+</table><p>Hodnoty provnání jsou takzvané <em>booleovské</em> hodnoty
+(angl. <em>boolean</em>, podle <a href="http://en.wikipedia.org/wiki/George_Boole">G. Boolea</a>).
+V Pythonu je můžeš použít vždycky, když potřebuješ vědět, jestli něco platí
+nebo neplatí.
+Jsou jenom dvě – buď <code>True</code> (pravda), nebo <code>False</code> (nepravda).</p>
+<p>Jako všechny hodnoty, <code>True</code> a <code>False</code> můžeš přiřadit do proměnných:</p>
+<div class="highlight"><pre><span></span><span class="n">pravda</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pravda</span><span class="p">)</span>
+
+<span class="n">nepravda</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nepravda</span><span class="p">)</span>
+</pre></div><div class="admonition note"><p>Všimni si, že rovnost zjistíš pomocí dvou rovnítek: <code>3 == 3</code>.
+Jedno rovnítko přiřazuje do proměnné; dvě rovnítka porovnávají.</p>
+</div><p>Slova <code>True</code> a <code>False</code> můžeš
+v programu použít i přímo,
+jen si dej pozor na velikost písmen:</p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div><h2>Podmínky</h2>
+<p>Teď oprášíme program na výpočet obvodu a obsahu.</p>
+<p>Otevři si v editoru nový soubor.
+Jestli ještě v adresáři, kde máš soubory ke kurzům Pythonu,
+nemáš adresář pro tuto lekci (třeba <code>02</code>), vytvoř si ho.
+Nový soubor ulož do něj pod jménem <code>if.py</code>.</p>
+<p>Do souboru pak napiš následující program:</p>
+<div class="highlight"><pre><span></span><span class="n">strana</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej stranu čtverce v centimetrech: &#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obvod čtverce se stranou&#39;</span><span class="p">,</span> <span class="n">strana</span><span class="p">,</span> <span class="s1">&#39;je&#39;</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">strana</span><span class="p">,</span> <span class="s1">&#39;cm&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obsah čtverce se stranou&#39;</span><span class="p">,</span> <span class="n">strana</span><span class="p">,</span> <span class="s1">&#39;je&#39;</span><span class="p">,</span> <span class="n">strana</span> <span class="o">*</span> <span class="n">strana</span><span class="p">,</span> <span class="s1">&#39;cm2&#39;</span><span class="p">)</span>
+</pre></div><p>Program spusť. Funguje?</p>
+<p>Co se stane, když jako stranu zadáš záporné číslo?
+Dává výstup smysl?</p>
+<p>Tady je vidět, jak počítač dělá přesně, co se mu řekne. Nepřemýšlí o významu.
+Bylo by dobré uživateli, který zadá záporné číslo,
+přímo říct, že zadal blbost. Jak na to?</p>
+<p>Nejdřív zkus nastavit proměnnou která bude <code>True</code>,
+když uživatel zadal kladné číslo.</p>
+<div class="solution" id="solution-0">
+    <h3>Řešení</h3>
+    <div class="solution-cover">
+        <a href="naucse:solution?solution=0"><span class="link-text">Ukázat řešení</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <p>Taková proměnná se dá nastavit pomocí tohoto kódu:</p>
+<div class="highlight"><pre><span></span><span class="n">strana</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej stranu čtverce v centimetrech: &#39;</span><span class="p">))</span>
+<span class="n">cislo_je_spravne</span> <span class="o">=</span> <span class="n">strana</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</pre></div>
+    </div>
+</div><p>A nyní řekni počítači, aby se na základě hodnoty této proměnné rozhodl, co má udělat.
+K tomu můžeš použít dvojici příkazů <code>if</code> (<em>pokud</em>)
+a <code>else</code> (<em>jinak</em>):</p>
+<div class="highlight"><pre><span></span><span class="n">strana</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej stranu čtverce v centimetrech: &#39;</span><span class="p">))</span>
+<span class="n">cislo_je_spravne</span> <span class="o">=</span> <span class="n">strana</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+<span class="k">if</span> <span class="n">cislo_je_spravne</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obvod čtverce se stranou&#39;</span><span class="p">,</span> <span class="n">strana</span><span class="p">,</span> <span class="s1">&#39;je&#39;</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">strana</span><span class="p">,</span> <span class="s1">&#39;cm&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obsah čtverce se stranou&#39;</span><span class="p">,</span> <span class="n">strana</span><span class="p">,</span> <span class="s1">&#39;je&#39;</span><span class="p">,</span> <span class="n">strana</span> <span class="o">*</span> <span class="n">strana</span><span class="p">,</span> <span class="s1">&#39;cm2&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Strana musí být kladná, jinak z toho nebude čtverec!&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Děkujeme za použití geometrické kalkulačky.&#39;</span><span class="p">)</span>
+</pre></div><p>Neboli: po <code>if</code> následuje <em>podmínka</em> (angl. <em>condition</em>),
+což je výraz, podle kterého se budeme rozhodovat.
+Za podmínkou je dvojtečka.
+Potom následují příkazy, které se provedou, pokud je podmínka pravdivá.
+Všechny jsou odsazeny o čtyři mezery.<br></p>
+<div class="admonition note"><p>Čtyři mezery neznamenají, že musíš čtyřikrát zmáčknout mezerník!
+K odsazení použij klávesu <kbd>Tab</kbd>, která vloží správný počet mezer.
+(Pokud ne, nemáš správně nastavený editor – podívej se do lekce o instalaci.)
+Pomocí <kbd>Shift</kbd>+<kbd>Tab</kbd> můžeš odsazení zase zmenšit.</p>
+<p>A ani <kbd>Tab</kbd> není vždycky potřeba.
+Pokud napíšeš řádek s <code>if</code> bez chyby, některé editory za tebe další řádek odsadí automaticky.</p>
+</div><p>Po téhle části stačí napsat neodsazené <code>else:</code>, zase s dvojtečkou na konci,
+a odsazené příkazy, které se provedou v opačném případě.<br>
+Potom můžeš psát příkazy, které se provedou vždycky – ty odsazené nebudou,
+podmíněná část programu už skončila.</p>
+<div class="admonition style-note"><p>Vzato čistě technicky, odsazení nemusí být o čtyři mezery.
+Může být třeba o dvě nebo o jedenáct, nebo se dokonce dá místo mezer použít
+tabulátor.
+V rámci jednoho bloku musí být ale odsazení vždycky stejné,
+takže když pak na jednom programu spolupracuje více lidí, musí se shodnout.
+No a na čtyřech mezerách se shodla většina Pythonního světa.</p>
+</div><h2>Další podmíněné příkazy</h2>
+<p>Někdy není <code>else</code> vůbec potřeba.
+V následujícím programu se nedělá nic navíc, pokud je číslo nenulové:</p>
+<div class="highlight"><pre><span></span><span class="n">cislo</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej číslo, přičtu k němu 3: &#39;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">cislo</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jé, to je jednoduché!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cislo</span><span class="p">,</span> <span class="s1">&#39;+ 3 =&#39;</span><span class="p">,</span> <span class="n">cislo</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div><p>Někdy je naopak potřeba podmínek několik,
+k čemuž slouží příkaz <code>elif</code> – kombinace <code>else</code> a <code>if</code>.
+Dává se „mezi“ bloky <code>if</code> a <code>else</code>.
+Příkazů <code>elif</code> může být za jedním <code>if</code>-em několik,
+ale vždy se provede jen jedna „větev“:
+ta první, jejíž podmínka je splněna.</p>
+<div class="highlight"><pre><span></span><span class="n">vek</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Kolik ti je let? &#39;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">vek</span> <span class="o">&gt;=</span> <span class="mi">150</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A ze kterépak jsi planety?&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">vek</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="c1"># Tahle větev se např. pro &quot;200&quot; už neprovede.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Můžeme nabídnout: víno, cider, nebo vodku.&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">vek</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Můžeme nabídnout: mléko, čaj, nebo vodu&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">vek</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sunar už bohužel došel.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Nenastala ani nedna ze situací výše – muselo to být záporné</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pro návštěvy z budoucnosti bohužel nemáme nic v nabídce.&#39;</span><span class="p">)</span>
+</pre></div><h2>Zanořování</h2>
+<p>Příkazy <code>if</code> se dají <em>zanořovat</em> (angl. <em>nest</em>).
+V odsazeném (podmíněném) bloku kódu může být další <code>if</code> s dalším odsazeným
+kódem.
+Třeba u tohoto programu, který rozdává nejapné rady do života:</p>
+<div class="highlight"><pre><span></span><span class="n">stastna</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Jsi šťastná?&#39;</span><span class="p">)</span>
+<span class="n">bohata</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Jsi bohatá?&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">stastna</span> <span class="o">==</span> <span class="s1">&#39;ano&#39;</span><span class="p">:</span>
+    <span class="c1"># Tenhle kus kódu se provede, když je &quot;šťastná&quot;</span>
+    <span class="k">if</span> <span class="n">bohata</span> <span class="o">==</span> <span class="s1">&#39;ano&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gratuluji!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zkus míň utrácet.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Tenhle kus kódu se provede, když není &quot;šťastná&quot;</span>
+    <span class="k">if</span> <span class="n">bohata</span> <span class="o">==</span> <span class="s1">&#39;ano&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zkus se víc usmívat!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;To je mi líto.&#39;</span><span class="p">)</span>
+</pre></div>
