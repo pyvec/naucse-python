@@ -38,6 +38,9 @@ jobs:
       run: |
         git fetch origin compiled || :
         poetry run python -m ghp_import -m "Compiled" -b compiled --push _compiled/
+        curl -H 'Content-Type: application/json' \
+            --data '{"repository": "https://github.com/${{ github.repository }}", "branch": "compiled"}' \
+            https://hooks.nauc.se/trigger
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GIT_AUTHOR_NAME: ghp_import
