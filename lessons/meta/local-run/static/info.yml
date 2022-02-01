@@ -8,7 +8,7 @@ place:
 description:
 long_description: |
     Delší popisek
-derives: pyladies
+timezone: Europe/Prague
 vars:
   pyladies: true
   coach-present: true
