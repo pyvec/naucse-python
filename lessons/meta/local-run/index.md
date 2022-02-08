@@ -46,8 +46,8 @@ s verzí `naucse = 0.5.0` nebo vyšší. Třeba takto:
 
 ```console
 $ git grep ^naucse pyproject.toml
-pyproject.toml:11:naucse = "^0.5.0"
-pyproject.toml:12:naucse-render = "^1.7"
+pyproject.toml:11:naucse = "^0.5.1"
+pyproject.toml:12:naucse-render = "^1.8"
 ```
 
 Jestli soubor `pyproject.toml` vůbec nemáš, zkopíruj si ho
@@ -78,10 +78,6 @@ Tam se „doklikej“ na kurz, ze kterého budeš vycházet.
 ## Struktura repozitáře
 
 V repozitáři s kurzem najdeš následující soubory a adresáře:
-
-### `pyproject.toml` a `poetry.lock`: Definice projektu a závislostí
-
-Tyhle soubory definují jaké nástroje se použijí pro publikování kurzu.
 
 ### `lessons/`: Texty lekcí
 
@@ -162,6 +158,10 @@ ale do té doby se s tímto souborem netrap.
 
 Tenhle adresář obsahuje licence, pod kterými obsah může být.
 Neměň ho.
+
+### `pyproject.toml`, `poetry.lock`, `.github`: Definice projektu a závislostí
+
+Tyhle soubory definují jaké nástroje se použijí pro publikování kurzu.
 
 
 ## Definice kurzu
@@ -343,7 +343,7 @@ plan:
 ```
 
 
-## Otestování vlastního kurzu
+## Otestování kurzu
 
 Po vytvoření definice kurzu s povinnými položkami se můžeš podívat na to, jak tvůj kurz bude vypadat.
 Spusť si vývojový server:
@@ -352,17 +352,21 @@ Spusť si vývojový server:
 $ poetry run python -m naucse serve
 ```
 
-Otevři si adresu, kterou ti příkaz napíše, a odnaviguj se do části s kurzy.
+Otevři si adresu, kterou ti příkaz napíše. Měl by na ní být seznam nadefinovaných kurzů.
 
 Pokud se stránka s kurzy nevykreslí, tak uvidíš Python vyjímku, která ti může pomoct, ale také může být pěkne matoucí.
 Nejprve si zkontroluj, jeslti jsi vážně vyplnil{{a}} všechny povinné údaje.
 Jestli si myslíš, že ano, tak se nám ozvi přes [issues na našem GitHubu](https://github.com/pyvec/naucse.python.cz/issues) a my ti rádi pomůžeme.
-Ozvi se i v případě že se ti objevila matoucí nebo nic neříkající chyba, ať ji můžeme opravit.
+(Ozvi se i v případě že se ti podaří matoucí nebo nic neříkající chybu pochopit, ať ji můžeme opravit.)
 
 Když stránku s kurzy uvidíš, rozklikni svůj kurz.
 Pokud se ti nevykreslí detail kurzu, nejspíš jsi udělal{{a}} nějakou chybu v definici lekcí nebo materiálů – zkontroluj si, jestli například nemáš dvě lekce se stejným identifikátorem, jestli není překlep v nějakém klíčí a jestli například neodkazuješ na materiál který neexistuje.
 
 Dále si pak můžeš proklikat všechny jednotlivé materiály, jestli vše funguje a vypadá jak má.
+
+Pokud máš lekce naplánované na určité dny, rozklikni si na stránce kurzu
+Kalendář a zkontroluj že odpovídá tvé představě.
+
 Jako další test může posloužit druhý režim spuštění, `freeze` místo `serve`, který projde všechny stránky a zkontroluje jestli fungují:
 
 ```console
