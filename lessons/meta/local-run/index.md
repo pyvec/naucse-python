@@ -42,7 +42,8 @@ nemusí odpovídat tomu co je na webu.)
 ## Kontrola nastavení projektu
 
 Zkontroluj si, že naklonovaný kurz obsahuje soubor `pyproject.toml`
-s verzí `naucse = 0.5.0` nebo vyšší. Třeba takto:
+s verzí `naucse = 0.5.0` nebo vyšší a `naucse-render = 1.8` nebo vyšší.
+Třeba takto:
 
 ```console
 $ git grep ^naucse pyproject.toml
