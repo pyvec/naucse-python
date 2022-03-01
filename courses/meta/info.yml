@@ -12,7 +12,6 @@ plan:
 - title: Přidání kurzu
   slug: adding-a-run
   materials:
-  - lesson: meta/installing-naucse
   - lesson: meta/local-run
   - lesson: meta/submitting-a-run
 
@@ -22,4 +21,6 @@ extra_lessons:
 - git/git-collaboration-2in1
 - beginners/install
 - beginners/cmdline
+- beginners/venv-setup
 - intro/notebook
+- fast-track/yaml

@@ -8,8 +8,8 @@ license = "CC-BY-SA-4.0"
 [tool.poetry.dependencies]
 python = "^3.9"
 pygments-pytest = "^2.2.0"
-naucse = "^0.4.0"
-naucse-render = "^1.6"
+naucse = "^0.5.2"
+naucse-render = "^1.8"
 
 [tool.poetry.extras]
 ghp-compiled = ["ghp-import"]
