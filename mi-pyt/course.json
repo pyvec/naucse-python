@@ -804,7 +804,7 @@
                 ],
                 "serial": "1",
                 "slug": "requests-click",
-                "source_file": "courses/mi-pyt/info.yml",
+                "source_file": "courses/mi-pyt.yml",
                 "title": "Weboví klienti & CLI – Requests a Click"
             },
             {
@@ -822,7 +822,7 @@
                 ],
                 "serial": "2",
                 "slug": "flask",
-                "source_file": "courses/mi-pyt/info.yml",
+                "source_file": "courses/mi-pyt.yml",
                 "title": "Webové aplikace – Flask"
             },
             {
@@ -835,7 +835,7 @@
                 ],
                 "serial": "3",
                 "slug": "distribution",
-                "source_file": "courses/mi-pyt/info.yml",
+                "source_file": "courses/mi-pyt.yml",
                 "title": "Moduly"
             },
             {
@@ -848,7 +848,7 @@
                 ],
                 "serial": "4",
                 "slug": "testing",
-                "source_file": "courses/mi-pyt/info.yml",
+                "source_file": "courses/mi-pyt.yml",
                 "title": "Testování"
             },
             {
@@ -861,7 +861,7 @@
                 ],
                 "serial": "5",
                 "slug": "docs",
-                "source_file": "courses/mi-pyt/info.yml",
+                "source_file": "courses/mi-pyt.yml",
                 "title": "Dokumentace – Sphinx"
             },
             {
@@ -884,7 +884,7 @@
                 ],
                 "serial": "6",
                 "slug": "numpy",
-                "source_file": "courses/mi-pyt/info.yml",
+                "source_file": "courses/mi-pyt.yml",
                 "title": "NumPy"
             },
             {
@@ -897,7 +897,7 @@
                 ],
                 "serial": "7",
                 "slug": "pandas",
-                "source_file": "courses/mi-pyt/info.yml",
+                "source_file": "courses/mi-pyt.yml",
                 "title": "Analýza dat – Pandas"
             },
             {
@@ -910,7 +910,7 @@
                 ],
                 "serial": "8",
                 "slug": "cython",
-                "source_file": "courses/mi-pyt/info.yml",
+                "source_file": "courses/mi-pyt.yml",
                 "title": "Cython"
             },
             {
@@ -923,7 +923,7 @@
                 ],
                 "serial": "9",
                 "slug": "qt",
-                "source_file": "courses/mi-pyt/info.yml",
+                "source_file": "courses/mi-pyt.yml",
                 "title": "GUI – PyQT"
             },
             {
@@ -941,7 +941,7 @@
                 ],
                 "serial": "10",
                 "slug": "async",
-                "source_file": "courses/mi-pyt/info.yml",
+                "source_file": "courses/mi-pyt.yml",
                 "title": "Generátory a AsyncIO"
             },
             {
@@ -954,7 +954,7 @@
                 ],
                 "serial": "11",
                 "slug": "magic",
-                "source_file": "courses/mi-pyt/info.yml",
+                "source_file": "courses/mi-pyt.yml",
                 "title": "Magie"
             },
             {
@@ -967,11 +967,11 @@
                 ],
                 "serial": "12",
                 "slug": "upy",
-                "source_file": "courses/mi-pyt/info.yml",
+                "source_file": "courses/mi-pyt.yml",
                 "title": "MicroPython"
             }
         ],
-        "source_file": "courses/mi-pyt/info.yml",
+        "source_file": "courses/mi-pyt.yml",
         "title": "MI-PYT",
         "vars": {
             "coach-present": false,

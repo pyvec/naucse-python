@@ -1419,7 +1419,7 @@
                 ],
                 "serial": "1",
                 "slug": "install",
-                "source_file": "courses/pyladies/info.yml",
+                "source_file": "courses/pyladies.yml",
                 "title": "Instalace"
             },
             {
@@ -1452,7 +1452,7 @@
                 ],
                 "serial": "2",
                 "slug": "hello",
-                "source_file": "courses/pyladies/info.yml",
+                "source_file": "courses/pyladies.yml",
                 "title": "První program"
             },
             {
@@ -1495,7 +1495,7 @@
                 ],
                 "serial": "3",
                 "slug": "loops",
-                "source_file": "courses/pyladies/info.yml",
+                "source_file": "courses/pyladies.yml",
                 "title": "Cykly"
             },
             {
@@ -1518,7 +1518,7 @@
                 ],
                 "serial": "4",
                 "slug": "git",
-                "source_file": "courses/pyladies/info.yml",
+                "source_file": "courses/pyladies.yml",
                 "title": "Správa zdrojového kódu"
             },
             {
@@ -1551,7 +1551,7 @@
                 ],
                 "serial": "5",
                 "slug": "def-str",
-                "source_file": "courses/pyladies/info.yml",
+                "source_file": "courses/pyladies.yml",
                 "title": "Řetězce"
             },
             {
@@ -1574,7 +1574,7 @@
                 ],
                 "serial": "6",
                 "slug": "def",
-                "source_file": "courses/pyladies/info.yml",
+                "source_file": "courses/pyladies.yml",
                 "title": "Definice funkcí"
             },
             {
@@ -1607,7 +1607,7 @@
                 ],
                 "serial": "7",
                 "slug": "tests",
-                "source_file": "courses/pyladies/info.yml",
+                "source_file": "courses/pyladies.yml",
                 "title": "Testování"
             },
             {
@@ -1635,7 +1635,7 @@
                 ],
                 "serial": "8",
                 "slug": "foss",
-                "source_file": "courses/pyladies/info.yml",
+                "source_file": "courses/pyladies.yml",
                 "title": "Spolupráce a Open-Source"
             },
             {
@@ -1658,7 +1658,7 @@
                 ],
                 "serial": "9",
                 "slug": "list",
-                "source_file": "courses/pyladies/info.yml",
+                "source_file": "courses/pyladies.yml",
                 "title": "Seznamy"
             },
             {
@@ -1686,7 +1686,7 @@
                 ],
                 "serial": "10",
                 "slug": "pyglet",
-                "source_file": "courses/pyladies/info.yml",
+                "source_file": "courses/pyladies.yml",
                 "title": "Grafika"
             },
             {
@@ -1714,7 +1714,7 @@
                 ],
                 "serial": "11",
                 "slug": "dict",
-                "source_file": "courses/pyladies/info.yml",
+                "source_file": "courses/pyladies.yml",
                 "title": "Slovníky"
             },
             {
@@ -1732,7 +1732,7 @@
                 ],
                 "serial": "12",
                 "slug": "class",
-                "source_file": "courses/pyladies/info.yml",
+                "source_file": "courses/pyladies.yml",
                 "title": "Třídy"
             },
             {
@@ -1755,11 +1755,11 @@
                 ],
                 "serial": "13",
                 "slug": "asteroids",
-                "source_file": "courses/pyladies/info.yml",
+                "source_file": "courses/pyladies.yml",
                 "title": "Závěrečný projekt"
             }
         ],
-        "source_file": "courses/pyladies/info.yml",
+        "source_file": "courses/pyladies.yml",
         "title": "Začátečnický kurz",
         "vars": {
             "coach-present": false

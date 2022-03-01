@@ -345,11 +345,11 @@
                     }
                 ],
                 "slug": "adding-a-run",
-                "source_file": "courses/meta/info.yml",
+                "source_file": "courses/meta.yml",
                 "title": "Přidání kurzu"
             }
         ],
-        "source_file": "courses/meta/info.yml",
+        "source_file": "courses/meta.yml",
         "title": "Jak přidat kurz na Nauč se Python"
     }
 }
