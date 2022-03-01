@@ -25,7 +25,7 @@ kontakty = {
 }
 ```
 
-Python v tomto případě jednotlivé záznamy uloží postupně, jako kdybys napasl{{a}}:
+Python v tomto případě jednotlivé záznamy uloží postupně, jako kdybys napsal{{a}}:
 
 ```python
 kontakty = {}
@@ -50,8 +50,8 @@ kontakty = {
 }
 ```
 
-Výraz jako `kontakty['Katka']` pak označuje seznam,
-pokud se Katka přestěhuje do zahraničí a pořídí si nové číslo,
+Výraz jako `kontakty['Katka']` pak označuje seznam.
+Pokud se Katka přestěhuje do zahraničí a pořídí si nové číslo,
 můžeš napsat:
 
 ```python
