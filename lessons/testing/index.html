@@ -1,4 +1,6 @@
-<h1>Testování</h1>
+<h1 id="testovani">Testování
+<a href="#header-testovani" class="header-link">#</a>
+</h1>
 <p>Programátorská práce nespočívá jen v tom, program napsat.
 Důležité je si i ověřit, že opravdu funguje, a případně ho pak opravit.
 Ověřování, že program funguje, se říká <em>testování</em> (angl. <em>testing</em>).</p>
@@ -15,7 +17,9 @@ zkontrolují, že program funguje správně.
 Spuštěním testů můžeš kdykoli ověřit, že kód funguje.
 Když v otestovaném kódu v budoucnu uděláš nějakou změnu,
 testy ověří, že jsi nerozbil/a nic, co dříve fungovalo.</p>
-<h2>Instalace knihovny pytest</h2>
+<h2 id="instalace_knihovny_pytest">Instalace knihovny pytest
+<a href="#header-instalace_knihovny_pytest" class="header-link">#</a>
+</h2>
 <p>Zatím jsme v kurzu pracovali/y s tím, co se instaluje
 se samotným Pythonem – s moduly jako <code>math</code> a <code>turtle</code>.
 Kromě takových modulů ale existuje ale velká spousta
@@ -56,7 +60,9 @@ Ačkoli se v těchto materiálech všude používá <code>python</code> na zač�
 mohlo všechno fungovat i bez toho.
 Program se ale bez příkazu <code>python</code> může spustit v jiném Pythonu,
 než v tom z virtuálního prostředí – a tam <code>pytest</code> nebude k dispozici.</p>
-</div><h2>Psaní testů</h2>
+</div><h2 id="psani_testu">Psaní testů
+<a href="#header-psani_testu" class="header-link">#</a>
+</h2>
 <p>Nejdříve si testování ukážeme na jednoduchém příkladu.
 Tady je funkce <code>secti</code>, která umí sečíst
 dvě čísla, a další funkce, která testuje, jestli se
@@ -82,7 +88,9 @@ Můžeš si představit, že <code>assert a == b</code> dělá následující:</
 </pre></div><div class="admonition note"><p>Zatím <code>assert</code> nepoužívej jinde než v testovacích funkcích.
 V „normálním” kódu se <code>assert</code> může chovat trochu jinak než výše,
 ale do toho teď nebudeme zabředávat.</p>
-</div><h2>Spouštění testů</h2>
+</div><h2 id="spousteni_testu">Spouštění testů
+<a href="#header-spousteni_testu" class="header-link">#</a>
+</h2>
 <p>Testy se spouští zadáním příkazu
 <code>python -m pytest -v</code> následovaným názvem souboru s testy.
 Tedy v překladu: <strong>Python</strong>e, pusť
@@ -110,7 +118,9 @@ ze všech souborů, jejichž jméno začíná na <code>test_</code>. Místo soub
 lze též uvést adresář: <code>pytest</code> vyhledá testy v něm.</p>
 </div><p>Zkus si změnit funkci <code>secti</code> (nebo její test) a podívat se,
 jak to vypadá když test „neprojde“.</p>
-<h2>Testovací moduly</h2>
+<h2 id="testovaci_moduly">Testovací moduly
+<a href="#header-testovaci_moduly" class="header-link">#</a>
+</h2>
 <p>Testy se většinou nepíšou přímo ke kódu,
 ale do souboru vedle.
 Je to tak přehlednější a taky to pak zjednodušuje
@@ -121,7 +131,9 @@ a v <code>test_secteni.py</code> nech jenom test.
 Do <code>test_secteni.py</code> pak na začátek přidej <code>from secteni import secti</code>,
 aby byla funkce testu k dispozici.</p>
 <p>Test by měl opět projít.</p>
-<h2>Spouštěcí moduly</h2>
+<h2 id="spousteci_moduly">Spouštěcí moduly
+<a href="#header-spousteci_moduly" class="header-link">#</a>
+</h2>
 <p>Automatické testy musí projít „bez dozoru“.
 V praxi se často automaticky spouští, případné chyby se automaticky
 oznamují (např. e-mailem) a fungující otestovaný kód se automaticky
@@ -194,7 +206,9 @@ Test může vypadat třeba takhle:</p>
     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">pole</span><span class="p">)</span> <span class="o">==</span> <span class="mi">20</span>
     <span class="k">assert</span> <span class="n">pole</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
     <span class="k">assert</span> <span class="n">pole</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">19</span>
-</pre></div><h2>Pozitivní a negativní testy</h2>
+</pre></div><h2 id="pozitivni_a_negativni_testy">Pozitivní a negativní testy
+<a href="#header-pozitivni_a_negativni_testy" class="header-link">#</a>
+</h2>
 <p>Testům, které kontrolují, že se program za správných podmínek chová správně,
 se říká <em>pozitivní testy</em>.
 Můžeš ale testovat i reakci programu na špatné nebo neočekávané podmínky.</p>

@@ -1,4 +1,6 @@
-<h2>Cyklické importy</h2>
+<h2 id="cyklicke_importy">Cyklické importy
+<a href="#header-cyklicke_importy" class="header-link">#</a>
+</h2>
 <p>V domácích projektech budeš rozdělovat 1D Piškvorky na několik modulů.
 Výsledek bude vypadat třeba nějak takhle:
 (Šipky mezi moduly znázorňují importování.)</p>
@@ -63,7 +65,9 @@ nepředvídatelně a tudíž nebezpečně.</p>
 nemusí to fungovat podle očekávání.</p>
 <p>Téhle situaci se budeš chtít vyvarovat.</p>
 <p>Jak na to? Máš dvě možnosti.</p>
-<h2>Organizace modulů podle závislostí</h2>
+<h2 id="organizace_modulu_podle_zavislosti">Organizace modulů podle závislostí
+<a href="#header-organizace_modulu_podle_zavislosti" class="header-link">#</a>
+</h2>
 <p>První možnost je importovat funkci <code>tah</code> v modulu <code>ai</code>
 a používat ji odtamtud.
 To je jednoduché, ale nerespektuje účel modulu
@@ -78,7 +82,9 @@ můžou být potřeba i jinde.</p>
 │ def tah_pocitace │  │ def vyhodnot  │
 │ def tah          │  │ def tah_hrace │
 │                  │  │               │
-└──────────────────┘  └───────────────┘</code></pre></div><h2>Pomocný modul</h2>
+└──────────────────┘  └───────────────┘</code></pre></div><h2 id="pomocny_modul">Pomocný modul
+<a href="#header-pomocny_modul" class="header-link">#</a>
+</h2>
 <p>Druhá možnost je definovat nový, sdílený modul,
 který se použije jak v <code>piskvorky.py</code> tak v <code>ai.py</code>.</p>
 <p>Takový modul se často se pojmenovává

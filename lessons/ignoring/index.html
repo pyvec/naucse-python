@@ -1,4 +1,6 @@
-<h1>Ignorování souborů</h1>
+<h1 id="ignorovani_souboru">Ignorování souborů
+<a href="#header-ignorovani_souboru" class="header-link">#</a>
+</h1>
 <p>Často se stává, že některé soubory v repozitáři nechceš.
 Takových souborů jsou tři hlavní druhy:</p>
 <dl>
@@ -31,7 +33,9 @@ nebude fungovat z adresáře <code>C:\Users\Helena\projektABC\venv</code>,
 ale ani z <code>/home/mirka/projektABC/venv</code>.</p>
 </dd></dl><p>My budeme chtít Git nastavit tak, aby tyto soubory ignoroval: aby
 <code>git status</code> neukazoval červeně, že ještě nejsou v repozitáři.</p>
-<h2>Příprava</h2>
+<h2 id="priprava">Příprava
+<a href="#header-priprava" class="header-link">#</a>
+</h2>
 <p>Pojďme si to ukázat na příkladu.
 Založ si nový repozitář a vytvoř v něm tři soubory s tímto obsahem:</p>
 <ul>
@@ -75,7 +79,9 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)</code></pre></div><p>Spousta souborů, ale jen jeden z nich chceš v repozitáři.
 Co s těmi ostatními?</p>
-<h2>Výstupy programu a pomocné soubory společných nástrojů</h2>
+<h2 id="vystupy_programu_a_pomocne_soubory_spolecnych_nastroju">Výstupy programu a pomocné soubory společných nástrojů
+<a href="#header-vystupy_programu_a_pomocne_soubory_spolecnych_nastroju" class="header-link">#</a>
+</h2>
 <p>Nejjednodušší je vyrovnat se se souborem <code>obrazek.ps</code>.
 V repozitáři ho nechceš (je to repozitář <em>zdrojového</em> kódu; výsledky bývá
 lepší schraňovat jinde než v Gitu).
@@ -119,7 +125,9 @@ Untracked files:
     <span style="color: #aa0000">poznamky.txt</span></code></pre></div><p>Když uděláš <code>git commit</code> a repozitář nasdílíš s ostatními, všichni dostanou
 <code>.gitignore</code> s instrukcí, že <code>obrazek.ps</code> do repozitáře nepatří.</p>
 <p>Jak ignorovat zbylé dva soubory?</p>
-<h2>Osobní poznámky</h2>
+<h2 id="osobni_poznamky">Osobní poznámky
+<a href="#header-osobni_poznamky" class="header-link">#</a>
+</h2>
 <p>Soubor <code>poznamky.txt</code> se taky dá zařadit do <code>.gitignore</code>, ale moc se tam nehodí.
 Existuje jen u tebe; není důvod předpokládat, že si někdo jiný vytvoří
 soubor se stejným jménem.</p>
@@ -144,7 +152,9 @@ Changes to be committed:
 
 Untracked files:
   (use "git add &lt;file&gt;..." to include in what will be committed)
-    <span style="color: #aa0000">Autofile.tmp</span></code></pre></div><h2>Další haraburdí</h2>
+    <span style="color: #aa0000">Autofile.tmp</span></code></pre></div><h2 id="dalsi_haraburdi">Další haraburdí
+<a href="#header-dalsi_haraburdi" class="header-link">#</a>
+</h2>
 <p>Některé programy automaticky vytvářejí pomocné soubory.
 Často to dělají správci souborů (často <code>.Thumbnails</code> na Linuxu,
 <code>.DS_Store</code> na Macu nebo <code>Thumbs.db</code> na Windows).
@@ -171,7 +181,9 @@ No commits yet
 Changes to be committed:
   (use "git rm --cached &lt;file&gt;..." to unstage)
     <span style="color: #00aa00">new file:   .gitignore</span>
-    <span style="color: #00aa00">new file:   obrazek.py</span></code></pre></div><h2>Formát ignorovacího souboru</h2>
+    <span style="color: #00aa00">new file:   obrazek.py</span></code></pre></div><h2 id="format_ignorovaciho_souboru">Formát ignorovacího souboru
+<a href="#header-format_ignorovaciho_souboru" class="header-link">#</a>
+</h2>
 <p>Ve všech třech „ignorovacích“ souborech lze samozřejmě uvést víc souborů:
 každý na zvláštní řádek.
 Kromě toho je možné použít několik vychytávek:</p>
@@ -184,7 +196,9 @@ Takže pokud chceš ignorovat všechny soubory s příponou <code>.tmp</code>, 
 <div class="highlight"><pre><code>__pycache__/</code></pre></div></li>
 </ul>
 <p>Další detaily je možné najít v <a href="https://git-scm.com/docs/gitignore">dokumentaci</a>.</p>
-<h2>Automatické přidávání</h2>
+<h2 id="automaticke_pridavani">Automatické přidávání
+<a href="#header-automaticke_pridavani" class="header-link">#</a>
+</h2>
 <p>Teď, když umíš ignorovat soubory, si můžeme ukázat zkratku. Místo</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>git add soubor1 soubor2
 <span class="gp">$ </span>git commit

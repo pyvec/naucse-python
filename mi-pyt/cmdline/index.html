@@ -1,4 +1,6 @@
-<h1>Příkazová řádka</h1>
+<h1 id="prikazova_radka">Příkazová řádka
+<a href="#header-prikazova_radka" class="header-link">#</a>
+</h1>
 <p>V této lekci se seznámíme s <em>příkazovou řádkou</em> – černým okýnkem,
 které programátoři používají na zadávání příkazů.
 Na první pohled může vypadat nepřirozeně, ale dá se na ni zvyknout :)</p>
@@ -32,7 +34,9 @@ V záložce Písmo si pak můžeš vybrat větší font.
 <p>Na ostatních systémech hledej v nastavení, nebo zkus
 <kbd>Ctrl</kbd>+<kbd>+</kbd> a
 <kbd>Ctrl</kbd>+<kbd>-</kbd> (příp. se Shift).</p>
-</div><h2>První příkaz</h2>
+</div><h2 id="prvni_prikaz">První příkaz
+<a href="#header-prvni_prikaz" class="header-link">#</a>
+</h2>
 <p>Začneme jednoduchým příkazem.
 Napiš <code>whoami</code> (z angl. <em>who am I?</em> – kdo jsem?)
 a stiskni <kbd>Enter</kbd>.
@@ -48,7 +52,9 @@ příkaz do příkazové řádky.
 Vypíše ho počítač, většinou ještě s něčím před ním,
 takže ho nepiš sama! Zadej jen <code>whoami</code> a <kbd>Enter</kbd>.</p>
 <p>Stejně tak počítač sám vypíše přihlašovací jméno.</p>
-</div><h2>Aktuální adresář</h2>
+</div><h2 id="aktualni_adresar">Aktuální adresář
+<a href="#header-aktualni_adresar" class="header-link">#</a>
+</h2>
 <p>Příkazová řádka pracuje vždy v nějakém <em>adresáři</em> (neboli <em>složce</em>,
 angl. <em>directory</em>, <em>folder</em>).
 Ve kterém adresáři zrovna je, to nám poví příkaz, který se podle systému
@@ -63,7 +69,9 @@ adresář, resp. <em>current directory</em> – aktuální adresář).</p>
 </pre></div></div></div><p>Aktuální adresář se většinou ukazuje i před znakem <code>$</code> nebo <code>&gt;</code>,
 ale je dobré <code>pwd</code>/<code>cd</code> znát, kdyby ses náhodou ztratil/a
 (nebo musel/a pracovat na počítači který před <code>$</code> ukazuje něco jiného).</p>
-<h2>Co v tom adresáři je?</h2>
+<h2 id="co_v_tom_adresari_je">Co v tom adresáři je?
+<a href="#header-co_v_tom_adresari_je" class="header-link">#</a>
+</h2>
 <p>Příkaz <code>ls</code> nebo <code>dir</code> (z angl. <em>list</em> – vyjmenovat, resp. <em>directory</em> – adresář)
 nám vypíše, co aktuální adresář obsahuje: všechny soubory,
 včetně podadresářů, které se v aktuálním adresáři nacházejí.</p>
@@ -82,7 +90,9 @@ včetně podadresářů, které se v aktuálním adresáři nacházejí.</p>
 <span class="go">05/08/2014 07:28 PM &lt;DIR&gt;  Downloads</span>
 <span class="go">05/08/2014 07:28 PM &lt;DIR&gt;  Music</span>
 <span class="go">…</span>
-</pre></div></div></div><h2>Změna aktuálního adresáře</h2>
+</pre></div></div></div><h2 id="zmena_aktualniho_adresare">Změna aktuálního adresáře
+<a href="#header-zmena_aktualniho_adresare" class="header-link">#</a>
+</h2>
 <p>Aktuální adresář se dá změnit pomocí příkazu <code>cd</code>
 (z angl. <em>change directory</em> – změnit adresář).
 Za <code>cd</code> se píše jméno adresáře, kam chceme přejít.
@@ -104,7 +114,9 @@ podle toho, jestli něco napíšeš za něj nebo ne.</p>
 <p>Pokud přecházíš do adresáře na jiném disku,
 například <code>D:</code> místo <code>C:</code>, je potřeba kromě <code>cd</code>
 zadat jméno disku s dvojtečkou jako zvláštní příkaz (např. <code>D:</code>).</p>
-</div><h2>Vytvoření adresáře</h2>
+</div><h2 id="vytvoreni_adresare">Vytvoření adresáře
+<a href="#header-vytvoreni_adresare" class="header-link">#</a>
+</h2>
 <p>Co takhle si vytvořit adresář na Python? To se dělá příkazem <code>mkdir</code>
 (z angl. <em>make directory</em> – vytvořit adresář).
 Za tento příkaz napiš jméno adresáře, který chceš vytvořit – v našem případě
@@ -115,7 +127,9 @@ Za tento příkaz napiš jméno adresáře, který chceš vytvořit – v našem
                 <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>mkdir naucse-python
 </pre></div></div></div><p>Teď se můžeš podívat na Plochu nebo do nějakého grafickém programu na
 prohlížení adresářů: zjistíš, že adresář se opravdu vytvořil!</p>
-<h2>Úkol</h2>
+<h2 id="ukol">Úkol
+<a href="#header-ukol" class="header-link">#</a>
+</h2>
 <p>Zkus v nově vytvořeném adresáři <code>naucse-python</code>
 vytvořit adresář <code>test</code>
 a zkontrolovat, že se opravdu vytvořil.</p>
@@ -138,7 +152,9 @@ a zkontrolovat, že se opravdu vytvořil.</p>
 <span class="go">05/08/2014 07:28 PM &lt;DIR&gt;  test</span>
 </pre></div></div></div>
     </div>
-</div><h2>Úklid</h2>
+</div><h2 id="uklid">Úklid
+<a href="#header-uklid" class="header-link">#</a>
+</h2>
 <p>Teď vytvořené adresáře zase smažeme.</p>
 <p>Nemůžeš ale smazat adresář, ve kterém jsi.
 Proto se vrátíme na <code>Desktop</code>.
@@ -183,7 +199,9 @@ Příkaz <code>rmdir</code> se automaticky ujistí, jestli to co mažeš opravdu
 <span class="go">C:\Users\helena\Desktop</span><span class="gp"></span>
 <span class="gp">&gt; </span>rmdir /S naucse-python
 <span class="go">naucse-python, Are you sure &lt;Y/N&gt;? Y</span>
-</pre></div></div></div><h2>Shrnutí</h2>
+</pre></div></div></div><h2 id="shrnuti">Shrnutí
+<a href="#header-shrnuti" class="header-link">#</a>
+</h2>
 <p>Tady je tabulka základních příkazů, se kterými si zatím vystačíme:</p>
 <table class="table">
     <tr>
@@ -262,7 +280,9 @@ nebo <code>gedit</code>.</p>
 <p>Při učení Pythonu použiješ programy/příkazy jako <code>python</code> a <code>git</code>, které
 zanedlouho nainstalujeme.
 <!--- XXX: this assumes installation is after intro to cmdline --></p>
-<h2>Konec</h2>
+<h2 id="konec">Konec
+<a href="#header-konec" class="header-link">#</a>
+</h2>
 <p>Nakonec vyzkoušej ještě jeden příkaz.
 Ten, který příkazovou řádku zavírá: <code>exit</code>.</p>
 <p>Jako většina příkazů (kromě pár z těch základních) funguje <code>exit</code>

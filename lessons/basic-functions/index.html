@@ -1,4 +1,6 @@
-<h1>Užitečné funkce</h1>
+<h1 id="uzitecne_funkce">Užitečné funkce
+<a href="#header-uzitecne_funkce" class="header-link">#</a>
+</h1>
 <p>Ukažme si pár základních funkcí, které Python nabízí.</p>
 <p>Tato kapitola ukazuje výběr z nástrojů, které jsou ti v Pythonu k dispozici.
 Tvůj cíl není naučit se vše nazpaměť, ale mít přehled o tom, co je zhruba
@@ -12,7 +14,9 @@ který se rozdává na srazech.
 Doporučuji mít ho ze začátku při ruce.
 Když narazíš na úkol, se kterým si nevíš rady, projdi si tahák a zamysli se,
 která z funkcí by se dala použít.</p>
-<h2>Vstup a výstup</h2>
+<h2 id="vstup_a_vystup">Vstup a výstup
+<a href="#header-vstup_a_vystup" class="header-link">#</a>
+</h2>
 <p>Tyhle funkce už známe.
 <code>print</code> vypíše nepojmenované argumenty, oddělené mezerou.
 Pojmenovaný argument <code>end</code> určuje, co se vypíše na konci (místo přechodu
@@ -42,7 +46,9 @@ Zařadil bych ji tedy mezi „normální“ funkce.</p>
 <p>Jako argument bere <code>input</code> otázku, na kterou se uživatele zeptá.</p>
 <p>Návratová hodnota funkce <code>input</code> je řetězec s odpovědí uživatele.</p>
     </div>
-</div><h2>Převádění typů</h2>
+</div><h2 id="prevadeni_typu">Převádění typů
+<a href="#header-prevadeni_typu" class="header-link">#</a>
+</h2>
 <p>Co ale když nechceme pracovat s řetězcem, ale třeba s číslem?
 Tady nám pomůže skupina funkcí, které umí převádět čísla na řetězce a zpátky.
 Každý ze tří <em>typů</em> (angl. <em>types</em>) proměnných, které zatím známe,
@@ -64,7 +70,9 @@ Na celá čísla je funkce <code>int</code> (z angl. <em>integer</em>), na reál
 <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;8.9&#39;</span><span class="p">)</span>          <span class="c1"># chyba!</span>
 </pre></div><p>…a jak si poradit s chybou, která nastane,
 když použiješ špatnou hodnotu, si řekneme později.</p>
-<h3>Převádění a <code>input</code></h3>
+<h3 id="prevadeni_a_codeinputcode">Převádění a <code>input</code>
+<a href="#header-prevadeni_a_codeinputcode" class="header-link">#</a>
+</h3>
 <p>Převádění typů se často používá při načítání vstupu, třeba takto:</p>
 <div class="highlight"><pre><span></span><span class="n">cislo</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej číslo: &#39;</span><span class="p">))</span>
 </pre></div><p>Jak Python vyhodnotí tento výraz?
@@ -77,7 +85,9 @@ Ten pak funkce <code>int</code> vezme jako argument, udělá podle něj číslo 
 <span class="n">cislo</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>        <span class="s1">&#39;42&#39;</span>          <span class="p">)</span>
       <span class="c1"># ╰────────────┬────────────╯</span>
 <span class="n">cislo</span> <span class="o">=</span>             <span class="mi">42</span>
-</pre></div><h2>Matematické funkce</h2>
+</pre></div><h2 id="matematicke_funkce">Matematické funkce
+<a href="#header-matematicke_funkce" class="header-link">#</a>
+</h2>
 <p>Matematika je občas potřeba, takže se pojďme
 podívat, jak v Pythonu pracovat s čísly.</p>
 <p>Jedna zajímavá matematická funkce je k dispozici vždy:</p>
@@ -110,7 +120,9 @@ importuješ-li <code>from math</code>, nesmí se tvůj program jmenovat <code>ma
 <p>Proč? Když Python v adresáři, ze kterého program pouštíš, najde soubor
 <code>math.py</code>, bude se snažit importovat <code>sin</code> z něho místo
 z předpřipravené sady matematických funkcí.</p>
-</div><h2>Náhoda</h2>
+</div><h2 id="nahoda">Náhoda
+<a href="#header-nahoda" class="header-link">#</a>
+</h2>
 <p>Nakonec si ukážeme dvě funkce, které vrací náhodná čísla.
 Jsou užitečné třeba pro hry, ve kterých se hází kostkou nebo tahají
 náhodné karty.</p>
@@ -137,7 +149,9 @@ což vrátí <code>0</code>, <code>1</code>, nebo
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Trojúhelníček&#39;</span><span class="p">)</span>
 </pre></div><div class="admonition note"><p>Pamatuj, když importuješ z modulu <code>random</code>, nesmí se tvůj soubor
 jmenovat <code>random.py</code>.</p>
-</div><h2>A další</h2>
+</div><h2 id="a_dalsi">A další
+<a href="#header-a_dalsi" class="header-link">#</a>
+</h2>
 <p>Python dává k dispozici obrovské množství dalších
 funkcí a modulů, i když ne všem budeš ze začátku
 rozumět.

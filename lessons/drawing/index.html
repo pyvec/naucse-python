@@ -1,4 +1,6 @@
-<h1>Nakresli mi hada</h1>
+<h1 id="nakresli_mi_hada">Nakresli mi hada
+<a href="#header-nakresli_mi_hada" class="header-link">#</a>
+</h1>
 <p>Většina videoher má vlastní svět – spoustu čísel, textů, seznamů a jiných
 datových objektů, které popisují všechno, co ve hře je – celý <em>stav</em> hry.
 Tenhle stav se časem mění, ať už automaticky nebo podle akcí hráče.
@@ -14,7 +16,9 @@ Naopak barvu hada se stavu ukložit nepotřebuješ – každý had v téhle hř
 stejný.</p>
 <p>Napadne tě, jak polohu hada zapsat pomocí čísel, seznamů a dalších základních
 datových typů?</p>
-<h2>Reprezentace hada</h2>
+<h2 id="reprezentace_hada">Reprezentace hada
+<a href="#header-reprezentace_hada" class="header-link">#</a>
+</h2>
 <p>Asi nejjednodušší způsob, jak si v počítači „zapamatovat“ herního hada,
 je pomocí seznamu souřadnic.</p>
 <p>Pamatuješ si ze školy na kartézské souřadnice?
@@ -45,7 +49,9 @@ seznam souřadnic bude seznam dvojic čísel.</p>
 hadovi vědět.</p>
 <p>Počítačům (a programátorům?) to takhle stačí.
 My si to ale zkusme zobrazit barevně, ať hadovi rozumí i hráč naší budoucí hry.</p>
-<h2>Logické a zobrazovací souřadnice</h2>
+<h2 id="logicke_a_zobrazovaci_souradnice">Logické a zobrazovací souřadnice
+<a href="#header-logicke_a_zobrazovaci_souradnice" class="header-link">#</a>
+</h2>
 <p>U vykreslování hada musíme vyřešit jeden základní problém:
 převod <em>logických souřadnic</em> na souřadnice <em>obrazovky</em>.</p>
 <p>Displeje počítačů fungují podobně jako naše souřadnicová „šachovnice“:
@@ -59,7 +65,9 @@ se na obrazovku bude vykreslovat na čtverečku, který začíná na (40, 50):</
 <p><span class="figure"><a href="naucse:static?filename=coords-px.svg"><img src="naucse:static?filename=coords-px.svg" alt="Had na „šachovnici“ se souřadnicemi obrazovky"></a></span></p>
 <p>A ocas s „herními“ (<em>logickými</em>) souřadnicemi (1, 2) se vykreslí na čtvereček
 se souřadnicemi (10, 20).</p>
-<h2>Sázení čtverečku</h2>
+<h2 id="sazeni_ctverecku">Sázení čtverečku
+<a href="#header-sazeni_ctverecku" class="header-link">#</a>
+</h2>
 <p>Na to, abychom hada vykreslili, použijeme okýnko z Pygletu.
 Tady je základní kostra programu Pyglet, které už bys měl/a rozumět.</p>
 <p>Udělej si nový, prázdný adresář na hadí hru, a kostru si
@@ -123,7 +131,9 @@ se naučíš).</p>
 <span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
     </div>
-</div><h2>Sázení hada</h2>
+</div><h2 id="sazeni_hada">Sázení hada
+<a href="#header-sazeni_hada" class="header-link">#</a>
+</h2>
 <p>Zkus teď na začátek programu – těsně pod <code>import</code> a konstantu – přidat
 definici hada:</p>
 <div class="highlight"><pre><span></span><span class="n">snake</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
@@ -164,7 +174,9 @@ správného řešení.</p>
 <span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
     </div>
-</div><h2>Krmení</h2>
+</div><h2 id="krmeni">Krmení
+<a href="#header-krmeni" class="header-link">#</a>
+</h2>
 <p><img src="naucse:static?filename=red.png" alt="" style="display:block; float:right; margin: 2px; border: 1px solid #ccc; border-radius: 1px;">
 <img src="naucse:static?filename=apple.png" alt="" style="display:block; float:right; margin: 2px; border: 1px solid #ccc; border-radius: 1px;">
 Aby bylo ve hře co dělat, budeme potřebovat pro hada krmení.
@@ -211,7 +223,9 @@ Až se naučíš grafiku víc do hloubky, pochopíš co se tu děje :)</p>
 <div class="highlight"><pre><span></span>    <span class="c1"># Lepší vykreslování (pro nás zatím kouzelné zaříkadlo)</span>
     <span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span><span class="o">.</span><span class="n">glEnable</span><span class="p">(</span><span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_BLEND</span><span class="p">)</span>
     <span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span><span class="o">.</span><span class="n">glBlendFunc</span><span class="p">(</span><span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_SRC_ALPHA</span><span class="p">,</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_ONE_MINUS_SRC_ALPHA</span><span class="p">)</span>
-</pre></div><h2>Načítání kousků hada</h2>
+</pre></div><h2 id="nacitani_kousku_hada">Načítání kousků hada
+<a href="#header-nacitani_kousku_hada" class="header-link">#</a>
+</h2>
 <p>Teď, když umíš kreslit hada ze čtverců, zkusíme ho udělat hezčího.
 Stáhni si archiv <a href="naucse:static?filename=snake-tiles.zip">snake-tiles.zip</a>
 a rozbal si ho tak, aby adresář <code>snake-tiles</code> s obrázky byl na stejné úrovni
@@ -288,7 +302,9 @@ Pak slovník vypiš.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">snake_tiles</span><span class="p">)</span>
 </pre></div>
     </div>
-</div><h2>Housenka</h2>
+</div><h2 id="housenka">Housenka
+<a href="#header-housenka" class="header-link">#</a>
+</h2>
 <p>A teď zkus načtení obrázků začlenit do programu s hadem!</p>
 <p>Všechny importy patří nahoru, konstanty pod ně, a dál pak zbytek kódu.
 Vypisovat načtený slovník ve hře nemusíš, zato místo <code>green_image</code>
@@ -333,7 +349,9 @@ pak ve vykreslovací funkci použij třeba <code>snake_tiles['tail-head']</code>
 <span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
     </div>
-</div><h2>Jak vybrat čtverečky?</h2>
+</div><h2 id="jak_vybrat_ctverecky">Jak vybrat čtverečky?
+<a href="#header-jak_vybrat_ctverecky" class="header-link">#</a>
+</h2>
 <p>Místo toho, aby byl všude stejný kousek hada,
 ale budeme chtít vybrat vždycky ten správný.</p>
 <p>Jak na to?</p>

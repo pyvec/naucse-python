@@ -1,11 +1,15 @@
-<h1>Dekorátory</h1>
+<h1 id="dekoratory">Dekorátory
+<a href="#header-dekoratory" class="header-link">#</a>
+</h1>
 <p>V této lekci se nebudeme věnovat žádné externí knihovně. Místo toho se seznámíme
 s jednou vlastností Pythonu, kterou knihovny často využívají, a která obvykle
 vypadá trochu magicky.</p>
 <p>Touto vlastností jsou <em>dekorátory</em>.</p>
 <p><em>Dekorátory</em> se hodí tehdy, když potřebujeme upravit chování nějaké funkce, ale
 nechceme ji přímo upravovat.</p>
-<h2>Teorie do začátku</h2>
+<h2 id="teorie_do_zacatku">Teorie do začátku
+<a href="#header-teorie_do_zacatku" class="header-link">#</a>
+</h2>
 <p>Co je to vlastně dekorátor? Dekorátor je vlastně jenom funkce, která dostane
 jeden argument a vrátí jednu hodnotu. Je ale trochu speciální v tom, že jak
 argument, tak návratová hodnota jsou zase jiné funkce.</p>
@@ -22,7 +26,9 @@ chová se přesně stejně jako následující kód, na kterém je lépe vidět,
 <span class="n">funkce</span> <span class="o">=</span> <span class="n">dekorator</span><span class="p">(</span><span class="n">funkce</span><span class="p">)</span>
 </pre></div><p>Na řádku za zavináčem může být libovolný výraz, který po vyhodnocení vrátí
 funkci, která má požadované rozhraní.</p>
-<h2>Přiklad 0 – registrace funkcí</h2>
+<h2 id="priklad_0_registrace_funkci">Přiklad 0 – registrace funkcí
+<a href="#header-priklad_0_registrace_funkci" class="header-link">#</a>
+</h2>
 <p>Jak už při programování bývá zvykem, náš první dekorátor nás pozdraví.</p>
 <p>Začneme s jednoduchým programem, který definuje funkci pro pozdrav a zavolá ji.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ahoj</span><span class="p">():</span>
@@ -85,7 +91,9 @@ do seznamu.</p>
 praktický způsob, jak řešit registraci funkcí. Stejné řešení používá
 například knihovna <code>flask</code> pro definování webových služeb nebo <code>click</code> pro
 vytváření příkazů pro terminál.</p>
-</div><h2>Příklad 1 – trasování volání funkcí</h2>
+</div><h2 id="priklad_1_trasovani_volani_funkci">Příklad 1 – trasování volání funkcí
+<a href="#header-priklad_1_trasovani_volani_funkci" class="header-link">#</a>
+</h2>
 <p>Podívejme se třeba na tuto na pohled nevinnou funkci. Počítá, jak vypadá <em>n</em>-té
 číslo ve Fibonacciho posloupnosti. Funguje docela pěkně, pokud jí nezadáme jako
 argument příliš velké číslo. Na autorově počítači příliš velká čísla začínají
@@ -153,7 +161,9 @@ těle dekorátoru ale můžeme nadefinovat novou funkci a vrátit ji.</p>
 v tom logu nikdo nevyzná. Myšlenka jako taková ovšem není úplně špatná. Kdyby
 třeba dekorátor počítal, kolikrát se funkce spustí, a jak dlouho obvykle
 trvá, mohl by nám pomoct najít místa pro optimalizaci.</p>
-</div><h3>Nápověda pro funkce</h3>
+</div><h3 id="napoveda_pro_funkce">Nápověda pro funkce
+<a href="#header-napoveda_pro_funkce" class="header-link">#</a>
+</h3>
 <p>Zkuste si v interaktivní konzoli Pythonu spustit následující příklad:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
 <span class="go">Help on built-in function print in module builtins:</span>
@@ -199,7 +209,9 @@ komentář a jméno z jedné funkce do druhé.</p>
 <span class="go">    Spočítá x-té číslo ve Fibonacciho posloupnosti.</span>
 
 <span class="go">&gt;&gt;&gt;</span>
-</pre></div><h3>Předávání všech argumentů.</h3>
+</pre></div><h3 id="predavani_vsech_argumentu">Předávání všech argumentů.
+<a href="#header-predavani_vsech_argumentu" class="header-link">#</a>
+</h3>
 <p>Při psaní dekorátorů je dobré myslet na to, jak moc univerzální by měly být.
 Například náš <code>co_se_deje</code> momentálně funguje pouze pro funkce, které mají
 jeden argument.</p>
@@ -222,7 +234,9 @@ všechny pojmenované argumenty. A při volání dekorované funkce je všechny 
 předáme dál.</p>
 <p>Ve výstupu teď používáme pouze poziční argumenty. Přidání těch pojmenovaných je
 cvičení pro čtenáře.</p>
-<h2>Příklad 2 – opakování HTTP požadavků</h2>
+<h2 id="priklad_2_opakovani_http_pozadavku">Příklad 2 – opakování HTTP požadavků
+<a href="#header-priklad_2_opakovani_http_pozadavku" class="header-link">#</a>
+</h2>
 <p>Pokud náš program musí pracovat s nějakou externí službou nebo systémem, může
 se stát, že komunikace mezi nimi nebude vždy bezproblémová. Pěkný příklad je
 třeba stahování webové stránky se špatným připojením. S tím z Pythonu nic

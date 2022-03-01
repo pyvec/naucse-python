@@ -1,4 +1,6 @@
-<h1>Deployment webových aplikací na PythonAnywhere</h1>
+<h1 id="deployment_webovych_aplikaci_na_pythonanywhere">Deployment webových aplikací na PythonAnywhere
+<a href="#header-deployment_webovych_aplikaci_na_pythonanywhere" class="header-link">#</a>
+</h1>
 <p><a href="https://www.pythonanywhere.com/">PythonAnywhere</a> je pro limitované použití zdarma.</p>
 <p>K posílání kódu na produkční prostředí budeme používat Git.
 Nejprve proto uložte celý projekt do Gitu a nahrajte na GitHub.</p>
@@ -56,7 +58,9 @@ vaše údaje. Jméno souboru je zde bez přípony <code>.py</code>.)</p>
 <p>Nakonec restartujte aplikaci velkým zeleným tlačítkem na záložce <em>Web</em>
 a na adrese <code><var>&lt;uživatelské-jméno&gt;</var>.pythonanywhere.com</code>
 si ji můžete prohlédnout.</p>
-<h3>Deployment soukromých údajů</h3>
+<h3 id="deployment_soukromych_udaju">Deployment soukromých údajů
+<a href="#header-deployment_soukromych_udaju" class="header-link">#</a>
+</h3>
 <p>Protože vaše hesla, tajné klíče apod. nejsou v repozitáři, je nutné je předat
 aplikaci zvlášť.
 Konfigurační i jiné soubory jde nahrát v záložce <em>Files</em> nebo opět vytvořit
@@ -70,7 +74,9 @@ což ostatně <a href="https://help.pythonanywhere.com/pages/environment-variabl
 k vlastním účtům, raději si vyrobte nějaké účty pouze pro tento účel.
 GitHub povoluje všem vytvořit si jeden účet pro automatické operace, ale
 takový účet musí mít napsané v popisu, že je robot.</p>
-</div><h3>Aktualizace</h3>
+</div><h3 id="aktualizace">Aktualizace
+<a href="#header-aktualizace" class="header-link">#</a>
+</h3>
 <p>Když nahrajeme nový kód na GitHub, je vždy potřeba provést na PythonAnywhere
 v konzoli <code>git pull</code> a pak v záložce <em>Web</em> aplikaci restartovat.</p>
 <p>Placená varianta PythonAnywhere má API a tento proces jde zautomatizovat.</p>

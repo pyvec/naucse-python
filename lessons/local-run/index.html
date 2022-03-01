@@ -1,122 +1,280 @@
-<h1>Vytvoření lokálního kurzu</h1>
-<p>Teď, když už máš lokální instalaci aplikace Nauč se Python, můžeš začít vytvářet vlastní kurz.</p>
-<p>První věc, kterou musíš udělat, je vybrat si identifikátor kurzu, pod kterým bude kurz uložený.
-Tento identifikátor také bude ve všech adresách, které se budou týkat tohoto kurzu.
-Identifikátor se může skládat pouze z malých alfanumerických znaků a spojovníků (<code>-</code>) a musí být uníkátní, alespoň v daném roce.
-Jak zjistit, jestli už identifikátor existuje? Podívej se do složky <code>runs</code> a pak dále do složky, která odpovídá roku, ve kterém tvůj kurz začíná.</p>
-<div class="admonition note"><p class="admonition-title">Jak vybrat identifikátor?</p>
-<p>Ze správného identifikátoru (v kombinaci s rokem) by mělo být jasné, o který kurz se jedná.
-Dobrý příklad je třeba <code>2017/mi-pyt</code>, identifikátor pro předmět MI-PYT, který začal v roce 2017.
-Pro jiné kurzy může být problém přijít na unikátní identifikátor.
-Například kurzy PyLadies se organizují ve více městech několikrát ročně.
-Poté se do identifikátoru přidává i město a označení, který je to kurz v daném roce – například <code>2018/pyladies-ostrava-jaro</code>.
-Třeba v Praze ale zároveň běží i více kurzů najednou, tak se používá <code>2018/pyladies-praha-jaro-cznic</code> a <code>2018/pyladies-praha-jaro-ntk</code>, poslední část zde říká, kde se kurz koná.</p>
-<p><br />
-Takže doporučení jsou následovné:</p>
+<h1 id="vytvoreni_lokalniho_kurzu">Vytvoření lokálního kurzu
+<a href="#header-vytvoreni_lokalniho_kurzu" class="header-link">#</a>
+</h1>
+<h2 id="priprava">Příprava
+<a href="#header-priprava" class="header-link">#</a>
+</h2>
+<p>První věc, kterou budeš potřebovat, je Python, a to alespoň ve verzi 3.8.
+Pokud zrovna danou verzi Pythonu nainstalovanou nemáš, můžeš postupovat podle <a href="naucse:page?lesson=beginners/install">návodu na instalaci Pythonu</a>.</p>
+<p>Druhá věc, kterou budeš potřebovat, je Git – pokud nemáš ten, můžeš postupovat podle <a href="naucse:page?lesson=git/install">návodu na instalaci Gitu</a>.</p>
+<p>Třetí věc, kterou budeš potřebovat, je nástroj Poetry.
+Ten můžeš nainstalovat několika způsoby:</p>
 <ul>
-<li>Když víš, že kurz se stejným názvem bude v daném roce jediný, identifikátor by měl být název, bez diakritiky a se spojovníky místo mezer.</li>
-<li>Když se stejně pojmenovaný kurz koná ve více městech, přidej název města.</li>
-<li>Když se kurz koná vícekrát za rok, přidej označení v daném roce (například roční období).</li>
-<li>Když se koná více kurzů se stejným názvem ve stejném městě najednou, přidej lokaci nebo den, pokud se konají na jiných místech nebo v jiné dny.</li>
+<li>Na některých variantách Linuxu můžeš nainstalovat systémový balíček, který se pak bude aktualizovat spolu se systémem), např.:<ul>
+<li>Fedora: <code>sudo dnf install poetry</code></li>
 </ul>
-</div><p>Když už máš vymyšlený identifikátor, vytvoř ve složce s rokem složku, která se bude jmenovat podle tvého identifikátoru.
-Pokud ještě složka pro daný rok neexistuje, musíš ji vytvořit také.</p>
-<h2>Definice kurzu</h2>
-<p>Kurz se definuje pomocí souboru <code>info.yml</code>, který se umisťuje právě do složky, kterou jsi výše vytvořil/a.
-Tento soubor obsahuje všechny informace o kurzu – název, popisek, kde a kdy se koná a pak samozřejmě plán jednotlivých lekcí.
-Soubor je formátu YAML, který si teď trochu ukážeme.</p>
-<h3>O formátu YAML</h3>
-<p>Formát se skládá z několika stavebních bloků, které se dají poté skládat dohromady.
-Prvním je seznam hodnot (podobně jako v Pythonu).
-Seznam se ve formátu YAML zapisuje následovně:</p>
-<div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">První položka</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Druhá položka</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Položka může být i něco jiného než text!</span><span class="w"></span>
-</pre></div><p>Druhým stavebním blokem je slovník (zase podobně jako v Pythonu), který se skládá z klíčů a hodnot, nezáleží v ní tedy na pořadí, protože se k informaci vždy člověk dostance pomocí klíče.
-Slovník se ve formátu YAML zapisuje následovně:</p>
-<div class="highlight"><pre><span></span><span class="nt">klic1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hodnota klíče klic1.</span><span class="w"></span>
-<span class="nt">klic2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
-<span class="nt">klic3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">I hodnoty ve slovníku mohou být něco jiného než text.</span><span class="w"></span>
-<span class="nt">klic4</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">    </span><span class="no">Pokud potřebuješ zapsat nějaký delší text, uděláš to takhle.</span><span class="w"></span>
-
-<span class="w">    </span><span class="no">Tento text budou dva separátní odstavce v rámci jednoho klíče.</span><span class="w"></span>
-<span class="nt">klic5</span><span class="p">:</span><span class="w"></span>
-<span class="nt">klic6</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Jak vidíš v klíči klic5, hodnota může být i prázdá.</span><span class="w"></span>
-</pre></div><p>Seznamy a slovníky jde samozřejmě i skládat dohromady:</p>
-<div class="highlight"><pre><span></span><span class="nt">klic1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hodnota klíče</span><span class="w"></span>
-<span class="nt">klic2</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tohle je seznam, které patří pod klíč klic2</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">vnorenyklic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Můžeme skládat jednotlivé typy skoro do nekonečna.</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">vnorenyklic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Klíče musí být unikátní jen v rámci jednoho slovníku, takže to může být takto.</span><span class="w"></span>
-<span class="nt">klic3</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">vnorenyklic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Slovník může obsahovat další slovník i takto.</span><span class="w"></span>
-</pre></div><h3>Povinné informace</h3>
-<p>Teď, když už se vyznáš ve formátu YAML, můžeš začít vytvářet soubor <code>info.yml</code>.
-Celá definice kurzu je jeden velký slovník, který si postupně popíšeme a vyplníme.
+</li>
+<li>Poetry můžeš nainstalovat do systému podle <a href="https://python-poetry.org/docs/#installation">návodu</a> na stránkách Poetry</li>
+<li>Můžeš si aktivovat <a href="naucse:page?lesson=beginners/venv-setup">virtuální prostředí</a> a Poetry nainstalovat pomocí:<div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install --user poetry
+</pre></div></li>
+</ul>
+<p>Poslední věc, kterou potřebuješ, už není žádný program, ale pár schopností.
+Je potřeba, abys uměl/a pracovat s příkazovou řádkou (terminálem), Gitem
+a formátem YAML.
+Vše potřebné si můžeš připomenout v <a href="naucse:page?lesson=beginners/cmdline">návodu na používání terminálu</a>,
+<a href="naucse:page?lesson=git/git-collaboration-2in1">návodu na používání Gitu</a>
+a v <a href="naucse:page?lesson=fast-track/yaml">úvodu k YAMLu</a>.</p>
+<h2 id="naklonovani_zakladu">Naklonování základu
+<a href="#header-naklonovani_zakladu" class="header-link">#</a>
+</h2>
+<p>Kurz můžeš vytvořit úplně od začátku, ale pro začátek lepší varianta je vyjít
+z nějakého už existujícího.
+Naklonuj si buď základní začátečnický kurz z <a href="https://github.com/pyvec/naucse-python">https://github.com/pyvec/naucse-python</a>,
+nebo si na naucse.python.cz vyber jiný základ.
+(Odkaz na repozitář najdeš v patičce stránky kurzu.
+Historické kurzy ale můžou být už zaarchivované a nejnovější verze v repozitáři
+nemusí odpovídat tomu co je na webu.)</p>
+<h2 id="kontrola_nastaveni_projektu">Kontrola nastavení projektu
+<a href="#header-kontrola_nastaveni_projektu" class="header-link">#</a>
+</h2>
+<p>Zkontroluj si, že naklonovaný kurz obsahuje soubor <code>pyproject.toml</code>
+s verzí <code>naucse = 0.5.0</code> nebo vyšší a <code>naucse-render = 1.8</code> nebo vyšší.
+Třeba takto:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git grep ^naucse pyproject.toml
+<span class="go">pyproject.toml:11:naucse = &quot;^0.5.1&quot;</span>
+<span class="go">pyproject.toml:12:naucse-render = &quot;^1.8&quot;</span>
+</pre></div><p>Jestli soubor <code>pyproject.toml</code> vůbec nemáš, zkopíruj si ho
+<a href="https://github.com/pyvec/naucse-python/blob/main/pyproject.toml">z repozitáre naucse-python</a>.
+Jestli máš starší verzi <code>naucse</code>, aktualizuj příkazem <code>poetry add naucse@latest</code>.</p>
+<h2 id="lokalni_spusteni">Lokální spuštění
+<a href="#header-lokalni_spusteni" class="header-link">#</a>
+</h2>
+<p>Po naklonování si zkontroluj, že kurz u tebe „jede“.</p>
+<p>Nainstaluj protřebné závislosti:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>poetry install
+</pre></div><p>A spusť vývojový server:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>poetry run python -m naucse serve
+</pre></div><p>Program vypíše adresu (např. <code>http://127.0.0.1:8003/</code>); tu navštiv v prohlížeči.
+Tam se „doklikej“ na kurz, ze kterého budeš vycházet.</p>
+<h2 id="struktura_repozitare">Struktura repozitáře
+<a href="#header-struktura_repozitare" class="header-link">#</a>
+</h2>
+<p>V repozitáři s kurzem najdeš následující soubory a adresáře:</p>
+<h3 id="codelessonscode_texty_lekci"><code>lessons/</code>: Texty lekcí
+<a href="#header-codelessonscode_texty_lekci" class="header-link">#</a>
+</h3>
+<p>Jednotlivé lekce jsou rozděleny do „kategorií“, aby se dalo lépe „smíchat“
+několik kurzů dohromady.
+Každá lekce má vlastní adresář se dvěma soubory:</p>
+<ul>
+<li><p><code>info.yml</code> obsahuje metadata, například:</p>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Vytvoření lokálního kurzu</span><span class="w"></span>
+<span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">md</span><span class="w"></span>
+<span class="w">  </span><span class="nt">attribution</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Napsal Mikuláš Poul, 2018</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Napsal Petr Viktorin, 2022</span><span class="w"></span>
+<span class="w">  </span><span class="nt">license</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cc-by-sa-40</span><span class="w"></span>
+<span class="w">  </span><span class="nt">license_code</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cc0</span><span class="w"></span>
+</pre></div><ul>
+<li><code>title</code> je titulek stránky, který se objeví v obsahu.</li>
+<li><code>style</code> je typ obsahu: <code>md</code> pro Markdown nebo <code>ipynb</code> pro
+Jupyter Notebooka</li>
+<li><code>attribution</code> je seznam autorů, který se objeví v patičce stránky.</li>
+<li><code>license</code> je kód licence, pod kterou lze šířit obsah lekce.
+(Stránky naucse.python.cz mají seznam přípustných licencí. Chceš-li
+použít jinou, kontaktuj Petra.)</li>
+<li><code>licence_code</code> je kód licence, pro ukázky kódu v textu. Je dobré
+použít <code>cc0</code>, aby čtenáři mohli kód používat bez omezení. Pokud je ale
+kód např. založený na dokumentaci Pythonu (nebo jiného projektu),
+je potřeba dodržet podmínky daného zdroje.</li>
+<li><code>pages</code> je seznam <em>podstránek</em>, které se používají např. pokud má být
+obsah lekce různý pro různé systémy.
+Viz např. lekce <a href="naucse:page?lesson=beginners/install">instalace Pythonu</a>.</li>
+</ul>
+</li>
+<li><p><code>index.md</code> (resp. <code>index.ipynb</code>) obsahuje zdrojový text lekce ve formátu
+Markdown (resp. Jupyter Notebook JSON).</p>
+</li>
+<li><p>Adresář <code>static/</code> obsahuje obrázky nebo jiné statické soubory k lekci.</p>
+</li>
+</ul>
+<h3 id="codecourseymlcode_codecoursescode_coderunscode_definice_kurzu"><code>course.yml</code>, <code>courses</code>, <code>runs</code>: Definice kurzu
+<a href="#header-codecourseymlcode_codecoursescode_coderunscode_definice_kurzu" class="header-link">#</a>
+</h3>
+<p>Definice kurzu je uložena v souboru YAML.
+Jsou dvé možnosti, kde tenhle soubor může být:</p>
+<ul>
+<li><code>course.yml</code>: Jestli spravuješ jen jeden kurz, dej jeho definici do souboru
+<code>course.yml</code>.</li>
+<li><code>courses/*.yml</code>: Jestli plánuješ mít v jednom repozitáři více kurzů,
+které budou sdílet obsah lekcí, tak pro každý vymysli identifikátor
+(malá písmena bez diakritiky, čísla, pomlčka, např. <code>zacatecnici-jaro</code>)
+a definici kurzu dej do souboru
+<code>courses/<var>identifikator</var>.yml</code>.
+Různým nástrojúm pro práci s kurzy pak budeš předávat přepínač
+<code>--slug <var>identifikator</var></code>.</li>
+</ul>
+<p>Existuje i třetí možnost, spíš historická:</p>
+<ul>
+<li><code>runs/<var>rok</var>/<var>identifikator</var>.yml</code>.
+Ta se hodí pokud chceš mít v repozitáři kurzy pro několik let.
+Většinou je ale lepší spravovat jen aktuální kurzy a ty staré archivovat.</li>
+</ul>
+<p>Když zakládáš nový kurz, můžeš zkopírovat existující definici na nové místo,
+nebo ji nechat kde je a změnit ji.</p>
+<h3 id="codegithubworkflowsmainymlcode_instrukce_pro_github_actions"><code>.github/workflows/main.yml</code>: Instrukce pro GitHub Actions
+<a href="#header-codegithubworkflowsmainymlcode_instrukce_pro_github_actions" class="header-link">#</a>
+</h3>
+<p>Tenhle soubor obsahuje instrukce pro GitHub Actions pomocí kterých se
+kurz publikuje. Obsahuje kromě instalace a <em>cache</em> tři hlavní kroky:</p>
+<ul>
+<li>"kompilaci" kurzu do HTML a JSON souborů v adresáři <code>_compiled</code>,</li>
+<li>přidání adresáře <code>_compiled</code> do Gitu (pomocí nástroje <code>ghp_import</code>),</li>
+<li>notifikaci hooks.nauc.se,naucse.python.cz, aby se nová verze kurzu nasadila.</li>
+</ul>
+<p>Tyhle instrukce můžou být pro každou sadu kurzů jiné.
+Až budeš kurz přidávat na naucse.python.cz, měly by se zkontrolovat,
+ale do té doby se s tímto souborem netrap.</p>
+<h3 id="codelicensescode"><code>licenses/</code>
+<a href="#header-codelicensescode" class="header-link">#</a>
+</h3>
+<p>Tenhle adresář obsahuje licence, pod kterými obsah může být.
+Neměň ho.</p>
+<h3 id="codepyprojecttomlcode_codepoetrylockcode_codegithubcode_definice_projektu_a_zavislosti"><code>pyproject.toml</code>, <code>poetry.lock</code>, <code>.github</code>: Definice projektu a závislostí
+<a href="#header-codepyprojecttomlcode_codepoetrylockcode_codegithubcode_definice_projektu_a_zavislosti" class="header-link">#</a>
+</h3>
+<p>Tyhle soubory definují jaké nástroje se použijí pro publikování kurzu.</p>
+<h2 id="definice_kurzu">Definice kurzu
+<a href="#header-definice_kurzu" class="header-link">#</a>
+</h2>
+<p>Soubor <code>course.yml</code> nebo <code>courses/*.yml</code> obsahuje všechny informace
+o kurzu – název, popisek, kde a kdy se koná a pak samozřejmě plán jednotlivých lekcí.</p>
+<p>Celá definice kurzu je jeden velký slovník, který si postupně popíšeme a vyplníme.
 Pro potřeby kurzu je <a href="naucse:static?filename=info.yml">připravena šablona</a>, kterou můžeš použít.</p>
+<h3 id="povinne_informace">Povinné informace
+<a href="#header-povinne_informace" class="header-link">#</a>
+</h3>
 <p>Nejdřív prvních pár základních povinných údajů:</p>
 <ul>
 <li><code>title</code> slouží pro název kurzu (nepovinně lze dodefinovat pomocí <code>subtitle</code>)</li>
 <li><code>description</code> slouží pro krátký popis kurzu (který se zobrazí v seznamu kurzů)</li>
 <li><code>long_description</code> slouží pro dlouhý popis kurzu, který se zobrazí na stránce kurzu</li>
 </ul>
-<p>A teď už jen nepovinné údaje:</p>
+<p>A teď už jen nepovinné údaje.</p>
+<h3 id="misto_a_cas">Místo a čas
+<a href="#header-misto_a_cas" class="header-link">#</a>
+</h3>
+<p>Přidáváš-li kurz s instruktorem, kdy se na každou lekci budete scházet,
+přidej informace o místu a času.
+U kurzu pro samouky je naopak vynech.</p>
 <ul>
 <li><code>place</code> slouží pro označení místa</li>
-<li><code>time</code> slouží pro informaci o času (není nutný žádný specifický formát)</li>
+<li><code>time</code> slouží pro informaci o času, kdy se budou lekce konat.
+Je to popisek „pro lidi“, takže není nutný žádný specifický formát:
+můžeš napsat třeba <code>'Vždy půl hodiny před západem slunce'</code>.</li>
 </ul>
-<p>Jestli chceš, aby pro kurz šel vygenerovat iCal soubor s plánem lekcí, musíš dále poté vyplnit údaj <code>default_time</code>.
+<p>Jestli chceš, aby pro kurz šel vygenerovat iCal soubor s plánem lekcí, přidej údaj <code>default_time</code>.
 Tato hodnota musí být slovník, který obsahuje dva klíče <code>start</code> a <code>end</code>, kde bude čas lekcí.
-Čas musí být ve formátu <code>HH:MM</code> a musí být obalen uvozovkami nebo apostrofy (kvůli té dvojtečce, aby si YAML nemyslel, že je to další slovník), takže třeba takhle:</p>
+Čas musí být ve formátu <code>HH:MM</code> a musí být obalen uvozovkami nebo apostrofy (kvůli té dvojtečce, aby si YAML nemyslel, že je to další slovník).</p>
+<p>Kromě toho je potřeba zadat časovou zónu, kde se lekce odehrávají.
+Pro ČR a Slovensko použij <code>Europe/Prague</code> (největší město v oblasti).</p>
+<p>Takže třeba takhle:</p>
 <div class="highlight"><pre><span></span><span class="nt">default_time</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">start</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;18:00&#39;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">end</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;20:00&#39;</span><span class="w"></span>
-</pre></div><p>Poslední nepovinná hodnota, než se dostaneme k obsahu kurzu, jsou proměné, které se definují klíčem <code>vars</code> a musí být také slovníkem.
+<span class="nt">timezone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Europe/Prague</span><span class="w"></span>
+</pre></div><p>Tohle výchozí čas.
+U každé lekce se dá zvlášť nastavit jiný začátek a konec.</p>
+<h3 id="promenne">Proměnné
+<a href="#header-promenne" class="header-link">#</a>
+</h3>
+<p>Poslední nepovinná hodnota, než se dostaneme k obsahu kurzu, jsou proměné, které se definují klíčem <code>vars</code> a musí být také slovníkem.
 Proměné mohou upravovat obsah lekcí a stránek kurzu, a pokud budeš vytvářet nebo upravovat materiály, můžeš si i definovat vlastní.</p>
-<p>První proměnou, kterou můžeš použít, je <code>coach-present</code>.
-Pokud je tvůj kurz s lektorem nebo koučem, nastav tuto proměnou na hodnotu <code>true</code>.</p>
-<p>Druhou proměnou, kterou můžeš použít je <code>user-gender</code>.
-Pokud víš, že na tvém kurzu budou lidé jen jednoho pohlaví, můžeš nastavit materiály (které tak byly napsány), aby vykreslily správně formátovaný obsah.
+<p>První proměnou, kterou můžeš použít je <code>user-gender</code>.
+Pokud víš, že na tvém kurzu budou lidé jen jednoho pohlaví, můžeš nastavit materiály (které tak byly napsány), aby je správně oslovovaly.
 Nastavíš to pomocí písmenka <code>f</code> pro ženy, <code>m</code> pro muže.
-Pokud proměnou nevyplníš, materiály vykreslí obě varianty.</p>
-<p>Další proměnou, kterou můžeš použít, je <code>pyladies</code>.
-Tu využij (nastavenín na hodnotu <code>true</code>), pokud organizuješ kurz PyLadies.
+Pokud proměnou nevyplníš, materiály se přizpůsobí pro obě varianty.</p>
+<p>Další proměnné závisí na konkrétních materiálech.
+Začátečnický kurz používá tyto:</p>
+<ul>
+<li><p><code>coach-present</code>: Pokud je tvůj kurz s lektorem nebo koučem, nastav tuto proměnou na <code>true</code>.
+Materiály pak budou místo hledání na internetu doporučovat rady od živých lidí.</p>
+</li>
+<li><p><code>pyladies</code> nastav na hodnotu <code>true</code>, pokud organizuješ kurz PyLadies.
 Tato proměná aktivuje v materiálech nějaké popisky navíc, například o tahácích, nebo také sjednotí názvy složek na <code>pyladies</code>.</p>
-<h3>Plán na základě kanonických materiálů</h3>
-<p>Pro vytvoření obsahu máš dvě základní možnosti.
-Buď využiješ plán existujícího kanonického kurzu, nebo si nadefinuješ svůj vlastní.
-Zde je popsán postup odvozování.</p>
-<p>Nejdřív si vyber kanonický kurz, ze kterého chceš svůj kurz odvodit.
-Kanonické kurzy najdeš ve složce <code>courses</code>.
-Vybraný kanonický kurz nastav v souboru <code>info.yml</code> klíčem <code>derives</code> – napiš do něj název složky kurzu (např. <code>pyladies</code> nebo <code>mi-pyt</code>).</p>
+</li>
+</ul>
+<h3 id="plan_lekci">Plán lekcí
+<a href="#header-plan_lekci" class="header-link">#</a>
+</h3>
 <p>A teď už zbývá poslední věc, a to je sestavení programu kurzu.
-Kurz se skládá z jednotlivých lekcí a každá lekce se skládá z jednotlivých materiálů.
-Lekce nadefinuješ klíčem <code>plan</code> v souboru <code>info.yml</code>.
-Ten musí být seznam dalších slovníků.</p>
-<p>Máš dvě možnosti, jak nadefinovat jednotlivé lekce.
-Buď můžeš převzít lekci z kanonického kurzu, nebo si nadefinovat vlastní.</p>
-<p>Nicméně, co je společné, je definování data a času kurzu.
-Datum nastavíš klíčem <code>date</code>, ve formátu <code>YYYY-MM-DD</code>.
-Čas nastavovat nemusíš, použije se čas z <code>default_time</code>, ale můžeš ho přenastavit pomocí klíče <code>time</code>, který bude mít jako hodnotu další slovník s hodnotami <code>start</code> a/nebo <code>end</code> (ve formátu <code>HH:MM</code> obalené uvozovkami).</p>
-<h4>Definice vlastní lekce</h4>
-<p>Nejdříve si ukážeme, jak se definují vlastní lekce – přebírání pak už bude jednoduché.
-Nejdřív si budeš muset zase vymyslet pro lekci identifikátor, který napiš do klíče <code>slug</code>.
-Identifikátor musí být zase unikántní, nicméně tentorkát jen v rámci kurzu.
-Identifikátor lekce bude v adrese na tu specifickou lekci.
-Dalším povinným údajem je <code>title</code> – název lekce.</p>
-<p>Kromě definování data a času už pak při definici lekce zbývá jen seznam materiálů.
-Ty se nastavují pomocí klíče <code>materials</code>.
-I když nechceš žádné materiály pro lekci definovat, musíš klíč nadefinovat, a to s hodnotou <code>[]</code> (prázdný seznam).
-Základní definice lekce tedy vypadá následovně:</p>
-<div class="highlight"><pre><span></span><span class="nt">plan</span><span class="p">:</span><span class="w"></span>
+Kurz se skládá z jednotlivých lekcí (<em>sessions</em>) a každá lekce obsahuje seznam materiálů.
+Lekce nadefinuješ klíčem <code>sessions</code> v definici kurzu.
+Ten musí být seznam dalších slovníků. Každý z nich představuje jednu lekci.</p>
+<h4 id="definice_lekce">Definice lekce
+<a href="#header-definice_lekce" class="header-link">#</a>
+</h4>
+<p>Datum lekce nastavíš klíčem <code>date</code>, ve formátu <code>YYYY-MM-DD</code>.
+Čas nastavovat nemusíš, použije se čas z <code>default_time</code>, ale můžeš ho přenastavit
+pomocí klíče <code>time</code>, který bude mít jako hodnotu další slovník s hodnotami <code>start</code> a/nebo <code>end</code> (ve formátu <code>HH:MM</code> obalené uvozovkami).</p>
+<p>Každá lekce má svůj identifikátor, který napiš do klíče <code>slug</code>.
+Identifikátor musí být unikátní (v rámci kurzu).
+Použije se v adrese (URL) lekce.</p>
+<p>Dalším povinným údajem je <code>title</code> – název lekce.</p>
+<p>Základní definice lekce tedy vypadá následovně:</p>
+<div class="highlight"><pre><span></span><span class="nt">sessions</span><span class="p">:</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">first-lesson</span><span class="w"></span>
 <span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Název první lekce</span><span class="w"></span>
 <span class="w">  </span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2018-03-07</span><span class="w"></span>
-<span class="w">  </span><span class="nt">materials</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
-</pre></div><p>Existují tři druhy materiálů. První druh jsou interní materiály, druhý druh jsou odkazy mimo Nauč se Python a třetí jsou jen záznam bez odkazu.
-Materiály se dále pak rozdělují na několik typů, které určují ikonku, která se použije v seznamu materiálů vedle názvu.</p>
+</pre></div><p>Většina lekcí bude mít navíc obsah – seznam materiálů.
+Ty se nastavují pomocí klíče <code>materials</code>.</p>
+<p>Existují tři druhy materiálů:</p>
+<ul>
+<li><p><strong>Interní materiály</strong> se definují pomocí klíče <code>lesson</code>, do kterého patří
+identifikátor interního materiálu,
+tedy jméno podsložky ve složce <code>lessons</code>.
+Identifikátor materiálu je <code>&lt;název kategorie&gt;/&lt;název materiálu z kategorie&gt;</code>.
+Takže například materiál `beginners/install by se zadal takto:</p>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">sessions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">first-lesson</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Název první lekce</span><span class="w"></span>
+<span class="w">    </span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2018-03-07</span><span class="w"></span>
+<span class="w">    </span><span class="nt">materials</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">lesson</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">beginners/install</span><span class="w"></span>
+</pre></div></li>
+</ul>
+<ul>
+<li><p><strong>Externí odkazy</strong> se definují pomocí klíčů <code>url</code> a <code>title</code>.
+Do <code>url</code> patří kompletní odkaz na materiál, do <code>title</code> patří název odkazu.
+Příklad použítí:</p>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">sessions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">first-lesson</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Název první lekce</span><span class="w"></span>
+<span class="w">    </span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2018-03-07</span><span class="w"></span>
+<span class="w">    </span><span class="nt">materials</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Úvodní prezentace</span><span class="w"></span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/uvod.pdf</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tahák na příkazovou řádku</span><span class="w"></span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/tahak.pdf</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cheatsheet</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Domácí projekty (PDF)</span><span class="w"></span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/ukol.pdf</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">homework</span><span class="w"></span>
+</pre></div></li>
+<li><p><strong>Materiály bez odkazu</strong> se definují stejně jako externí odkazy,
+jen se do klíče <code>url</code> dá hodnota <code>null</code>. Například:</p>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">sessions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">last-lesson</span><span class="w"></span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Název lekce</span><span class="w"></span>
+<span class="w">    </span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2019-03-07</span><span class="w"></span>
+<span class="w">    </span><span class="nt">materials</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Přehlídka závěrečných projektů</span><span class="w"></span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Předání diplomů</span><span class="w"></span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"></span>
+</pre></div></li>
+</ul>
+<p>U všech druhú materiálú lze nastavit typ, který určuje ikonku která se použije v seznamu materiálů vedle názvu.</p>
 <p>Podporované typy jsou následující:</p>
 <ul>
 <li><code>page</code> – výchozí typ pro druh interní materiály</li>
@@ -125,36 +283,6 @@ Materiály se dále pak rozdělují na několik typů, které určují ikonku, k
 <li><code>homework</code> – pro domácí úkoly</li>
 <li><code>special</code> – pro všechno ostatní</li>
 </ul>
-<p>A teď už k definování.
-Interní materiály se definují pomocí klíče <code>lesson</code>, do kterého patří identifikátor interního materiálu.
-Interní materiály jsou definovány ve složce <code>lessons</code>.
-V té složce jsou tzv. kolekce materiálů, které pak obsahují jednotlivé materiály.
-Identifikátor materiálu je <code>&lt;název kolekce&gt;/&lt;název materiálu z kolekce&gt;</code>, takže například <code>beginners/install</code>.
-Následovně by se použil materiál v seznamu materiálů:</p>
-<div class="highlight"><pre><span></span><span class="nt">plan</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">first-lesson</span><span class="w"></span>
-<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Název první lekce</span><span class="w"></span>
-<span class="w">  </span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2018-03-07</span><span class="w"></span>
-<span class="w">  </span><span class="nt">materials</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">lesson</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">beginners/install</span><span class="w"></span>
-</pre></div><p>Druhý druh se definuje pomocí klíčů <code>url</code> a <code>title</code>.
-Do <code>url</code> patří kompletní odkaz na materiál, do <code>title</code> patří název odkazu.
-Nepovinně se pak může změnit typ pomocí klíče <code>type</code>.
-Příklad použítí:</p>
-<div class="highlight"><pre><span></span><span class="nt">plan</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">first-lesson</span><span class="w"></span>
-<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Název první lekce</span><span class="w"></span>
-<span class="w">  </span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2018-03-07</span><span class="w"></span>
-<span class="w">  </span><span class="nt">materials</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Úvodní prezentace</span><span class="w"></span>
-<span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/uvod.pdf</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tahák na příkazovou řádku</span><span class="w"></span>
-<span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/tahak.pdf</span><span class="w"></span>
-<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cheatsheet</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Domácí projekty (PDF)</span><span class="w"></span>
-<span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/ukol.pdf</span><span class="w"></span>
-<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">homework</span><span class="w"></span>
-</pre></div><p>Třetí druh se definuje stejně jako druhý, jen se do klíče <code>url</code> dá hodnota <code>null</code>.</p>
 <p>Poslední věc, která jde definovat u materiálů, jsou proměné, pomocí klíče <code>vars</code>.
 Definují se stejně jako u celého kurzu, ale mají účinek jen pro specifický materiál.
 Například takhle:</p>
@@ -166,52 +294,33 @@ Například takhle:</p>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">lesson</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">beginners/install</span><span class="w"></span>
 <span class="w">    </span><span class="nt">vars</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">bonus</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-</pre></div><h4>Převzetí lekce</h4>
-<p>Lekci převezmeš nastavením klíče <code>base</code> na identifikátor (<code>slug</code>) lekce z kanonického kurzu (viz soubor <code>info.yml</code> ve složce toho kurzu).
-Takto převzaná lekce si vezme z kanonického kurzu název i materiály.
-Lze to třeba i jen takto:</p>
-<div class="highlight"><pre><span></span><span class="nt">plan</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">install</span><span class="w"></span>
-<span class="w">  </span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2018-03-07</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hello</span><span class="w"></span>
-<span class="w">  </span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2018-03-14</span><span class="w"></span>
-<span class="w">  </span><span class="nt">time</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">start</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;18:00&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">end</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;20:00&#39;</span><span class="w"></span>
-</pre></div><p>Nicméně můžeš ale i u převzatých kurzů změnit seznam materiálů, pomocí seznamu hodnot <code>materials</code>.
-Můžeš si nadefinovat úplně nový seznam materiálů (stejně jako výše) nebo můžeš použít hodnotu <code>+merge</code>, které na dané místo v seznamu materiálů vloží všechny materiály z odvozované lekce.
-To se hodí, pokud třeba jen potřebuješ přidat něco před nebo za materiály z kanonického kurzu.
-Použití vypadá následovně:</p>
-<div class="highlight"><pre><span></span><span class="nt">plan</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">install</span><span class="w"></span>
-<span class="w">  </span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2018-03-07</span><span class="w"></span>
-<span class="w">  </span><span class="nt">materials</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Úvodní prezentace</span><span class="w"></span>
-<span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/uvod.pdf</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">+merge</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Domácí projekty (PDF)</span><span class="w"></span>
-<span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/ukol.pdf</span><span class="w"></span>
-<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">homework</span><span class="w"></span>
-</pre></div><h3>Úplně nový plán</h3>
-<p>Pokud chceš vytvořit úplně nový plán, můžeš se řídit stejným postupem jako výše, jen nevyplňuj klíč <code>derives</code> a nevyužívej způsob definování přes lekci <code>base</code>.</p>
-<h2>Otestování vlastního kurzu</h2>
-<p>Po vytvoření souboru <code>info.yml</code> s povinnými položkami se můžeš konečně podívat na to, jak tvůj kurz bude vypadat.
-Podle instrukcí z <a href="naucse:page?lesson=meta/installing-naucse#launch">předchozí části manuálu</a> si spusť Nauč se v Python režimu <code>serve</code>.
-Otevři si adresu, kterou ti příkaz napíše, a odnaviguj se do části s kurzy.</p>
+</pre></div><h2 id="otestovani_kurzu">Otestování kurzu
+<a href="#header-otestovani_kurzu" class="header-link">#</a>
+</h2>
+<p>Po vytvoření definice kurzu s povinnými položkami se můžeš podívat na to, jak tvůj kurz bude vypadat.
+Spusť si vývojový server:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>poetry run python -m naucse serve
+</pre></div><p>Otevři si adresu, kterou ti příkaz napíše. Měl by na ní být seznam nadefinovaných kurzů.</p>
 <p>Pokud se stránka s kurzy nevykreslí, tak uvidíš Python vyjímku, která ti může pomoct, ale také může být pěkne matoucí.
 Nejprve si zkontroluj, jeslti jsi vážně vyplnil/a všechny povinné údaje.
 Jestli si myslíš, že ano, tak se nám ozvi přes <a href="https://github.com/pyvec/naucse.python.cz/issues">issues na našem GitHubu</a> a my ti rádi pomůžeme.
-V opačném případě si rozklikni svůj kurz.
-Pokud se ti nevykreslí detail kurzu, nejspíš jsi udělal/a nějakou chybu v definici lekcí nebo materiálů – zkontroluj si, jestli například nemáš dvě lekce se stejným identifikátorem, jestli není překlep v nějakém klíčí a jestli například neodkazuješ na materiál, který neexistuje.</p>
-<p>Dále si pak můžeš proklikat všechny jednotlivé materiály, jestli vše funguje a vypadá jak má.
-Jako další test může posloužit druhý režim spuštění Nauč se Python (<code>freeze</code>), který projde všechny stránky, jestli fungují.</p>
-<h2>Upravování a vytváření materiálů</h2>
+(Ozvi se i v případě že se ti podaří matoucí nebo nic neříkající chybu pochopit, ať ji můžeme opravit.)</p>
+<p>Když stránku s kurzy uvidíš, rozklikni svůj kurz.
+Pokud se ti nevykreslí detail kurzu, nejspíš jsi udělal/a nějakou chybu v definici lekcí nebo materiálů – zkontroluj si, jestli například nemáš dvě lekce se stejným identifikátorem, jestli není překlep v nějakém klíčí a jestli například neodkazuješ na materiál který neexistuje.</p>
+<p>Dále si pak můžeš proklikat všechny jednotlivé materiály, jestli vše funguje a vypadá jak má.</p>
+<p>Pokud máš lekce naplánované na určité dny, rozklikni si na stránce kurzu
+Kalendář a zkontroluj že odpovídá tvé představě.</p>
+<p>Jako další test může posloužit druhý režim spuštění, <code>freeze</code> místo <code>serve</code>, který projde všechny stránky a zkontroluje jestli fungují:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>poetry run python -m naucse freeze
+</pre></div><h2 id="upravovani_a_vytvareni_materialu">Upravování a vytváření materiálů
+<a href="#header-upravovani_a_vytvareni_materialu" class="header-link">#</a>
+</h2>
 <p>Na závěr této části ještě trochu k materiálům.
 Jak bylo zmíněno výše, obsah materiálů je definován ve složce <code>lessons</code>.
 Kromě toho, že si můžeš sestavit vlastní kurz, můžeš si i upravit materiály, které využíváš, nebo si napsat úplně nové.</p>
 <p>Většina materiálů je napsaná v formátu <a href="https://cs.wikipedia.org/wiki/Markdown">Markdown</a> a pár je napsaných v <a href="naucse:page?lesson=intro/notebook">Jupyter Noteboocích</a>.
-Upravování je jednoduché, stačí se podívat do složky s daným specifický materiálem a upravit, co je potřeba, v souboru s obsahem.</p>
-<p>Vytváření je trošku složitější v tom, že člověk musí vybrat správnou kolekci a název lekce a pak vytvořit ve složce kromě obsahu i soubor informacích o materiálech.
+Upravování je jednoduché, stačí se podívat do složky s daným specifickým materiálem a upravit, co je potřeba, v souboru s obsahem.</p>
+<p>Vytváření je trošku složitější v tom, že člověk musí vybrat správnou kategorii a vymyslet název lekce a pak vytvořit ve složce kromě obsahu i soubor informacích o materiálech.
 Soubor se znovu jmenuje <code>info.yml</code> a má povinné tři údaje, <code>title</code>, <code>style</code> a <code>license</code>:</p>
 <ul>
 <li><code>title</code> nastavuje název,</li>
@@ -220,5 +329,7 @@ Soubor se znovu jmenuje <code>info.yml</code> a má povinné tři údaje, <code>
 </ul>
 <p>Dále má soubor nepovinné položky, první <code>attributions</code> – buď jednoduchý text, nebo seznam textů s informacemi o tom, kdo a proč materiál napsal.
 Nakonec lze použít jinou licenci na ukázky kódu pomocí <code>license_code</code>: doporučujeme použít <code>cc0</code>.</p>
-<div class="admonition note"><p>Obecně je dobrý nápad se při psaní materiálů inspirovat již existujícími řešeními v ostatních materiálech a přebírat jejich styl a způsoby formátování.</p>
-</div>
+<p>Obecně je dobrý nápad se při psaní materiálů inspirovat již existujícími řešeními v ostatních materiálech a přebírat jejich styl a způsoby formátování.
+Materiály z jedné kategorie byly většinou psány pro jeden typ kurzu a mají specifický styl:
+v <code>beginners</code> jsou texty pro začátečníky psané kamarádsky, texty pro studenty v <code>intro</code> čtenářům vykají (v množném čísle),
+úvody z <code>fast-track</code> jsou zkratkovité.</p>

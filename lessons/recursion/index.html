@@ -1,4 +1,6 @@
-<h1>Rekurze</h1>
+<h1 id="rekurze">Rekurze
+<a href="#header-rekurze" class="header-link">#</a>
+</h1>
 <p><em>Rekurze</em> (angl. <em>recursion</em>) je programátorská technika,
 kdy funkce volá sebe sama.</p>
 <p>Taková rekurze skončí nekonečným voláním.
@@ -51,7 +53,9 @@ Když zadáš tento program:</p>
   [Previous line repeated 996 more times]
 RecursionError: maximum recursion depth exceeded</code></pre></div><p>Hláška je zkrácená – dva řádky by se správně měly opakovat 999×, ale novější
 verze Pythonu je vypíšou jen třikrát.</p>
-<h1>Kontrolované zanoření</h1>
+<h1 id="kontrolovane_zanoreni">Kontrolované zanoření
+<a href="#header-kontrolovane_zanoreni" class="header-link">#</a>
+</h1>
 <p>Jak rekurzi využít v praxi?
 Jeden způsob je si počítat, kolikrát se ještě „zanořit“.</p>
 <p>Představ si potápěče, který prozkoumává mořské hlubiny následujícím způsobem:</p>
@@ -114,7 +118,9 @@ Jeden způsob je si počítat, kolikrát se ještě „zanořit“.</p>
 </ul>
 </li>
 </ul>
-<h1>Lokální proměnné</h1>
+<h1 id="lokalni_promenne">Lokální proměnné
+<a href="#header-lokalni_promenne" class="header-link">#</a>
+</h1>
 <p>Na předchozím příkladu je vidět zajímavé chování lokálních proměnných.
 Když je potápěč „na dně“, jakou hodnotu má proměnná <em>hloubka</em>?</p>
 <p>Tahle otázka je chyták. <em>Která</em> proměnná <code>hloubka</code>?
@@ -125,7 +131,9 @@ každá funkce „vidí“ jen tu svoji proměnnou.
 Ale když se potápěč vynoří a volání funkce se ukončí, tato proměnná
 přestane existovat.
 A „volající“ funkce vidí svoji proměnnou, ve které je stále původní hodnota.</p>
-<h1>Pro matematiky</h1>
+<h1 id="pro_matematiky">Pro matematiky
+<a href="#header-pro_matematiky" class="header-link">#</a>
+</h1>
 <div class="admonition note"><p>Nemáš-li rád/a matematiku, tuhle sekci přeskoč!</p>
 </div><p>Rekurzivní algoritmy mají původ v matematice. Faktoriál <var>x</var>, neboli
 součin všech  čísel od 1 do <var>x</var>, zapsaný jako <var>x</var>!,

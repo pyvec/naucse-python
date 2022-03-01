@@ -1069,6 +1069,28 @@
                 "static_files": {},
                 "title": "Vytvoření virtuáního prostředí"
             },
+            "fast-track/yaml": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Napsal Mikuláš Poul, 2018"
+                        ],
+                        "content": {
+                            "path": "yaml/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "license_code": "cc0",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/fast-track/yaml/index.md",
+                        "title": "O formátu YAML",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/fast-track/yaml/info.yml",
+                "static_files": {},
+                "title": "O formátu YAML"
+            },
             "git/basics": {
                 "pages": {
                     "index": {
@@ -1890,7 +1912,8 @@
                 "pages": {
                     "index": {
                         "attribution": [
-                            "Napsal Mikuláš Poul, 2018"
+                            "Napsal Mikuláš Poul, 2018",
+                            "Upravil Petr Viktorin, 2022"
                         ],
                         "content": {
                             "path": "local-run/index.html"
@@ -2574,6 +2597,11 @@
                     {
                         "lesson_slug": "fast-track/install",
                         "title": "Vytvoření virtuáního prostředí",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "fast-track/yaml",
+                        "title": "O formátu YAML",
                         "type": "lesson"
                     }
                 ],

@@ -15,7 +15,9 @@
             "git/git-collaboration-2in1",
             "beginners/install",
             "beginners/cmdline",
-            "intro/notebook"
+            "beginners/venv-setup",
+            "intro/notebook",
+            "fast-track/yaml"
         ],
         "lessons": {
             "beginners/cmdline": {
@@ -120,6 +122,53 @@
                     }
                 },
                 "title": "Instalace Pythonu"
+            },
+            "beginners/venv-setup": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2018."
+                        ],
+                        "content": {
+                            "path": "venv-setup/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/venv-setup/index.md",
+                        "title": "Nastavení prostředí",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/beginners/venv-setup/info.yml",
+                "static_files": {
+                    "dirs.png": {
+                        "path": "venv-setup/dirs.png"
+                    }
+                },
+                "title": "Nastavení prostředí"
+            },
+            "fast-track/yaml": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Napsal Mikuláš Poul, 2018"
+                        ],
+                        "content": {
+                            "path": "yaml/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "license_code": "cc0",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/fast-track/yaml/index.md",
+                        "title": "O formátu YAML",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/fast-track/yaml/info.yml",
+                "static_files": {},
+                "title": "O formátu YAML"
             },
             "git/branching": {
                 "pages": {
@@ -226,33 +275,12 @@
                 "static_files": {},
                 "title": "Notebook"
             },
-            "meta/installing-naucse": {
-                "pages": {
-                    "index": {
-                        "attribution": [
-                            "Napsal Mikuláš Poul, 2018"
-                        ],
-                        "content": {
-                            "path": "installing-naucse/index.html"
-                        },
-                        "license": "cc-by-sa-40",
-                        "license_code": "cc0",
-                        "slug": "index",
-                        "solutions": [],
-                        "source_file": "lessons/meta/installing-naucse/index.md",
-                        "title": "Lokální instalace Nauč se Python",
-                        "vars": {}
-                    }
-                },
-                "source_file": "lessons/meta/installing-naucse/info.yml",
-                "static_files": {},
-                "title": "Lokální instalace Nauč se Python"
-            },
             "meta/local-run": {
                 "pages": {
                     "index": {
                         "attribution": [
-                            "Napsal Mikuláš Poul, 2018"
+                            "Napsal Mikuláš Poul, 2018",
+                            "Upravil Petr Viktorin, 2022"
                         ],
                         "content": {
                             "path": "local-run/index.html"
@@ -305,11 +333,6 @@
         "sessions": [
             {
                 "materials": [
-                    {
-                        "lesson_slug": "meta/installing-naucse",
-                        "title": "Lokální instalace Nauč se Python",
-                        "type": "lesson"
-                    },
                     {
                         "lesson_slug": "meta/local-run",
                         "title": "Vytvoření lokálního kurzu",

@@ -1,4 +1,6 @@
-<h1>Testování</h1>
+<h1 id="testovani">Testování
+<a href="#header-testovani" class="header-link">#</a>
+</h1>
 <p>V tomto cvičení se budeme zabývat automatickým testováním kódu.
 Modul unittest ze standardní knihovny už byste měli znát,
 co to jsou jednotkové testy a k čemu slouží tedy rovnou přeskočím.</p>
@@ -8,7 +10,9 @@ Obsah se zčásti překrývá, ale základní principy jsou tam vysvětleny tro�
 podrobněji.</p>
 </div><p>Pokud si chcete přečíst krátký text o tom, jak testovat, zkuste <a href="http://blog.horejsek.com/matka-moudrosti-jak-testovat">blogový
 zápisek Michala Hořejška</a>.</p>
-<h2>pytest</h2>
+<h2 id="pytest">pytest
+<a href="#header-pytest" class="header-link">#</a>
+</h2>
 <p>Rovnou se podíváme na velmi oblíbený balíček <a href="http://pytest.org/">pytest</a>, který oproti standardnímu
 unittestu přináší mnoho výhod. Začneme jednoduchou ukázkou z modulu <code>isholiday</code>
 z <a href="naucse:page?lesson=intro/distribution">cvičení o modulech</a>.</p>
@@ -84,7 +88,9 @@ ověření vyhození výjimky. To se dělá takto:</p>
     <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">SystemExit</span><span class="p">):</span>
         <span class="n">f</span><span class="p">()</span>
 </pre></div><p>Více o základním použití pytestu najdete v <a href="http://docs.pytest.org/en/latest/getting-started.html">dokumentaci</a>.</p>
-<h3>Parametrické testy</h3>
+<h3 id="parametricke_testy">Parametrické testy
+<a href="#header-parametricke_testy" class="header-link">#</a>
+</h3>
 <p>Jednou z vlastností pytestu, která často přichází vhod, jsou <a href="http://doc.pytest.org/en/latest/parametrize.html">parametrické testy</a>.
 Pokud bychom například chtěli otestovat, jestli je Štědrý den svátkem nejen
 v roce 2016, ale v jiných letech, nemusíme psát testů více, ani použít cyklus.</p>
@@ -186,7 +192,9 @@ year = 2048
 
 <span class=" -Color -Color-Bold -Color-Bold-Red">tests/test_holidays.py</span>:8: AssertionError
 ====================== 2 failed, 3 passed in 0.03 seconds ======================
-</pre></div><h3>Fixtures</h3>
+</pre></div><h3 id="fixtures">Fixtures
+<a href="#header-fixtures" class="header-link">#</a>
+</h3>
 <p>Často se stává, že před samotným testem potřebujte spustit nějaký kus kódu,
 abyste získali to, co teprve chcete testovat. Příkladem může být například
 inicializace objektu pro komunikaci s nějakým API.</p>
@@ -255,14 +263,18 @@ parametry předané dekorátoru <code>pytest.fixture</code> získáme ze speciá
 <a href="http://doc.pytest.org/en/latest/example/index.html">sekci s příklady</a>.
 Hledáte-li příklady krok za krokem, zkuste <a href="https://github.com/PyConPL/Book/blob/master/2017/workshops/pytest_parametric_tests/text.md">příspěvek ze sborníku konference
 PyCon PL</a>.</p>
-<h2>„Podvádění“</h2>
+<h2 id="podvadeni">„Podvádění“
+<a href="#header-podvadeni" class="header-link">#</a>
+</h2>
 <p>Při psaní testů se občas hodí trochu podvádět. Například když nechceme,
 aby testy měly nějaký vedlejší účinek, když chceme testovat něco, co závisí na
 náhodě a podobně. Obecně se tomuto říká <em>mocking</em> * či <em>test doubles</em> a existuje více různých
 knihoven, které to umožňují. Jednou z nich je <a href="https://flexmock.readthedocs.io/">flexmock</a>.</p>
 <p>* <em>mocking</em> je jen jeden druh podvádění, ale obecně se dá tento název použít
 pro funkcionalitu knihoven, které mají v názvu <em>mock</em> :)</p>
-<h3>Falešné objekty (fakes)</h3>
+<h3 id="falesne_objekty_fakes">Falešné objekty (fakes)
+<a href="#header-falesne_objekty_fakes" class="header-link">#</a>
+</h3>
 <p>Při testování často potřebujeme nějaký objekt, který má určité atributy a
 metody. Vytvářet si pro každý takový objekt třídu může být ubíjející:</p>
 <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FakePlane</span><span class="p">:</span>
@@ -275,7 +287,9 @@ metody. Vytvářet si pro každý takový objekt třídu může být ubíjejíc�
 <div class="highlight"><pre><span></span><span class="n">plane</span> <span class="o">=</span> <span class="n">flexmock</span><span class="p">(</span><span class="n">operational</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                  <span class="n">model</span><span class="o">=</span><span class="s1">&#39;MIG-21&#39;</span><span class="p">,</span>
                  <span class="n">fly</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="kc">None</span><span class="p">)</span>
-</pre></div><h3>Částečně upravené objekty, třídy, moduly (stubs)</h3>
+</pre></div><h3 id="castecne_upravene_objekty_tridy_moduly_stubs">Částečně upravené objekty, třídy, moduly (stubs)
+<a href="#header-castecne_upravene_objekty_tridy_moduly_stubs" class="header-link">#</a>
+</h3>
 <p>Stejně tak můžete vzít i nějaký existující objekt nebo třídu a upravit jen část
 atributů nebo metod:</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">flexmock</span>
@@ -299,19 +313,25 @@ atributů nebo metod:</p>
 <span class="o">...</span>     <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
 <span class="o">...</span> 
 <span class="p">[</span><span class="s1">&#39;fake content&#39;</span><span class="p">]</span>
-</pre></div><h3>Očekávání (mocks, spies)</h3>
+</pre></div><h3 id="ocekavani_mocks_spies">Očekávání (mocks, spies)
+<a href="#header-ocekavani_mocks_spies" class="header-link">#</a>
+</h3>
 <p>Pomocí flexmocku můžete zároveň <a href="http://flexmock.readthedocs.io/en/latest/start/#creating-and-checking-expectations">kontrolovat</a>, že se vaší implementaci něco
 zavolalo, a to dvojím způsobem: buďto zároveň změníte výsledek funkce (mocks),
 nebo jen sledujete, jestli se zavolala (spies).
 (Příklady na odkazu.)</p>
-<h3>Integrace s pytestem</h3>
+<h3 id="integrace_s_pytestem">Integrace s pytestem
+<a href="#header-integrace_s_pytestem" class="header-link">#</a>
+</h3>
 <p>Dobrá mockovací knihovna se stará o to, aby platnost vašich změn byla omezená
 kontextem jedné funkce a tedy jednoho testu. Implementovat vlastní <em>test double</em>
 ale není nic těžkého a můžete to udělat sami (bez knihovny).
 Pro přepsání nějaké metody, funkce apod. na omezenou dobu
 můžete využít zabudovanou pytest fixturu
 <a href="https://docs.pytest.org/en/latest/monkeypatch.html">monkeypatch</a>.</p>
-<h3>Varování</h3>
+<h3 id="varovani">Varování
+<a href="#header-varovani" class="header-link">#</a>
+</h3>
 <p>Podvádění při testech občas vypadá nevyhnutelně. Pokud například vaše funkce
 čte soubor <code>/etc/passwd</code> a vy chcete testovat, že se zachová správně, pokud
 bude obsahovat daný obsah, musíte si trochu zapodvádět, protože nemůžete vědět,
@@ -327,7 +347,9 @@ která čte soubor formátu <code>/etc/passwd</code>, ale jméno souboru jí př
 <div class="admonition note"><p>Mohl by vás zajímat záznam z přednášky <a href="https://www.youtube.com/watch?v=-nJ-ZW_LP7s">Should I mock or should I not?</a>
 z konference <a href="https://cz.pycon.org/">PyCon CZ</a> 2017. V přednášce se věnuji různým způsobům podvádění
 při psaní testů.</p>
-</div><h2>Testování HTTP komunikace: betamax</h2>
+</div><h2 id="testovani_http_komunikace_betamax">Testování HTTP komunikace: betamax
+<a href="#header-testovani_http_komunikace_betamax" class="header-link">#</a>
+</h2>
 <p>Vaše programy často používají webová API. Při testování funkcionality API klientů
 se vynoří řada problémů:</p>
 <ul>
@@ -382,7 +404,9 @@ vytvořit vlastní fixture, která použije fixture <code>betamax_session</code>
 <div class="highlight"><pre><span></span><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
 <span class="k">def</span> <span class="nf">client</span><span class="p">(</span><span class="n">betamax_session</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">betamax_session</span><span class="p">)</span>
-</pre></div></div><h3>Citlivé údaje</h3>
+</pre></div></div><h3 id="citlive_udaje">Citlivé údaje
+<a href="#header-citlive_udaje" class="header-link">#</a>
+</h3>
 <p>Při práci s webovými API často létají vzduchem citlivé údaje jako tokeny apod.</p>
 <p>Vyvstávají dvě otázky:</p>
 <ol>
@@ -415,7 +439,9 @@ Na tuto otázku podrobněji odpovídá
 <a href="https://betamax.readthedocs.io/en/latest/configuring.html#filtering-sensitive-data">dokumentace</a>.</p>
 <p>V každém případě je moudré před uložením do gitu zkontrolovat, že se v kazetách
 nenachází žádný citlivý údaj, a pokud tam je, přepsat kód tak, aby se tam nenacházel.</p>
-<h4>Komprimované citlivé údaje</h4>
+<h4 id="komprimovane_citlive_udaje">Komprimované citlivé údaje
+<a href="#header-komprimovane_citlive_udaje" class="header-link">#</a>
+</h4>
 <p>Problém může nastat, pokud je token či jiná citlivá informace uložena jako část v těle 
 odpovědi (případně i požadavku) a zároveň je toto tělo zprávy zkomprimováno (defaultní
 chování, viz <a href="http://betamax.readthedocs.io/en/latest/implementation_details.html#gzip-content-encoding">dokumentace</a>). 
@@ -425,7 +451,9 @@ hlavičku <code>Accept-Encoding</code> v <code>betamax_session</code> tak, aby n
 <div class="highlight"><pre><code>betamax_session.headers.update({'Accept-Encoding': 'identity'})</code></pre></div><div class="admonition note"><p>Kódování <code>'identity'</code> má shodné chování jako <code>''</code> a to, že data ve zprávě nejsou 
 nijak transformována, více viz <a href="https://en.wikipedia.org/wiki/HTTP_compression#Content-Encoding_tokens">Wikipedia</a> 
 a <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.3">specifikace HTTP</a>)</p>
-</div><h3>Které HTTP požadavky jsou stejné?</h3>
+</div><h3 id="ktere_http_pozadavky_jsou_stejne">Které HTTP požadavky jsou stejné?
+<a href="#header-ktere_http_pozadavky_jsou_stejne" class="header-link">#</a>
+</h3>
 <p>Podle čeho se vyhodnotí, že HTTP požadavek odpovídá nahrané interakci a má se
 pouze přehrát? Ve výchozím stavu podle HTTP metody a URL.
 Pokud tedy na jedno URL provedete dva POST požadavky s jiným tělem, betamax
@@ -436,7 +464,9 @@ v <a href="http://betamax.readthedocs.io/en/latest/matchers.html">dokumentaci</a
 <div class="admonition note"><p>Mohl by vás zajímat záznam z přednášky <a href="https://www.youtube.com/watch?v=iFqF5IaWfy0">If it Moves, Test it Anyway</a>
 z konference <a href="https://cz.pycon.org/">PyCon CZ</a> 2016. V přednášce se věnuji různým způsobům, jak
 testovat webové API klienty v Pythonu.</p>
-</div><h2>Testování aplikací ve Flasku</h2>
+</div><h2 id="testovani_aplikaci_ve_flasku">Testování aplikací ve Flasku
+<a href="#header-testovani_aplikaci_ve_flasku" class="header-link">#</a>
+</h2>
 <p>Pro testování aplikací ve Flasku se
 <a href="http://flask.pocoo.org/docs/1.0/testing/">používá</a> <code>app.test_client()</code>:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
@@ -453,7 +483,9 @@ testovat webové API klienty v Pythonu.</p>
 z requests.
 Proto nelze použít přímo <code>response.text</code>; text dostaneme pomocí
 <code>response.get_data(as_text=True)</code>.</p>
-<h2>Testování aplikací v clicku</h2>
+<h2 id="testovani_aplikaci_v_clicku">Testování aplikací v clicku
+<a href="#header-testovani_aplikaci_v_clicku" class="header-link">#</a>
+</h2>
 <p>Podobně funguje <a href="http://click.pocoo.org/6/testing/">testování aplikací v clicku</a>.
 Click obsahuje třídu <code>CliRunner</code>, která pomáhá s testováním:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">click.testing</span> <span class="kn">import</span> <span class="n">CliRunner</span>
@@ -463,7 +495,9 @@ Click obsahuje třídu <code>CliRunner</code>, která pomáhá s testováním:</
     <span class="n">result</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">git_cli_made_in_click</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;push&#39;</span><span class="p">,</span> <span class="s1">&#39;--force&#39;</span><span class="p">])</span>
     <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">exit_code</span> <span class="o">==</span> <span class="mi">0</span>
     <span class="k">assert</span> <span class="s1">&#39;forced update&#39;</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">output</span>
-</pre></div><h2>Kam dát testy?</h2>
+</pre></div><h2 id="kam_dat_testy">Kam dát testy?
+<a href="#header-kam_dat_testy" class="header-link">#</a>
+</h2>
 <p><a href="http://doc.pytest.org/en/latest/goodpractices.html#choosing-a-test-layout-import-rules">Dokumentace pytestu</a>
 uvádí dvě možnosti, kam dát adresář s testy. Buď vedle adresáře s modulem:</p>
 <div class="highlight"><pre><code>setup.py
@@ -491,7 +525,9 @@ pokud zvolíte první variantu umístění, aby se neinstalovaly (<code>setup.py
 protože by tam kolidovaly s ostatními testy z jiných balíčků.</p>
 <p>Případné soubory potřebné k testování bývá zvykem dávat do složky <code>fixtures</code> ve
 složce s testy.</p>
-<h2>Spouštění testů pomocí <code>setup.py test</code></h2>
+<h2 id="spousteni_testu_pomoci_codesetuppy_testcode">Spouštění testů pomocí <code>setup.py test</code>
+<a href="#header-spousteni_testu_pomoci_codesetuppy_testcode" class="header-link">#</a>
+</h2>
 <p>Standardně se testy v Pythonu nespouští pomocí <code>python -m pytest</code>, ale
 <code>python setup.py test</code>, což funguje i s jinými nástroji než je pytest.
 Pokud pytest používáme, je proto dobré <code>setup.py</code> naučit spouštět pytest.</p>
@@ -512,7 +548,9 @@ test=pytest</code></pre></div><p>Příkaz <code>python setup.py test</code> by m
 podporovat další argumenty pytestu (jako <code>-v</code>).
 Na to uživatel spustí pytest samotný.</p>
 <p>Další informace jsou v <a href="http://doc.pytest.org/en/latest/goodpractices.html#integrating-with-setuptools-python-setup-py-test-pytest-runner">dokumentaci pytestu</a>.</p>
-<h2>Travis CI</h2>
+<h2 id="travis_ci">Travis CI
+<a href="#header-travis_ci" class="header-link">#</a>
+</h2>
 <p>Vaše testy nemusí běžet jen u vás na počítači, ale můžete je pouštět automaticky
 na službě Travis CI při každém pushnutí na GitHub.</p>
 <p>Travis CI je zadarmo pro veřejné repozitáře na <a href="https://travis-ci.org/">travis-ci.org</a>, pro soukromé
@@ -552,7 +590,9 @@ Pro Python 3.7 je třeba nastavit novější verzi Ubuntu:</p>
 </pre></div><p>Po pushnutí by se na Travisu měl automaticky spustit test.
 Více informací o použití pro Python najdete
 v <a href="https://docs.travis-ci.com/user/languages/python/">dokumentaci</a>.</p>
-<h2>Kvíz</h2>
+<h2 id="kviz">Kvíz
+<a href="#header-kviz" class="header-link">#</a>
+</h2>
 <p>Co je špatně na této testovací sadě k funkci <code>is_even()</code>?</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>

@@ -10,7 +10,9 @@ a <code>python3-devel</code> (Fedora) nebo <code>python3-dev</code> (Ubuntu/Debi
 na <a href="https://wiki.python.org/moin/WindowsCompilers">Python wiki</a>.</li>
 </ul>
 <hr>
-<h1>C API</h1>
+<h1 id="c_api">C API
+<a href="#header-c_api" class="header-link">#</a>
+</h1>
 <p>Mluvíme-li o „Pythonu“, máme často na mysli jak jazyk samotný, tak i interpret,
 program, který programy v tomto jazyce umí spouštět.
 Správně je ale „Python“ pouze jméno jazyka.
@@ -30,7 +32,9 @@ Správně napsaný pythonní program by neměl na takových detailech záviset, 
 není k nekompatibilitě mezi interprety dobrý důvod.</p>
 <p>Někdy to ale je potřeba, a dnešní přednáška bude specifická pro CPython
 a přímé využití jeho API pro jazyk C.</p>
-<h2>Rychlost</h2>
+<h2 id="rychlost">Rychlost
+<a href="#header-rychlost" class="header-link">#</a>
+</h2>
 <p>Častý důvod proč sáhnout k C API je rychlost: CPython je celkem pomalý.
 Tradiční metoda optimalizace je zjistit, které části jsou kritické, a přepsat
 je do C.
@@ -48,7 +52,9 @@ tabulku počtu volání jednotlivých funkcí a času v nich stráveného:</p>
 popsanými níže.</p>
 <p>Jiná možnost, jak program zrychlit, je ho pustit, tak jak je, pod interpretem
 PyPy, který obsahuje optimalizovaný překladač. To je ale jiná kapitola.</p>
-<h2>Externí knihovny</h2>
+<h2 id="externi_knihovny">Externí knihovny
+<a href="#header-externi_knihovny" class="header-link">#</a>
+</h2>
 <p>Druhý důvod, proč programátoři používají C API, je použití knihoven, které mají
 rozhraní pro C.
 Takových knihoven existuje mnoho – pokud není něco specifické pro určitý jazyk,
@@ -56,12 +62,16 @@ Takových knihoven existuje mnoho – pokud není něco specifické pro určitý
 <p>Pro práci s externími knihovnami se dá použít C API nebo vestavěný modul
 <a href="https://docs.python.org/3/library/ctypes.html">ctypes</a>, ale v dnešní době je dobré místo toho použít <a href="http://cffi.readthedocs.io/en/latest/">CFFI</a>, knihovnu
 která funguje i s PyPy (a teoreticky jinými implementacemi).</p>
-<h2>CPython</h2>
+<h2 id="cpython">CPython
+<a href="#header-cpython" class="header-link">#</a>
+</h2>
 <p>Třetí důvod, proč použít C API, je práce s CPythonem samotným.
 Když člověk zabředne do složitého problému, může na CPython pustit C debugger
 jako <a href="https://en.wikipedia.org/wiki/GNU_Debugger">gdb</a> nebo <a href="http://valgrind.org/">Valgrind</a>, prozkoumat potíže na nižší úrovni
 a zjistit, kde přesně se chyba nachází.</p>
-<h2>Modul v C</h2>
+<h2 id="modul_v_c">Modul v C
+<a href="#header-modul_v_c" class="header-link">#</a>
+</h2>
 <p>Pojďme začít příkladem.
 Vytvořte si následující soubor, který implementuje rozšíření
 (importovatelný modul) s jednou funkcí.</p>
@@ -131,7 +141,9 @@ inicializuje, t.j. má podobnou funkci jako <code>__init__</code> u třídy v Py
 takže jediná, která je exportována jako API knihovny, kterou vytváříme.
 Až bude Python tento modul importovat, najde tuto funkci podle jména, spustí ji
 a podle vrácené struktury typu <code>PyModuleDef</code> vytvoří pythonní objekt s modulem.</p>
-<h2>Překlad</h2>
+<h2 id="preklad">Překlad
+<a href="#header-preklad" class="header-link">#</a>
+</h2>
 <p>Abychom mohli takovýto modul naimportovat, musíme ho nejdřív přeložit a sestavit
 z něj sdílenou knihovnu – soubor .so (nebo .dll) – s názvem modulu:
 buď jen <code>demo.so</code>, nebo i s identifikací architektury a verze Pythonu,
@@ -181,7 +193,9 @@ K tomu slouží příkaz <code>python setup.py build_ext --inplace</code>.
 Pozor na to, že po každé změně zdrojového kódu je potřeba rozšíření znovu přeložit.</p>
 <p>Příkaz <code>python setup.py develop</code> bude fungovat jako dřív (používá <code>build_ext --inplace</code>),
 jen je opět potřeba příkaz po každé změně znovu spustit.</p>
-<h2>PyObject</h2>
+<h2 id="pyobject">PyObject
+<a href="#header-pyobject" class="header-link">#</a>
+</h2>
 <p>Podívejme se teď na základní mechanismy interpretu CPython.</p>
 <p>Základní datová struktura, která reprezentuje jakýkoli objekt Pythonu, je PyObject
 (<a href="https://docs.python.org/3/c-api/structures.html#c.PyObject">dokumentace</a>, 
@@ -216,7 +230,9 @@ jednotlivých 30bitových „číslic“.
 NumPy matice mají metadata (velikost, typ, popis rozložení v paměti) a ukazatel na pole hodnot.</p>
 <p>To základní, co potřebujeme vědět, je, že na úrovni C je každý pythonní objekt reprezentován
 jako struktura počtu referencí, ukazatele na typ a dat specifických pro daný typ.</p>
-<h2>Reference counting</h2>
+<h2 id="reference_counting">Reference counting
+<a href="#header-reference_counting" class="header-link">#</a>
+</h2>
 <p>Tak jako v C je důležité správně alokovat a dealokovat paměť, při tvorbě rozšíření do CPythonu
 je třeba správně pracovat s referencemi: ke každému <a href="https://docs.python.org/3/c-api/refcounting.html#c.Py_INCREF">Py_INCREF</a> (přičtení 1 k počtu referencí)
 je potřeba později zavolat <a href="https://docs.python.org/3/c-api/refcounting.html#c.Py_DECREF">Py_DECREF</a> (odečtení 1 a případné uvolnění objektu).
@@ -234,7 +250,9 @@ V modulu <code>demo</code> voláme funkci <a href="https://docs.python.org/3/c-a
 Za vzniklou referenci naše funkce přebírá zodpovědnost, je tedy na nás, abychom se postarali
 o zavolání Py_DECREF.
 Vrácením výsledku tuto zodpovědnost ale předáváme na funkci, která volá tu naši.</p>
-<h2>Hodnoty a výjimky</h2>
+<h2 id="hodnoty_a_vyjimky">Hodnoty a výjimky
+<a href="#header-hodnoty_a_vyjimky" class="header-link">#</a>
+</h2>
 <p>Další konvence, kterou většina funkcí v C API dodržuje, je způsob vracení výjimek.</p>
 <p>Funkce, které vrací pythonní objekty, na úrovni C vrací <code>PyObject*</code>.
 Nastane-li výjimka, objekt výjimky se zaznamená do globální (přesněji, <em>thread-local</em>)
@@ -246,7 +264,9 @@ Naší funkci <code>system</code> už stačí vrátit NULL, protože víme, že 
 <p>Další funkce, která může neuspět, je <code>PyLong_FromLong</code>.
 Vzhledem k tomu, že její výsledek rovnou vracíme, není potřeba úspěch kontrolovat – vrátíme
 buď správnou hodnotu nebo NULL se zaznamenanou výjimkou.</p>
-<h2>GIL</h2>
+<h2 id="gil">GIL
+<a href="#header-gil" class="header-link">#</a>
+</h2>
 <p>Poslední omezení, kterého si autor rozšíření musí být vědom, je <em>Global Interpreter Lock</em>.
 Stručně řečeno, s objekty <code>PyObject*</code> může pracovat pouze jedno vlákno.
 Toto vlákno drží globální zámek, který čas od času odemkne a znovu se pokusí zamknout,
@@ -257,7 +277,9 @@ Na druhou stranu tento zámek ale omezuje paralelismus, a tedy i rychlost progra
 <p>Globální zámek se dá odemknout v situacích, kdy nepracujeme s <code>PyObject*</code> a nevoláme pythonní kód.
 Například čtení ze souboru nebo sítě ostatní vlákna neblokuje.
 Stejně tak maticové operace v NumPy typicky nedrží GIL zatímco počítají na úrovni C nebo Fortranu.</p>
-<h1>Cython</h1>
+<h1 id="cython">Cython
+<a href="#header-cython" class="header-link">#</a>
+</h1>
 <p>Teď, když víme jak to všechno funguje, se můžeme podívat na způsob, jak rozšíření psát
 jednoduše.
 C API se totiž dá použít nejen z C, ale z jakéhokoli jazyka, který umí volat funkce se
@@ -267,7 +289,9 @@ Další způsob, jak použít C API ale nepsat C, je použít překladač z př�
 <p>Cython je jazyk podobný Pythonu, který ale lze přeložit na C a dále optimalizovat.</p>
 <p>Cython si nainstalujte pomocí příkazu:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install cython
-</pre></div><h2>Kompilace Pythonu</h2>
+</pre></div><h2 id="kompilace_pythonu">Kompilace Pythonu
+<a href="#header-kompilace_pythonu" class="header-link">#</a>
+</h2>
 <p>Když chceme převést modul z Pythonu do Cythonu, nejjednodušší začátek je přejmenovat soubor <code>.py</code>
 na <code>.pyx</code>, aby bylo jasné, že jde o jiný jazyk, který nepůjde naimportovat přímo.</p>
 <p>Jazyky Python a Cython nejsou 100% kompatibilní, ale zvláště u kódu, který pracuje hlavně s
@@ -333,7 +357,9 @@ Instalace z archivu <code>sdist</code> se tedy nemusí povést – je potřeba u
 že dané moduly už musí mít nainstalované.
 Tento problém aktuálně řeší PyPA (správci <code>pip</code> a <code>setuptools</code>).</p>
 <p>Instalace z archivů <code>wheel</code> by měla být bezproblémová.</p>
-<h2>Anotace</h2>
+<h2 id="anotace">Anotace
+<a href="#header-anotace" class="header-link">#</a>
+</h2>
 <p>Kód, který takto vznikne, není o moc rychlejší než původní Python.
 Je to tím, že sekvence příkazů ve funkci je sice převedená do C a přeložená do strojového kódu,
 ale každá operace pracuje s generickými pythonními objekty, takže musí pro každé číslo
@@ -349,7 +375,9 @@ maker).</p>
 Ale v cyklech, zvláště těch třikrát zanořených, se autor rozšíření typicky snaží žlutým řádkům
 vyhnout.
 Nejjednodušší způsob, jak toho docílit, je doplnění statických informací o typech.</p>
-<h2>Doplnění typů</h2>
+<h2 id="doplneni_typu">Doplnění typů
+<a href="#header-doplneni_typu" class="header-link">#</a>
+</h2>
 <p>Začneme u funkce <code>intmul</code>, kde doplníme informaci o tom, že parametry <code>a</code> a <code>b</code> a proměnná
 <code>result</code> jsou typu <code>int</code>.
 Parametrům stačí doplnit typ podobně jako v C, ostatní lokální proměnné potřebují definici pomocí
@@ -371,14 +399,18 @@ hodnoty:</p>
 </pre></div><p>Tím se zbavíme nákladného převodu výsledku na PyObject.
 Bohužel ale toto zrychlení pocítíme, jen když takovou funkci zavoláme
 z jiné funkce napsané v Cythonu.</p>
-<h2>Tři typy funkcí</h2>
+<h2 id="tri_typy_funkci">Tři typy funkcí
+<a href="#header-tri_typy_funkci" class="header-link">#</a>
+</h2>
 <p>Funkce jdou deklarovat třemi způsoby:</p>
 <ul>
 <li><code>def func(...):</code> je funkce, která jde volat z Pythonu i z Cythonu, ale volání z Cythonu je pomalé (argumenty a výsledek se převádí na pythonní objekty a zpět),</li>
 <li><code>cdef &lt;type&gt; func(...):</code> je funkce, která jde volat pouze z Cythonu, ale volání je rychlé (pracuje se s C typy),</li>
 <li><code>cpdef &lt;type&gt; func(...):</code> je funkce, která se z Cythonu volá rychle, ale jde volat i z Pythonu (ve skutečnosti Cython vytvoří dva druhy této funkce).</li>
 </ul>
-<h2>Třídy</h2>
+<h2 id="tridy">Třídy
+<a href="#header-tridy" class="header-link">#</a>
+</h2>
 <p>Cython umožňuje vytvářet tzv. <em>built-in</em> třídy: stejný druh tříd jako je
 např. <code>str</code> nebo <code>int</code>.
 Práce s takovými třídami je rychlejší, ale mají pevně danou strukturu.
@@ -408,7 +440,9 @@ Ani jim ani jejich instancím nelze z Pythonu nastavovat nové atributy:</p>
         <span class="o">...</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">foo</span>
 </pre></div><p>Více o definici tříd najdete v <a href="http://cython.readthedocs.io/en/latest/src/tutorial/cdef_classes.html">dokumentaci Cythonu</a>.</p>
-<h2>Používání NumPy</h2>
+<h2 id="pouzivani_numpy">Používání NumPy
+<a href="#header-pouzivani_numpy" class="header-link">#</a>
+</h2>
 <p>Pro funkci <code>matmul</code> můžeme nadefinovat číselné proměnné (<code>n</code>, <code>m</code>, <code>p</code>, <code>i</code>, <code>j</code>, <code>k</code>, <code>x</code>, <code>y</code>)
 jako <code>int</code>, ale tím si moc nepomůžeme: většinu času program stráví vybíráním a ukládáním hodnot
 z/do matic, a protože Cython nemá informace o tom, že jsou to NumPy matice, používá obecný
@@ -440,7 +474,9 @@ jazyka C. Při použití <code>matrix[a][b]</code> se ale dějí operace dvě, n
 <code>matrix[a]</code> vrací jeden řádek matice a až poté <code>[b]</code> vrací jeden prvek z
 tohoto řádku. Obě operace probíhají na úrovni Pythonu a proto budou pomalejší
 a při použití <code>--annotate</code> bude řádek s takovou operací označen žlutě.</p>
-</div><h2>Direktivy</h2>
+</div><h2 id="direktivy">Direktivy
+<a href="#header-direktivy" class="header-link">#</a>
+</h2>
 <p>Anotací typů matic se naše demo maticového násobení dostalo skoro na úroveň
 C, ale ne úplně: řádky, které pracují s maticemi, jsou ve výstupu <code>--annotate</code>
 stále trochu žluté.
@@ -472,7 +508,9 @@ Smí se použít, pouze pokud nepracujeme s pythonními objekty – například 
 operujeme jen na obsahu už existujících maticí.
 Opak je <code>with cython.gil:</code>, kterým zámek zase zamkneme – například když
 potřebujeme vyhodit výjimku.</p>
-<h2>Struktury, ukazatele a dynamická alokace</h2>
+<h2 id="struktury_ukazatele_a_dynamicka_alokace">Struktury, ukazatele a dynamická alokace
+<a href="#header-struktury_ukazatele_a_dynamicka_alokace" class="header-link">#</a>
+</h2>
 <p>Přestože v Cythonu můžete používat pythonní <em>n</em>-tice, slovníky, seznamy a další
 podobné nehomogenní typy, jejich použití je pomalé, protože vždy pracují
 s pythonními objekty.</p>
@@ -538,7 +576,9 @@ přes alokaci paměti a ukazatele.</p>
 <span class="n">cdef</span> <span class="n">coord</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="mf">2.0</span><span class="p">,</span>
                 <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span>
                 <span class="s1">&#39;z&#39;</span><span class="p">:</span><span class="o">-</span><span class="mf">0.75</span><span class="p">}</span>
-</pre></div><h2>Použití knihoven z C</h2>
+</pre></div><h2 id="pouziti_knihoven_z_c">Použití knihoven z C
+<a href="#header-pouziti_knihoven_z_c" class="header-link">#</a>
+</h2>
 <p>Pro použití C knihoven z Pythonu je lepší použít <a href="http://cffi.readthedocs.io/en/latest/">CFFI</a>.
 Ale když už píšete kód v Cythonu
 a potřebujete zavolat nějakou C funkci, můžete to udělat takto:</p>
@@ -561,7 +601,9 @@ předpřipravené, můžete tedy použít <code>cimport</code> rovnou:</p>
 
 <span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="n">NULL</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rand</span><span class="p">())</span>
-</pre></div><h2>Zkratky: <code>pyximport</code> a <code>%%cython</code></h2>
+</pre></div><h2 id="zkratky_codepyximportcode_a_codecythoncode">Zkratky: <code>pyximport</code> a <code>%%cython</code>
+<a href="#header-zkratky_codepyximportcode_a_codecythoncode" class="header-link">#</a>
+</h2>
 <p>Pro interaktivní práci v Jupyter Notebook má Cython vlastní „magii“.
 Na začátku Notebooku můžeme zadat:</p>
 <div class="highlight"><pre><span></span><span class="o">%</span><span class="n">load_ext</span> <span class="n">cython</span>
@@ -580,7 +622,9 @@ Zapíná se to následovně:</p>
 <span class="n">pyximport</span><span class="o">.</span><span class="n">install</span><span class="p">()</span>
 
 <span class="kn">import</span> <span class="nn">matmul</span>
-</pre></div><h2>Video</h2>
+</pre></div><h2 id="video">Video
+<a href="#header-video" class="header-link">#</a>
+</h2>
 <p>Před nedávnem měl <a href="https://github.com/hroncok/">Miro</a> na Středisku unixových technologií nahrávanou ukázku přepsání
 úlohy ruksaku z předmětu MI-PAA z Pythonu do Cythonu (včetně nepříjemného záseku a live
 ukázky debugování problému).

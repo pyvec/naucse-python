@@ -1,4 +1,6 @@
-<h1>Pong</h1>
+<h1 id="pong">Pong
+<a href="#header-pong" class="header-link">#</a>
+</h1>
 <div style="text-align:center;">
     <img src="naucse:static?filename=pong.png" alt="">
 </div><p>Dnes si prohloubíme znalosti programování grafických aplikací,
@@ -10,7 +12,9 @@ Pong vydala společnost <a href="https://en.wikipedia.org/wiki/Atari,_Inc.">Atar
 jako svůj první titul v roce 1972 a odstartovala tak boom herního průmyslu.</p>
 <p>Na Youtube se můžeš podívat na
 <a href="https://www.youtube.com/watch?v=fiShX2pTz9A">video, které ukazuje jak se Pong hraje</a>.</p>
-<h2>Konstanty a stav hry</h2>
+<h2 id="konstanty_a_stav_hry">Konstanty a stav hry
+<a href="#header-konstanty_a_stav_hry" class="header-link">#</a>
+</h2>
 <p>Hra Pong má jednoduchá pravidla. Musíme je ale umět
 vyjádřit v Pythonu a to není úplně jednoduché.
 Pojdmě si srovnat v hlavě, co ve hře máme.</p>
@@ -73,7 +77,9 @@ práci.</p>
 <span class="n">rychlost_mice</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># x, y slozky rychlosti micku -- nastavene v reset()</span>
 <span class="n">stisknute_klavesy</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>  <span class="c1"># sada stisknutych klaves</span>
 <span class="n">skore</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># skore dvou hracu</span>
-</pre></div><h2>Vykreslení hrací plochy</h2>
+</pre></div><h2 id="vykresleni_hraci_plochy">Vykreslení hrací plochy
+<a href="#header-vykresleni_hraci_plochy" class="header-link">#</a>
+</h2>
 <p>Nejprve si v Pygletu otevřeme okno velikosti hrací plochy.</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyglet</span>
 <span class="o">...</span>
@@ -259,10 +265,14 @@ konstanty SIRKA, VYSKA, ODSAZENI_TEXTU a VELIKOST_FONTU.</p>
 </pre></div>
     </div>
 </div><p>Hurá, teď už máme vykreslené hrací pole. Pojďme ho rozhýbat.</p>
-<h2>Dynamika hry</h2>
+<h2 id="dynamika_hry">Dynamika hry
+<a href="#header-dynamika_hry" class="header-link">#</a>
+</h2>
 <p>Teď to začne být zajímavé. Nejdřív rozhýbeme pálky,
 protože je to jednodušší, pak míček.</p>
-<h3>Vstup od uživatele</h3>
+<h3 id="vstup_od_uzivatele">Vstup od uživatele
+<a href="#header-vstup_od_uzivatele" class="header-link">#</a>
+</h3>
 <p>Potřebujeme pohybovat s pálkami podle vstupu od uživatele.
 Dokud bude uživatel držet např. klávesu <kbd>S</kbd>, levá pálka
 pojede dolů.
@@ -344,7 +354,9 @@ pustil.</p>
     <span class="n">on_key_release</span><span class="o">=</span><span class="n">pusteni_klavesy</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div><h3>Pohyb pálek</h3>
+</pre></div><h3 id="pohyb_palek">Pohyb pálek
+<a href="#header-pohyb_palek" class="header-link">#</a>
+</h3>
 <p>Když už jsme dokázali zpracovat vstup od uživatele,
 můžeme podle něj pohnout s pálkami.
 Pohyb předmětů budeme provádět ve funkci <code>obnov_stav(dt)</code>,
@@ -386,7 +398,9 @@ Analogicky to provedeme, když se blíží hornímu okraji.</p>
 <span class="n">pyglet</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">schedule</span><span class="p">(</span><span class="n">obnov_stav</span><span class="p">)</span>
 <span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div><p>a podívej se na výsledek.</p>
-<h3>Rozehrání</h3>
+<h3 id="rozehrani">Rozehrání
+<a href="#header-rozehrani" class="header-link">#</a>
+</h3>
 <p>Než začneme míček odrážet od stěn, musíme ho nejprve
 uvést do pohybu. Vystřelíme ho ze středu hrací plochy
 do náhodného směru. Toto se také stane v momentě, kdy
@@ -443,7 +457,9 @@ funkce <code>obnov_stav(dt)</code> následující kód:</p>
     <span class="n">pozice_mice</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">rychlost_mice</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt</span>
 </pre></div><p>Zkus, co se teď stane při spuštění hry.
 Míček by měl vyletět pokaždé do jiného směru.</p>
-<h3>Odrážení míčku</h3>
+<h3 id="odrazeni_micku">Odrážení míčku
+<a href="#header-odrazeni_micku" class="header-link">#</a>
+</h3>
 <p>Míček nám teď nekontrolovaně vyletí z hřiště.
 Musíme tedy zařídit, aby se odrážel od stěn.
 Jelikož úhel dopadu se rovná úhlu odrazu,
@@ -493,7 +509,9 @@ prohrál kolo a my máme přičíst jeho soupeři bod a
         <span class="k">else</span><span class="p">:</span>
             <span class="n">skore</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="n">reset</span><span class="p">()</span>
-</pre></div><h2>Závěr</h2>
+</pre></div><h2 id="zaver">Závěr
+<a href="#header-zaver" class="header-link">#</a>
+</h2>
 <p>Hurá, prokousali jsme se k zdárnému konci Pongu!
 Máš teď plně funkční interaktivní grafickou
 hru zakládající se na reálné předloze. :)</p>

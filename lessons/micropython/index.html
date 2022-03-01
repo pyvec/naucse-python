@@ -1,4 +1,6 @@
-<h1>MicroPython na malém zařízení</h1>
+<h1 id="micropython_na_malem_zarizeni">MicroPython na malém zařízení
+<a href="#header-micropython_na_malem_zarizeni" class="header-link">#</a>
+</h1>
 <div class="admonition note"><p class="admonition-title">Tahle sekce bohužel nejde jednoduše projít z domu.</p>
 <p>Využíváme speciální vybavení, které je potřeba nejdřív
 sehnat. Máš-li možnost se dostat na sraz, nebo
@@ -60,7 +62,9 @@ Zkontroluj si, jestli jsou všechny nožičky rovné;
 kdyby byla některá ohnutá, tak ji (nejlépe s pomocí
 kouče) narovnej nebo si vezmi jinou destičku.</p>
 <p><br style='clear: both;'></p>
-<h2>Instalace</h2>
+<h2 id="instalace">Instalace
+<a href="#header-instalace" class="header-link">#</a>
+</h2>
 <p>Bohužel se dnes neobejdeme bez instalace. Musíš naučit
 svůj počítač, aby si s destičkou povídal.</p>
 <p>Nejdřív si do virtuálního prostředí nainstaluj program Ampy od Adafruitu.
@@ -75,7 +79,9 @@ nabíječkám) jsou často nepoužitelné.</p>
 Kdyby něco nefungovalo, poraď se s koučem.
 Původní (anglický) návod k této části je na
 <a href="http://docs.micropython.org/en/latest/pyboard/pyboard/tutorial/repl.html">stránkách MicroPythonu</a>.</p>
-<h3>Linux</h3>
+<h3 id="linux">Linux
+<a href="#header-linux" class="header-link">#</a>
+</h3>
 <p>Na správně nastaveném počítači stačí zadat:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>picocom -b <span class="m">115200</span> --flow n /dev/ttyUSB0
 </pre></div><p>Pokud příkaz neskončí s chybou, stiskni tlačítko <code>RST</code> na modulu.
@@ -121,7 +127,9 @@ se ti přidat do skupiny, dá se to obejít tak,
 že místo <code>picocom</code> použiješ <code>sudo picocom</code>.</p>
 </li>
 </ul>
-<h3>Windows</h3>
+<h3 id="windows">Windows
+<a href="#header-windows" class="header-link">#</a>
+</h3>
 <p>MicroPython se přihlásí jako COM port. Otevři
 správce zařízení a zjisti, který COM port to je (kouč s tím pomůže).</p>
 <p>Nebylo-li zařízení nalezeno, je potřeba nainstalovat
@@ -141,7 +149,9 @@ do políčka <em>Saved Sessions</em> zadej <em>MicroPython</em> a klikni OK.</p>
 <p>Nakonec klikni <em>Open</em>. Mělo by se otevřít
 okýnko podobné konzoli, kde se, když zmáčkneš
 na modulu <code>RST</code>, objeví nakonec tři zobáčky: <code>&gt;&gt;&gt;</code>.</p>
-<h3>macOS</h3>
+<h3 id="macos">macOS
+<a href="#header-macos" class="header-link">#</a>
+</h3>
 <p>V příkazové řádce zadej:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>screen /dev/tty.usbmodem* <span class="m">115200</span>
 </pre></div><p>a stiskni Enter.
@@ -149,7 +159,9 @@ Pak na modulu zmáčkni <code>RST</code>.
 Měly by se nakonec objevit tři zobáčky, <code>&gt;&gt;&gt;</code>.</p>
 <p>Nejde-li to, je možná potřeba nainstalovat driver. Ten se dá stáhnout
 z <a href="https://tzapu.com/ch340-ch341-serial-adapters-macos-sierra/">tohoto blogu</a>.</p>
-<h2>MicroPython – taky Python</h2>
+<h2 id="micropython_taky_python">MicroPython – taky Python
+<a href="#header-micropython_taky_python" class="header-link">#</a>
+</h2>
 <p>Tak jako máš na počítači nainstalovaný operační
 systém, na vývojové desce je takzvaný <em>firmware</em>,
 program, který ovládá všechny ty drátky,
@@ -187,7 +199,9 @@ náhodné číslo od 0 do 255 se dá získat pomocí:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">urandom</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">urandom</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="go">61</span>
-</pre></div><h2>Vstup</h2>
+</pre></div><h2 id="vstup">Vstup
+<a href="#header-vstup" class="header-link">#</a>
+</h2>
 <p>MicroPython na malé destičce obsahuje některé
 moduly, které jinde nenajdeš. Ten hlavní se jmenuje
 <code>machine</code> a zpřístupňuje základní funkce zařízení. Zkus si:</p>
@@ -212,7 +226,9 @@ kterým se tak dá ono napětí ovládat.
 Informace o tom, která nožička je kam připojená,
 máš na <a href="https://pyvec.github.io/cheatsheets/micropython/nodemcu-cs.pdf">taháku</a> –
 můžeš si zkontrolovat, že Pin(0) u sebe má poznámku FLASH.</p>
-<h2>Obvod</h2>
+<h2 id="obvod">Obvod
+<a href="#header-obvod" class="header-link">#</a>
+</h2>
 <p>Teď na chvíli necháme programování a postavíme si elektrický obvod.
 Vezmi si modrou svítivou diodu (LED, „světýlko”) a
 nepájivé pole („hloupou destičku”).
@@ -268,7 +284,9 @@ V elektronice používáme rozdíl oproti „zemi” – napětí
 na nožičce <code>G</code>. Stanovíme si, že tam je
 0 voltů a ostatní napětí počítáme vzhledem k ní.
 Na nožičce <code>3V</code> je tedy napětí 3,3 V vzhledem k zemi.</p>
-</div><h2>Výstup</h2>
+</div><h2 id="vystup">Výstup
+<a href="#header-vystup" class="header-link">#</a>
+</h2>
 <p>Proč jsme diodu na to, aby se rozsvítila,
 připojili k modulu a ne jen k baterce?
 Ten modul je trošku složitější zařízení než baterka a jedna důležitá věc,
@@ -307,7 +325,9 @@ a nastavovat podle něj stav LED.</p>
     <span class="n">pin_diody</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">pin_tlacitka</span><span class="o">.</span><span class="n">value</span><span class="p">())</span>
 </pre></div>
     </div>
-</div><h2>Pouštění kódu ze souboru</h2>
+</div><h2 id="pousteni_kodu_ze_souboru">Pouštění kódu ze souboru
+<a href="#header-pousteni_kodu_ze_souboru" class="header-link">#</a>
+</h2>
 <p>Jak začneš psát trochu složitější programy,
 mohlo by se stát, že tě konzole MicroPythonu začne trochu štvát.
 Špatně se v ní opravují chyby a automatické odsazování funguje jen většinou.
@@ -337,7 +357,9 @@ Ke spuštění budeš potřebovat znát port:</p>
 </pre></div><p>Program by měl blikat diodou.
 Využívá k tomu funkci <code>time.sleep()</code>, která počká daný počet vteřin –
 tedy <code>time.sleep(1/2)</code> zastaví program na půl sekundy.</p>
-<h2>Velice rychle blikat</h2>
+<h2 id="velice_rychle_blikat">Velice rychle blikat
+<a href="#header-velice_rychle_blikat" class="header-link">#</a>
+</h2>
 <p>Jedna z nevýhod „našeho” čipu ESP8266 je, že na svých
 nožičkách umí nastavovat jen dvě hodnoty – 3,3 V a zem, jedničku a nulu.
 Dioda tak buď svítí, nebo nesvítí – nedá se
@@ -397,7 +419,9 @@ setinu vteřiny zhasne.</p>
 <p>PWM se dá zrušit metodou <code>pwm.deinit()</code>.
 Jako s otvíráním souborů, je dobré po sobě uklidit –
 i když zatím můžeš jednoduše restartovat celé zařízení.</p>
-<h2>Tóny a melodie</h2>
+<h2 id="tony_a_melodie">Tóny a melodie
+<a href="#header-tony_a_melodie" class="header-link">#</a>
+</h2>
 <p>Vezmi si další součástku – piezobudič, neboli „bzučítko”.</p>
 <p>Tahle malá věc obsahuje speciální materiál, který se,
 když ho připojíš ke zdroji napětí, trošku roztáhne.
@@ -454,7 +478,9 @@ Hz – <a href="https://en.wikipedia.org/wiki/Hertz">Hertz</a> – je jednotka f
 </table>
 <p>Naprogramuj písničku! Potřebuješ-li víc not, pusť si <a href="naucse:static?filename=noty.py">program</a>,
 který vypočítá další frekvence.</p>
-<h2>Další ovládání</h2>
+<h2 id="dalsi_ovladani">Další ovládání
+<a href="#header-dalsi_ovladani" class="header-link">#</a>
+</h2>
 <p>Teď si vezmi dvě tlačítka a připoj je k modulu:
 <code>GND</code> vždycky na <code>G</code>, <code>VCC</code> vždycky na <code>3V</code> a
 <code>OUT</code> u jednoho tlačítka na <code>D1</code> a u druhého na <code>D2</code>.</p>
@@ -466,7 +492,9 @@ Mělo by to být podobné jako u příkladu s tlačítkem FLASH.</p>
 <p>Zvládneš napsat program, který bude bzučet bzučítkem
 a přitom se jedním tlačítkem bude dát zvyšovat tón a druhým snižovat?</p>
 <p>Program si (na svém počítači) ulož, ať se k němu můžeš vrátit.</p>
-<h2>Rotace</h2>
+<h2 id="rotace">Rotace
+<a href="#header-rotace" class="header-link">#</a>
+</h2>
 <p>Čas na další součástku! Tentokrát to bude <em>servomotor</em>.</p>
 <p>Servomotor je součástka, která má v sobě zabudovaný
 ovladač, se kterým si naše zařízení může povídat
@@ -507,7 +535,9 @@ konzole přestane fungovat, zkus ho odpojit a znovu
 připojit. Kdyby to nepomohlo, motorek ti dneska
 nebude fungovat. Za chvíli si řekneme proč; zatím (jsi-li na kurzu)
 se přidej do dvojice k někomu, komu to funguje.</p>
-<h2>Poznámka o napájení a napětí</h2>
+<h2 id="poznamka_o_napajeni_a_napeti">Poznámka o napájení a napětí
+<a href="#header-poznamka_o_napajeni_a_napeti" class="header-link">#</a>
+</h2>
 <p>K tomu, aby se otočil motor, je potřeba mnohem víc
 energie, než k rozsvícení světýlka.
 Z USB z počítače té energie dostaneš docela málo,
@@ -540,7 +570,9 @@ nejčastěji takhle:</p>
 <li>Zem na zdroji napětí na <code>G</code> na desce</li>
 </ul>
 <p>Pozor, 5V nepřipojuj jinam než na <code>VIN</code>!</p>
-<h2>Napětí</h2>
+<h2 id="napeti">Napětí
+<a href="#header-napeti" class="header-link">#</a>
+</h2>
 <p>Další důvod, proč ti servomotor někdy nefunguje dobře,
 je to, že je stavěný na 5 voltů, ne na 3,3 které
 poskytuje modul.</p>
@@ -570,7 +602,9 @@ který převede třívoltový signál na pětivoltový.</li>
 <p>Kdybys to někdy potřebovala, ozvi se koučům – i po
 workshopu ti určitě rádi poradí nebo ti aspoň řeknou
 koho se zeptat!</p>
-<h2>Barevná světýlka</h2>
+<h2 id="barevna_svetylka">Barevná světýlka
+<a href="#header-barevna_svetylka" class="header-link">#</a>
+</h2>
 <p>Tak, dost teorie; vezmi si novou hračku!
 Tentokrát to bude LED pásek.</p>
 <p>Na pásku máš 8 malých čtverečků.

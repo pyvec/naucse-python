@@ -1,4 +1,6 @@
-<h1>Webové API</h1>
+<h1 id="webove_api">Webové API
+<a href="#header-webove_api" class="header-link">#</a>
+</h1>
 <p>Jak už bylo řečeno v <a href="naucse:page?lesson=intro/json">lekci o JSON</a>,
 hlavní výhoda formátu JSON je, že se na Internetu rozšířil nejvíc.
 Pojďme toho využít!</p>
@@ -11,7 +13,9 @@ dostaneme data ve formátu, kterým rozumí počítače –
 a v dnešní době to bude většinou formát JSON.</p>
 <p>Z minulých lekcí bys měl/a mít založený účet na github.com,
 tak se zkusme zeptat Githubu, co o nás ví.</p>
-<h2>Autorizace</h2>
+<h2 id="autorizace">Autorizace
+<a href="#header-autorizace" class="header-link">#</a>
+</h2>
 <p>První, a mnohdy nejsložitější, krok k použití API
 je přihlášení. Počítače se totiž přihlašují jinak
 než lidi a problematika bezpečnosti a oprávnění by vydala na samostatný kurz.
@@ -27,7 +31,9 @@ My to uděláme co nejjednodušeji, ať se rychle dostaneme k jádru věci:</p>
 opravňuje pracovat s Githubem pod tvým jménem!
 Drž ho v tajnosti. Kdyby se přece jen dostalo „ven”, na stránce
 <a href="https://github.com/settings/tokens">Personal Accesss Tokens</a> ho deaktivuj.</p>
-</div><h2>Requests</h2>
+</div><h2 id="requests">Requests
+<a href="#header-requests" class="header-link">#</a>
+</h2>
 <p>K práci s internetovými stránkami použijeme knihovnu Requests.
 V aktivovaném virtuálním prostředí si ji nainstaluj příkazem:</p>
 <div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>python -m pip install requests
@@ -49,7 +55,9 @@ HTML kód, který se objeví když v prohlížeči dáš
 a ze kterého prohlížeč umí vykreslit stránku.</p>
 <p>Ale my nechceme obsah pro lidi.
 Podívejme se, co Github zpřístupňuje počítačům.</p>
-<h2>Uživatelský účet</h2>
+<h2 id="uzivatelsky_ucet">Uživatelský účet
+<a href="#header-uzivatelsky_ucet" class="header-link">#</a>
+</h2>
 <p>Zkus, co dělá tento kód:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
@@ -77,14 +85,18 @@ udržovat v tajnosti).</p>
 se dá pracovat jako s každým jiným slovníkem.
 Třeba adresu svého obrázku můžeš vypsat pomocí:</p>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;avatar_url&#39;</span><span class="p">])</span>
-</pre></div><h2>API Githubu</h2>
+</pre></div><h2 id="api_githubu">API Githubu
+<a href="#header-api_githubu" class="header-link">#</a>
+</h2>
 <p>API Githubu toho umí mnohem víc. Třeba na adrese
 <a href="https://api.github.com/emojis">https://api.github.com/emojis</a> na tebe čeká
 slovník s adresami malých obrázků.
 (Tenhle slovník funguje jako vyhledávací tabulka.)
 Celé API je zdokumentováno na adrese
 <a href="https://developer.github.com/v3/">developer.github.com</a>.</p>
-<h2>Interakce</h2>
+<h2 id="interakce">Interakce
+<a href="#header-interakce" class="header-link">#</a>
+</h2>
 <p>Pomocí webových API se dají informace nejen číst, ale i měnit.</p>
 <p>Na stránce
 <a href="https://github.com/pyvec/naucse.python.cz/stargazers">github.com/pyvec/naucse.python.cz/stargazers</a>

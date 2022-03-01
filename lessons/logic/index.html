@@ -1,4 +1,6 @@
-<h1>Logika hry</h1>
+<h1 id="logika_hry">Logika hry
+<a href="#header-logika_hry" class="header-link">#</a>
+</h1>
 <p>Už umíš vykreslit „fotku“ hada.
 Hadí videohra ale nebude jen statický obrázek.
 Had se bude hýbat!</p>
@@ -8,7 +10,9 @@ Had se bude hýbat!</p>
 XXX - Nestíhám dopsat, omlouvám se
 -->
 
-<h1>Rozhýbejme hada</h1>
+<h1 id="rozhybejme_hada">Rozhýbejme hada
+<a href="#header-rozhybejme_hada" class="header-link">#</a>
+</h1>
 <p>Tak, ale teď už k samotné hře!</p>
 <p>Tvůj program teď, doufám, vypadá nějak takhle:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
@@ -55,7 +59,9 @@ pyglet.clock.schedule_interval(move, 1/6)</code></pre></div><p>Funguje?
 Tak do téhle funkce ještě přidej <code>del snake[0]</code>, aby had nerostl donekonečna.
 Víš co tenhle příkaz dělá? Jestli ne, koukni znovu na poznámky k seznamům!</p>
 <p>A had se hýbe… Jen ho ještě nejde ovládat.</p>
-<h2>Ven se stavem</h2>
+<h2 id="ven_se_stavem">Ven se stavem
+<a href="#header-ven_se_stavem" class="header-link">#</a>
+</h2>
 <p>Než uděláme interaktivního hada, zkusíme trošku uklidit.
 Program se nám rozrůstá, a za chvíli bude složité se v něm vyznat.
 Můžeme tomu trochu pomoct tím, že ho rozdělíme do dvou souborů:
@@ -167,7 +173,9 @@ Pro kontrolu můžeš svůj program porovnat s mým (ale nejde o jediné správ
 <span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
     </div>
-</div><h2>Ovládání</h2>
+</div><h2 id="ovladani">Ovládání
+<a href="#header-ovladani" class="header-link">#</a>
+</h2>
 <p>Nyní k onomu slíbenému ovládání. Respektive nejdřív k změnám směru.</p>
 <p>Had ze hry se plazí stále stejným směrem, dokud hráč nezmáckne klávesu.
 Had z naší ukázky se plazí doprava; dokážeš zařídit, aby se místo toho
@@ -258,7 +266,9 @@ Určitě ale při zkoušení narazíš na pár věcí, které je potřeba doděl
 <li>Hra by měla skončit, když had narazí sám do sebe.</li>
 </ul>
 <p>Pojďme je vyřešit, jednu po druhé.</p>
-<h2>Zatím dobrý, teď ale narazíme</h2>
+<h2 id="zatim_dobry_ted_ale_narazime">Zatím dobrý, teď ale narazíme
+<a href="#header-zatim_dobry_ted_ale_narazime" class="header-link">#</a>
+</h2>
 <p>„Hadí“ hry jako ta naše mají dvě varianty: buď je kolem hřiště „zeď“
 a hráč při nárazu do okraje prohraje, nebo je hřiště „nekonečné“ – had okrajem
 proleze a objeví se na druhé straně.</p>
@@ -337,7 +347,9 @@ a okýnko (<code>window</code>) velikost nastav.
 Použij celočíselné dělení (se zbytkem), aby velikost byla v celých číslech:</p>
 <div class="highlight"><pre><span></span><span class="n">state</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="n">TILE_SIZE</span>
 <span class="n">state</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">height</span> <span class="o">//</span> <span class="n">TILE_SIZE</span>
-</pre></div><h2>Nekonečná magická klec</h2>
+</pre></div><h2 id="nekonecna_magicka_klec">Nekonečná magická klec
+<a href="#header-nekonecna_magicka_klec" class="header-link">#</a>
+</h2>
 <p>Teď místo konce hry při naražení necháme hada „projít“ a objevit se na druhé
 straně.</p>
 <p>Nemělo by to být tak složité udělat – stačí místo <code>exit()</code> vždy správně
@@ -401,7 +413,9 @@ Odborně se tomu „takhle“ říká
 dělení záporných čísel. Proto dodám, že ho Python schválně
 <a href="https://docs.python.org/3/reference/expressions.html#binary-arithmetic-operations">definuje</a>
 <em>vhodně</em> pro tento účel; <code>a % b</code> má vždy stejné znaménko jako <code>b</code>.</p>
-</div><h2>Krmení</h2>
+</div><h2 id="krmeni">Krmení
+<a href="#header-krmeni" class="header-link">#</a>
+</h2>
 <p>Tak. Had je v pasti, už nemůže vylézt.
 Co dál?</p>
 <p>Teď se musíme o hada postarat: pravidelně ho krmit.
@@ -471,7 +485,9 @@ Běda ale těm, kdo opisují kód bez toho aby mu rozuměli!</p>
             <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">snake</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
     </div>
-</div><h3>Nové jídlo</h3>
+</div><h3 id="nove_jidlo">Nové jídlo
+<a href="#header-nove_jidlo" class="header-link">#</a>
+</h3>
 <p>Když už had umí jíst, je potřeba mu zajistit pravidelný přísun jídla.
 Nejlépe tak, že se každé snězené jídlo nahradí novým.</p>
 <p>Přidej do třídy <code>State</code> následující novou metodu, která umí přidat jídlo:</p>
@@ -553,7 +569,9 @@ jídla napsat:</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_food</span><span class="p">()</span>
 </pre></div><p>Pak budou na začátku hry na hada čekat dvě náhodné jídla.</p>
     </div>
-</div><h2>Konec</h2>
+</div><h2 id="konec">Konec
+<a href="#header-konec" class="header-link">#</a>
+</h2>
 <p>Had teď může narůst do obrovských rozměrů – a hru stále nelze prohrát.
 Zařídíme tedy, aby hra skončila, když had narazí sám do sebe.</p>
 <p>Na rozdíl od <code>0/1</code>, které jsme použili výše, buďme trochu opatrnější.
@@ -607,7 +625,9 @@ okamžitě ukončí provádění metody).</li>
 hada.</li>
 </ul>
     </div>
-</div><h2>Vylepšení ovládání</h2>
+</div><h2 id="vylepseni_ovladani">Vylepšení ovládání
+<a href="#header-vylepseni_ovladani" class="header-link">#</a>
+</h2>
 <p>Poslední úprava kódu!</p>
 <p>Možná si všimneš – zvlášť jestli jsi už nějakou verzi hada hrál/a,
 že ovládání tvé nové hry je trošku frustrující.
@@ -663,7 +683,9 @@ Kód tedy bude vypadat takto:</p>
             <span class="n">new_x</span><span class="p">,</span> <span class="n">new_y</span> <span class="o">=</span> <span class="n">new_direction</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">old_x</span><span class="p">,</span> <span class="n">old_y</span><span class="p">)</span> <span class="o">!=</span> <span class="p">(</span><span class="o">-</span><span class="n">new_x</span><span class="p">,</span> <span class="o">-</span><span class="n">new_y</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">snake_direction</span> <span class="o">=</span> <span class="n">new_direction</span>
-</pre></div><h2>A to je vše?</h2>
+</pre></div><h2 id="a_to_je_vse">A to je vše?
+<a href="#header-a_to_je_vse" class="header-link">#</a>
+</h2>
 <p>Gratuluji, máš funkční a hratelnou hru!
 Doufám že jsi na sebe hrdý/á!</p>
 <p>Dej si něco sladkého, zasloužíš si to.</p>

@@ -1,4 +1,6 @@
-<h1>Requests</h1>
+<h1 id="requests">Requests
+<a href="#header-requests" class="header-link">#</a>
+</h1>
 <p>Knihoven pro HTTP klienty (tedy “programy, které stahují webové stránky“)
 je celá řada.
 Jedna z nich, <a href="https://docs.python.org/3/library/urllib.request.html#module-urllib.request"><code>urllib.request</code></a>, je dokonce součástí standardní knihovny Pythonu.
@@ -41,7 +43,9 @@ které vysvětluje vše potřebné.</p>
 To se většinou nedělá a webové API to často ani nepodporují.
 Pokud na GitHub používáte dvoufaktorovou autentizaci, příklad nebude fungovat.</p>
 </div><p>Příklady použití pro další HTTP metody najdete v <a href="http://docs.python-requests.org/en/master/user/quickstart/">dokumentaci</a>.</p>
-<h2>Použití session</h2>
+<h2 id="pouziti_session">Použití session
+<a href="#header-pouziti_session" class="header-link">#</a>
+</h2>
 <p>Hlavně v budoucnu se nám bude hodit použití tzv.
 <a href="http://docs.python-requests.org/en/master/user/advanced/#session-objects"><em>session</em></a>.</p>
 <p>Session má několik výhod.
@@ -61,7 +65,9 @@ k testování HTTP dotazů:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/headers&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x-test2&#39;</span><span class="p">:</span> <span class="s1">&#39;true&#39;</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="go">{&#39;headers&#39;: {&#39;Accept&#39;: &#39;*/*&#39;, &#39;Accept-Encoding&#39;: &#39;gzip, deflate&#39;, &#39;Connection&#39;: &#39;close&#39;, &#39;Cookie&#39;: &#39;mipyt=best&#39;, &#39;Host&#39;: &#39;httpbin.org&#39;, &#39;User-Agent&#39;: &#39;python-requests/2.19.1&#39;, &#39;X-Test&#39;: &#39;true&#39;, &#39;X-Test2&#39;: &#39;true&#39;}}</span>
-</pre></div><h2>GitHub API</h2>
+</pre></div><h2 id="github_api">GitHub API
+<a href="#header-github_api" class="header-link">#</a>
+</h2>
 <p>Podíváme se teď, podobně jako v úvodním příkladu, na <a href="https://developer.github.com/v3">GitHub API</a>,
 které má poměrně jednoduchou autentizaci (od GitHubu přímo
 získáte token). Stačí jít do <a href="https://github.com/settings/tokens">nastavení</a> a vyrobit nový token
@@ -124,7 +130,9 @@ Můžete ale zkontrolovat návratový stav:</p>
 </pre></div><p>Pokud hvězdičku chcete odebrat, použijte metodu DELETE.
 My ale věříme, že ji odebrat nechcete :)</p>
 <p><a href="https://developer.github.com/v3/">Dokumentace</a> ke GitHub API.</p>
-<h2>Chraňte své tokeny</h2>
+<h2 id="chrante_sve_tokeny">Chraňte své tokeny
+<a href="#header-chrante_sve_tokeny" class="header-link">#</a>
+</h2>
 <p>Když ukládáte skript do gitu, mějte na paměti, že tokeny a klíče do něj nikdy
 nepatří. Můžete je uložit do konfiguračního souboru, který bude gitem ignorován,
 například takhle:</p>

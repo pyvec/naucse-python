@@ -1,4 +1,6 @@
-<h1>Slovníky</h1>
+<h1 id="slovniky">Slovníky
+<a href="#header-slovniky" class="header-link">#</a>
+</h1>
 <p>Další základní datový typ, který si představíme –
 po číslech, řetězcích, seznamech a <var>n</var>-ticích –
 jsou <em>slovníky</em> (angl. <em>dictionary</em>, <code>dict</code>).</p>
@@ -33,7 +35,9 @@ ze seznamu, jen místo indexu (pozice) použiješ klíč:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">ja</span><span class="p">[</span><span class="s1">&#39;čísla&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ja</span>
 <span class="go">{&#39;jméno&#39;: &#39;Anna&#39;, &#39;město&#39;: &#39;Brno&#39;, &#39;jazyk&#39;: &#39;Python&#39;}</span>
-</pre></div><h2>Vyhledávací tabulka</h2>
+</pre></div><h2 id="vyhledavaci_tabulka">Vyhledávací tabulka
+<a href="#header-vyhledavaci_tabulka" class="header-link">#</a>
+</h2>
 <p>Trochu jiné použití slovníku, než sdružování
 „různých“ typů informací, je takzvaná
 <em>vyhledávací tabulka</em> (angl. <em>lookup table</em>).
@@ -59,7 +63,9 @@ přiřazeny překlady.</p>
     <span class="s1">&#39;zelí&#39;</span><span class="p">:</span> <span class="s1">&#39;zelená&#39;</span><span class="p">,</span>
     <span class="s1">&#39;mrkev&#39;</span><span class="p">:</span> <span class="s1">&#39;červená&#39;</span><span class="p">,</span>
 <span class="p">}</span>
-</pre></div><h2>Iterace</h2>
+</pre></div><h2 id="iterace">Iterace
+<a href="#header-iterace" class="header-link">#</a>
+</h2>
 <p>Když dáš slovník do cyklu <code>for</code>, dostaneš klíče:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">popisy_funkci</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;len&#39;</span><span class="p">:</span> <span class="s1">&#39;délka&#39;</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">:</span> <span class="s1">&#39;řetězec&#39;</span><span class="p">,</span> <span class="s1">&#39;dict&#39;</span><span class="p">:</span> <span class="s1">&#39;slovník&#39;</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">klic</span> <span class="ow">in</span> <span class="n">popisy_funkci</span><span class="p">:</span>
@@ -95,7 +101,9 @@ do slovníku přidávat záznamy, ani záznamy odebírat:</p>
   <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">RuntimeError</span><span class="p">:</span> <span class="n">dictionary</span> <span class="n">changed</span> <span class="n">size</span> <span class="n">during</span> <span class="n">iteration</span>
 </pre></div><p>Hodnoty u už existujících klíčů ale měnit můžeš.</p>
-<h2>Jak udělat slovník</h2>
+<h2 id="jak_udelat_slovnik">Jak udělat slovník
+<a href="#header-jak_udelat_slovnik" class="header-link">#</a>
+</h2>
 <p>Slovník se dá vytvořit dvěma způsoby.
 První, pomocí {složených závorek}, jsme už viděli;
 další využívají funkci <code>dict</code>.
@@ -127,7 +135,9 @@ Například takhle nejde zadat jako klíč řetězec
 <code>"def"</code> nebo <code>"propan-butan"</code>.</p>
 </div><p>Pojmenované argumenty jde kombinovat s ostatními
 způsoby vytvoření <code>dict</code>.</p>
-<h2>A to je zatím ke slovníkům vše</h2>
+<h2 id="a_to_je_zatim_ke_slovnikum_vse">A to je zatím ke slovníkům vše
+<a href="#header-a_to_je_zatim_ke_slovnikum_vse" class="header-link">#</a>
+</h2>
 <p>Chceš-li mít všechny triky, které  slovníky umí,
 pěkně pohromadě, můžeš si stáhnout
 <a href="https://pyvec.github.io/cheatsheets/dicts/dicts-cs.pdf">Slovníkový tahák</a>.</p>

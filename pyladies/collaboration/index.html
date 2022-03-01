@@ -1,4 +1,6 @@
-<h1>Spolupráce</h1>
+<h1 id="spoluprace">Spolupráce
+<a href="#header-spoluprace" class="header-link">#</a>
+</h1>
 <p>„Opravdové” programy zřídka vznikají prací jednoho člověka.
 Víc hlav víc ví, a tak je dobré si na projekt vytvořit tým.</p>
 <p>Každý člen týmu potřebuje mít přístup k práci ostatních.
@@ -15,7 +17,9 @@ zvládnout se to dá.)</p>
 něj soubor se svým jménem. Příklad je na
 <a href="https://github.com/naucse/prezencka">naucse/prezencka</a>.
 Nasdílej s účastníky příkaz na jeho naklonování (přes https).</p>
-</div><h2>Open Source</h2>
+</div><h2 id="open_source">Open Source
+<a href="#header-open_source" class="header-link">#</a>
+</h2>
 <p>Nejde mluvit o Gitu a spolupráci a nezastavit se chvíli u otevřeného
 zdrojového kódu.
 První programy vznikaly v akademické sféře, kde byly zcela přirozeně sdíleny,
@@ -97,7 +101,9 @@ v uzavřeném týmu – ale na druhou stranu,
 máš důvod proč to nedělat?
 Zveřejňovat zdrojový kód se hodí už jen pro to,
 aby ti s ním mohli zkušenější programátoři snadněji pomáhat.</p>
-<h2>GitHub</h2>
+<h2 id="github">GitHub
+<a href="#header-github" class="header-link">#</a>
+</h2>
 <p>Na Internetu existuje spousta stránek, kam se dají nahrávat gitové repozitáře
 s kódem – např. <a href="https://gitlab.com/">GitLab</a>,
 <a href="https://bitbucket.org">BitBucket</a>,
@@ -107,7 +113,9 @@ Aktuálně nejpopulárnější je ale <a href="https://github.com">GitHub</a>, k
 ukážeme.</p>
 <p>Jestli ještě nemáš uživatelský účet na <a href="https://github.com">github.com</a>, jdi
 tam a založ si ho.</p>
-<h2>Naklonování repozitáře <small>(<code>git clone</code>)</small></h2>
+<h2 id="naklonovani_repozitare_smallcodegit_clonecodesmall">Naklonování repozitáře <small>(<code>git clone</code>)</small>
+<a href="#header-naklonovani_repozitare_smallcodegit_clonecodesmall" class="header-link">#</a>
+</h2>
 <p>Pro začátek zkusíme práci s repozitářem, který už vytvořil někdo jiný.
 V příkazové řádce zadej příkaz, který ti oznámí kouč; něco jako</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>git clone https://github.com/naucse/prezencka
@@ -133,7 +141,9 @@ přezdívku, oblíbené jídlo nebo pár náhodných písmen. Ale:</p>
 <li>když budeš pojmenovávat soubor, buď originální, aby nedošlo ke konfliktům, a</li>
 <li>nesdílej nic, co nemáš právo sdílet (např. texty moderních písní).</li>
 </ul>
-<h2>Vytvoření větve</h2>
+<h2 id="vytvoreni_vetve">Vytvoření větve
+<a href="#header-vytvoreni_vetve" class="header-link">#</a>
+</h2>
 <p>Pomocí <code>git branch</code> zjisti, na jaké jsi aktuálně větvi.
 Měla by to být větev <code>master</code>.</p>
 <p>Tuhle „základní“ větev je dobré používat jen na revize, na kterých se už
@@ -143,7 +153,9 @@ udělej novou větev a přepni se do ní.
 Například pomocí:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>git branch pridani-jmena
 <span class="gp">$ </span>git checkout pridani-jmena
-</pre></div><h2>Posílání změn <small>(<code>git push</code>)</small></h2>
+</pre></div><h2 id="posilani_zmen_smallcodegit_pushcodesmall">Posílání změn <small>(<code>git push</code>)</small>
+<a href="#header-posilani_zmen_smallcodegit_pushcodesmall" class="header-link">#</a>
+</h2>
 <p>Teď se do projektu zapoj.
 Přidej soubor pojmenovaný podle tvého jména (nebo přezdívky)
 a dej ho do gitu (<code>git add <var>...</var></code>; <code>git commit</code>).</p>
@@ -230,7 +242,9 @@ větev <code>pridani-jmena</code>.</p>
 <p>Funguje? Podívej se na
 <code>https://github.com/<i>tvojejmeno</i>/prezencka</code>
 v prohlížeči a ujisti se, že tam tvoje změny jsou.</p>
-<h2>Žádost o začlenění <small>(<em>pull request</em>)</small></h2>
+<h2 id="zadost_o_zacleneni_smallempull_requestemsmall">Žádost o začlenění <small>(<em>pull request</em>)</small>
+<a href="#header-zadost_o_zacleneni_smallempull_requestemsmall" class="header-link">#</a>
+</h2>
 <p>Teď zbývá požádat autory původního projektu,
 aby změny z tvého sdíleného repozitáře přidali do svojí kopie.
 GitHub na to má mechanismus zvaný <em>pull request</em> (žádost o začlenění).</p>
@@ -261,7 +275,9 @@ pár dnech diskuse), nebyl by to problém.
 Přepni se na svém počítači do větve <code>pridani-jmena</code>, udělej další revize,
 a pomocí <code>git push <i>tvojejmeno</i> pridani-jmena</code>
 <em>pull request</em> aktualizuj.</p>
-<h2>Aktualizace <small>(<code>git pull</code>)</small></h2>
+<h2 id="aktualizace_smallcodegit_pullcodesmall">Aktualizace <small>(<code>git pull</code>)</small>
+<a href="#header-aktualizace_smallcodegit_pullcodesmall" class="header-link">#</a>
+</h2>
 <p>Když budou tvé změny – a změny od ostatních –
 začleněné, můžeš si aktualizovat lokální repozitář. (To je ten,
 který máš u sebe na počítači.)</p>
@@ -278,7 +294,9 @@ Zaručíš tím, že projekt, který měníš, je „čerstvý“.</p>
 <p>Gratuluji! Právě jsi prošel/prošla „kolečkem“,
 které většina programátorů dělá denně: udělání nějaké změny,
 odeslání kolegům na kontrolu a začlenění a stažení změn od ostatních.</p>
-<h2>Hlášení chyb <small>(<em>issues</em>)</small></h2>
+<h2 id="hlaseni_chyb_smallemissuesemsmall">Hlášení chyb <small>(<em>issues</em>)</small>
+<a href="#header-hlaseni_chyb_smallemissuesemsmall" class="header-link">#</a>
+</h2>
 <p>Občas nastane situace, kdy v nějakém projektu
 na GitHubu najdeš chybu, ale nemáš čas nebo
 znalosti, abys ji opravil/a. V takovém případě
@@ -292,7 +310,9 @@ a můžeš psát, kdy chyba nastává, co program dělá
 Kdybys záložku Issues nenašel/nenašla, podívej se
 do dokumentace projektu, jestli tam není odkaz na
 seznam chyb.</p>
-</div><h2>README: Informace pro ostatní</h2>
+</div><h2 id="readme_informace_pro_ostatni">README: Informace pro ostatní
+<a href="#header-readme_informace_pro_ostatni" class="header-link">#</a>
+</h2>
 <p>Pokud vytváříš projekt a chceš, aby do něj přispívali i ostatní,
 je potřeba aby věděli, co tvůj projekt dělá, k čemu se hodí,
 jak se používá a podobně.</p>
@@ -329,7 +349,9 @@ Tenhle kurz je česky, aby byly začátky jednodušší,
 ale jestli se ti programování zalíbilo a chceš
 v něm po kurzu pokračovat dál, bez angličtiny
 to bude velice složité.</p>
-<h2>Licence</h2>
+<h2 id="licence">Licence
+<a href="#header-licence" class="header-link">#</a>
+</h2>
 <p>Aby sdílení fungovalo i pro právní stránce,
 nestačí když nahraješ kus kódu na Internet.
 Musíš taky oficiálně oznámit, že si s ním ostatní můžou hrát.

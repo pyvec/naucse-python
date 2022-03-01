@@ -1,4 +1,6 @@
-<h1>Git</h1>
+<h1 id="git">Git
+<a href="#header-git" class="header-link">#</a>
+</h1>
 <p>Ať už programuješ nebo píšeš dokumenty, stává se,
 že vytvoříš několik verzí.
 Tuhle chceš archivovat část, která už není potřeba,
@@ -26,11 +28,15 @@ Jestli se s ní ještě nekamarádíš, koukni se na
 <a href="naucse:page?lesson=beginners/cmdline">úvod</a>.</p>
 <p>Nezapomeň: <code>$</code> na začátku se nepíše;
 je tu proto, aby šlo poznat že jde o příkaz.</p>
-</div><h2>Instalace</h2>
+</div><h2 id="instalace">Instalace
+<a href="#header-instalace" class="header-link">#</a>
+</h2>
 <p>Popis instalace Gitu najdeš
 <a href="naucse:page?lesson=git/install">zde</a>.
 Jestli jsi instalaci přeskočil/a, projdi si ji teď.</p>
-<h2>Repozitář</h2>
+<h2 id="repozitar">Repozitář
+<a href="#header-repozitar" class="header-link">#</a>
+</h2>
 <p>Každý projekt, který budeš verzovat, musí mít pro sebe
 vyhrazený adresář.
 Vytvoř si tedy nový adresář a přepni se do něj (pomocí <code>cd</code>).
@@ -55,7 +61,9 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre></d
 <em>„No commits yet”</em> říká, že zatím nemáš uloženou žádnou revizi.
 A <em>„nothing to commit”</em> říká, že je adresář
 prázdný – nejsou tu žádné soubory k verzování.</p>
-<h2>První revize</h2>
+<h2 id="prvni_revize">První revize
+<a href="#header-prvni_revize" class="header-link">#</a>
+</h2>
 <p>Teď si zkus do Gitu něco přidat!</p>
 <p>Vytvoř soubor <code>basnicka.txt</code> a napiš do něj
 nějakou básničku.
@@ -160,7 +168,9 @@ a zpět se dostaneš klávesou <kbd>Q</kbd> jako <em>Quit</em>.</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt; </span>set LC_ALL=C.UTF-8
 </pre></div><p>Tento příkaz nastaví aktuální terminál: když si otevřeš nové okno
 s příkazovou řádkou, bude ho potřeba zadat znovu.</p>
-</div><h2>Druhá revize</h2>
+</div><h2 id="druha_revize">Druhá revize
+<a href="#header-druha_revize" class="header-link">#</a>
+</h2>
 <p>Udělej v básničce nějakou malou změnu – změň slovo,
 uprav interpunkci nebo přidej sloku.
 Pak se opět zeptej Gitu na stav repozitáře.</p>
@@ -266,11 +276,15 @@ Date:   Mon May 18 16:18:40 2020 +0200
  Zatahá tě za copánek
 <span style="color: #aa0000">-Holka modrooká, nesedávej tam</span>
 <span style="color: #00aa00">+</span><span style="color: #00aa00">Holka modrooká</span>
-<span style="color: #00aa00">+</span><span style="color: #00aa00">Nesedávej tam</span></code></pre></div><h2>Diagram</h2>
+<span style="color: #00aa00">+</span><span style="color: #00aa00">Nesedávej tam</span></code></pre></div><h2 id="diagram">Diagram
+<a href="#header-diagram" class="header-link">#</a>
+</h2>
 <p>Pro lepší pochopení, co dělají jednotlivé příkazy a v jakém
 stavu můžou být soubory/změny, přikládám tento diagram:</p>
 <p><span class="figure"><a href="naucse:static?filename=diagram.svg"><img src="naucse:static?filename=diagram.svg" alt="Diagram revizí"></a></span></p>
-<h2>Log</h2>
+<h2 id="log">Log
+<a href="#header-log" class="header-link">#</a>
+</h2>
 <p>Teď, když máme za sebou první(ch) pár revizí,
 si ukážeme několik příkazů, které nám umožní se
 v nich orientovat.
@@ -307,7 +321,9 @@ rozumět. :)</p>
 </div><p>Když se na nějakou verzi budeš chtít podívat podrobněji,
 napiš <code>git show 5ff0b</code>, kde místo <code>5ff0b</code>
 uveď prvních několik čísel z <span class="yellow">označení revize</span>.</p>
-<h2>gitk</h2>
+<h2 id="gitk">gitk
+<a href="#header-gitk" class="header-link">#</a>
+</h2>
 <p>Z příkazové řádky se dá vyčíst všechno potřebné,
 ale chce to trochu praxe.
 Někdy je přehlednější použít grafické „klikátko“ jménem
@@ -321,7 +337,9 @@ psali programátoři, které místo designu zajímá, co je
 Zkus se v něm trochu zorientovat, pak ho zavři,
 udělej dalších pár revizí a koukni se na ně přes
 <code>git log</code> a <code>gitk --all</code>.</p>
-<h2>Závěr</h2>
+<h2 id="zaver">Závěr
+<a href="#header-zaver" class="header-link">#</a>
+</h2>
 <p>A to je všechno, co z Gitu zatím budeš potřebovat.
 Vždycky, když uděláš <code>git add <var>soubor</var></code>
 a <code>git commit</code>,

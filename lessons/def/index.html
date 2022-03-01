@@ -1,9 +1,13 @@
-<h1>Definice funkcí</h1>
+<h1 id="definice_funkci">Definice funkcí
+<a href="#header-definice_funkci" class="header-link">#</a>
+</h1>
 <p><a href="naucse:page?lesson=beginners/functions">Dříve</a> jsme
 volali funkce, které napsal někdo jiný:</p>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ahoj světe!&#39;</span><span class="p">)</span>
 </pre></div><p>Dnes si ukážeme, jak psát funkce vlastní.</p>
-<h2>K čemu jsou funkce?</h2>
+<h2 id="kcemu_jsou_funkce">K čemu jsou funkce?
+<a href="#header-kcemu_jsou_funkce" class="header-link">#</a>
+</h2>
 <p>Často se stává, že kód, který dělá nějakou jednoduchou věc, není úplně
 jednoduchý.
 Jako příklad uvedu nám už známý kód, který v určitém řetězci zamění znak
@@ -32,7 +36,9 @@ Nebo řekneš želvě <code>forward(100)</code> a nezatěžuješ se tím, jak si
 svůj aktuální úhel natočení nebo jak se vlastně kreslí čára.</p>
 <p>Funkce umožňuje <em>pojmenovat</em> nějaký kousek programu, který se pak dá
 použít pomocí jména bez detailních znalostí toho, jak to vevnitř funguje.</p>
-<h2>Definice funkce</h2>
+<h2 id="definice_funkce">Definice funkce
+<a href="#header-definice_funkce" class="header-link">#</a>
+</h2>
 <p>Protože už znáš <code>if</code> a <code>for</code>, které mají jednořádkovou hlavičku a odsazené tělo
 příkazu, neměl by ti zápis funkce připadat příliš zvláštní:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zamen</span><span class="p">(</span><span class="n">slovo</span><span class="p">,</span> <span class="n">pozice</span><span class="p">,</span> <span class="n">novy_znak</span><span class="p">):</span>
@@ -89,7 +95,9 @@ Následující procedura třeba vypíše skóre daného hráče a k tomu hláš
 
 <span class="n">napis_hlasku</span><span class="p">(</span><span class="s1">&#39;Tvoje&#39;</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>
 <span class="n">napis_hlasku</span><span class="p">(</span><span class="s1">&#39;Protivníkovo&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div><h2>Cvičení</h2>
+</pre></div><h2 id="cviceni">Cvičení
+<a href="#header-cviceni" class="header-link">#</a>
+</h2>
 <p>Zkus napsat funkci, která vrátí obsah obdélníka daných rozměrů.
 Příslušný vzoreček je <var>S</var> = <var>a</var>×<var>b</var>,
 kde <var>a</var> a <var>b</var> jsou délky stran.</p>
@@ -106,7 +114,9 @@ kde <var>a</var> a <var>b</var> jsou délky stran.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obsah obdélníka se stranami 3 cm a 5 cm je&#39;</span><span class="p">,</span> <span class="n">obsah_obdelnika</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="s1">&#39;cm2&#39;</span><span class="p">)</span>
 </pre></div>
     </div>
-</div><h2>Vracení ukončuje funkci</h2>
+</div><h2 id="vraceni_ukoncuje_funkci">Vracení ukončuje funkci
+<a href="#header-vraceni_ukoncuje_funkci" class="header-link">#</a>
+</h2>
 <p>Speciální příkaz <code>return</code>, který jde použít jenom ve funkcích, vrátí danou
 návratovou hodnotu ven z funkce a zároveň <em>ukončí</em> provádění funkce.</p>
 <p>Chová se tedy trochu jako <code>break</code>, jen místo cyklu opouští celou funkci.</p>
@@ -151,7 +161,9 @@ Třeba, chceš-li odpověď „ano“ nebo „ne“:</p>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Škoda.&#39;</span><span class="p">)</span>
 </pre></div><div class="admonition note"><p>Stejně jako <code>if</code> nebo <code>break</code> je <code>return</code> <em>příkaz</em>, ne funkce.
 Kolem „své“ hodnoty nepotřebuje závorky.</p>
-</div><h3>Vrátit nebo vypsat?</h3>
+</div><h3 id="vratit_nebo_vypsat">Vrátit nebo vypsat?
+<a href="#header-vratit_nebo_vypsat" class="header-link">#</a>
+</h3>
 <p>Podívejme se teď na následující program, který vypíše obsah elipsy:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
 
@@ -205,7 +217,9 @@ nemít ve funkci, ale vně, v kódu, který funkci volá:</p>
 (jako <code>ano_nebo_ne</code> výše), zase <code>input</code>.
 Když ale funkce něco <em>počítá</em>, nebo když si nejsi jistý/á,
 je dobré ve funkci <code>print</code> ani <code>input</code> nemít.</p>
-<h2>None</h2>
+<h2 id="none">None
+<a href="#header-none" class="header-link">#</a>
+</h2>
 <p>Když funkce neskončí příkazem <code>return</code>,
 automaticky se vrátí hodnota <code>None</code>.</p>
 <p>Je to hodnota zabudovaná přímo do Pythonu, podobně jako <code>True</code> nebo <code>False</code>,

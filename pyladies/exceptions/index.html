@@ -1,4 +1,6 @@
-<h1>Výjimky</h1>
+<h1 id="vyjimky">Výjimky
+<a href="#header-vyjimky" class="header-link">#</a>
+</h1>
 <p>Pojďme si prohloubit znalosti o chybách, neboli odborně o <em>výjimkách</em>
 (angl. <em>exceptions</em>).</p>
 <p>Vezmi následující funkci:</p>
@@ -49,7 +51,9 @@ odmítne.</li>
 </ul>
 <p>Chceš-li zjistit jestli funkce <code>int</code> umí daný řetězec převést na číslo,
 nejlepší je použít přímo funkci <code>int</code>.</p>
-</div><h2>Ošetření chyby</h2>
+</div><h2 id="osetreni_chyby">Ošetření chyby
+<a href="#header-osetreni_chyby" class="header-link">#</a>
+</h2>
 <p>Pro zachycení chyby má Python příkaz <code>try</code>/<code>except</code>.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nacti_cislo</span><span class="p">():</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
@@ -63,7 +67,9 @@ Příkazy v bloku uvozeném příkazem <code>try</code> se normálně provádě
 nastane uvedená výjimka, Python přeskočí zbytek bloku <code>try</code> a provede všechno 
 v bloku <code>except</code>.
 Pokud výjimka nenastala, přeskočí se celý blok <code>except</code>.</p>
-<h2>Druhy chyb</h2>
+<h2 id="druhy_chyb">Druhy chyb
+<a href="#header-druhy_chyb" class="header-link">#</a>
+</h2>
 <p>A co je to <code>ValueError</code>? To je typ chyby.
 Podobných typů je spousta.
 Všechny jsou popsané <a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy">v dokumentaci</a>; pro nás jsou (nebo budou) důležité tyto:</p>
@@ -90,7 +96,9 @@ vždy najdeš v příslušné chybové hlášce.</p>
 chytnou se i všechny podřízené typy výjimek –
 například <code>except ArithmeticError:</code> zachytí i <code>ZeroDivisionError</code>.
 A <code>except Exception:</code> zachytí <em>všechny</em> výjimky, které běžně chceš zachytit.</p>
-<h2>Nechytej je všechny!</h2>
+<h2 id="nechytej_je_vsechny">Nechytej je všechny!
+<a href="#header-nechytej_je_vsechny" class="header-link">#</a>
+</h2>
 <p>Většinu chyb <em>není</em> potřeba ošetřovat.</p>
 <p>Nastane-li <em>nečekaná</em> situace, je téměř vždy
 mnohem lepší program ukončit, než se snažit
@@ -109,7 +117,9 @@ Nejlepší reakce na takovou nečekanou situaci ukončit program a informovat
 uživatele (nebo lépe, programátora), že (a kde) je něco špatně.
 Neboli vypsat chybovou hlášku.
 A to se stane normálně, bez <code>try</code>.</p>
-<h2>Další přílohy k <code>try</code></h2>
+<h2 id="dalsi_prilohy_kcodetrycode">Další přílohy k <code>try</code>
+<a href="#header-dalsi_prilohy_kcodetrycode" class="header-link">#</a>
+</h2>
 <p>Pro úplnost: kromě <code>except</code> existují dva jiné bloky,
 které můžeš „přilepit“ k <code>try</code>, a to <code>else</code> a <code>finally</code>.
 První se provede, když v <code>try</code> bloku
@@ -133,7 +143,9 @@ ten první, který danou chybu umí ošetřit.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tohle se provede, pokud chyba nenastane&#39;</span><span class="p">)</span>
 <span class="k">finally</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tohle se provede vždycky; i pokud v `try` bloku byl např. `return`&#39;</span><span class="p">)</span>
-</pre></div><h2>Vyvolání chyby</h2>
+</pre></div><h2 id="vyvolani_chyby">Vyvolání chyby
+<a href="#header-vyvolani_chyby" class="header-link">#</a>
+</h2>
 <p>Občas se stane, že výjimku budeš potřebovat vyvolat sám/sama.</p>
 <p>Často se to stává když píšeš nějakou obecnou funkci.
 Třeba funkci na výpočet obsahu čtverce.

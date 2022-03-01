@@ -1,4 +1,6 @@
-<h1>Lokální proměnné</h1>
+<h1 id="lokalni_promenne">Lokální proměnné
+<a href="#header-lokalni_promenne" class="header-link">#</a>
+</h1>
 <p>Už umíš definovat vlastní funkce.
 Zbývá ale ještě dovysvětlit, jak v nich fungují proměnné.</p>
 <p>Funkce může používat proměnné „zvnějšku“.
@@ -27,7 +29,9 @@ protože existují jen místně, v rámci volání jedné jediné funkce.</p>
 Funkce <code>nastav_x</code> si hraje na vlastním písečku; proměnná <code>x</code> je jen
 pro ni.
 Když funkce <code>nastav_x</code> skončí, proměnná <code>x</code> přestane existovat.</p>
-<h2>Skrývání detailů</h2>
+<h2 id="skryvani_detailu">Skrývání detailů
+<a href="#header-skryvani_detailu" class="header-link">#</a>
+</h2>
 <p>Podobně skončí s chybou i složitější program:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zamen</span><span class="p">(</span><span class="n">slovo</span><span class="p">,</span> <span class="n">pozice</span><span class="p">,</span> <span class="n">novy_znak</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;V daném slově zamění znak na dané pozici za daný nový znak&quot;&quot;&quot;</span>
@@ -49,7 +53,9 @@ izolují od zbytku programu.</p>
 <p>Ještě lépe je to vidět u funkcí, které jsi nenapsal/a sám/sama.
 Jak divné by bylo, kdyby po každém zavolání <code>print</code> byla najednou nastavená
 proměnná <code>i</code>, kterou <code>print</code> náhodou používá při procházení svých parametrů!</p>
-<h2>Přiřazení</h2>
+<h2 id="prirazeni">Přiřazení
+<a href="#header-prirazeni" class="header-link">#</a>
+</h2>
 <p>To, co dělá lokální proměnnou, je <em>přiřazení</em>.
 Porovnej <code>nastav_x</code> s příkladem na <code>obsah_kruhu</code> výše: rozdíl mezi <code>pi</code> a <code>x</code>
 je v tom, že do <code>x</code> se v rámci funkce přiřazuje.</p>
@@ -68,7 +74,9 @@ způsoby, které postupně poznáš. Není jich mnoho:</p>
 <li>Příkazy <code>with ... as x</code>, <code>del x</code>, <code>except ... as x</code> přiřazují do <code>x</code>.</li>
 <li>Přiřazují i speciální přiřazovací operátory jako <code>+=</code>, <code>*=</code>, <code>:=</code>.</li>
 </ul>
-</div><h2>Zakrývání jména</h2>
+</div><h2 id="zakryvani_jmena">Zakrývání jména
+<a href="#header-zakryvani_jmena" class="header-link">#</a>
+</h2>
 <p>Jak to funguje, když ve funkci přiřadíš do proměnné, která existuje i globálně?
 Pak tu máme problém.</p>
 <p>Vytvoří se <em>úplně nová</em> lokální proměnná, která má stejné jméno jako
@@ -86,7 +94,9 @@ Jméno označuje lokální proměnnou, a ta globální pak „není vidět“.</
 </pre></div><p>V tomto programu existují <em>dvě</em> proměnné jménem <code>x</code>.
 Jedna je globální. Jedna je lokální pro funkci <code>nastav_x</code>.
 Jmenují se stejně, ale jsou to dvě různé proměnné.</p>
-<h2>Lokální nebo globální?</h2>
+<h2 id="lokalni_nebo_globalni">Lokální nebo globální?
+<a href="#header-lokalni_nebo_globalni" class="header-link">#</a>
+</h2>
 <p>Pojďme si to ukázat.
 Než spustíš tenhle program, zkus předpovědět co bude dělat.
 Pak ho pusť, a pokud dělal něco jiného, zkus vysvětlit proč.
@@ -140,7 +150,9 @@ proměnných – ty jsou „ještě globálnější“.)</li>
 </ul>
 </div>
     </div>
-</div><h2>Rada na závěr</h2>
+</div><h2 id="rada_na_zaver">Rada na závěr
+<a href="#header-rada_na_zaver" class="header-link">#</a>
+</h2>
 <p>Pravidla pro lokální proměnné jsou pro začátečníky jednou z nejzvláštnějších
 věcí v Pythonu.
 Jsou ale přínosná – umožňují některé užitečné techniky, např. rekurzi.</p>

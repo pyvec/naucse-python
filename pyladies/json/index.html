@@ -1,11 +1,15 @@
-<h1>JSON</h1>
+<h1 id="json">JSON
+<a href="#header-json" class="header-link">#</a>
+</h1>
 <p>Existují i jiné programovací jazyky než Python.</p>
 <p>Ostatní jazyky neumí pracovat s pythonními hodnotami.
 Budeš-li se chtít s takovými programy „domluvit” –
 předat jim nějaké informace ke zpracování
 nebo od nich dostat výsledky –
 musíš informace předávat v nějaké zjednodušené podobě.</p>
-<h2>Typy</h2>
+<h2 id="typy">Typy
+<a href="#header-typy" class="header-link">#</a>
+</h2>
 <p>Většina programovacích jazyků má nějaká čísla, nějaký druh seznamů,
 nějakou odrůdu řetězců a nějakou variaci na slovníky
 (nebo několik způsobů jak slovníky vytvořit).
@@ -16,7 +20,9 @@ jakékoli informace v rozumně čitelné podobě,
 i když ne ve všech jazycích mají přesné ekvivalenty
 (třeba Python má dva základní druhy čísel – <code>int</code> a <code>float</code>).
 Často se proto v komunikaci omezíme na ně.</p>
-<h2>Kódování dat</h2>
+<h2 id="kodovani_dat">Kódování dat
+<a href="#header-kodovani_dat" class="header-link">#</a>
+</h2>
 <p>Další problém je přenos dat:
 abys mohl/a informace zapsat na disk nebo přenést
 přes Internet, musíš je převést na sekvenci <em>bytů</em> (čísel od 0 do 255).
@@ -60,7 +66,9 @@ Nezaměňuj je!</p>
 <p>Aspoň ze začátku nedoporučuji JSON psát ručně;
 nech na počítači, aby dal na správné místo správné
 čárky a uvozovky.</p>
-</div><h2>JSON v Pythonu</h2>
+</div><h2 id="json_v_pythonu">JSON v Pythonu
+<a href="#header-json_v_pythonu" class="header-link">#</a>
+</h2>
 <p>Kódování objektů v JSONu je jednoduché: existuje modul <code>json</code>,
 jehož metoda <code>loads</code> načte data z řetězce:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>

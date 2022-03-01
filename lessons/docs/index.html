@@ -1,8 +1,12 @@
-<h1>Dokumentace</h1>
+<h1 id="dokumentace">Dokumentace
+<a href="#header-dokumentace" class="header-link">#</a>
+</h1>
 <p>Jednou ze zásadních součástí každého kvalitního Python projektu je dokumentace.
 Protože chceme, abyste vytvářeli kvalitní projekty, podíváme se tedy i na
 dokumentaci.</p>
-<h2>Sphinx</h2>
+<h2 id="sphinx">Sphinx
+<a href="#header-sphinx" class="header-link">#</a>
+</h2>
 <p>Nejpoužívanějším nástrojem na vytváření dokumentace Python projektů je <a href="http://www.sphinx-doc.org/">Sphinx</a>.
 Když jste se dívali do dokumentace Flasku, requests, clicku, flexmocku, pytestu,
 betamaxu či Pythonu samotného, viděli jste dokumentaci vytvořenou ve Sphinxu.</p>
@@ -55,7 +59,9 @@ manuálové stránky atd.), pro nás bude podstatné především HTML.</p>
 <span class="go">The HTML pages are in _build/html.</span>
 </pre></div><p>Ve zmíněné složce byste měli najít <code>index.html</code>, ten si můžete prohlédnout
 v prohlížeči.</p>
-<h2>Textový obsah v dokumentaci</h2>
+<h2 id="textovy_obsah_v_dokumentaci">Textový obsah v dokumentaci
+<a href="#header-textovy_obsah_v_dokumentaci" class="header-link">#</a>
+</h2>
 <p>Text dokumentace začíná v souboru <code>index.rst</code> a píše se ve značkovacím formátu
 <a href="http://www.sphinx-doc.org/en/stable/rest.html">reStructuredText</a> neboli rst.
 Ten se od Markdownu liší v syntaxi, která je komplikovanější na
@@ -97,7 +103,9 @@ This is the text of the section.
 <a href="http://www.sphinx-doc.org/en/master/markup/inline.html#role-ref">konstrukce ref</a>:</p>
 <div class="highlight"><pre><span></span>It refers to the section itself, see <span class="na">:ref:</span><span class="nv">`my-reference-label`</span>.
 It could refer to a different section as well :)
-</pre></div><h2>Co do dokumentace psát</h2>
+</pre></div><h2 id="co_do_dokumentace_psat">Co do dokumentace psát
+<a href="#header-co_do_dokumentace_psat" class="header-link">#</a>
+</h2>
 <p>Teď, když víte jak něco napsat, pojďme si povědět <em>co</em> vlastně psát.
 K čemu dokumentace vlastně je?</p>
 <p>Dobrá dokumentace vysvětluje, proč a jak by váš projekt měl někdo používat.
@@ -132,7 +140,9 @@ odkaz na běžící instanci;</li>
 <li>dokumentaci API – popis všech veřejných modulů, tříd, funkcí a podobně;</li>
 <li>podrobný návod jak přispívat.</li>
 </ul>
-<h2>Nastavení a rozšíření</h2>
+<h2 id="nastaveni_a_rozsireni">Nastavení a rozšíření
+<a href="#header-nastaveni_a_rozsireni" class="header-link">#</a>
+</h2>
 <p>Průvodce <code>sphinx-quickstart</code> generuje soubor s nastavením, <code>conf.py</code>,
 ve kterém můžete měnit nastavení Sphinxu a jeho rozšíření, včetně detailů
 jako jméno a verze projektu.</p>
@@ -144,7 +154,9 @@ zkontrolujte a případně rozšíření doplňte:</p>
     <span class="s1">&#39;sphinx.ext.doctest&#39;</span><span class="p">,</span>
     <span class="s1">&#39;sphinx.ext.intersphinx&#39;</span><span class="p">,</span>
 <span class="p">]</span>
-</pre></div><h2>doctest</h2>
+</pre></div><h2 id="doctest">doctest
+<a href="#header-doctest" class="header-link">#</a>
+</h2>
 <p><code>doctest</code> je modul ze standardní knihovny, který najde v dokumentaci bloky kódu
 a otestuje, jestli odpovídají ukázanému výstupu.
 Rozšíření <code>sphinx.ext.doctest</code> integruje <code>doctest</code> do dokumentů
@@ -165,24 +177,36 @@ V tomto případě se provede součet a zkontroluje se, zda výsledek je 2.</p>
 </pre></div><p>A dále někde jinde výstup volání:</p>
 <div class="highlight"><pre><span></span><span class="n">foo</span>
 </pre></div><p>K tomu všemu složí několik direktiv:</p>
-<h3>.. testsetup::</h3>
+<h3 id="_testsetup">.. testsetup::
+<a href="#header-_testsetup" class="header-link">#</a>
+</h3>
 <p>Direktiva pro potřebný kód, který se musí provést, aby příklad fungoval, ale
 nebude v dokumentaci zobrazen (např. kód pro vytvoření falešného objektu,
 import...).</p>
-<h3>.. testcleanup::</h3>
+<h3 id="_testcleanup">.. testcleanup::
+<a href="#header-_testcleanup" class="header-link">#</a>
+</h3>
 <p>Podobná direktiva jako <code>.. testsetup::</code> provedená po skončení testů.
 V dokumentaci nebude kód zobrazen.</p>
-<h3>.. doctest::</h3>
+<h3 id="_doctest">.. doctest::
+<a href="#header-_doctest" class="header-link">#</a>
+</h3>
 <p>Test s interaktivní konzolí. V dokumentaci bude zobrazen, pokud nepoužijete flag
 <code>:hide:</code>.</p>
-<h3>.. testcode::</h3>
+<h3 id="_testcode">.. testcode::
+<a href="#header-_testcode" class="header-link">#</a>
+</h3>
 <p>Kód testu bez interaktivní konzole, co chcete kontrolovat, musíte dát na
 standardní výstup. V dokumentaci bude zobrazen, pokud nepoužijete flag
 <code>:hide:</code>.</p>
-<h3>.. testoutput::</h3>
+<h3 id="_testoutput">.. testoutput::
+<a href="#header-_testoutput" class="header-link">#</a>
+</h3>
 <p>Výstup posledního testcode bloku. V dokumentaci bude kód zobrazen, pokud
 nepoužijete flag <code>:hide:</code>.</p>
-<h3>Kompletní příklad</h3>
+<h3 id="kompletni_priklad">Kompletní příklad
+<a href="#header-kompletni_priklad" class="header-link">#</a>
+</h3>
 <p>Zde můžete vidět výše zmíněné direktivy použité dohromady.
 Jedná se o umělý příklad, kdy použitou třídu připravíme v direktivě <code>testsetup</code>.
 V praxi pak doctestem testujeme, jestli naše dokumentace odpovídá chování
@@ -262,7 +286,9 @@ v <a href="http://www.sphinx-doc.org/en/master/ext/doctest.html">dokumentaci</a>
 <span class="go">    0 failures in setup code</span>
 <span class="go">    0 failures in cleanup code</span>
 <span class="go">...</span>
-</pre></div><h3>Import z vlastního kódu</h3>
+</pre></div><h3 id="import_z_vlastniho_kodu">Import z vlastního kódu
+<a href="#header-import_z_vlastniho_kodu" class="header-link">#</a>
+</h3>
 <p>Pokud nemáte nainstalovaný vlastní balíček a budete z něj chtít v doctestu
 importovat, pravděpodobně dostanete <code>ImportError</code>.
 V takovém případě pomůže drobná editace na začátku <code>conf.py</code>.
@@ -278,7 +304,9 @@ je tedy potřeba přidat nadřazený adresář (<code>..</code>):</p>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">))</span>
-</pre></div><h3>Travis CI</h3>
+</pre></div><h3 id="travis_ci">Travis CI
+<a href="#header-travis_ci" class="header-link">#</a>
+</h3>
 <p>Neexistuje zatím unifikovaný způsob, jak specifikovat závislosti pro sestavení
 dokumentace. Proto, pokud chcete mít nějaký jednoduchý způsob, jak pouštět
 doctesty na Travisu, vytvořte například soubor <code>docs/requirements.txt</code>
@@ -307,7 +335,9 @@ standardizaci.</p>
 </pre></div><p>Projekt pak lze nainstalovat pomocí <code>.[dev]</code> (tedy jméno balíčku a za ním
 jméno <em>extras</em> v hranatých závorkách):</p>
 <div class="highlight"><pre><code>install:
-- python -m pip install .[dev]</code></pre></div></div><h2>autodoc</h2>
+- python -m pip install .[dev]</code></pre></div></div><h2 id="autodoc">autodoc
+<a href="#header-autodoc" class="header-link">#</a>
+</h2>
 <p>Pro dokumentaci API lze použít <code>sphinx.ext.autodoc</code>, další rozšíření Sphinxu,
 které průvodce přidává automaticky.</p>
 <div class="admonition note"><p>Nemáte-li toto rozšíření povolené, přidejte jej do <code>conf.py</code>:</p>
@@ -368,7 +398,9 @@ dokonce žádoucí.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
 </pre></div><p>Existují různé způsoby, jak dokumentovat argumenty, návratové hodnoty apod.
 Zvídavým studentům doporučujeme podívat se na rozšíření <a href="http://www.sphinx-doc.org/en/master/ext/napoleon.html">Napoleon</a>.</p>
-<h2>Odkazy na třídy a moduly</h2>
+<h2 id="odkazy_na_tridy_a_moduly">Odkazy na třídy a moduly
+<a href="#header-odkazy_na_tridy_a_moduly" class="header-link">#</a>
+</h2>
 <p>Máte-li zdokumentovaný modul, funkci, třídu, metodu apod., je možné na ni
 odkázat pomocí konstrukce <code>:mod:</code>, <code>:func:</code>, <code>:class:</code>, <code>:meth:</code> a dalších
 ze Sphinxové <a href="http://www.sphinx-doc.org/en/master/domains.html#cross-referencing-python-objects">domény Python</a>:</p>
@@ -377,11 +409,15 @@ ze Sphinxové <a href="http://www.sphinx-doc.org/en/master/domains.html#cross-re
 bez použití <code>autodoc</code>.</p>
 <p>Všechny zdokumentované objekty se automaticky přidávají do rejstříku.
 Chcete-li do rejstříku přidat něco navíc, použijte direktivu <a href="http://www.sphinx-doc.org/en/master/markup/misc.html#index-generating-markup">index</a>.</p>
-<h2>README.rst</h2>
+<h2 id="readmerst">README.rst
+<a href="#header-readmerst" class="header-link">#</a>
+</h2>
 <p>Když už se stejně zabýváme <a href="http://www.sphinx-doc.org/en/stable/rest.html">reStructuredText</a>em, je dobré váš README přepsat
 nebo převést do stejného formátu. Na PyPI pak bude váš projekt vypadat lépe.</p>
 <p>Při přejmenování na <code>README.rst</code> dejte pozor na patřičné změny v <code>setup.py</code>.</p>
-<h2>Read the Docs</h2>
+<h2 id="read_the_docs">Read the Docs
+<a href="#header-read_the_docs" class="header-link">#</a>
+</h2>
 <p>Pokud svůj repositář na GitHubu změníte na veřejný, můžete využít službu
 <a href="https://readthedocs.org/">Read the Docs</a> k hostování dokumentace ve Sphinxu.
 Dokumentace se sestaví při každém pushnutí na GitHub.</p>

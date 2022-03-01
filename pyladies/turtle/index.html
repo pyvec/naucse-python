@@ -1,4 +1,6 @@
-<h1>🐍 🐢</h1>
+<h1 id="_">🐍 🐢
+<a href="#header-_" class="header-link">#</a>
+</h1>
 <p>V této lekci si vyzkoušíš <em>želví kreslení</em>.</p>
 <p>Pusť Python v <em>interaktivním módu</em> (bez souboru .py).</p>
 <div class="highlight"><pre><span></span><span class="go">$ python</span>
@@ -15,7 +17,9 @@ Na Windows bude místo <code>$</code> znak
 </pre></div><p>Ukáže se okýnko se šipkou, které nezavírej.
 Dej ho tak, abys viděla i příkazovou řádku
 i nové okýnko.</p>
-<h2>A kde je ta želva?</h2>
+<h2 id="a_kde_je_ta_zelva">A kde je ta želva?
+<a href="#header-a_kde_je_ta_zelva" class="header-link">#</a>
+</h2>
 <p>Želva je zrovna převlečená za šipku.
 Ale funkce <code>shape</code> ji umí odmaskovat:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">shape</span>
@@ -23,7 +27,9 @@ Ale funkce <code>shape</code> ji umí odmaskovat:</p>
 <span class="n">shape</span><span class="p">(</span><span class="s1">&#39;turtle&#39;</span><span class="p">)</span>
 </pre></div><p>Modul <code>turtle</code> obsahuje spoustu dalších funkcí, kterými můžeš želvu ovládat.
 Pojďme se na ně kouknout zblízka.</p>
-<h2>Otáčení</h2>
+<h2 id="otaceni">Otáčení
+<a href="#header-otaceni" class="header-link">#</a>
+</h2>
 <p>Želva se umí otáčet (doleva – <code>left</code> a doprava – <code>right</code>) a lézt po papíře
 (dopředu – <code>forward</code>).
 Na ocase má připevněný štětec, kterým při pohybu kreslí čáru.</p>
@@ -37,7 +43,9 @@ Na ocase má připevněný štětec, kterým při pohybu kreslí čáru.</p>
 </pre></div><p>Zkus chvíli dávat želvě příkazy.
 Když se ti výsledek nelíbí, můžeš zavřít kreslící okno a zkusit to znovu.
 (Nebo místo zavření okna můžeš naimportovat a použít funkci <code>clear()</code>.)</p>
-<h2>Želví program</h2>
+<h2 id="zelvi_program">Želví program
+<a href="#header-zelvi_program" class="header-link">#</a>
+</h2>
 <p>Interaktivní mód je skvělý na hraní,
 ale teď přejdeme zase na soubory.</p>
 <p>Vytvoř si v editoru nový soubor.
@@ -52,7 +60,9 @@ a – pozor! – na konci programu zavolej funkci <code>exitonclick</code>
 (naimportovanou z modulu <code>turtle</code>).</p>
 <div class="admonition note"><p class="admonition-title">Otázka</p>
 <p>Co dělá funkce <code>exitonclick</code>, kterou voláš na konci programu?</p>
-</div><h2>Přerušovaná čára</h2>
+</div><h2 id="prerusovana_cara">Přerušovaná čára
+<a href="#header-prerusovana_cara" class="header-link">#</a>
+</h2>
 <p>Funkce <code>penup</code> řekne želvě, aby zvedla ocásek se štětcem: bude se tak hýbat
 aniž by za sebou nechávala stopu.
 Funkcí <code>pendown</code> můžeš želvě říct, aby kreslit zase začala.
@@ -67,7 +77,9 @@ Zkus si to:</p>
 
 <span class="n">exitonclick</span><span class="p">()</span>
 </pre></div><p>Až to budeš mít hotové, zkus začít kreslit trochu složitější obrázky:</p>
-<h3>Čtverec</h3>
+<h3 id="ctverec">Čtverec
+<a href="#header-ctverec" class="header-link">#</a>
+</h3>
 <p>Nakresli čtverec.</p>
 <p><img src="naucse:static?filename=turtle-square.png" alt="Želví čtverec"></p>
 <p>Čtverec má čtyři rovné strany
@@ -92,7 +104,9 @@ a čtyři rohy po 90°.</p>
 <span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
     </div>
-</div><h3>Obdélník</h3>
+</div><h3 id="obdelnik">Obdélník
+<a href="#header-obdelnik" class="header-link">#</a>
+</h3>
 <p>Nakresli obdélník.</p>
 <p>Zkus zařídit, aby se po nakreslení „dívala” želva doprava (tak jako na začátku).</p>
 <p><img src="naucse:static?filename=turtle-rect.png" alt="Želví obdélník"></p>
@@ -116,7 +130,9 @@ a čtyři rohy po 90°.</p>
 <span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
     </div>
-</div><h3>Tři čtverce</h3>
+</div><h3 id="tri_ctverce">Tři čtverce
+<a href="#header-tri_ctverce" class="header-link">#</a>
+</h3>
 <p>Nakresli tři čtverce, každý otočený třeba o 20°.</p>
 <p><img src="naucse:static?filename=turtle-squares.png" alt="Tři želví čtverce"></p>
 <div class="solution" id="solution-2">
@@ -164,7 +180,9 @@ a čtyři rohy po 90°.</p>
 </div><p>Tolik kódu! Tohle musí jít nějak zjednodušit!</p>
 <p>Jde.
 Pojďme se naučit, jak v Pythonu nějakou činnost opakovat.</p>
-<h2>Jak opakovat – a neopakovat <em>se</em></h2>
+<h2 id="jak_opakovat_a_neopakovat_emseem">Jak opakovat – a neopakovat <em>se</em>
+<a href="#header-jak_opakovat_a_neopakovat_emseem" class="header-link">#</a>
+</h2>
 <p>Udělej v editoru nový soubor a ulož ho jako <code>cykly.py</code>.
 Budeš v něm zkoušet <em>cykly</em>.</p>
 <p>První opakovací program, který napíšeš, bude dělat tohle:</p>
@@ -184,7 +202,9 @@ Stejně jako u <code>if</code> tu je na konci dvojtečka a za ní následuje
 odsazený blok – <em>tělo</em> příkazu; to na co se hlavička vztahuje.
 Tělo příkazu <code>if</code> se provede jen někdy;
 tělo příkazu <code>for</code> se opakuje několikrát dokola.</p>
-<h3>Výčet</h3>
+<h3 id="vycet">Výčet
+<a href="#header-vycet" class="header-link">#</a>
+</h3>
 <p>Zkus napsat ještě jeden vzorový program, který v češtině zní:</p>
 <ul>
 <li>Pro každý <var>pozdrav</var> z výčtu: „Ahoj“, “Hello”, “Hola”, ”Hei”, "SYN":<ul>
@@ -217,7 +237,9 @@ Program výše tedy funguje úplně stejně, jako kdybys napsal/a:</p>
 
 <span class="n">pozdrav</span> <span class="o">=</span> <span class="s1">&#39;SYN&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pozdrav</span> <span class="o">+</span> <span class="s1">&#39;!&#39;</span><span class="p">)</span>
-</pre></div><h3>Range</h3>
+</pre></div><h3 id="range">Range
+<a href="#header-range" class="header-link">#</a>
+</h3>
 <p>Vraťme se k <code>for i in range(100)</code>.
 Už víš, že to znamená „Pro každé <var>i</var> ze sekvence <code>range(100)</code>“.
 Co je ale to <code>range</code>? Když si ho vypíšeš, nevypadne nic vysvětlujícího:</p>
@@ -290,7 +312,9 @@ které proměnnou nepoužívají – se ale často setkáš s krátkým <code>i
 To je pro Python jméno jako jakékoli jiné, ničím se neliší od <code>i</code> nebo <code>x</code>:</p>
 <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nikdy nebudu odsazovat o tři mezery!&#39;</span><span class="p">)</span>
-</pre></div></div><h2>Dlouhá přerušovaná čára</h2>
+</pre></div></div><h2 id="dlouha_prerusovana_cara">Dlouhá přerušovaná čára
+<a href="#header-dlouha_prerusovana_cara" class="header-link">#</a>
+</h2>
 <p>Už víš, že pomocí <code>penup</code> a <code>pendown</code> lze nakreslit přerušenou čáru:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">forward</span><span class="p">,</span> <span class="n">penup</span><span class="p">,</span> <span class="n">pendown</span><span class="p">,</span> <span class="n">exitonclick</span>
 
@@ -345,7 +369,9 @@ a mít tak délky 0, 1, 2, 3, 4, …</p>
 <span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
     </div>
-</div><h2>Čtverec II</h2>
+</div><h2 id="ctverec_ii">Čtverec II
+<a href="#header-ctverec_ii" class="header-link">#</a>
+</h2>
 <p>A teď znovu nakresli čtverec, tentokrát lépe – s použitím cyklu!</p>
 <p>Čtverec se kreslí následovně:</p>
 <ul>
@@ -371,7 +397,9 @@ a mít tak délky 0, 1, 2, 3, 4, …</p>
 <span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
     </div>
-</div><h3>Tři čtverce</h3>
+</div><h3 id="tri_ctverce">Tři čtverce
+<a href="#header-tri_ctverce" class="header-link">#</a>
+</h3>
 <p>Nakonec nakresli 3 čtverce, každý otočený o 20°.
 Tentokrát už víš, jak to dělat chytře: opakuj pomocí příkazu
 <code>for</code>, ne kopírováním kódu.</p>
@@ -405,7 +433,9 @@ Tentokrát už víš, jak to dělat chytře: opakuj pomocí příkazu
 <span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
     </div>
-</div><h2>Úkol navíc</h2>
+</div><h2 id="ukol_navic">Úkol navíc
+<a href="#header-ukol_navic" class="header-link">#</a>
+</h2>
 <p>Máš-li hotovo, zkus nakreslit schody:</p>
 <p><img src="naucse:static?filename=turtle-stairs.png" alt="Želví schody"></p>
 <p>A máš-li i schody, zkus nakreslit těchto šest (nebo sedm?) šestiúhelníků:</p>

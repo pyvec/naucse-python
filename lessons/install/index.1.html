@@ -22,7 +22,9 @@ s <a href="naucse:page?lesson=beginners/cmdline">příkazovou řádkou</a>.</p>
 <p>Podrobný postup instalace Pythonu a vytvoření prostředí je je popsán
 v příslušné <a href="naucse:page?lesson=beginners/install">lekci pro začátečníky</a>.
 Modul <code>venv</code> je součást <a href="https://docs.python.org/3/library/venv.html">standardní knihovny</a>.</p>
-<h2>Unix (Linux, macOS)</h2>
+<h2 id="unix_linux_macos">Unix (Linux, macOS)
+<a href="#header-unix_linux_macos" class="header-link">#</a>
+</h2>
 <p>Zkontroluj, že máš modul <code>ensurepip</code>:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>python3.7 -m ensurepip --version
 <span class="go">pip 18.0 (nebo i jiná verze)</span>
@@ -36,7 +38,9 @@ Jinak použij:</p>
 <span class="gp gp-VirtualEnv">(__venv__)</span><span class="gp">$ </span>python -m pip install requests  <span class="c1"># příkaz na instalaci balíčků puštěný ve virtualenvu</span>
 <span class="gp gp-VirtualEnv">(__venv__)</span><span class="gp">$ </span>...  <span class="c1"># práce &quot;uvnitř&quot;</span>
 <span class="gp gp-VirtualEnv">(__venv__)</span><span class="gp">$ </span>deactivate  <span class="c1"># vypnutí virtualenvu</span>
-</pre></div><h2>Windows</h2>
+</pre></div><h2 id="windows">Windows
+<a href="#header-windows" class="header-link">#</a>
+</h2>
 <div class="highlight"><pre><span></span><span class="gp">&gt; </span>mkdir project<span class="gp"></span>
 <span class="gp">&gt; </span>cd project<span class="gp"></span>
 <span class="gp">&gt; </span>py -3 -m venv __venv__<span class="gp"></span>
@@ -44,7 +48,9 @@ Jinak použij:</p>
 <span class="gp">(__venv__)&gt; </span>python -m pip install requests  <span class="c"># příkaz na instalaci balíčků puštěný ve virtualenvu</span>
 <span class="gp">(__venv__)&gt; </span>...  <span class="c"># práce &quot;uvnitř&quot;</span>
 <span class="gp">(__venv__)&gt; </span>deactivate  <span class="c"># vypnutí virtualenvu</span>
-</pre></div><h2>Poznámky</h2>
+</pre></div><h2 id="poznamky">Poznámky
+<a href="#header-poznamky" class="header-link">#</a>
+</h2>
 <p>Příkaz <code>. __venv__/bin/activate</code> budeš muset zadat vždy, než začneš na projektu
 pracovat.</p>
 <p>Ono <code>__venv__</code> je jen jméno adresáře. Můžeš si ho pojmenovat jak chceš; dokonce
