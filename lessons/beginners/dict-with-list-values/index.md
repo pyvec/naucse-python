@@ -36,7 +36,7 @@ kontakty['Verča'] = '1019103'
 ```
 
 A ve výsledku bude mít `'Jirka'` uložené jen jedno číslo.
-Python tohle nebere jako chybu, ačkoli to často není to, co chceš.
+Python tohle nenahlásí jako chybu, ačkoli to často není to co chceš.
 
 Protože ve slovníku může být každému klíči přiřazena jen jedna hodnota,
 bude potřeba více hodnot směstnat do jedné.

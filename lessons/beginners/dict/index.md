@@ -10,7 +10,7 @@ Představ si překladový slovník, třeba tenhle česko-anglický:
 * **Knoflík**: Button
 * **Myš**: Mouse
 
-Slovník v Pythonu obsahuje *záznamy*, a každý záznam přiřazuje
+Slovník v Pythonu obsahuje *záznamy*. Každý záznam přiřazuje
 nějakému *klíči* nějakou *hodnotu*.
 V našem příkladu je klíči *Jablko* přiřazena hodnota *Apple*,
 klíči *Knoflík* náleží hodnota *Button*
@@ -24,7 +24,7 @@ V Pythonu by se takový slovník napsal následovně:
 {'Jablko': 'Apple', 'Knoflík': 'Button', 'Myš': 'Mouse'}
 ```
 Pozor na všechny ty symboly!
-V tomhle slovníku jsou klíče i hodnoty řetězce, a jsou tedy v uvozovkách.
+V tomhle slovníku jsou klíče i hodnoty řetězce, takže jsou v uvozovkách.
 Každý klíč je od své hodnoty oddělený dvojtečkou;
 jednotlivé dvojice jsou od sebe oddělené čárkou.
 A celý slovník je uzavřený ve složených závorkách.
@@ -39,7 +39,7 @@ Ten dáš do hranatých závorek:
 ```
 
 Je to podobné jako u seznamů, jen v hranatých závorkách není index
-(pořadí prvku) nebo rozmezí s dvojtečkou, ale právě klíč.
+(pořadové číslo prvku) nebo rozmezí s dvojtečkou, ale právě klíč.
 
 > [note]
 > Naopak to nejde – slovník neumožňuje podle hodnoty přímo zjistit klíč.
@@ -134,8 +134,8 @@ Mouse
 
 Většinou ale potřebuješ jak klíče tak hodnoty.
 K tomu mají slovníky metodu `items`, která vrací iterátor dvojic.
-Často každou dvojici přímo rozbalíš v cyklu `for`, jako se to dělá se
-`zip` nebo `enumerate`:
+Často využiješ možnost každou dvojici přímo rozbalit v cyklu `for`,
+jako se to dělá se `zip` nebo `enumerate`:
 
 ```pycon
 >>> for klic, hodnota in slovnik.items():
@@ -151,7 +151,7 @@ Myš: Mouse
 > To, co `keys()`, `values()` a `items()` vrací, jsou speciální objekty,
 > které kromě použití ve `for` umožňují další
 > operace: například pracovat s klíči jako s množinou.
-> V [dokumentaci](https://docs.python.org/3.0/library/stdtypes.html#dictionary-view-objects)
+> V [dokumentaci](https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects)
 > Pythonu je to všechno popsáno.
 
 V průběhu iterace (tedy v rámci `for` cyklu) nesmíš
@@ -171,8 +171,8 @@ Hodnoty u už existujících klíčů ale měnit můžeš.
 
 Slovník se dá vytvořit několika způsoby.
 První, pomocí složených závorek, jsi už viděl{{a}}.
-Další způsob je využívá funkci `dict`.
-Ta, ve stylu `str`, `int` či `list`, převede cokoli, co jde, na slovník.
+Další způsob využívá funkci `dict`.
+Ta, ve stylu `str`, `int` či `list`, převede cokoli co jde na slovník.
 
 Slovník je ovšem dost specifická struktura –
 čísla ani většina seznamů na něj převést nejdou.
@@ -217,7 +217,7 @@ print(popisy_funkci['len'])
 
 ### Zaplň prázdný slovník
 
-Nejobecnější způsob vytváření slovníků je podobný tomu, co znáš u seznamů:
+Nejobecnější způsob vytváření slovníků je podobný tomu co znáš u seznamů:
 vytvoř prázdný slovník a postupně do něj přidávej záznamy, jeden za druhým.
 
 Řekněme, že máš slovník který přiřazuje ovoci jeho barvu:
@@ -247,7 +247,7 @@ print(barvy_po_tydnu['jablko'])
 
 ## Typy klíčů a hodnot
 
-Do slovníku můžeš uložit použít jakoukoli hodnotu: řetězce, seznamy, nebo čísla.
+Do slovníku můžeš uložit jakoukoli hodnotu: řetězce, seznamy, nebo čísla.
 
 ```python
 uzivatel = {'jméno': 'Amálka', 'velikost nohy': 36, 'oblíbená čísla': [5, 27]}

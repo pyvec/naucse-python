@@ -34,7 +34,7 @@ musíš je *zakódovat* – převést na řetězec.
 
 ## Kódování
 
-Existuje spousta způsobů, jak zakódovat data do textu.
+Existuje spousta způsobů jak zakódovat data do textu.
 Každý způsob se snaží najít vhodnou rovnováhu mezi
 čitelností pro lidi/počítače, délkou zápisu,
 bezpečností, možnostmi a rozšiřitelností.
