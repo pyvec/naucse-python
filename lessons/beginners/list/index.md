@@ -80,8 +80,8 @@ Oprava je snadná: výsledek si ulož do proměnné.
 kamaradka = kamaradka.upper()
 ```
 
-Tímto přiřazením Python „zahodí“ původní hodnotu,
-a od tohoto příkazu dál bude proměnná `kamaradka` označovat nový řetězec.
+Tímto přiřazením Python „zahodí“ původní hodnotu.
+Od tohoto příkazu dál bude proměnná `kamaradka` označovat nový řetězec.
 
 Podobně by se dala proměnná přenastavit na jakoukoli jinou hodnotu:
 
@@ -98,7 +98,7 @@ print(kamaradka)
 A jak jsou na tom seznamy?
 Ty se měnit dají.
 
-Základní způsob, jak změnit seznam, je přidání
+Základní způsob jak změnit seznam je přidání
 prvku na konec pomocí metody `append`.
 Ta *nic nevrací* (resp. vrací `None`), ale „na místě” (angl. *in place*) změní
 seznam, se kterým pracuje. Vyzkoušej si to:
@@ -181,7 +181,8 @@ ukazuje, jak u takového „sekání” číslovat:
 funguje to stejně, jen místo menšího řetězce dostaneš menší seznam.
 
 ```python
-print(zviratka[2:-3])
+zviratka = ['pes', 'kočka', 'králík', 'had', 'andulka']
+print(zviratka[1:-2])
 ```
 
 „Sekáním“ vzniká nový seznam – když pak původní seznam změníš, v novém menším seznamu se
@@ -206,8 +207,8 @@ co přiřadíš.
 
 ```python
 zviratka = ['pes', 'kočka', 'králík', 'had', 'andulka']
-print(zviratka[1:-1])
-zviratka[1:-1] = ['koťátko', 'králíček', 'hádě']
+print(zviratka[1:-2])
+zviratka[1:-2] = ['koťátko', 'králíček']
 print(zviratka)
 ```
 
