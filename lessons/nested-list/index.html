@@ -1,0 +1,57 @@
+<h1 id="vnorene_seznamy">Vnořené seznamy
+<a href="#header-vnorene_seznamy" class="header-link">#</a>
+</h1>
+<p>Seznam může obsahovat jakýkoli typ hodnot: čísla, řetězce a tak dále:</p>
+<div class="highlight"><pre><span></span><span class="n">prvocisla</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">41</span><span class="p">]</span>
+<span class="n">zviratka</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pes&#39;</span><span class="p">,</span> <span class="s1">&#39;kočka&#39;</span><span class="p">,</span> <span class="s1">&#39;králík&#39;</span><span class="p">]</span>
+<span class="n">odpovedi</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+</pre></div><p>Stejně tak může seznam obsahovat i další seznamy.
+Podobně jako seznam čísel nebo seznam řetězců tak lze vytvořit seznam seznamů:</p>
+<div class="highlight"><pre><span></span><span class="n">seznam_seznamu</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+</pre></div><p>Takový seznam se chová docela normálně – můžeš z něj třeba brát jednotlivé
+prvky (které jsou ovšem taky seznamy):</p>
+<div class="highlight"><pre><span></span><span class="n">prvni_seznam</span> <span class="o">=</span> <span class="n">seznam_seznamu</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">prvni_seznam</span><span class="p">)</span>
+</pre></div><p>A protože jsou prvky samy seznamy,
+dá se mluvit o věcech jako „první prvek druhého seznamu”:</p>
+<div class="highlight"><pre><span></span><span class="n">druhy_seznam</span> <span class="o">=</span> <span class="n">seznam_seznamu</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">prvni_prvek_druheho_seznamu</span> <span class="o">=</span> <span class="n">druhy_seznam</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">prvni_prvek_druheho_seznamu</span><span class="p">)</span>
+</pre></div><p>A protože výraz <code>seznam_seznamu[1]</code>
+označuje seznam, můžeš brát prvky přímo z něj:</p>
+<div class="highlight"><pre><span></span><span class="n">prvni_prvek_druheho_seznamu</span> <span class="o">=</span> <span class="p">(</span><span class="n">seznam_seznamu</span><span class="p">[</span><span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div><p>Neboli:</p>
+<div class="highlight"><pre><span></span><span class="n">prvni_prvek_druheho_seznamu</span> <span class="o">=</span> <span class="n">seznam_seznamu</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div><p>A má tahle věc nějaké použití?
+Stejně jako vnořené cykly <code>for</code> ti umožnily vypsat tabulku, vnořené seznamy
+ti umožní si tabulku „zapamatovat”.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vytvor_radek_tabulky</span><span class="p">(</span><span class="n">cislo_radku</span><span class="p">,</span> <span class="n">velikost</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Vrátí seznam – daný řádek tabulky s násobilkou&quot;&quot;&quot;</span>
+    <span class="n">radek</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">cislo_sloupce</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">velikost</span><span class="p">):</span>
+        <span class="n">radek</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cislo_radku</span> <span class="o">*</span> <span class="n">cislo_sloupce</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">radek</span>
+
+<span class="k">def</span> <span class="nf">vytvor_tabulku</span><span class="p">(</span><span class="n">velikost</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Vrátí seznam seznamů – tabulku s násobilkou&quot;&quot;&quot;</span>
+    <span class="n">seznam_radku</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">cislo_radku</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">velikost</span><span class="p">):</span>
+        <span class="n">radek</span> <span class="o">=</span> <span class="n">vytvor_radek_tabulky</span><span class="p">(</span><span class="n">cislo_radku</span><span class="p">,</span> <span class="n">velikost</span><span class="p">)</span>
+        <span class="n">seznam_radku</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">radek</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seznam_radku</span>
+
+<span class="n">nasobilka</span> <span class="o">=</span> <span class="n">vytvor_tabulku</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">nasobilka</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># dva krát tři</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nasobilka</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># pět krát dva</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nasobilka</span><span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="mi">7</span><span class="p">])</span>  <span class="c1"># osm krát sedm</span>
+
+<span class="c1"># Vypsání celé tabulky</span>
+<span class="k">for</span> <span class="n">radek</span> <span class="ow">in</span> <span class="n">nasobilka</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">cislo</span> <span class="ow">in</span> <span class="n">radek</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">cislo</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div><p>Co s takovou „zapamatovanou” tabulkou?
+Můžeš si do ní uložit třeba pozice
+figurek na šachovnici nebo křížků a koleček
+ve <em>2D</em> piškvorkách.</p>

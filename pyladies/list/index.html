@@ -1,93 +1,89 @@
-<p>Tahle kapitola je plná nových věcí.
-Doufám, že vydržíš až do konce. A kdyby něco
-zatím nedávalo úplně smysl, nevěš hlavu:
-věci, které si teď vysvětlíme, se opravdu naučíš
-až v dalších lekcích, kde je budeme využívat
-prakticky.</p>
 <p>Encyklopedické informace z této stránky shrnuje
 <a href="https://github.com/pyvec/cheatsheets/blob/master/lists/lists-cs.pdf">Tahák na seznamy</a>,
-který si doporučuji vytisknout.</p>
-<p>Každý příklad v tomto textu si vyzkoušej;
-to, co Python vypíše, je důležitá součást lekce,
-i když v materiálech není přímo napsaná.</p>
+který si můžeš vytisknout.</p>
 <h1 id="seznamy">Seznamy
 <a href="#header-seznamy" class="header-link">#</a>
 </h1>
-<p>Dnes si ukážeme, jak pracovat se <em>seznamy</em> (angl. <em>lists</em>).
-Doufám, že víš, kde máš na klávesnici hranaté
-závorky, protože právě těmi se seznamy vytváří:</p>
-<div class="highlight"><pre><span></span><span class="n">cisla</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cisla</span><span class="p">)</span>
+<p>Dnes si ukážeme, jak pracovat se <em>seznamy</em> (angl. <em>lists</em>).</p>
+<p>Začneme prakticky.
+Vytvoř si seznam pomocí následujícího kódu:</p>
+<div class="highlight"><pre><span></span><span class="n">zviratka</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pes&#39;</span><span class="p">,</span> <span class="s1">&#39;kočka&#39;</span><span class="p">,</span> <span class="s1">&#39;králík&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zviratka</span><span class="p">)</span>
 </pre></div><div class="admonition note"><p>Nemůžeš najít hranaté závorky?
 Na české klávesnici zkus pravý <kbd>Alt</kbd> + <kbd>F</kbd> a <kbd>G</kbd>.</p>
 </div><p>Seznam je hodnota, která může obsahovat spoustu dalších hodnot.
 Tak jako řetězec obsahuje sekvenci znaků,
-seznam obsahuje sekvenci... čehokoliv. Třeba čísel.
-A tak jako můžeme pomocí cyklu <code>for</code>
-procházet řetězec po znacích,
-seznam můžeme procházet po jednotlivých prvcích:</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cislo</span> <span class="ow">in</span> <span class="n">cisla</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">cislo</span><span class="p">)</span>
-</pre></div><p>Seznamy se v programech vyskytují velice často:
-soubor se dá načíst jako seznam řetězců
-s jednotlivými řádky,
-seznam řetězců jako <code>'7♥'</code>
-a <code>'K♣'</code> může posloužit jako balíček karet,
-matematika je plná číselných řad,
-každá online služba má seznam uživatelů.</p>
-<p>Hodnoty v seznamu můžou být jakéhokoli typu,
-dokonce můžeme různé typy míchat v jednom seznamu
-(i když s takovými namixovanými seznamy se
-příliš často nesetkáme – více se používají v
-<var>n</var>-ticích, o kterých si povíme později):</p>
+seznam obsahuje sekvenci jakýchkoli hodnot.
+V našem případě obsahuje sekvenci řetězců.</p>
+<p>A tak jako můžeš pomocí cyklu <code>for</code> procházet řetězec po znacích,
+seznam můžeš procházet po jednotlivých prvcích:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">zviratko</span> <span class="ow">in</span> <span class="n">zviratka</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">zviratko</span><span class="p">)</span>
+</pre></div><p>Seznamy se v programech vyskytují často:
+soubor se dá načíst jako seznam jednotlivých řádků,
+matematika je plná číselných řad, e-shopy pracují se seznamy zboží,
+seznam řetězců jako <code>'7♥'</code> a <code>'K♣'</code> může posloužit jako balíček karet.</p>
+<p>Hodnoty v seznamu můžou být jakéhokoli typu:</p>
+<div class="highlight"><pre><span></span><span class="n">prvni_prvocisla</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+</pre></div><p>Dokonce můžeš různé typy míchat v jednom seznamu.
+(S takovými namixovanými seznamy se ovšem příliš často nesetkáš.
+Různé typy hodnot se používají spíš v <var>n</var>-ticích, o kterých si povíme
+později):</p>
 <div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="nb">len</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">seznam</span><span class="p">)</span>
-</pre></div><h2 id="vybirani_ze_seznamu">Vybírání ze seznamů
-<a href="#header-vybirani_ze_seznamu" class="header-link">#</a>
+</pre></div><h2 id="nemenitelne_hodnoty">Neměnitelné hodnoty
+<a href="#header-nemenitelne_hodnoty" class="header-link">#</a>
 </h2>
-<p>Nejzákladnější operaci se seznamy,
-cyklus <code>for</code>, už jsme si ukázali.
-Druhá nejdůležitější operace je vybírání
-jednotlivých prvků.
-To funguje jako u řetězců: do hranatých závorek
-se dá číslo prvku. Čísluje se, jako u řetězců,
-od nuly; záporná čísla označují prvky od konce.</p>
-<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cisla</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-</pre></div><p>Hranatými závorkami můžeme získávat podseznamy.
-<a href="naucse:page?lesson=beginners/str#slicing-diagram">Diagram z materiálů k řetězcům</a>
-ukazuje, jak u takového „sekání” číslovat:
-funguje to stejně, jen místo menšího řetězce
-dostaneme menší seznam.</p>
-<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cisla</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+<p>Důležitá vlastnost seznamů je, že se dají <em>měnit</em>.</p>
+<p>Než vysvětlíme o co jde, připomeňme si jak fungují hodnoty, které se měnit
+nedají – např. čísla, řetězce, <code>True</code>, <code>False</code>, <code>None</code>.</p>
+<p>Vyzkoušej si následující kousek kódu. Co je na něm „špatně“?</p>
+<div class="highlight"><pre><span></span><span class="n">kamaradka</span> <span class="o">=</span> <span class="s1">&#39;Žaneta&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kamaradka</span><span class="p">)</span>
+<span class="n">kamaradka</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kamaradka</span><span class="p">)</span>
+</pre></div><p>Proměnná <code>kamaradka</code> obsahuje řetězec <code>'Žaneta'</code> (který se už nedá změnit).
+Metoda <code>upper()</code> vytvoří a vrátí <em>nový</em> řetězec <code>'ŽANETA'</code>.
+Výsledná hodnota se ale v našem programu nevyužije – Python ji vytvoří,
+ale pak ji „zahodí“.</p>
+<p>Oprava je snadná: výsledek si ulož do proměnné.
+Často budeš chtít takový výsledek uložit zpátky do původní proměnné:</p>
+<div class="highlight"><pre><span></span><span class="n">kamaradka</span> <span class="o">=</span> <span class="n">kamaradka</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</pre></div><p>Tímto přiřazením Python „zahodí“ původní hodnotu.
+Od tohoto příkazu dál bude proměnná <code>kamaradka</code> označovat nový řetězec.</p>
+<p>Podobně by se dala proměnná přenastavit na jakoukoli jinou hodnotu:</p>
+<div class="highlight"><pre><span></span><span class="n">kamaradka</span> <span class="o">=</span> <span class="s1">&#39;Žaneta&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kamaradka</span><span class="p">)</span>
+<span class="n">kamaradka</span> <span class="o">=</span> <span class="s1">&#39;Alexandra&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kamaradka</span><span class="p">)</span>
 </pre></div><h2 id="meneni_seznamu">Měnění seznamů
 <a href="#header-meneni_seznamu" class="header-link">#</a>
 </h2>
-<p>Důležitá vlastnost seznamů, kterou nemají ani čísla, ani řetězce
-(a <code>True</code>/<code>False</code>/<code>None</code> už vůbec ne), je,
-že seznamy se dají měnit.</p>
-<p>Čísla měnit nejdou – máš-li <code>a = 3</code> a
-napíšeš <code>a = a + 1</code>, číslo <code>3</code> se nezmění.
-Vypočítá se nové číslo <code>4</code> a proměnná <code>a</code>
-se nastaví na toto nové číslo.</p>
-<p>Oproti tomu seznamy se dají měnit bez nastavování proměnné.
-Základní způsob, jak změnit seznam, je přidání
+<p>A jak jsou na tom seznamy?
+Ty se měnit dají.</p>
+<p>Základní způsob jak změnit seznam je přidání
 prvku na konec pomocí metody <code>append</code>.
-Ta <em>nic nevrací</em> (resp. vrací <code>None</code>),
-ale „na místě” (angl. <em>in place</em>) změní
-seznam, na kterém pracuje. Vyzkoušej si to:</p>
-<div class="highlight"><pre><span></span><span class="n">prvocisla</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">prvocisla</span><span class="p">)</span>
-<span class="n">prvocisla</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">19</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">prvocisla</span><span class="p">)</span>
-</pre></div><p>Takové měnění hodnoty může být občas překvapující,
-protože stejnou hodnotu může mít více proměnných.
+Ta <em>nic nevrací</em> (resp. vrací <code>None</code>), ale „na místě” (angl. <em>in place</em>) změní
+seznam, se kterým pracuje. Vyzkoušej si to:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zviratka</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pes&#39;</span><span class="p">,</span> <span class="s1">&#39;kočka&#39;</span><span class="p">,</span> <span class="s1">&#39;králík&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">zviratka</span><span class="p">)</span>
+<span class="go">[&#39;pes&#39;, &#39;kočka&#39;, &#39;králík&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zviratka</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;morče&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">zviratka</span><span class="p">)</span>
+<span class="go">[&#39;pes&#39;, &#39;kočka&#39;, &#39;králík&#39;, &#39;morče&#39;]</span>
+</pre></div><p>Všimni si, že proměnná <code>zviratka</code> se nastavuje jen na začátku.
+V rámci celého běhu programu výše existuje jen jeden seznam.
+Na začátku má tři prvky, pak mu jeden přibude, ale stále je to jeden a ten
+samý seznam.</p>
+<p>Takové měnění může být občas překvapující,
+protože stejná hodnota může být přiřazená ve více proměnných.
 Protože se mění hodnota samotná, může to vypadat,
-že se proměnná „mění aniž na ni sáhneme”:</p>
-<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>   <span class="c1"># vytvoření seznamu</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>           <span class="c1"># tady se nový seznam nevytváří</span>
+že se „mění proměnná, aniž na ni sáhneš”:</p>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>   <span class="c1"># Vytvoření seznamu</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>           <span class="c1"># Tady se nový seznam nevytváří!</span>
 
 <span class="c1"># seznam vytvořený v prvním řádku má teď dvě jména: &quot;a&quot; a &quot;b&quot;,</span>
-<span class="c1"># ale stále pracujeme jenom s jedním seznamem</span>
+<span class="c1"># ale stále pracuješ jenom s jedním seznamem</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -95,109 +91,136 @@ Protože se mění hodnota samotná, může to vypadat,
 </pre></div><h2 id="dalsi_zpusoby_jak_menit_seznamy">Další způsoby, jak měnit seznamy
 <a href="#header-dalsi_zpusoby_jak_menit_seznamy" class="header-link">#</a>
 </h2>
-<p>Kromě metody <code>append</code>, která přidává
-jediný prvek, existuje metoda <code>extend</code>,
-která umí přidávat prvků víc.
-Prvky k přidání jí předáme ve formě seznamu:</p>
-<div class="highlight"><pre><span></span><span class="n">dalsi_prvocisla</span> <span class="o">=</span> <span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
-<span class="n">prvocisla</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">dalsi_prvocisla</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">prvocisla</span><span class="p">)</span>
-</pre></div><p>Metoda <code>extend</code> umí pracovat i s jinými
-typy než se seznamy – ráda zpracuje cokoli, přes
-co umí cyklit <code>for</code>: např.
-jednotlivé znaky řetězců, řádky souborů, nebo čísla z <code>range()</code>.</p>
-<div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">seznam</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="s1">&#39;abcdef&#39;</span><span class="p">)</span>
-<span class="n">seznam</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">seznam</span><span class="p">)</span>
-</pre></div><h2 id="meneni_prvku">Měnění prvků
-<a href="#header-meneni_prvku" class="header-link">#</a>
+<p>Kromě metody <code>append</code>, která přidává jediný prvek na konec, existuje
+spousta dalších metod, které seznamy mění.
+Všechny udělají změny přímo v daném seznamu a (kromě <code>pop</code>) vrací <code>None</code>:</p>
+<ul>
+<li><code>extend()</code> přidá více prvků najednou,</li>
+<li><code>pop()</code> odebere poslední prvek a <em>vrátí ho</em> (jako návratovou hodnotu),</li>
+<li><code>insert()</code> přidá prvek na danou pozici,</li>
+<li><code>remove()</code> odstraní první výskyt daného prvku,</li>
+<li><code>sort()</code> seznam seřadí (řetězce „podle abecedy”, čísla vzestupně),</li>
+<li><code>clear()</code> odstraní všechny prvky.</li>
+<li><code>reverse()</code> obrátí pořadí prvků,</li>
+</ul>
+<p><span class="figure"><a href="naucse:static?filename=methods.svg"><img src="naucse:static?filename=methods.svg" alt="Tahák"></a></span></p>
+<p>Například:</p>
+<div class="highlight"><pre><span></span><span class="n">zviratka</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pes&#39;</span><span class="p">,</span> <span class="s1">&#39;kočka&#39;</span><span class="p">,</span> <span class="s1">&#39;králík&#39;</span><span class="p">]</span>
+<span class="n">zviratka</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;morče&#39;</span><span class="p">)</span>      <span class="c1"># [&#39;pes&#39;, &#39;kočka&#39;, &#39;králík&#39;, &#39;morče&#39;]</span>
+<span class="n">zviratka</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;had&#39;</span><span class="p">)</span>     <span class="c1"># [&#39;pes&#39;, &#39;kočka&#39;, &#39;had&#39;, &#39;králík&#39;, &#39;morče&#39;]</span>
+<span class="n">zviratka</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>                <span class="c1"># [&#39;pes&#39;, &#39;kočka&#39;, &#39;had&#39;, &#39;králík&#39;], vrátí &#39;morče&#39;</span>
+<span class="n">zviratka</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;had&#39;</span><span class="p">)</span>        <span class="c1"># [&#39;pes&#39;, &#39;kočka&#39;, &#39;králík&#39;]</span>
+<span class="n">zviratka</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>               <span class="c1"># [&#39;kočka&#39;, &#39;králík&#39;, &#39;pes&#39;]</span>
+<span class="n">zviratka</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>            <span class="c1"># [&#39;pes&#39;, &#39;králík&#39;, &#39;kočka&#39;]</span>
+<span class="n">zviratka</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>              <span class="c1"># []</span>
+</pre></div><h2 id="vybirani_ze_seznamu">Vybírání ze seznamů
+<a href="#header-vybirani_ze_seznamu" class="header-link">#</a>
 </h2>
-<p>Ale dost přidávání.
-Seznamům se dají i měnit jednotlivé prvky
-a to jednoduše tak, že do prvku přiřadíme,
-jako by to byla proměnná:</p>
-<div class="highlight"><pre><span></span><span class="n">cisla</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">cisla</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cisla</span><span class="p">)</span>
+<p>Často budeš ze seznamu chtít vybrat prvek na určité pozici.
+To funguje jako u řetězců: do hranatých závorek dáš číslo prvku.
+Stejně jako u řetězců se čísluje od nuly a záporná čísla číslují od konce.</p>
+<div class="highlight"><pre><span></span><span class="n">zviratka</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pes&#39;</span><span class="p">,</span> <span class="s1">&#39;kočka&#39;</span><span class="p">,</span> <span class="s1">&#39;králík&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zviratka</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div><p>Hranatými závorkami můžeš získat i podseznam.
+<a href="naucse:page?lesson=beginners/str-index-slice#slicing-diagram">Diagram z materiálů k řetězcům</a>
+ukazuje, jak u takového „sekání” číslovat:
+funguje to stejně, jen místo menšího řetězce dostaneš menší seznam.</p>
+<div class="highlight"><pre><span></span><span class="n">zviratka</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pes&#39;</span><span class="p">,</span> <span class="s1">&#39;kočka&#39;</span><span class="p">,</span> <span class="s1">&#39;králík&#39;</span><span class="p">,</span> <span class="s1">&#39;had&#39;</span><span class="p">,</span> <span class="s1">&#39;andulka&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zviratka</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+</pre></div><p>„Sekáním“ vzniká nový seznam – když pak původní seznam změníš, v novém menším seznamu se
+to neprojeví.</p>
+<h3 id="meneni_prvku">Měnění prvků
+<a href="#header-meneni_prvku" class="header-link">#</a>
+</h3>
+<p>Na rozdíl od řetězců (které se měnit nedají) můžeš u existujících seznamů
+nastavovat konkrétní prvky – a to tak, že do prvku přiřadíš jako by to byla
+proměnná:</p>
+<div class="highlight"><pre><span></span><span class="n">zviratka</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pes&#39;</span><span class="p">,</span> <span class="s1">&#39;kočka&#39;</span><span class="p">,</span> <span class="s1">&#39;králík&#39;</span><span class="p">]</span>
+<span class="n">zviratka</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;koťátko&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zviratka</span><span class="p">)</span>
 </pre></div><p>Přiřazovat se dá i do podseznamu – v tomto případě
 se podseznam nahradí jednotlivými prvky z toho,
-co přiřazujeme.
-Jako u <code>extend</code> můžeš do podseznamu opět přiřadit cokoli, co umí
-zpracovat <code>for</code> – seznam, řetězec, <code>range()</code> apod.</p>
-<div class="highlight"><pre><span></span><span class="n">cisla</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">cisla</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cisla</span><span class="p">)</span>
-</pre></div><h2 id="mazani_prvku">Mazání prvků
+co přiřadíš.</p>
+<div class="highlight"><pre><span></span><span class="n">zviratka</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pes&#39;</span><span class="p">,</span> <span class="s1">&#39;kočka&#39;</span><span class="p">,</span> <span class="s1">&#39;králík&#39;</span><span class="p">,</span> <span class="s1">&#39;had&#39;</span><span class="p">,</span> <span class="s1">&#39;andulka&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zviratka</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">zviratka</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;koťátko&#39;</span><span class="p">,</span> <span class="s1">&#39;králíček&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zviratka</span><span class="p">)</span>
+</pre></div><h3 id="mazani_prvku">Mazání prvků
 <a href="#header-mazani_prvku" class="header-link">#</a>
-</h2>
-<p>Přiřazením do podseznamu se dá i změnit délka
-seznamu, nebo některé prvky úplně odstranit:</p>
-<div class="highlight"><pre><span></span><span class="n">cisla</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">cisla</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cisla</span><span class="p">)</span>
-<span class="n">cisla</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cisla</span><span class="p">)</span>
-</pre></div><p>Tenhle zápis pro mazání prvků je ale docela
-nepřehledný, a proto na to máme zvláštní příkaz
-jménem <code>del</code>.
+</h3>
+<p>Přiřazením do podseznamu můžeš i změnit délku
+seznamu nebo některé prvky úplně odstranit:</p>
+<div class="highlight"><pre><span></span><span class="n">zviratka</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pes&#39;</span><span class="p">,</span> <span class="s1">&#39;kočka&#39;</span><span class="p">,</span> <span class="s1">&#39;králík&#39;</span><span class="p">]</span>
+<span class="n">zviratka</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;had&#39;</span><span class="p">,</span> <span class="s1">&#39;ještěrka&#39;</span><span class="p">,</span> <span class="s1">&#39;drak&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zviratka</span><span class="p">)</span>
+<span class="n">zviratka</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zviratka</span><span class="p">)</span>
+</pre></div><p>Tenhle zápis pro mazání prvků je ale docela nepřehledný.
+Proto na to existuje zvláštní příkaz jménem <code>del</code>.
 Jak už jeho název (z angl. <em>delete</em>, smazat)
 napovídá, smaže, co mu přijde pod ruku – jednotlivé
-prvky seznamů, podseznamy, … a dokonce i proměnné!</p>
-<div class="highlight"><pre><span></span><span class="n">cisla</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-<span class="k">del</span> <span class="n">cisla</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cisla</span><span class="p">)</span>
-<span class="k">del</span> <span class="n">cisla</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cisla</span><span class="p">)</span>
-<span class="k">del</span> <span class="n">cisla</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cisla</span><span class="p">)</span>
-</pre></div><p>Další mazací metody jsou:</p>
+prvky seznamů, podseznamy, … a dokonce i proměnné!
+Zkus si:</p>
+<div class="highlight"><pre><span></span><span class="n">zviratka</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pes&#39;</span><span class="p">,</span> <span class="s1">&#39;kočka&#39;</span><span class="p">,</span> <span class="s1">&#39;králík&#39;</span><span class="p">,</span> <span class="s1">&#39;had&#39;</span><span class="p">,</span> <span class="s1">&#39;ještěrka&#39;</span><span class="p">,</span> <span class="s1">&#39;andulka&#39;</span><span class="p">]</span>
+
+<span class="c1"># Smazání prvku seznamu</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zviratka</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">del</span> <span class="n">zviratka</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zviratka</span><span class="p">)</span>
+
+<span class="c1"># Smazání podseznamu</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zviratka</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">del</span> <span class="n">zviratka</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zviratka</span><span class="p">)</span>
+</pre></div><div class="admonition note"><p>Příkaz <code>del</code> umí mazat i proměnné.
+Po takovém smazání se proměnná chová jako kdyby do ní nikdo nikdy nic
+nepřiřadil:</p>
+<div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">zviratka</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zviratka</span><span class="p">)</span>
+</pre></div><p>V praxi se ale <code>del</code> na proměnné příliš často nepoužívá.</p>
+</div><p>Na mazání prvků můžeš použít i metody zmíněné výše:</p>
 <ul>
-<li><code>pop</code>, která odstraní <em>a vrátí</em> poslední prvek v seznamu – například pokud
-mám seznam karet v balíčku, jde takhle jednoduše „líznout” kartu,</li>
-<li><code>remove</code>, která najde v seznamu daný prvek a odstraní ho,</li>
-<li><code>clear</code>, která vyprázdní celý seznam.</li>
+<li><code>pop</code> odstraní poslední prvek v seznamu a <em>vrátí</em> ho,</li>
+<li><code>remove</code> najde v seznamu první výskyt daného prvku a odstraní ho,</li>
+<li><code>clear</code> vyprázdní celý seznam.</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="n">cisla</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
-<span class="n">posledni</span> <span class="o">=</span> <span class="n">cisla</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">posledni</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cisla</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">balicek</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;eso&#39;</span><span class="p">,</span> <span class="s1">&#39;sedma&#39;</span><span class="p">,</span> <span class="s1">&#39;svršek&#39;</span><span class="p">,</span> <span class="s1">&#39;sedma&#39;</span><span class="p">,</span> <span class="s1">&#39;král&#39;</span><span class="p">]</span>
+<span class="n">liznuta_karta</span> <span class="o">=</span> <span class="n">balicek</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liznuta_karta</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">balicek</span><span class="p">)</span>
 
-<span class="n">cisla</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cisla</span><span class="p">)</span>
+<span class="n">balicek</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;sedma&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">balicek</span><span class="p">)</span>
 
-<span class="n">cisla</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cisla</span><span class="p">)</span>
+<span class="n">balicek</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">balicek</span><span class="p">)</span>
 </pre></div><h2 id="razeni">Řazení
 <a href="#header-razeni" class="header-link">#</a>
 </h2>
-<p>A taky tu máme metodu <code>sort</code>, která prvky seznamu seřadí.</p>
+<p>Metoda <code>sort</code> seřadí prvky seznamu.</p>
 <div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="n">seznam</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">seznam</span><span class="p">)</span>
 </pre></div><p>Aby se daly seřadit, musí být prvky seznamu vzájemně
-<em>porovnatelné</em> – konktrétně na ně musí fungovat
-operátor <code>&lt;</code>.
+<em>porovnatelné</em> – konktrétně na ně musí fungovat operátor <code>&lt;</code>.
 Seznam s mixem čísel a řetězců tedy seřadit nepůjde.
-Operátor <code>&lt;</code> definuje i
-jak přesně se řadí (např. čísla podle velikosti;
-řetězce podle speciální „abecedy” která řadí
-velká písmena za malá, česká až za anglická, atd.).</p>
-<p>Metoda <code>sort</code> zná pojmenovaný argument
-<code>reverse</code>. Pokud ho nastavíš na <em>True</em>, řadí se „naopak”.</p>
+Operátor <code>&lt;</code> definuje i jak přesně <code>sort</code> řadí: čísla vzestupně podle
+velikosti; řetězce podle speciální „abecedy” která řadí
+malá písmena za velká, česká až za anglická, atd.</p>
+<p>Metoda <code>sort</code> zná pojmenovaný argument <code>reverse</code>.
+Pokud ho nastavíš na <em>True</em>, řadí se naopak – od největšího prvku po nejmenší.</p>
 <div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="n">seznam</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">seznam</span><span class="p">)</span>
 </pre></div><h2 id="zname_operace_se_seznamy">Známé operace se seznamy
 <a href="#header-zname_operace_se_seznamy" class="header-link">#</a>
 </h2>
-<p>Spousta toho, co můžeme dělat s řetězci, má stejný
-účinek i u seznamů.
+<p>Spousta toho, co můžeš dělat s řetězci, má stejný účinek i u seznamů.
 Třeba sečítání a násobení číslem:</p>
 <div class="highlight"><pre><span></span><span class="n">melodie</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">melodie</span><span class="p">)</span>
-</pre></div><p>Stejně jako u řetězců, sečítat jde jen seznam
-se seznamem – ne třeba seznam s řetězcem.</p>
+</pre></div><p>Stejně jako u řetězců jde se seznamem sečíst jen další seznam.
+Nemůžeš sečítat třeba seznam s řetězcem.</p>
 <p>Další staří známí jsou funkce <code>len</code>,
 metody <code>count</code> a <code>index</code>, a operátor <code>in</code>.</p>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">melodie</span><span class="p">))</span>         <span class="c1"># Délka seznamu</span>
@@ -207,41 +230,38 @@ metody <code>count</code> a <code>index</code>, a operátor <code>in</code>.</p>
 </pre></div><p>Poslední tři se ale přece jen chovají kapku jinak:
 u řetězců pracují s <em>podřetězci</em>,
 u seznamů jen s <em>jednotlivými</em> prvky.
-Takže ačkoliv naše melodie obsahuje prvky
-<code>'D'</code> a <code>'E'</code> vedle sebe, <code>'DE'</code> v seznamu není:</p>
+Takže ačkoliv melodie výše obsahuje prvky
+<code>'D'</code> a <code>'E'</code> vedle sebe, <code>'DE'</code> ani <code>['D', 'E']</code> v seznamu není:</p>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DE&#39;</span> <span class="ow">in</span> <span class="n">melodie</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">melodie</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;DE&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">melodie</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;DE&#39;</span><span class="p">))</span>
 </pre></div><h2 id="seznam_jako_podminka">Seznam jako podmínka
 <a href="#header-seznam_jako_podminka" class="header-link">#</a>
 </h2>
-<p>Seznam se dá použít v příkazu <code>if</code> (nebo <code>while</code>) jako podmínka,
+<p>Seznam můžeš použít v příkazu <code>if</code> (nebo <code>while</code>) jako podmínku,
 která platí, když v tom seznamu něco je.
 Jinými slovy, <code>seznam</code> je tu „zkratka“ pro <code>len(seznam) &gt; 0</code>.</p>
 <div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">seznam</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;V seznamu něco je!&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Seznam je prázdný!&#39;</span><span class="p">)</span>
-</pre></div><p>Podobně se dají v podmínce použít i řetězce.
+</pre></div><p>Podobně můžeš v podmínce použít i řetězce.
 A dokonce i čísla – ta jako podmínka platí, pokud jsou nenulová.</p>
 <h2 id="tvoreni_seznamu">Tvoření seznamů
 <a href="#header-tvoreni_seznamu" class="header-link">#</a>
 </h2>
 <p>Tak jako funkce <code>int</code> převádí na
 celá čísla a <code>str</code> na řetězce,
-funkce <code>list</code> (angl. <em>seznam</em>) převádí na seznam.
-Jako argument jí předáme jakoukoli hodnotu,
+funkce <code>list</code> převádí na seznam.
+Jako argument jí můžeš předat jakoukoli hodnotu,
 kterou umí zpracovat příkaz <code>for</code>.
-Z řetězců udělá seznam znaků, z otevřeného souboru
-udělá seznam řádků, z <code>range</code> udělá
-seznam čísel.</p>
+Z řetězce udělá seznam znaků, z <code>range</code> udělá seznam čísel.</p>
 <div class="highlight"><pre><span></span><span class="n">abeceda</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span><span class="p">)</span>
 <span class="n">cisla</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">abeceda</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cisla</span><span class="p">)</span>
 </pre></div><p>I ze seznamu udělá funkce <code>list</code> seznam.
-To může znít zbytečně, ale není – vytvoří se
-totiž <em>nový</em> seznam.
+To může znít zbytečně, ale není – vytvoří se totiž <em>nový</em> seznam.
 Bude mít sice stejné prvky ve stejném pořadí,
 ale nebude to ten samý seznam:
 měnit se bude nezávisle na tom starém.</p>
@@ -251,192 +271,117 @@ měnit se bude nezávisle na tom starém.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div><p>Další způsob, jak tvořit seznamy
 (zvláště složitější), je nejdřív udělat prázdný
 seznam a pak ho postupně naplnit pomocí funkce <code>append</code>.
 Třeba pokud z nějakého důvodu chceš seznam
-mocnin dvou, projdi čísla, kterými chceme mocnit,
+mocnin dvou, projdi čísla, kterými chceš mocnit,
 cyklem <code>for</code> a pro každé z nich
 do seznamu přidej příslušnou mocninu:</p>
 <div class="highlight"><pre><span></span><span class="n">mocniny_dvou</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">cislo</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">mocniny_dvou</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">cislo</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mocniny_dvou</span><span class="p">)</span>
+</pre></div><p>Podobným způsobem získáš seznam seznam <code>matka</code>, <code>babička</code>, <code>prababička</code>,
+<code>praprababička</code>, atd.:</p>
+<div class="highlight"><pre><span></span><span class="n">predkove</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;matka&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">pocet_pra</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">predkove</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;pra&#39;</span> <span class="o">*</span> <span class="n">pocet_pra</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;babička&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">predkove</span><span class="p">)</span>
 </pre></div><p>Chceš-li seznam, který reprezentuje balíček karet,
-zavolej <code>append</code> pro všechny kombinace barev a hodnot.</p>
+zavolej <code>append</code> pro všechny kombinace barev a hodnot.
+Neboli česky:</p>
+<ul>
+<li>Začni s prázdným <strong>balíčkem</strong>.</li>
+<li>Pro každou ze čtyř <strong>barev</strong> (<em>přidáme 13 karet té barvy, a to následovně</em>):<ul>
+<li>Pro každou ze 13 <strong>hodnot</strong>, 2-10 a 4 karty s obrázkem:<ul>
+<li>Přidej do <strong>balíčku</strong> kartu s danou <strong>barvou</strong> a <strong>hodnotou</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Balíček</strong> je hotový, vypiš ho.</li>
+</ul>
+<p>Takový program může být trochu složitější vymyslet.
+Začít můžeš programem, který všechny karty jen vypíše:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">barva</span> <span class="ow">in</span> <span class="s1">&#39;♠&#39;</span><span class="p">,</span> <span class="s1">&#39;♥&#39;</span><span class="p">,</span> <span class="s1">&#39;♦&#39;</span><span class="p">,</span> <span class="s1">&#39;♣&#39;</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">hodnota</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">hodnota</span><span class="p">,</span> <span class="n">barva</span><span class="p">)</span>
+</pre></div><p>A pak program změň tak, aby každou kartu místo vypsání přidal do seznamu:</p>
 <div class="highlight"><pre><span></span><span class="n">balicek</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">barva</span> <span class="ow">in</span> <span class="s1">&#39;♠&#39;</span><span class="p">,</span> <span class="s1">&#39;♥&#39;</span><span class="p">,</span> <span class="s1">&#39;♦&#39;</span><span class="p">,</span> <span class="s1">&#39;♣&#39;</span><span class="p">:</span>  <span class="c1"># (Na Windows použij textová jména)</span>
-    <span class="k">for</span> <span class="n">hodnota</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">]:</span>
-        <span class="n">balicek</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span> <span class="o">+</span> <span class="n">barva</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">barva</span> <span class="ow">in</span> <span class="s1">&#39;♠&#39;</span><span class="p">,</span> <span class="s1">&#39;♥&#39;</span><span class="p">,</span> <span class="s1">&#39;♦&#39;</span><span class="p">,</span> <span class="s1">&#39;♣&#39;</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">hodnota</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">]:</span>
+        <span class="n">balicek</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hodnota</span> <span class="o">+</span> <span class="n">barva</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">balicek</span><span class="p">)</span>
-</pre></div><h2 id="seznamy_a_retezce">Seznamy a řetězce
+</pre></div><p>Výsledný program porovnej s českým „překladem“ výše.</p>
+<div class="admonition note"><p class="admonition-title">Jde to líp?</p>
+<p>Psát do programu výčet po sobě jdoucích čísel,
+<code>'2', '3', '4', '5', '6', '7', '8', '9', '10'</code>,
+není ideální – na takovou otročinu přece máme počítače!
+Zkus čísla dostat pomocí <code>range</code>.
+Ale pozor, není to úplně přímočaré:</p>
+<ul>
+<li>Jaké argumenty dáš funkci <code>range</code>, abys dostal/a čísla od 2 do 10?</li>
+<li>Funkce <code>range</code> vrací sekvenci, která ale není seznam.
+Abys ji mohl/a spojit se seznamem <code>['J', 'Q', 'K', 'A']</code>, budeš ji muset
+na seznam převést: <code>list(range(...))</code></li>
+<li>Abys mohl/a čísla z <code>range</code> připojit k řetězci jako <code>♠</code>, budeš muset
+každou hodnotu před použitím převést na řetězec: <code>str(hodnota)</code>.</li>
+</ul>
+<p>Bonus: Jaký je nejkratší zápis, kterým můžeš zadat seznam
+<code>['J', 'Q', 'K', 'A']</code>?</p>
+<p>Řešení najdeš v textu o kousek níže.</p>
+</div><h2 id="seznamy_a_retezce">Seznamy a řetězce
 <a href="#header-seznamy_a_retezce" class="header-link">#</a>
 </h2>
-<p>Seznamy a řetězce jsou druhy „sekvencí”,
-takže snad nepřekvapí, že se dá různě převádět
-z jednoho typu na druhý.
-Funkce <code>list</code> vytvoří z řetězce
-seznam znaků.
-Když chceme dostat seznam slov, použijeme
+<p>Seznamy a řetězce jsou druhy <em>sekvencí</em>.
+Můžeš různě převádět z jednoho typu na druhý.</p>
+<p>Funkce <code>list</code> vytvoří z řetězce seznam znaků.
+Když chceš dostat seznam slov, použij
 na řetězci metodu <code>split</code> (angl. <em>rozdělit</em>):</p>
 <div class="highlight"><pre><span></span><span class="n">slova</span> <span class="o">=</span> <span class="s1">&#39;Tato věta je složitá, rozdělme ji na slova!&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">slova</span><span class="p">)</span>
 </pre></div><p>Metoda <code>split</code> umí brát i argument.
-Pokud ho předáme, místo mezer (a nových řádků)
-se řetězec „rozseká” daným oddělovačem.
-Takže když máme nějaká data oddělená čárkami,
-není nic jednoduššího než použít <code>split</code> s čárkou:</p>
+Pokud ho předáš, řetězec „rozseká” podle daného oddělovače
+(místo mezer a nových řádků).
+Takže když máš nějaká data oddělená čárkami,
+použij <code>split</code> s čárkou:</p>
 <div class="highlight"><pre><span></span><span class="n">zaznamy</span> <span class="o">=</span> <span class="s1">&#39;3A,8B,2E,9D&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">zaznamy</span><span class="p">)</span>
-</pre></div><p>Chceme-li spojit seznam řetězců zase dohromady
-do jediného řetězce, použijeme metodu
-<code>join</code> (angl. <em>spojit</em>).
+</pre></div><p>Chceš-li spojit seznam řetězců zase dohromady
+do jediného řetězce, použij metodu <code>join</code> (angl. <em>spojit</em>).
 Pozor, tahle metoda se volá na <em>oddělovači</em>,
-tedy řetězci, kterým se jednotlivé kousky „slepí”
-dohromady; a jako argument bere seznam jednotlivých
-řetězců.</p>
+tedy na řetězci, kterým se jednotlivé kousky „slepí” dohromady.
+Seznam jednotlivých řetězců bere jako argument.</p>
 <div class="highlight"><pre><span></span><span class="n">veta</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">slova</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">veta</span><span class="p">)</span>
-</pre></div><h2 id="ukol">Úkol
-<a href="#header-ukol" class="header-link">#</a>
-</h2>
-<p>Představ si, že ti uživatelé zadávají jména a příjmení a ty si je ukládáš do
-seznamu pro další použití např. v evidenci studentů. Ne všichni jsou ale pořádní,
-a tak se v seznamu sem tam objeví i jméno s nesprávně zadanými velkými písmeny.
-Například:</p>
-<div class="highlight"><pre><span></span><span class="n">zaznamy</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pepa novák&#39;</span><span class="p">,</span> <span class="s1">&#39;Jiří Sládek&#39;</span><span class="p">,</span> <span class="s1">&#39;Ivo navrátil&#39;</span><span class="p">,</span> <span class="s1">&#39;jan Poledník&#39;</span><span class="p">]</span>
-</pre></div><p>Úkolem je:</p>
-<ul>
-<li>Napsat funkci, která vybere jen ty správně zadané záznamy, které mají správně
-jméno i příjmení s velkým počátečním písmenem.</li>
-<li>Napsat funkci, která vybere naopak jen ty nesprávně zadané záznamy.</li>
-<li><em>(Nepovinný)</em> – Napsat funkci, která vrátí seznam s opravenými záznamy.</li>
-</ul>
-<p>Výsledné funkce by měly fungovat takto:</p>
-<div class="highlight"><pre><span></span><span class="n">zaznamy</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pepa novák&#39;</span><span class="p">,</span> <span class="s1">&#39;Jiří Sládek&#39;</span><span class="p">,</span> <span class="s1">&#39;Ivo navrátil&#39;</span><span class="p">,</span> <span class="s1">&#39;jan Poledník&#39;</span><span class="p">]</span>
-
-<span class="n">chybne_zaznamy</span> <span class="o">=</span> <span class="n">vyber_chybne</span><span class="p">(</span><span class="n">zaznamy</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">chybne_zaznamy</span><span class="p">)</span> <span class="c1"># → [&#39;pepa novák&#39;, &#39;Ivo navrátil&#39;, &#39;jan Poledník&#39;]</span>
-
-<span class="n">spravne_zaznamy</span> <span class="o">=</span> <span class="n">vyber_spravne</span><span class="p">(</span><span class="n">zaznamy</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">spravne_zaznamy</span><span class="p">)</span> <span class="c1"># → [&#39;Jiří Sládek&#39;]</span>
-
-<span class="n">opravene_zaznamy</span> <span class="o">=</span> <span class="n">oprav_zaznamy</span><span class="p">(</span><span class="n">zaznamy</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">opravene_zaznamy</span><span class="p">)</span> <span class="c1"># → [&#39;Pepa Novák&#39;, &#39;Jiří Sládek&#39;, &#39;Ivo Navrátil&#39;, &#39;Jan Poledník&#39;]</span>
-</pre></div><div class="admonition note"><p>Snadný způsob jak zjistit, zda je řetězec složen jen z malých písmen,
-je metoda <code>islower()</code>, která vrací True, pokud řetězec obsahuje jen malá
-písmena, jinak vrací False. Například <code>'abc'.islower() == True</code> ale
-<code>'aBc'.islower() == False</code>.</p>
-<p>Snadný způsob jak převést první písmenko na velké je metoda <code>capitalize()</code>:
-např. <code>'abc'.capitalize() == 'Abc'</code></p>
-</div><div class="solution" id="solution-0">
-    <h3>Řešení</h3>
-    <div class="solution-cover">
-        <a href="naucse:solution?solution=0"><span class="link-text">Ukázat řešení</span></a>
-    </div>
-    <div class="solution-body" aria-hidden="true">
-        <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vyber_chybne</span><span class="p">(</span><span class="n">seznam</span><span class="p">):</span>
-    <span class="n">vysledek</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">zaznam</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">:</span>
-        <span class="n">jmeno_a_prijmeni</span> <span class="o">=</span> <span class="n">zaznam</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-        <span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno_a_prijmeni</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">prijmeni</span> <span class="o">=</span> <span class="n">jmeno_a_prijmeni</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">jmeno</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">islower</span><span class="p">()</span> <span class="ow">or</span> <span class="n">prijmeni</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">islower</span><span class="p">():</span>
-            <span class="n">vysledek</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zaznam</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">vysledek</span>
-
-<span class="k">def</span> <span class="nf">vyber_spravne</span><span class="p">(</span><span class="n">seznam</span><span class="p">):</span>
-    <span class="n">vysledek</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">zaznam</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">:</span>
-        <span class="n">jmeno_a_prijmeni</span> <span class="o">=</span> <span class="n">zaznam</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-        <span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno_a_prijmeni</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">prijmeni</span> <span class="o">=</span> <span class="n">jmeno_a_prijmeni</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">jmeno</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">islower</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">prijmeni</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">islower</span><span class="p">():</span>
-            <span class="n">vysledek</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zaznam</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">vysledek</span>
-
-<span class="k">def</span> <span class="nf">oprav_zaznamy</span><span class="p">(</span><span class="n">seznam</span><span class="p">):</span>
-    <span class="n">vysledek</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">zaznam</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">:</span>
-        <span class="n">jmeno_a_prijmeni</span> <span class="o">=</span> <span class="n">zaznam</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-        <span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno_a_prijmeni</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">prijmeni</span> <span class="o">=</span> <span class="n">jmeno_a_prijmeni</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">vysledek</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jmeno</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">prijmeni</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
-    <span class="k">return</span> <span class="n">vysledek</span>
-</pre></div>
-    </div>
-</div><h2 id="seznamy_a_nahoda">Seznamy a náhoda
+</pre></div><h2 id="seznamy_a_nahoda">Seznamy a náhoda
 <a href="#header-seznamy_a_nahoda" class="header-link">#</a>
 </h2>
-<p>Modul <code>random</code> obsahuje dvě funkce, které se hodí k seznamům.
-Jako <code>random.randrange</code>, obě mají něco
-společného s náhodou.</p>
+<p>Modul <code>random</code> obsahuje funkce, které mají něco společného s náhodou:
+třeba nám už známou <code>random.randrange</code>.
+Podívejme se na dvě další, které se hodí k seznamům.</p>
 <p>Funkce <code>shuffle</code> seznam „zamíchá” – všechny prvky náhodně popřehází.
-Jako metoda <code>sort</code> i funkce <code>shuffle</code> nic nevrací.</p>
+Seznam změní „na místě“ a nic nevrací, podobně jako metoda <code>sort</code>.</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">ciselne_hodnoty</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="n">pismenne_hodnoty</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;JQKA&#39;</span><span class="p">)</span>
 
 <span class="n">balicek</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">barva</span> <span class="ow">in</span> <span class="s1">&#39;♠&#39;</span><span class="p">,</span> <span class="s1">&#39;♥&#39;</span><span class="p">,</span> <span class="s1">&#39;♦&#39;</span><span class="p">,</span> <span class="s1">&#39;♣&#39;</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">hodnota</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">hodnota</span> <span class="ow">in</span> <span class="n">ciselne_hodnoty</span> <span class="o">+</span> <span class="n">pismenne_hodnoty</span><span class="p">:</span>
         <span class="n">balicek</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">hodnota</span><span class="p">)</span> <span class="o">+</span> <span class="n">barva</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">balicek</span><span class="p">)</span>
 
 <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">balicek</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">balicek</span><span class="p">)</span>
 </pre></div><p>A funkce <code>choice</code> ze seznamu vybere jeden náhodný prvek.
-S použitím seznamu tak můžeme výrazně zjednodušit
-úvodní část naší staré hry kámen/nůžky/papír:</p>
+S použitím seznamu tak můžeš třeba jednoduše vybrat tah pro hru
+kámen/nůžky/papír:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">mozne_tahy</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;kámen&#39;</span><span class="p">,</span> <span class="s1">&#39;nůžky&#39;</span><span class="p">,</span> <span class="s1">&#39;papír&#39;</span><span class="p">]</span>
 <span class="n">tah_pocitace</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">mozne_tahy</span><span class="p">)</span>
-</pre></div><h2 id="vnorene_seznamy">Vnořené seznamy
-<a href="#header-vnorene_seznamy" class="header-link">#</a>
-</h2>
-<p>A perlička na konec!
-Na začátku tohoto textu je napsáno, že seznam
-může obsahovat jakýkoli typ hodnot.
-Může třeba obsahovat i další seznamy:</p>
-<div class="highlight"><pre><span></span><span class="n">seznam_seznamu</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
-</pre></div><p>Takový seznam se chová docela normálně – jdou
-z něj třeba brát jednotlivé prvky
-(které jsou ovšem taky seznamy):</p>
-<div class="highlight"><pre><span></span><span class="n">prvni_seznam</span> <span class="o">=</span> <span class="n">seznam_seznamu</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">prvni_seznam</span><span class="p">)</span>
-</pre></div><p>A protože jsou prvky samy seznamy,
-můžeme mluvit o věcech jako „první prvek druhého seznamu”:</p>
-<div class="highlight"><pre><span></span><span class="n">druhy_seznam</span> <span class="o">=</span> <span class="n">seznam_seznamu</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">prvni_prvek_druheho_seznamu</span> <span class="o">=</span> <span class="n">druhy_seznam</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">prvni_prvek_druheho_seznamu</span><span class="p">)</span>
-</pre></div><p>A protože výraz <code>seznam_seznamu[1]</code>
-označuje seznam, můžeme brát prvky přímo z něj:</p>
-<div class="highlight"><pre><span></span><span class="n">prvni_prvek_druheho_seznamu</span> <span class="o">=</span> <span class="p">(</span><span class="n">seznam_seznamu</span><span class="p">[</span><span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div><p>Neboli:</p>
-<div class="highlight"><pre><span></span><span class="n">prvni_prvek_druheho_seznamu</span> <span class="o">=</span> <span class="n">seznam_seznamu</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-</pre></div><p>A má tahle věc nějaké použití, ptáš se?
-Stejně jako vnořené cykly <code>for</code>
-nám umožnily vypsat tabulku, vnořené seznamy
-nám umožní si tabulku „zapamatovat”.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vytvor_tabulku</span><span class="p">(</span><span class="n">velikost</span><span class="o">=</span><span class="mi">11</span><span class="p">):</span>
-    <span class="n">seznam_radku</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">velikost</span><span class="p">):</span>
-        <span class="n">radek</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">velikost</span><span class="p">):</span>
-            <span class="n">radek</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>
-        <span class="n">seznam_radku</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">radek</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">seznam_radku</span>
-
-<span class="n">nasobilka</span> <span class="o">=</span> <span class="n">vytvor_tabulku</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">nasobilka</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># dva krát tři</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">nasobilka</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># pět krát dva</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">nasobilka</span><span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="mi">7</span><span class="p">])</span>  <span class="c1"># osm krát sedm</span>
-
-<span class="c1"># Vypsání celé tabulky</span>
-<span class="k">for</span> <span class="n">radek</span> <span class="ow">in</span> <span class="n">nasobilka</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">cislo</span> <span class="ow">in</span> <span class="n">radek</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">cislo</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-</pre></div><p>Co s takovou „zapamatovanou” tabulkou?
-Můžeš si do ní uložit třeba pozice
-figurek na šachovnici nebo křížků a koleček
-ve <em>2D</em> piškvorkách.</p>
+<span class="nb">print</span><span class="p">(</span><span class="n">tah_pocitace</span><span class="p">)</span>
+</pre></div>

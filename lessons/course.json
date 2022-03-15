@@ -609,18 +609,18 @@
                         },
                         "license": "cc-by-sa-40",
                         "slug": "index",
-                        "solutions": [
-                            {
-                                "content": "<div class=\"highlight\"><pre><span></span><span class=\"k\">def</span> <span class=\"nf\">vyber_chybne</span><span class=\"p\">(</span><span class=\"n\">seznam</span><span class=\"p\">):</span>\n    <span class=\"n\">vysledek</span> <span class=\"o\">=</span> <span class=\"p\">[]</span>\n    <span class=\"k\">for</span> <span class=\"n\">zaznam</span> <span class=\"ow\">in</span> <span class=\"n\">seznam</span><span class=\"p\">:</span>\n        <span class=\"n\">jmeno_a_prijmeni</span> <span class=\"o\">=</span> <span class=\"n\">zaznam</span><span class=\"o\">.</span><span class=\"n\">split</span><span class=\"p\">(</span><span class=\"s1\">&#39; &#39;</span><span class=\"p\">)</span>\n        <span class=\"n\">jmeno</span> <span class=\"o\">=</span> <span class=\"n\">jmeno_a_prijmeni</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span>\n        <span class=\"n\">prijmeni</span> <span class=\"o\">=</span> <span class=\"n\">jmeno_a_prijmeni</span><span class=\"p\">[</span><span class=\"mi\">1</span><span class=\"p\">]</span>\n        <span class=\"k\">if</span> <span class=\"n\">jmeno</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span><span class=\"o\">.</span><span class=\"n\">islower</span><span class=\"p\">()</span> <span class=\"ow\">or</span> <span class=\"n\">prijmeni</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span><span class=\"o\">.</span><span class=\"n\">islower</span><span class=\"p\">():</span>\n            <span class=\"n\">vysledek</span><span class=\"o\">.</span><span class=\"n\">append</span><span class=\"p\">(</span><span class=\"n\">zaznam</span><span class=\"p\">)</span>\n    <span class=\"k\">return</span> <span class=\"n\">vysledek</span>\n\n<span class=\"k\">def</span> <span class=\"nf\">vyber_spravne</span><span class=\"p\">(</span><span class=\"n\">seznam</span><span class=\"p\">):</span>\n    <span class=\"n\">vysledek</span> <span class=\"o\">=</span> <span class=\"p\">[]</span>\n    <span class=\"k\">for</span> <span class=\"n\">zaznam</span> <span class=\"ow\">in</span> <span class=\"n\">seznam</span><span class=\"p\">:</span>\n        <span class=\"n\">jmeno_a_prijmeni</span> <span class=\"o\">=</span> <span class=\"n\">zaznam</span><span class=\"o\">.</span><span class=\"n\">split</span><span class=\"p\">(</span><span class=\"s1\">&#39; &#39;</span><span class=\"p\">)</span>\n        <span class=\"n\">jmeno</span> <span class=\"o\">=</span> <span class=\"n\">jmeno_a_prijmeni</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span>\n        <span class=\"n\">prijmeni</span> <span class=\"o\">=</span> <span class=\"n\">jmeno_a_prijmeni</span><span class=\"p\">[</span><span class=\"mi\">1</span><span class=\"p\">]</span>\n        <span class=\"k\">if</span> <span class=\"ow\">not</span> <span class=\"n\">jmeno</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span><span class=\"o\">.</span><span class=\"n\">islower</span><span class=\"p\">()</span> <span class=\"ow\">and</span> <span class=\"ow\">not</span> <span class=\"n\">prijmeni</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span><span class=\"o\">.</span><span class=\"n\">islower</span><span class=\"p\">():</span>\n            <span class=\"n\">vysledek</span><span class=\"o\">.</span><span class=\"n\">append</span><span class=\"p\">(</span><span class=\"n\">zaznam</span><span class=\"p\">)</span>\n    <span class=\"k\">return</span> <span class=\"n\">vysledek</span>\n\n<span class=\"k\">def</span> <span class=\"nf\">oprav_zaznamy</span><span class=\"p\">(</span><span class=\"n\">seznam</span><span class=\"p\">):</span>\n    <span class=\"n\">vysledek</span> <span class=\"o\">=</span> <span class=\"p\">[]</span>\n    <span class=\"k\">for</span> <span class=\"n\">zaznam</span> <span class=\"ow\">in</span> <span class=\"n\">seznam</span><span class=\"p\">:</span>\n        <span class=\"n\">jmeno_a_prijmeni</span> <span class=\"o\">=</span> <span class=\"n\">zaznam</span><span class=\"o\">.</span><span class=\"n\">split</span><span class=\"p\">(</span><span class=\"s1\">&#39; &#39;</span><span class=\"p\">)</span>\n        <span class=\"n\">jmeno</span> <span class=\"o\">=</span> <span class=\"n\">jmeno_a_prijmeni</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span>\n        <span class=\"n\">prijmeni</span> <span class=\"o\">=</span> <span class=\"n\">jmeno_a_prijmeni</span><span class=\"p\">[</span><span class=\"mi\">1</span><span class=\"p\">]</span>\n        <span class=\"n\">vysledek</span><span class=\"o\">.</span><span class=\"n\">append</span><span class=\"p\">(</span><span class=\"n\">jmeno</span><span class=\"o\">.</span><span class=\"n\">capitalize</span><span class=\"p\">()</span> <span class=\"o\">+</span> <span class=\"s1\">&#39; &#39;</span> <span class=\"o\">+</span> <span class=\"n\">prijmeni</span><span class=\"o\">.</span><span class=\"n\">capitalize</span><span class=\"p\">())</span>\n    <span class=\"k\">return</span> <span class=\"n\">vysledek</span>\n</pre></div>"
-                            }
-                        ],
+                        "solutions": [],
                         "source_file": "lessons/beginners/list/index.md",
                         "title": "Seznamy",
                         "vars": {}
                     }
                 },
                 "source_file": "lessons/beginners/list/info.yml",
-                "static_files": {},
+                "static_files": {
+                    "methods.svg": {
+                        "path": "list/methods.svg"
+                    }
+                },
                 "title": "Seznamy"
             },
             "beginners/local-variables": {
@@ -720,6 +720,27 @@
                 "source_file": "lessons/beginners/modules/info.yml",
                 "static_files": {},
                 "title": "Moduly"
+            },
+            "beginners/nested-list": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2020."
+                        ],
+                        "content": {
+                            "path": "nested-list/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/nested-list/index.md",
+                        "title": "Vnořené seznamy",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/beginners/nested-list/info.yml",
+                "static_files": {},
+                "title": "Vnořené seznamy"
             },
             "beginners/nested-traceback": {
                 "pages": {
@@ -2519,6 +2540,11 @@
                     {
                         "lesson_slug": "beginners/modules",
                         "title": "Moduly",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "beginners/nested-list",
+                        "title": "Vnořené seznamy",
                         "type": "lesson"
                     },
                     {
