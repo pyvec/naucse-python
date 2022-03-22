@@ -90,7 +90,6 @@ plan:
   materials:
   - lesson: git/collaboration
   - lesson: git/ignoring
-  - lesson: beginners/files
   - title: Gitový tahák
     url: https://pyvec.github.io/cheatsheets/basic-git/basic-git-cs.pdf
     type: cheatsheet
@@ -104,6 +103,13 @@ plan:
   - title: Tahák na seznamy
     url: https://pyvec.github.io/cheatsheets/lists/lists-cs.pdf
     type: cheatsheet
+
+- title: Sekvence a soubory
+  slug: seq
+  materials:
+  - lesson: beginners/range
+  - lesson: beginners/zip-enumerate
+  - lesson: beginners/files
 
 - title: Grafika
   slug: pyglet
