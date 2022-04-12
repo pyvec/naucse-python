@@ -284,8 +284,8 @@ Traceback (most recent call last):
 AttributeError: 'Kotatko' object has no attribute 'jmeno'
 ```
 
-Aby tahle chyba nemohla nastat, můžeš zařídit aby každé kotě *muselo* být
-pojmenované už od okamžiku kdy vznikne.
+Aby tahle chyba nemohla nastat, můžeš zařídit, aby každé kotě *muselo* být
+pojmenované už od okamžiku, kdy vznikne.
 Jméno pak budeš zadávat už při vytváření kotěte, nějak takhle:
 
 ```python
