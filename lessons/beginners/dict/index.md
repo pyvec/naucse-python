@@ -175,16 +175,20 @@ můžeš ho měnit nezávisle na tom původním.
 Druhá věc, která jde převést na slovník, je
 *sekvence dvojic* klíč/hodnota – ať už seznam:
 
-```python
-data = [(1, 'jedna'), (2, 'dva'), (3, 'tři')]
-nazvy_cisel = dict(data)
+```pycon
+>>> data = [(1, 'jedna'), (2, 'dva'), (3, 'tři')]
+>>> nazvy_cisel = dict(data)
+>>> nazvy_cisel
+{1: 'jedna', 2: 'dva', 3: 'tři'}
 ```
 
 nebo jiný iterovatelný objekt:
 
-```python
-data = enumerate(['nula', 'jedna', 'dva'])
-nazvy_cisel = dict(data)
+```pycon
+>>> data = enumerate(['nula', 'jedna', 'dva'])
+>>> nazvy_cisel = dict(data)
+>>> nazvy_cisel
+{0: 'nula', 1: 'jedna', 2: 'dva'}
 ```
 
 A to je vše, co se na slovník dá převést.
