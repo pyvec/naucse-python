@@ -9,11 +9,11 @@ Spousta webových služeb poskytuje takzvané
 programátorské rozhraní), přes které je možné s danou
 službou komunikovat programově.
 Místo klikání na tlačítka a čtení stránek „očima”
-dostaneš data ve formátu kterému rozumí počítače.
+dostaneš data ve formátu, kterému rozumí počítače.
 V dnešní době to bude většinou formát JSON.
 
 Z minulých lekcí bys měl{{a}} mít založený účet na github.com.
-Podívejme se na to, jak se zeptat Githubu co o tobě ví.
+Podívejme se na to, jak se zeptat Githubu, co o tobě ví.
 
 
 ## Autorizace
@@ -74,7 +74,7 @@ Podívejme se, co Github zpřístupňuje počítačům.
 
 ## Uživatelský účet
 
-Zkus co dělá tento kód:
+Zkus, co dělá tento kód:
 
 ```python
 import requests
@@ -115,7 +115,7 @@ Teď už je lépe vidět celý tvůj profil
 (možná včetně neveřejných informací – proto musíš svůj token
 udržovat v tajnosti).
 
-S profilem který máš v proměnné `data`
+S profilem, který máš v proměnné `data`,
 se dá pracovat jako s každým jiným slovníkem.
 Třeba adresu svého profilového obrázku můžeš vypsat pomocí:
 

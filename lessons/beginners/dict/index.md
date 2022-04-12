@@ -90,7 +90,7 @@ u seznamů – příkazem `del`:
 {'Jablko': 'Apple', 'Knoflík': 'Button', 'Myš': 'Mouse'}
 ```
 
-Když budeš chtít zjistit kolik je ve slovníku záznamů,
+Když budeš chtít zjistit, kolik je ve slovníku záznamů,
 zeptáš se podobně jako na počet znaků řetězce nebo prvků seznamu.
 Použiješ funkci `len()`.
 
@@ -215,7 +215,7 @@ print(popisy_funkci['len'])
 Nejobecnější způsob vytváření slovníků je podobný tomu co znáš u seznamů:
 vytvoř prázdný slovník a postupně do něj přidávej záznamy, jeden za druhým.
 
-Řekněme, že máš slovník který přiřazuje ovoci jeho barvu:
+Řekněme, že máš slovník, který přiřazuje ovoci jeho barvu:
 
 ```python
 barvy = {
