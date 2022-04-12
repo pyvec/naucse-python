@@ -76,7 +76,7 @@ Typ objektu umí zjistit funkce `type`:
 <class '_io.TextIOWrapper'>
 ```
 
-A co je to třída? Třída je *popis*, jak se všechny objekty
+A co je to ten typ neboli třída? Je to *popis*, jak se všechny objekty
 daného typu chovají.
 
 Například `<class 'int'>` obsahuje všechno, co je společné všem celým číslům:
@@ -285,8 +285,8 @@ Traceback (most recent call last):
 AttributeError: 'Kotatko' object has no attribute 'jmeno'
 ```
 
-Aby tahle chyba nemohla nastat, můžeš zařídit, aby každé kotě *muselo* být
-pojmenované – a to už od okamžiku kdy vznikne.
+Aby tahle chyba nemohla nastat, můžeš zařídit aby každé kotě *muselo* být
+pojmenované už od okamžiku kdy vznikne.
 Jméno pak budeš zadávat už při vytváření kotěte, nějak takhle:
 
 ```python
