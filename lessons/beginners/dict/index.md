@@ -145,15 +145,6 @@ Knoflík: Button
 Myš: Mouse
 ```
 
-> [note]
-> Existuje i metoda `keys()`, která vrací klíče.
->
-> To, co `keys()`, `values()` a `items()` vrací, jsou speciální objekty,
-> které kromě použití ve `for` umožňují další
-> operace: například pracovat s klíči jako s množinou.
-> V [dokumentaci](https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects)
-> Pythonu je to všechno popsáno.
-
 V průběhu iterace (tedy v rámci `for` cyklu) nesmíš
 do slovníku přidávat záznamy, ani záznamy odebírat:
 
