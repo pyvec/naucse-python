@@ -226,7 +226,7 @@ rozlišit.
 Teď se na chvíli vraťme k metodám. Konkrétně k parametru `self`.
 
 Každá metoda má přístup ke konkrétnímu objektu, na
-kterém pracuje, právě přes argument `self`.
+kterém pracuje, právě přes parametr `self`.
 Teď, když máš koťátka pojmenovaná, můžeš v metodě `zamnoukej` použít `self`
 a dostat se tak ke jménu daného koťátka:
 
@@ -250,14 +250,13 @@ Když ji pak zavoláš (`mourek.zamnoukej()`),
 objekt `mourek` se předá funkci `zamnoukej` jako první argument, `self`.
 
 > [note]
-> Onen první argument metody můžeš teoreticky pojmenovat i jinak než `self`,
+> Onen první parametr metody můžeš teoreticky pojmenovat i jinak než `self`,
 > ale když to uděláš, ostatní programátoři se na tebe budou koukat hodně divně.
 
-
-Může taková metoda brát víc než jeden argument?
-Může – `self` se doplní na první místo,
-zbytek argumentů se vezme z volání metody.
-Třeba:
+Metoda může mít po `self` i další parametry.
+Při volání `self` vynecháš – doplní se vždy automaticky – ale ostatní
+se předávají jako u normálního volání funkce.
+Třeba v tomto příkladu se jako `jidlo` předá řetězec `'ryba'`:
 
 ```python
 class Kotatko:
@@ -317,14 +316,14 @@ mourek = Kotatko('Mourek')
 mourek.zamnoukej()
 ```
 
-A teď už není možnost, jak vytvořit koťátko beze jména.
+A teď už není možnost jak vytvořit koťátko beze jména.
 Metoda `zamnoukej` bude vždycky fungovat.
 
 Jako u jiných funkcí je možné jméno koťátka zadat buď jako pojmenovaný
 argument, nebo jako poziční. Obojí funguje stejně:
 
-```
-mourek = Kotatko('Mourek')  # 'Mourek' je hodnota prvního argument pro __init__ (po self)
+```python
+mourek = Kotatko('Mourek')  # 'Mourek' je hodnota prvního argumentu pro __init__ (po self)
 micka = Kotatko(jmeno='Micka')  # 'Micka' je hodnota argumentu `jmeno`
 ```
 
