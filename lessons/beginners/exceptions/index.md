@@ -14,7 +14,7 @@ def nacti_cislo():
 
 Když uživatel nezadá číslice, ale třeba text `cokolada`,
 nastane výjimka jménem `ValueError` (chyba hodnoty) a Python vypíše
-odpovídající chybovou hlášku.
+odpovídající chybovou hlášku:
 
 ```pycon
 Traceback (most recent call last):
@@ -28,7 +28,7 @@ Co s tím má chudák funkce `int` dělat?
 Není žádná rozumná hodnota, kterou by mohla vrátit.
 Převádění tohoto textu na celé číslo nedává smysl.
 
-Až funkce `nacti_cislo` nejlíp „ví“, co se má stát, když uživatel nezadá
+Až funkce `nacti_cislo` nejlíp „ví“, co se má stát když uživatel nezadá
 číslice.
 Stačí se uživatele zeptat znovu!
 Kdybys měl{{a}} funkci, která zjistí jestli jsou v řetězci jen číslice,
@@ -56,9 +56,9 @@ A dokonce nám to dá vědět – výjimkou, kterou můžeš *zachytit*.
 > Místo řešení problému to ale spíš ilustruje, v čem problém spočívá:
 > * Řetězcová metoda `isnumeric` vrací `True` pokud řetězec obsahuje číslice:
 >   `'123'.isnumeric()` je pravda; `'abc'.isnumeric()` nepravda.
->   Problém je, že funkci `int` potřebuje jeden konkrétní druh číslic:
->   pro řetězce jako `'½'` nebo `'௩三๓໓`' (trojka v tamilském, japonském,
->   thajském nebo laoském písmu) platí `isnumeric`, ale `int` si na nich
+>   Problém je, že funkce `int` potřebuje jeden konkrétní druh číslic:
+>   pro řetězce jako `'½'` nebo `'௩三๓໓`' (trojky v tamilském, japonském,
+>   thajském a laoském písmu) platí `isnumeric`, ale `int` si na nich
 >   vyláme zuby stejně jako na `'abc'`.
 > * Řetězcová metoda `isdecimal` vrací `True` pokud řetězec obsahuje arabské
 >   číslice 0-9. To už je lepší, ale stejně to úplně nesedí: `int` si poradí
@@ -82,6 +82,7 @@ def nacti_cislo():
             return int(odpoved)
         except ValueError:
             print('To nebylo číslo!')
+            # ... a zeptáme se znovu -- cyklus `while` pokračuje
 ```
 
 Jak to funguje?
@@ -207,8 +208,8 @@ funkce mohla vrátit.
 Místo vrácení výsledku musí tato funkce *signalizovat chybu*.
 S tou se pak může program, který `obsah_ctverce(-5)` zavolal,
 vypořádat – vynadat uživateli, zkalibrovat měřák, nebo, pokud na chybu není
-připravený, sám skončit s chybou (a upozornit tak programátora, že je něco
-špatně).
+připravený, sám skončit s chybou a upozornit tak programátora, že je něco
+špatně.
 
 Jak na to prakticky?
 Chybu můžeš vyvolat pomocí příkazu `raise`.
@@ -223,7 +224,7 @@ def obsah_ctverce(strana):
         raise ValueError(f'Strana musí být kladná, číslo {strana} kladné není!')
 ```
 
-Podobně jako `return`, i příkaz `raise` ukončí funkci.
+Podobně jako `return` i příkaz `raise` ukončí funkci.
 A nejen tu – pokud na tuhle konkrétní chybu není program předem připravený,
 ukončí se celý program.
 
