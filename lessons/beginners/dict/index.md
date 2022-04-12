@@ -121,7 +121,7 @@ Knoflík
 Myš
 ```
 
-Kdybys chtěl{{a}} projít místo klíčů hoodnoty, použij metodu `values`,
+Kdybys chtěl{{a}} projít místo klíčů hodnoty, použij metodu `values`,
 která vrací iterátor hodnot:
 
 ```pycon
