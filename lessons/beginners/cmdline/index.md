@@ -27,10 +27,9 @@ vychytávky mají dvě nevýhody:
 * z příkazové řádky se dá jednoduše kopírovat text, což zjednodušuje
   spolupráci přes e-mail nebo chat.
 
-Na první pohled to může vypadat nepřirozeně, ale dá se na to zvyknout.
-
-I když to možná není úplně nejjednodušší způsob jak s programováním začít,
-dlouhodobě se ti základy práce s příkazovou řádkou určitě vyplatí.
+I když příkazová řádka možná není úplně nejjednodušší způsob jak
+s programováním začít,
+dlouhodobě se ti základy práce s ní určitě vyplatí.
 A i o tom tenhle kurz je.
 
 Příkazová řádka (respektive program, kterému se říká i *konzole* či *terminál*;
@@ -163,7 +162,7 @@ Music
 
 Aktuální adresář se dá změnit pomocí příkazu `cd`
 (z angl. *change directory* – změnit adresář).
-Za `cd` se píše jméno adresáře, kam chceme přejít.
+Za `cd` se píše mezera a jméno adresáře, kam chceš přejít.
 Pokud máš adresář `Desktop` nebo `Plocha`, přejdi tam.
 Pak nezapomeň ověřit, že jsi na správném místě.
 
@@ -254,7 +253,7 @@ V budoucnu to ale bude složitější, takže bude dobré si vyzkoušet kopíro
 z příkazové řádky a vložit ho do prohlížeče souborů.
 
 Bohužel se to dělá na každém systému jinak.
-A protože známá zkratka <kbd>Ctrl</kbd>+<kbd>C</kbd> a
+A protože známé zkratky <kbd>Ctrl</kbd>+<kbd>C</kbd> a
 <kbd>Ctrl</kbd>+<kbd>V</kbd> dělají v příkazové řádce něco jiného než
 kopírování, nejspíš se to dělá jinak než jsi zvykl{{gnd('ý', 'á')}}.
 
