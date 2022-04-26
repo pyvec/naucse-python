@@ -1,6 +1,6 @@
 # Moduly
 
-Modul je v Pythonu něco, z čeho můžeme importovat.
+Modul je v Pythonu něco, z čeho můžeš importovat.
 Třeba z modulu `math` můžeš importovat funkci `sqrt`:
 
 ```python
@@ -58,12 +58,10 @@ barva_travy = 'zelená'
 pocet_kotatek = 28
 
 def popis_stav():
-    return 'Tráva je {barva}. Prohání se po ní {pocet} koťátek'.format(
-        barva=barva_travy, pocet=pocet_kotatek)
+    return f'Tráva je {barva_travy}. Prohání se po ní {pocet_kotatek} koťátek'
 ```
 
-
-A pak v dalším souboru, třeba `vypis.py`, napiš:
+A pak do dalšího souboru, třeba `vypis.py`, napiš:
 
 ```python
 import louka
@@ -71,15 +69,15 @@ import louka
 print(louka.popis_stav())
 ```
 
-a pak spusť:
+A pak spusť `vypis.py`:
 
 ```console
 $ python vypis.py
 ```
 
 Příkaz `import` hledá soubory (mimo jiné) v adresáři,
-ve kterém je „hlavní modul” programu – tedy soubor,
-který spouštíš (u nás `vypis.py`).
+ve kterém je „hlavní modul” programu – tedy soubor
+který spouštíš (tady `vypis.py`).
 Oba soubory by proto měly být ve stejném adresáři.
 
 
@@ -90,10 +88,10 @@ Co přesně dělá příkaz `import louka`?
 Python najde příslušný soubor (`louka.py`) a provede v něm všechny příkazy,
 odshora dolů, jako v normálním Pythonním programu.
 Všechny globální proměnné (včetně nadefinovaných funkcí) pak dá k dispozici
-kódu, který „louku“ importoval.
+kódu, který importoval.
 
-Když pak stejný modul importuješ podruhé, už se neprovádí všechno
-znovu – stejná sada proměnných se použije znovu.
+Když pak stejný modul importuješ podruhé, už se neprovádí všechno znovu.
+Druhý import jen zpřístupní stejnou sadu proměnných/funkcí jako ten první.
 
 Zkus si to – na konci `louka.py` dopiš:
 
@@ -112,17 +110,26 @@ a zadej v něm:
 ```
 
 Výpis se objeví jen poprvé.
+Co víc, když teď soubor `louka.py` změníš, změny se do naimportovaného modulu
+nepromítnou.
+Aby se promítly, musíš Python zavřít a spustit znovu.
+(I proto je dobré pouštět programy ze souborů – při každém spuštění se
+znovu načte aktuální verze modulů.)
 
-Když takhle modul při importu „dělá“ něco víc, než jen nastavuje proměnné
-a funkce, říká se, že má *vedlejší efekt* (angl. *side effect*).
+Ale zpátky k volání `print`.
+Přijde ti trochu divné, že příkaz `import louka` něco vypíše na obrazovku?
+
+Když takhle modul při importu „dělá“ něco víc než jen nastavení proměnných
+a funkcí, říká se, že má *vedlejší efekt* (angl. *side effect*).
 Vedlejší efekt může být vypsání něčeho na obrazovku nebo do souboru,
 vykreslení okýnka na obrazovku, otázka na uživatele pomocí `input`, atp.
 
-V modulech připravených na importování se vedlejším efektům vyhýbáme:
+V modulech připravených na importování se vedlejším efektům vyhýbej:
 úloha takového modulu je dát k dispozici *funkce*, které něco dělají,
 ne to udělat přímo.
 Všimni si například, že `import turtle` neukáže okýnko – to se objeví až po
 zavolání `turtle.forward()`.
+Importem si programátor připravuje nástroje; teprve zavoláním funkce je používá.
 
 Příkaz `print` proto radši z modulu zase smaž.
 

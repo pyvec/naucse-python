@@ -1,7 +1,10 @@
 ## Cyklické importy
 
-V domácích projektech budeš rozdělovat 1D Piškvorky na několik modulů.
-Výsledek bude vypadat třeba nějak takhle:
+V domácích úkolech budeš rozdělovat piškvorkový projekt na několik modulů.
+Tento text si doporučuju číst až když narazíš na příslušný úkol,
+abys věděl{{a}} o čem tu je řeč.
+
+Po rozdělení bude projekt vypadat třeba nějak takhle:
 (Šipky mezi moduly znázorňují importování.)
 
 ```plain
@@ -15,16 +18,6 @@ Výsledek bude vypadat třeba nějak takhle:
 └──────────────────┘  │ def tah_hrace │  └──────────────────┘
                       │               │
                       └───────────────┘
-                          ▲
-                          │
-                          │ ┌───────────────────╮
-                          │ │ test_piskvorky.py │
-                          │ ├───────────────────┤
-                          └─│ import piskvorky  │
-                            ├───────────────────┤
-                            │ def test_...      │
-                            │                   │
-                            └───────────────────┘
 ```
 
 Jenže funkce `tah_pocitace`
@@ -47,7 +40,7 @@ Můžeš importovat `ai` z `piskvorky` a zároveň
                       └───────────────┘  
 ```
 
-Můžeme se na to podívat z hlediska Pythonu,
+Můžeš se na to podívat z pohledu Pythonu,
 který příkazy v souborech vykonává.
 Když má importovat soubor `piskvorky.py`, začne ho
 zpracovávat řádek po řádku,
@@ -59,7 +52,7 @@ Brzy narazí na příkaz `import piskvorky`. Co teď?
 Aby nenastala situace podobná nekonečné smyčce –
 jeden soubor by importoval druhý, druhý zase první,
 a tak stále dokola –
-udělá Python taková malý „podvod“:
+udělá Python takový malý „podvod“:
 když zjistí, že soubor `piskvorky.py`
 už importuje, zpřístupní v modulu `ai`
 modul `piskvorky` tak, jak ho

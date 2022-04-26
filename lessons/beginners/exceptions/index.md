@@ -3,21 +3,22 @@
 Pojďme si prohloubit znalosti o chybách, neboli odborně o *výjimkách*
 (angl. *exceptions*).
 
-Vezmi následující funkci:
+Podívej se na následující funkci:
 
 ```python
 def nacti_cislo():
+    """Získá od uživatele celé číslo a vrátí ho"""
     odpoved = input('Zadej číslo: ')
     return int(odpoved)
 ```
 
 Když uživatel nezadá číslice, ale třeba text `cokolada`,
 nastane výjimka jménem `ValueError` (chyba hodnoty) a Python vypíše
-odpovídající chybovou hlášku.
+odpovídající chybovou hlášku:
 
 ```pycon
 Traceback (most recent call last):
-  File "ukazka.py", line 3, in nacti_cislo
+  File "ukazka.py", line 4, in nacti_cislo
     cislo = int(odpoved)
 ValueError: invalid literal for int() with base 10: 'cokolada'
 ```
@@ -27,7 +28,7 @@ Co s tím má chudák funkce `int` dělat?
 Není žádná rozumná hodnota, kterou by mohla vrátit.
 Převádění tohoto textu na celé číslo nedává smysl.
 
-Až funkce `nacti_cislo` nejlíp „ví“, co se má stát, když uživatel nezadá
+Až funkce `nacti_cislo` nejlíp „ví“, co se má stát když uživatel nezadá
 číslice.
 Stačí se uživatele zeptat znovu!
 Kdybys měl{{a}} funkci, která zjistí jestli jsou v řetězci jen číslice,
@@ -35,6 +36,7 @@ mohlo by to fungovat nějak takhle:
 
 ```python
 def nacti_cislo():
+    """Získá od uživatele celé číslo a vrátí ho"""
     while True:
         odpoved = input('Zadej číslo: ')
         if obsahuje_jen_cislice(odpoved):
@@ -47,20 +49,20 @@ def nacti_cislo():
 Kde ale vzít funkci `obsahuje_jen_cislice`?
 Nemá smysl ji psát znovu – funkce `int` sama nejlíp pozná, co se dá převést na
 číslo a co ne.
-A dokonce nám to dá vědět – chybou, kterou můžeš *zachytit*.
+A dokonce nám to dá vědět – výjimkou, kterou můžeš *zachytit*.
 
 > [note]
 > Ono „obsahuje_jen_cislice“ v Pythonu existuje. Dokonce několikrát.
 > Místo řešení problému to ale spíš ilustruje, v čem problém spočívá:
 > * Řetězcová metoda `isnumeric` vrací `True` pokud řetězec obsahuje číslice:
 >   `'123'.isnumeric()` je pravda; `'abc'.isnumeric()` nepravda.
->   Problém je, že funkci `int` potřebuje jeden konkrétní druh číslic:
->   pro řetězce jako `'½'` nebo `'௩三๓໓`' (trojka v tamilském, japonském,
->   thajském nebo laoském písmu) platí `isnumeric`, ale `int` si na nich
+>   Problém je, že funkce `int` potřebuje jeden konkrétní druh číslic:
+>   pro řetězce jako `'½'` nebo `'௩三๓໓`' (trojky v tamilském, japonském,
+>   thajském a laoském písmu) platí `isnumeric`, ale `int` si na nich
 >   vyláme zuby stejně jako na `'abc'`.
 > * Řetězcová metoda `isdecimal` vrací `True` pokud řetězec obsahuje arabské
 >   číslice 0-9. To už je lepší, ale stejně to úplně nesedí: `int` si poradí
->   s mezerou na začátku, např. s `' 3'`, ale funkce `isdecimal` takový řetězec
+>   s mezerou na začátku, např. s `' 3'`. Funkce `isdecimal` ale takový řetězec
 >   odmítne.
 >
 > Chceš-li zjistit jestli funkce `int` umí daný řetězec převést na číslo,
@@ -73,17 +75,19 @@ Pro zachycení chyby má Python příkaz `try`/`except`.
 
 ```python
 def nacti_cislo():
+    """Získá od uživatele celé číslo a vrátí ho"""
     while True:
         odpoved = input('Zadej číslo: ')
         try:
             return int(odpoved)
         except ValueError:
             print('To nebylo číslo!')
+            # ... a zeptáme se znovu -- cyklus `while` pokračuje
 ```
 
 Jak to funguje?
 Příkazy v bloku uvozeném příkazem `try` se normálně provádějí, ale když
-nastane uvedená výjimka, Python přeskočí zbytek bloku `try` a provede všechno 
+nastane uvedená výjimka, Python přeskočí zbytek bloku `try` a provede všechno
 v bloku `except`.
 Pokud výjimka nenastala, přeskočí se celý blok `except`.
 
@@ -141,10 +145,10 @@ V našem příkladu to platí pro `ValueError` z funkce `int`: víš že uživ
 nemusí vždy zadat číslo ve správném formátu a víš že správná
 reakce na tuhle situaci je problém vysvětlit a zeptat se znovu.
 
-Co ale dělat, kdyš uživatel chce ukončit program a zmáčkne
+Co ale dělat, když uživatel chce ukončit program a zmáčkne
 <kbd>Ctrl</kbd>+<kbd>C</kbd>?
 Nebo když se mu porouchá klávesnice a selže funkce `input`?
-Nejlepší reakce na takovou nečekanou situaci ukončit program a informovat
+Nejlepší reakce na takovou nečekanou situaci je ukončit program a informovat
 uživatele (nebo lépe, programátora), že (a kde) je něco špatně.
 Neboli vypsat chybovou hlášku.
 A to se stane normálně, bez `try`.
@@ -204,8 +208,8 @@ funkce mohla vrátit.
 Místo vrácení výsledku musí tato funkce *signalizovat chybu*.
 S tou se pak může program, který `obsah_ctverce(-5)` zavolal,
 vypořádat – vynadat uživateli, zkalibrovat měřák, nebo, pokud na chybu není
-připravený, sám skončit s chybou (a upozornit tak programátora, že je něco
-špatně).
+připravený, sám skončit s chybou a upozornit tak programátora, že je něco
+špatně.
 
 Jak na to prakticky?
 Chybu můžeš vyvolat pomocí příkazu `raise`.
@@ -213,13 +217,14 @@ Za příkaz dáš druh výjimky a pak do závorek nějaký popis toho, co je šp
 
 ```python
 def obsah_ctverce(strana):
+    """Vrátí obsah čtverce s danou délkou strany"""
     if strana > 0:
         return strana ** 2
     else:
         raise ValueError(f'Strana musí být kladná, číslo {strana} kladné není!')
 ```
 
-Podobně jako `return`, i příkaz `raise` ukončí funkci.
+Podobně jako `return` i příkaz `raise` ukončí funkci.
 A nejen tu – pokud na tuhle konkrétní chybu není program předem připravený,
 ukončí se celý program.
 
