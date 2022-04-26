@@ -23,7 +23,7 @@ testy ověří, že jsi nerozbil{{a}} nic co dříve fungovalo.
 
 ## Instalace knihovny pytest
 
-Zatím jsme v kurzu pracoval{{ gnd('i', 'y') }} s tím, co se instaluje
+Zatím jsme v kurzu pracovali s tím, co se instaluje
 se samotným Pythonem – s moduly jako `math` a `turtle`.
 Kromě takových modulů ale existuje ale velká spousta
 dalších *knihoven*, které nejsou přímo v Pythonu, ale dají se doinstalovat
