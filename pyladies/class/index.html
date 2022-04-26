@@ -59,7 +59,7 @@ věci. Pro nás to budou synonyma.</p>
 <span class="gp">... </span>    <span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="gp">... </span>
 <span class="go">&lt;class &#39;_io.TextIOWrapper&#39;&gt;</span>
-</pre></div><p>A co je to třída? Třída je <em>popis</em>, jak se všechny objekty
+</pre></div><p>A co je to ten typ neboli třída? Je to <em>popis</em>, jak se všechny objekty
 daného typu chovají.</p>
 <p>Například <code>&lt;class 'int'&gt;</code> obsahuje všechno, co je společné všem celým číslům:
 že (a jak) se dají sčítat, jak takové číslo převést na řetězec, a tak dále.</p>
@@ -117,14 +117,14 @@ důvodů – původně to byly opravdu funkce.</p>
 úplně jako funkce – jen mají první parametr <code>self</code>.
 Ten si ale vysvětlíme později – napřed zkus zamňoukat:</p>
 <div class="highlight"><pre><span></span><span class="c1"># Vytvoření konkrétního objektu</span>
-<span class="n">kotatko</span> <span class="o">=</span> <span class="n">Kotatko</span><span class="p">()</span>
+<span class="n">mourek</span> <span class="o">=</span> <span class="n">Kotatko</span><span class="p">()</span>
 
 <span class="c1"># Volání metody</span>
-<span class="n">kotatko</span><span class="o">.</span><span class="n">zamnoukej</span><span class="p">()</span>
+<span class="n">mourek</span><span class="o">.</span><span class="n">zamnoukej</span><span class="p">()</span>
 </pre></div><p>V tomhle příkladu si dej pozor na velikost písmen:
 <code>Kotatko</code> (s velkým K) je třída – popis, jak
 se koťátka chovají.
-<code>kotatko</code> (s malým k)
+<code>mourek</code> (s malým m)
 je konkrétní objekt (angl. <em>instance</em>) té třídy:
 hodnota, která reprezentuje kotě.</p>
 <p>Když definuješ třídu (pomocí bloku <code>class</code>), neznamená to zatím, že ve tvém
@@ -171,7 +171,7 @@ metoda z třídy? Vyzkoušej si to:</p>
 </h2>
 <p>Teď se na chvíli vraťme k metodám. Konkrétně k parametru <code>self</code>.</p>
 <p>Každá metoda má přístup ke konkrétnímu objektu, na
-kterém pracuje, právě přes argument <code>self</code>.
+kterém pracuje, právě přes parametr <code>self</code>.
 Teď, když máš koťátka pojmenovaná, můžeš v metodě <code>zamnoukej</code> použít <code>self</code>
 a dostat se tak ke jménu daného koťátka:</p>
 <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kotatko</span><span class="p">:</span>
@@ -189,12 +189,12 @@ a dostat se tak ke jménu daného koťátka:</p>
 </pre></div><p>Co se stalo? Výraz <code>mourek.zamnoukej</code> udělá <em>metodu</em>.
 Když ji pak zavoláš (<code>mourek.zamnoukej()</code>),
 objekt <code>mourek</code> se předá funkci <code>zamnoukej</code> jako první argument, <code>self</code>.</p>
-<div class="admonition note"><p>Onen první argument metody můžeš teoreticky pojmenovat i jinak než <code>self</code>,
+<div class="admonition note"><p>Onen první parametr metody můžeš teoreticky pojmenovat i jinak než <code>self</code>,
 ale když to uděláš, ostatní programátoři se na tebe budou koukat hodně divně.</p>
-</div><p>Může taková metoda brát víc než jeden argument?
-Může – <code>self</code> se doplní na první místo,
-zbytek argumentů se vezme z volání metody.
-Třeba:</p>
+</div><p>Metoda může mít po <code>self</code> i další parametry.
+Při volání <code>self</code> vynecháš – doplní se vždy automaticky – ale ostatní
+se předávají jako u normálního volání funkce.
+Třeba v tomto příkladu se jako <code>jidlo</code> předá řetězec <code>'ryba'</code>:</p>
 <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kotatko</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Mňau!&quot;</span><span class="p">)</span>
@@ -216,7 +216,7 @@ Metoda <code>zamnoukej</code> přestane fungovat:</p>
   File <span class="nb">&quot;&lt;zvirata.py&gt;&quot;</span>, line <span class="m">5</span>, in <span class="n">snez</span>
 <span class="gr">AttributeError</span>: <span class="n">&#39;Kotatko&#39; object has no attribute &#39;jmeno&#39;</span>
 </pre></div><p>Aby tahle chyba nemohla nastat, můžeš zařídit, aby každé kotě <em>muselo</em> být
-pojmenované – a to už od okamžiku kdy vznikne.
+pojmenované už od okamžiku, kdy vznikne.
 Jméno pak budeš zadávat už při vytváření kotěte, nějak takhle:</p>
 <div class="highlight"><pre><span></span><span class="n">mourek</span> <span class="o">=</span> <span class="n">Kotatko</span><span class="p">(</span><span class="n">jmeno</span><span class="o">=</span><span class="s1">&#39;Mourek&#39;</span><span class="p">)</span>
 </pre></div><p>To ale zatím nefunguje; musíš na to třídu <code>Kotatko</code> připravit.</p>
@@ -238,12 +238,13 @@ Můžeš tedy napsat:</p>
 
 <span class="n">mourek</span> <span class="o">=</span> <span class="n">Kotatko</span><span class="p">(</span><span class="s1">&#39;Mourek&#39;</span><span class="p">)</span>
 <span class="n">mourek</span><span class="o">.</span><span class="n">zamnoukej</span><span class="p">()</span>
-</pre></div><p>A teď už není možnost, jak vytvořit koťátko beze jména.
+</pre></div><p>A teď už není možnost jak vytvořit koťátko beze jména.
 Metoda <code>zamnoukej</code> bude vždycky fungovat.</p>
 <p>Jako u jiných funkcí je možné jméno koťátka zadat buď jako pojmenovaný
 argument, nebo jako poziční. Obojí funguje stejně:</p>
-<div class="highlight"><pre><code>mourek = Kotatko('Mourek')  # 'Mourek' je hodnota prvního argument pro __init__ (po self)
-micka = Kotatko(jmeno='Micka')  # 'Micka' je hodnota argumentu `jmeno`</code></pre></div><h3 id="metoda_code__str__code">Metoda <code>__str__</code>
+<div class="highlight"><pre><span></span><span class="n">mourek</span> <span class="o">=</span> <span class="n">Kotatko</span><span class="p">(</span><span class="s1">&#39;Mourek&#39;</span><span class="p">)</span>  <span class="c1"># &#39;Mourek&#39; je hodnota prvního argumentu pro __init__ (po self)</span>
+<span class="n">micka</span> <span class="o">=</span> <span class="n">Kotatko</span><span class="p">(</span><span class="n">jmeno</span><span class="o">=</span><span class="s1">&#39;Micka&#39;</span><span class="p">)</span>  <span class="c1"># &#39;Micka&#39; je hodnota argumentu `jmeno`</span>
+</pre></div><h3 id="metoda_code__str__code">Metoda <code>__str__</code>
 <a href="#header-metoda_code__str__code" class="header-link">#</a>
 </h3>
 <p>Podobných „opodtržítkovaných“ (speciálních) metod je víc.
