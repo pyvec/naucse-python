@@ -150,12 +150,12 @@ Co třeba má dělat volání `vyhodnot(8, 'kukačka')`?
 
 Testy, které kontrolují reakci na „špatný“ vstup,
 se jmenují *negativní testy*.
-Často kontrolují to, že nastane „rozumná“ výjimka.
+Často kontrolují to, že nastane nějaká výjimka.
 
 Na otestování výjimky použij příkaz `with` a funkci `raises` naimportovanou
 z modulu `pytest`.
-Jak příkaz `with` přesně funguje, se dozvíš později;
-teď stačí říct, že ověří, že odsazený blok kódu
+Jak příkaz `with` přesně funguje, to se dozvíš později;
+teď stačí říct, že `with pytest.raises` ověří, že odsazený blok kódu
 pod ním vyvolá danou výjimku:
 
 ```python
