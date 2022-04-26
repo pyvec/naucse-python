@@ -61,39 +61,7 @@ daný počet prvků.
 Jde to ale použít se všemi hodnotami, které jdou použít ve <code>for</code>:</p>
 <div class="highlight"><pre><span></span><span class="n">ix</span><span class="p">,</span> <span class="n">ocko</span> <span class="o">=</span> <span class="s1">&#39;xo&#39;</span>
 <span class="n">jedna</span><span class="p">,</span> <span class="n">dva</span><span class="p">,</span> <span class="n">tri</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-</pre></div></div><h2 id="funkce_ktere_vraceji_varnvar-tice">Funkce, které vracejí <var>n</var>-tice
-<a href="#header-funkce_ktere_vraceji_varnvar-tice" class="header-link">#</a>
-</h2>
-<p><code>zip</code> je zajímavá funkce.
-Používá se ve <code>for</code> cyklech, podobně jako funkce <code>range</code>, která „dává” čísla.</p>
-<p>Když funkce <code>zip</code> dostane dva seznamy
-(či jiné věci použitelné ve <code>for</code>),
-„dává” dvojice, a to tak, že nejdřív spáruje
-první prvek jednoho seznamu s prvním prvkem
-druhého seznamu,
-pak druhý s druhým, třetí s třetím a tak dál.</p>
-<p>Hodí se to, když máš dva seznamy se stejnou
-strukturou – příslušné prvky k sobě „patří”
-a chceš je zpracovávat společně:</p>
-<div class="highlight"><pre><span></span><span class="n">osoby</span> <span class="o">=</span> <span class="s1">&#39;máma&#39;</span><span class="p">,</span> <span class="s1">&#39;teta&#39;</span><span class="p">,</span> <span class="s1">&#39;babička&#39;</span><span class="p">,</span> <span class="s1">&#39;vrah&#39;</span>
-<span class="n">vlastnosti</span> <span class="o">=</span> <span class="s1">&#39;hodná&#39;</span><span class="p">,</span> <span class="s1">&#39;milá&#39;</span><span class="p">,</span> <span class="s1">&#39;laskavá&#39;</span><span class="p">,</span> <span class="s1">&#39;zákeřný&#39;</span>
-<span class="k">for</span> <span class="n">osoba</span><span class="p">,</span> <span class="n">vlastnost</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">osoby</span><span class="p">,</span> <span class="n">vlastnosti</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> je </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">osoba</span><span class="p">,</span> <span class="n">vlastnost</span><span class="p">))</span>
-</pre></div><p>Když <code>zip</code> dostane tři seznamy,
-bude tvořit trojice, ze čtyř seznamů nadělá čtveřice a tak dále.</p>
-<p>Další funkce, která vrací dvojice, je <code>enumerate</code>.
-Jako argument bere seznam (či jinou věc použitelnou
-ve <code>for</code>) a vždy spáruje index (pořadí v seznamu) s příslušným prvkem.
-Jako první tedy dá
-(0, <em>první prvek seznamu</em>), potom
-(1, <em>druhý prvek seznamu</em>),
-(2, <em>třetí prvek seznamu</em>)
-a tak dále.</p>
-<div class="highlight"><pre><span></span><span class="n">prvocisla</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">prvocislo</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">prvocisla</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Prvočíslo č.</span><span class="si">{}</span><span class="s1"> je </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">prvocislo</span><span class="p">))</span>
-</pre></div><h2 id="male_varnvar-tice">Malé <var>n</var>-tice
+</pre></div></div><h2 id="male_varnvar-tice">Malé <var>n</var>-tice
 <a href="#header-male_varnvar-tice" class="header-link">#</a>
 </h2>
 <p>Jak vytvořit <var>n</var>-tici s žádným nebo jedním prvkem? Takhle:</p>

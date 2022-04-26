@@ -203,7 +203,9 @@
                 "pages": {
                     "index": {
                         "attribution": [
-                            "Pro PyLadies Brno napsal Petr Viktorin, 2015-2017."
+                            "Část této kapitoly je založena na materiálech <a href=\"https://djangogirls.org/\">DjangoGirls</a>.",
+                            "Původní DjangoGirls tutoriál přeložila do češtiny skupina dobrovolníků.\nPoděkování patří hlavně: Davidovi (dakf), Kristýně Kumpánové,\nVeronice Gabrielové, Tomáši Ehrlichovi, Aničce Jaegerové,\nMatějovi Stuchlíkovi, Filipovi Sivákovi a Juraji M. Bezručkovi.",
+                            "Pro PyLadies CZ upravil Petr Viktorin, 2015-2021."
                         ],
                         "content": {
                             "path": "dict/index.html"
@@ -219,6 +221,27 @@
                 "source_file": "lessons/beginners/dict/info.yml",
                 "static_files": {},
                 "title": "Slovníky"
+            },
+            "beginners/dict-with-list-values": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies CZ napsal Petr Viktorin, 2015-2021."
+                        ],
+                        "content": {
+                            "path": "dict-with-list-values/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/dict-with-list-values/index.md",
+                        "title": "Víc hodnot v jednom záznamu slovníku",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/beginners/dict-with-list-values/info.yml",
+                "static_files": {},
+                "title": "Víc hodnot v jednom záznamu slovníku"
             },
             "beginners/exceptions": {
                 "pages": {
@@ -785,6 +808,27 @@
                 "static_files": {},
                 "title": "Print a chybové hlášky"
             },
+            "beginners/range": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2019."
+                        ],
+                        "content": {
+                            "path": "range/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/range/index.md",
+                        "title": "Range - sekvence čísel",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/beginners/range/info.yml",
+                "static_files": {},
+                "title": "Range - sekvence čísel"
+            },
             "beginners/reassignment": {
                 "pages": {
                     "index": {
@@ -1042,6 +1086,34 @@
                 "source_file": "lessons/beginners/while/info.yml",
                 "static_files": {},
                 "title": "Cyklus While"
+            },
+            "beginners/zip-enumerate": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2019."
+                        ],
+                        "content": {
+                            "path": "zip-enumerate/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [
+                            {
+                                "content": "<div class=\"highlight\"><pre><span></span><span class=\"n\">dny</span> <span class=\"o\">=</span> <span class=\"p\">[</span><span class=\"s1\">&#39;Po&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;Út&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;St&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;Čt&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;Pá&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;So&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;Ne&#39;</span><span class=\"p\">]</span>\n<span class=\"k\">for</span> <span class=\"n\">index</span><span class=\"p\">,</span> <span class=\"n\">den</span> <span class=\"ow\">in</span> <span class=\"nb\">enumerate</span><span class=\"p\">(</span><span class=\"n\">dny</span><span class=\"p\">):</span>\n    <span class=\"n\">cislo</span> <span class=\"o\">=</span> <span class=\"n\">index</span> <span class=\"o\">+</span> <span class=\"mi\">1</span>\n    <span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"sa\">f</span><span class=\"s1\">&#39;</span><span class=\"si\">{</span><span class=\"n\">cislo</span><span class=\"si\">}</span><span class=\"s1\">. </span><span class=\"si\">{</span><span class=\"n\">den</span><span class=\"si\">}</span><span class=\"s1\">&#39;</span><span class=\"p\">)</span>\n</pre></div><p>To je trošku kostrbaté, ale dá se to zjednodušit: buď jako\n<code>f'{index + 1}. {den}'</code>, nebo můžeš funkci <code>enumerate</code> předat\npojmenovaný argument <code>start</code>, pomocí kterého umí sama\npočítat od jiného začátku než od nuly:</p>\n<div class=\"highlight\"><pre><span></span><span class=\"n\">dny</span> <span class=\"o\">=</span> <span class=\"p\">[</span><span class=\"s1\">&#39;Po&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;Út&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;St&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;Čt&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;Pá&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;So&#39;</span><span class=\"p\">,</span> <span class=\"s1\">&#39;Ne&#39;</span><span class=\"p\">]</span>\n<span class=\"k\">for</span> <span class=\"n\">index</span><span class=\"p\">,</span> <span class=\"n\">den</span> <span class=\"ow\">in</span> <span class=\"nb\">enumerate</span><span class=\"p\">(</span><span class=\"n\">dny</span><span class=\"p\">,</span> <span class=\"n\">start</span><span class=\"o\">=</span><span class=\"mi\">1</span><span class=\"p\">):</span>\n    <span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"sa\">f</span><span class=\"s1\">&#39;</span><span class=\"si\">{</span><span class=\"n\">index</span><span class=\"si\">}</span><span class=\"s1\">. </span><span class=\"si\">{</span><span class=\"n\">den</span><span class=\"si\">}</span><span class=\"s1\">&#39;</span><span class=\"p\">)</span>\n</pre></div>"
+                            },
+                            {
+                                "content": "<p>Iterátor <code>zip</code> skončí hned když dojdou prvky nejkratší sekvence.</p>"
+                            }
+                        ],
+                        "source_file": "lessons/beginners/zip-enumerate/index.md",
+                        "title": "Iterátory n-tic",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/beginners/zip-enumerate/info.yml",
+                "static_files": {},
+                "title": "Iterátory n-tic"
             },
             "fast-track/http": {
                 "pages": {
@@ -2473,6 +2545,11 @@
                         "type": "lesson"
                     },
                     {
+                        "lesson_slug": "beginners/dict-with-list-values",
+                        "title": "Víc hodnot v jednom záznamu slovníku",
+                        "type": "lesson"
+                    },
+                    {
                         "lesson_slug": "beginners/exceptions",
                         "title": "Výjimky",
                         "type": "lesson"
@@ -2558,6 +2635,11 @@
                         "type": "lesson"
                     },
                     {
+                        "lesson_slug": "beginners/range",
+                        "title": "Range - sekvence čísel",
+                        "type": "lesson"
+                    },
+                    {
                         "lesson_slug": "beginners/reassignment",
                         "title": "Přepisování proměnných",
                         "type": "lesson"
@@ -2605,6 +2687,11 @@
                     {
                         "lesson_slug": "beginners/while",
                         "title": "Cyklus While",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "beginners/zip-enumerate",
+                        "title": "Iterátory n-tic",
                         "type": "lesson"
                     }
                 ],

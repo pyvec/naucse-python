@@ -1,44 +1,44 @@
-<h1 id="json">JSON
-<a href="#header-json" class="header-link">#</a>
-</h1>
-<p>Existují i jiné programovací jazyky než Python.</p>
-<p>Ostatní jazyky neumí pracovat s pythonními hodnotami.
-Budeš-li se chtít s takovými programy „domluvit” –
-předat jim nějaké informace ke zpracování
-nebo od nich dostat výsledky –
-musíš informace předávat v nějaké zjednodušené podobě.</p>
-<h2 id="typy">Typy
-<a href="#header-typy" class="header-link">#</a>
-</h2>
-<p>Většina programovacích jazyků má nějaká čísla, nějaký druh seznamů,
-nějakou odrůdu řetězců a nějakou variaci na slovníky
-(nebo několik způsobů jak slovníky vytvořit).
-Dále má spousta jazyků způsob, jak zapsat
-<code>True</code>, <code>False</code> a <code>None</code>.</p>
-<p>Tyhle základní typy většinou stačí na předání
-jakékoli informace v rozumně čitelné podobě,
-i když ne ve všech jazycích mají přesné ekvivalenty
-(třeba Python má dva základní druhy čísel – <code>int</code> a <code>float</code>).
-Často se proto v komunikaci omezíme na ně.</p>
-<h2 id="kodovani_dat">Kódování dat
+<h1 id="kodovani_dat">Kódování dat
 <a href="#header-kodovani_dat" class="header-link">#</a>
+</h1>
+<p>V Pythonu informace spravuješ v seznamech, slovnících a jiných datových
+strukturách.
+Když si vytvoříš nějaký slovník plný seznamů, řetězců a čísel,
+můžeš s ním v Pythonu dál pracovat. Třeba:</p>
+<div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;jméno&#39;</span><span class="p">:</span> <span class="s1">&#39;Anna&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;město&#39;</span><span class="p">:</span> <span class="s1">&#39;Brno&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;jazyky&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;čeština&#39;</span><span class="p">,</span> <span class="s1">&#39;angličtina&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;věk&#39;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;jazyky&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+</pre></div><p>Taková data ale nejdou přímo zapsat na disk nebo přenést přes Internet.
+Python si je „pamatuje“ tak, aby s nimi mohl jednoduše pracovat.
+Když ale Python vypneš, informace se ztratí.</p>
+<p>Abys mohl/a informace zapsat, uložit nebo dokonce přenést na jiný počítač,
+musíš je <em>zakódovat</em> – převést na řetězec.
+Řetězec pak lze zapsat do souboru nebo třeba poslat přes Internet.</p>
+<div class="admonition note"><p>Doopravdy se do souborů zapisují (a po síti posílají)
+sekvence <em>bytů</em> (čísel od 0 do 255).
+Python řetězce na byty ale převádí automaticky (pomocí kódování
+nastaveného pomocí <code>encoding</code> při otevření souboru).
+Vystačíš si proto s převáděním na řetězce, se kterými – na rozdíl od bytů
+– už umíš pracovat.</p>
+</div><h2 id="kodovani">Kódování
+<a href="#header-kodovani" class="header-link">#</a>
 </h2>
-<p>Další problém je přenos dat:
-abys mohl/a informace zapsat na disk nebo přenést
-přes Internet, musíš je převést na sekvenci <em>bytů</em> (čísel od 0 do 255).
-Zjednodušeně řečeno, musíš je převést na řetězec.</p>
-<p>Existuje spousta způsobů, jak zakódovat data do textu.
+<p>Existuje spousta způsobů jak zakódovat data do textu.
 Každý způsob se snaží najít vhodnou rovnováhu mezi
 čitelností pro lidi/počítače, délkou zápisu,
 bezpečností, možnostmi a rozšiřitelností.
-My už známe syntaxi Pythonu:</p>
+Už znáš syntaxi Pythonu, kterou můžeš použít jen pro Python:</p>
 <div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s1">&#39;jméno&#39;</span><span class="p">:</span> <span class="s1">&#39;Anna&#39;</span><span class="p">,</span>
     <span class="s1">&#39;město&#39;</span><span class="p">:</span> <span class="s1">&#39;Brno&#39;</span><span class="p">,</span>
     <span class="s1">&#39;jazyky&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;čeština&#39;</span><span class="p">,</span> <span class="s1">&#39;angličtina&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">],</span>
     <span class="s1">&#39;věk&#39;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
 <span class="p">}</span>
-</pre></div><p>Jiný způsob zápisu dat je <a href="http://www.yaml.org/">YAML</a>:</p>
+</pre></div><p>Jiný způsob kódování dat je <a href="http://www.yaml.org/">YAML</a>:</p>
 <div class="highlight"><pre><span></span><span class="nt">jméno</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Anna</span><span class="w"></span>
 <span class="nt">město</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Brno</span><span class="w"></span>
 <span class="nt">jazyky</span><span class="p">:</span><span class="w"></span>
@@ -47,12 +47,13 @@ My už známe syntaxi Pythonu:</p>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Python</span><span class="w"></span>
 <span class="nt">věk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">26</span><span class="w"></span>
 </pre></div><p>Nebo třeba <a href="http://en.wikipedia.org/wiki/Bencode">Bencode</a>:</p>
-<div class="highlight"><pre><code>d6:jazykyl9:čeština11:angličtina6:Pythone4:věki26e6:město4:Brno6:jméno4:Annae</code></pre></div><p>Existují i netextové formáty, jako
-<a href="https://docs.python.org/3/library/pickle.html">Pickle 3</a>:</p>
+<div class="highlight"><pre><code>d6:jazykyl9:čeština11:angličtina6:Pythone4:věki26e6:město4:Brno6:jméno4:Annae</code></pre></div><p>Existují i netextové formáty jako
+<a href="https://docs.python.org/3/library/pickle.html">Pickle 3</a>.
+Převedením do textu bys dostal/a „guláš“ jako:</p>
 <div class="highlight"><pre><code>}q(XjmÃ©noqXAnnaqXmÄtoqXBrnoqXjazykyq]q(X       ÄeÅ¡tinaqX
                                                           angliÄtinaXPythonq       eXvÄq
 K▒u.</code></pre></div><p>A nakonec uvedu <a href="http://json.org/">JSON</a>
-(z angl. <em>Javascript Object Notation</em> „zápis Javascriptových objektů”),
+(z angl. <em>Javascript Object Notation</em> „zápis Javascriptových objektů”),
 který se pro svou jednoduchost rozšířil na Internetu nejvíc:</p>
 <div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;jméno&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Anna&quot;</span><span class="p">,</span><span class="w"></span>
@@ -61,40 +62,50 @@ který se pro svou jednoduchost rozšířil na Internetu nejvíc:</p>
 <span class="w">  </span><span class="nt">&quot;věk&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div><div class="admonition note"><p>Pozor na to, že ačkoli JSON vypadá podobně jako zápis
-v Pythonu, je to jiný formát s vlastními pravidly.
+v Pythonu, je to jiný formát s vlastními pravidly.
 Nezaměňuj je!</p>
 <p>Aspoň ze začátku nedoporučuji JSON psát ručně;
 nech na počítači, aby dal na správné místo správné
 čárky a uvozovky.</p>
-</div><h2 id="json_v_pythonu">JSON v Pythonu
-<a href="#header-json_v_pythonu" class="header-link">#</a>
+</div><h2 id="json">JSON
+<a href="#header-json" class="header-link">#</a>
 </h2>
-<p>Kódování objektů v JSONu je jednoduché: existuje modul <code>json</code>,
-jehož metoda <code>loads</code> načte data z řetězce:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
-
-<span class="n">json_retezec</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    {</span>
-<span class="s2">      &quot;jméno&quot;: &quot;Anna&quot;,</span>
-<span class="s2">      &quot;město&quot;: &quot;Brno&quot;,</span>
-<span class="s2">      &quot;jazyky&quot;: [&quot;čeština&quot;, &quot;angličtina&quot;, &quot;Python&quot;],</span>
-<span class="s2">      &quot;věk&quot;: 26</span>
-<span class="s2">    }</span>
-<span class="s2">&quot;&quot;&quot;</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_retezec</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;město&#39;</span><span class="p">])</span>
-</pre></div><p>A pak tu je metoda <code>dumps</code>, která naopak daná data zakóduje
-a vrátí řetězec:</p>
-<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-<span class="go">{&quot;v\u011bk&quot;: 26, &quot;jm\u00e9no&quot;: &quot;Anna&quot;, &quot;jazyky&quot;: [&quot;\u010de\u0161tina&quot;, &quot;angli\u010dtina&quot;, &quot;Python&quot;], &quot;m\u011bsto&quot;: &quot;Brno&quot;}</span>
-</pre></div><p>To, co vrátí jednoduché zavolání <code>dumps(data)</code> je vhodné pro počítačové
-zpracování;
-má-li výsledná data číst člověk, nastav
-<code>ensure_ascii=False</code> (aby se písmenka s diakritikou nekódovala pomocí <code>\</code>)
+<p>Pojďme se zaměřit na populární JSON; práce s ostatními formáty funguje podobně.</p>
+<p>K zakódování dat do textu použij funkci <code>dumps</code> z modulu <code>json</code>
+(který je potřeba naimportovat).</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">json</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kod</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kod</span>
+<span class="go">&#39;{&quot;jm\\u00e9no&quot;: &quot;Anna&quot;, &quot;m\\u011bsto&quot;: &quot;Brno&quot;, &quot;jazyky&quot;: [&quot;\\u010de\\u0161tina&quot;, &quot;angli\\u010dtina&quot;, &quot;Python&quot;], &quot;v\\u011bk&quot;: 26}&#39;</span>
+</pre></div><p>Výsledný řetězec obsahuje ty správné informace – ale je psaný spíš pro
+počítačové zpracování než k tomu, aby ho četl člověk.</p>
+<p>Zapiš tenhle řetězec do souboru:</p>
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">soubor</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">kod</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">soubor</span><span class="p">)</span>
+</pre></div><p>Jinde – třeba v jiném programu, nebo dokonce na jiném počítači, pokud tam
+soubor zkopíruješ – můžeš pak řetězec s kódem načíst:</p>
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">soubor</span><span class="p">:</span>
+    <span class="n">kod</span> <span class="o">=</span> <span class="n">soubor</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div><p>A pomocí <code>json.loads</code> ho pak převedeš zpátky na původní slovník,
+se kterým můžeš dál pracovat:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">kod</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="go">{&#39;jméno&#39;: &#39;Anna&#39;, &#39;město&#39;: &#39;Brno&#39;, &#39;jazyky&#39;: [&#39;čeština&#39;, &#39;angličtina&#39;, &#39;Python&#39;], &#39;věk&#39;: 26}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;věk&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">27</span>
+</pre></div><h3 id="hezky_vystup">Hezký výstup
+<a href="#header-hezky_vystup" class="header-link">#</a>
+</h3>
+<p>To, co vrací <code>json.dumps</code>, je vhodné pro počítačové zpracování:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kod</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">kod</span><span class="p">)</span>
+<span class="go">{&quot;jm\u00e9no&quot;: &quot;Anna&quot;, &quot;m\u011bsto&quot;: &quot;Brno&quot;, &quot;jazyky&quot;: [&quot;\u010de\u0161tina&quot;, &quot;angli\u010dtina&quot;, &quot;Python&quot;], &quot;v\u011bk&quot;: 26}</span>
+</pre></div><p>Má-li výsledný soubor číst člověk, je ho možné zpřehlednit
+pomocí pojmenovaných argumentů <code>ensure_ascii=False</code>
+(aby se písmenka s diakritikou nekódovala pomocí <code>\</code>)
 a <code>indent=2</code> (odsazení dvěma mezerami).</p>
-<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kod</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">kod</span><span class="p">)</span>
 <span class="go">{</span>
 <span class="go">  &quot;věk&quot;: 26,</span>
 <span class="go">  &quot;jméno&quot;: &quot;Anna&quot;,</span>
@@ -105,6 +116,80 @@ a <code>indent=2</code> (odsazení dvěma mezerami).</p>
 <span class="go">  ],</span>
 <span class="go">  &quot;město&quot;: &quot;Brno&quot;</span>
 <span class="go">}</span>
-</pre></div><p>Kompletní popis modulu <code>json</code> –
+</pre></div><p>Tenhle kód lze taky zapsat do souboru nebo načíst zpět pomocí <code>json.loads</code>,
+jen se trochu líp čte lidem.</p>
+<div class="admonition note"><p>Kompletní popis modulu <code>json</code> –
 včetně funkcí na zápis/čtení přímo do/ze souborů –
 je v příslušné <a href="https://docs.python.org/3/library/json.html">dokumentaci</a>.</p>
+</div><h2 id="typy">Typy
+<a href="#header-typy" class="header-link">#</a>
+</h2>
+<p>JSON neumožňuje věrně zakódovat jakýkoli Pythonní objekt.
+Zaměřuje se na výměnu informací mezi různými programy a programovacími jazyky.</p>
+<p>Ostatní jazyky často neumí přímo pracovat s pythonními hodnotami – seznamy,
+slovníky, <code>range</code>, nebo funkcemi.
+Budeš-li se chtít s takovými programy „domluvit” –
+předat jim nějaké informace ke zpracování
+nebo od nich dostat výsledky –
+musíš informace předávat ve zjednodušené podobě.</p>
+<p>Většina programovacích jazyků má nějaká čísla, nějaký druh seznamů,
+nějakou odrůdu řetězců a nějakou variaci na slovníky
+(často jen s řetězcovými klíči).
+Dále má spousta jazyků způsob, jak zapsat
+<code>True</code>, <code>False</code> a <code>None</code>.</p>
+<p>Tyhle základní typy většinou stačí na předání
+jakékoli informace v rozumně čitelné podobě.
+A tak se v komunikaci často omezíme na ně,
+i když ne všechny jazyky mají přesné ekvivalenty.
+Třeba Python má dva základní druhy sekvencí – seznamy a <var>n</var>-tice – a
+dva druhy čísel – celá (<code>int</code>) a reálná (<code>float</code>).</p>
+<p>Převod na JSON je proto „ztrátový“: po dekódování nedostaneš přesně stejný
+objekt jako ten, který jsi zakódoval/a, ale nějaký podobný.
+Konkrétně modul <code>json</code> převádí <var>n</var>-tice na seznamy
+a klíče slovníků převádí na řetězce:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;dvojice&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;seznam&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;dva&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">:</span> <span class="s1">&#39;jedenáct&#39;</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">kod</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">kod</span><span class="p">)</span>
+<span class="p">{</span><span class="s1">&#39;dvojice&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;seznam&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span> <span class="s1">&#39;dva&#39;</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">:</span> <span class="s1">&#39;jedenáct&#39;</span><span class="p">}</span>
+</pre></div><h2 id="jina_kodovani">Jiná kódování
+<a href="#header-jina_kodovani" class="header-link">#</a>
+</h2>
+<p>Jak už bylo řečeno, JSON je jen jeden ze způsobů, kterými lze data zakódovat.
+Jiná kódování mají svá pro a proti, ale v podstatě fungují stejně:
+jedna funkce (často <code>dumps</code>) zakóduje Pythonní objekt do řetězce a druhá
+(často <code>loads</code>) dekóduje řetězec na původní (nebo podobný) Pythonní objekt.</p>
+<p>V případech, kdy má soubor s informacemi psát člověk,
+se často používají formáty <a href="https://github.com/toml-lang/toml">TOML</a> nebo <a href="https://yaml.org/">YAML</a>.</p>
+<h3 id="toml">TOML
+<a href="#header-toml" class="header-link">#</a>
+</h3>
+<p>Knihovnu pro TOML potřeba si nainstalovat.
+Dělá se to příkazem, který znáš z instalace knihovny Pytest.
+Pozor ve jméně <code>toml</code> neudělej překlep, jinak nainstaluješ něco jiného
+(a možná nebezpečného!):</p>
+<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>python -m pip install toml
+</pre></div><p>Data pak lze kódovat pomocí <code>toml.dumps</code> a dekódovat pomocí <code>toml.loads</code>:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">toml</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">toml</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="go">&quot;věk&quot; = 26</span>
+<span class="go">&quot;jméno&quot; = &quot;Anna&quot;</span>
+<span class="go">jazyky = [&quot;čeština&quot;, &quot;angličtina&quot;, &quot;Python&quot;]</span>
+<span class="go">&quot;město&quot; = &quot;Brno&quot;</span>
+</pre></div><h3 id="yaml">YAML
+<a href="#header-yaml" class="header-link">#</a>
+</h3>
+<p>Knihovnu pro YAML je také potřeba doinstalovat.
+Opět – ve jméně <code>pyyaml</code> neudělej překlep!</p>
+<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>python -m pip install pyyaml
+</pre></div><p>Data pak lze kódovat pomocí <code>yaml.safe_dump</code> (nebo „hezky“
+pomocí <code>yaml.safe_dump(data, indent=4, allow_unicode=True)</code>)
+a zapisovat pomocí <code>yaml.safe_load(kod)</code>.
+Výsledný soubor vypadá takto:</p>
+<div class="highlight"><pre><span></span><span class="nt">jazyky</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">čeština</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">angličtina</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Python</span><span class="w"></span>
+<span class="nt">jméno</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Anna</span><span class="w"></span>
+<span class="nt">město</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Brno</span><span class="w"></span>
+<span class="nt">věk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">26</span><span class="w"></span>
+</pre></div>

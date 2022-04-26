@@ -9,10 +9,10 @@ Pojďme toho využít!</p>
 programátorské rozhraní), přes které je možné s danou
 službou komunikovat programově.
 Místo klikání na tlačítka a čtení stránek „očima”
-dostaneme data ve formátu, kterým rozumí počítače –
-a v dnešní době to bude většinou formát JSON.</p>
-<p>Z minulých lekcí bys měl/a mít založený účet na github.com,
-tak se zkusme zeptat Githubu, co o nás ví.</p>
+dostaneš data ve formátu, kterému rozumí počítače.
+V dnešní době to bude většinou formát JSON.</p>
+<p>Z minulých lekcí bys měl/a mít založený účet na github.com.
+Podívejme se na to, jak se zeptat Githubu, co o tobě ví.</p>
 <h2 id="autorizace">Autorizace
 <a href="#header-autorizace" class="header-link">#</a>
 </h2>
@@ -24,14 +24,16 @@ My to uděláme co nejjednodušeji, ať se rychle dostaneme k jádru věci:</p>
 <li>Přihlaš se na <a href="https://github.com">github.com</a>.</li>
 <li>Jdi na <a href="https://github.com/settings/tokens">nastavení Personal Accesss Tokens</a>.</li>
 <li>Vytvoř si nový token ("Generate new token"). Nezaškrtávej žádná oprávnění navíc.</li>
-<li>Zkopíruj si heslo, které takto dostaneš, do souboru <code>token.txt</code>.</li>
+<li>Zkopíruj si token (dlouhý řetězec), které takto dostaneš, do souboru <code>token.txt</code>.</li>
 </ul>
 <div class="admonition warning"><p class="admonition-title">Pozor!</p>
-<p>Vygenerovaný kód je heslo, které držitele
+<p>Vygenerovaný token je heslo, které držitele
 opravňuje pracovat s Githubem pod tvým jménem!
 Drž ho v tajnosti. Kdyby se přece jen dostalo „ven”, na stránce
 <a href="https://github.com/settings/tokens">Personal Accesss Tokens</a> ho deaktivuj.</p>
-</div><h2 id="requests">Requests
+</div><p>Obsah tokenu se ti zobrazí pouze jednou, hned po vytvoření.
+Když ho zapomeneš, deaktivuj ho a vytvoř si nový.</p>
+<h2 id="requests">Requests
 <a href="#header-requests" class="header-link">#</a>
 </h2>
 <p>K práci s internetovými stránkami použijeme knihovnu Requests.
@@ -70,10 +72,13 @@ Podívejme se, co Github zpřístupňuje počítačům.</p>
 <span class="n">stranka</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">stranka</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div><p>Co se stalo? Tím, že jsi Githubu dal/a svůj token
-(načtený ze souboru, předaný přes slovník <code>headers</code>),
+(načtený ze souboru, předaný přes „přihlašovací“ slovník <code>headers</code>),
 poznal, že jde dotaz od tebe a vrátil nějaké informace
 ve formátu JSON.</p>
-<p>Zkus řetězec <code>stranka.text</code> převést z JSON na slovník
+<div class="admonition note"><p>Pokud kód opisuješ, pozor: v řetězci <code>'token '</code> je mezera.
+„Přihlašovací“ slovník <code>headers</code> bude ve výsledku vypadat takto:</p>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;token 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&#39;</span><span class="p">}</span>
+</pre></div></div><p>Zkus řetězec <code>stranka.text</code> převést z JSON na slovník
 a vypsat trochu srozumitelněji:</p>
 <div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">stranka</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 
@@ -83,7 +88,7 @@ a vypsat trochu srozumitelněji:</p>
 udržovat v tajnosti).</p>
 <p>S profilem, který máš v proměnné <code>data</code>,
 se dá pracovat jako s každým jiným slovníkem.
-Třeba adresu svého obrázku můžeš vypsat pomocí:</p>
+Třeba adresu svého profilového obrázku můžeš vypsat pomocí:</p>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;avatar_url&#39;</span><span class="p">])</span>
 </pre></div><h2 id="api_githubu">API Githubu
 <a href="#header-api_githubu" class="header-link">#</a>
@@ -91,7 +96,7 @@ Třeba adresu svého obrázku můžeš vypsat pomocí:</p>
 <p>API Githubu toho umí mnohem víc. Třeba na adrese
 <a href="https://api.github.com/emojis">https://api.github.com/emojis</a> na tebe čeká
 slovník s adresami malých obrázků.
-(Tenhle slovník funguje jako vyhledávací tabulka.)
+<!-- (Tenhle slovník funguje jako vyhledávací tabulka.) -->
 Celé API je zdokumentováno na adrese
 <a href="https://developer.github.com/v3/">developer.github.com</a>.</p>
 <h2 id="interakce">Interakce
@@ -117,7 +122,7 @@ obsah, pomocí <code>POST</code> se přidává nový,
 a <code>DELETE</code> něco maže.
 Jakou metodu poujeme závisí na tom, co chceme udělat;
 většinou to bude <code>POST</code>, <code>PUT</code> nebo <code>DELETE</code>.</p>
-<p>Podle <a href="https://developer.github.com/v3/activity/starring/#star-a-repository">dokumentace Githubu</a>
+<p>Podle <a href="https://docs.github.com/en/rest/reference/activity#star-a-repository-for-the-authenticated-user">dokumentace Githubu</a>
 se přidání hvězdičky dělá pomocí <code>PUT</code>
 dotazu na adresu <code>/user/starred/:owner/:repo</code>.
 Za <code>:owner</code> a <code>:repo</code>

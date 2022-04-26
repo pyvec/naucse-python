@@ -1,0 +1,95 @@
+<h1 id="range_sekvence_cisel">Range – sekvence čísel
+<a href="#header-range_sekvence_cisel" class="header-link">#</a>
+</h1>
+<p>Funkce <code>range(10)</code> vrátí speciální hodnotu,
+která v sobě obsahuje čísla od 0 do 9:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sekvence</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sekvence</span>
+<span class="go">range(0, 10)</span>
+</pre></div><p>Je to hodnota typu <code>range</code>, podobně jako čísla jsou typu <code>int</code>, řetězce typu
+<code>str</code>, nebo seznamy typu <code>list</code>.</p>
+<p>Chceš-li se podívat, co v tomhle <code>range(0, 10)</code> vlastně je, máš dvě základní
+možnosti – projít ho cyklem <code>for</code> nebo převést na seznam konkrétních čísel:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sekvence</span>
+<span class="go">range(0, 10)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sekvence</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+<span class="go">4</span>
+<span class="go">5</span>
+<span class="go">6</span>
+<span class="go">7</span>
+<span class="go">8</span>
+<span class="go">9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">sekvence</span><span class="p">)</span>
+<span class="go">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+</pre></div><p>Možná se ptáš – proč tak složitě?
+Proč se místo <code>range(0, 10)</code> prostě ta čísla neukážou rovnou?</p>
+<p>Je to proto, že <code>range</code> se dá použít na opravdu dlouhé řady čísel:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+<span class="go">range(0, 10000)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
+<span class="go">[0, 1, 2, 3, ..., 9999]</span>
+</pre></div><p>Kdybys zkusil/a třeba <code>list(range(1000000000000000))</code>, počítači
+dojde paměť.
+Biliarda čísel se tam prostě nevejde.
+Python vyhodí výjimku  <code>MemoryError</code>.</p>
+<div class="admonition warning"><p>Pokud máš na počítači v jiném okně neuloženou práci, radši <code>list(range(...))</code>
+s hodně vysokými čísly nezkoušej.</p>
+<p>U absurdně vysokého čísla jako <code>1000000000000000</code> Python předem ví,
+že mu paměť dojde, a tak ohlásí chybu ještě než se bude snažit seznam vytvořit.
+U trochu menšího čísla (např. <code>1000000000</code>, ale na každém počítači je to
+jinak) se může stát, že se Python pokusí seznam začít tvořit, zaplní přitom
+většinu dostupné paměti a počítač „zamrzne“.
+V závislosti na systému se pak třeba může stát že reakce na
+<kbd>Ctrl</kbd>+<kbd>C</kbd> bude trvat hodně dlouho.</p>
+</div><p>Se samotným <code>range(1000000000000000)</code> ale není problém.
+S konceptem <em>všech čísel od 0 do biliardy</em> se počítač vypořádá, i když si je
+neumí „zapamatovat“ všechny <em>najednou</em>.</p>
+<p>Je spousta věcí, které Python umí s <code>range</code> udělat, aniž by potřeboval
+„spočítat“ každé z čísel.
+Spousta operací, které znáš od seznamů, bude fungovat i s <code>range</code>:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zajimava_cisla</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Každé třetí číslo od 8 do 9999</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zajimava_cisla</span><span class="p">[</span><span class="mi">80</span><span class="p">]</span>          <span class="c1"># Osmdesáté &quot;zajímavé číslo&quot;</span>
+<span class="go">248</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zajimava_cisla</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>          <span class="c1"># Prvních 5 &quot;zajímavých čísel&quot;</span>
+<span class="go">range(8, 23, 3)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">zajimava_cisla</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>    <span class="c1"># Vypsání prvních 5 &quot;zajímavých čísel&quot;</span>
+<span class="go">[8, 11, 14, 17, 20]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">zajimava_cisla</span><span class="p">)</span>         <span class="c1"># Kolik tam je čísel?</span>
+<span class="go">3331</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">1337</span> <span class="ow">in</span> <span class="n">zajimava_cisla</span>      <span class="c1"># Je v této sekvenci moje konkrétní číslo ?</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zajimava_cisla</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">1337</span><span class="p">)</span>  <span class="c1"># Kolikáté je?</span>
+<span class="go">443</span>
+</pre></div><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">random</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">zajimava_cisla</span><span class="p">)</span>
+<span class="go">1229</span>
+</pre></div><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">zajimava_cisla</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="k">break</span>  <span class="c1"># Stačilo!</span>
+<span class="go">8</span>
+<span class="go">11</span>
+<span class="go">14</span>
+<span class="go">17</span>
+<span class="go">20</span>
+<span class="go">23</span>
+</pre></div><p>Objekt <code>range</code> ale nejde měnit – mazání prvků nebo metody jako
+<code>zajimava_cisla.sort()</code>, <code>zajimava_cisla.pop()</code> fungovat nebudou.</p>
+<div class="admonition note"><p class="admonition-title">Proč ne?</p>
+<p>Když máš objekt jako <code>range(8, 10000, 3)</code>, osmdesátý prvek je jen trocha
+matematiky: spočítáš <code>8 + 3 * 80</code> a zkontroluješ že to nepřesáhlo <code>10000</code>.
+Podobně je to s ostatními sekvencemi „všech <var>X</var>-tých čísel od
+<var>A</var> do <var>B</var>“, tedy s ostatními <code>range</code>.</p>
+<p>Kdyby ale šlo udělat něco jako:</p>
+<div class="highlight"><pre><span></span><span class="n">sekvence</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">sekvence</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">sekvence</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">103</span><span class="p">,</span> <span class="s1">&#39;ježek&#39;</span><span class="p">)</span>
+</pre></div><p>… jde najednou o mnohem složitější koncept, kde se N-tý prvek hledá mnohem
+hůř. Už to není jednoduchá sekvence čísel – už to není <code>range</code>, ale spíš
+seznam jakýchkoli hodnot.</p>
+</div><p>Pokud budeš něco, co <code>range</code> neumí, potřebovat, převeď <code>range</code> na seznam.</p>

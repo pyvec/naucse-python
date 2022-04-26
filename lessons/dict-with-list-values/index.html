@@ -1,0 +1,54 @@
+<h1 id="vice_hodnot_vjednom_zaznamu_slovniku">Více hodnot v jednom záznamu slovníku
+<a href="#header-vice_hodnot_vjednom_zaznamu_slovniku" class="header-link">#</a>
+</h1>
+<p>Ke každému klíči může patřit jen jedna hodnota.
+Jak bys zařídil/a, aby hodnot bylo víc?</p>
+<p>Řekněme, že bys chtěl/a do slovníku uložit tyto telefonní kontakty:</p>
+<ul>
+<li>Katka:<ul>
+<li>4925219</li>
+</ul>
+</li>
+<li>Jirka:<ul>
+<li>7477058</li>
+<li>3251156</li>
+</ul>
+</li>
+<li>Verča:<ul>
+<li>1019103</li>
+</ul>
+</li>
+</ul>
+<p>Jak na to?
+Jednoduchý slovník použít nemůžeš. Pozor na následující zápis!</p>
+<div class="highlight"><pre><span></span><span class="n">kontakty</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Katka&#39;</span><span class="p">:</span> <span class="s1">&#39;4925219&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Jirka&#39;</span><span class="p">:</span> <span class="s1">&#39;7477058&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Jirka&#39;</span><span class="p">:</span> <span class="s1">&#39;3251156&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Verča&#39;</span><span class="p">:</span> <span class="s1">&#39;1019103&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div><p>Python v tomto případě jednotlivé záznamy uloží postupně, jako kdybys napsal/a:</p>
+<div class="highlight"><pre><span></span><span class="n">kontakty</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">kontakty</span><span class="p">[</span><span class="s1">&#39;Katka&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;4925219&#39;</span>
+<span class="n">kontakty</span><span class="p">[</span><span class="s1">&#39;Jirka&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;7477058&#39;</span>
+<span class="n">kontakty</span><span class="p">[</span><span class="s1">&#39;Jirka&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;3251156&#39;</span>
+<span class="n">kontakty</span><span class="p">[</span><span class="s1">&#39;Verča&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1019103&#39;</span>
+</pre></div><p>A ve výsledku bude mít <code>'Jirka'</code> uložené jen jedno číslo.
+Python tohle nenahlásí jako chybu, ačkoli to často není to, co chceš.</p>
+<p>Protože ve slovníku může být každému klíči přiřazena jen jedna hodnota,
+bude potřeba více hodnot směstnat do jedné.
+Každému kontaktu můžeš přiřadit <em>seznam</em> čísel:</p>
+<div class="highlight"><pre><span></span><span class="n">kontakty</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Katka&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;4925219&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Jirka&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;7477058&#39;</span><span class="p">,</span> <span class="s1">&#39;3251156&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Verča&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;1019103&#39;</span><span class="p">],</span>
+<span class="p">}</span>
+</pre></div><p>Výraz jako <code>kontakty['Katka']</code> pak označuje seznam.
+Pokud se Katka přestěhuje do zahraničí a pořídí si nové číslo,
+můžeš napsat:</p>
+<div class="highlight"><pre><span></span><span class="n">kontakty</span><span class="p">[</span><span class="s1">&#39;Katka&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;+897 3788509&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kontakty</span><span class="p">[</span><span class="s1">&#39;Katka&#39;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kontakty</span><span class="p">[</span><span class="s1">&#39;Katka&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">del</span> <span class="n">kontakty</span><span class="p">[</span><span class="s1">&#39;Katka&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kontakty</span><span class="p">[</span><span class="s1">&#39;Katka&#39;</span><span class="p">])</span>
+</pre></div>
