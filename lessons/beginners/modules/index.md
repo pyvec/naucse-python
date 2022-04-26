@@ -76,7 +76,7 @@ $ python vypis.py
 ```
 
 Příkaz `import` hledá soubory (mimo jiné) v adresáři,
-ve kterém je „hlavní modul” programu – tedy soubor,
+ve kterém je „hlavní modul” programu – tedy soubor
 který spouštíš (tady `vypis.py`).
 Oba soubory by proto měly být ve stejném adresáři.
 
@@ -88,10 +88,10 @@ Co přesně dělá příkaz `import louka`?
 Python najde příslušný soubor (`louka.py`) a provede v něm všechny příkazy,
 odshora dolů, jako v normálním Pythonním programu.
 Všechny globální proměnné (včetně nadefinovaných funkcí) pak dá k dispozici
-kódu, který „louku“ importoval.
+kódu, který importoval.
 
-Když pak stejný modul importuješ podruhé, už se neprovádí všechno
-znovu – stejná sada proměnných se použije znovu.
+Když pak stejný modul importuješ podruhé, už se neprovádí všechno znovu.
+Druhý import jen zpřístupní stejnou sadu proměnných/funkcí jako ten první.
 
 Zkus si to – na konci `louka.py` dopiš:
 
