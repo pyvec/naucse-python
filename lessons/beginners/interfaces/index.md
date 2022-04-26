@@ -21,27 +21,33 @@ panelu nebo k atomové elektrárně.
 Zásuvka poskytuje elektrický proud, a jsou u ní důležité určité parametry
 (tvar, napětí, frekvence, maximální proud) na kterých se obě strany,
 poskytovatel proudu i spotřebič, shodly.
+Tyhle parametry tvoří *rozhraní*, které umožňuje připojit jakýkoli spotřebič
+k jakékoli elektrárně.
 
 
-# Funkce jako rozhraní
+## Rozhraní funkce
 
 Podívej se na tuhle hlavičku funkce.
-Víš z ní, co ta funkce dělá a jak ji použít?
+Je z ní poznat, co ta funkce dělá a jak ji použít?
 
 ```python
 def ano_nebo_ne(otazka):
     """Zeptá se uživatele na otázku a vrátí True nebo False dle odpovědi"""
+    ...
 ```
 
-Podobnou funkci už jsi napsal{{a}}; víš že „vevnitř“ volá `input` a ptá se na
-příkazové řádce.
+Podobnou funkci už jsi napsal{{a}}.
+Když zavoláš `ano_nebo_ne('Chutná ti čokoláda?')`, otázka se objeví
+na příkazové řádce.
+Když uživatel odpoví, funkce vrátí True nebo False.
 
-Co kdybys ale měla následující funkci?
+Co kdybys ale měl{{a}} následující funkci?
 
 ```python
 def ano_nebo_ne(otazka):
     """Ukáže tlačítka "Ano" a "Ne" a až uživatel jedno zmáčkne, vrátí True
     nebo False dle stisknutého tlačítka."""
+    ...
 ```
 
 <img src="{{ static('yn.png') }}" alt="Screenshot s tlačítky Ano a Ne" style="display:block;float:right;">
@@ -51,10 +57,10 @@ okýnko se dvěma tlačítky.
 Když uživatel jedno zmáčkne, funkce vrátí True nebo False.
 
 Z hlediska programu se nic nemění: jediné co se změní je *definice funkce*;
-volání je pak stejné jako dřív.
+volání a práce s návratovou hodnotou je pak stejné jako dřív.
 
 
-# Vyzkoušej si to!
+### Vyzkoušej si to!
 
 Najdi nějaký svůj program, který používá `ano_nebo_ne`, případně jen `print`
 a `input`.
@@ -80,36 +86,22 @@ vyndej, aby se použily ty naimportované.
 
 Program by měl fungovat stejně jako dřív!
 
-Je to tím, že tyto funkce mají stejné rozhraní jako jejich dřívější protějšky,
-tedy:
+Je to tím, že tyto funkce mají stejné *rozhraní* jako jejich dřívější protějšky.
+Rozhraní funkce tvoří všechno, co potřebuje kód který funkce volá:
 
 * jméno, kterým se funkce volá,
 * argumenty, které bere (např. `input` bere otázku jako řetězec; `print`
   může brát více argumentů k vypsání), a
-* návratovou hodnotu, se kterou program pracuje dál (např. `input` vrací
+* návratová hodnota, se kterou program pracuje dál (např. `input` vrací
   řetězec; `print` nevrací nic smysluplného).
 
-Většina z těchto informací je přímo v hlavičce funkce.
+Nékteré z těchto informací musíš do hlavičky funkce napsat vždy.
 Ty ostatní je dobré popsat v dokumentačním řetězci, aby ten, kdo chce funkci
 použít, věděl jak na to.
 
 
-# Je to dobrý nápad?
-
-Modul `tkui` je jen ilustrační. Nedoporučuju ho používat.
-
-Příkazová řádka je dělaná tak, aby byla užitečná pro programátory.
-Až se naučíš základy a vytvoříš nějaký skvělý program, přijde čas
-k logice (tzv. *backendu*) přidat část, která bude lépe použitelná pro
-uživatele – tedy okýnko nebo webovou stránku (tzv. *frontend*).
-
-Udělat hezké a funkční *uživatelské* rozhraní je ovšem většinou celkem složité,
-a často se dělá až potom, co jsou samotné „vnitřnosti“ funkční a otestované.
-Doporučuju postupovat stejně, když se programování učíš: zůstaň u základních
-`print` a `input`, dokud nezvládneš samotné programování.
-A pak se můžeš naučit něco nového!
-
-Co si ale z této lekce odnes je koncept rozhraní: při zachování několika
-informací z hlavičky je možné vyměnit funkci za něco úplně jiného.
-A stejně tak je možné jednu funkci (třeba `input`) volat ze spousty různých
-programů, pokud znáš její rozhraní.
+> [note]
+> Modul `tkui` je jen ilustrační. Je udělaný tak, aby se dobře “instaloval”
+> spíš než aby ti pomohl psát reálné programy.
+> V tomto kurzu se vrátíme zpět k příkazové řádce, která je dělaná tak
+> aby byla užitečná pro programátory.
