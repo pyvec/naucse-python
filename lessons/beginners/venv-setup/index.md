@@ -53,7 +53,7 @@ Proto ho nedoporučuji vytvářet na Ploše.
 Tenhle adresář budeš potřebovat na celý zbytek kurzu i na případné
 navazující kurzy.
 Poznamenej si proto kde přesně je – zkopíruj si celé jeho jméno, které pak
-můžeš vložit do `cd` v příkazové řádce nebo do grafického prohlížeše souborů.
+můžeš vložit do `cd` v příkazové řádce nebo do grafického prohlížeče souborů.
 
 
 ### Adresář pro každou lekci
