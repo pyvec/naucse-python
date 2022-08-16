@@ -28,16 +28,14 @@ jobs:
         poetry install -E ghp-compiled
     - name: Compile the courses
       run: |
-        for slug in pyladies mi-pyt meta lessons; do
-          poetry run python -m naucse_render compile _compiled/$slug --slug $slug \
+          poetry run python -m naucse_render compile _compiled \
             --edit-repo-url https://github.com/${{ github.repository }} \
-            --edit-repo-branch main
-        done
-    - if: ${{ github.ref == 'refs/heads/main' }}
+            --edit-repo-branch ${{ github.ref_name }}
+    - if: ${{ startsWith(github.ref, 'refs/heads/') }}
       name: Publish compiled courses
       run: |
-        git fetch origin compiled || :
-        poetry run python -m ghp_import -m "Compiled" -b compiled --push _compiled/
+        git fetch origin compiled/${{ github.ref_name }} || :
+        poetry run python -m ghp_import -m "Compiled" -b compiled/${{ github.ref_name }} --push _compiled/
         curl -H 'Content-Type: application/json' \
             --data '{"repository": "https://github.com/${{ github.repository }}", "branch": "compiled"}' \
             https://hooks.nauc.se/trigger
