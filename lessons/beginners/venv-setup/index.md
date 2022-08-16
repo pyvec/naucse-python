@@ -1,12 +1,14 @@
-{%- macro sidebyside(titles=['Unix', 'Windows']) -%}
+{%- macro sidebyside(titles=['Unix', 'Windows'], code=True) -%}
     <div class="row side-by-side-commands">
         {%- for title in titles -%}
             <div class="col">
                 <h4>{{ title }}</h4>
 {%- filter markdown() -%}
-```{%- if title.lower().startswith('win') -%}dosvenv{%- else -%}console{%- endif -%}
+{%- if code -%}```
+    {%- if title.lower().startswith('win') -%}dosvenv{%- else -%}console{%- endif -%}
+{%- endif -%}
 {{ caller() | extract_part(loop.index0, '---') | dedent }}
-```
+{%- if code -%}```{%- endif -%}
 {%- endfilter -%}
             </div>
         {%- endfor -%}
@@ -192,10 +194,21 @@ V grafickém prohlížeči souborů to vypadá např. takto:
 
 Nakonec virtuální prostředí aktivuj:
 
-{% call sidebyside(titles=['Unix', 'Windows']) %}
+{% call sidebyside(titles=['Unix', 'Windows'], code=False) %}
+```console
 $ source venv/bin/activate
+```
 ---
+```doscon
 > venv\Scripts\activate
+```
+
+Jestli používáš  příkazovou řádku ve Visual Studio Code,
+je příkaz pro Windows složitější:
+```doscon
+> &powershell -ExecutionPolicy bypass
+> venv/Scripts/Activate.ps1
+```
 {% endcall %}
 
 Po spuštění tohoto příkazu by se mělo na začátku příkazové řádky
