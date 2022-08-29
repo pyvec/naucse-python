@@ -12,7 +12,7 @@ timezone: Europe/Prague
 vars:
   pyladies: true
   coach-present: true
-plan:
+sessions:
 - base: install
   date: 2018-03-07
   materials:
