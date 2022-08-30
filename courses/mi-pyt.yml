@@ -11,7 +11,7 @@ canonical: true
 vars:
   coach-present: false
   mi-pyt: true
-plan:
+sessions:
 - title: Weboví klienti & CLI – Requests a Click
   slug: requests-click
   materials:
