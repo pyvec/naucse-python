@@ -8,7 +8,7 @@ long_description: |
   s gitem a GitHubem.
 canonical: true
 meta: true
-plan:
+sessions:
 - title: Přidání kurzu
   slug: adding-a-run
   materials:

@@ -11,7 +11,7 @@ long_description: |
 canonical: true
 vars:
   coach-present: false
-plan:
+sessions:
 - title: Instalace
   slug: install
   materials:

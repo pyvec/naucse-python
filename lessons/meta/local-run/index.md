@@ -333,7 +333,7 @@ Definují se stejně jako u celého kurzu, ale mají účinek jen pro specifick�
 Například takhle:
 
 ```yaml
-plan:
+sessions:
 - slug: first-lesson
   title: Název první lekce
   date: 2018-03-07
