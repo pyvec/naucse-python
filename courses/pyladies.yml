@@ -116,6 +116,7 @@ sessions:
   - lesson: beginners/range
   - lesson: beginners/zip-enumerate
   - lesson: beginners/files
+  - lesson: beginners/with
 
 - title: Grafika
   slug: pyglet
