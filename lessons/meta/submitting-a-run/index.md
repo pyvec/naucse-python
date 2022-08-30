@@ -43,6 +43,18 @@ Vytvoření chvilku trvá.
 To, že je fork vytvořen, poznáš tak, že tě GitHub přesměruje na stránku, která bude skoro stejná, ale v hlavičce bude jiné uživatelské jméno (tvoje nebo tvé
 organizace) a pod tím text <code>forked from <var>původní_repozitář</var></code>.
 
+V novém forku je dobré promazat větve `compiled`.
+Vyber „View all branches“ vseznamu větví:
+
+<div style="text-align: center">
+{{ figure(
+    img=static('view-all-branches.png'),
+    alt="Odkaz na seznam všech větví",
+) }}
+</div>
+
+A smaž větve začínající `compiled`.
+
 Tvůj fork si teď potřebuješ přidat do lokálního repozitáře jako *referenci*, abys tam pak mohl{{a}} poslat svůj kurz.
 To uděláš pomocí příkazu (nahraď obě `uzivatelskejmeno` za uživatelské jméno
 pod kterým fork je, a `nazevrepa` za název repozitáře):
