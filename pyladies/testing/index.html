@@ -3,24 +3,24 @@
 </h1>
 <p>Programátorská práce nespočívá jen v tom, program napsat.
 Důležité je si i ověřit, že opravdu funguje, a případně ho pak opravit.
-Ověřování, že program funguje, se říká <em>testování</em> (angl. <em>testing</em>).</p>
+Tomu ověřování že program funguje se říká <em>testování</em> (angl. <em>testing</em>).</p>
 <p>Zatím jsi asi svoje programy testoval/a tak, že jsi
 je zkusil/a spustit, něco zadal/a a podíval/a se,
 jestli jsou výsledky v pořádku.
 U větších programů, které budou mít více a více
 možností, ale bude těžší a těžší takhle zkontrolovat,
 jestli všechny ty možnosti fungují, jak mají.</p>
-<p>Proto si programátoři často nezkouší programy „ručně“.
+<p>Proto programátoři často nezkouší programy „ručně“.
 Píšou jiné programy, které jejich výtvory testují za ně.</p>
 <p><em>Automatické testy</em> jsou funkce, které
 zkontrolují, že program funguje správně.
 Spuštěním testů můžeš kdykoli ověřit, že kód funguje.
 Když v otestovaném kódu v budoucnu uděláš nějakou změnu,
-testy ověří, že jsi nerozbil/a nic, co dříve fungovalo.</p>
+testy ověří, že jsi nerozbil/a nic co dříve fungovalo.</p>
 <h2 id="instalace_knihovny_pytest">Instalace knihovny pytest
 <a href="#header-instalace_knihovny_pytest" class="header-link">#</a>
 </h2>
-<p>Zatím jsme v kurzu pracovali/y s tím, co se instaluje
+<p>Zatím jsme v kurzu pracovali s tím, co se instaluje
 se samotným Pythonem – s moduly jako <code>math</code> a <code>turtle</code>.
 Kromě takových modulů ale existuje ale velká spousta
 dalších <em>knihoven</em>, které nejsou přímo v Pythonu, ale dají se doinstalovat
@@ -33,15 +33,21 @@ mnohem jednodušeji a je velice populární.</p>
 Jak se dělá a spouští virtuální prostředí
 ses naučil/a při <a href="naucse:page?lesson=beginners/install">instalaci Pythonu</a>,
 ale teprve teď to začíná být opravdu důležité.
-Ujisti se, že máš virtuální prostředí aktivované.</p>
+Ujisti se, že máš virtuální prostředí aktivované – na začátku příkazové řádky
+máš <code>(venv)</code>.</p>
 <p>Potom zadej následující příkaz.
 (Je to příkaz příkazové řádky, podobně jako
 <code>cd</code> nebo <code>mkdir</code>; nezadávej ho do Pythonu.)</p>
 <div class="admonition warning"><p class="admonition-title">Opisuj opatrně!</p>
-<p>Příkaz níže instaluje software z Internetu.
+<p>Příkaz níže instaluje software z internetu.
+Nahrát takovou knihovnu na internet může kdokoli – hodný nebo zlý,
+chytrý nebo hloupý.
 Za knihovnu <code>pytest</code> autoři tohoto kurzu ručí.
-Jiné knihovny ale můžou dělat neplechu nebo být dokonce „zavirované“.
+Jiné knihovny ale můžou dělat neplechu nebo být dokonce „zavirované“;
+už při instalaci můžou něco pokazit.
 Dej si proto pozor a ve jménu <code>pytest</code> neudělej překlep!</p>
+<p>Nainstaluješ-li přesto omylem něco cos nechtěl/a, dej co nejdřív vědět
+zkušenějšímu programátorovi, aby zkontroloval jaký to mohlo mít efekt.</p>
 </div><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>python -m pip install pytest
 </pre></div><div class="admonition note"><p class="admonition-title">Co ten příkaz znamená?</p>
 <p><code>python -m pip</code> zavolá Python s tím, že má pustit modul
@@ -65,19 +71,18 @@ než v tom z virtuálního prostředí – a tam <code>pytest</code> nebude k�
 </h2>
 <p>Nejdříve si testování ukážeme na jednoduchém příkladu.
 Tady je funkce <code>secti</code>, která umí sečíst
-dvě čísla, a další funkce, která testuje, jestli se
-<code>secti</code> pro určité hodnoty
-chová správně.</p>
-<p>Kód si opiš do souboru <code>test_secteni.py</code>,
-v novém prázdném adresáři.
-Pro <code>pytest</code> je (ve výchozím nastavení)
-důležité, aby jména jak souborů s testy, tak
-samotných testovacích funkcí, začínala na
+dvě čísla, a další funkce, která testuje jestli se
+<code>secti</code> pro určité hodnoty chová správně.</p>
+<p>Kód si opiš do souboru <code>test_secteni.py</code> v novém prázdném adresáři.
+Jméno je důležité: <code>pytest</code> ve výchozím nastavení předpokládá,
+že jména jak souborů s testy tak samotných testovacích funkcí začínají na
 <code>test_</code>.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">secti</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Vrátí součet dvou čísel&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
 <span class="k">def</span> <span class="nf">test_secti</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Otestuje funkci secti&quot;&quot;&quot;</span>
     <span class="k">assert</span> <span class="n">secti</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
 </pre></div><p>Co se v té testovací funkci děje?</p>
 <p>Příkaz <code>assert</code> vyhodnotí výraz za ním a pokud výsledek není pravdivý,
@@ -131,110 +136,3 @@ a v <code>test_secteni.py</code> nech jenom test.
 Do <code>test_secteni.py</code> pak na začátek přidej <code>from secteni import secti</code>,
 aby byla funkce testu k dispozici.</p>
 <p>Test by měl opět projít.</p>
-<h2 id="spousteci_moduly">Spouštěcí moduly
-<a href="#header-spousteci_moduly" class="header-link">#</a>
-</h2>
-<p>Automatické testy musí projít „bez dozoru“.
-V praxi se často automaticky spouští, případné chyby se automaticky
-oznamují (např. e-mailem) a fungující otestovaný kód se automaticky
-začne používat dál (nebo se rovnou vydá zákazníkům).</p>
-<p>Co to znamená pro nás?
-Funkce <code>input</code> v testech nefunguje. Nemá koho by se zeptala; „za klávesnicí“
-nemusí nikdo sedět.</p>
-<p>To může někdy „ztěžovat práci“. Ukážeme si to na složitějším projektu:
-na 1D piškvorkách.</p>
-<div class="admonition note"><p>Učíš-li se z domu, dodělej si Piškvorky než budeš pokračovat dál!
-Zadání najdeš (prozatím)
-v <a href="http://pyladies.cz/v1/s004-strings/handout/handout4.pdf">projektech pro PyLadies</a>
-na straně 2.</p>
-</div><p>Kód pro 1D Piškvorky může rámcově vypadat zhruba takto:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>  <span class="c1"># (příp. import jiných věcí, které budou potřeba)</span>
-
-<span class="k">def</span> <span class="nf">tah</span><span class="p">(</span><span class="n">pole</span><span class="p">,</span> <span class="n">cislo_policka</span><span class="p">,</span> <span class="n">symbol</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Vrátí pole s daným symbolem umístěným na danou pozici&quot;&quot;&quot;</span>
-    <span class="o">...</span>
-
-<span class="k">def</span> <span class="nf">tah_hrace</span><span class="p">(</span><span class="n">pole</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Zeptá se hráče kam chce hrát a vrátí pole se zaznamenaným tahem&quot;&quot;&quot;</span>
-    <span class="o">...</span>
-    <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Kam chceš hrát? &#39;</span><span class="p">)</span>
-    <span class="o">...</span>
-
-<span class="k">def</span> <span class="nf">piskvorky1d</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Spustí hru</span>
-
-<span class="sd">    Vytvoří hrací pole a střídavě volá tah_hrace a tah_pocitace</span>
-<span class="sd">    dokud někdo nevyhraje&quot;&quot;&quot;</span>
-    <span class="k">while</span> <span class="o">...</span><span class="p">:</span>
-        <span class="o">...</span>
-        <span class="n">tah_hrace</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-        <span class="o">...</span>
-
-<span class="c1"># Puštění hry!</span>
-<span class="n">piskvorky1d</span><span class="p">()</span>
-</pre></div><p>Když tenhle modul naimportuješ, Python v něm postupně, odshora dolů,
-provede všechny příkazy.</p>
-<p>První příkaz, <code>import</code>, jen zpřístupní nějaké proměnné a funkce;
-je-li importovaný modul správně napsaný, nemá vedlejší účinek.
-Definice funkcí (příkazy <code>def</code> a všechno v nich) podobně jen definují funkce.
-Ale zavoláním funkce <code>piskvorky1d</code> se spustí hra:
-funkce <code>piskvorky1d</code> zavolá funkci <code>tah_hrace()</code> a ta zavolá <code>input()</code>.</p>
-<p>Importuješ-li tenhle modul z testů, <code>input</code> selže a import se nepovede.</p>
-<div class="admonition note"><p>A kdybys modul importoval/a odjinud – například bys chtěl/a funkci
-<code>tah</code> použít v nějaké jiné hře – uživatel si bude muset v rámci importu
-zahrát Piškvorky!</p>
-</div><p>Volání funkce <code>piskvorky1d</code> je vedlejší efekt, a je potřeba ho odstranit.
-No jo, ale po takovém odstranění
-už nejde jednoduše spustit hra! Co s tím?</p>
-<p>Můžeš na to vytvořit nový modul.
-Pojmenuj ho <code>hra.py</code> a dej do něj jenom to odstraněné volání:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">piskvorky</span>
-
-<span class="n">piskvorky</span><span class="o">.</span><span class="n">piskvorky1d</span><span class="p">()</span>
-</pre></div><p>Tenhle modul nebudeš moci testovat (protože nepřímo volá funkci <code>input</code>),
-ale můžeš ho spustit, když si budeš chtít zahrát.
-Protože k němu nemáš napsané testy, nepoznáš
-z nich, když se takový spouštěcí modul rozbije.
-Měl by být proto nejjednodušší – jeden import a jedno volání.</p>
-<p>Původní modul teď můžeš importovat bez obav – ať už z testů nebo z jiných
-modulů.
-Test může vypadat třeba takhle:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">piskvorky</span>
-
-<span class="k">def</span> <span class="nf">test_tah_na_prazdne_pole</span><span class="p">():</span>
-    <span class="n">pole</span> <span class="o">=</span> <span class="n">piskvorky</span><span class="o">.</span><span class="n">tah_pocitace</span><span class="p">(</span><span class="s1">&#39;--------------------&#39;</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">pole</span><span class="p">)</span> <span class="o">==</span> <span class="mi">20</span>
-    <span class="k">assert</span> <span class="n">pole</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
-    <span class="k">assert</span> <span class="n">pole</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">19</span>
-</pre></div><h2 id="pozitivni_a_negativni_testy">Pozitivní a negativní testy
-<a href="#header-pozitivni_a_negativni_testy" class="header-link">#</a>
-</h2>
-<p>Testům, které kontrolují, že se program za správných podmínek chová správně,
-se říká <em>pozitivní testy</em>.
-Můžeš ale testovat i reakci programu na špatné nebo neočekávané podmínky.</p>
-<p>Testy, které kontrolují reakci na „špatný“ vstup,
-se jmenují <em>negativní testy</em>.
-Můžou kontrolovat nějaký negativní výsledek (např.
-že volání jako <code>cislo_je_sude(7)</code> vrátí <code>False</code>),
-a nebo to, že nastane „rozumná“ výjimka.</p>
-<p>Například funkce <code>tah_pocitace</code> by měla způsobit
-chybu (třeba <code>ValueError</code>), když je herní pole už plné.</p>
-<div class="admonition note"><p>Vyvolat výjimku je mnohem lepší než alternativy, např. kdyby takové volání
-„tiše“ – bez oznámení – zablokovalo celý program.
-Když kód pak použiješ ve větším programu,
-můžeš si být jistá, že při špatném volání
-dostaneš srozumitelnou chybu – tedy takovou,
-která se co nejsnadněji opravuje.</p>
-</div><p>Na otestování výjimky použij příkaz <code>with</code> a funkci <code>raises</code> naimportovanou
-z modulu <code>pytest</code>.
-Jak příkaz <code>with</code> přesně funguje, se dozvíme později;
-teď stačí říct, že ověří, že odsazený blok kódu
-pod ním vyvolá danou výjimku:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
-
-<span class="kn">import</span> <span class="nn">piskvorky</span>
-
-<span class="k">def</span> <span class="nf">test_tah_chyba</span><span class="p">():</span>
-    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-        <span class="n">piskvorky</span><span class="o">.</span><span class="n">tah_pocitace</span><span class="p">(</span><span class="s1">&#39;oxoxoxoxoxoxoxoxoxox&#39;</span><span class="p">)</span>
-</pre></div>

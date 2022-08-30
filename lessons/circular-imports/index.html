@@ -1,8 +1,10 @@
 <h2 id="cyklicke_importy">Cyklické importy
 <a href="#header-cyklicke_importy" class="header-link">#</a>
 </h2>
-<p>V domácích projektech budeš rozdělovat 1D Piškvorky na několik modulů.
-Výsledek bude vypadat třeba nějak takhle:
+<p>V domácích úkolech budeš rozdělovat piškvorkový projekt na několik modulů.
+Tento text si doporučuju číst až když narazíš na příslušný úkol,
+abys věděl/a o čem tu je řeč.</p>
+<p>Po rozdělení bude projekt vypadat třeba nějak takhle:
 (Šipky mezi moduly znázorňují importování.)</p>
 <div class="highlight"><pre><code>┌──────────────────╮  ┌───────────────╮  ┌──────────────────╮ 
 │      ai.py       │  │ piskvorky.py  │  │    hra.py        │
@@ -13,17 +15,7 @@ Výsledek bude vypadat třeba nějak takhle:
 │                  │  │ def tah       │  │                  │
 └──────────────────┘  │ def tah_hrace │  └──────────────────┘
                       │               │
-                      └───────────────┘
-                          ▲
-                          │
-                          │ ┌───────────────────╮
-                          │ │ test_piskvorky.py │
-                          │ ├───────────────────┤
-                          └─│ import piskvorky  │
-                            ├───────────────────┤
-                            │ def test_...      │
-                            │                   │
-                            └───────────────────┘</code></pre></div><p>Jenže funkce <code>tah_pocitace</code>
+                      └───────────────┘</code></pre></div><p>Jenže funkce <code>tah_pocitace</code>
 většinou potřebuje volat funkci <code>tah</code>.
 Co s tím?
 Můžeš importovat <code>ai</code> z <code>piskvorky</code> a zároveň
@@ -38,7 +30,7 @@ Můžeš importovat <code>ai</code> z <code>piskvorky</code> a zároveň
 │                  │  │ def tah       │
 └──────────────────┘  │ def tah_hrace │
                       │               │
-                      └───────────────┘</code></pre></div><p>Můžeme se na to podívat z hlediska Pythonu,
+                      └───────────────┘</code></pre></div><p>Můžeš se na to podívat z pohledu Pythonu,
 který příkazy v souborech vykonává.
 Když má importovat soubor <code>piskvorky.py</code>, začne ho
 zpracovávat řádek po řádku,
@@ -49,7 +41,7 @@ Brzy narazí na příkaz <code>import piskvorky</code>. Co teď?</p>
 <p>Aby nenastala situace podobná nekonečné smyčce –
 jeden soubor by importoval druhý, druhý zase první,
 a tak stále dokola –
-udělá Python taková malý „podvod“:
+udělá Python takový malý „podvod“:
 když zjistí, že soubor <code>piskvorky.py</code>
 už importuje, zpřístupní v modulu <code>ai</code>
 modul <code>piskvorky</code> tak, jak ho

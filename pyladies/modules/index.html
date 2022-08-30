@@ -1,7 +1,7 @@
 <h1 id="moduly">Moduly
 <a href="#header-moduly" class="header-link">#</a>
 </h1>
-<p>Modul je v Pythonu něco, z čeho můžeme importovat.
+<p>Modul je v Pythonu něco, z čeho můžeš importovat.
 Třeba z modulu <code>math</code> můžeš importovat funkci <code>sqrt</code>:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
 
@@ -42,17 +42,16 @@ Vytvoř soubor <code>louka.py</code> a do něj napiš:</p>
 <span class="n">pocet_kotatek</span> <span class="o">=</span> <span class="mi">28</span>
 
 <span class="k">def</span> <span class="nf">popis_stav</span><span class="p">():</span>
-    <span class="k">return</span> <span class="s1">&#39;Tráva je </span><span class="si">{barva}</span><span class="s1">. Prohání se po ní </span><span class="si">{pocet}</span><span class="s1"> koťátek&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-        <span class="n">barva</span><span class="o">=</span><span class="n">barva_travy</span><span class="p">,</span> <span class="n">pocet</span><span class="o">=</span><span class="n">pocet_kotatek</span><span class="p">)</span>
-</pre></div><p>A pak v dalším souboru, třeba <code>vypis.py</code>, napiš:</p>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Tráva je </span><span class="si">{</span><span class="n">barva_travy</span><span class="si">}</span><span class="s1">. Prohání se po ní </span><span class="si">{</span><span class="n">pocet_kotatek</span><span class="si">}</span><span class="s1"> koťátek&#39;</span>
+</pre></div><p>A pak do dalšího souboru, třeba <code>vypis.py</code>, napiš:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">louka</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">louka</span><span class="o">.</span><span class="n">popis_stav</span><span class="p">())</span>
-</pre></div><p>a pak spusť:</p>
+</pre></div><p>A pak spusť <code>vypis.py</code>:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>python vypis.py
 </pre></div><p>Příkaz <code>import</code> hledá soubory (mimo jiné) v adresáři,
-ve kterém je „hlavní modul” programu – tedy soubor,
-který spouštíš (u nás <code>vypis.py</code>).
+ve kterém je „hlavní modul” programu – tedy soubor
+který spouštíš (tady <code>vypis.py</code>).
 Oba soubory by proto měly být ve stejném adresáři.</p>
 <h2 id="vedlejsi_efekty">Vedlejší efekty
 <a href="#header-vedlejsi_efekty" class="header-link">#</a>
@@ -61,9 +60,9 @@ Oba soubory by proto měly být ve stejném adresáři.</p>
 <p>Python najde příslušný soubor (<code>louka.py</code>) a provede v něm všechny příkazy,
 odshora dolů, jako v normálním Pythonním programu.
 Všechny globální proměnné (včetně nadefinovaných funkcí) pak dá k dispozici
-kódu, který „louku“ importoval.</p>
-<p>Když pak stejný modul importuješ podruhé, už se neprovádí všechno
-znovu – stejná sada proměnných se použije znovu.</p>
+kódu, který importoval.</p>
+<p>Když pak stejný modul importuješ podruhé, už se neprovádí všechno znovu.
+Druhý import jen zpřístupní stejnou sadu proměnných/funkcí jako ten první.</p>
 <p>Zkus si to – na konci <code>louka.py</code> dopiš:</p>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Louka je zelená!&#39;</span><span class="p">)</span>
 </pre></div><p>Spusť <code>python</code> (máš-li ho už spuštěný, ukonči a spusť znovu)
@@ -72,16 +71,24 @@ a zadej v něm:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">louka</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Druhý import:&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">louka</span>
-</pre></div><p>Výpis se objeví jen poprvé.</p>
-<p>Když takhle modul při importu „dělá“ něco víc, než jen nastavuje proměnné
-a funkce, říká se, že má <em>vedlejší efekt</em> (angl. <em>side effect</em>).
+</pre></div><p>Výpis se objeví jen poprvé.
+Co víc, když teď soubor <code>louka.py</code> změníš, změny se do naimportovaného modulu
+nepromítnou.
+Aby se promítly, musíš Python zavřít a spustit znovu.
+(I proto je dobré pouštět programy ze souborů – při každém spuštění se
+znovu načte aktuální verze modulů.)</p>
+<p>Ale zpátky k volání <code>print</code>.
+Přijde ti trochu divné, že příkaz <code>import louka</code> něco vypíše na obrazovku?</p>
+<p>Když takhle modul při importu „dělá“ něco víc než jen nastavení proměnných
+a funkcí, říká se, že má <em>vedlejší efekt</em> (angl. <em>side effect</em>).
 Vedlejší efekt může být vypsání něčeho na obrazovku nebo do souboru,
 vykreslení okýnka na obrazovku, otázka na uživatele pomocí <code>input</code>, atp.</p>
-<p>V modulech připravených na importování se vedlejším efektům vyhýbáme:
+<p>V modulech připravených na importování se vedlejším efektům vyhýbej:
 úloha takového modulu je dát k dispozici <em>funkce</em>, které něco dělají,
 ne to udělat přímo.
 Všimni si například, že <code>import turtle</code> neukáže okýnko – to se objeví až po
-zavolání <code>turtle.forward()</code>.</p>
+zavolání <code>turtle.forward()</code>.
+Importem si programátor připravuje nástroje; teprve zavoláním funkce je používá.</p>
 <p>Příkaz <code>print</code> proto radši z modulu zase smaž.</p>
 <h2 id="adresar_pro_kazdy_projekt">Adresář pro každý projekt
 <a href="#header-adresar_pro_kazdy_projekt" class="header-link">#</a>

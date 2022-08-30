@@ -626,6 +626,34 @@
                 },
                 "title": "Instalace editoru"
             },
+            "beginners/interfaces": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2020."
+                        ],
+                        "content": {
+                            "path": "interfaces/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/interfaces/index.md",
+                        "title": "Rozhraní",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/beginners/interfaces/info.yml",
+                "static_files": {
+                    "tkui.py": {
+                        "path": "interfaces/tkui.py"
+                    },
+                    "yn.png": {
+                        "path": "interfaces/yn.png"
+                    }
+                },
+                "title": "Rozhraní"
+            },
             "beginners/list": {
                 "pages": {
                     "index": {
@@ -675,6 +703,27 @@
                 "source_file": "lessons/beginners/local-variables/info.yml",
                 "static_files": {},
                 "title": "Lokální proměnné"
+            },
+            "beginners/main-module": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2020."
+                        ],
+                        "content": {
+                            "path": "main-module/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/main-module/index.md",
+                        "title": "Spouštěcí moduly a Negativní testy",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/beginners/main-module/info.yml",
+                "static_files": {},
+                "title": "Spouštěcí moduly a Negativní testy"
             },
             "beginners/micropython": {
                 "pages": {
@@ -976,7 +1025,7 @@
                 "pages": {
                     "index": {
                         "attribution": [
-                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2020."
                         ],
                         "content": {
                             "path": "testing/index.html"
@@ -2605,6 +2654,11 @@
                         "type": "lesson"
                     },
                     {
+                        "lesson_slug": "beginners/interfaces",
+                        "title": "Rozhraní",
+                        "type": "lesson"
+                    },
+                    {
                         "lesson_slug": "beginners/list",
                         "title": "Seznamy",
                         "type": "lesson"
@@ -2612,6 +2666,11 @@
                     {
                         "lesson_slug": "beginners/local-variables",
                         "title": "Lokální proměnné",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "beginners/main-module",
+                        "title": "Spouštěcí moduly a Negativní testy",
                         "type": "lesson"
                     },
                     {

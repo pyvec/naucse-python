@@ -3,27 +3,29 @@
 </h1>
 <p>Pojďme si prohloubit znalosti o chybách, neboli odborně o <em>výjimkách</em>
 (angl. <em>exceptions</em>).</p>
-<p>Vezmi následující funkci:</p>
+<p>Podívej se na následující funkci:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nacti_cislo</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Získá od uživatele celé číslo a vrátí ho&quot;&quot;&quot;</span>
     <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej číslo: &#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">odpoved</span><span class="p">)</span>
 </pre></div><p>Když uživatel nezadá číslice, ale třeba text <code>cokolada</code>,
 nastane výjimka jménem <code>ValueError</code> (chyba hodnoty) a Python vypíše
-odpovídající chybovou hlášku.</p>
+odpovídající chybovou hlášku:</p>
 <div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;ukazka.py&quot;</span>, line <span class="m">3</span>, in <span class="n">nacti_cislo</span>
+  File <span class="nb">&quot;ukazka.py&quot;</span>, line <span class="m">4</span>, in <span class="n">nacti_cislo</span>
     <span class="n">cislo</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">odpoved</span><span class="p">)</span>
 <span class="gr">ValueError</span>: <span class="n">invalid literal for int() with base 10: &#39;cokolada&#39;</span>
 </pre></div><p>Program volá funkci <code>int()</code> pro něco, co nedává smysl jako číslo.
 Co s tím má chudák funkce <code>int</code> dělat?
 Není žádná rozumná hodnota, kterou by mohla vrátit.
 Převádění tohoto textu na celé číslo nedává smysl.</p>
-<p>Až funkce <code>nacti_cislo</code> nejlíp „ví“, co se má stát, když uživatel nezadá
+<p>Až funkce <code>nacti_cislo</code> nejlíp „ví“, co se má stát když uživatel nezadá
 číslice.
 Stačí se uživatele zeptat znovu!
 Kdybys měl/a funkci, která zjistí jestli jsou v řetězci jen číslice,
 mohlo by to fungovat nějak takhle:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nacti_cislo</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Získá od uživatele celé číslo a vrátí ho&quot;&quot;&quot;</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej číslo: &#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">obsahuje_jen_cislice</span><span class="p">(</span><span class="n">odpoved</span><span class="p">):</span>
@@ -34,19 +36,19 @@ mohlo by to fungovat nějak takhle:</p>
 </pre></div><p>Kde ale vzít funkci <code>obsahuje_jen_cislice</code>?
 Nemá smysl ji psát znovu – funkce <code>int</code> sama nejlíp pozná, co se dá převést na
 číslo a co ne.
-A dokonce nám to dá vědět – chybou, kterou můžeš <em>zachytit</em>.</p>
+A dokonce nám to dá vědět – výjimkou, kterou můžeš <em>zachytit</em>.</p>
 <div class="admonition note"><p>Ono „obsahuje_jen_cislice“ v Pythonu existuje. Dokonce několikrát.
 Místo řešení problému to ale spíš ilustruje, v čem problém spočívá:</p>
 <ul>
 <li>Řetězcová metoda <code>isnumeric</code> vrací <code>True</code> pokud řetězec obsahuje číslice:
 <code>'123'.isnumeric()</code> je pravda; <code>'abc'.isnumeric()</code> nepravda.
-Problém je, že funkci <code>int</code> potřebuje jeden konkrétní druh číslic:
-pro řetězce jako <code>'½'</code> nebo <code>'௩三๓໓</code>' (trojka v tamilském, japonském,
-thajském nebo laoském písmu) platí <code>isnumeric</code>, ale <code>int</code> si na nich
+Problém je, že funkce <code>int</code> potřebuje jeden konkrétní druh číslic:
+pro řetězce jako <code>'½'</code> nebo <code>'௩三๓໓</code>' (trojky v tamilském, japonském,
+thajském a laoském písmu) platí <code>isnumeric</code>, ale <code>int</code> si na nich
 vyláme zuby stejně jako na <code>'abc'</code>.</li>
 <li>Řetězcová metoda <code>isdecimal</code> vrací <code>True</code> pokud řetězec obsahuje arabské
 číslice 0-9. To už je lepší, ale stejně to úplně nesedí: <code>int</code> si poradí
-s mezerou na začátku, např. s <code>' 3'</code>, ale funkce <code>isdecimal</code> takový řetězec
+s mezerou na začátku, např. s <code>' 3'</code>. Funkce <code>isdecimal</code> ale takový řetězec
 odmítne.</li>
 </ul>
 <p>Chceš-li zjistit jestli funkce <code>int</code> umí daný řetězec převést na číslo,
@@ -56,15 +58,17 @@ nejlepší je použít přímo funkci <code>int</code>.</p>
 </h2>
 <p>Pro zachycení chyby má Python příkaz <code>try</code>/<code>except</code>.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nacti_cislo</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Získá od uživatele celé číslo a vrátí ho&quot;&quot;&quot;</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej číslo: &#39;</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">odpoved</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;To nebylo číslo!&#39;</span><span class="p">)</span>
+            <span class="c1"># ... a zeptáme se znovu -- cyklus `while` pokračuje</span>
 </pre></div><p>Jak to funguje?
 Příkazy v bloku uvozeném příkazem <code>try</code> se normálně provádějí, ale když
-nastane uvedená výjimka, Python přeskočí zbytek bloku <code>try</code> a provede všechno 
+nastane uvedená výjimka, Python přeskočí zbytek bloku <code>try</code> a provede všechno
 v bloku <code>except</code>.
 Pokud výjimka nenastala, přeskočí se celý blok <code>except</code>.</p>
 <h2 id="druhy_chyb">Druhy chyb
@@ -110,10 +114,10 @@ nastat a proč; máš možnost správně zareagovat.</p>
 <p>V našem příkladu to platí pro <code>ValueError</code> z funkce <code>int</code>: víš že uživatel
 nemusí vždy zadat číslo ve správném formátu a víš že správná
 reakce na tuhle situaci je problém vysvětlit a zeptat se znovu.</p>
-<p>Co ale dělat, kdyš uživatel chce ukončit program a zmáčkne
+<p>Co ale dělat, když uživatel chce ukončit program a zmáčkne
 <kbd>Ctrl</kbd>+<kbd>C</kbd>?
 Nebo když se mu porouchá klávesnice a selže funkce <code>input</code>?
-Nejlepší reakce na takovou nečekanou situaci ukončit program a informovat
+Nejlepší reakce na takovou nečekanou situaci je ukončit program a informovat
 uživatele (nebo lépe, programátora), že (a kde) je něco špatně.
 Neboli vypsat chybovou hlášku.
 A to se stane normálně, bez <code>try</code>.</p>
@@ -164,17 +168,18 @@ funkce mohla vrátit.
 Místo vrácení výsledku musí tato funkce <em>signalizovat chybu</em>.
 S tou se pak může program, který <code>obsah_ctverce(-5)</code> zavolal,
 vypořádat – vynadat uživateli, zkalibrovat měřák, nebo, pokud na chybu není
-připravený, sám skončit s chybou (a upozornit tak programátora, že je něco
-špatně).</p>
+připravený, sám skončit s chybou a upozornit tak programátora, že je něco
+špatně.</p>
 <p>Jak na to prakticky?
 Chybu můžeš vyvolat pomocí příkazu <code>raise</code>.
 Za příkaz dáš druh výjimky a pak do závorek nějaký popis toho, co je špatně.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">obsah_ctverce</span><span class="p">(</span><span class="n">strana</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Vrátí obsah čtverce s danou délkou strany&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">strana</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">strana</span> <span class="o">**</span> <span class="mi">2</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Strana musí být kladná, číslo </span><span class="si">{</span><span class="n">strana</span><span class="si">}</span><span class="s1"> kladné není!&#39;</span><span class="p">)</span>
-</pre></div><p>Podobně jako <code>return</code>, i příkaz <code>raise</code> ukončí funkci.
+</pre></div><p>Podobně jako <code>return</code> i příkaz <code>raise</code> ukončí funkci.
 A nejen tu – pokud na tuhle konkrétní chybu není program předem připravený,
 ukončí se celý program.</p>
 <p>Ze začátku není u <code>raise</code> příliš důležité dumat nad tím, který typ výjimky je
