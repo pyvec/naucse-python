@@ -74,16 +74,22 @@ sessions:
   - lesson: beginners/nested-traceback
   - lesson: beginners/local-variables
 
-- title: Testování
-  slug: tests
+- title: Chyby a moduly
+  slug: exc
   materials:
   - lesson: beginners/exceptions
   - lesson: beginners/modules
-  - lesson: beginners/testing
-  - lesson: beginners/circular-imports
+  # XXX when homework is added, include lesson: beginners/circular-imports
   - title: Výjimkový tahák
     url: https://pyvec.github.io/cheatsheets/exceptions/exceptions-cs.pdf
     type: cheatsheet
+
+- title: Rozhraní a testy
+  slug: tests
+  materials:
+  - lesson: beginners/interfaces
+  - lesson: beginners/testing
+  - lesson: beginners/main-module
 
 - title: Spolupráce a Open-Source
   slug: foss
