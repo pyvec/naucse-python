@@ -32,23 +32,28 @@
                         },
                         "license": "cc-by-sa-40",
                         "slug": "index",
-                        "solutions": [
-                            {
-                                "content": "<div class=\"row side-by-side-commands\"><div class=\"col\">\n                <h4>Unix</h4><div class=\"highlight\"><pre><span></span><span class=\"gp\">$ </span><span class=\"nb\">cd</span> naucse-python\n<span class=\"gp\">$ </span>mkdir <span class=\"nb\">test</span>\n<span class=\"gp\">$ </span>ls\n<span class=\"go\">test</span>\n</pre></div></div><div class=\"col\">\n                <h4>Windows</h4><div class=\"highlight\"><pre><span></span><span class=\"gp\">&gt; </span>cd naucse-python<span class=\"gp\"></span>\n<span class=\"gp\">&gt; </span>mkdir test<span class=\"gp\"></span>\n<span class=\"gp\">&gt; </span>dir\n<span class=\"go\">05/08/2014 07:28 PM &lt;DIR&gt;  test</span>\n</pre></div></div></div>"
-                            }
-                        ],
+                        "solutions": [],
                         "source_file": "lessons/beginners/cmdline/index.md",
-                        "title": "Úvod do příkazové řádky",
+                        "title": "Příkazová řádka",
                         "vars": {}
                     }
                 },
                 "source_file": "lessons/beginners/cmdline/info.yml",
                 "static_files": {
+                    "linux-file-browser.png": {
+                        "path": "cmdline/linux-file-browser.png"
+                    },
+                    "macos-file-browser.png": {
+                        "path": "cmdline/macos-file-browser.png"
+                    },
                     "windows-cmd-properties.png": {
                         "path": "cmdline/windows-cmd-properties.png"
+                    },
+                    "windows-file-browser.png": {
+                        "path": "cmdline/windows-file-browser.png"
                     }
                 },
-                "title": "Úvod do příkazové řádky"
+                "title": "Příkazová řádka"
             },
             "beginners/install": {
                 "pages": {
