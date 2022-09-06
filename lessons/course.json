@@ -2104,6 +2104,9 @@
                 "static_files": {
                     "naucse_fork.png": {
                         "path": "submitting-a-run/naucse_fork.png"
+                    },
+                    "view-all-branches.png": {
+                        "path": "submitting-a-run/view-all-branches.png"
                     }
                 },
                 "title": "Přidání kurzu na Nauč se Python"
