@@ -176,3 +176,153 @@ Do `test_secteni.py` pak na začátek přidej `from secteni import secti`,
 aby byla funkce testu k dispozici.
 
 Test by měl opět projít.
+
+
+## Spouštěcí moduly
+
+Automatické testy musí projít „bez dozoru“.
+V praxi se často automaticky spouští, případné chyby se automaticky
+oznamují (např. e-mailem) a fungující kód se automaticky
+začne používat dál (nebo se rovnou vydá zákazníkům).
+
+Co to znamená pro nás?
+Funkce `input` v testech nefunguje. Nemá koho by se zeptala; „za klávesnicí“
+nemusí nikdo sedět.
+
+To může někdy „ztěžovat práci“. Ukážeme si to na složitějším projektu:
+na 1D piškvorkách.
+
+> [note]
+{% if var('coach-present') -%}
+> Nemáš-li hotové 1D piškvorky, následující sekce budou jen teorietické.
+{% endif -%}
+> Učíš-li se z domu, dodělej si Piškvorky než budeš pokračovat dál!
+> Zadání najdeš (prozatím)
+> v [projektech pro PyLadies](http://pyladies.cz/v1/s004-strings/handout/handout4.pdf)
+> na straně 2.
+
+Kód pro 1D Piškvorky může rámcově vypadat zhruba takto:
+
+```python
+import random  # (příp. import jiných věci, které budou potřeba)
+
+def tah(pole, cislo_policka, symbol):
+    """Vrátí pole s daným symbolem umístěným na danou pozici"""
+    ...
+
+def tah_hrace(pole):
+    """Zeptá se hráče kam chce hrát a vrátí pole se zaznamenaným tahem"""
+    ...
+    input('Kam chceš hrát? ')
+    ...
+
+def piskvorky1d():
+    """Spustí hru
+
+    Vytvoří hrací pole a střídavě volá tah_hrace a tah_pocitace
+    dokud někdo nevyhraje"""
+    while ...:
+        ...
+        tah_hrace(...)
+        ...
+
+# Puštění hry!
+piskvorky1d()
+```
+
+Když tenhle modul naimportuješ, Python v něm postupně, odshora dolů,
+provede všechny příkazy.
+
+První příkaz, `import`, jen zpřístupní nějaké proměnné a funkce;
+je-li importovaný modul správně napsaný, nemá vedlejší účinek.
+Definice funkcí (příkazy `def` a všechno v nich) podobně jen definují funkce.
+Ale zavoláním funkce `piskvorky1d` se spustí hra:
+funkce `piskvorky1d` zavolá funkci `tah_hrace()` a ta zavolá `input()`.
+
+Importuješ-li tenhle modul z testů, `input` selže a import se nepovede.
+
+> [note]
+> A kdybys modul importoval{{a}} odjinud – například bys chtěl{{a}} funkci
+> `tah` použít v nějaké jiné hře – uživatel si bude muset v rámci importu
+> zahrát Piškvorky!
+
+Volání funkce `piskvorky1d` je vedlejší efekt, a je potřeba ho odstranit.
+No jo, ale po takovém odstranění
+už nejde jednoduše spustit hra! Co s tím?
+
+Můžeš na to vytvořit nový modul.
+Pojmenuj ho `hra.py` a dej do něj jenom to odstraněné volání:
+
+```python
+import piskvorky
+
+piskvorky.piskvorky1d()
+```
+
+Nebo lepší varianta `if __main__ == '__name__'` statement 
+na konci souboru `piskvorky.py`.
+
+```python
+if __main__ == '__name__':
+    piskvorky1d()
+```
+
+Tenhle modul nebudeš moci testovat (protože nepřímo volá funkci `input`),
+ale můžeš ho spustit, když si budeš chtít zahrát.
+Protože k němu nemáš napsané testy, nepoznáš
+z nich, když se takový spouštěcí modul rozbije.
+Měl by být proto nejjednodušší – jeden import a jedno volání.
+
+Původní modul teď můžeš importovat bez obav – ať už z testů nebo z jiných
+modulů.
+Test může vypadat třeba takhle:
+
+```python
+import piskvorky
+
+def test_tah_na_prazdne_pole():
+    pole = piskvorky.tah_pocitace('--------------------')
+    assert len(pole) == 20
+    assert pole.count('x') == 1
+    assert pole.count('-') == 19
+```
+
+## Pozitivní a negativní testy
+
+Testům, které kontrolují že se program za správných podmínek chová správně,
+se říká *pozitivní testy*.
+Můžeš ale testovat i reakci programu na špatné nebo neočekávané podmínky.
+
+Testy, které kontrolují reakci na „špatný“ vstup,
+se jmenují *negativní testy*.
+Můžou kontrolovat nějaký negativní výsledek (např.
+že volání jako <code>cislo_je_sude(7)</code> vrátí `False`),
+a nebo to, že nastane „rozumná“ výjimka.
+
+Například funkce `tah_pocitace` by měla způsobit
+chybu (třeba `ValueError`), když je herní pole už plné.
+
+> [note]
+> Vyvolat výjimku je mnohem lepší než alternativy, např. kdyby takové volání
+> „tiše“ – bez oznámení – zablokovalo celý program.
+> Když kód pak použiješ ve větším programu,
+> můžeš si být jistá, že při špatném volání
+> dostaneš srozumitelnou chybu – tedy takovou,
+> která se co nejsnadněji opravuje.
+
+Na otestování výjimky použij příkaz `with` a funkci `raises` naimportovanou
+z modulu `pytest`.
+Jak příkaz `with` přesně funguje, se dozvíme později;
+teď stačí říct, že ověří, že odsazený blok kódu
+pod ním vyvolá danou výjimku:
+
+```python
+import pytest
+
+import piskvorky
+
+def test_tah_chyba():
+    with pytest.raises(ValueError):
+        piskvorky.tah_pocitace('oxoxoxoxoxoxoxoxoxox')
+```
+

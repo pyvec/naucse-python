@@ -20,4 +20,5 @@ subpages:
         subtitle: Notepad++
     others:
         title: Nastavení editoru
-        subtitle: Nastavení
+    vscode:
+        title: Nastavení Visual Studio Code

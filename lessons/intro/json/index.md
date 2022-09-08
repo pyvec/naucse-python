@@ -42,29 +42,29 @@ Už znáš syntaxi Pythonu, kterou můžeš použít jen pro Python:
 
 ```python
 {
-    'jméno': 'Anna',
-    'město': 'Brno',
-    'jazyky': ['čeština', 'angličtina', 'Python'],
-    'věk': 26,
+    'name': 'Anna',
+    'city': 'Brno',
+    'language': ['czech', 'english', 'Python'],
+    'age': 26,
 }
 ```
 
 Jiný způsob kódování dat je [YAML](http://www.yaml.org/):
 
 ```yaml
-jméno: Anna
-město: Brno
-jazyky:
-  - čeština
-  - angličtina
+name: Anna
+city: Brno
+language:
+  - czech
+  - english
   - Python
-věk: 26
+age: 26
 ```
 
 Nebo třeba [Bencode](http://en.wikipedia.org/wiki/Bencode):
 
 ```plain
-d6:jazykyl9:čeština11:angličtina6:Pythone4:věki26e6:město4:Brno6:jméno4:Annae
+d6:languagel9:czech11:english6:Pythone4:agei26e6:city4:Brno6:name4:Annae
 ```
 
 Existují i netextové formáty jako
@@ -72,7 +72,7 @@ Existují i netextové formáty jako
 Převedením do textu bys dostal{{a}} „guláš“ jako:
 
 ```plain
-}q(XjmÃ©noqXAnnaqXmÄtoqXBrnoqXjazykyq]q(X       ÄeÅ¡tinaqX
+}q(XjmÃ©noqXAnnaqXmÄtoqXBrnoqXlanguageq]q(X       ÄeÅ¡tinaqX
                                                           angliÄtinaXPythonq       eXvÄq
 K▒u.
 ```
@@ -83,10 +83,10 @@ který se pro svou jednoduchost rozšířil na Internetu nejvíc:
 
 ```json
 {
-  "jméno": "Anna",
-  "město": "Brno",
-  "jazyky": ["čeština", "angličtina", "Python"],
-  "věk": 26
+  "name": "Anna",
+  "city": "Brno",
+  "language": ["czech", "english", "Python"],
+  "age": 26
 }
 ```
 
@@ -104,14 +104,25 @@ který se pro svou jednoduchost rozšířil na Internetu nejvíc:
 
 Pojďme se zaměřit na populární JSON; práce s ostatními formáty funguje podobně.
 
-K zakódování dat do textu použij funkci `dumps` z modulu `json`
-(který je potřeba naimportovat).
+json_string = """
+    {
+      "name": "Anna",
+      "city": "Brno",
+      "language": ["czech", "english", "Python"],
+      "age": 26
+    }
+"""
+
+data = json.loads(json_string)
+print(data)
+print(data['city'])
+```
+
+A pak tu je metoda `dumps`, která naopak daná data zakóduje
+a vrátí řetězec:
 
 ```pycon
->>> import json
->>> kod = json.dumps(data)
->>> kod
-'{"jm\\u00e9no": "Anna", "m\\u011bsto": "Brno", "jazyky": ["\\u010de\\u0161tina", "angli\\u010dtina", "Python"], "v\\u011bk": 26}'
+{"name": "Anna", "city": "Brno", "language": ["czech", "english", "Python"], "age": 26}
 ```
 
 Výsledný řetězec obsahuje ty správné informace – ale je psaný spíš pro
@@ -163,14 +174,14 @@ a `indent=2` (odsazení dvěma mezerami).
 >>> kod = json.dumps(data, ensure_ascii=False, indent=2)
 >>> print(kod)
 {
-  "věk": 26,
-  "jméno": "Anna",
-  "jazyky": [
-    "čeština",
-    "angličtina",
+  "age": 26,
+  "name": "Anna",
+  "language": [
+    "czech",
+    "english",
     "Python"
   ],
-  "město": "Brno"
+  "city": "Brno"
 }
 ```
 

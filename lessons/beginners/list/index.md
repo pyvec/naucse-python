@@ -499,6 +499,72 @@ veta = ' '.join(slova)
 print(veta)
 ```
 
+## Úkol
+
+Představ si, že ti uživatelé zadávají jména a příjmení a ty si je ukládáš do
+seznamu pro další použití např. v evidenci studentů. Ne všichni jsou ale pořádní,
+a tak se v seznamu sem tam objeví i jméno s nesprávně zadanými velkými písmeny.
+Například:
+
+```python
+zaznamy = ['pepa novák', 'Jiří Sládek', 'Ivo navrátil', 'jan Poledník']
+```
+
+Úkolem je:
+
+* Napsat program, který vybere jen ty správně zadané záznamy, které mají správně
+jméno i příjmení s velkým počátečním písmenem.
+* Napsat program, který vybere naopak jen ty nesprávně zadané záznamy.
+* *(Nepovinný)* – Napsat program, který opraví špatné záznamy.
+
+Výsledný kód by měl fungovat takto:
+
+```python
+zaznamy = ['pepa novák', 'Jiří Sládek', 'Ivo navrátil', 'jan Poledník']
+
+print(chybne_zaznamy) # → ['pepa novák', 'Ivo navrátil', 'jan Poledník']
+
+print(spravne_zaznamy) # → ['Jiří Sládek']
+
+print(opravene_zaznamy) # → ['Pepa Novák', 'Jiří Sládek', 'Ivo Navrátil', 'Jan Poledník']
+```
+
+> [note]
+> Snadný způsob jak zjistit, zda je řetězec složen jen z malých písmen,
+> je metoda `islower()`, která vrací True, pokud řetězec obsahuje jen malá
+> písmena, jinak vrací False. Například `'abc'.islower() == True` ale
+> `'aBc'.islower() == False`.
+>
+> Snadný způsob jak převést první písmenko na velké je metoda `capitalize()`:
+> např. `'abc'.capitalize() == 'Abc'`
+
+{% filter solution %}
+```python
+chybne_zaznamy = []
+for zaznam in zaznamy:
+    jmeno_a_prijmeni = zaznam.split(' ')
+    jmeno = jmeno_a_prijmeni[0]
+    prijmeni = jmeno_a_prijmeni[1]
+    if jmeno[0].islower() or prijmeni[0].islower():
+        chybne_zaznamy.append(zaznam)
+
+spravne_zaznamy = []
+for zaznam in zaznamy:
+    jmeno_a_prijmeni = zaznam.split(' ')
+    jmeno = jmeno_a_prijmeni[0]
+    prijmeni = jmeno_a_prijmeni[1]
+    if not jmeno[0].islower() and not prijmeni[0].islower():
+        spravne_zaznamy.append(zaznam)
+
+opravene_zaznamy = []
+for zaznam in zaznamy:
+    jmeno_a_prijmeni = zaznam.split(' ')
+    jmeno = jmeno_a_prijmeni[0]
+    prijmeni = jmeno_a_prijmeni[1]
+    opravene_zaznamy.append(jmeno.capitalize() + ' ' + prijmeni.capitalize())
+```
+{% endfilter %}
+
 ## Seznamy a náhoda
 
 Modul `random` obsahuje funkce, které mají něco společného s náhodou:
@@ -534,3 +600,75 @@ mozne_tahy = ['kámen', 'nůžky', 'papír']
 tah_pocitace = random.choice(mozne_tahy)
 print(tah_pocitace)
 ```
+
+## Vnořené seznamy
+
+A perlička na konec!
+Na začátku tohoto textu je napsáno, že seznam
+může obsahovat jakýkoli typ hodnot.
+Může třeba obsahovat i další seznamy:
+
+```python
+seznam_seznamu = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+```
+
+Takový seznam se chová docela normálně – jdou
+z něj třeba brát jednotlivé prvky
+(které jsou ovšem taky seznamy):
+
+```python
+prvni_seznam = seznam_seznamu[0]
+print(prvni_seznam)
+```
+
+A protože jsou prvky samy seznamy,
+můžeme mluvit o věcech jako „první prvek druhého seznamu”:
+
+```python
+druhy_seznam = seznam_seznamu[1]
+prvni_prvek_druheho_seznamu = druhy_seznam[0]
+print(prvni_prvek_druheho_seznamu)
+```
+
+A protože výraz `seznam_seznamu[1]`
+označuje seznam, můžeme brát prvky přímo z něj:
+
+```python
+prvni_prvek_druheho_seznamu = (seznam_seznamu[1])[0]
+```
+
+Neboli:
+
+```python
+prvni_prvek_druheho_seznamu = seznam_seznamu[1][0]
+```
+
+A má tahle věc nějaké použití, ptáš se?
+Stejně jako vnořené cykly `for`
+nám umožnily vypsat tabulku, vnořené seznamy
+nám umožní si tabulku „zapamatovat”.
+
+```python
+velikost = 11
+nasobilka = []
+for a in range(velikost):
+    radek = []
+    for b in range(velikost):
+        radek.append(a * b)
+    nasobilka.append(radek)
+
+print(nasobilka[2][3])  # dva krát tři
+print(nasobilka[5][2])  # pět krát dva
+print(nasobilka[8][7])  # osm krát sedm
+
+# Vypsání celé tabulky
+for radek in nasobilka:
+    for cislo in radek:
+        print(cislo, end=' ')
+    print()
+```
+
+Co s takovou „zapamatovanou” tabulkou?
+Můžeš si do ní uložit třeba pozice
+figurek na šachovnici nebo křížků a koleček
+ve *2D* piškvorkách.

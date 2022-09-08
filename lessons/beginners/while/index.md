@@ -41,7 +41,8 @@ Program se dá přerušit zmáčknutím
 > Tahle klávesová zkratka vyvolá v programu chybu
 > a program se – jako po každé chybě – ukončí.
 
-A nakonec, existuje příkaz `break`, který z cyklu „vyskočí“:
+Existují dva příkazy, které se hodí pro práci s cykly.
+Prvním z nich je `break`, který z cyklu „vyskočí“:
 začnou se hned vykonávat příkazy za cyklem.
 
 ```python
@@ -67,42 +68,13 @@ for i in range(10):  # Vnější cyklus
     print()
 ```
 
-Ale zpátky k `while`!
-Dokážeš napsat tenhle program?
+Druhým šikovným příkazem je `continue`, který přeskočí aktuální opakování
+(iteraci) cyklu. Pokud bychom například chtěli vypsat čísla od 0 do 9,
+ale přeskočit při tom čísla větší než 2 a menší než 5, mohli bychom napsat:
 
-## Oko bere
-
-* Začínáš s 0 body.
-* Počítač v každém kole vypíše, kolik máš bodů,
-  a zeptá se tě, jestli chceš pokračovat.
-* Pokud odpovíš „ne“, hra končí.
-* Pokud odpovíš „ano“, počítač „otočí kartu“
-  (náhodně vybere číslo od 2 do 10), vypíše její hodnotu a přičte ji k bodům.
-* Pokud máš víc než 21 bodů, prohráváš.
-* Cílem hry je získat co nejvíc bodů, ideálně 21.
-
-{% filter solution %}
 ```python
-from random import randrange
-
-soucet = 0
-while soucet < 21:
-    print('Máš', soucet, 'bodů')
-    odpoved = input('Otočit kartu? ')
-    if odpoved == 'ano':
-        karta = randrange(2, 11)
-        print('Otočil{{a}} jsi', karta)
-        soucet = soucet + karta
-    elif odpoved == 'ne':
-        break
-    else:
-        print('Nerozumím! Odpovídej "ano", nebo "ne"')
-
-if soucet == 21:
-    print('Gratuluji! Vyhrál{{a}} jsi!')
-elif soucet > 21:
-    print('Smůla!', soucet, 'bodů je moc!')
-else:
-    print('Chybělo jen', 21 - soucet, 'bodů!')
+for i in range(10):
+    if i > 2 and i < 5:
+        continue
+    print(i)
 ```
-{% endfilter %}

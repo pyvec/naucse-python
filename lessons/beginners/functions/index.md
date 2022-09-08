@@ -1,76 +1,53 @@
-# Funkce
+Prozatím jsme si při programování vystačili hlavně s operátory.
+Sčítali jsme čísla pomocí <code>+</code>, porovnávali jsme pomocí `if`.
 
-Známe spoustu matematických operací, které se zapisují pomocí symbolů – třeba
-plus a minus.
-Python se snaží používat stejné symboly jako matematici:
+V Pythonu je operátorů poměrně málo. Už z nich známe skoro půlku!
+Tady jsou všechny Pythonní operátory:
 
-* 3 + 4
-* <var>a</var> - <var>b</var>
+<div>
+    <code>==</code> <code>!=</code>
+    <code>&lt;</code> <code>&gt;</code>
+    <code>&lt;=</code> <code>&gt;=</code>
+    <code class="text-muted">|</code> <code class="text-muted">^</code>
+    <code class="text-muted">&amp;</code>
+    <code class="text-muted">&lt;&lt;</code> <code class="text-muted">&gt;&gt;</code>
+    <code>+</code> <code>-</code>
+    <code>*</code> <code class="text-muted">@</code> <code>/</code>
+    <code>//</code> <code>%</code>
+    <code class="text-muted">~</code>
+    <code>**</code>
+    <code class="text-muted">[ ]</code> <code class="text-muted">( )</code>
+    <code class="text-muted">{ }</code>
+    <code class="text-muted">.</code>
+</div>
 
-S násobením a dělením už je to složitější.
-Matematický zápis se na běžné klávesnici nedá napsat:
-
-* 3 · 4
-* ¾
-
-V Pythonu si ale pořád vystačíme se symbolem, byť trochu jiným – `*`, `/`.
-
-Matematici ale píšou na papír, a tak si můžou dovolit vymýšlet stále
-zajímavější klikyháky, které se pak na klávesnici píšou stále hůř:
-
-* <var>x</var>²
-* <var>x</var> ≤ <var>y</var>
-* sin θ
-* Γ(<var>x</var>)
-* ∫<var>x</var>
-* |<var>s</var>|
-* ⌊<var>x</var>⌋
-* <var>a</var> ★ <var>b</var>
-* <var>a</var> ⨁ <var>b</var>
-
-Ne že by neexistovaly programovací jazyky,
-na které je potřeba speciální klávesnice.
-Třeba program v jazyce APL laik jednoduše ani nenapíše, ani nepřečte:
-
-<!--z http://catpad.net/michael/apl/ -->
-```plain
-⍎’⎕’,∈Nρ⊂S←’←⎕←(3=T)∨M∧2=T←⊃+/(V⌽”⊂M),(V⊖”⊂M),(V,⌽V)⌽”(V,V←1¯1)⊖”⊂M’
-```
-
-Expert v APL může být vysoce produktivní, ale Python se zaměřuje spíš na to,
-aby se dal snadno naučit.
-A tak používá symboly jen pro ty nejčastější operace.
-Operátorů, které využívají symboly, je tak málo, že už jich zhruba půlku znáš!
-
-> [note]
-> Pro zajímavost, tady jsou všechny – i ty co ještě neznáš:
->
-> <div>
->     <code>==</code> <code>!=</code>
->     <code>&lt;</code> <code>&gt;</code>
->     <code>&lt;=</code> <code>&gt;=</code>
->     <code class="text-muted">:=</code>
->     <code class="text-muted">|</code> <code class="text-muted">^</code>
->     <code class="text-muted">&amp;</code>
->     <code class="text-muted">&lt;&lt;</code> <code class="text-muted">&gt;&gt;</code>
->     <code>+</code> <code>-</code>
->     <code>*</code> <code class="text-muted">@</code> <code>/</code>
->     <code>//</code> <code>%</code>
->     <code class="text-muted">~</code>
->     <code>**</code>
->     <code class="text-muted">[ ]</code> <code class="text-muted">( )</code>
->     <code class="text-muted">{ }</code>
->     <code class="text-muted">.</code>
-> </div>
-
-Všechno ostatní vyjádříme slovně.
+<div>
+    <code class="text-muted">lambda</code>
+    <code class="text-muted">if else</code>
+    <code>or</code> <code>and</code> <code>not</code>
+    <code class="text-muted">in</code> <code class="text-muted">not in</code>
+    <code class="text-muted">is</code> <code class="text-muted">is not</code>
+</div>
 
 
-## Délka řetězce
+Asi jste si ale neuvědomili, že jsme pracovali i s funkcemi - třeba s `print`
+nebo `input`.
 
-Jedna operace, na kterou v Pythonu není symbol, je zjištění délky řetězce.
-Místo symbolu má název.
-Jmenuje se `len` (z angl. *length*, délka), a používá se takto:
+Co je to tedy funkce? Jedná se o kus kódu, který je nějako pojmenovaný, třeba
+právě `print`. Tento kód provádí to, co popisuje jeho název - `print`
+tiskne text. Funkce mívají vstupy, což jsou hodnoty, se kterými se v kódu dále
+pracuje - `print` má jako vstup mj. text, který se má vytisknout. Funkce také mívají
+výstup. Díky tomu můžeme výsledek funkce použít v dalších částech programu.
+
+V Pythonu se funkce sdružují do modulů. No modulech není nic složitého -
+jsou to jen soubory s příponou <code>.py</code>. Jméno modulu je stejné,
+jako jméno souboru.
+
+Příkladem funkce z matematiky je sinus:
+* <var>x</var> = sin <var>a</var>
+
+Python má tuto funkci zabudovanou, jenom přidáme závorky,
+aby bylo jasnější, k čemu se operace vztahuje:
 
 ```python
 slovo = 'Ahoj'
@@ -78,8 +55,33 @@ delka = len(slovo)      # Vypočítání délky
 print(delka)
 ```
 
-To `len` je *funkce* (angl. *function*).
-Jak se takové funkce používají?
+Funkce `sin` se musí *naimportovat* z modulu `math`.
+
+```python
+from math import sin
+
+x = sin(1)  # (v radiánech)
+print(x)
+```
+
+Jak je vidět, funkce sinus je tak trochu schovaná.
+Přece jen, `print` nebo `if` potřebují všichni, ale ne všichni mají
+rádi matematiku…
+
+> [warning] Import a pojmenování souborů
+> Při importování je potřeba si dávat pozor na pojmenování souborů:
+> importuješ-li `from math`, nesmí se tvůj program jmenovat `math.py`.
+>
+> Proč? Když Python v adresáři, ze kterého program pouštíš, najde soubor
+> `math.py`, bude se snažit importovat `sin` z něho místo
+> z předpřipravené sady matematických funkcí.
+
+## Volání funkcí
+
+Funkci voláme *jménem*.
+
+Je to jméno jako u proměnných – vlastně to *je* proměnná,
+jen je v ní, místo čísla nebo řetězce, funkce.
 
 K tomu, abys funkci mohl{{a}} použít, potřebuješ znát její
 *jméno* – tady `len`.
@@ -298,5 +300,116 @@ print(len + 1)      # Sečtení funkce a čísla
 
 ## Přehled funkcí
 
-A jaké funkce můžeš, kromě `len` a `print`, použít?
-Přehled těch základních najdeš v [následující lekci](../basic-functions).
+```python
+input('zadej vstup: ')
+```
+
+### Převádění typů
+
+
+Co ale když nechceme pracovat s řetězcem, ale třeba s číslem?
+Tady nám pomůže skupina funkcí, které umí převádět čísla na řetězce a zpátky.
+Každý ze tří <em>typů</em> (angl. <em>types</em>) proměnných, které zatím známe,
+má funkci, která vezme nějakou hodnotu a vrátí podobnou hodnotu „svého“ typu.
+Na celá čísla je funkce `int` (z angl. *integer*), na reálná čísla je `float`
+(z angl. *floating-point*), a pro řetězce `str` (z angl. *string*).
+
+```python
+int(x)              # převod na celé číslo
+float(x)            # převod na reálné číslo
+str(x)              # převod na řetězec
+```
+
+Příklady:
+
+```python
+3 == int('3') == int(3.0) == int(3.141) == int(3)
+8.12 == float('8.12') == float(8.12)
+8.0 == float(8) == float('8') == float(8.0)
+'3' == str(3) == str('3')
+'3.141' == str(3.141) == str('3.141')
+```
+Ne všechny převody jsou možné:
+
+```python
+int('blablabla')    # chyba!
+float('blablabla')  # chyba!
+int('8.9')          # chyba!
+```
+
+…a jak si poradit s chybou, která nastane,
+když použiješ špatnou hodnotu, si řekneme později.
+{%- if var('pyladies') %}
+Teď je hlavní to, že už víš, jak funguje
+`int(input('zadej číslo: '))` z minula!
+{% endif %}
+
+
+### Matematické funkce
+
+Matematika je občas potřeba, takže se pojďme
+podívat, jak v Pythonu pracovat s čísly.
+
+Jedna zajímavá matematická funkce je k dispozici vždy:
+
+```python
+round(cislo)    # zaokrouhlení
+```
+
+Spousta dalších se dá importovat z modulu `math`:
+
+```python
+from math import sin, cos, tan, sqrt, floor, ceil
+
+sin(uhel)       # sinus
+cos(uhel)       # kosinus
+tan(uhel)       # tangens
+sqrt(cislo)     # druhá odmocnina
+
+floor(cislo)    # zaokrouhlení dolů
+ceil(cislo)     # zaokrouhlení nahoru
+```
+
+### Náhoda
+
+Nakonec si ukážeme dvě funkce z modulu
+`random`, které jsou velice
+užitečné pro hry.
+
+```python
+from random import randrange, uniform
+
+randrange(a, b)   # náhodné celé číslo od a do b-1
+uniform(a, b)     # náhodné reálné číslo od a do b
+```
+
+Pozor na to, že <code>randrange(a, b)</code>
+nikdy nevrátí samotné <code>b</code>.
+Pokud potřebujeme náhodně vybrat ze tří možností,
+použij <code>randrange(0, 3)</code>,
+což vrátí <code>0</code>, <code>1</code>, nebo
+<code>2</code>:
+
+```python
+from random import randrange
+
+cislo = randrange(0, 3)  # číslo je od 0, 1, nebo 2
+if cislo == 0:
+    print('Kolečko')
+elif cislo == 1:
+    print('Čtvereček')
+else:  # 2
+    print('Trojúhelníček')
+```
+
+> [note]
+> Pamatuj, když importuješ z modulu `random`, nesmí se tvůj soubor
+> jmenovat `random.py`.
+
+### A další
+Python dává k dispozici obrovské množství dalších
+funkcí a modulů, i když ne všem budeš ze začátku
+rozumět.
+Všechny jsou – anglicky – popsány v dokumentaci Pythonu, např.
+<a href="https://docs.python.org/3/library/functions.html">vestavěné funkce</a>,
+<a href="https://docs.python.org/3/library/math.html">matematika</a>.

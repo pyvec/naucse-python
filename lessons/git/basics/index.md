@@ -26,7 +26,7 @@ Pro větší projekt by byl takový způsob práce
 neefektivní.
 
 Programátoři proto používají mocnější nástroje na
-správu verzí (angl. version control system. VCS).
+správu verzí (angl. version control system - VCS).
 Asi nejpopulárnější z nich je Git, se kterým
 se teď seznámíme.
 
@@ -36,7 +36,7 @@ se teď seznámíme.
 > [úvod]({{ lesson_url('beginners/cmdline') }}).
 >
 > Nezapomeň: `$` na začátku se nepíše;
-> je tu proto, aby šlo poznat že jde o příkaz.
+> je tu proto, aby šlo poznat, že jde o příkaz.
 
 
 ## Instalace
@@ -49,9 +49,9 @@ Jestli jsi instalaci přeskočil{{a}}, projdi si ji teď.
 ## Repozitář
 
 Každý projekt, který budeš verzovat, musí mít pro sebe
-vyhrazený adresář.
-Vytvoř si tedy nový adresář a přepni se do něj (pomocí `cd`).
-Pak vytvoř gitový <em>repozitář</em> (angl. repository)
+vyhrazený adresář. My budeme tenhle kurz považovat za jeden projekt.
+Přejdi do složky, kde máš uložené všechny materiály.
+Tady vytvoř gitový <em>repozitář</em> (angl. repository)
 pomocí příkazu `git init`:
 
 ```ansi
@@ -341,8 +341,8 @@ Můj popisek bude znít takhle:
 Rozdělení dlouhých řádků
 
 Verše básně se většinou píšou na jednotlivé řádky. Myslím, že
-takhle se to líp čte. (Ale, co si budeme povídat, hlavní
-důvod je ukázat co dělá git diff.)
+takhle se to líp čte. (Ale co si budeme povídat, hlavní
+důvod je ukázat, co dělá git diff.)
 ```
 
 > [note]
@@ -409,6 +409,10 @@ Author: Adéla Novotná <adela.novotna@example.cz>
 Date:   Mon May 18 16:18:40 2020 +0200
 
     Rozdělení dlouhých řádků
+
+    Verše básně se většinou píšou na jednotlivé řádky. Myslím, že
+    takhle se to líp čte. (Ale co si budeme povídat, hlavní
+    důvod je ukázat, co dělá git diff.)
 
     Verše básně se většinou píšou na jednotlivé řádky. Myslím, že
     takhle se to líp čte. (Ale, co si budeme povídat, hlavní
