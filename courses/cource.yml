@@ -1,0 +1,55 @@
+title: Začátečnický kurz Pyladies (Mergado)
+description: Naučte se Python vážně od začátku. Žádné předchozí znalosti nejsou potřeba.
+long_description: |
+    Tady najdeš všechny materiály k brněnské verzi začátečnického kurzu PyLadies.
+    Stránky samotných PyLadies jsou na http://pyladies.cz.
+    Jednotlivé lekce jsou určeny naprostým začátečnicím.
+    Instrukce jsou uvedeny pro operační systémy Linux, Windows i macOS.
+time: 18:00–20:00
+default_time:
+  start: '18:00'
+  end: '20:00'
+place: Brno - Mergado
+timezone: Europe/Prague
+vars:
+  pyladies: true
+  coach-present: true
+sessions:
+
+- title: Instalace
+  slug: install
+  date: 2022-09-14
+  materials:
+  - lesson: beginners/cmdline
+  - lesson: beginners/install
+  - lesson: beginners/venv-setup
+  - lesson: beginners/first-steps
+  - lesson: beginners/install-editor
+  - lesson: git/install
+  - lesson: beginners/hello-world
+  - title: Tahák na klávesnici (PDF)
+    url: https://pyvec.github.io/cheatsheets/keyboard/keyboard-cs.pdf
+    type: cheatsheet
+
+- title: První krůčky
+  slug: hello
+  date: 2022-09-21
+  materials:
+  - lesson: beginners/print
+  - lesson: beginners/variables
+  - lesson: beginners/comparisons
+  - lesson: beginners/and-or
+
+- title: Cykly
+  slug: loops
+  date: 2022-09-28
+  materials:
+  - lesson: beginners/expressions
+  - lesson: beginners/functions
+  - lesson: beginners/basic-functions
+  - lesson: intro/turtle
+  - lesson: beginners/while
+  - lesson: beginners/reassignment
+  - title: Tahák s užitečnými funkcemi
+    url: https://pyvec.github.io/cheatsheets/basic-functions/basic-functions-cs.pdf
+    type: cheatsheet
