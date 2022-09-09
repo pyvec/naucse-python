@@ -1,9 +1,32 @@
 # Instalace Pythonu pro Windows
 
+Máš-li Windows 10 nebo novější, otevři příkazovou řádku - nabídka start `cmd` - spustit příkazovou řádku.
+Zadej do příkazové řádky python3.
+
+Pokud ještě Python nemáš nainstalovaný, otevře se ti automaticky stránka Microsoft Store.
+Python nainstaluj z ní. Pokud máš v oblibě jiné instalátory jako např. `choco` nebo `winget`, můžeš je použít.
+
+Jestli Python už nainstalovaný máš, ukáže se ti v příkazové řádce něco jako:
+
+```
+> python3
+Python 3.9.6 ...
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+
+Na prvním řádku výstupu je verze Pythonu. Zkontroluj si, že verze je 3.9 nebo novější.
+
+Jestli ne, pokračuj sekcí níže.
+
+Jestli ano, Python máš nainstalovaný! Ukonči ho zkratkou Ctrl+Z a Enter, aby řádek, kam budeš psát další příkazy, nezačínal na „tři zobáčky“ (>>>).
+(Nebo okýnko s příkazovou řádkou zavři. Až ho budeš znovu potřebovat, můžeš otevřít nové.)
+
+## Manuální instalace
 Běž na [stahovací stránku Pythonu](https://www.python.org/downloads/)
 a stáhni si instalátor nejnovější stabilní verze Pythonu.
-Ověř si že je to verze **3.6.0 nebo novější** –
-verze 3.6.0 má jistá vylepšení, která budeme v tomto kurzu používat.
+Ověř si že je to verze **3.9.0 nebo novější** –
+verze 3.9.0 má jistá vylepšení, která budeme v tomto kurzu používat.
 
 Jak poznat, který instalátor je ten pravý?
 Pokud má tvůj počítač 64bitovou verzi Windows,
