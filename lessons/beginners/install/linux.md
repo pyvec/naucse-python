@@ -14,11 +14,11 @@ v [příkazové řádce]({{ lesson_url('beginners/cmdline') }}) příkaz:
 $ python3 --version
 ```
 
-Objeví-li se „Python“ a číslo verze (např. `Python 3.6.6`)
-a verze je 3.6 nebo vyšší, máš nainstalováno.
+Objeví-li se „Python“ a číslo verze (např. `Python 3.9.6`)
+a verze je 3.9 nebo vyšší, máš nainstalováno.
 Přejdi na další sekci, [kontrolu `tkinter`](#check-tkinter).
 
-Objeví-li se „Python“ a verze 3.5 nebo nižší,
+Objeví-li se „Python“ a verze 3.6 nebo nižší,
 {% if var('coach-present') -%}
 poraď se s koučem.
 {%- else -%}
