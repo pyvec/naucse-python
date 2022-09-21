@@ -1,5 +1,5 @@
 title: Začátečnický kurz PyLadies
-subtitle: Plzeň - jaro 2022 - úterý
+subtitle: Plzeň - podzim 2022 - úterý
 time: 18:00–20:00
 default_time:
   start: '18:00'
@@ -17,19 +17,16 @@ long_description: |
     Jednotlivé lekce jsou určeny naprostým začátečnicím.
     Instrukce jsou uvedeny pro operační systémy Linux, Windows i macOS.
 
-derives: pyladies
+canonical: true
 vars:
   user-gender: f
   pyladies: true
   coach-present: true
 
-extra_lessons:
-  - git/install
-  - beginners/venv-setup
-
-plan:
-- base: install
-  date: 2022-02-15
+sessions:
+- title: Instalace
+  slug: install
+  date: 2022-09-20
   materials:
 #  - url: http://pyladies.cz/v1/s001-install/uvod.html
 #    title: Úvodní prezentace
@@ -47,8 +44,9 @@ plan:
     url: https://projekty.pyladies.cz/session?course=pyladies-2022-plzen-spring&session=install
     type: homework
 
-- base: hello
-  date: 2022-02-22
+- title: Proměnné a porovnávání
+  slug: hello
+  date: 2022-09-27
   materials:
   - lesson: beginners/print
   - lesson: beginners/variables
@@ -62,8 +60,8 @@ plan:
     url: https://projekty.pyladies.cz/session?course=pyladies-2022-plzen-spring&session=hello
     type: homework
 
-- title: Cykly a želva
-  date: 2022-03-01
+- title: Cykly
+  date: 2022-10-04
   slug: cyk
   materials:
     - lesson: beginners/for
@@ -78,7 +76,7 @@ plan:
 
 - title: Funkce
   slug: fun
-  date: 2022-03-08
+  date: 2022-11-10
   materials:
   #- lesson: beginners/expressions
   - lesson: beginners/functions
@@ -90,7 +88,7 @@ plan:
 
 - title: Soubory a řetězce
   slug: str_fio
-  date: 2022-03-15
+  date: 2022-10-18
   materials:
   - lesson: beginners/str
   - lesson: beginners/str-index-slice
@@ -111,7 +109,7 @@ plan:
 
 - title: Procvičování
   slug: ex
-  date: 2022-03-22
+  date: 2022-10-25
   materials:
     - lesson: beginners/expressions
     - lesson: beginners/basic-functions
@@ -131,16 +129,23 @@ plan:
       url: https://projekty.pyladies.cz/session?course=pyladies-2022-plzen-spring&session=ex
       type: homework
 
-- base: list
-  date: 2022-03-29
+- title: Seznamy
+  slug: list
+  date: 2022-11-01
   materials:
-    - +merge
-    - title: Domácí projekty
-      url: https://projekty.pyladies.cz/session?course=pyladies-2022-plzen-spring&session=list
-      type: homework
+  - lesson: beginners/list
+  - lesson: beginners/tuple
+  - lesson: beginners/nested-list
+  - title: Tahák na seznamy
+    url: https://pyvec.github.io/cheatsheets/lists/lists-cs.pdf
+    type: cheatsheet
+  - title: Domácí projekty
+    url: https://projekty.pyladies.cz/session?course=pyladies-2022-plzen-spring&session=list
+    type: homework
 
-- base: dict
-  date: 2022-04-05
+- title: Slovníky
+  slug: dict
+  date: 2022-11-15
   materials:
     #  - title: Turnaj v piškvorkách
     #    url: null
@@ -158,17 +163,19 @@ plan:
       url: https://projekty.pyladies.cz/session?course=pyladies-2022-plzen-spring&session=dict
       type: homework
 
-- base: class
-  date: 2022-04-12
+- title: Třídy
+  slug: class
+  date: 2022-11-22
   materials:
-  - +merge
+  - lesson: beginners/class
+  - lesson: beginners/inheritance
   - title: Domácí projekty
     url: https://projekty.pyladies.cz/session?course=pyladies-2022-plzen-spring&session=class
     type: homework
 
 - title: Testování
   slug: test
-  date: 2022-04-19
+  date: 2022-11-29
   materials:
     - lesson: beginners/exceptions
     - lesson: beginners/modules
@@ -182,8 +189,9 @@ plan:
       url: https://projekty.pyladies.cz/session?course=pyladies-2022-plzen-spring&session=test
       type: homework
 
-- base: foss
-  date: 2022-04-26
+- title: Open-source a spolupráce
+  slug: foss
+  date: 2022-11-29
   materials:
   - lesson: git/basics
   - lesson: git/collaboration
