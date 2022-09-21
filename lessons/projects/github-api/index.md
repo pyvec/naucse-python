@@ -9,11 +9,11 @@ Spousta webových služeb poskytuje takzvané
 programátorské rozhraní), přes které je možné s danou
 službou komunikovat programově.
 Místo klikání na tlačítka a čtení stránek „očima”
-dostaneš data ve formátu, kterému rozumí počítače.
-V dnešní době to bude většinou formát JSON.
+dostaneme data ve formátu, kterým rozumí počítače –
+a v dnešní době to bude většinou formát JSON.
 
-Z minulých lekcí bys měl{{a}} mít založený účet na github.com.
-Podívejme se na to, jak se zeptat Githubu, co o tobě ví.
+Z minulých lekcí bys měl{{a}} mít založený účet na github.com,
+tak se zkusme zeptat Githubu, co o nás ví.
 
 
 ## Autorizace
@@ -26,18 +26,15 @@ My to uděláme co nejjednodušeji, ať se rychle dostaneme k jádru věci:
 * Přihlaš se na [github.com](https://github.com).
 * Jdi na [nastavení Personal Accesss Tokens](https://github.com/settings/tokens).
 * Vytvoř si nový token ("Generate new token"). Nezaškrtávej žádná oprávnění navíc.
-* Zkopíruj si token (dlouhý řetězec), které takto dostaneš, do souboru `token.txt`.
+* Zkopíruj si heslo, které takto dostaneš, do souboru `token.txt`.
 
 > [warning] Pozor!
-> Vygenerovaný token je heslo, které držitele
+> Vygenerovaný kód je heslo, které držitele
 > opravňuje pracovat s Githubem pod tvým jménem!
 > Drž ho v tajnosti. Kdyby se přece jen dostalo „ven”, na stránce
 > [Personal Accesss Tokens](https://github.com/settings/tokens) ho deaktivuj.
 
-Obsah tokenu se ti zobrazí pouze jednou, hned po vytvoření.
-Když ho zapomeneš, deaktivuj ho a vytvoř si nový.
-
-
+    
 ## Requests
 
 K práci s internetovými stránkami použijeme knihovnu Requests.
@@ -90,17 +87,9 @@ print(stranka.text)
 ```
 
 Co se stalo? Tím, že jsi Githubu dal{{a}} svůj token
-(načtený ze souboru, předaný přes „přihlašovací“ slovník `headers`),
+(načtený ze souboru, předaný přes slovník `headers`),
 poznal, že jde dotaz od tebe a vrátil nějaké informace
 ve formátu JSON.
-
-> [note]
-> Pokud kód opisuješ, pozor: v řetězci `'token '` je mezera.
-> „Přihlašovací“ slovník `headers` bude ve výsledku vypadat takto:
->
-> ```python
-> {'Authorization': 'token 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'}
-> ```
 
 Zkus řetězec `stranka.text` převést z JSON na slovník
 a vypsat trochu srozumitelněji:
@@ -117,7 +106,7 @@ udržovat v tajnosti).
 
 S profilem, který máš v proměnné `data`,
 se dá pracovat jako s každým jiným slovníkem.
-Třeba adresu svého profilového obrázku můžeš vypsat pomocí:
+Třeba adresu svého obrázku můžeš vypsat pomocí:
 
 ```python
 print(data['avatar_url'])
@@ -129,7 +118,7 @@ print(data['avatar_url'])
 API Githubu toho umí mnohem víc. Třeba na adrese
 [https://api.github.com/emojis](https://api.github.com/emojis) na tebe čeká
 slovník s adresami malých obrázků.
-<!-- (Tenhle slovník funguje jako vyhledávací tabulka.) -->
+(Tenhle slovník funguje jako vyhledávací tabulka.)
 Celé API je zdokumentováno na adrese
 [developer.github.com](https://developer.github.com/v3/).
 
@@ -160,7 +149,7 @@ a `DELETE` něco maže.
 Jakou metodu poujeme závisí na tom, co chceme udělat;
 většinou to bude `POST`, `PUT` nebo `DELETE`.
 
-Podle [dokumentace Githubu](https://docs.github.com/en/rest/reference/activity#star-a-repository-for-the-authenticated-user)
+Podle [dokumentace Githubu](https://developer.github.com/v3/activity/starring/#star-a-repository)
 se přidání hvězdičky dělá pomocí `PUT`
 dotazu na adresu `/user/starred/:owner/:repo`.
 Za `:owner` a `:repo`

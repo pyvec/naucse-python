@@ -73,11 +73,22 @@ Vybereš-li editor, klikni na jeho jméno a dostaneš se na instrukce ke stažen
 a nastavení.
 (Na tuhle stránku se pak už nemusíš vracet.)
 
+Na kurzu budeme používat Mu editor
+
+* [Mu]({{ subpage_url('mu') }}) - jednoduchý editor určený pro začínající programátory.
+
+Pro pokročilejší programátory je vhodné Visual Studio Code, v kurzu se s ním 
+později seznámíme, pokud už máš s programováním zkušenosti můžeš jej používat 
+od začátku.
+
 * [Visual Studio Code]({{ subpage_url('vscode') }}) – doporučený editor pro
   Windows a macOS (a vhodný i pro Linux).
   V poslední době je to asi nejpopulárnější editor kódu.
   Nabízí mnoho funkcí a má velkou základnu uživatelů a vývojářů,
   takže se neustále vylepšuje.
+
+Není však nutné používat ani jeden z nich, vyber si jakýkoliv editor, 
+který ti bude vyhovovat.
 
 Na Linuxu budeš mít pravděpodobně už nainstalovaný Gedit nebo Kate.
 Zkus se podívat do systémové nabídky, jestli jeden z nich máš (případně je

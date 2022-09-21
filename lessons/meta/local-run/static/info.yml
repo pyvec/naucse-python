@@ -8,11 +8,11 @@ place:
 description:
 long_description: |
     Delší popisek
-timezone: Europe/Prague
+derives: pyladies
 vars:
   pyladies: true
   coach-present: true
-sessions:
+plan:
 - base: install
   date: 2018-03-07
   materials:

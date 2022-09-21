@@ -76,7 +76,7 @@ Typ objektu umí zjistit funkce `type`:
 <class '_io.TextIOWrapper'>
 ```
 
-A co je to ten typ neboli třída? Je to *popis*, jak se všechny objekty
+A co je to třída? Třída je *popis*, jak se všechny objekty
 daného typu chovají.
 
 Například `<class 'int'>` obsahuje všechno, co je společné všem celým číslům:
@@ -157,16 +157,16 @@ Ten si ale vysvětlíme později – napřed zkus zamňoukat:
 
 ```python
 # Vytvoření konkrétního objektu
-mourek = Kotatko()
+kotatko = Kotatko()
 
 # Volání metody
-mourek.zamnoukej()
+kotatko.zamnoukej()
 ```
 
 V tomhle příkladu si dej pozor na velikost písmen:
 `Kotatko` (s velkým K) je třída – popis, jak
 se koťátka chovají.
-`mourek` (s malým m)
+`kotatko` (s malým k)
 je konkrétní objekt (angl. *instance*) té třídy:
 hodnota, která reprezentuje kotě.
 
@@ -226,7 +226,7 @@ rozlišit.
 Teď se na chvíli vraťme k metodám. Konkrétně k parametru `self`.
 
 Každá metoda má přístup ke konkrétnímu objektu, na
-kterém pracuje, právě přes parametr `self`.
+kterém pracuje, právě přes argument `self`.
 Teď, když máš koťátka pojmenovaná, můžeš v metodě `zamnoukej` použít `self`
 a dostat se tak ke jménu daného koťátka:
 
@@ -250,13 +250,14 @@ Když ji pak zavoláš (`mourek.zamnoukej()`),
 objekt `mourek` se předá funkci `zamnoukej` jako první argument, `self`.
 
 > [note]
-> Onen první parametr metody můžeš teoreticky pojmenovat i jinak než `self`,
+> Onen první argument metody můžeš teoreticky pojmenovat i jinak než `self`,
 > ale když to uděláš, ostatní programátoři se na tebe budou koukat hodně divně.
 
-Metoda může mít po `self` i další parametry.
-Při volání `self` vynecháš – doplní se vždy automaticky – ale ostatní
-se předávají jako u normálního volání funkce.
-Třeba v tomto příkladu se jako `jidlo` předá řetězec `'ryba'`:
+
+Může taková metoda brát víc než jeden argument?
+Může – `self` se doplní na první místo,
+zbytek argumentů se vezme z volání metody.
+Třeba:
 
 ```python
 class Kotatko:
@@ -285,7 +286,7 @@ AttributeError: 'Kotatko' object has no attribute 'jmeno'
 ```
 
 Aby tahle chyba nemohla nastat, můžeš zařídit, aby každé kotě *muselo* být
-pojmenované už od okamžiku, kdy vznikne.
+pojmenované – a to už od okamžiku kdy vznikne.
 Jméno pak budeš zadávat už při vytváření kotěte, nějak takhle:
 
 ```python
@@ -316,14 +317,14 @@ mourek = Kotatko('Mourek')
 mourek.zamnoukej()
 ```
 
-A teď už není možnost jak vytvořit koťátko beze jména.
+A teď už není možnost, jak vytvořit koťátko beze jména.
 Metoda `zamnoukej` bude vždycky fungovat.
 
 Jako u jiných funkcí je možné jméno koťátka zadat buď jako pojmenovaný
 argument, nebo jako poziční. Obojí funguje stejně:
 
-```python
-mourek = Kotatko('Mourek')  # 'Mourek' je hodnota prvního argumentu pro __init__ (po self)
+```
+mourek = Kotatko('Mourek')  # 'Mourek' je hodnota prvního argument pro __init__ (po self)
 micka = Kotatko(jmeno='Micka')  # 'Micka' je hodnota argumentu `jmeno`
 ```
 

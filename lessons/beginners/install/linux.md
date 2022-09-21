@@ -77,37 +77,3 @@ Jestli ne, modul `tkinter` ještě nainstaluj:
   {% endfilter %}
 
 Používáš-li jinou distribuci, musíš si správné jméno balíčku najít na Internetu.
-
-{{ anchor('install-virtualenv') }}
-## Doinstalování Virtualenv
-
-Novější verze Pythonu mají zabudovaný nástroj `venv`, který použijeme níže.
-Starší verze ho ale nemají (a některé distribuce Linuxu ho dokonce z Pythonu
-vyřadily).
-Potřebuješ proto zjistit, jestli `venv` máš, a případně nainstalovat alternativu.
-
-Spusť v příkazové řádce příkaz:
-
-```console
-$ python3 -m ensurepip --version
-```
-
-Objeví-li se výpis začínající „pip“, máš funkční `venv` nainstalovaný.
-Zbytek této sekce můžeš přeskočit!
-
-Objeví-li se ale nápis `No module named ensurepip`, je potřeba doinstalovat
-alternativu, Virtualenv:
-
-<!-- na Fedoře se tohle nestává -->
-
-* **Ubuntu**:
-  {% filter markdown(inline=True) %}
-  ```console
-  $ sudo apt-get install python-virtualenv
-  ```
-  {% endfilter %}
-
-Používáš-li jinou distribuci, doufám, že instalovat programy už umíš.
-
-Instaluješ-li Virtualenv, **zapamatuj si**, že ho budeš muset použít později
-při vytváření virtuálního prostředí.

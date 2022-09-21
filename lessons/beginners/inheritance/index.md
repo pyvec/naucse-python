@@ -30,7 +30,7 @@ class Stenatko:
 ```
 
 Většina kódu je stejná!
-Kdybys měl{{a}} napsat i třídu pro kuřátka, kůzlátka,
+Kdybys měla napsat i třídu pro kuřátka, kůzlátka,
 slůňátka a háďátka, bez <kbd>Ctrl</kbd>+<kbd>C</kbd> by to bylo docela nudné.
 A protože jsou programátoři líní psát stejný kód
 několikrát (a hlavně ho potom udržovat), vymysleli

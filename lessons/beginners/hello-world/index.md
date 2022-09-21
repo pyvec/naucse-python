@@ -51,7 +51,7 @@ Aktivuj si virtuální prostředí.
 Pak a zadej tento příkaz:
 
 ```console
-(venv)$ python ahoj.py
+$ python ahoj.py
 ```
 
 Pokud se vypíše hláška `Ahoj světe!`, gratuluji!
@@ -59,9 +59,6 @@ Napsal{{a}} jsi svůj první program v Pythonu!
 
 Jestli to nefunguje, zkontroluj, že:
 
-* Máš zapnuté virtuální prostředí.
-  (Na příkazové řádce se musí ukazovat <code>(venv)</code>;
-  pokud tam není, použij příkaz „activate“ z [minula]({{ lesson_url('beginners/install') }}).)
 * Jsi ve správném adresáři. Zkus `pwd` (Unix) nebo `cd` (Windows).
   Aktuální adresář musí být ten, do kterého jsi uložil{{a}}
   soubor s programem.
@@ -70,7 +67,7 @@ Jestli to nefunguje, zkontroluj, že:
   jmenuje `ahoj.py` a ne třeba `ahoj.py.txt`.
   Jestli ne, ulož ho znovu pod správným jménem.
 * Soubor `ahoj.py` obsahuje správný příkaz, včetně všech uvozovek a závorek.
-* Slovo `(venv)` ani znak `$` nezadáváš – v materiálech jsou proto, aby bylo
+* Znak `$` nezadáváš – v materiálech je proto, aby bylo
   poznat že jde o příkaz příkazové řádky.
   Na `$` (nebo, na Windows, `>`) končí dotaz, který vypíše sám počítač.
   Příkaz, který zadáváš ty, je jen `python ahoj.py`.
