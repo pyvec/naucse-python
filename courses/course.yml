@@ -40,6 +40,9 @@ sessions:
   - title: Tahák na klávesnici (PDF)
     url: https://pyvec.github.io/cheatsheets/keyboard/keyboard-cs.pdf
     type: cheatsheet
+  - title: Tahák na příkazovou řádku a první kroky v Pythonu (PDF)
+    url: https://s3-eu-west-1.amazonaws.com/messa-shared-files/2017/09/pyladies_2_lekce_tahak.pdf
+    type: cheatsheet
   - title: Domácí projekty
     url: https://projekty.pyladies.cz/session?course=pyladies-2022-plzen-spring&session=install
     type: homework
@@ -51,11 +54,10 @@ sessions:
   - lesson: beginners/print
   - lesson: beginners/variables
   - lesson: beginners/comparisons
-  - title: Tahák na příkazovou řádku a první kroky v Pythonu (PDF)
-    url: https://s3-eu-west-1.amazonaws.com/messa-shared-files/2017/09/pyladies_2_lekce_tahak.pdf
-    type: cheatsheet
   - lesson: beginners/and-or
-    title: '*Nebo* anebo *a* (bonus)'
+    title: '(Bonus) "Nebo" anebo "a"'
+  - lesson: beginners/expressions
+    title: '(Doplnění) Vyhodnocování výrazů'
   - title: Domácí projekty
     url: https://projekty.pyladies.cz/session?course=pyladies-2022-plzen-spring&session=hello
     type: homework
@@ -65,8 +67,11 @@ sessions:
   slug: cyk
   materials:
     - lesson: beginners/for
+    - lesson: beginners/range
+      title: '(Doplnění) Range - sekvence čísel'
     - lesson: intro/turtle
     - lesson: beginners/while
+    - lesson: beginners/reassignment
     - title: Tahák s užitečnými funkcemi
       url: https://pyvec.github.io/cheatsheets/basic-functions/basic-functions-cs.pdf
       type: cheatsheet
@@ -78,10 +83,11 @@ sessions:
   slug: fun
   date: 2022-11-10
   materials:
-  #- lesson: beginners/expressions
   - lesson: beginners/functions
-  #- lesson: beginners/basic-functions
+  - lesson: beginners/basic-functions
   - lesson: beginners/def
+  - lesson: beginners/local-variables
+  - lesson: beginners/nested-traceback
   - title: Domácí projekty
     url: https://projekty.pyladies.cz/session?course=pyladies-2022-plzen-spring&session=fun
     type: homework
@@ -93,6 +99,7 @@ sessions:
   - lesson: beginners/str
   - lesson: beginners/str-index-slice
   - lesson: beginners/str-methods
+  - lesson: beginners/fstring
   - lesson: beginners/files
   - title: 'Odkaz k lekci – Jane Austen: Pride and Prejudice'
     url: https://www.gutenberg.org/files/1342/1342-0.txt
@@ -105,29 +112,26 @@ sessions:
     type: homework
 
 
-
-
 - title: Procvičování
   slug: ex
   date: 2022-10-25
   materials:
-    - lesson: beginners/expressions
-    - lesson: beginners/basic-functions
-    - title: Odkaz k domácím projektům – hiragana
+    - lesson: beginners/exceptions
+    - title: Odkaz k projektu – hiragana
       url: http://pyladies.cz/v1/s006-lists/resources/hiragana.txt
       type: link
-    - title: Odkaz k domácím projektům – katakana
+    - title: Odkaz k projektu – katakana
       url: http://pyladies.cz/v1/s006-lists/resources/katakana.txt
       type: link
-    - title: Odkaz k domácím projektům – „日本語の表記体系” na japonské Wikipedii
+    - title: Odkaz k projektu – „日本語の表記体系” na japonské Wikipedii
       url: http://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%81%AE%E8%A1%A8%E8%A8%98%E4%BD%93%E7%B3%BB
       type: link
     - title: Zadání projektu na lekci (PDF)
       url: http://pyladies.cz/v1/s005-modules/handout/handout7.pdf
       type: homework
-    - title: Domácí projekty
-      url: https://projekty.pyladies.cz/session?course=pyladies-2022-plzen-spring&session=ex
-      type: homework
+#    - title: Domácí projekty
+#      url: https://projekty.pyladies.cz/session?course=pyladies-2022-plzen-spring&session=ex
+#      type: homework
 
 - title: Seznamy
   slug: list
@@ -136,6 +140,7 @@ sessions:
   - lesson: beginners/list
   - lesson: beginners/tuple
   - lesson: beginners/nested-list
+  - lesson: beginners/zip-enumerate
   - title: Tahák na seznamy
     url: https://pyvec.github.io/cheatsheets/lists/lists-cs.pdf
     type: cheatsheet
@@ -147,10 +152,8 @@ sessions:
   slug: dict
   date: 2022-11-15
   materials:
-    #  - title: Turnaj v piškvorkách
-    #    url: null
-    #    type: special
     - lesson: beginners/dict
+    - lesson: beginners/dict-with-list-values
     - lesson: intro/json
     - lesson: projects/github-api
     - title: 'Odkaz k lekci – Vzorky (ZIP)'
