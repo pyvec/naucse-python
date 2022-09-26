@@ -280,7 +280,7 @@ Na **macOS** vyber text myší a pak stiskni <kbd>⌘ Command</kbd>+<kbd>C</kbd>
 Na **Windows** v menu příkazové řádky (ikonce vlevo nahoře) vyber
 *Edit* → *Mark*, text vyber myší a zkopíruj pomocí <kbd>Enter</kbd>.
 
-### Otevření v prohlížeče souborů
+### Otevření v prohlížeči souborů
 
 Na **Linuxu** záleží na programu, který používáš. Buď:
 * zmáčkni <kbd>Ctrl</kbd>+<kbd>L</kbd> a jméno adresáře vlož pomocí

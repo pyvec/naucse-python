@@ -65,7 +65,7 @@ A dokonce nám to dá vědět – výjimkou, kterou můžeš *zachytit*.
 >   s mezerou na začátku, např. s `' 3'`. Funkce `isdecimal` ale takový řetězec
 >   odmítne.
 >
-> Chceš-li zjistit jestli funkce `int` umí daný řetězec převést na číslo,
+> Chceš-li zjistit, jestli funkce `int` umí daný řetězec převést na číslo,
 > nejlepší je použít přímo funkci `int`.
 
 
@@ -190,7 +190,7 @@ finally:
 
 Občas se stane, že výjimku budeš potřebovat vyvolat {{gnd('sám', 'sama')}}.
 
-Často se to stává když píšeš nějakou obecnou funkci.
+Často se to stává, když píšeš nějakou obecnou funkci.
 Třeba funkci na výpočet obsahu čtverce.
 Co se stane, když někdo zavolá `obsah_ctverce(-5)`?
 

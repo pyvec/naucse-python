@@ -60,7 +60,7 @@ má: nekompletní, bez většiny funkcí co v něm mají
 být nadefinované.
 A až potom, co dokončí import `ai.py`,
 se vrátí k souboru `piskvorky.py`
-a pokračuje v provádění příkazů `def` které v něm jsou.
+a pokračuje v provádění příkazů `def`, které v něm jsou.
 Takový nekompletní modul může být občas užitečný,
 ale ve většině případů se chová skoro
 nepředvídatelně a tudíž nebezpečně.

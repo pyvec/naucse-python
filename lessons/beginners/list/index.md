@@ -56,7 +56,7 @@ print(seznam)
 
 Důležitá vlastnost seznamů je, že se dají *měnit*.
 
-Než vysvětlíme o co jde, připomeňme si jak fungují hodnoty, které se měnit
+Než vysvětlíme, o co jde, připomeňme si, jak fungují hodnoty, které se měnit
 nedají – např. čísla, řetězce, `True`, `False`, `None`.
 
 Vyzkoušej si následující kousek kódu. Co je na něm „špatně“?
@@ -98,7 +98,7 @@ print(kamaradka)
 A jak jsou na tom seznamy?
 Ty se měnit dají.
 
-Základní způsob jak změnit seznam je přidání
+Základní způsob, jak změnit seznam, je přidání
 prvku na konec pomocí metody `append`.
 Ta *nic nevrací* (resp. vrací `None`), ale „na místě” (angl. *in place*) změní
 seznam, se kterým pracuje. Vyzkoušej si to:

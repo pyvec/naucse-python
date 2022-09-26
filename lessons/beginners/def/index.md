@@ -82,7 +82,7 @@ Potom následuje odsazené *tělo funkce* – příkazy, které funkce provádí
 Tělo může začít *dokumentačním řetězcem* (angl. *docstring*), který popisuje
 co funkce dělá.
 To může být jakýkoli řetězec, ale tradičně se uvozuje třemi uvozovkami
-(i v případě že je jen jednořádkový).
+(i v případě, že je jen jednořádkový).
 
 Příkazem `return` pak můžeš z funkce *vrátit* nějakou hodnotu.
 
