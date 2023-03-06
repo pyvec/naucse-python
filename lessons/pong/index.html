@@ -93,30 +93,29 @@ v Pongu funkci stejného jména, která vykreslí prvky na hrací
 ploše.</p>
 <p>Většina z tvarů jsou obdélníky, takže nejprve
 navrhněme funkci <code>nakresli_obdelnik</code>, která
-dostane čtveřici souřadnic a pomocí modulu <code>gl</code>
-z Pygletu vykreslí čtverec pomocí 2 trojúhelníků.</p>
+dostane souřadnice a velikost obdélníku a vykreslí ho.
+Na to má pyglet v modulu <code>pyglet.shapes</code> třídu <code>Rectangle</code>,
+která se používá následovně:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyglet</span> <span class="kn">import</span> <span class="n">gl</span>
 <span class="o">...</span>
-<span class="k">def</span> <span class="nf">nakresli_obdelnik</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Nakresli obdelnik na dane souradnice</span>
+<span class="k">def</span> <span class="nf">nakresli_obdelnik</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sirka</span><span class="p">,</span> <span class="n">vyska</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Nakresli obdelnik na danych souradnicich</span>
 
 <span class="sd">    Nazorny diagram::</span>
 
-<span class="sd">         y2 - +-----+</span>
-<span class="sd">              |/////|</span>
-<span class="sd">         y1 - +-----+</span>
-<span class="sd">              :     :</span>
-<span class="sd">             x1    x2</span>
+<span class="sd">                sirka (velikost v ose X)</span>
+<span class="sd">              |&lt;------&gt;|</span>
+
+<span class="sd">              +--------+     -</span>
+<span class="sd">              |KRESLIME|     ^</span>
+<span class="sd">              |*TENHLE*|     | vyska (velikost v ose Y)</span>
+<span class="sd">              |OBDELNIK|     v</span>
+<span class="sd">          y - +--------+     -</span>
+<span class="sd">              :</span>
+<span class="sd">              x</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Tady pouzijeme volani OpenGL, ktere je pro nas zatim asi nejjednodussi</span>
-    <span class="c1"># na pouziti</span>
-    <span class="n">gl</span><span class="o">.</span><span class="n">glBegin</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_TRIANGLE_FAN</span><span class="p">)</span>   <span class="c1"># zacni kreslit spojene trojuhelniky</span>
-    <span class="n">gl</span><span class="o">.</span><span class="n">glVertex2f</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x1</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">y1</span><span class="p">))</span>  <span class="c1"># vrchol A</span>
-    <span class="n">gl</span><span class="o">.</span><span class="n">glVertex2f</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x1</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">y2</span><span class="p">))</span>  <span class="c1"># vrchol B</span>
-    <span class="n">gl</span><span class="o">.</span><span class="n">glVertex2f</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x2</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">y2</span><span class="p">))</span>  <span class="c1"># vrchol C, nakresli trojuhelnik ABC</span>
-    <span class="n">gl</span><span class="o">.</span><span class="n">glVertex2f</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x2</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">y1</span><span class="p">))</span>  <span class="c1"># vrchol D, nakresli trojuhelnik BCD</span>
-    <span class="c1"># dalsi souradnice E by nakreslila trojuhelnik CDE, atd.</span>
-    <span class="n">gl</span><span class="o">.</span><span class="n">glEnd</span><span class="p">()</span>  <span class="c1"># ukonci kresleni trojuhelniku</span>
+    <span class="n">obdelnik</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">sirka</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">vyska</span><span class="p">)</span>
+    <span class="n">obdelnik</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 </pre></div><p>Teď začneme pracovat na funkci <code>vykresli()</code>
 Nejprve ji vytvoř prázdnou a zaregistruj ji
 v Pygletu na událost <code>on_draw</code>, jak jsme to
@@ -129,8 +128,7 @@ grafických prvků.</p>
 <div class="highlight"><pre><span></span><span class="o">...</span>
 <span class="k">def</span> <span class="nf">vykresli</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Vykresli stav hry&quot;&quot;&quot;</span>
-    <span class="n">gl</span><span class="o">.</span><span class="n">glClear</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_COLOR_BUFFER_BIT</span><span class="p">)</span>  <span class="c1"># smaz obsah okna (vybarvi na cerno)</span>
-    <span class="n">gl</span><span class="o">.</span><span class="n">glColor3f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># nastav barvu kresleni na bilou</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>  <span class="c1"># smaz obsah okna (vybarvi na cerno)</span>
 
 <span class="n">window</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Window</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">SIRKA</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">VYSKA</span><span class="p">)</span>
 <span class="n">window</span><span class="o">.</span><span class="n">push_handlers</span><span class="p">(</span>
@@ -143,7 +141,8 @@ plochu, do které kreslíme a nastaví barvu kreslení na bílou.</p>
 vykreslení <code>míčku</code> na správné pozici,
 kterou získáš z příslušné globální proměnné. Míček je
 v našem případě jen malý čtvereček jehož velikost
-máme uloženou v konstantě.</p>
+máme uloženou v konstantě.
+Pozor na to, že <code>pozice_mice</code> určuje <em>střed</em> míčku, ne roh.</p>
 <div class="solution" id="solution-0">
     <h3>Řešení</h3>
     <div class="solution-cover">
@@ -152,13 +151,11 @@ máme uloženou v konstantě.</p>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vykresli</span><span class="p">():</span>
     <span class="o">...</span>
-    <span class="c1"># Vykresleni micku</span>
     <span class="n">nakresli_obdelnik</span><span class="p">(</span>
         <span class="n">pozice_mice</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">VELIKOST_MICE</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
         <span class="n">pozice_mice</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">VELIKOST_MICE</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="n">pozice_mice</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">VELIKOST_MICE</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="n">pozice_mice</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">VELIKOST_MICE</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="p">)</span>
+        <span class="n">VELIKOST_MICE</span><span class="p">,</span>
+        <span class="n">VELIKOST_MICE</span><span class="p">)</span>
 </pre></div>
     </div>
 </div><p>Po míčku zkus vykreslit obě <em>pálky</em>.
@@ -174,17 +171,19 @@ je podobný jako u vykreslení míčku.</p>
         <a href="naucse:solution?solution=1"><span class="link-text">Ukázat řešení</span></a>
     </div>
     <div class="solution-body" aria-hidden="true">
-        <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vykresli</span><span class="p">():</span>
+        <p>Existuje víc řešení.
+Třeba se vykreslit obdélník dvojnásobnou šířkou, ale na hraně okna takže
+ho bude vidět jen půl:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vykresli</span><span class="p">():</span>
     <span class="o">...</span>
-    <span class="c1"># palky - udelame si seznam souradnic palek a pro kazdou dvojici souradnic</span>
+    <span class="c1"># palky - udelame si seznam souradnic palek, a pro kazdou dvojici souradnic</span>
     <span class="c1"># v tom seznamu palku vykreslime</span>
-    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pozice_palek</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="n">SIRKA</span><span class="p">,</span> <span class="n">pozice_palek</span><span class="p">[</span><span class="mi">1</span><span class="p">])]:</span>
+    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pozice_palek</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="n">SIRKA</span><span class="p">,</span> <span class="n">pozice_palek</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span> <span class="p">:</span>
         <span class="n">nakresli_obdelnik</span><span class="p">(</span>
             <span class="n">x</span> <span class="o">-</span> <span class="n">TLOUSTKA_PALKY</span><span class="p">,</span>
             <span class="n">y</span> <span class="o">-</span> <span class="n">DELKA_PALKY</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
-            <span class="n">x</span> <span class="o">+</span> <span class="n">TLOUSTKA_PALKY</span><span class="p">,</span>
-            <span class="n">y</span> <span class="o">+</span> <span class="n">DELKA_PALKY</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="p">)</span>
+            <span class="n">TLOUSTKA_PALKY</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="n">DELKA_PALKY</span><span class="p">)</span>
 </pre></div>
     </div>
 </div><p>Přehlednosti hry pomůže <em>půlící čára</em>
@@ -194,7 +193,7 @@ Namalujme ji jako sérii obdélníčků táhnoucích se odshora
 dolů. Chce to jen vygenerovat seznam souřadnic,
 které budou mít dostatečné rozestupy, a na každé
 z nich vykreslit obdélníček. Kterou funkci z Pythonu
-bys použila na získání tohoto seznamu souřadnic?</p>
+bys použil/a na získání tohoto seznamu souřadnic?</p>
 <div class="solution" id="solution-2">
     <h3>Řešení</h3>
     <div class="solution-cover">
@@ -208,9 +207,8 @@ bys použila na získání tohoto seznamu souřadnic?</p>
         <span class="n">nakresli_obdelnik</span><span class="p">(</span>
             <span class="n">SIRKA</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
             <span class="n">y</span><span class="p">,</span>
-            <span class="n">SIRKA</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
-            <span class="n">y</span> <span class="o">+</span> <span class="n">DELKA_PULICI_CARKY</span>
-        <span class="p">)</span>
+            <span class="mi">2</span><span class="p">,</span>
+            <span class="n">DELKA_PULICI_CARKY</span><span class="p">)</span>
 </pre></div>
     </div>
 </div><p>Co nám ještě chybí? <em>Počítadlo skóre</em> pro oba hráče.
@@ -220,11 +218,7 @@ objekt <code>Label</code> (Nápis). Ten se hodí k vykreslení hodnoty
 skóre. Objekt musíme nejdřív vytvořit. To uděláme
 kulatými závorkami za jménem objektu, jako bychom
 volali funkci, a uložíme si ho do proměnné:
-<code>napis = Label()</code>. Normálně bychom objekt
-vytvořili jen jednou a pak měnili jeho hodnotu, ale
-pro jednoduchost vytvoříme vždy nový a celé to zabalíme
-do funkce. V jejím závěru musíme na nadpisu zavolat
-metodu <code>draw()</code>, jinak se nápis nevykreslí.</p>
+<code>napis = Label()</code>.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nakresli_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">pozice_x</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Nakresli dany text na danou pozici</span>
 
@@ -515,3 +509,5 @@ prohrál kolo a my máme přičíst jeho soupeři bod a
 <p>Hurá, prokousali jsme se k zdárnému konci Pongu!
 Máš teď plně funkční interaktivní grafickou
 hru zakládající se na reálné předloze. :)</p>
+<p>Můžeš si stáhnout <a href="naucse:static?filename=pong.py">celý kód hry</a>
+a porovnat ho se svým řešením.</p>

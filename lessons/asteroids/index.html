@@ -129,21 +129,14 @@ takže si zatím jen zkopíruj kód:</p>
 <span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
     <span class="n">window</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 
-    <span class="k">for</span> <span class="n">x_offset</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="n">window</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">width</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">y_offset</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="n">window</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">height</span><span class="p">):</span>
-            <span class="c1"># Remember the current state</span>
-            <span class="n">gl</span><span class="o">.</span><span class="n">glPushMatrix</span><span class="p">()</span>
-            <span class="c1"># Move everything drawn from now on by (x_offset, y_offset, 0)</span>
-            <span class="n">gl</span><span class="o">.</span><span class="n">glTranslatef</span><span class="p">(</span><span class="n">x_offset</span><span class="p">,</span> <span class="n">y_offset</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-
-            <span class="c1"># Draw</span>
-            <span class="n">batch</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-
-            <span class="c1"># Restore remembered state (this cancels the glTranslatef)</span>
-            <span class="n">gl</span><span class="o">.</span><span class="n">glPopMatrix</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">x_offset</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="n">window</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">y_offset</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="n">window</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="c1"># Set the view matrix to offset draws</span>
+            <span class="n">matrix</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">Mat4</span><span class="o">.</span><span class="n">from_translation</span><span class="p">(</span><span class="n">x_offset</span><span class="p">,</span> <span class="n">y_offset</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">window</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">matrix</span>
 </pre></div><p>Pro přehled, dokumentace k použitým funkcím je tady:
-<a href="https://www.opengl.org/sdk/docs/man2/xhtml/glPushMatrix.xml">glPushMatrix, glPopMatrix</a>,
-<a href="https://www.opengl.org/sdk/docs/man2/xhtml/glTranslate.xml">glTranslatef</a>.</p>
+<a href="https://pyglet.readthedocs.io/en/latest/programming_guide/migration.html?highlight=matrix#window-projection-and-cameras">window.view</a>,
+<a href="https://pyglet.readthedocs.io/en/latest/modules/math.html#pyglet.math.Mat4"> Mat4</a>.</p>
 </li>
 </ul>
 <p>Povedlo se? Můžeš létat vesmírem?
@@ -196,24 +189,16 @@ kolečkem a budeme počítat, kdy se srazí kolečka.
 Každý objekt bude potřebovat mít poloměr – atribut <code>radius</code>.</li>
 <li><p>Aby bylo vidět co si hra o objektech „myslí”,
 nakresli si nad každým objektem příslušné kolečko.
-Nejlepší je to udělat pomocí
-<a href="http://pyglet.readthedocs.org/en/latest/programming_guide/gl.html">pyglet.gl</a>
-a trochy matematiky; pro teď si jen opiš funkci
-<code>draw_circle</code> a pro každý objekt ji zavolej.
-Až to bude všechno fungovat, můžeš funkci dát pryč.</p>
+Pyglet na to má třídu <code>Circle</code> v modulu
+<a href="https://pyglet.readthedocs.io/en/latest/programming_guide/shapes.html"><code>pyglet.shapes</code></a>:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_circle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
-    <span class="n">iterations</span> <span class="o">=</span> <span class="mi">20</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">iterations</span><span class="p">)</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">iterations</span><span class="p">)</span>
-
-    <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">radius</span><span class="p">,</span> <span class="mi">0</span>
-
-    <span class="n">gl</span><span class="o">.</span><span class="n">glBegin</span><span class="p">(</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_LINE_STRIP</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="n">gl</span><span class="o">.</span><span class="n">glVertex2f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">dx</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">dy</span><span class="p">)</span>
-        <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="p">(</span><span class="n">dx</span><span class="o">*</span><span class="n">c</span> <span class="o">-</span> <span class="n">dy</span><span class="o">*</span><span class="n">s</span><span class="p">),</span> <span class="p">(</span><span class="n">dy</span><span class="o">*</span><span class="n">c</span> <span class="o">+</span> <span class="n">dx</span><span class="o">*</span><span class="n">s</span><span class="p">)</span>
-    <span class="n">gl</span><span class="o">.</span><span class="n">glEnd</span><span class="p">()</span>
-</pre></div></li>
+    <span class="n">circle</span> <span class="o">=</span> <span class="n">shapes</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">)</span>
+    <span class="n">circle</span><span class="o">.</span><span class="n">opacity</span> <span class="o">=</span> <span class="mi">120</span>  <span class="c1"># (ne)průhlednost, od 0 (průhledné) do 255 (plné)</span>
+    <span class="n">circle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div><p>Pro zrychlení můžeš kolečka přidat do <code>batch</code> a vykreslovat společně se
+zbytkem vesmíru.</p>
+<p>Až to bude všechno fungovat, můžeš kolečka dát pryč.</p>
+</li>
 <li>Když asteroid narazí do lodi, loď exploduje a zmizí.
 Explozi necháme na později, teď je důležité odebrání objektu ze hry.
 Dej ho do metody <code>SpaceObject.delete</code>,
