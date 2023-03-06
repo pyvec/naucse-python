@@ -112,34 +112,32 @@ ploše.
 
 Většina z tvarů jsou obdélníky, takže nejprve
 navrhněme funkci `nakresli_obdelnik`, která
-dostane čtveřici souřadnic a pomocí modulu `gl`
-z Pygletu vykreslí čtverec pomocí 2 trojúhelníků.
+dostane souřadnice a velikost obdélníku a vykreslí ho.
+Na to má pyglet v modulu `pyglet.shapes` třídu `Rectangle`,
+která se používá následovně:
 
 ```python
 from pyglet import gl
 ...
-def nakresli_obdelnik(x1, y1, x2, y2):
-    """Nakresli obdelnik na dane souradnice
+def nakresli_obdelnik(x, y, sirka, vyska):
+    """Nakresli obdelnik na danych souradnicich
 
     Nazorny diagram::
 
-         y2 - +-----+
-              |/////|
-         y1 - +-----+
-              :     :
-             x1    x2
-    """
-    # Tady pouzijeme volani OpenGL, ktere je pro nas zatim asi nejjednodussi
-    # na pouziti
-    gl.glBegin(gl.GL_TRIANGLE_FAN)   # zacni kreslit spojene trojuhelniky
-    gl.glVertex2f(int(x1), int(y1))  # vrchol A
-    gl.glVertex2f(int(x1), int(y2))  # vrchol B
-    gl.glVertex2f(int(x2), int(y2))  # vrchol C, nakresli trojuhelnik ABC
-    gl.glVertex2f(int(x2), int(y1))  # vrchol D, nakresli trojuhelnik BCD
-    # dalsi souradnice E by nakreslila trojuhelnik CDE, atd.
-    gl.glEnd()  # ukonci kresleni trojuhelniku
-```
+                sirka (velikost v ose X)
+              |<------>|
 
+              +--------+     -
+              |KRESLIME|     ^
+              |*TENHLE*|     | vyska (velikost v ose Y)
+              |OBDELNIK|     v
+          y - +--------+     -
+              :
+              x
+    """
+    obdelnik = pyglet.shapes.Rectangle(x=x, y=y, width=sirka, height=vyska)
+    obdelnik.draw()
+```
 
 Teď začneme pracovat na funkci `vykresli()`
 Nejprve ji vytvoř prázdnou a zaregistruj ji
@@ -155,8 +153,7 @@ grafických prvků.
 ...
 def vykresli():
     """Vykresli stav hry"""
-    gl.glClear(gl.GL_COLOR_BUFFER_BIT)  # smaz obsah okna (vybarvi na cerno)
-    gl.glColor3f(1, 1, 1)  # nastav barvu kresleni na bilou
+    window.clear()  # smaz obsah okna (vybarvi na cerno)
 
 window = pyglet.window.Window(width=SIRKA, height=VYSKA)
 window.push_handlers(
@@ -173,18 +170,17 @@ vykreslení `míčku` na správné pozici,
 kterou získáš z příslušné globální proměnné. Míček je
 v našem případě jen malý čtvereček jehož velikost
 máme uloženou v konstantě.
+Pozor na to, že `pozice_mice` určuje *střed* míčku, ne roh.
 
 {% filter solution %}
 ```python
 def vykresli():
     ...
-    # Vykresleni micku
     nakresli_obdelnik(
         pozice_mice[0] - VELIKOST_MICE // 2,
         pozice_mice[1] - VELIKOST_MICE // 2,
-        pozice_mice[0] + VELIKOST_MICE // 2,
-        pozice_mice[1] + VELIKOST_MICE // 2,
-    )
+        VELIKOST_MICE,
+        VELIKOST_MICE)
 ```
 {% endfilter %}
 
@@ -198,18 +194,21 @@ správně a na správném místě? Princip určení souřadnic
 je podobný jako u vykreslení míčku.
 
 {% filter solution %}
+Existuje víc řešení.
+Třeba se vykreslit obdélník dvojnásobnou šířkou, ale na hraně okna takže
+ho bude vidět jen půl:
+
 ```python
 def vykresli():
     ...
-    # palky - udelame si seznam souradnic palek a pro kazdou dvojici souradnic
+    # palky - udelame si seznam souradnic palek, a pro kazdou dvojici souradnic
     # v tom seznamu palku vykreslime
-    for x, y in [(0, pozice_palek[0]), (SIRKA, pozice_palek[1])]:
+    for x, y in [(0, pozice_palek[0]), (SIRKA, pozice_palek[1])] :
         nakresli_obdelnik(
             x - TLOUSTKA_PALKY,
             y - DELKA_PALKY // 2,
-            x + TLOUSTKA_PALKY,
-            y + DELKA_PALKY // 2,
-        )
+            TLOUSTKA_PALKY * 2,
+            DELKA_PALKY)
 ```
 {% endfilter %}
 
@@ -220,7 +219,7 @@ Namalujme ji jako sérii obdélníčků táhnoucích se odshora
 dolů. Chce to jen vygenerovat seznam souřadnic,
 které budou mít dostatečné rozestupy, a na každé
 z nich vykreslit obdélníček. Kterou funkci z Pythonu
-bys použila na získání tohoto seznamu souřadnic?
+bys použil{{a}} na získání tohoto seznamu souřadnic?
 
 {% filter solution %}
 ```python
@@ -231,9 +230,8 @@ def vykresli():
         nakresli_obdelnik(
             SIRKA // 2 - 1,
             y,
-            SIRKA // 2 + 1,
-            y + DELKA_PULICI_CARKY
-        )
+            2,
+            DELKA_PULICI_CARKY)
 ```
 {% endfilter %}
 
@@ -244,11 +242,7 @@ objekt `Label` (Nápis). Ten se hodí k vykreslení hodnoty
 skóre. Objekt musíme nejdřív vytvořit. To uděláme
 kulatými závorkami za jménem objektu, jako bychom
 volali funkci, a uložíme si ho do proměnné:
-`napis = Label()`. Normálně bychom objekt
-vytvořili jen jednou a pak měnili jeho hodnotu, ale
-pro jednoduchost vytvoříme vždy nový a celé to zabalíme
-do funkce. V jejím závěru musíme na nadpisu zavolat
-metodu `draw()`, jinak se nápis nevykreslí.
+`napis = Label()`.
 
 ```python
 def nakresli_text(text, x, y, pozice_x):
@@ -578,3 +572,6 @@ def obnov_stav(dt):
 Hurá, prokousali jsme se k zdárnému konci Pongu!
 Máš teď plně funkční interaktivní grafickou
 hru zakládající se na reálné předloze. :)
+
+Můžeš si stáhnout [celý kód hry]({{ static('pong.py') }})
+a porovnat ho se svým řešením.

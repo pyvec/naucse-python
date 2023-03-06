@@ -157,22 +157,15 @@ První krok bude naprogramovat vesmírnou loď, která půjde ovládat klávesni
   def draw():
       window.clear()
 
-      for x_offset in (-window.width, 0, window.width):
-          for y_offset in (-window.height, 0, window.height):
-              # Remember the current state
-              gl.glPushMatrix()
-              # Move everything drawn from now on by (x_offset, y_offset, 0)
-              gl.glTranslatef(x_offset, y_offset, 0)
-
-              # Draw
-              batch.draw()
-
-              # Restore remembered state (this cancels the glTranslatef)
-              gl.glPopMatrix()
+      for x_offset in (-window.width, window.width, 0):
+          for y_offset in (-window.height, window.height, 0):
+              # Set the view matrix to offset draws
+              matrix = pyglet.math.Mat4.from_translation(x_offset, y_offset, 0)
+              window.view = matrix
   ```
   Pro přehled, dokumentace k použitým funkcím je tady:
-  [glPushMatrix, glPopMatrix](https://www.opengl.org/sdk/docs/man2/xhtml/glPushMatrix.xml),
-  [glTranslatef](https://www.opengl.org/sdk/docs/man2/xhtml/glTranslate.xml).
+  [window.view](https://pyglet.readthedocs.io/en/latest/programming_guide/migration.html?highlight=matrix#window-projection-and-cameras),
+  [ Mat4](https://pyglet.readthedocs.io/en/latest/modules/math.html#pyglet.math.Mat4).
 
 Povedlo se? Můžeš létat vesmírem?
 Čas to všechno dát do Gitu!
@@ -230,26 +223,19 @@ Naše asteroidy jsou zatím docela neškodné. Pojďme to změnit.
   Každý objekt bude potřebovat mít poloměr – atribut `radius`.
 * Aby bylo vidět co si hra o objektech „myslí”,
   nakresli si nad každým objektem příslušné kolečko.
-  Nejlepší je to udělat pomocí
-  [pyglet.gl](http://pyglet.readthedocs.org/en/latest/programming_guide/gl.html)
-  a trochy matematiky; pro teď si jen opiš funkci
-  `draw_circle` a pro každý objekt ji zavolej.
-  Až to bude všechno fungovat, můžeš funkci dát pryč.
+  Pyglet na to má třídu `Circle` v modulu
+  [`pyglet.shapes`](https://pyglet.readthedocs.io/en/latest/programming_guide/shapes.html):
 
   ```python
   def draw_circle(x, y, radius):
-      iterations = 20
-      s = math.sin(2*math.pi / iterations)
-      c = math.cos(2*math.pi / iterations)
-
-      dx, dy = radius, 0
-
-      gl.glBegin(gl.GL_LINE_STRIP)
-      for i in range(iterations+1):
-          gl.glVertex2f(x+dx, y+dy)
-          dx, dy = (dx*c - dy*s), (dy*c + dx*s)
-      gl.glEnd()
+      circle = shapes.Circle(x=x, y=y, radius=radius)
+      circle.opacity = 120  # (ne)průhlednost, od 0 (průhledné) do 255 (plné)
+      circle.draw()
   ```
+  Pro zrychlení můžeš kolečka přidat do `batch` a vykreslovat společně se
+  zbytkem vesmíru.
+
+  Až to bude všechno fungovat, můžeš kolečka dát pryč.
 * Když asteroid narazí do lodi, loď exploduje a zmizí.
   Explozi necháme na později, teď je důležité odebrání objektu ze hry.
   Dej ho do metody `SpaceObject.delete`,

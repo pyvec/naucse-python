@@ -122,9 +122,6 @@ sessions:
   materials:
   - lesson: intro/pyglet
   - lesson: projects/pong
-  - title: Kód celé hry Pong
-    type: link
-    url: http://pyladies.cz/v1/s012-pyglet/pong.py
   - title: Tahák na Pyglet
     url: https://pyvec.github.io/cheatsheets/pyglet/pyglet-basics-cs.pdf
     type: cheatsheet
