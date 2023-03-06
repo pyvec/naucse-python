@@ -1,16 +1,32 @@
 # Instalace Pythonu pro Windows
 
-Běž na [stahovací stránku Pythonu](https://www.python.org/downloads/)
-a stáhni si instalátor nejnovější stabilní verze Pythonu.
-Ověř si že je to verze **3.6.0 nebo novější** –
-verze 3.6.0 má jistá vylepšení, která budeme v tomto kurzu používat.
+## Zjisti, jestli už máš Python nainstalovaný
 
-Jak poznat, který instalátor je ten pravý?
-Pokud má tvůj počítač 64bitovou verzi Windows,
-stáhni si *Windows x86-64 executable installer*.
-Pokud máš starší počítač s 32bitovými Windows,
-stáhni si *Windows x86 executable installer*.
-(Rozdíl je v *x86-64* versus *x86*.)
+Otevři si příkazovou řádku (pokud nevíš o co jde, přečti si o ní [tady]({{ lesson_url('beginners/cmdline') }})).
+
+Napiš `python` a zmáčkni na klávesnici <kbd>Enter</kbd>. Teďka se může stát několik různých věcí:
+1. Otevře se ti Microsoft Store → okno zavři a pokračuj v kroku [Stažení](#download)
+1. Zobrazí se ti text podobný tomuto níže?
+```plain
+> python
+Python 3.8.1 (...)
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+To je dobrá zpráva! Ještě si zkontroluj, jakou verzi máš nainstalovanou (např.`Python 3.11.2` je `3.11`,
+`Python 3.8.1` je `3.8` atd.). Třetí číslo za tečkou není tady podstatné.
+  - je verze `3.6` nebo novější? Výborně, máš instalaci hotovou! Okýnko s příkazovou řádkou můžeš pro teďka zavřít. Až ho budeš znovu potřebovat, můžeš otevřít nové.
+  Pokračuj dále [Nastavením prostředí]({{ lesson_url('beginners/venv-setup') }}).
+  - v opačném případě přejdi na [Stažení](#download)
+1. Stane se něco jiného? Řekni si o pomoc.
+
+
+
+{{ anchor('download') }}
+## Stažení
+- Běž na [stahovací stránku](https://www.python.org/downloads/windows/)
+- klepni na *Latest Python 3 Release*
+- v části *Files*, ve sloupci *Version*, vyber vhodný *Windows installer* pro tvou verzi windows (32 nebo 64bit).
 
 > [note]
 > Kde zjistíš, zda máš 32bitové nebo 64bitové Windows? Otevři nabídku
@@ -22,13 +38,17 @@ stáhni si *Windows x86 executable installer*.
     alt='Screenshot zjišťování verze systému',
 ) }}
 
+## Instalace
+
 Stažený instalátor spusť.
-Na začátku instalace zaškrtni **Install launcher for all users**
-a také **Add Python to PATH**.
+
+Na začátku instalace zaškrtni:
+- **Use admin privileges when installing py.exe**
+- a také **Add python.exe to PATH**.
 Tyto volby ti zjednoduší vytvoření virtuálního prostředí.
 
 (Jestli nemáš administrátorské oprávnění, volbu
-*Install launcher for all users* nezaškrtávej.)
+*Use admin privileges when installing py.exe* nezaškrtávej.)
 
 {{ figure(
     img=static('windows_add_python_to_path.png'),
