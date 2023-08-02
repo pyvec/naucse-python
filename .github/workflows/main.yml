@@ -3,6 +3,9 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+permissions:
+  repository-projects: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,12 +30,7 @@ jobs:
         python -m pip install poetry
         poetry install -E ghp-compiled
     - name: Compile the courses
-      run: |
-        for slug in pyladies mi-pyt meta lessons; do
-          poetry run python -m naucse_render compile _compiled/$slug --slug $slug \
-            --edit-repo-url https://github.com/${{ github.repository }} \
-            --edit-repo-branch main
-        done
+      run: ./build.sh "${{ github.repository }}"
     - if: ${{ github.ref == 'refs/heads/main' }}
       name: Publish compiled courses
       run: |
