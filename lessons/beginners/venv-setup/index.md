@@ -183,7 +183,8 @@ Nakonec virtuální prostředí aktivuj:
 {% call sidebyside(titles=['Unix', 'Windows']) %}
 $ source venv/bin/activate
 ---
-> venv\Scripts\activate
+> &powershell -ExecutionPolicy bypass
+> venv/Scripts/Activate.ps1
 {% endcall %}
 
 Po spuštění tohoto příkazu by se mělo na začátku příkazové řádky
