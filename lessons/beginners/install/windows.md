@@ -4,29 +4,31 @@
 
 Otevři si příkazovou řádku (pokud nevíš o co jde, přečti si o ní [tady]({{ lesson_url('beginners/cmdline') }})).
 
-Napiš `python` a zmáčkni na klávesnici <kbd>Enter</kbd>. Teďka se může stát několik různých věcí:
+Napiš `python` a zmáčkni na klávesnici <kbd>Enter</kbd>.
+Teď se může stát několik různých věcí:
 1. Otevře se ti Microsoft Store → okno zavři a pokračuj v kroku [Stažení](#download)
-1. Zobrazí se ti text podobný tomuto níže?
+2. Zobrazí se ti text podobný tomuto níže?
 ```plain
 > python
 Python 3.8.1 (...)
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
-To je dobrá zpráva! Ještě si zkontroluj, jakou verzi máš nainstalovanou (např.`Python 3.11.2` je `3.11`,
-`Python 3.8.1` je `3.8` atd.). Třetí číslo za tečkou není tady podstatné.
-  - je verze `3.6` nebo novější? Výborně, máš instalaci hotovou! Okýnko s příkazovou řádkou můžeš pro teďka zavřít. Až ho budeš znovu potřebovat, můžeš otevřít nové.
+To je dobrá zpráva! Ještě si zkontroluj, jakou verzi máš nainstalovanou
+(např.`Python 3.11.2` je `3.11`, `Python 3.8.1` je `3.8` atd.).
+Třetí číslo za tečkou není tady podstatné.
+  - Je verze `3.6` nebo novější? Výborně, máš instalaci hotovou!
+  Okénko s příkazovou řádkou můžeš zavřít.
+  Až ho budeš znovu potřebovat, můžeš otevřít nové.
   Pokračuj dále [Nastavením prostředí]({{ lesson_url('beginners/venv-setup') }}).
-  - v opačném případě přejdi na [Stažení](#download)
-1. Stane se něco jiného? Řekni si o pomoc.
-
+V opačném případě přejdi na [Stažení](#download)
 
 
 {{ anchor('download') }}
 ## Stažení
 - Běž na [stahovací stránku](https://www.python.org/downloads/windows/)
-- klepni na *Latest Python 3 Release*
-- v části *Files*, ve sloupci *Version*, vyber vhodný *Windows installer* pro tvou verzi windows (32 nebo 64bit).
+- klikni na *Latest Python 3 Release*
+- v části *Files*, ve sloupci *Version*, vyber vhodný *Windows installer* pro tvou verzi Windows (32 nebo 64bit).
 
 > [note]
 > Kde zjistíš, zda máš 32bitové nebo 64bitové Windows? Otevři nabídku
