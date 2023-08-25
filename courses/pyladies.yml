@@ -71,6 +71,7 @@ sessions:
   slug: def
   materials:
   - lesson: beginners/def
+  - lesson: beginners/prefer-return
   - lesson: beginners/nested-traceback
   - lesson: beginners/local-variables
 
