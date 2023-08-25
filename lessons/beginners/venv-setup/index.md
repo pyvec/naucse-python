@@ -173,7 +173,7 @@ Zkontroluj si, že `00` a `venv` jsou pěkně vedle sebe:
 
 {% call sidebyside(titles=['Unix', 'Windows']) %}
 $ ls
-01
+00
 venv
 ---
 > dir
