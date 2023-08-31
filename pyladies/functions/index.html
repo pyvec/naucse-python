@@ -35,8 +35,16 @@ Třeba program v jazyce APL laik jednoduše ani nenapíše, ani nepřečte:</p>
 <div class="highlight"><pre><code>⍎’⎕’,∈Nρ⊂S←’←⎕←(3=T)∨M∧2=T←⊃+/(V⌽”⊂M),(V⊖”⊂M),(V,⌽V)⌽”(V,V←1¯1)⊖”⊂M’</code></pre></div><p>Expert v APL může být vysoce produktivní, ale Python se zaměřuje spíš na to,
 aby se dal snadno naučit.
 A tak používá symboly jen pro ty nejčastější operace.
-Operátorů, které využívají symboly, je tak málo, že už jich zhruba půlku znáš!</p>
+Operátorů které využívají symboly je tak málo, že už jich zhruba půlku znáš!</p>
 <div class="admonition note"><p>Pro zajímavost, tady jsou všechny – i ty co ještě neznáš:</p>
+<!--
+“Operátor” není přesně definovaný termín.
+Tenhle seznam by měl odpovídat https://docs.python.org/3/reference/expressions.html#operator-precedence
+(jsou to operátory jako kousky výrazů, ne lexikální jednotky (https://docs.python.org/3/reference/lexical_analysis.html#operators)
+ani “základní” operace (https://docs.python.org/3/library/operator.html).
+Proto tu není =, +=, *= atd., které se ve výrazu použít nedají.
+-->
+
 <div>
     <code>==</code> <code>!=</code>
     <code>&lt;</code> <code>&gt;</code>
