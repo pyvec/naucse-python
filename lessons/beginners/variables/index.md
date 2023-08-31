@@ -170,7 +170,7 @@ Detaily si vysvětlíme později;
 pro teď to budou kouzelná zaříkadla.
 
 > [warning]
-> Pozor, záleží na typu hodnoty který chceš získat: text nebo číslo.
+> Pozor, záleží na typu hodnoty, který chceš získat: text nebo číslo.
 > Vybírej pečlivě!
 
 * Chceš-li načíst **text**, použij:

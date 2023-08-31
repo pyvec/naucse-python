@@ -71,6 +71,7 @@ sessions:
   slug: def
   materials:
   - lesson: beginners/def
+  - lesson: beginners/prefer-return
   - lesson: beginners/nested-traceback
   - lesson: beginners/local-variables
 
@@ -116,6 +117,7 @@ sessions:
   - lesson: beginners/range
   - lesson: beginners/zip-enumerate
   - lesson: beginners/files
+  - lesson: beginners/with
 
 - title: Grafika
   slug: pyglet

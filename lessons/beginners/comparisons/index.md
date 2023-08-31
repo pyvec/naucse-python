@@ -117,7 +117,7 @@ Tady je vidět, jak počítač dělá přesně, co se mu řekne. Nepřemýšlí 
 Bylo by dobré uživateli, který zadá záporné číslo,
 přímo říct, že zadal blbost. Jak na to?
 
-Nejdřív zkus nastavit proměnnou která bude `True`,
+Nejdřív zkus nastavit proměnnou, která bude `True`,
 když uživatel zadal kladné číslo.
 
 
