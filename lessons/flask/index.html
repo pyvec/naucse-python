@@ -76,7 +76,7 @@ Používejte ho proto <em>pouze</em> na svém počítači.</p>
 <a href="#header-dynamicke_routy" class="header-link">#</a>
 </h3>
 <p>Když vytváříte dynamický web, ne vždy můžete všechna URL znát dopředu.
-Budete například chctít zobrazit informace o uživatelích na adresách
+Budete například chtít zobrazit informace o uživatelích na adresách
 jako <code>/user/hroncok/</code>, ale nemůžete při každé registraci nového uživatele
 přidávat novou funkci do kódu.
 Musíte použít <a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/#variable-rules">dynamické routy</a>:</p>
@@ -85,7 +85,7 @@ Musíte použít <a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/
     <span class="k">return</span> <span class="s1">&#39;User </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
 </pre></div><p>Proměnnou část cesty ohraničíte lomenými závorkami a použijte jako parametr
 funkce. Pokud chcete, můžete specifikovat, na jaký obsah se pravidlo vztahuje.
-Například číselný idenifikátor článku pro adresy jako <code>/post/42/</code> můžete zadat
+Například číselný identifikátor článku pro adresy jako <code>/post/42/</code> můžete zadat
 takto:</p>
 <div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/post/&lt;int:post_id&gt;/&#39;</span><span class="p">)</span>
 </pre></div><p>Můžete použít různá pravidla, např.:</p>
@@ -95,7 +95,7 @@ takto:</p>
 <li><code>float</code> akceptuje i desetinná čísla s tečkou (a předá je jako <code>float</code>)</li>
 <li><code>path</code> akceptuje text i s lomítky</li>
 </ul>
-<p>Rout můžte definovat i víc pro jednu funkci.
+<p>Rout můžete definovat i víc pro jednu funkci.
 Často se to používá s výchozí hodnotou argumentu:</p>
 <div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hello/&#39;</span><span class="p">)</span>
 <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hello/&lt;name&gt;/&#39;</span><span class="p">)</span>

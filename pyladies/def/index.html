@@ -57,7 +57,7 @@ pak do závorky seznam <em>parametrů</em>, které funkce bere, a pak dvojtečku
 <p>Tělo může začít <em>dokumentačním řetězcem</em> (angl. <em>docstring</em>), který popisuje
 co funkce dělá.
 To může být jakýkoli řetězec, ale tradičně se uvozuje třemi uvozovkami
-(i v případě že je jen jednořádkový).</p>
+(i v případě, že je jen jednořádkový).</p>
 <p>Příkazem <code>return</code> pak můžeš z funkce <em>vrátit</em> nějakou hodnotu.</p>
 <p>Při volání funkce se hodnoty, se kterými funkci
 zavoláš, přiřadí jednotlivým parametrům.
@@ -161,71 +161,4 @@ Třeba, chceš-li odpověď „ano“ nebo „ne“:</p>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Škoda.&#39;</span><span class="p">)</span>
 </pre></div><div class="admonition note"><p>Stejně jako <code>if</code> nebo <code>break</code> je <code>return</code> <em>příkaz</em>, ne funkce.
 Kolem „své“ hodnoty nepotřebuje závorky.</p>
-</div><h3 id="vratit_nebo_vypsat">Vrátit nebo vypsat?
-<a href="#header-vratit_nebo_vypsat" class="header-link">#</a>
-</h3>
-<p>Podívejme se teď na následující program, který vypíše obsah elipsy:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
-
-<span class="k">def</span> <span class="nf">obsah_elipsy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obsah elipsy s poloosami 3 a 5 je&#39;</span><span class="p">,</span> <span class="n">obsah_elipsy</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="s1">&#39;cm2&#39;</span><span class="p">)</span>
-</pre></div><p>Takový program se teoreticky dá napsat i s procedurou, tedy funkcí, která nic
-nevrací.
-Procedura může výsledek třeba vypsat na obrazovku:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
-
-<span class="k">def</span> <span class="nf">obsah_elipsy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obsah je&#39;</span><span class="p">,</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Pozor, `print` místo `return`!</span>
-
-<span class="n">obsah_elipsy</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div><p>Program takhle funguje, ale přichází o jednu z hlavních výhod funkcí:
-možnost vrácenou hodnotu použít i jinak jež jen v <code>print</code>.</p>
-<p>Funkci, která <em>vrací</em> výsledek, můžeš použít v dalších výpočtech:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">objem_eliptickeho_valce</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">vyska</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">obsah_elipsy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">vyska</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">objem_eliptickeho_valce</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-</pre></div><p>... ale s procedurou, která výsledek přímo vypíše, by to nešlo.
-Proto je dobré psát funkce, které spočítané hodnoty vrací,
-a zpracování výsledku (např. vypsání) nechat na kód mimo funkci.</p>
-<p>Další důvod proč hodnoty spíš vracet než vypisovat je ten, že jedna funkce se
-dá použít v různých situacích.
-Proceduru s <code>print</code> by nešlo rozumně použít tehdy, když nás příkazová
-řádka vůbec nezajímá – třeba v grafické hře, webové aplikaci, nebo pro ovládání
-robota.</p>
-<p>Podobně je to se vstupem: když použiju v rámci své funkce <code>input</code>, bude se
-moje funkce dát použít jen v situacích, kdy je u počítače klávesnice a za ní
-člověk.
-Proto je lepší funkcím potřebné informace předávat jako argumenty
-a volání <code>input</code> (nebo čtení textového políčka či měření čidlem robota)
-nemít ve funkci, ale vně, v kódu, který funkci volá:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
-
-<span class="k">def</span> <span class="nf">obsah_elipsy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Vrátí obsah elipsy s poloosami daných délek&quot;&quot;&quot;</span>
-    <span class="c1"># Jen samotný výpočet:</span>
-    <span class="k">return</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
-
-<span class="c1"># print a input jsou &quot;venku&quot;:</span>
-<span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej délku poloosy 1: &#39;</span><span class="p">))</span>
-<span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej délku poloosy 2: &#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obsah je&#39;</span><span class="p">,</span> <span class="n">obsah_elipsy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
-</pre></div><p>Samozřejmě existují výjimky: procedura, která přímo vytváří textový výpis
-(např. tabulku), může používat <code>print</code>; funkce, která načítá textové informace
-(jako <code>ano_nebo_ne</code> výše), zase <code>input</code>.
-Když ale funkce něco <em>počítá</em>, nebo když si nejsi jistý/á,
-je dobré ve funkci <code>print</code> ani <code>input</code> nemít.</p>
-<h2 id="none">None
-<a href="#header-none" class="header-link">#</a>
-</h2>
-<p>Když funkce neskončí příkazem <code>return</code>,
-automaticky se vrátí hodnota <code>None</code>.</p>
-<p>Je to hodnota zabudovaná přímo do Pythonu, podobně jako <code>True</code> nebo <code>False</code>,
-a znamená „nic“.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nic</span><span class="p">():</span>
-     <span class="sd">&quot;&quot;&quot;Tahle funkce nic nedělá &quot;&quot;&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">nic</span><span class="p">())</span>
-</pre></div><p>Procedury v Pythonu vracejí právě toto „nic“.</p>
+</div>

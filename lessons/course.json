@@ -436,7 +436,7 @@
                 "pages": {
                     "index": {
                         "attribution": [
-                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Martin Pavlásek (2023)"
                         ],
                         "content": {
                             "path": "install/index.html"
@@ -450,7 +450,7 @@
                     },
                     "linux": {
                         "attribution": [
-                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Martin Pavlásek (2023)"
                         ],
                         "content": {
                             "path": "install/linux.html"
@@ -465,7 +465,7 @@
                     },
                     "macos": {
                         "attribution": [
-                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Martin Pavlásek (2023)"
                         ],
                         "content": {
                             "path": "install/macos.html"
@@ -480,7 +480,7 @@
                     },
                     "windows": {
                         "attribution": [
-                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Martin Pavlásek (2023)"
                         ],
                         "content": {
                             "path": "install/windows.html"
@@ -840,6 +840,27 @@
                 "static_files": {},
                 "title": "Chybové hlášky ze zanořených funkcí"
             },
+            "beginners/prefer-return": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "prefer-return/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/prefer-return/index.md",
+                        "title": "Vrátit nebo vypsat?",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/beginners/prefer-return/info.yml",
+                "static_files": {},
+                "title": "Vrátit nebo vypsat?"
+            },
             "beginners/print": {
                 "pages": {
                     "index": {
@@ -1140,6 +1161,27 @@
                 "source_file": "lessons/beginners/while/info.yml",
                 "static_files": {},
                 "title": "Cyklus While"
+            },
+            "beginners/with": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2021."
+                        ],
+                        "content": {
+                            "path": "with/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/with/index.md",
+                        "title": "Kontext: with a finally",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/beginners/with/info.yml",
+                "static_files": {},
+                "title": "Kontext: with a finally"
             },
             "beginners/zip-enumerate": {
                 "pages": {
@@ -2700,6 +2742,11 @@
                         "type": "lesson"
                     },
                     {
+                        "lesson_slug": "beginners/prefer-return",
+                        "title": "Vrátit nebo vypsat?",
+                        "type": "lesson"
+                    },
+                    {
                         "lesson_slug": "beginners/print",
                         "title": "Print a chybové hlášky",
                         "type": "lesson"
@@ -2757,6 +2804,11 @@
                     {
                         "lesson_slug": "beginners/while",
                         "title": "Cyklus While",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "beginners/with",
+                        "title": "Kontext: with a finally",
                         "type": "lesson"
                     },
                     {

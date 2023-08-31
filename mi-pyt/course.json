@@ -83,7 +83,7 @@
                 "pages": {
                     "index": {
                         "attribution": [
-                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Martin Pavlásek (2023)"
                         ],
                         "content": {
                             "path": "install/index.html"
@@ -100,7 +100,7 @@
                     },
                     "linux": {
                         "attribution": [
-                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Martin Pavlásek (2023)"
                         ],
                         "content": {
                             "path": "install/linux.html"
@@ -118,7 +118,7 @@
                     },
                     "macos": {
                         "attribution": [
-                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Martin Pavlásek (2023)"
                         ],
                         "content": {
                             "path": "install/macos.html"
@@ -136,7 +136,7 @@
                     },
                     "windows": {
                         "attribution": [
-                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Martin Pavlásek (2023)"
                         ],
                         "content": {
                             "path": "install/windows.html"
