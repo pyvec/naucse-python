@@ -1110,8 +1110,8 @@
                 },
                 "source_file": "lessons/beginners/venv-setup/info.yml",
                 "static_files": {
-                    "dirs.png": {
-                        "path": "venv-setup/dirs.png"
+                    "dirs-00.png": {
+                        "path": "venv-setup/dirs-00.png"
                     }
                 },
                 "title": "Nastavení prostředí"
