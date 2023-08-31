@@ -111,7 +111,7 @@ Používejte ho proto *pouze* na svém počítači.
 ### Dynamické routy
 
 Když vytváříte dynamický web, ne vždy můžete všechna URL znát dopředu.
-Budete například chctít zobrazit informace o uživatelích na adresách
+Budete například chtít zobrazit informace o uživatelích na adresách
 jako `/user/hroncok/`, ale nemůžete při každé registraci nového uživatele
 přidávat novou funkci do kódu.
 Musíte použít [dynamické routy]:
@@ -126,7 +126,7 @@ def profile(username):
 
 Proměnnou část cesty ohraničíte lomenými závorkami a použijte jako parametr
 funkce. Pokud chcete, můžete specifikovat, na jaký obsah se pravidlo vztahuje.
-Například číselný idenifikátor článku pro adresy jako `/post/42/` můžete zadat
+Například číselný identifikátor článku pro adresy jako `/post/42/` můžete zadat
 takto:
 
 ```python
@@ -140,7 +140,7 @@ Můžete použít různá pravidla, např.:
  * `float` akceptuje i desetinná čísla s tečkou (a předá je jako `float`)
  * `path` akceptuje text i s lomítky
 
-Rout můžte definovat i víc pro jednu funkci.
+Rout můžete definovat i víc pro jednu funkci.
 Často se to používá s výchozí hodnotou argumentu:
 
 ```python
