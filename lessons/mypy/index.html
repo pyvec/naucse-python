@@ -1,18 +1,18 @@
 <h1 id="mypy">Mypy
-<a href="#header-mypy" class="header-link">#</a>
+<a href="#mypy" class="header-link">#</a>
 </h1>
 <p>Dnes se společně podíváme na knihovnu <code>mypy</code>, která nám do Pythonu přidá
 možnost kontroly typů, jenž je jinak dostupná jen v jiných programovacích
 jazycích.</p>
 <h2 id="staticka_a_dynamicka_typova_kontrola">Statická a dynamická typová kontrola
-<a href="#header-staticka_a_dynamicka_typova_kontrola" class="header-link">#</a>
+<a href="#staticka_a_dynamicka_typova_kontrola" class="header-link">#</a>
 </h2>
 <p>Statická typová kontrola v programovacím jazyce počítá s tím, že pro každou
 proměnnou či parametr je uveden datový typ. Proměnná definovaná s konkrétním
 typem pak nemůže obsahovat hodnotu jiného datového typu a pokus o to vyvolá
 výjimku. Jako např. tento kód v Javě:</p>
-<div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;John&quot;</span><span class="p">;</span>
-<span class="n">name</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;John&quot;</span><span class="p">;</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
 </pre></div><p>První řádek definuje proměnnou <code>name</code> jako řetězec. Na druhém řádku se
 pokoušíme do této proměnné přiřadit celé číslo, což není povoleno
 a kompilace takového kódu skončí chybou.</p>
@@ -34,12 +34,12 @@ editory a IDE mohou díky ní lépe napovídat programátorům a typová kontrol
 může odhalit chyby ještě před spuštěním aplikace či jejich testů.</p>
 <p>Pokud výhody statické typové kontroly znějí slibně, je tady pro vás <code>mypy</code>.</p>
 <h2 id="instalace_a_spusteni">Instalace a spuštění
-<a href="#header-instalace_a_spusteni" class="header-link">#</a>
+<a href="#instalace_a_spusteni" class="header-link">#</a>
 </h2>
 <p><code>mypy</code> se instaluje standardním způsobem:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install mypy
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mypy
 </pre></div><p>A spouští se pak stejnojmenným příkazem:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>mypy program.py 
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mypy<span class="w"> </span>program.py<span class="w"> </span>
 <span class="go">Success: no issues found in 1 source file</span>
 </pre></div><p>První spuštění nejspíše nezahlásí žádný problém, protože program neobsahuje
 informace o typech proměnných a tak nemá <code>mypy</code> co kontrolovat.</p>
@@ -49,14 +49,14 @@ informace o typech proměnných a tak nemá <code>mypy</code> co kontrolovat.</p
 <span class="nb">print</span><span class="p">(</span><span class="n">hello</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">))</span>
 </pre></div><p>Pokud budeme chtít do budoucna zařídit, aby <code>mypy</code> nepřeskakovala funkce bez
 definovaných typů, dá se to zařídit přepínačem <code>--disallow-untyped-defs</code>.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>mypy --disallow-untyped-defs program.py 
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mypy<span class="w"> </span>--disallow-untyped-defs<span class="w"> </span>program.py<span class="w"> </span>
 <span class="go">program.py:1: error: Function is missing a type annotation</span>
 <span class="go">Found 1 error in 1 file (checked 1 source file)</span>
 </pre></div><div class="admonition note"><p>Jakmile aplikace používá definice typů, je dobré je kontrolovat
 v rámci testů. Např. pro pytest existuje doplněk <a href="https://pypi.org/project/pytest-mypy/"><code>pytest-mypy</code></a>, který
 se o to postará.</p>
 </div><h2 id="definice_typu_a_jejich_kontrola">Definice typů a jejich kontrola
-<a href="#header-definice_typu_a_jejich_kontrola" class="header-link">#</a>
+<a href="#definice_typu_a_jejich_kontrola" class="header-link">#</a>
 </h2>
 <p>Python sám o sobě sice statickou typovou kontrolu neobsahuje, ale od verze 3
 je pro ni v jazyce připravena podpora. Náš moderní program
@@ -69,10 +69,10 @@ s definovanými typy bude vypadat následovně:</p>
 řetězec a vrací taktéž řetězec.</p>
 <p>Tato úprava nemá na běh programu vůbec žádný vliv, protože Python samotný
 definice typů ignoruje.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python program.py                      
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>program.py<span class="w">                      </span>
 <span class="go">Hello World!</span>
 </pre></div><p><code>mypy</code> nám ovšem potvrdí, že je vše v pořádku.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>mypy --disallow-untyped-defs program.py
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mypy<span class="w"> </span>--disallow-untyped-defs<span class="w"> </span>program.py
 <span class="go">Success: no issues found in 1 source file</span>
 </pre></div><p>Co když se teď naši vylepšenou funkci pokusíme zavolat znovu s nesprávným
 typem argumentu?</p>
@@ -81,19 +81,19 @@ typem argumentu?</p>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">hello</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hello</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-</pre></div><div class="highlight"><pre><span></span><span class="gp">$ </span>python program.py                      
+</pre></div><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>program.py<span class="w">                      </span>
 <span class="go">Hello World!</span>
 <span class="go">Hello 5!</span>
 </pre></div><p>Funguje to, protože řetězcová metoda <code>.format()</code> si poradí i s argumenty
 jiných typů. Ovšem, co na to <code>mypy</code> a typová kontrola?</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>mypy --disallow-untyped-defs program.py
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mypy<span class="w"> </span>--disallow-untyped-defs<span class="w"> </span>program.py
 <span class="go">program.py:5: error: Argument 1 to &quot;hello&quot; has incompatible type &quot;int&quot;; expected &quot;str&quot;</span>
 <span class="go">Found 1 error in 1 file (checked 1 source file)</span>
 </pre></div><p>Té se to právem nelíbí, protože v definici jsme si stanovili, že funkce má
 brát jako argument řetězec a místo toho jí na posledním řádku voláme
 s celočíselným argumentem.</p>
 <h3 id="vlastni_datove_typy">Vlastní datové typy
-<a href="#header-vlastni_datove_typy" class="header-link">#</a>
+<a href="#vlastni_datove_typy" class="header-link">#</a>
 </h3>
 <p>V Pythonu často používáme vlastní třídy a jejich instance si všemi možnými
 způsoby předáváme do/z funkcí. I s tím si umí mypy poradit.</p>
@@ -117,15 +117,15 @@ způsoby předáváme do/z funkcí. I s tím si umí mypy poradit.</p>
 <span class="n">hello</span><span class="p">(</span><span class="n">rooster</span><span class="p">)</span>
 <span class="n">hello</span><span class="p">(</span><span class="n">guest</span><span class="p">)</span>
 </pre></div><p>Když se program pokusíme spustit, bude bez problémů fungovat:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python program.py
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>program.py
 <span class="go">Hi, I am Kokrhac, your pet.</span>
 <span class="go">Hi, I am Tichoslapek, your pet.</span>
 </pre></div><p><code>mypy</code> nás ovšem upozorní, že funkci <code>hello</code> v druhém případě nepoužíváme správně:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>mypy program.py
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mypy<span class="w"> </span>program.py
 <span class="go">program.py:19: error: Argument 1 to &quot;hello&quot; has incompatible type &quot;Person&quot;; expected &quot;Animal&quot;</span>
 <span class="go">Found 1 error in 1 file (checked 1 source file)</span>
 </pre></div><h3 id="alternativni_zpusoby_definice">Alternativní způsoby definice
-<a href="#header-alternativni_zpusoby_definice" class="header-link">#</a>
+<a href="#alternativni_zpusoby_definice" class="header-link">#</a>
 </h3>
 <p>Jak už bylo zmíněno, Python samotný definice typů ignoruje. I přes to ale
 bylo potřeba na ně jazyk připravit, aby dvojtečka za parametrem a šipka za
@@ -137,7 +137,7 @@ v Pythonu 2, kde je nutné dávat definice typů do komentářů:</p>
 <span class="nb">print</span> <span class="n">hello</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">hello</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div><p>A říci <code>mypy</code>, že kontroluje kód pro starší verzi Pythonu:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>mypy --py2 program.py                  
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mypy<span class="w"> </span>--py2<span class="w"> </span>program.py<span class="w">                  </span>
 <span class="go">program.py:5: error: Argument 1 to &quot;hello&quot; has incompatible type &quot;int&quot;; expected &quot;str&quot;</span>
 <span class="go">Found 1 error in 1 file (checked 1 source file)</span>
 </pre></div><p>Poslední možností definice typů je využití tzv. „stub“ souborů. Takový soubor
@@ -151,7 +151,7 @@ definice typů ke kódu, který jinak nemáte právo upravovat.</p>
 <p>Definice sama o sobě je validní Python kód a funguje ve stejné formě
 pro Python 2 i 3.</p>
 <h2 id="slozitejsi_definice_a_modul_codetypingcode">Složitější definice a modul <code>typing</code>
-<a href="#header-slozitejsi_definice_a_modul_codetypingcode" class="header-link">#</a>
+<a href="#slozitejsi_definice_a_modul_codetypingcode" class="header-link">#</a>
 </h2>
 <p>Změníme naši jednoduchou funkci tak, aby uměla přímo pozdravit a to hned
 několikrát.</p>
@@ -160,7 +160,7 @@ několikrát.</p>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello </span><span class="si">{}</span><span class="s2">!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
 <span class="n">say_hello</span><span class="p">([</span><span class="s2">&quot;PyLadies&quot;</span><span class="p">,</span> <span class="s2">&quot;Ostrava&quot;</span><span class="p">])</span>
-</pre></div><div class="highlight"><pre><span></span><span class="gp">$ </span>python say_hello.py 
+</pre></div><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>say_hello.py<span class="w"> </span>
 <span class="go">Hello PyLadies!</span>
 <span class="go">Hello Ostrava!</span>
 </pre></div><p>Program funguje dobře. Přidejme tedy definice typů — seznam pro jména
@@ -176,11 +176,11 @@ z nich postupně podíváme.</p>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello </span><span class="si">{}</span><span class="s2">!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
 <span class="n">say_hello</span><span class="p">([</span><span class="s2">&quot;PyLadies&quot;</span><span class="p">,</span> <span class="s2">&quot;Ostrava&quot;</span><span class="p">])</span>
-</pre></div><div class="highlight"><pre><span></span><span class="gp">$ </span>python say_hello.py
+</pre></div><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>say_hello.py
 <span class="go">Hello PyLadies!</span>
 <span class="go">Hello Ostrava!</span>
 
-<span class="gp">$ </span>mypy say_hello.py  
+<span class="gp">$ </span>mypy<span class="w"> </span>say_hello.py<span class="w">  </span>
 <span class="go">Success: no issues found in 1 source file</span>
 </pre></div><p>Na fungování programu nemá změna žádný vliv a <code>mypy</code> je zdá se také spokojená.
 Máme hotovo? Svým způsobem ano, ale naše funkce je přeci jen univerzálnější
@@ -262,15 +262,15 @@ funkcí předané jako argument jiné funkci.</p>
 
 <span class="n">result</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hello</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
-</pre></div><div class="highlight"><pre><span></span><span class="gp">$ </span>mypy program.py
+</pre></div><div class="highlight"><pre><span></span><span class="gp">$ </span>mypy<span class="w"> </span>program.py
 <span class="go">program.py:11: error: Argument 1 to &quot;hello&quot; has incompatible type &quot;int&quot;; expected &quot;str&quot;</span>
 <span class="go">Found 1 error in 1 file (checked 1 source file)</span>
 </pre></div><h2 id="globalni_promenne">Globální proměnné
-<a href="#header-globalni_promenne" class="header-link">#</a>
+<a href="#globalni_promenne" class="header-link">#</a>
 </h2>
 <p>Ne vždy si <code>mypy</code> dokáže odvodit datové typy např. pro globální proměnné.</p>
 <div class="highlight"><pre><span></span><span class="n">global_dict</span> <span class="o">=</span> <span class="p">{}</span>
-</pre></div><div class="highlight"><pre><span></span><span class="gp">$ </span>mypy global.py
+</pre></div><div class="highlight"><pre><span></span><span class="gp">$ </span>mypy<span class="w"> </span>global.py
 <span class="go">global.py:1: error: Need type annotation for &#39;global_dict&#39; (hint: &quot;global_dict: Dict[&lt;type&gt;, &lt;type&gt;] = ...&quot;)</span>
 <span class="go">Found 1 error in 1 file (checked 1 source file)</span>
 </pre></div><p>V takovém případě se dá datový typ definovat velmi podobně jako u funkcí:</p>
@@ -278,7 +278,7 @@ funkcí předané jako argument jiné funkci.</p>
 
 <span class="n">global_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
 </pre></div><h2 id="a_mnohem_vice">A mnohem více
-<a href="#header-a_mnohem_vice" class="header-link">#</a>
+<a href="#a_mnohem_vice" class="header-link">#</a>
 </h2>
 <p>Tohle by na úvod mohlo stačit. O <code>mypy</code> se toho dá samozřejmě nejvíce dočíst
 v <a href="https://mypy.readthedocs.io/en/stable/index.html">dokumentaci</a>

@@ -1,11 +1,11 @@
 <h1 id="vyjimky">Výjimky
-<a href="#header-vyjimky" class="header-link">#</a>
+<a href="#vyjimky" class="header-link">#</a>
 </h1>
 <p>Pojďme si prohloubit znalosti o chybách, neboli odborně o <em>výjimkách</em>
 (angl. <em>exceptions</em>).</p>
 <p>Podívej se na následující funkci:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nacti_cislo</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Získá od uživatele celé číslo a vrátí ho&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Získá od uživatele celé číslo a vrátí ho&quot;&quot;&quot;</span>
     <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej číslo: &#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">odpoved</span><span class="p">)</span>
 </pre></div><p>Když uživatel nezadá číslice, ale třeba text <code>cokolada</code>,
@@ -13,7 +13,7 @@ nastane výjimka jménem <code>ValueError</code> (chyba hodnoty) a Python vypí�
 odpovídající chybovou hlášku:</p>
 <div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;ukazka.py&quot;</span>, line <span class="m">4</span>, in <span class="n">nacti_cislo</span>
-    <span class="n">cislo</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">odpoved</span><span class="p">)</span>
+<span class="w">    </span><span class="n">cislo</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">odpoved</span><span class="p">)</span>
 <span class="gr">ValueError</span>: <span class="n">invalid literal for int() with base 10: &#39;cokolada&#39;</span>
 </pre></div><p>Program volá funkci <code>int()</code> pro něco, co nedává smysl jako číslo.
 Co s tím má chudák funkce <code>int</code> dělat?
@@ -25,7 +25,7 @@ Stačí se uživatele zeptat znovu!
 Kdybys měl/a funkci, která zjistí jestli jsou v řetězci jen číslice,
 mohlo by to fungovat nějak takhle:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nacti_cislo</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Získá od uživatele celé číslo a vrátí ho&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Získá od uživatele celé číslo a vrátí ho&quot;&quot;&quot;</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej číslo: &#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">obsahuje_jen_cislice</span><span class="p">(</span><span class="n">odpoved</span><span class="p">):</span>
@@ -54,11 +54,11 @@ odmítne.</li>
 <p>Chceš-li zjistit, jestli funkce <code>int</code> umí daný řetězec převést na číslo,
 nejlepší je použít přímo funkci <code>int</code>.</p>
 </div><h2 id="osetreni_chyby">Ošetření chyby
-<a href="#header-osetreni_chyby" class="header-link">#</a>
+<a href="#osetreni_chyby" class="header-link">#</a>
 </h2>
 <p>Pro zachycení chyby má Python příkaz <code>try</code>/<code>except</code>.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nacti_cislo</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Získá od uživatele celé číslo a vrátí ho&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Získá od uživatele celé číslo a vrátí ho&quot;&quot;&quot;</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej číslo: &#39;</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
@@ -72,7 +72,7 @@ nastane uvedená výjimka, Python přeskočí zbytek bloku <code>try</code> a pr
 v bloku <code>except</code>.
 Pokud výjimka nenastala, přeskočí se celý blok <code>except</code>.</p>
 <h2 id="druhy_chyb">Druhy chyb
-<a href="#header-druhy_chyb" class="header-link">#</a>
+<a href="#druhy_chyb" class="header-link">#</a>
 </h2>
 <p>A co je to <code>ValueError</code>? To je typ chyby.
 Podobných typů je spousta.
@@ -101,7 +101,7 @@ chytnou se i všechny podřízené typy výjimek –
 například <code>except ArithmeticError:</code> zachytí i <code>ZeroDivisionError</code>.
 A <code>except Exception:</code> zachytí <em>všechny</em> výjimky, které běžně chceš zachytit.</p>
 <h2 id="nechytej_je_vsechny">Nechytej je všechny!
-<a href="#header-nechytej_je_vsechny" class="header-link">#</a>
+<a href="#nechytej_je_vsechny" class="header-link">#</a>
 </h2>
 <p>Většinu chyb <em>není</em> potřeba ošetřovat.</p>
 <p>Nastane-li <em>nečekaná</em> situace, je téměř vždy
@@ -122,7 +122,7 @@ uživatele (nebo lépe, programátora), že (a kde) je něco špatně.
 Neboli vypsat chybovou hlášku.
 A to se stane normálně, bez <code>try</code>.</p>
 <h2 id="dalsi_prilohy_kcodetrycode">Další přílohy k <code>try</code>
-<a href="#header-dalsi_prilohy_kcodetrycode" class="header-link">#</a>
+<a href="#dalsi_prilohy_kcodetrycode" class="header-link">#</a>
 </h2>
 <p>Pro úplnost: kromě <code>except</code> existují dva jiné bloky,
 které můžeš „přilepit“ k <code>try</code>, a to <code>else</code> a <code>finally</code>.
@@ -148,7 +148,7 @@ ten první, který danou chybu umí ošetřit.</p>
 <span class="k">finally</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tohle se provede vždycky; i pokud v `try` bloku byl např. `return`&#39;</span><span class="p">)</span>
 </pre></div><h2 id="vyvolani_chyby">Vyvolání chyby
-<a href="#header-vyvolani_chyby" class="header-link">#</a>
+<a href="#vyvolani_chyby" class="header-link">#</a>
 </h2>
 <p>Občas se stane, že výjimku budeš potřebovat vyvolat sám/sama.</p>
 <p>Často se to stává, když píšeš nějakou obecnou funkci.
@@ -174,7 +174,7 @@ připravený, sám skončit s chybou a upozornit tak programátora, že je něc
 Chybu můžeš vyvolat pomocí příkazu <code>raise</code>.
 Za příkaz dáš druh výjimky a pak do závorek nějaký popis toho, co je špatně.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">obsah_ctverce</span><span class="p">(</span><span class="n">strana</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Vrátí obsah čtverce s danou délkou strany&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Vrátí obsah čtverce s danou délkou strany&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">strana</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">strana</span> <span class="o">**</span> <span class="mi">2</span>
     <span class="k">else</span><span class="p">:</span>

@@ -1,5 +1,5 @@
 <h1 id="prikazova_radka">Příkazová řádka
-<a href="#header-prikazova_radka" class="header-link">#</a>
+<a href="#prikazova_radka" class="header-link">#</a>
 </h1>
 <p>V této lekci se seznámíme s <em>příkazovou řádkou</em> – černým okýnkem,
 které programátoři používají na zadávání textových příkazů.</p>
@@ -51,7 +51,7 @@ V záložce Písmo si pak můžeš vybrat větší font.
 <kbd>Ctrl</kbd>+<kbd>+</kbd> a
 <kbd>Ctrl</kbd>+<kbd>-</kbd> (příp. se Shift).</p>
 </div><h2 id="prvni_prikaz">První příkaz
-<a href="#header-prvni_prikaz" class="header-link">#</a>
+<a href="#prvni_prikaz" class="header-link">#</a>
 </h2>
 <p>Začněme ale příkazem, který je všude stejný.
 Napiš <code>whoami</code> (z angl. <em>who am I?</em> – kdo jsem?)
@@ -69,7 +69,7 @@ Vypíše ho počítač, většinou ještě s něčím před ním,
 takže ho nepiš sám/sama! Zadej jen <code>whoami</code> a <kbd>Enter</kbd>.</p>
 <p>Stejně tak počítač sám vypíše přihlašovací jméno.</p>
 </div><h2 id="aktualni_adresar">Aktuální adresář
-<a href="#header-aktualni_adresar" class="header-link">#</a>
+<a href="#aktualni_adresar" class="header-link">#</a>
 </h2>
 <p>Příkazová řádka pracuje vždy v nějakém <em>adresáři</em> neboli <em>složce</em>
 (angl. <em>directory</em>, <em>folder</em>).
@@ -94,7 +94,7 @@ kterými vybíráš soubory: typicky mají v horní (nebo na Macu dolní)
 části uvedeno který adresář zrovna ukazují.
 Příkazová řádka umí soubory ukazovat taky – ale musíš si o to říct.</p>
 <h2 id="co_v_tom_adresari_je">Co v tom adresáři je?
-<a href="#header-co_v_tom_adresari_je" class="header-link">#</a>
+<a href="#co_v_tom_adresari_je" class="header-link">#</a>
 </h2>
 <p>Příkaz <code>ls</code> nebo <code>dir</code> (z angl. <em>list</em> – vyjmenovat, resp. <em>directory</em> – adresář)
 ti vypíše co aktuální adresář obsahuje: všechny soubory,
@@ -115,7 +115,7 @@ včetně podadresářů, které se v aktuálním adresáři nacházejí.</p>
 <span class="go">05/08/2014 07:28 PM &lt;DIR&gt;  Music</span>
 <span class="go">…</span>
 </pre></div></div></div><h2 id="zmena_aktualniho_adresare">Změna aktuálního adresáře
-<a href="#header-zmena_aktualniho_adresare" class="header-link">#</a>
+<a href="#zmena_aktualniho_adresare" class="header-link">#</a>
 </h2>
 <p>Aktuální adresář se dá změnit pomocí příkazu <code>cd</code>
 (z angl. <em>change directory</em> – změnit adresář).
@@ -127,11 +127,11 @@ systémech jsou <code>Desktop</code> a <code>desktop</code> dvě různá jména.
 <p>Používáš-li Windows, <code>cd</code> už jsi používal/a – tento příkaz se chová různě
 podle toho, jestli něco napíšeš za něj nebo ne.</p>
 <div class="row side-by-side-commands"><div class="col">
-                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> Desktop
+                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>Desktop
 <span class="gp">$ </span><span class="nb">pwd</span>
 <span class="go">/home/helena/Desktop</span>
 </pre></div></div><div class="col">
-                <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd Desktop<span class="gp"></span>
+                <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd Desktop
 <span class="gp">&gt; </span>cd
 <span class="go">C:\Users\helena\Desktop</span>
 </pre></div></div></div><div class="admonition note"><p class="admonition-title">Poznámka pro Windows</p>
@@ -139,26 +139,26 @@ podle toho, jestli něco napíšeš za něj nebo ne.</p>
 například <code>D:</code> místo <code>C:</code>, je potřeba kromě <code>cd</code>
 zadat jméno disku s dvojtečkou jako zvláštní příkaz (např. <code>D:</code>).</p>
 </div><h2 id="vytvoreni_adresare">Vytvoření adresáře
-<a href="#header-vytvoreni_adresare" class="header-link">#</a>
+<a href="#vytvoreni_adresare" class="header-link">#</a>
 </h2>
 <p>Co takhle si zkusit vytvořit adresář? To se dělá příkazem <code>mkdir</code>
 (z angl. <em>make directory</em> – vytvořit adresář).
 Za tento příkaz napiš jméno adresáře, který chceš vytvořit – v našem případě
 <code>zkouska</code>:</p>
 <div class="row side-by-side-commands"><div class="col">
-                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir zkouska
+                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>zkouska
 </pre></div></div><div class="col">
                 <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>mkdir zkouska
 </pre></div></div></div><p>Když je adresář vytvořený, můžeš do něj přejít podobně jako jsi před chvílí
 přešel/přešla na <code>Desktop</code> nebo <code>Plocha</code>:</p>
 <div class="row side-by-side-commands"><div class="col">
-                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> zkouska
+                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>zkouska
 </pre></div></div><div class="col">
                 <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd zkouska
 </pre></div></div></div><p>Vypiš si teď obsah aktuálního adresáře pomocí <code>ls</code> nebo <code>dir</code>.
 Jeden z vypsaných adresářů bude <code>zkouska</code>.</p>
 <h2 id="vgrafickem_hledatku">V grafickém hledátku
-<a href="#header-vgrafickem_hledatku" class="header-link">#</a>
+<a href="#vgrafickem_hledatku" class="header-link">#</a>
 </h2>
 <p>Často nebudeš pracovat <em>jenom</em> s příkazovou řádkou.
 Vyplatí se umět aktuální adresář z příkazové řádky otevřít i v jiných
@@ -195,7 +195,7 @@ kopírování, nejspíš se to dělá jinak než jsi zvyklý/á.</p>
                 <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd
 <span class="go">C:\Users\helena\Desktop\zkouska</span>
 </pre></div></div></div><h3 id="kopirovani_z_prikazove_radky">Kopírování z příkazové řádky
-<a href="#header-kopirovani_z_prikazove_radky" class="header-link">#</a>
+<a href="#kopirovani_z_prikazove_radky" class="header-link">#</a>
 </h3>
 <p>Na <strong>Linuxu</strong> vyber text myší a pak buď:</p>
 <ul>
@@ -207,7 +207,7 @@ kopírování, nejspíš se to dělá jinak než jsi zvyklý/á.</p>
 <p>Na <strong>Windows</strong> v menu příkazové řádky (ikonce vlevo nahoře) vyber
 <em>Edit</em> → <em>Mark</em>, text vyber myší a zkopíruj pomocí <kbd>Enter</kbd>.</p>
 <h3 id="otevreni_vprohlizeci_souboru">Otevření v prohlížeči souborů
-<a href="#header-otevreni_vprohlizeci_souboru" class="header-link">#</a>
+<a href="#otevreni_vprohlizeci_souboru" class="header-link">#</a>
 </h3>
 <p>Na <strong>Linuxu</strong> záleží na programu, který používáš. Buď:</p>
 <ul>
@@ -226,7 +226,7 @@ Potvrď pomocí <kbd>Enter</kbd>.</p>
 <p>Teď se můžeš podívat na Plochu nebo do nějakého grafickém programu na
 prohlížení adresářů: zjistíš, že se adresář opravdu vytvořil.</p>
 <h3 id="vkladani_do_prikazove_radky">Vkládání do příkazové řádky
-<a href="#header-vkladani_do_prikazove_radky" class="header-link">#</a>
+<a href="#vkladani_do_prikazove_radky" class="header-link">#</a>
 </h3>
 <p>Občas si otevřeš soubor v prohlížeči souborů a budeš do něj chtít přejít
 v příkazové řádce.
@@ -240,10 +240,10 @@ je ale občas jiné než v ostatních pogramech:</p>
 <div class="admonition note"><p>Pokud jsou ve jménu mezery nebo jiné speciální znaky jako <code>*#$%^()&gt;&lt;;"?</code>,
 musíš ho v příkazové řádce ještě uzavřít do uvozovek: před a za jméno napiš
 <code>"</code>, např:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> <span class="s2">&quot;můj super adresář&quot;</span>
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;můj super adresář&quot;</span>
 </pre></div><p>Lepší je ale mezery a zvláštní znaky ve jménech souborů nepoužívat.</p>
 </div><h2 id="pozorovani_zmen">Pozorování změn
-<a href="#header-pozorovani_zmen" class="header-link">#</a>
+<a href="#pozorovani_zmen" class="header-link">#</a>
 </h2>
 <p>Vyzkoušej si, že se v řádce projeví i změny, které na počítači
 uděláš jiným způsobem.</p>
@@ -255,7 +255,7 @@ Potom ho v grafickém programu smaž – a v příkazové řádce se ujisti,
 <p>Na počítači máš jen jednu sadu souborů, se kterou umí manipulovat jak grafické
 programy tak příkazová řádka.</p>
 <h2 id="o_uroven_nahoru">O úroveň nahoru
-<a href="#header-o_uroven_nahoru" class="header-link">#</a>
+<a href="#o_uroven_nahoru" class="header-link">#</a>
 </h2>
 <p>A poslední věc: jsi-li teď v adresáři <code>Desktop/zkouska</code> (nebo <code>Plocha/zkouska</code>,
 <code>Desktop\zkouska</code> atp.), jak se dostat zpátky do <code>Desktop</code>?</p>
@@ -267,17 +267,17 @@ Odborně řečeno, adresář <code>Desktop</code> je <em>nadřazený</em> aktuá
 <p>Nadřazený adresář má speciální jméno <code>..</code>, dvě tečky.
 Přejdi do něj zadáním <code>cd ..</code> a pak se ujisti, že jsi opravdu v <code>Desktop</code>:</p>
 <div class="row side-by-side-commands"><div class="col">
-                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> ..
+                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>..
 <span class="gp">$ </span><span class="nb">pwd</span>
 <span class="go">/home/helena/Desktop</span>
 </pre></div></div><div class="col">
-                <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd ..<span class="gp"></span>
+                <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd ..
 <span class="gp">&gt; </span>cd
 <span class="go">C:\Users\helena\Desktop</span>
 </pre></div></div></div><p>Další <code>cd ..</code> by tě přesunulo do dalšího nadřazeného adresáře – v našem
 příkladu <code>helena</code>.</p>
 <h2 id="konec">Konec
-<a href="#header-konec" class="header-link">#</a>
+<a href="#konec" class="header-link">#</a>
 </h2>
 <p>Příkazů existuje samozřejmě daleko víc.</p>
 <p>Když se je naučíš, můžeš z příkazové řádky plnohodnotně ovládat
@@ -298,7 +298,7 @@ Používáš-li Windows, je dobré si na <code>$</code> zvyknout i když ve své
 <div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">exit</span>
 </pre></div><p>A tím je úvod do příkazové řádky hotový.</p>
 <h2 id="prehled">Přehled
-<a href="#header-prehled" class="header-link">#</a>
+<a href="#prehled" class="header-link">#</a>
 </h2>
 <p>Tady je tabulka základních příkazů, se kterými si do začátku vystačíš:</p>
 <table class="table">

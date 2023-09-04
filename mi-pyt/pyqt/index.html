@@ -1,46 +1,46 @@
 <h1 id="gui_v_pythonu_pyqt5">GUI v Pythonu: PyQt5
-<a href="#header-gui_v_pythonu_pyqt5" class="header-link">#</a>
+<a href="#gui_v_pythonu_pyqt5" class="header-link">#</a>
 </h1>
 <p>Způsobů, jak dělat v Pythonu aplikace s GUI, je mnoho. Dá se použít zabudovaný, ale ošklivý Tkinter, nebo nějaký externí framework.</p>
 <p>V tomto cvičení budeme používat framework Qt, protože je multiplatformní, používá se i v jiných oblastech, než je Python,
 je dostatečně robustní a dá se na většinu systémů nainstalovat bez větších problémů.</p>
 <p>Pomocí aplikace Qt Designer se dá navíc základní kostra GUI poměrně jednoduše <em>naklikat</em>, takže není nutné psát layout aplikace v kódu.</p>
 <h2 id="instalace">Instalace
-<a href="#header-instalace" class="header-link">#</a>
+<a href="#instalace" class="header-link">#</a>
 </h2>
 <p>Na tomto cvičení budete potřebovat balíček PyQt5 a aplikaci Qt5 Designer.
 Pokud budete používat svůj počítač, prosíme vás o instalaci již předem, na cvičení toho bude opravdu hodně a nemůžeme si dovolit plýtvat časem.</p>
 <h3 id="pyqt5">PyQt5
-<a href="#header-pyqt5" class="header-link">#</a>
+<a href="#pyqt5" class="header-link">#</a>
 </h3>
 <p>Pokud máte Python alespoň 3.5 a jednu z platforem, pro které je připraven <a href="https://pypi.org/project/PyQt5/">wheel na PyPI</a>, stačí udělat:</p>
-<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>python -m pip install --upgrade pip
-<span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>python -m pip install PyQt5
+<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+<span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>PyQt5
 </pre></div><p>Pro starší verzi Pythonu nebo 32bitový Linux to ale nebude fungovat.
 V takovém případě můžete PyQt5 zkusit najít v balíčkovacím systému vaší distribuce (např. balíček <code>python3-qt5</code> ve Fedoře nebo <code>python3-pyqt5</code> v Debianu).
 Virtualenv pak může vytvořit s přepínačem <code>--system-site-packages</code>, který zajistí, že i z virtualenvu uvidíte PyQt5 nainstalované z distribučního balíčku.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python3 -m venv --system-site-packages __venv__
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>--system-site-packages<span class="w"> </span>__venv__
 </pre></div><p>Pokud nic z toho nepomůže, můžete zkusit přeložit PyQt5 ze <a href="https://www.riverbankcomputing.com/software/pyqt/download5">zdrojových souborů</a>
 (<a href="http://pyqt.sourceforge.net/Docs/PyQt5/installation.html#building-and-installing-from-source">návod</a>).</p>
 <p><em>První aplikace</em> níže by vám měla fungovat.</p>
 <div class="admonition note"><p>Pokud narazíte na chybu <code>Could not find or load the Qt platform plugin "xcb"</code>, podívejte se do <a href="https://github.com/cvut/MI-PYT/issues/57">naší issue</a>.</p>
 </div><h3 id="qt5_designer">Qt5 Designer
-<a href="#header-qt5_designer" class="header-link">#</a>
+<a href="#qt5_designer" class="header-link">#</a>
 </h3>
 <p>Na Linuxu najdete Qt5 Designer v balíčkách, třeba <code>qt5-designer</code> na Fedoře nebo <code>qttools5-dev-tools</code> na Debianu.</p>
 <p>Na Windows (i na Macu) si můžete <a href="https://www.qt.io/download-open-source/#section-2">stáhnout</a> instalátor Qt 5, který (doufáme) nainstaluje i Designer.</p>
 <p>Pokud používáte na Macu <code>homebrew</code>, můžete to udělat i takto:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>brew install qt5
-<span class="gp">$ </span>brew linkapps qt5
+<div class="highlight"><pre><span></span><span class="gp">$ </span>brew<span class="w"> </span>install<span class="w"> </span>qt5
+<span class="gp">$ </span>brew<span class="w"> </span>linkapps<span class="w"> </span>qt5
 </pre></div><p>Existují i Python wheely <a href="https://pypi.python.org/pypi/pyqt5-tools">pyqt5-tools</a> pro Windows obsahující Qt5 Designer.
 Ten je pak potřeba pro spuštění dohledat v nainstalované lokaci.</p>
 <h3 id="numpy">NumPy
-<a href="#header-numpy" class="header-link">#</a>
+<a href="#numpy" class="header-link">#</a>
 </h3>
 <p>Do virtuálního prostředí s PyQt5 si nainstalujte i NumPy:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install numpy
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>numpy
 </pre></div><h2 id="prvni_aplikace">První aplikace
-<a href="#header-prvni_aplikace" class="header-link">#</a>
+<a href="#prvni_aplikace" class="header-link">#</a>
 </h2>
 <p>Napište si první aplikaci, ať vidíte, jak kód v PyQt vypadá.
 Detaily toho, jak to funguje, si ukážeme později.</p>
@@ -56,7 +56,7 @@ Detaily toho, jak to funguje, si ukážeme později.</p>
 
 <span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
 </pre></div><h2 id="o_qt_pyqt_a_pyside">O Qt, PyQt a PySide
-<a href="#header-o_qt_pyqt_a_pyside" class="header-link">#</a>
+<a href="#o_qt_pyqt_a_pyside" class="header-link">#</a>
 </h2>
 <p><a href="https://www.qt.io/">Qt</a> je aplikační framework napsaný v C++, který zjednodušuje psaní multiplatformních aplikací (od počítačů s Linuxem, Mac OS či Windows po různá vestavěná zařízení).</p>
 <p><a href="https://riverbankcomputing.com/software/pyqt">PyQt</a> je knihovna, která umožňuje použít Qt z Pythonu.
@@ -64,7 +64,7 @@ Na rozdíl od samotného Qt je licencovaná pod <a href="https://www.gnu.org/lic
 Tedy: kdokoliv, kdo dostane kopii programu, musí mít možnost dostat odpovídající zdrojový kód a má možnost tento kód dál šířit pod stejnou licencí.</p>
 <p>Pokud by se vám tato licence nelíbila, je možnost použít <a href="https://wiki.qt.io/PySide">PySide</a>, které má permisivnější licenci a téměř stejné API jako PyQt, ale není tak stabilní.</p>
 <h3 id="moduly_qt">Moduly Qt
-<a href="#header-moduly_qt" class="header-link">#</a>
+<a href="#moduly_qt" class="header-link">#</a>
 </h3>
 <p>Qt je rozděleno na několik tzv. <a href="http://doc.qt.io/qt-5/qtmodules.html">modulů</a>.
 Pro grafická uživatelská rozhraní (GUI), kterými se budeme zabývat, použijeme hlavně <a href="http://doc.qt.io/qt-5/qtgui-index.html">QtGui</a> a <a href="http://doc.qt.io/qt-5/qtwidgets-index.html">QtWidgets</a>.</p>
@@ -73,12 +73,12 @@ automaticky převádí na pythonní ekvivalenty a zpět) nebo třeba <a href="ht
 <p>Další moduly jsou nadstavby od <a href="http://doc.qt.io/qt-5/qtsvg-index.html">vykreslování SVG</a> nebo <a href="http://doc.qt.io/qt-5/qtmultimedia-index.html">práci s multimédii</a> (které se můžou hodit) po
 třeba práci s <a href="http://doc.qt.io/qt-5/qtsql-index.html">SQL</a> a <a href="http://doc.qt.io/qt-5/qtxml-index.html">XML</a> nebo <a href="http://doc.qt.io/qt-5/qtnetwork-index.html">síťovou komunikaci</a>, kde je pro Python pohodlnější použít jiné knihovny.</p>
 <h2 id="specifika_pyqt">Specifika PyQt
-<a href="#header-specifika_pyqt" class="header-link">#</a>
+<a href="#specifika_pyqt" class="header-link">#</a>
 </h2>
 <p>Ačkoli se Qt dá použít z Pythonu, bohužel zjistíte, že ne všechno funguje a vypadá tak, jako kdyby to byla knihovna od základů napsaná pro Python.
 Tady jsou některé zvláštnosti, na které se můžete připravit.</p>
 <h3 id="jmena_a_dokumentace">Jména a dokumentace
-<a href="#header-jmena_a_dokumentace" class="header-link">#</a>
+<a href="#jmena_a_dokumentace" class="header-link">#</a>
 </h3>
 <p>Qt pojmenovává funkce, metody a atributy konvencí <code>camelCase</code>, místo pythonistického <code>snake_case</code>.
 PyQt tuto konvenci nemění: je užitečnější používat identická jména, a kromě toho knihovna PyQt vznikla ještě před PEP 8.</p>
@@ -90,13 +90,13 @@ Občas však můžete narazit na nekompletní dokumentaci (např. <a href="https
 <p>Rozdíly mezi C a pythonní verzí jsou většinou intuitivní (např. None místo NULL), ale jsou popsány
 v <a href="http://pyqt.sourceforge.net/Docs/PyQt5/index.html">dokumentaci PyQt</a>.</p>
 <h3 id="atributy">Atributy
-<a href="#header-atributy" class="header-link">#</a>
+<a href="#atributy" class="header-link">#</a>
 </h3>
 <p>Qt zásadně používá pro přístup k atributům objektů funkce.
 Funkce pro čtení se typicky jmenuje podle atributu, funkce pro nastavení má předponu <code>set</code>.
 Namísto pythonního <code>c = obj.color</code> a <code>obj.color = ...</code> tedy použijeme <code>c = obj.color()</code> a <code>obj.setColor(...)</code>.</p>
 <h3 id="sprava_pameti">Správa paměti
-<a href="#header-sprava_pameti" class="header-link">#</a>
+<a href="#sprava_pameti" class="header-link">#</a>
 </h3>
 <p>Python a C++/Qt mají, bohužel, rozdílný přístup ke správě paměti.
 Python používá <em>reference counting</em> a <em>garbage collection</em>.
@@ -113,7 +113,7 @@ Bez hlubší znalosti Qt a PyQt se taková chyba odstraňuje poměrně těžko, 
 a CPython C API (z <a href="naucse:page?lesson=intro/cython">minula</a>) vám v tom pomůžou.
 Doporučujeme dělat malé commity a psát jednoduchý kód.</p>
 <h3 id="smycka_udalosti_signaly_a_sloty">Smyčka událostí, signály a sloty
-<a href="#header-smycka_udalosti_signaly_a_sloty" class="header-link">#</a>
+<a href="#smycka_udalosti_signaly_a_sloty" class="header-link">#</a>
 </h3>
 <p>Qt funguje na principu smyčky událostí (event loop).
 Metoda <code>QApplication.exec</code> obsahuje v podstatě nekonečnou smyčku, která čeká na externí <em>události</em> (klik myši,
@@ -153,7 +153,7 @@ nebo jako <code>QComboBox.activated[str]</code>, kdy předává text položky:</
 
 <span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
 </pre></div><h2 id="skladani_gui">Skládání GUI
-<a href="#header-skladani_gui" class="header-link">#</a>
+<a href="#skladani_gui" class="header-link">#</a>
 </h2>
 <p>Základní způsob, jak v Qt vytvářet grafické rozhraní, je skládání funkčních prvků (<em>widgets</em>) do
 hierarchie oken, skupin a panelů.</p>
@@ -197,7 +197,7 @@ do něj přidané.</p>
 programy stačí „poskládat“ z nich a napojit je na logiku.
 Pro složitější programy jsou pak možnosti, jak si widgety přizpůsobit.</p>
 <h2 id="qt_designer">Qt Designer
-<a href="#header-qt_designer" class="header-link">#</a>
+<a href="#qt_designer" class="header-link">#</a>
 </h2>
 <p>Na tomto cvičení si připravíme aplikaci pro editaci dlaždicových map (<em>tile maps</em>)
 – obrázků složených z omezené nabídky čtverečků („dlaždic“),
@@ -251,7 +251,7 @@ základ pro vytváření UI v kódu (např. na vytvoření sady několika podobn
 
 <span class="n">main</span><span class="p">()</span>
 </pre></div><h2 id="vlastni_widget_-_grid">Vlastní widget - Grid
-<a href="#header-vlastni_widget_-_grid" class="header-link">#</a>
+<a href="#vlastni_widget_-_grid" class="header-link">#</a>
 </h2>
 <p>Qt neobsahuje předpřipravený widget na dlaždicové mapy. Musíme si tedy vyrobit vlastní.</p>
 <p>Mapu budeme reprezentovat jako NumPy matici (viz <a href="naucse:page?lesson=intro/numpy">lekce o NumPy</a>).
@@ -351,7 +351,7 @@ na různé „povrchy“ jako widgety, obrázky, nebo i instrukce pro tiskárnu.
                 <span class="n">painter</span><span class="o">.</span><span class="n">fillRect</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QBrush</span><span class="p">(</span><span class="n">color</span><span class="p">))</span>
 </pre></div><p>Nyní by již mapa měla být v okně vidět barevně.</p>
 <h3 id="obrazky">Obrázky
-<a href="#header-obrazky" class="header-link">#</a>
+<a href="#obrazky" class="header-link">#</a>
 </h3>
 <p>Protože barvičky jsou příliš nudné, přidáme do mapového widgetu obrázky.</p>
 <p>Veškerou, ke cvičení i k úkolu potřebnou, grafiku najdete na <a href="https://github.com/pyvec/naucse.python.cz/tree/master/lessons/intro/pyqt/static/pics">GitHubu</a>.
@@ -382,7 +382,7 @@ a je (společně se další volně licencovanou grafikou) ke stažení z <a href
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">column</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
                     <span class="n">SVG_WALL</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">painter</span><span class="p">,</span> <span class="n">rect</span><span class="p">)</span>
 </pre></div><h2 id="modelview">Model/View
-<a href="#header-modelview" class="header-link">#</a>
+<a href="#modelview" class="header-link">#</a>
 </h2>
 <p>Nyní trochu odbočíme a povíme si krátce o dalším podsystému Qt: o modelech.</p>
 <p>Qt obsahuje framework, který mapuje informace do podoby tabulek, seznamů nebo obecných stromů.
@@ -399,7 +399,7 @@ Naštěstí ale existují widgety se zabudovanými modely, které obsahují i sa
 Tyto modely je složitější napojit na existující aplikační logiku, ale pro většinu účelů postačí.</p>
 <p>O obecných modelech si můžete přečíst v <a href="http://doc.qt.io/qt-5/model-view-programming.html">dokumentaci</a>.</p>
 <h2 id="qlistwidget_-_paleta">QListWidget - Paleta
-<a href="#header-qlistwidget_-_paleta" class="header-link">#</a>
+<a href="#qlistwidget_-_paleta" class="header-link">#</a>
 </h2>
 <p>Jeden z widgetů se zabudovaným modelem je <code>QListWidget</code>, který umí spravovat a zobrazovat
 nějaký seznam.
@@ -429,7 +429,7 @@ mohli bychom místo toho i předefinovat metodu <code>itemSelectionChanged()</co
     <span class="o">...</span>
 
     <span class="k">def</span> <span class="nf">item_activated</span><span class="p">():</span>
-        <span class="sd">&quot;&quot;&quot;Tato funkce se zavolá, když uživatel zvolí položku&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Tato funkce se zavolá, když uživatel zvolí položku&quot;&quot;&quot;</span>
 
         <span class="c1"># Položek může obecně být vybráno víc, ale v našem seznamu je to</span>
         <span class="c1"># zakázáno (v Designeru selectionMode=SingleSelection).</span>
@@ -463,7 +463,7 @@ Pro případ, že budeme potřebovat rolí víc, je dobré si je vhodně pojmeno
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">palette</span><span class="o">.</span><span class="n">selectedItems</span><span class="p">():</span>
             <span class="n">grid</span><span class="o">.</span><span class="n">selected</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">VALUE_ROLE</span><span class="p">)</span>
 </pre></div><h2 id="klikani_do_gridu">Klikání do gridu
-<a href="#header-klikani_do_gridu" class="header-link">#</a>
+<a href="#klikani_do_gridu" class="header-link">#</a>
 </h2>
 <p>Nyní nezbývá nic jiného, než pomocí klikání nanášet zvolené dílky do mapy.
 K tomu opět použijeme událost, tentokrát událost kliknutí, tedy <code>mousePressEvent</code>.</p>
@@ -488,7 +488,7 @@ je lepší zavolat <code>self.update()</code> bez argumentů a říct tak systé
 <div class="highlight"><pre><span></span><span class="c1"># Za přidáním položek do palety a napojení signálu</span>
 <span class="n">palette</span><span class="o">.</span><span class="n">setCurrentRow</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div><h3 id="vice_tlacitek_mysi">Více tlačítek myši
-<a href="#header-vice_tlacitek_mysi" class="header-link">#</a>
+<a href="#vice_tlacitek_mysi" class="header-link">#</a>
 </h3>
 <p>Můžete si vyzkoušet, že se mapa mění při použití jakéhokoliv tlačítka myši.
 Je to proto, že <code>mousePressEvent</code> se stane, kdykoli na widgetu stiskneme libovolné tlačítko.
@@ -502,7 +502,7 @@ Pokud bychom chtěli řešit pouze levé (primární) tlačítko, můžeme zjist
 <div class="highlight"><pre><span></span>            <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">button</span><span class="p">()</span> <span class="o">==</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">Qt</span><span class="o">.</span><span class="n">RightButton</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div><h3 id="tazeni_mysi">Tažení myši
-<a href="#header-tazeni_mysi" class="header-link">#</a>
+<a href="#tazeni_mysi" class="header-link">#</a>
 </h3>
 <p>Pro splnění úkolu bude stačit objekty mazat a klást pomocí klikání na jednotlivá políčka.
 Pokud však chcete poskytnout uživateli větší komfort, prozkoumejte další <a href="http://doc.qt.io/qt-5/qwidget.html">události</a>
@@ -513,7 +513,7 @@ Když program nestíhá, OS nebo Qt spojuje víc událostí pohybu myši dohroma
 jen jednu poslední.
 Jednotlivé body můžete spojit čárou pomocí knihovny <a href="https://pypi.org/project/bresenham/">bresenham</a>.)</p>
 <h2 id="menu_a_modalni_dialog">Menu a modální dialog
-<a href="#header-menu_a_modalni_dialog" class="header-link">#</a>
+<a href="#menu_a_modalni_dialog" class="header-link">#</a>
 </h2>
 <p>Naše aplikace bude umět vytvořit novou, prázdnou mapu.
 Ukážeme si, jak vytvořit modální dialog pro volby (šířka a výška nové mapy).
@@ -597,7 +597,7 @@ Jsou to dialogy pro ukázání hlášky, výběr souboru, barvy nebo fontu nebo 
 </li>
 </ul>
 <h2 id="trida_pro_gui_aplikace">Třída pro GUI aplikace
-<a href="#header-trida_pro_gui_aplikace" class="header-link">#</a>
+<a href="#trida_pro_gui_aplikace" class="header-link">#</a>
 </h2>
 <p>Funkce <code>main</code> se nám pomalu rozrůstá a další funkce, které volá, musí být buď definované v ní (jako <code>item_activated</code>)
 nebo musí brát relativně hodně argumentů (jako <code>new_dialog</code>).

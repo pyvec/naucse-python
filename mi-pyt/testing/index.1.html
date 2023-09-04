@@ -1,5 +1,5 @@
 <h1 id="testovani">Testování
-<a href="#header-testovani" class="header-link">#</a>
+<a href="#testovani" class="header-link">#</a>
 </h1>
 <p>V tomto cvičení se budeme zabývat automatickým testováním kódu.
 Modul unittest ze standardní knihovny už byste měli znát,
@@ -11,7 +11,7 @@ podrobněji.</p>
 </div><p>Pokud si chcete přečíst krátký text o tom, jak testovat, zkuste <a href="http://blog.horejsek.com/matka-moudrosti-jak-testovat">blogový
 zápisek Michala Hořejška</a>.</p>
 <h2 id="pytest">pytest
-<a href="#header-pytest" class="header-link">#</a>
+<a href="#pytest" class="header-link">#</a>
 </h2>
 <p>Rovnou se podíváme na velmi oblíbený balíček <a href="http://pytest.org/">pytest</a>, který oproti standardnímu
 unittestu přináší mnoho výhod. Začneme jednoduchou ukázkou z modulu <code>isholiday</code>
@@ -19,13 +19,13 @@ z <a href="naucse:page?lesson=intro/distribution">cvičení o modulech</a>.</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">isholiday</span>
 
 <span class="k">def</span> <span class="nf">test_xmas_2016</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Test whether there is Christmas in 2016&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test whether there is Christmas in 2016&quot;&quot;&quot;</span>
     <span class="n">holidays</span> <span class="o">=</span> <span class="n">isholiday</span><span class="o">.</span><span class="n">getholidays</span><span class="p">(</span><span class="mi">2016</span><span class="p">)</span>
     <span class="k">assert</span> <span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="ow">in</span> <span class="n">holidays</span>
 </pre></div><p>Test uložíme někam do projektu, třeba do souboru <code>tests/test_holidays.py</code> a
 nainstalujeme a spustíme <code>pytest</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>python -m pip install pytest
-<span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>python -m pytest tests/test_holidays.py
+<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pytest
+<span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/test_holidays.py
 </pre></div><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">============================= test session starts ==============================</span>
 platform linux -- Python 3.7.1, pytest-4.0.1, py-1.7.0, pluggy-0.8.0
 rootdir: /tmp/tmp.etepchwQWh, inifile:
@@ -58,7 +58,7 @@ než z adresáře s kódem. Odhalíte tím často balíčkovací chyby.</p>
 </div><p>Pytest upravuje chování assertu, což oceníte především, pokud test selže:</p>
 <div class="highlight"><pre><span></span>    <span class="o">...</span>
     <span class="k">assert</span> <span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="ow">in</span> <span class="n">holidays</span>
-</pre></div><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>python -m pytest tests/test_holidays.py
+</pre></div><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/test_holidays.py
 </pre></div><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">============================= test session starts ==============================</span>
 platform linux -- Python 3.7.1, pytest-4.0.1, py-1.7.0, pluggy-0.8.0
 rootdir: /tmp/tmp.etepchwQWh, inifile:
@@ -89,7 +89,7 @@ ověření vyhození výjimky. To se dělá takto:</p>
         <span class="n">f</span><span class="p">()</span>
 </pre></div><p>Více o základním použití pytestu najdete v <a href="http://docs.pytest.org/en/latest/getting-started.html">dokumentaci</a>.</p>
 <h3 id="parametricke_testy">Parametrické testy
-<a href="#header-parametricke_testy" class="header-link">#</a>
+<a href="#parametricke_testy" class="header-link">#</a>
 </h3>
 <p>Jednou z vlastností pytestu, která často přichází vhod, jsou <a href="http://doc.pytest.org/en/latest/parametrize.html">parametrické testy</a>.
 Pokud bychom například chtěli otestovat, jestli je Štědrý den svátkem nejen
@@ -103,7 +103,7 @@ průběh testu při selhání ukončí.</p>
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2033</span><span class="p">,</span> <span class="mi">2048</span><span class="p">))</span>
 <span class="k">def</span> <span class="nf">test_xmas</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Test whether there is Christmas&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test whether there is Christmas&quot;&quot;&quot;</span>
     <span class="n">holidays</span> <span class="o">=</span> <span class="n">isholiday</span><span class="o">.</span><span class="n">getholidays</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
     <span class="k">assert</span> <span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="ow">in</span> <span class="n">holidays</span>
 </pre></div><p>Zápis je určitým způsobem podobný knihovně <a href="naucse:page?lesson=intro/click">click</a>: funkce
@@ -112,7 +112,7 @@ Test se spustí pro každou uvedenou hodnotu, k jejich definici lze použít
 jakýkoliv objekt, přes který jde iterovat, tedy kromě v ukázce použité
 <var>n</var>-tice např. seznam, množinu, <code>range</code>, vlastní generátor...</p>
 <p>Pro podrobnější výpis výsledku testů můžete použít přepínač <code>-v</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>python -m pytest -v
+<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>-v
 </pre></div><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">============================= test session starts ==============================</span>
 platform linux -- Python 3.7.1, pytest-4.0.1, py-1.7.0, pluggy-0.8.0 -- /tmp/tmp.etepchwQWh/__venv__/bin/python
 cachedir: .pytest_cache
@@ -145,7 +145,7 @@ argumentů a seznam jejich hodnot:</p>
      <span class="p">(</span><span class="mi">2048</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">)],</span>
 <span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_some_holidays</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Test a few sample holidays&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test a few sample holidays&quot;&quot;&quot;</span>
     <span class="n">holidays</span> <span class="o">=</span> <span class="n">isholiday</span><span class="o">.</span><span class="n">getholidays</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
     <span class="k">assert</span> <span class="p">(</span><span class="n">day</span><span class="p">,</span> <span class="n">month</span><span class="p">)</span> <span class="ow">in</span> <span class="n">holidays</span>
 </pre></div><p>Vždy je dobré pokusit se nějaký test rozbít v samotném kódu, který testujeme,
@@ -193,7 +193,7 @@ year = 2048
 <span class=" -Color -Color-Bold -Color-Bold-Red">tests/test_holidays.py</span>:8: AssertionError
 ====================== 2 failed, 3 passed in 0.03 seconds ======================
 </pre></div><h3 id="fixtures">Fixtures
-<a href="#header-fixtures" class="header-link">#</a>
+<a href="#fixtures" class="header-link">#</a>
 </h3>
 <p>Často se stává, že před samotným testem potřebujte spustit nějaký kus kódu,
 abyste získali to, co teprve chcete testovat. Příkladem může být například
@@ -264,7 +264,7 @@ parametry předané dekorátoru <code>pytest.fixture</code> získáme ze speciá
 Hledáte-li příklady krok za krokem, zkuste <a href="https://github.com/PyConPL/Book/blob/master/2017/workshops/pytest_parametric_tests/text.md">příspěvek ze sborníku konference
 PyCon PL</a>.</p>
 <h2 id="podvadeni">„Podvádění“
-<a href="#header-podvadeni" class="header-link">#</a>
+<a href="#podvadeni" class="header-link">#</a>
 </h2>
 <p>Při psaní testů se občas hodí trochu podvádět. Například když nechceme,
 aby testy měly nějaký vedlejší účinek, když chceme testovat něco, co závisí na
@@ -273,7 +273,7 @@ knihoven, které to umožňují. Jednou z nich je <a href="https://flexmock.read
 <p>* <em>mocking</em> je jen jeden druh podvádění, ale obecně se dá tento název použít
 pro funkcionalitu knihoven, které mají v názvu <em>mock</em> :)</p>
 <h3 id="falesne_objekty_fakes">Falešné objekty (fakes)
-<a href="#header-falesne_objekty_fakes" class="header-link">#</a>
+<a href="#falesne_objekty_fakes" class="header-link">#</a>
 </h3>
 <p>Při testování často potřebujeme nějaký objekt, který má určité atributy a
 metody. Vytvářet si pro každý takový objekt třídu může být ubíjející:</p>
@@ -288,7 +288,7 @@ metody. Vytvářet si pro každý takový objekt třídu může být ubíjejíc�
                  <span class="n">model</span><span class="o">=</span><span class="s1">&#39;MIG-21&#39;</span><span class="p">,</span>
                  <span class="n">fly</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="kc">None</span><span class="p">)</span>
 </pre></div><h3 id="castecne_upravene_objekty_tridy_moduly_stubs">Částečně upravené objekty, třídy, moduly (stubs)
-<a href="#header-castecne_upravene_objekty_tridy_moduly_stubs" class="header-link">#</a>
+<a href="#castecne_upravene_objekty_tridy_moduly_stubs" class="header-link">#</a>
 </h3>
 <p>Stejně tak můžete vzít i nějaký existující objekt nebo třídu a upravit jen část
 atributů nebo metod:</p>
@@ -314,14 +314,14 @@ atributů nebo metod:</p>
 <span class="o">...</span> 
 <span class="p">[</span><span class="s1">&#39;fake content&#39;</span><span class="p">]</span>
 </pre></div><h3 id="ocekavani_mocks_spies">Očekávání (mocks, spies)
-<a href="#header-ocekavani_mocks_spies" class="header-link">#</a>
+<a href="#ocekavani_mocks_spies" class="header-link">#</a>
 </h3>
 <p>Pomocí flexmocku můžete zároveň <a href="http://flexmock.readthedocs.io/en/latest/start/#creating-and-checking-expectations">kontrolovat</a>, že se vaší implementaci něco
 zavolalo, a to dvojím způsobem: buďto zároveň změníte výsledek funkce (mocks),
 nebo jen sledujete, jestli se zavolala (spies).
 (Příklady na odkazu.)</p>
 <h3 id="integrace_s_pytestem">Integrace s pytestem
-<a href="#header-integrace_s_pytestem" class="header-link">#</a>
+<a href="#integrace_s_pytestem" class="header-link">#</a>
 </h3>
 <p>Dobrá mockovací knihovna se stará o to, aby platnost vašich změn byla omezená
 kontextem jedné funkce a tedy jednoho testu. Implementovat vlastní <em>test double</em>
@@ -330,7 +330,7 @@ Pro přepsání nějaké metody, funkce apod. na omezenou dobu
 můžete využít zabudovanou pytest fixturu
 <a href="https://docs.pytest.org/en/latest/monkeypatch.html">monkeypatch</a>.</p>
 <h3 id="varovani">Varování
-<a href="#header-varovani" class="header-link">#</a>
+<a href="#varovani" class="header-link">#</a>
 </h3>
 <p>Podvádění při testech občas vypadá nevyhnutelně. Pokud například vaše funkce
 čte soubor <code>/etc/passwd</code> a vy chcete testovat, že se zachová správně, pokud
@@ -348,7 +348,7 @@ která čte soubor formátu <code>/etc/passwd</code>, ale jméno souboru jí př
 z konference <a href="https://cz.pycon.org/">PyCon CZ</a> 2017. V přednášce se věnuji různým způsobům podvádění
 při psaní testů.</p>
 </div><h2 id="testovani_http_komunikace_betamax">Testování HTTP komunikace: betamax
-<a href="#header-testovani_http_komunikace_betamax" class="header-link">#</a>
+<a href="#testovani_http_komunikace_betamax" class="header-link">#</a>
 </h2>
 <p>Vaše programy často používají webová API. Při testování funkcionality API klientů
 se vynoří řada problémů:</p>
@@ -405,7 +405,7 @@ vytvořit vlastní fixture, která použije fixture <code>betamax_session</code>
 <span class="k">def</span> <span class="nf">client</span><span class="p">(</span><span class="n">betamax_session</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">betamax_session</span><span class="p">)</span>
 </pre></div></div><h3 id="citlive_udaje">Citlivé údaje
-<a href="#header-citlive_udaje" class="header-link">#</a>
+<a href="#citlive_udaje" class="header-link">#</a>
 </h3>
 <p>Při práci s webovými API často létají vzduchem citlivé údaje jako tokeny apod.</p>
 <p>Vyvstávají dvě otázky:</p>
@@ -440,7 +440,7 @@ Na tuto otázku podrobněji odpovídá
 <p>V každém případě je moudré před uložením do gitu zkontrolovat, že se v kazetách
 nenachází žádný citlivý údaj, a pokud tam je, přepsat kód tak, aby se tam nenacházel.</p>
 <h4 id="komprimovane_citlive_udaje">Komprimované citlivé údaje
-<a href="#header-komprimovane_citlive_udaje" class="header-link">#</a>
+<a href="#komprimovane_citlive_udaje" class="header-link">#</a>
 </h4>
 <p>Problém může nastat, pokud je token či jiná citlivá informace uložena jako část v těle 
 odpovědi (případně i požadavku) a zároveň je toto tělo zprávy zkomprimováno (defaultní
@@ -452,7 +452,7 @@ hlavičku <code>Accept-Encoding</code> v <code>betamax_session</code> tak, aby n
 nijak transformována, více viz <a href="https://en.wikipedia.org/wiki/HTTP_compression#Content-Encoding_tokens">Wikipedia</a> 
 a <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.3">specifikace HTTP</a>)</p>
 </div><h3 id="ktere_http_pozadavky_jsou_stejne">Které HTTP požadavky jsou stejné?
-<a href="#header-ktere_http_pozadavky_jsou_stejne" class="header-link">#</a>
+<a href="#ktere_http_pozadavky_jsou_stejne" class="header-link">#</a>
 </h3>
 <p>Podle čeho se vyhodnotí, že HTTP požadavek odpovídá nahrané interakci a má se
 pouze přehrát? Ve výchozím stavu podle HTTP metody a URL.
@@ -465,7 +465,7 @@ v <a href="http://betamax.readthedocs.io/en/latest/matchers.html">dokumentaci</a
 z konference <a href="https://cz.pycon.org/">PyCon CZ</a> 2016. V přednášce se věnuji různým způsobům, jak
 testovat webové API klienty v Pythonu.</p>
 </div><h2 id="testovani_aplikaci_ve_flasku">Testování aplikací ve Flasku
-<a href="#header-testovani_aplikaci_ve_flasku" class="header-link">#</a>
+<a href="#testovani_aplikaci_ve_flasku" class="header-link">#</a>
 </h2>
 <p>Pro testování aplikací ve Flasku se
 <a href="http://flask.pocoo.org/docs/1.0/testing/">používá</a> <code>app.test_client()</code>:</p>
@@ -484,7 +484,7 @@ z requests.
 Proto nelze použít přímo <code>response.text</code>; text dostaneme pomocí
 <code>response.get_data(as_text=True)</code>.</p>
 <h2 id="testovani_aplikaci_v_clicku">Testování aplikací v clicku
-<a href="#header-testovani_aplikaci_v_clicku" class="header-link">#</a>
+<a href="#testovani_aplikaci_v_clicku" class="header-link">#</a>
 </h2>
 <p>Podobně funguje <a href="http://click.pocoo.org/6/testing/">testování aplikací v clicku</a>.
 Click obsahuje třídu <code>CliRunner</code>, která pomáhá s testováním:</p>
@@ -496,7 +496,7 @@ Click obsahuje třídu <code>CliRunner</code>, která pomáhá s testováním:</
     <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">exit_code</span> <span class="o">==</span> <span class="mi">0</span>
     <span class="k">assert</span> <span class="s1">&#39;forced update&#39;</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">output</span>
 </pre></div><h2 id="kam_dat_testy">Kam dát testy?
-<a href="#header-kam_dat_testy" class="header-link">#</a>
+<a href="#kam_dat_testy" class="header-link">#</a>
 </h2>
 <p><a href="http://doc.pytest.org/en/latest/goodpractices.html#choosing-a-test-layout-import-rules">Dokumentace pytestu</a>
 uvádí dvě možnosti, kam dát adresář s testy. Buď vedle adresáře s modulem:</p>
@@ -526,7 +526,7 @@ protože by tam kolidovaly s ostatními testy z jiných balíčků.</p>
 <p>Případné soubory potřebné k testování bývá zvykem dávat do složky <code>fixtures</code> ve
 složce s testy.</p>
 <h2 id="spousteni_testu_pomoci_codesetuppy_testcode">Spouštění testů pomocí <code>setup.py test</code>
-<a href="#header-spousteni_testu_pomoci_codesetuppy_testcode" class="header-link">#</a>
+<a href="#spousteni_testu_pomoci_codesetuppy_testcode" class="header-link">#</a>
 </h2>
 <p>Standardně se testy v Pythonu nespouští pomocí <code>python -m pytest</code>, ale
 <code>python setup.py test</code>, což funguje i s jinými nástroji než je pytest.
@@ -549,7 +549,7 @@ podporovat další argumenty pytestu (jako <code>-v</code>).
 Na to uživatel spustí pytest samotný.</p>
 <p>Další informace jsou v <a href="http://doc.pytest.org/en/latest/goodpractices.html#integrating-with-setuptools-python-setup-py-test-pytest-runner">dokumentaci pytestu</a>.</p>
 <h2 id="travis_ci">Travis CI
-<a href="#header-travis_ci" class="header-link">#</a>
+<a href="#travis_ci" class="header-link">#</a>
 </h2>
 <p>Vaše testy nemusí běžet jen u vás na počítači, ale můžete je pouštět automaticky
 na službě Travis CI při každém pushnutí na GitHub.</p>
@@ -560,38 +560,38 @@ můžete i tuto verzi využít zdarma.</p>
 Pak opět vpravo nahoře zvolte <a href="https://travis-ci.com/profile">Accounts</a>
 a povolte Travis pro váš repozitář.</p>
 <p>Do repozitáře přidejte soubor <code>.travis.yml</code>:</p>
-<div class="highlight"><pre><span></span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span><span class="w"></span>
-<span class="nt">python</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;3.6&#39;</span><span class="w"></span>
-<span class="nt">install</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python setup.py install</span><span class="w"></span>
-<span class="nt">script</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python setup.py test</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span>
+<span class="nt">python</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;3.6&#39;</span>
+<span class="nt">install</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python setup.py install</span>
+<span class="nt">script</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python setup.py test</span>
 </pre></div><p>Uvedený příklad je pro Python 3.6.
 Pro Python 3.7 je třeba nastavit novější verzi Ubuntu:</p>
-<div class="highlight"><pre><span></span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span><span class="w"></span>
-<span class="nt">python</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;3.7&#39;</span><span class="w"></span>
-<span class="nt">dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xenial</span><span class="w"></span>
-<span class="nt">install</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python setup.py install</span><span class="w"></span>
-<span class="nt">script</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python setup.py test</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span>
+<span class="nt">python</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;3.7&#39;</span>
+<span class="nt">dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xenial</span>
+<span class="nt">install</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python setup.py install</span>
+<span class="nt">script</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python setup.py test</span>
 </pre></div><p>Verze Pythonu lze kombinovat:</p>
-<div class="highlight"><pre><span></span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span><span class="w"></span>
-<span class="nt">python</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;3.6&#39;</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;3.7&#39;</span><span class="w"></span>
-<span class="nt">dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xenial</span><span class="w"></span>
-<span class="nt">install</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python setup.py install</span><span class="w"></span>
-<span class="nt">script</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python setup.py test</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span>
+<span class="nt">python</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;3.6&#39;</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;3.7&#39;</span>
+<span class="nt">dist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xenial</span>
+<span class="nt">install</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python setup.py install</span>
+<span class="nt">script</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python setup.py test</span>
 </pre></div><p>Po pushnutí by se na Travisu měl automaticky spustit test.
 Více informací o použití pro Python najdete
 v <a href="https://docs.travis-ci.com/user/languages/python/">dokumentaci</a>.</p>
 <h2 id="kviz">Kvíz
-<a href="#header-kviz" class="header-link">#</a>
+<a href="#kviz" class="header-link">#</a>
 </h2>
 <p>Co je špatně na této testovací sadě k funkci <code>is_even()</code>?</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>

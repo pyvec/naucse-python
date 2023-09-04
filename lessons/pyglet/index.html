@@ -1,5 +1,5 @@
 <h1 id="grafika">Grafika
-<a href="#header-grafika" class="header-link">#</a>
+<a href="#grafika" class="header-link">#</a>
 </h1>
 <p>Dnes si ukážeme, jak s Pythonem napsat grafickou aplikaci.</p>
 <p>Použijeme knihovnu, která není zabudovaná přímo
@@ -8,7 +8,7 @@ Musíme si ji nejdřív nainstalovat a na to použijeme
 v zapnutém virtualenvu modul <code>pip</code> –
 konkrétně příkaz <code>python -m pip install pyglet</code>.
 U mě vypadá instalace nějak takto:</p>
-<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>python -m pip install pyglet
+<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pyglet
 <span class="go">Collecting pyglet</span>
 <span class="go">  Downloading pyglet-1.2.4-py3-none-any.whl (964kB)</span>
 <span class="go">Installing collected packages: pyglet</span>
@@ -28,7 +28,7 @@ Než do okýnka začneme kreslit obrázky, nepořádek
 uklidíme.</p>
 </div><p>Hotovo? Pojďme si vysvětlit, co se tu vlastně děje.</p>
 <h2 id="interaktivni_programy">Interaktivní programy
-<a href="#header-interaktivni_programy" class="header-link">#</a>
+<a href="#interaktivni_programy" class="header-link">#</a>
 </h2>
 <p>Podívejme se ještě jednou, jak zhruba vypadá hlavní
 program pro Piškvorky, který jsme napsali
@@ -93,7 +93,7 @@ Napíše se to jednou a dobře, zabalí se to jako tzv.
 <em>knihovna</em> (angl. <em>library</em>)
 a ostatní to pak můžou používat.</p>
 <h2 id="pyglet_">Pyglet 🐷
-<a href="#header-pyglet_" class="header-link">#</a>
+<a href="#pyglet_" class="header-link">#</a>
 </h2>
 <p>Jedna z takových knihoven je Pyglet.
 Obsahuje kromě smyčky událostí taky funkce na
@@ -117,7 +117,7 @@ Po zavření okna skončí smyčka událostí
 (funkce <code>pyglet.app.run()</code>)
 a program může pokračovat.</p>
 <h2 id="text">Text
-<a href="#header-text" class="header-link">#</a>
+<a href="#text" class="header-link">#</a>
 </h2>
 <p>Klávesa <kbd>Esc</kbd> není příliš zajímavá.
 Zkusme reagovat i na jiné klávesy.</p>
@@ -171,7 +171,7 @@ vhodný argument <code>text</code>.
 Proto Pygletu dáme samotnou funkci, kterou bude sám
 volat, kdykoli uživatel stiskne klávesu.</p>
 <h2 id="cas_">Čas ⏲
-<a href="#header-cas_" class="header-link">#</a>
+<a href="#cas_" class="header-link">#</a>
 </h2>
 <p>Ještě jednu událost zpracujme, než se přesuneme ke grafice.</p>
 <p>Bude to takzvaný <em>tik</em> hodin
@@ -209,7 +209,7 @@ mozek si je spojí a vznikne iluze plynulého pohybu.
 Většina filmů používá jen 24 obrázků za vteřinu;
 realistické 3D hry až 60.</p>
 </div><h2 id="vykreslovani_">Vykreslování 🖌
-<a href="#header-vykreslovani_" class="header-link">#</a>
+<a href="#vykreslovani_" class="header-link">#</a>
 </h2>
 <p><img src="naucse:static?filename=had.png" alt="" style="display:block;float:right;"></p>
 <p>Program, který vypisuje na terminál spoustu čísel,
@@ -287,7 +287,7 @@ takhle najednou.</li>
 kterou Pyglet volá z <code>on_draw</code>.
 Jinde funkce jako <code>clear</code> a <code>draw</code> nebudou fungovat správně.</p>
 <h2 id="animace">Animace
-<a href="#header-animace" class="header-link">#</a>
+<a href="#animace" class="header-link">#</a>
 </h2>
 <p>Pojď si teď se Spritem trochu pohrát.</p>
 <p>Do funkce <code>zpracuj_text</code> dej místo printu tento příkaz:</p>
@@ -311,7 +311,7 @@ a nech obrázek, ať se pohybuje podle nějaké funkce:</p>
 </pre></div><p>Co se stane, když začneš měnit ta čísla?</p>
 <p>Co se stane, když zkusíš podobně nastavovat atribut <code>rotation</code>?</p>
 <h2 id="zavolej_pozdeji">Zavolej později
-<a href="#header-zavolej_pozdeji" class="header-link">#</a>
+<a href="#zavolej_pozdeji" class="header-link">#</a>
 </h2>
 <p><img src="naucse:static?filename=had2.png" alt="" style="display:block;float:right;"></p>
 <p>Pyglet umí kromě opakovaného „tikání“ zavolat funkci
@@ -340,7 +340,7 @@ nahradit tímhle:</p>
     <span class="n">had</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">obrazek</span>
     <span class="n">pyglet</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">schedule_once</span><span class="p">(</span><span class="n">zmen</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
 </pre></div><h2 id="klik_">Klik 🐭
-<a href="#header-klik_" class="header-link">#</a>
+<a href="#klik_" class="header-link">#</a>
 </h2>
 <p>Poslední věc, na kterou se tady naučíme reagovat, je klikání.
 Těsně před <code>window.push_handlers</code> napiš funkci:</p>
@@ -358,7 +358,7 @@ Kdykoliv budeš chtít zjistit nějakou hodnotu, prostě si ji vypiš.</li>
 <li>Jak se projeví <kbd>Shift</kbd>+klik?</li>
 </ul>
 </div><h2 id="pokracovani_priste">Pokračování příště
-<a href="#header-pokracovani_priste" class="header-link">#</a>
+<a href="#pokracovani_priste" class="header-link">#</a>
 </h2>
 <p>Koukám že kódu už je dnes tak akorát na ukončení lekce:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>

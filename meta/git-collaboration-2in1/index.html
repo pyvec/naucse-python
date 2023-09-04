@@ -1,5 +1,5 @@
 <h1 id="spoluprace_a_git">Spolupráce a Git
-<a href="#header-spoluprace_a_git" class="header-link">#</a>
+<a href="#spoluprace_a_git" class="header-link">#</a>
 </h1>
 <p>„Opravdové” programy zřídka vznikají prací jednoho člověka. Víc hlav víc ví, a tak je dobré si na projekt vytvořit tým.
 Každý člen týmu potřebuje mít přístup k práci ostatních. Jak ale zařídit to, aby několik lidí mohlo najednou upravovat
@@ -15,7 +15,7 @@ Spolupráce a sdílení kódu je spjato s programováním od nepaměti, už od p
 Tohle přepoužívání se postupně vyvinulo do fenoménu <em>open-source</em> a <em>svobodného softwaru</em>.</p>
 <p>Dnes si vyzkoušíme, jak spolupracovat s mnoha programátory na jednom projektu pomocí verzovacího nástroje <em>Git</em> a služby <em>GitHub</em>.</p>
 <h2 id="git_a_github">Git a GitHub
-<a href="#header-git_a_github" class="header-link">#</a>
+<a href="#git_a_github" class="header-link">#</a>
 </h2>
 <p>Představte si, že jste už napsali větší Python program, který je už kvůli složitosti a velikosti rozdělen do více souborů.
 Takové složce s kódem říkáme repozitář.
@@ -42,7 +42,7 @@ Další kopie na GitHubu je „vaše” a můžete si do ní nahrát cokoliv
 A třetí kopii repozitáře máte u sebe na počítači.</p>
 <p><img src="naucse:static?filename=gh-workflow-diagram.svg" alt="Git workflow"></p>
 <h3 id="prace_s_lokalnim_repozitarem">Práce s lokálním repozitářem
-<a href="#header-prace_s_lokalnim_repozitarem" class="header-link">#</a>
+<a href="#prace_s_lokalnim_repozitarem" class="header-link">#</a>
 </h3>
 <p>Než budeme schopní poslat nějaké změny k začlenění do našeho vybraného projektu, musíme se naučit, jak se s Gitem pracuje.
 Co je to vlastně ten zmíněný <em>repozitář</em>? Můžeme ho vytvořit z jakéhokoliv adresáře na disku, kde máme uložené soubory, 
@@ -56,13 +56,13 @@ jen Gitu řekneme, že z něj chceme ten repozitář udělat. To má za následe
 <p>Budeme hodně pracovat s příkazovou řádkou. Jestli se s ní ještě nekamarádíš, koukni se na <a href="naucse:page?lesson=beginners/cmdline">úvod</a>.
 Nezapomeň: $ na začátku se nepíše; je tu proto, aby šlo poznat, že jde o příkaz.</p>
 </div><p>Naším dnešním cílem je ale přispět do projektu, který založil někdo jiný. Proto použijeme příkaz <code>git clone</code> ke stažení vzdáleného repozitáře.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git clone https://github.com/asgeirrr/prezencka
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/asgeirrr/prezencka
 </pre></div><p>V aktuálním adresáři se nám vytvořil podadresář <code>prezencka</code>, který obsahuje všechny soubory, které vidíme ve webovém rozhraní na <a href="https://github.com/asgeirrr/prezencka">GitHubu</a>.</p>
 <h4 id="stav_repozitare_codegit_statuscode">Stav repozitáře (<code>git status</code>)
-<a href="#header-stav_repozitare_codegit_statuscode" class="header-link">#</a>
+<a href="#stav_repozitare_codegit_statuscode" class="header-link">#</a>
 </h4>
 <p>Velmi často potřebujeme zjistit současný stav repozitáře. Navigujte v příkazové řádce do adresáře <code>prezencka</code> a zadejte <code>git status</code>. Git nám odpoví:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git status
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>status
 <span class="go">On branch master</span>
 <span class="go">Your branch is up-to-date with &#39;origin/master&#39;.</span>
 <span class="go">nothing to commit, working tree clean</span>
@@ -73,7 +73,7 @@ Nezapomeň: $ na začátku se nepíše; je tu proto, aby šlo poznat, že jde o 
 <li>Že jsme neudělali žádné změny oproti poslední verzi souborů, což je pravda.</li>
 </ol>
 <h4 id="prvni_revize_codegit_commitcode">První revize (<code>git commit</code>)
-<a href="#header-prvni_revize_codegit_commitcode" class="header-link">#</a>
+<a href="#prvni_revize_codegit_commitcode" class="header-link">#</a>
 </h4>
 <p>Už jsme několikrát zmínili, že Git je verzovací systém. Jak že to ale soubory verzuje? 
 V podstatě mu musíme dát příkaz, aby zmrazil současný stav repozitáře, tzv. vytvořit <em>revizi</em>.
@@ -81,7 +81,7 @@ Pak můžeme dělat další změny, ale už vždy budeme schopni se k této revi
 <p>Přidejte do adresáře <code>prezencka</code> soubor <code>vase_jmeno.txt</code>, např. tedy <code>magdalena_rettigova.txt</code>
 a do něj napište svoje současné povolání nebo cokoliv jiného.
 Zkontrolujte současný stav repozitáře pomocí <code>git status</code>: Git oznámí, že v adresáři je soubor, o kterém ještě „neví“.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git status
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>status
 <span class="go">On branch master</span>
 <span class="go">Your branch is up-to-date with &#39;origin/master&#39;.</span>
 <span class="go">Untracked files:</span>
@@ -91,9 +91,9 @@ Zkontrolujte současný stav repozitáře pomocí <code>git status</code>: Git o
 
 <span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
 </pre></div><p>U každého nového souboru musíme Gitu říct, že chceme jeho obsah sledovat. Proveďte to se svým souborem:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git add magdalena_rettigova.txt
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>magdalena_rettigova.txt
 </pre></div><p>a znovu zkontrolujte stav repozitáře:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git status
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>status
 <span class="go">On branch master</span>
 <span class="go">Your branch is up-to-date with &#39;origin/master&#39;.</span>
 <span class="go">Changes to be committed:</span>
@@ -101,13 +101,13 @@ Zkontrolujte současný stav repozitáře pomocí <code>git status</code>: Git o
 
 <span class="go">        new file:   magdalena_rettigova.txt</span>
 </pre></div><p>To, co je zelené („changes to be committed“), se přidá do další revize (angl. commit), kterou vytvoříme. Pojďme tedy vytvořit revizi:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git commit
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>commit
 </pre></div><p>Po zadání tohoto příkazu se otevře editor, do kterého je nutné napsat výstižný popis změn, 
 abyste vy i ostatní programátoři věděli, co tahle revize obsahuje za změny.
 Např. tedy <code>Přidáno mé jméno a povolání</code>. Předvyplněné řádky začínající # můžeme nechat být
 (nebo vymazat, podle chuti – Git je ignoruje).
 Pak soubor uložíme a zavřeme editor.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git status
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>status
 <span class="go">On branch master</span>
 <span class="go">Your branch is ahead of &#39;origin/master&#39; by 1 commit.</span>
 <span class="go">  (use &quot;git push&quot; to publish your local commits)</span>
@@ -115,12 +115,12 @@ Pak soubor uložíme a zavřeme editor.</p>
 </pre></div><p>Pro lepší pochopení, co dělají jednotlivé příkazy a v jakém stavu můžou být soubory/změny, přikládáme tento diagram:</p>
 <p><img src="naucse:static?filename=diagram.png" alt="Git workflow"></p>
 <h4 id="log_codegit_logcode">Log (<code>git log</code>)
-<a href="#header-log_codegit_logcode" class="header-link">#</a>
+<a href="#log_codegit_logcode" class="header-link">#</a>
 </h4>
 <p>Teď, když za sebou máme první revizi, podívejme se, jak vypadá historie repozitáře, do kterého chceme přispívat.
 K tomu můžeme použít příkaz <code>git log</code>, jako první uvidíme naši poslední změnu a další jsou změny od jiných autorů,
 na které navazujeme.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git log
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>log
 <span class="go">commit 0bdfbb2a2398fea179395a8dd303e9f672ef4dca</span>
 <span class="go">Author: Magdalena Dobromila &lt;magdalena@rettigova.cz&gt;</span>
 <span class="go">Date:   Tue Mar 28 19:27:08 2017 +0200</span>
@@ -138,7 +138,7 @@ na které navazujeme.</p>
 </pre></div><p>V logu se pohybujeme šipkami a když z něj chceme vyskočit zpět, stiskneme <code>q</code> jako quit.
 Příkaz <code>git log</code> má mnoho přepínačů, přehlednější historii změn můžeme získat pomocí <code>git log --oneline --graph --decorate</code>.</p>
 <h2 id="open-source_a_free_software">Open-source a Free software
-<a href="#header-open-source_a_free_software" class="header-link">#</a>
+<a href="#open-source_a_free_software" class="header-link">#</a>
 </h2>
 <p>Dejme si menší pauzu na zažití základní práce s lokálním repozitářem.
 Nejde mluvit o Gitu a spolupráci a nezastavit se chvíli u otevřeného zdrojového kódu.
@@ -188,11 +188,11 @@ Licence projektu většinou najdete v souboru <code>LICENCE</code>.
 Na kód neuvolněný pod svobodnou licencí se automaticky vztahuje copyright a ostatní ho nemohou volně sdílet.</p>
 <p>Informace o open-source licencích najdete např. na <a href="https://choosealicense.com">choosealicence.com</a>, případně <a href="https://creativecommons.org">creativecommons.org</a> a <a href="https://opensource.org">opensource.org</a>.</p>
 <h2 id="spoluprace_na_projektu">Spolupráce na projektu
-<a href="#header-spoluprace_na_projektu" class="header-link">#</a>
+<a href="#spoluprace_na_projektu" class="header-link">#</a>
 </h2>
 <p>Nyní se posuneme ke sdílení revize, kterou jsme vytvořili, a ke stažení revizí od ostatních přispěvatelů.</p>
 <h3 id="posilani_zmen_codegit_pushcode">Posílání změn (<code>git push</code>)
-<a href="#header-posilani_zmen_codegit_pushcode" class="header-link">#</a>
+<a href="#posilani_zmen_codegit_pushcode" class="header-link">#</a>
 </h3>
 <p>Nyní stačí požádat autora projektu, aby naše změny začlenil do repozitáře na GitHubu 
 a všichni uživatelé projektu, na kterém pracujeme, budou mít užitek z našich změn.
@@ -205,26 +205,26 @@ adresa by měla být něco jako <code>https://github.com/tvojejmeno/prezencka</c
 <p>A teď, jak nahrát změny z našeho počítače na GitHub? Git si u každého repozitáře na našem počítači pamatuje adresy, 
 odkud se dají stahovat a kam se dají posílat změny. 
 Seznam těchto adres nám ukáže příkaz <code>git remote -v</code>. Třeba:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git remote -v
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>remote<span class="w"> </span>-v
 <span class="go">origin  https://github.com/asgeirrr/prezencka (fetch)</span>
 <span class="go">origin  https://github.com/asgeirrr/prezencka (push)</span>
 </pre></div><p>Tenhle výstup znamená, že pod zkratkou <em>origin</em> se schovává adresa, ze které jsme repozitář naklonovali.</p>
 <p>Přidejme si podobnou zkratku pro vlastní repozitář na GitHubu. Můžeme ho pojmenovat např. <em>moje</em>
 nebo svým uživatelským jménem na GitHubu,
 aby nám bylo jasné, že je to ten náš, do kterého můžeme nahrávat změny.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git remote add tvojejmeno https://github.com/tvojejmeno/prezencka
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>tvojejmeno<span class="w"> </span>https://github.com/tvojejmeno/prezencka
 </pre></div><p>Zkontrolujme, že se nám to povedlo:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git remote -v
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>remote<span class="w"> </span>-v
 <span class="go">origin  https://github.com/asgeirrr/prezencka (fetch)</span>
 <span class="go">origin  https://github.com/asgeirrr/prezencka (push)</span>
 <span class="go">tvojejmeno  https://github.com/tvojejmeno/prezencka (fetch)</span>
 <span class="go">tvojejmeno  https://github.com/tvojejmeno/prezencka (push)</span>
 </pre></div><p>Tolik k nastavení ‒ <code>git remote add</code> stačí udělat jednou pro každý repozitář. Pak už můžeme změny nahrávat pomocí:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git push tvojejmeno master
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>push<span class="w"> </span>tvojejmeno<span class="w"> </span>master
 </pre></div><p>což znamená: pošli na adresu uloženou pod zkratkou <code>tvojejmeno</code> větev <code>master</code>.</p>
 <p>Funguje? Můžeme se podívat na <code>https://github.com/tvojejmeno/prezencka</code> v prohlížeči a ujistit se, že tam změny jsou.</p>
 <h3 id="zadost_o_zacleneni_pull_request">Žádost o začlenění (pull request)
-<a href="#header-zadost_o_zacleneni_pull_request" class="header-link">#</a>
+<a href="#zadost_o_zacleneni_pull_request" class="header-link">#</a>
 </h3>
 <p>Teď zbývá požádat autory původního projektu, aby změny z tvého sdíleného repozitáře přidali do svojí kopie. 
 GitHub na to má vlastní mechanismus zvaný <em>pull request</em> (žádost o začlenění).</p>
@@ -237,10 +237,10 @@ Po kliknutí na tlačítko můžeme doplnit popis toho, co tahle změna obnáš�
 <p>Procházíte-li materiály z domu, musíte počkat, než si někdo žádosti všimne a začlení ji.
 To může trvat i pár dní; kdyby to bylo přes týden, tak se zkuste se ozvat znovu.</p>
 </div><h3 id="aktualizace_codegit_pullcode">Aktualizace (<code>git pull</code>)
-<a href="#header-aktualizace_codegit_pullcode" class="header-link">#</a>
+<a href="#aktualizace_codegit_pullcode" class="header-link">#</a>
 </h3>
 <p>Když budou změny od všech účastníků začleněné, můžeme si aktualizovat repozitář, který máme u sebe na počítači. Příkaz</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git pull origin master
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>master
 </pre></div><p>stáhne změny z větve „master” z adresy pod zkratkou „origin”.
 Pomocí <code>git log</code> se můžeme podívat, jak se projekt mezitím vyvinul.</p>
 <p>Kruh se uzavřel, jsme schopni začlenit do projektu vlastní změny a naopak si stáhnout změny od ostatních. 

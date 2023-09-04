@@ -1,5 +1,5 @@
 <h1 id="hra_typu_asteroids">Hra typu Asteroids
-<a href="#header-hra_typu_asteroids" class="header-link">#</a>
+<a href="#hra_typu_asteroids" class="header-link">#</a>
 </h1>
 <p>Dnes to všechno – třídy, grafiku, seznamy, a tak dále –
 spojíme dohromady do závěrečného projektu.
@@ -18,7 +18,7 @@ něco s čím si nebudeš vědět rady.
 Kdyby se to stalo, prosím, ozvi se nám!
 Rádi ti s projektem pomůžeme.</p>
 </div><h2 id="vesmirna_lod">Vesmírná loď
-<a href="#header-vesmirna_lod" class="header-link">#</a>
+<a href="#vesmirna_lod" class="header-link">#</a>
 </h2>
 <p>První krok bude naprogramovat vesmírnou loď, která půjde ovládat klávesnicí.</p>
 <ul>
@@ -143,7 +143,7 @@ takže si zatím jen zkopíruj kód:</p>
 Čas to všechno dát do Gitu!</p>
 <p>Projdi si předchozí body, jestli máš opravdu všechno, a můžeš pokračovat dál!</p>
 <h2 id="asteroidy">Asteroidy
-<a href="#header-asteroidy" class="header-link">#</a>
+<a href="#asteroidy" class="header-link">#</a>
 </h2>
 <p>Přidej druhý typ vesmírného objektu: <code>Asteroid</code>.</p>
 <ul>
@@ -178,7 +178,7 @@ na začátku do hry.</li>
 <p>Zase si projdi, jestli máš všechno hotové,
 a jdeme na další část!</p>
 <h2 id="kolize">Kolize
-<a href="#header-kolize" class="header-link">#</a>
+<a href="#kolize" class="header-link">#</a>
 </h2>
 <p>Naše asteroidy jsou zatím docela neškodné. Pojďme to změnit.</p>
 <ul>
@@ -216,14 +216,14 @@ zavolej na objektu metodu <code>hit_by_spaceship</code>.</p>
 <a href="https://en.wikipedia.org/wiki/Wraparound_%28video_games%29">objekty které vyletí ven vrací na druhé straně</a>,
 není úplně přímočaré, takže si příslušný kód pro teď jen zkopíruj:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">wrap_size</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Distance in one direction (x or y)&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Distance in one direction (x or y)&quot;&quot;&quot;</span>
     <span class="n">result</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">result</span> <span class="o">&gt;</span> <span class="n">wrap_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">wrap_size</span> <span class="o">-</span> <span class="n">result</span>
     <span class="k">return</span> <span class="n">result</span>
 
 <span class="k">def</span> <span class="nf">overlaps</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns true iff two space objects overlap&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns true iff two space objects overlap&quot;&quot;&quot;</span>
     <span class="n">distance_squared</span> <span class="o">=</span> <span class="p">(</span><span class="n">distance</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">width</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span>
                         <span class="n">distance</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">height</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">max_distance_squared</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">radius</span> <span class="o">+</span> <span class="n">b</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
@@ -243,7 +243,7 @@ Metoda <code>hit_by_spaceship</code> by tedy na to měla mít argument.</p>
 <p>Povedlo se? Konečně se dá prohrát?
 Čas to všechno zkontrolovat, dát do Gitu a můžeme pokračovat!</p>
 <h2 id="utok">Útok
-<a href="#header-utok" class="header-link">#</a>
+<a href="#utok" class="header-link">#</a>
 </h2>
 <p>Teď zkusíme asteroidy rozbíjet.</p>
 <ul>
@@ -277,7 +277,7 @@ Většinou bývají nové asteroidy rychlejší než ten původní.</p>
 </ul>
 <p>Povedlo se? Dá se i vyhrát? Čas to všechno dát do Gitu!</p>
 <h2 id="dokonceni_a_rozsireni">Dokončení a rozšíření
-<a href="#header-dokonceni_a_rozsireni" class="header-link">#</a>
+<a href="#dokonceni_a_rozsireni" class="header-link">#</a>
 </h2>
 <p>Chceš-li ve hře pokračovat, tady jsou další nápady.
 Můžeš je dělat v jakémkoli pořadí – nebo si vymysli

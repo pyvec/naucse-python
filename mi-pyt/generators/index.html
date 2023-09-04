@@ -1,11 +1,11 @@
 <h1 id="generatory">Generátory
-<a href="#header-generatory" class="header-link">#</a>
+<a href="#generatory" class="header-link">#</a>
 </h1>
 <p>Dnes si popíšeme, jak v Pythonu fungují <em>generátory</em>, tedy funkce s příkazem <code>yield</code>.
 Někteří z vás možná už nějaký jednoduchý generátor napsali, ale pojďme si je
 vysvětlit od úplného začátku: od toho, jak se v Pythonu iteruje.</p>
 <h2 id="iterace">Iterace
-<a href="#header-iterace" class="header-link">#</a>
+<a href="#iterace" class="header-link">#</a>
 </h2>
 <p>Když je v Pythonu potřeba iterovat (např. příkazem <code>for</code>) přes nějakou kolekci
 (seznam, řetězec, soubor, …), použije se <em>iterační protokol</em>,
@@ -26,11 +26,11 @@ Po vyčerpání iterátoru způsobuje <code>next()</code> výjimku <code>StopIte
 <span class="go">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-  <span class="c">...</span>
+<span class="w">  </span><span class="c">...</span>
 <span class="gr">StopIteration</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-  <span class="c">...</span>
+<span class="w">  </span><span class="c">...</span>
 <span class="gr">StopIteration</span>
 </pre></div><p>Cyklus <code>for x in collection: ...</code> tedy dělá něco jako:</p>
 <div class="highlight"><pre><span></span><span class="n">iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">collection</span><span class="p">)</span>
@@ -53,14 +53,14 @@ objekt a aktuální pozici. Příklady jsou iterátory seznamů (<code>iter([])<
 <p>Iterátory ale můžou být i „větší“: třeba otevřený soubor je iterátor, z něhož <code>next()</code>
 načítá jednotlivé řádky.</p>
 <h2 id="generatory">Generátory
-<a href="#header-generatory" class="header-link">#</a>
+<a href="#generatory" class="header-link">#</a>
 </h2>
 <p>Asi nejzajímavější druh iterátoru je tzv. <em>generátor</em>: funkce, která umí postupně
 dávat k dispozici hodnoty.
 Definuje se pomocí klíčového slova <code>yield</code>: každá funkce, která obsahuje <code>yield</code>,
 je <em>generátorová funkce</em> (angl. <em>generator function</em>).</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate2</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;generates 2 numbers&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;generates 2 numbers&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
     <span class="k">yield</span> <span class="mi">0</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
@@ -83,10 +83,10 @@ zastavena.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
 <span class="go">C</span>
 <span class="gt">Traceback (most recent call last):</span>
-  <span class="c">...</span>
+<span class="w">  </span><span class="c">...</span>
 <span class="gr">StopIteration</span>
 </pre></div><h2 id="dalsi_pouziti_generatoru">Další použití generátorů
-<a href="#header-dalsi_pouziti_generatoru" class="header-link">#</a>
+<a href="#dalsi_pouziti_generatoru" class="header-link">#</a>
 </h2>
 <p>Vlastnost přerušit provádění funkce je velice užitečná nejen pro vytváření
 sekvencí, ale má celou řadu dalších užití.
@@ -108,14 +108,14 @@ dál a vše po <code>yield</code> se provede na konci.
 Můžeme si představit, že místo <code>yield</code> se „doplní“ obsah bloku <code>with</code>.
 Funkce se tam na chvíli zastaví a může se tedy provádět něco jiného.</p>
 <h2 id="vraceni_hodnot_z_generatoru">Vracení hodnot z generátorů
-<a href="#header-vraceni_hodnot_z_generatoru" class="header-link">#</a>
+<a href="#vraceni_hodnot_z_generatoru" class="header-link">#</a>
 </h2>
 <p>V rámci generátorové funkce můžeme použít i <code>return</code>, který funkci ukončí.
 Vrácená hodnota se však při normální iteraci (např. ve <code>for</code>) nepoužije.
 Objeví se pouze jako hodnota výjimky <code>StopIteration</code>, která signalizuje konec
 iterace:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generator</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Yield two numbers and return their sum&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Yield two numbers and return their sum&quot;&quot;&quot;</span>
     <span class="k">yield</span> <span class="n">a</span>
     <span class="k">yield</span> <span class="n">b</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
@@ -129,7 +129,7 @@ iterace:</p>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
 <span class="gr">StopIteration</span>: <span class="n">5</span>
 </pre></div><h2 id="obousmerna_komunikace">Obousměrná komunikace
-<a href="#header-obousmerna_komunikace" class="header-link">#</a>
+<a href="#obousmerna_komunikace" class="header-link">#</a>
 </h2>
 <p>Oproti normálním iterátorům, které hodnoty jen poskytují, mají generátory metodu
 <code>send()</code>, kterou je možné posílat hodnoty <em>do</em> běžícího generátoru.
@@ -182,7 +182,7 @@ Pokud generátor tuto výjimku chytá, měl by se co nejdřív ukončit.
 <span class="go">RuntimeError: generator ignored GeneratorExit</span>
 <span class="go">0</span>
 </pre></div><h2 id="delegace_na_podgenerator_codeyield_fromcode">Delegace na podgenerátor – <code>yield from</code>
-<a href="#header-delegace_na_podgenerator_codeyield_fromcode" class="header-link">#</a>
+<a href="#delegace_na_podgenerator_codeyield_fromcode" class="header-link">#</a>
 </h2>
 <p>Máme následující generátor:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dance</span><span class="p">():</span>

@@ -1,5 +1,5 @@
 <h1 id="deployment_webovych_aplikaci_na_pythonanywhere">Deployment webových aplikací na PythonAnywhere
-<a href="#header-deployment_webovych_aplikaci_na_pythonanywhere" class="header-link">#</a>
+<a href="#deployment_webovych_aplikaci_na_pythonanywhere" class="header-link">#</a>
 </h1>
 <p><a href="https://www.pythonanywhere.com/">PythonAnywhere</a> je pro limitované použití zdarma.</p>
 <p>K posílání kódu na produkční prostředí budeme používat Git.
@@ -14,9 +14,9 @@ případně další závislosti nebo jiný webový framework).</p>
 tak je ve webové konzoli potřeba použít jiný příkaz
 na vytvoření virtuální prostředí, než jste z toho kurzu zvyklí.
 Napište příkazy takto (bez úvodního <code>$</code>):</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>virtualenv --python<span class="o">=</span>python3.7 __venv__
-<span class="gp">$ </span>. __venv__/bin/activate
-<span class="gp">$ </span>python -m pip install flask
+<div class="highlight"><pre><span></span><span class="gp">$ </span>virtualenv<span class="w"> </span>--python<span class="o">=</span>python3.7<span class="w"> </span>__venv__
+<span class="gp">$ </span>.<span class="w"> </span>__venv__/bin/activate
+<span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>flask
 </pre></div><div class="admonition note"><p>Pokud máte na PythonAnywhere starší účet, možná tam Python 3.7 nenajdete.
 Můžete použít Python 3.6, nemělo by to vadit, protože tento návod je
 koncipován tak, aby s touto verzí také fungoval.
@@ -26,12 +26,12 @@ image</a>.</p>
 S veřejným repozitářem je to jednodušší – stačí ho naklonovat „anonymně”
 (<code>git clone https://github.com/&lt;github-username&gt;/&lt;github-repo&gt;</code>).
 Pokud ale používáme privátní repozitář, bude potřeba si vygenerovat SSH klíč:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ssh-keygen  <span class="c1"># (zeptá se na hesla ke klíči)</span>
-<span class="gp">$ </span>cat ~/.ssh/id_rsa.pub
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ssh-keygen<span class="w">  </span><span class="c1"># (zeptá se na hesla ke klíči)</span>
+<span class="gp">$ </span>cat<span class="w"> </span>~/.ssh/id_rsa.pub
 </pre></div><p>Obsah souboru <code>~/.ssh/id_rsa.pub</code> je pak potřeba přidat na GitHub v osobním
 nastavení v sekci "SSH and GPG Keys".
 Pak můžete klonovat přes SSH:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git clone git@github.com:&lt;github-username&gt;/&lt;github-repo&gt;.git
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:&lt;github-username&gt;/&lt;github-repo&gt;.git
 </pre></div><p>Zbývá nastavit, aby PythonAnywhere tento kód spustil jako webovou aplikaci.</p>
 <p>Přejděte na stránkách PythonAnywhere do <em>Dashboard</em> do záložky <em>Web</em>,
 a vytvořte novou aplikaci.
@@ -59,7 +59,7 @@ vaše údaje. Jméno souboru je zde bez přípony <code>.py</code>.)</p>
 a na adrese <code><var>&lt;uživatelské-jméno&gt;</var>.pythonanywhere.com</code>
 si ji můžete prohlédnout.</p>
 <h3 id="deployment_soukromych_udaju">Deployment soukromých údajů
-<a href="#header-deployment_soukromych_udaju" class="header-link">#</a>
+<a href="#deployment_soukromych_udaju" class="header-link">#</a>
 </h3>
 <p>Protože vaše hesla, tajné klíče apod. nejsou v repozitáři, je nutné je předat
 aplikaci zvlášť.
@@ -75,7 +75,7 @@ k vlastním účtům, raději si vyrobte nějaké účty pouze pro tento účel.
 GitHub povoluje všem vytvořit si jeden účet pro automatické operace, ale
 takový účet musí mít napsané v popisu, že je robot.</p>
 </div><h3 id="aktualizace">Aktualizace
-<a href="#header-aktualizace" class="header-link">#</a>
+<a href="#aktualizace" class="header-link">#</a>
 </h3>
 <p>Když nahrajeme nový kód na GitHub, je vždy potřeba provést na PythonAnywhere
 v konzoli <code>git pull</code> a pak v záložce <em>Web</em> aplikaci restartovat.</p>

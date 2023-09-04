@@ -1,5 +1,5 @@
 <h1 id="zapis_retezcu">Zápis řetězců
-<a href="#header-zapis_retezcu" class="header-link">#</a>
+<a href="#zapis_retezcu" class="header-link">#</a>
 </h1>
 <p>Teď se podíváme na zoubek řetězcům.
 Už s nimi trochu umíš, tak začneme rekapitulací.</p>
@@ -17,7 +17,7 @@ Počítač, na rozdíl od lidí, rozdíl mezi textem a instrukcí nepozná z ko
 a tak je uvozovky potřeba používat důsledně.</p>
 <p><span class="figure"><a href="naucse:static?filename=quote-comic.svg"><img src="naucse:static?filename=quote-comic.svg" alt="(Ilustrační komiks. Člověk říká robotovi: &#34;Řekni Pavlovi, ať mi zavolá!&#34;. Robot odpoví: &#34;PAVLOVI AŤ MI ZAVOLÁ!&#34;)"></a></span></p>
 <h2 id="znaky">Znaky
-<a href="#header-znaky" class="header-link">#</a>
+<a href="#znaky" class="header-link">#</a>
 </h2>
 <p>Texty sestávají z jednotlivých písmenek.
 Řetězce víceméně taky, ale aby bylo jasné, co přesně tím <em>písmenkem</em>
@@ -43,7 +43,7 @@ Je to taky znak. V řetězci se tedy chová stejně jako písmenko:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 <span class="go">0</span>
 </pre></div><h2 id="uvozovky">Uvozovky
-<a href="#header-uvozovky" class="header-link">#</a>
+<a href="#uvozovky" class="header-link">#</a>
 </h2>
 <p>K uvození řetězce můžeš použít jednoduché nebo dvojité rovné uvozovky.
 Není mezi nimi rozdíl.
@@ -63,7 +63,7 @@ výrazů „programátorsky“ – pokud možno tak, jak se zapisují v Pythonu
 Funkce <code>print()</code> vypisuje hodnoty „hezky“, „pro uživatele“ – v případě
 řetězců tedy bez uvozovek.</p>
 </div><h3 id="uvozovky_vuvozovkach">Uvozovky v uvozovkách
-<a href="#header-uvozovky_vuvozovkach" class="header-link">#</a>
+<a href="#uvozovky_vuvozovkach" class="header-link">#</a>
 </h3>
 <p>Proč si při zadávání textu můžeš vybrat mezi dvěma druhy uvozovek?</p>
 <p>Občas se stane, že v rámci textu potřebuješ použít samotnou uvozovku (nebo
@@ -76,14 +76,14 @@ naprosto zmatený.</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Zpívala si: &quot;</span><span class="n">Tralala</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 <span class="go">Traceback (most recent call last)</span>
   File <span class="nb">&quot;&lt;&gt;&quot;</span>, line <span class="m">1</span>
-    <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Zpívala si: &quot;</span><span class="n">Tralala</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-                      <span class="p p-Marker">^</span>
+<span class="w">    </span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Zpívala si: &quot;</span><span class="n">Tralala</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="w">                      </span><span class="pm">^</span>
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div><p>Pokud používáš chytrý editor, doporučuju si zvyknout na to, jakou barvou
 máš řetězce zvýrazněné.
 Často to pomáhá odhalit chybky.</p>
 <h2 id="sekvence_se_zpetnym_lomitkem">Sekvence se zpětným lomítkem
-<a href="#header-sekvence_se_zpetnym_lomitkem" class="header-link">#</a>
+<a href="#sekvence_se_zpetnym_lomitkem" class="header-link">#</a>
 </h2>
 <p>Co dělat, když v řetězci potřebuješ <em>oba</em> druhy uvozovek,
 jako ve větě <code>Vtom vnuk křik': "Hleď!"</code>?</p>
@@ -146,7 +146,7 @@ pomlčkami <code>-</code>. Délka každého řetězce je tedy celkem 3:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-</span><span class="se">\U0001F0BD</span><span class="s1">-&#39;</span><span class="p">)</span>
 <span class="go">-🂽-</span>
 </pre></div><h3 id="zpetne_lomitko">Zpětné lomítko
-<a href="#header-zpetne_lomitko" class="header-link">#</a>
+<a href="#zpetne_lomitko" class="header-link">#</a>
 </h3>
 <p>Zpětné lomítko tedy začíná speciální sekvenci (známou pod anglickým
 termínem <em>escape sequence</em>), kterou zadáš <em>jediný znak</em>.</p>
@@ -158,7 +158,7 @@ Musíš použít speciální sekvenci <code>\\</code> – tedy lomítko zdvojit:
 </pre></div><p>Podobně jako <code>\"</code> je zápis pro uvozovku a <code>\'</code> pro apostrof, sekvence <code>\\</code>
 je zápis pro jedno zpětné lomítko.</p>
 <h3 id="novy_radek">Nový řádek
-<a href="#header-novy_radek" class="header-link">#</a>
+<a href="#novy_radek" class="header-link">#</a>
 </h3>
 <p>Někdy potřebuješ řetězce, které obsahují více řádků.
 Pythonní řetězce ale můžeš normálně napsat jen na <em>jeden</em> řádek.
@@ -177,7 +177,7 @@ jako jakýkoli jiný znak:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;-</span><span class="se">\n</span><span class="s1">-&#39;</span><span class="p">)</span>
 <span class="go">3</span>
 </pre></div><h2 id="trojite_uvozovky">Trojité uvozovky
-<a href="#header-trojite_uvozovky" class="header-link">#</a>
+<a href="#trojite_uvozovky" class="header-link">#</a>
 </h2>
 <p>Kromě <code>\n</code> je i druhý způsob, jak zadat řetězec se znakem nového řádku:
 ohraničit ho <em>třemi</em> uvozovkami (jednoduchými nebo dvojitými)
@@ -199,7 +199,7 @@ několika mezerami.
 <span class="s2">        Číslo je kladné.</span>
 <span class="s2">    &quot;&quot;&quot;</span><span class="p">)</span>
 </pre></div><h2 id="cviceni">Cvičení
-<a href="#header-cviceni" class="header-link">#</a>
+<a href="#cviceni" class="header-link">#</a>
 </h2>
 <p>Jaká je délka těchto řetězců?</p>
 <p>Výsledek zjistíš snadno, zkus se ale zamyslet a Python použít jen pro ověření.</p>

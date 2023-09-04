@@ -1,5 +1,5 @@
 <h1 id="sablony_formatovaci_retezce">Šablony (formátovací řetězce)
-<a href="#header-sablony_formatovaci_retezce" class="header-link">#</a>
+<a href="#sablony_formatovaci_retezce" class="header-link">#</a>
 </h1>
 <p>Řekněme, že chceš uživateli vypsat určitou hodnotu s nějakou „omáčkou“ okolo.
 Dá se na to použít <code>print()</code>, kterému můžeš předat „mix“ řetězců a čísel:</p>
@@ -44,15 +44,15 @@ A aby bylo jasné, že jde o šablonu, před první uvozovky přidej navíc zna�
 <span class="s2">Váš výsledek je </span><span class="si">{</span><span class="n">soucet</span><span class="si">}</span><span class="s2">.</span>
 
 <span class="s2">S pozdravem,</span>
-<span class="si">{</span><span class="n">podpis</span><span class="si">}</span><span class="s2"></span>
+<span class="si">{</span><span class="n">podpis</span><span class="si">}</span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
 </pre></div><p>A nakonec – v šabloně můžeš použít nejen jména proměnných, ale jakékoli výrazy.</p>
-<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hlaska</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Součet je </span><span class="si">{</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="si">}</span><span class="s1">&#39;</span>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hlaska</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Součet je </span><span class="si">{</span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">4</span><span class="si">}</span><span class="s1">&#39;</span>
 </pre></div><p>Ale nepřežeň to!
 Většinou je program přehlednější, když si každou vypisovanou hodnotu zvlášť
 pojmenuješ – tedy uložíš do vhodně pojmenované proměnné.</p>
 <h2 id="metoda_format">Metoda format
-<a href="#header-metoda_format" class="header-link">#</a>
+<a href="#metoda_format" class="header-link">#</a>
 </h2>
 <p>Někdy se stane, že jednu šablonu potřebuješ použít vícekrát.
 Pak formátovací řetězec použít nemůžeš, protože se do něj proměnné doplňují

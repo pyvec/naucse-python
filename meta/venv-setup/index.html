@@ -1,5 +1,5 @@
 <h1 id="nastaveni_prostredi">Nastavení prostředí
-<a href="#header-nastaveni_prostredi" class="header-link">#</a>
+<a href="#nastaveni_prostredi" class="header-link">#</a>
 </h1>
 <p>V této sekci si:</p>
 <ul>
@@ -8,7 +8,7 @@ Pythonu a</li>
 <li>aktivuješ virtuální prostředí.</li>
 </ul>
 <h2 id="priprava_adresare">Příprava adresáře
-<a href="#header-priprava_adresare" class="header-link">#</a>
+<a href="#priprava_adresare" class="header-link">#</a>
 </h2>
 <p>Programátoři vytváří spoustu souborů a víc než u mnoha jiných uživatelů
 počítače jim záleží na tom, kde jsou ty soubory uložené.</p>
@@ -29,7 +29,7 @@ navazující kurzy.
 Poznamenej si proto kde přesně je – zkopíruj si celé jeho jméno, které pak
 můžeš vložit do <code>cd</code> v příkazové řádce nebo do grafického prohlížeče souborů.</p>
 <h3 id="adresar_pro_kazdou_lekci">Adresář pro každou lekci
-<a href="#header-adresar_pro_kazdou_lekci" class="header-link">#</a>
+<a href="#adresar_pro_kazdou_lekci" class="header-link">#</a>
 </h3>
 <p>Nový adresář je zatím prázdný.
 To se ale brzo změní a čím víc věcí v něm bude, tím bude důležitější
@@ -42,12 +42,12 @@ příště si vytvoříš adresář <code>01</code> a tak dále.</p>
 <p>Adresář <code>00</code> si vytvoř už teď.
 (Možná do něj dnes nic nedáš, ale hodí se ho mít jako ukázku pro příště.)</p>
 <h3 id="prepnuti">Přepnutí
-<a href="#header-prepnuti" class="header-link">#</a>
+<a href="#prepnuti" class="header-link">#</a>
 </h3>
 <p>Pak otevři příkazovou řádku a příkazem <code>cd</code> přepni do adresáře,
 ve kterém jsi právě vytvořil/a <code>00</code> (t.j. ne přímo do <code>00</code>).
 Například:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> naucse-python
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>naucse-python
 </pre></div><p>Pak zkontroluj, že jsi na správném místě:</p>
 <ul>
 <li>Pomocí příkazu <code>pwd</code> (na Windows <code>cd</code>) zkontroluj,
@@ -70,7 +70,7 @@ Například:</p>
 <span class="go"> Directory of C:\Users\Helena\naucse-python</span>
 <span class="go">05/08/2014 07:28 PM &lt;DIR&gt;  00</span>
 </pre></div></div></div><h2 id="virtualni_prostredi">Virtuální prostředí
-<a href="#header-virtualni_prostredi" class="header-link">#</a>
+<a href="#virtualni_prostredi" class="header-link">#</a>
 </h2>
 <p>Teď si vytvoříš <em>virtuální prostředí</em> pro Python.</p>
 <p>Virtuální prostředí je něco, co zajistí že se všechny počítače budou
@@ -90,12 +90,12 @@ Na každém systému jinak!</p>
  příkazů.
  Bude je rychlejší vyzkoušet než popsat kdy je který správný,
  takže nejdřív zkus:</p>
-<div class="highlight"><pre><span></span><span class="gp"> $ </span>python3 -m venv venv
+<div class="highlight"><pre><span></span><span class="gp"> $ </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
 </pre></div><p>A jestli dostaneš chybu <code>No module named venv</code>, zkus místo toho:</p>
-<div class="highlight"><pre><span></span><span class="gp"> $ </span>virtualenv -p python3 venv
+<div class="highlight"><pre><span></span><span class="gp"> $ </span>virtualenv<span class="w"> </span>-p<span class="w"> </span>python3<span class="w"> </span>venv
 </pre></div></li>
 <li><p><strong>macOS</strong>:</p>
-<div class="highlight"><pre><span></span><span class="gp"> $ </span>python3 -m venv venv
+<div class="highlight"><pre><span></span><span class="gp"> $ </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
 </pre></div></li>
 <li><p><strong>Windows</strong>:</p>
 <p>Podle toho jak máš Python nainstalovaný bude fungovat jeden z následujících
@@ -122,11 +122,11 @@ Můžeš se podívat dovnitř, ale neukládej tam své soubory a nikdy tam nic n
 </pre></div></div></div><p>V grafickém prohlížeči souborů to vypadá např. takto:</p>
 <p><span class="figure"><a href="naucse:static?filename=dirs-00.png"><img src="naucse:static?filename=dirs-00.png" alt="(adresáře &#39;00&#39; a &#39;venv&#39; vedle sebe)"></a></span></p>
 <h3 id="aktivace_virtualniho_prostredi">Aktivace virtuálního prostředí
-<a href="#header-aktivace_virtualniho_prostredi" class="header-link">#</a>
+<a href="#aktivace_virtualniho_prostredi" class="header-link">#</a>
 </h3>
 <p>Nakonec virtuální prostředí aktivuj:</p>
 <div class="row side-by-side-commands"><div class="col">
-                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">source</span> venv/bin/activate
+                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
 </pre></div></div><div class="col">
                 <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>venv\Scripts\activate
 </pre></div><p>Jestli používáš  příkazovou řádku ve Visual Studio Code,

@@ -1,5 +1,5 @@
 <h1 id="lokalni_promenne">Lokální proměnné
-<a href="#header-lokalni_promenne" class="header-link">#</a>
+<a href="#lokalni_promenne" class="header-link">#</a>
 </h1>
 <p>Už umíš definovat vlastní funkce.
 Zbývá ale ještě dovysvětlit, jak v nich fungují proměnné.</p>
@@ -30,11 +30,11 @@ Funkce <code>nastav_x</code> si hraje na vlastním písečku; proměnná <code>x
 pro ni.
 Když funkce <code>nastav_x</code> skončí, proměnná <code>x</code> přestane existovat.</p>
 <h2 id="skryvani_detailu">Skrývání detailů
-<a href="#header-skryvani_detailu" class="header-link">#</a>
+<a href="#skryvani_detailu" class="header-link">#</a>
 </h2>
 <p>Podobně skončí s chybou i složitější program:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zamen</span><span class="p">(</span><span class="n">slovo</span><span class="p">,</span> <span class="n">pozice</span><span class="p">,</span> <span class="n">novy_znak</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;V daném slově zamění znak na dané pozici za daný nový znak&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;V daném slově zamění znak na dané pozici za daný nový znak&quot;&quot;&quot;</span>
     <span class="n">zacatek</span> <span class="o">=</span> <span class="n">slovo</span><span class="p">[:</span><span class="n">pozice</span><span class="p">]</span>
     <span class="n">konec</span> <span class="o">=</span> <span class="n">slovo</span><span class="p">[</span><span class="n">pozice</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
     <span class="n">nove_slovo</span> <span class="o">=</span> <span class="n">zacatek</span> <span class="o">+</span> <span class="n">novy_znak</span> <span class="o">+</span> <span class="n">konec</span>
@@ -54,7 +54,7 @@ izolují od zbytku programu.</p>
 Jak divné by bylo, kdyby po každém zavolání <code>print</code> byla najednou nastavená
 proměnná <code>i</code>, kterou <code>print</code> náhodou používá při procházení svých parametrů!</p>
 <h2 id="prirazeni">Přiřazení
-<a href="#header-prirazeni" class="header-link">#</a>
+<a href="#prirazeni" class="header-link">#</a>
 </h2>
 <p>To, co dělá lokální proměnnou, je <em>přiřazení</em>.
 Porovnej <code>nastav_x</code> s příkladem na <code>obsah_kruhu</code> výše: rozdíl mezi <code>pi</code> a <code>x</code>
@@ -75,7 +75,7 @@ způsoby, které postupně poznáš. Není jich mnoho:</p>
 <li>Přiřazují i speciální přiřazovací operátory jako <code>+=</code>, <code>*=</code>, <code>:=</code>.</li>
 </ul>
 </div><h2 id="zakryvani_jmena">Zakrývání jména
-<a href="#header-zakryvani_jmena" class="header-link">#</a>
+<a href="#zakryvani_jmena" class="header-link">#</a>
 </h2>
 <p>Jak to funguje, když ve funkci přiřadíš do proměnné, která existuje i globálně?
 Pak tu máme problém.</p>
@@ -95,7 +95,7 @@ Jméno označuje lokální proměnnou, a ta globální pak „není vidět“.</
 Jedna je globální. Jedna je lokální pro funkci <code>nastav_x</code>.
 Jmenují se stejně, ale jsou to dvě různé proměnné.</p>
 <h2 id="lokalni_nebo_globalni">Lokální nebo globální?
-<a href="#header-lokalni_nebo_globalni" class="header-link">#</a>
+<a href="#lokalni_nebo_globalni" class="header-link">#</a>
 </h2>
 <p>Pojďme si to ukázat.
 Než spustíš tenhle program, zkus předpovědět co bude dělat.
@@ -151,7 +151,7 @@ proměnných – ty jsou „ještě globálnější“.)</li>
 </div>
     </div>
 </div><h2 id="rada_na_zaver">Rada na závěr
-<a href="#header-rada_na_zaver" class="header-link">#</a>
+<a href="#rada_na_zaver" class="header-link">#</a>
 </h2>
 <p>Pravidla pro lokální proměnné jsou pro začátečníky jednou z nejzvláštnějších
 věcí v Pythonu.

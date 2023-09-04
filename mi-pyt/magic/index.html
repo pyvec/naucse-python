@@ -1,5 +1,5 @@
 <h1 id="magie">Magie
-<a href="#header-magie" class="header-link">#</a>
+<a href="#magie" class="header-link">#</a>
 </h1>
 <p>Co z Pythonu dělá tak užitečný jazyk?
 Z velké části je to zaměření na čitelnost kódu. Pythonu se někdy říká „spustitelný pseudokód“: syntaxe je inspirovaná zápisem abstraktních algoritmů v matematice, používá se málo speciálních znaků jako <code>$</code>, <code>&lt;&lt;</code>, <code>&amp;&amp;</code>, <code>?</code>.
@@ -13,7 +13,7 @@ Existuje ideálně jeden <em>zjevně nejlepší</em> způsob, jak dosáhnout ur�
 <p>Na jiný důvod, proč použít méně pochopitelné techniky, narazíme při psaní knihoven a frameworků. To je kód, který používá hodně programátorů – a často jsou to programátoři s méně zkušenostmi, než mají autoři knihovny. Tady proto bývá dobré občas použít nějakou tu magii – znepřehlednit kód knihovny, aby kód který knihovnu <em>používá</em>, mohl být přehlednější.</p>
 <p>Typický příklad jsou dekorátory ve Flasku. Napsat dekorátor není úplně triviální, ale velice to zjednodušuje práci všem, co ve Flasku píšou web. Konstrukce <code>@app.route</code> je pro většinu lidí magická – nevíme přesně, co to dělá, ale to nám nebrání ji použít.</p>
 <h2 id="velka_moc_a_velka_zodpovednost">Velká moc a velká zodpovědnost
-<a href="#header-velka_moc_a_velka_zodpovednost" class="header-link">#</a>
+<a href="#velka_moc_a_velka_zodpovednost" class="header-link">#</a>
 </h2>
 <p>Druhý možný význam slova <em>magie</em> je něco, co neodpovídá „normálnímu“ chování podobných věcí.</p>
 <p>Jazyk Python standardizuje syntaxi relativně malého počtu operací (operátory, volání funkcí, atributy, ...), způsobů řízení toku programu (cykly, <code>with</code>, ...) a strukturování kódu (moduly, <code>def</code>, <code>class</code>).
@@ -26,7 +26,7 @@ Příkaz <code>class</code> dokonce vůbec nemusí vytvořit třídu, jak uvidí
 <p>Následující principy (kromě jiných) je proto dobré při psaní knihoven používat jen po pečlivém zvážení, jestli by to nešlo i bez magie.</p>
 <p>* <em>Taková třída dokonce <a href="https://docs.python.org/3/library/pathlib.html">existuje ve standardní knihovně</a>.</em></p>
 <h2 id="specialni_metody">Speciální metody
-<a href="#header-specialni_metody" class="header-link">#</a>
+<a href="#specialni_metody" class="header-link">#</a>
 </h2>
 <p>Základní způsob, jak přizpůsobit chování objektů, jsou <em>speciální metody</em>.
 Asi už víte, že všechny atributy, které začínají a končí dvojitým podtržítkem, jsou rezervované pro samotný Python, který je používá podle svých pravidel – například danou metodu volá, když je potřeba sečíst dvě čísla.</p>
@@ -62,7 +62,7 @@ Doporučuji si předtím, než nějakou naimplementujete, dokumentaci přečíst
 <p>Předefinování hierarchie dědičnosti:
 <code>__instancecheck__</code>, <code>__subclasscheck__</code>.</p>
 <h2 id="dekoratory">Dekorátory
-<a href="#header-dekoratory" class="header-link">#</a>
+<a href="#dekoratory" class="header-link">#</a>
 </h2>
 <p>Další věc, na kterou se podíváme, jsou <em>dekorátory</em> – způsob, jak si
 přizpůsobovat funkce.</p>
@@ -129,7 +129,7 @@ po tomto volání může dělat i něco jiného.</p>
 
 <span class="nd">@to_floats</span>
 <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds two numbers&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds two numbers&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">))</span>
@@ -215,7 +215,7 @@ za funkcí napsali <code>add = register_operator('+')(add)</code>.</p>
 Dekorátor dostane třídu jako první argument a třída se nahradí tím,
 co dekorátor vrátí.</p>
 <h2 id="deskriptory">Deskriptory
-<a href="#header-deskriptory" class="header-link">#</a>
+<a href="#deskriptory" class="header-link">#</a>
 </h2>
 <p>Jeden z nejmagičtějších operátorů v Pythonu je <code>.</code>, tečka.
 Je magický v obou významech – většina lidí ho používá, ačkoli nemá tušení, co přesně dělá, a dá se předefinovat tolika různými způsoby, že to vydá na <a href="https://www.youtube.com/watch?v=NiSqG6s8skA">celou přednášku</a>.</p>
@@ -274,14 +274,14 @@ Je to <em>deskriptor</em>, objekt, který v rámci nějaké třídy <em>popisuje
 <div class="highlight"><pre><span></span><span class="c1"># (Omluvte prosím češtinu v kódu)</span>
 
 <span class="k">class</span> <span class="nc">Descriptor2D</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Popisuje atribut, který kombinuje dva jiné atributy do dvojice&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Popisuje atribut, který kombinuje dva jiné atributy do dvojice&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name1</span> <span class="o">=</span> <span class="n">name1</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name2</span> <span class="o">=</span> <span class="n">name2</span>
 
     <span class="k">def</span> <span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Volá se, když je třeba načíst atribut dané `instance` na dané třídě `cls`.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Volá se, když je třeba načíst atribut dané `instance` na dané třídě `cls`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="n">instance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -395,7 +395,7 @@ Při dalším přístupu k atributu už se použije uložená hodnota.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">vect</span><span class="o">.</span><span class="n">length</span><span class="p">)</span>
 </pre></div><p>Kompletní implementace je např. ve frameworku Pyramid jako <a href="http://docs.pylonsproject.org/projects/pyramid/en/latest/_modules/pyramid/decorator.html">pyramid.decorator.reify</a>.</p>
 <h2 id="konstruktor">Konstruktor
-<a href="#header-konstruktor" class="header-link">#</a>
+<a href="#konstruktor" class="header-link">#</a>
 </h2>
 <p>Třídy v Pythonu můžou mít <em>konstruktor</em> – funkci, která se zavolá, aby
 vytvořila objekt daného typu.
@@ -428,7 +428,7 @@ Chceme-li brát dva, dá se to udělat takto:</p>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 </pre></div><h2 id="metatridy">Metatřídy
-<a href="#header-metatridy" class="header-link">#</a>
+<a href="#metatridy" class="header-link">#</a>
 </h2>
 <p>Poslední věc, na kterou se podíváme, jsou metatřídy.</p>
 <p>Začneme zlehka: pokud při definici třídy zadáme nějakou funkci jako pojmenovaný
@@ -557,7 +557,7 @@ existuje, zavolá pro vytvoření jmenného prostoru:</p>
 nebo SQLAlchemy), kdy chceme, aby pořadí sloupců tabulky odpovídalo
 tomu, jak jsou sloupce/atributy nadefinovány ve třídě.</p>
 <h2 id="a_dalsi">A další
-<a href="#header-a_dalsi" class="header-link">#</a>
+<a href="#a_dalsi" class="header-link">#</a>
 </h2>
 <p>Další (bohužel?) oblíbený trik je vnuknutí magických schopností modulu.</p>
 <p>Naimportované moduly Python ukládá do slovníku <code>sys.modules</code>, aby při dalším
@@ -588,7 +588,7 @@ builtins.ANSWER = 42
 print(ANSWER)</code></pre></div><p>Tímto způsobem se dají i předefinovat vestavěné funkce, což může být někdy
 užitečné pro ladění. V produkčním kódu to ale, prosím, nedělejte.</p>
 <h2 id="ukol">Úkol
-<a href="#header-ukol" class="header-link">#</a>
+<a href="#ukol" class="header-link">#</a>
 </h2>
 <p>Úkol není!</p>
 <p>Budete-li chtít některé techniky z této lekce ve svém kódu (včetně semestrálky) použít, zamyslete se, jestli se problém nedá vyřešit jednodušeji, čitelněji, přehledněji, udržovatelněji.

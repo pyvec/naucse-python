@@ -1,5 +1,5 @@
 <h1 id="micropython_na_esp8266nodemcu">MicroPython (na ESP8266/NodeMCU)
-<a href="#header-micropython_na_esp8266nodemcu" class="header-link">#</a>
+<a href="#micropython_na_esp8266nodemcu" class="header-link">#</a>
 </h1>
 <p>(Tato lekce bohužel, na rozdíl od předchozích, nejde jen tak vyzkoušet z domu – je potřeba speciální hardware.)</p>
 <p>Dnes si ukážeme, jak lze Python použít na malých/vestavěných zařízeních.</p>
@@ -14,14 +14,14 @@
 <p>Přichystejte si MicroUSB kabel. Pokud nemáte vlastní, několik jich můžeme zapůjčit.</p>
 <p>Obsah lekce vychází z tutoriálů pro PyLadies (<a href="https://naucse.python.cz/2019/brno-podzim-pondeli/sessions/micropython/">a</a>, <a href="https://github.com/stlk/micropython/tree/master/workshop">b</a>), na které se můžete podívat, pokud tu bude něco vysvětleno příliš rychle.</p>
 <h2 id="popis_desky">Popis desky
-<a href="#header-popis_desky" class="header-link">#</a>
+<a href="#popis_desky" class="header-link">#</a>
 </h2>
 <p>V posledních letech se dá za relativně málo peněz pořídit počítač dost „velký” na to, aby se na něm dal spustit MicroPython – speciální implementace Pythonu pro prostředí s omezenou pamětí.
 NodeMCU, které budeme používat my, obsahuje čip ESP8266, čip navržený jako ovladač WiFi k vestavěným systémům (např. k Arduinu).
 Kromě samotného čipu a flash paměti, které se skrývají v oplechované krabičce, je na desce převodník napětí z 5 V (USB) na 3,3 V a datový převodník z USB na sériový protokol a jednotlivé piny procesoru jsou vyvedeny na „nožičky” desky.</p>
 <p>V paměti je už nahraný firmware MicroPython; pojďme se k němu připojit.</p>
 <h2 id="drivery_a_pripojeni">Drivery a připojení
-<a href="#header-drivery_a_pripojeni" class="header-link">#</a>
+<a href="#drivery_a_pripojeni" class="header-link">#</a>
 </h2>
 <p>Postup připojení je jiný pro každý systém:</p>
 <ul>
@@ -38,7 +38,7 @@ Kromě samotného čipu a flash paměti, které se skrývají v oplechované kra
 <p>Kdyby byly pro Windows či Mac potřeba ovladače, dají se najít na <a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">stránkách výrobce</a>.</p>
 <p>Po připojení stiskněte tlačítko RST na desce. Měla by se objevit hlavička a nakonec známý pythonní prompt <code>&gt;&gt;&gt;</code>.</p>
 <h2 id="micropython">MicroPython
-<a href="#header-micropython" class="header-link">#</a>
+<a href="#micropython" class="header-link">#</a>
 </h2>
 <p>Implementace MicroPython se chová téměř stejně jako CPython. Vyzkoušejte si ale některé rozdíly (porovnejte výstup MicroPythonu a Pythonu 3 na počítači):</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span>
@@ -53,7 +53,7 @@ Několik funkcí je na nestandardních místech se změněným rozhraním, např
 <span class="o">&gt;&gt;&gt;</span> <span class="n">urandom</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="mi">61</span>
 </pre></div><h2 id="vstup_a_vystup">Vstup a výstup
-<a href="#header-vstup_a_vystup" class="header-link">#</a>
+<a href="#vstup_a_vystup" class="header-link">#</a>
 </h2>
 <p>Co má MicroPython navíc je přístup k hardwaru.
 Zkusme zjistit hodnotu pinu 0, který je na NodeMCU normálně HIGH (3,3 V) a je spojen se zemí přes tlačítko FLASH.</p>
@@ -72,7 +72,7 @@ Následující kód diodu rozsvítí:</p>
 Odpovídající si označení lze zjistit z <a href="https://pyvec.github.io/cheatsheets/micropython/nodemcu-cs.pdf">taháku</a>.</p>
 <p>Zkuste zajistit, aby dioda svítila, právě pokud je stisknuté tlačítko FLASH.</p>
 <h2 id="ovladani_konzole">Ovládání konzole
-<a href="#header-ovladani_konzole" class="header-link">#</a>
+<a href="#ovladani_konzole" class="header-link">#</a>
 </h2>
 <p>Pravděpodobně jste si všimli, že konzole MicroPythonu automaticky odsazuje.
 To je pro malé programy pohodlné, ale umí to i znepříjemnit život – hlavně když chceme kód do konzole vložit.</p>
@@ -80,16 +80,16 @@ To je pro malé programy pohodlné, ale umí to i znepříjemnit život – hlav
 Aktivuje se pomocí <kbd>Ctrl+E</kbd> a ukončuje se pomocí <kbd>Ctrl+D</kbd>.</p>
 <p>Existuje ale i nástroj jménem <code>ampy</code>, který umožňuje pustit předpřipravený skript.
 Instaluje se jako <code>adafruit-ampy</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install adafruit-ampy
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>adafruit-ampy
 </pre></div><p>Po nainstalování vypněte existující připojení k desce (picocom/screen/PuTTY),
 napište skript a spusťte ho pomocí příkazu <code>run</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ampy -p PORT run script.py
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ampy<span class="w"> </span>-p<span class="w"> </span>PORT<span class="w"> </span>run<span class="w"> </span>script.py
 </pre></div><p>Kde <code>PORT</code> je stejný port jako výše – např. <code>/dev/ttyUSB0</code> na Linuxu, <code>COM3</code> na Windows.
 Pro více informací můžete nepřekvapivě použít příkaz <code>ampy --help</code>.</p>
 <p>Od teď doporučuji psát kód vedle do editoru a spouštět jej pomocí <code>ampy run</code>.</p>
 <p>Zkuste pomocí funkce <code>time.sleep</code> (která v MicroPythonu k dispozici je) diodou blikat v pravidelných intervalech.</p>
 <h2 id="blikani">Blikání
-<a href="#header-blikani" class="header-link">#</a>
+<a href="#blikani" class="header-link">#</a>
 </h2>
 <p>Na pravidelné blikání, technicky řečeno <em>pulzně-šířkovou modulaci</em> (angl. <em>Pulse Width Modulation</em>)
 má MicroPython třídu <code>PWM</code>, které se dá nastavit frekvence (<code>freq</code>) v Hz a střída (<code>duty</code>) od 0 do 1024:</p>
@@ -102,7 +102,7 @@ má MicroPython třídu <code>PWM</code>, které se dá nastavit frekvence (<cod
 LED (střída určuje intenzitu světla), bzučáků (frekvence určuje výšku tónu),
 servomotorků (délka signálu určuje úhel otočení), atd.</p>
 <h2 id="led_pasek_ws2812">LED pásek WS2812
-<a href="#header-led_pasek_ws2812" class="header-link">#</a>
+<a href="#led_pasek_ws2812" class="header-link">#</a>
 </h2>
 <p>Na destičku se dá připojit spousta různých komponent. Jen je vždy potřeba ověřit v <a href="http://docs.micropython.org/en/latest/esp8266/">dokumentaci</a>, že existuje knihovna pro daný protokol na MicroPython <em>pro ESP8266</em>.
 Časté protokoly jsou <a href="http://docs.micropython.org/en/latest/esp8266/library/machine.I2C.html#machine-i2c">I2C</a>, <a href="http://docs.micropython.org/en/latest/esp8266/esp8266/quickref.html#onewire-driver">OneWire</a>, či <a href="http://docs.micropython.org/en/latest/esp8266/esp8266/quickref.html#software-spi-bus">SPI</a>.</p>
@@ -126,20 +126,20 @@ Používá vlastní protokol, který je v MicroPythonu pro ESP8266 implementov�
 <span class="n">np</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
 </pre></div><p>Co znamenají čísla 0 a 255 na posledním řádku, jistě zjistíte experimentálně.</p>
 <h2 id="flashovani">Flashování
-<a href="#header-flashovani" class="header-link">#</a>
+<a href="#flashovani" class="header-link">#</a>
 </h2>
 <p>Na našich destičkách je MicroPython už nahraný, ale kdybyste si koupili vlastní NodeMCU nebo chtěli firmware aktualizovat, budete ho potřebovat umět nahrát.</p>
 <p>K tomu je potřeba nástroj <code>esptool</code>, který se dá nainstalovat pomocí:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install esptool
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>esptool
 </pre></div><p>Po instalaci esptool si stáhněte nejnovější stabilní firmware pro ESP8266 z <a href="http://micropython.org/download#esp8266">micropython.org/download</a> a zadejte:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>esptool.py --port /dev/ttyUSB0 --baud <span class="m">460800</span> write_flash <span class="m">0</span> esp8266-20161110-v1.8.6.bin
+<div class="highlight"><pre><span></span><span class="gp">$ </span>esptool.py<span class="w"> </span>--port<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span>--baud<span class="w"> </span><span class="m">460800</span><span class="w"> </span>write_flash<span class="w"> </span><span class="m">0</span><span class="w"> </span>esp8266-20161110-v1.8.6.bin
 </pre></div><p>Hodnotu pro <code>--port</code> opět doplňte podle svého systému – např. <code>/dev/tty.wchusbserial1420</code> na Macu, <code>COM3</code> na Windows.</p>
 <div class="admonition note"><p>Destiček s čipem ESP8266 se vyrábí celá řada různých typů a některé mohou
 potřebovat odlišné nastavení při flashování.
 Popis všech možností nastavení je k nalezení v <a href="https://github.com/espressif/esptool#usage">dokumentaci k esptool</a>.</p>
 </div><p>Je-li na desce nahraný MicroPython, tento příkaz by měl fungovat. U jiného firmware, (případně u poškozeného MicroPythonu), je potřeba při zapojování destičky do USB držet tlačítko FLASH.</p>
 <h2 id="souborovy_system">Souborový systém
-<a href="#header-souborovy_system" class="header-link">#</a>
+<a href="#souborovy_system" class="header-link">#</a>
 </h2>
 <p>MicroPython pro ESP8266 obsahuje souborový systém nad flash pamětí,
 se kterým pracují standardní pythonní funkce jako <code>open</code> a <code>os.listdir</code>.
@@ -148,9 +148,9 @@ Nahrajete-li soubor s příponou <code>.py</code>, lze jej pak v kódu importova
 zařízení.
 Není ho pak potřeba připojovat k počítači – stačí powerbanka nebo 3,3V zdroj.</p>
 <p>Pro nahrání souborů do zařízení můžete použít příkaz <code>ampy put</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>ampy -p PORT put main.py
+<div class="highlight"><pre><span></span><span class="gp">$ </span>ampy<span class="w"> </span>-p<span class="w"> </span>PORT<span class="w"> </span>put<span class="w"> </span>main.py
 </pre></div><h2 id="webrepl">WebREPL
-<a href="#header-webrepl" class="header-link">#</a>
+<a href="#webrepl" class="header-link">#</a>
 </h2>
 <p>ESP8266 byl původně navržen i jako čip pro WiFi a i s MicroPythonem se umí připojit k síti.
 Dokonce se přes WiFi dá i ovládat.</p>
@@ -188,7 +188,7 @@ Dokonce se přes WiFi dá i ovládat.</p>
 Měli byste dostat konzoli, jako přes USB.
 Pomocí WebREPL lze nejen zadávat interaktivní příkazy, ale i nahrávat soubory.</p>
 <h2 id="komunikace">Komunikace
-<a href="#header-komunikace" class="header-link">#</a>
+<a href="#komunikace" class="header-link">#</a>
 </h2>
 <p>Pro komunikaci po síti můžete použít nízkoúrovňovou knihovnu <code>socket</code>,
 nebo protokol pro „internet of things“ (jako MQTT), ale

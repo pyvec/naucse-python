@@ -1,10 +1,10 @@
 <h1 id="pridani_kurzu_na_nauc_se_python">Přidání kurzu na Nauč se Python
-<a href="#header-pridani_kurzu_na_nauc_se_python" class="header-link">#</a>
+<a href="#pridani_kurzu_na_nauc_se_python" class="header-link">#</a>
 </h1>
 <p>Když už máme nadefinováný vlastní kurz, zbývá nám jen ho dostat na <a href="https://naucse.python.cz/">naucse.python.cz</a>.
 Budeme k tomu potřebovat pár příkazů v Gitu a trochu trpělivosti.</p>
 <h2 id="definice_github_actions">Definice GitHub Actions
-<a href="#header-definice_github_actions" class="header-link">#</a>
+<a href="#definice_github_actions" class="header-link">#</a>
 </h2>
 <p>Způsob, jakým se obsah kurz dostane na naucse.python.cz je následující:</p>
 <ul>
@@ -18,7 +18,7 @@ repozitáři.
 Jestli tenhle soubor nemáš, zkopíruj si ho
 <a href="https://github.com/pyvec/naucse-python/blob/main/.github/workflows/main.yml">z repozitáře pyvec/naucse-python</a>.</p>
 <h2 id="nahrani_do_vlastniho_forku">Nahrání do vlastního forku
-<a href="#header-nahrani_do_vlastniho_forku" class="header-link">#</a>
+<a href="#nahrani_do_vlastniho_forku" class="header-link">#</a>
 </h2>
 <p>První věc, kterou budeš potřebovat, je vlastní účet na <a href="https://github.com/">GitHubu</a>.</p>
 <p>Přihlaš se na GitHub a vytvoř „fork” kurzu ze kterého vycházíš,
@@ -42,21 +42,21 @@ Vyber „View all branches“ vseznamu větví:</p>
 <p>Tvůj fork si teď potřebuješ přidat do lokálního repozitáře jako <em>referenci</em>, abys tam pak mohl/a poslat svůj kurz.
 To uděláš pomocí příkazu (nahraď obě <code>uzivatelskejmeno</code> za uživatelské jméno
 pod kterým fork je, a <code>nazevrepa</code> za název repozitáře):</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git remote add uzivatelskejmeno https://github.com/uzivatelskejmeno/nazevrepa
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>uzivatelskejmeno<span class="w"> </span>https://github.com/uzivatelskejmeno/nazevrepa
 </pre></div><p>Dále potřebuješ vytvořit commit se svým kurzem a případně se změnami v materiálech.
 Je dobré změny dělat v zvláštní větvi, ne v <code>main</code>/<code>master</code>.
 Vymysli si název větve (např. <code>pridani-kurzu</code>) a pusť příkazy</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git branch nazevvetve
-<span class="gp">$ </span>git checkout nazevvetve
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>nazevvetve
+<span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>nazevvetve
 </pre></div><p>Jak vytvořit commit, se dozvíš například v <a href="naucse:page?lesson=git/git-collaboration-2in1">návodu na používání Gitu</a>.
 Více o větvích se můžeš dozvědět v <a href="naucse:page?lesson=git/branching">návodu na větvení v Gitu</a>.</p>
 <h2 id="pull_request">Pull request
-<a href="#header-pull_request" class="header-link">#</a>
+<a href="#pull_request" class="header-link">#</a>
 </h2>
 <p>Svůj commit teď potřebuješ dostat do svého forku na GitHubu.
 To uděláš příkazem (<code>uzivatelskejmeno</code> nahraď za uživatelské jméno, pod kterým fork
 je, <code>nazevvetve</code> za název větve):</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>git push uzivatelskejmeno nazevvetve
+<div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>push<span class="w"> </span>uzivatelskejmeno<span class="w"> </span>nazevvetve
 </pre></div><p>Mezi informacemi které tento příkaz vypíše by měla být adresa na vytvoření
 <em>pull requestu</em>. Tu navštiv, vyber na ní <em>compare across forks</em> a pod
 <em>base repository</em> vyber repozitář se svým kurzem.
@@ -68,16 +68,16 @@ Až proces doběhne, uvidíš zelené tlačítko <em>merge</em> kterým 
 Tím se spustí další GitHub Action, který vytvoří větev <code>compiled</code> s obsahem pro
 naucse.python.cz.</p>
 <h2 id="informace_o_tvem_repozitari">Informace o tvém repozitáři
-<a href="#header-informace_o_tvem_repozitari" class="header-link">#</a>
+<a href="#informace_o_tvem_repozitari" class="header-link">#</a>
 </h2>
 <p>Teď potřebuješ ještě přidat kurz na naucse.python.cz.
 To se dělá změnou souboru <a href="https://github.com/pyvec/naucse.python.cz/blob/master/courses.yml">courses.yml</a>,
 nejlépe přímo na GitHubu pomocí tlačítka s ikonkou tužky.</p>
 <p>Na konec souboru přidej záznam:</p>
-<div class="highlight"><pre><span></span><span class="nt">rok/identifikator</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/uzivatelskejmeno/nazevrepa</span><span class="w"></span>
-<span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">idkurzu</span><span class="w"></span>
-<span class="w">  </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">compiled</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nt">rok/identifikator</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/uzivatelskejmeno/nazevrepa</span>
+<span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">idkurzu</span>
+<span class="w">  </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">compiled</span>
 </pre></div><p>kde doplň:</p>
 <ul>
 <li><code>rok</code> kdy se kurz koná. U kurzu který zasahuje do více kalendářních roků
@@ -94,7 +94,7 @@ poklikej na zelená tlačítka). Neboj se že něco uděláš špatně
 někdo schválit a v rámci toho může všechno zkontrolovat a upravit.</p>
 <p>Po tom, co správci PR schválí a začlení tvoje změny do základního repozitáře, stačí počkat pár minut a tvůj kurz se objeví na <a href="https://naucse.python.cz/">naucse.python.cz</a>.</p>
 <h2 id="upravovani_kurzu">Upravování kurzu
-<a href="#header-upravovani_kurzu" class="header-link">#</a>
+<a href="#upravovani_kurzu" class="header-link">#</a>
 </h2>
 <p>Pokud budeš chtít na svém kurzu něco změnit, musíš s každou změnou udělat commit a odeslat commit na GitHub.</p>
 <p>Nastavené GitHub Actions pro každou změnu sestaví a publikují novou

@@ -1,7 +1,7 @@
 {
     "api_version": [
         0,
-        3
+        4
     ],
     "course": {
         "description": "Naučte se Python vážně od začátku. Žádné předchozí znalosti nejsou potřeba.",
@@ -19,7 +19,17 @@
                         "content": {
                             "path": "and-or/index.html"
                         },
+                        "ids": [
+                            "emneboem_anebo_emaem",
+                            "stastnabohata"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#emneboem_anebo_emaem",
+                            "#stastnabohata",
+                            "naucse:page?lesson=beginners/comparisons",
+                            "naucse:page?lesson=beginners/exceptions"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/and-or/index.md",
@@ -42,7 +52,31 @@
                         "content": {
                             "path": "basic-functions/index.html"
                         },
+                        "ids": [
+                            "a_dalsi",
+                            "matematicke_funkce",
+                            "nahoda",
+                            "prevadeni_a_codeinputcode",
+                            "prevadeni_typu",
+                            "solution-0",
+                            "uzitecne_funkce",
+                            "vstup_a_vystup"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#a_dalsi",
+                            "#matematicke_funkce",
+                            "#nahoda",
+                            "#prevadeni_a_codeinputcode",
+                            "#prevadeni_typu",
+                            "#uzitecne_funkce",
+                            "#vstup_a_vystup",
+                            "https://cs.wikipedia.org/wiki/Radi%C3%A1n",
+                            "https://docs.python.org/3/library/functions.html",
+                            "https://docs.python.org/3/library/math.html",
+                            "https://github.com/pyvec/cheatsheets/raw/master/basic-functions/basic-functions-cs.pdf",
+                            "naucse:solution?solution=0"
+                        ],
                         "slug": "index",
                         "solutions": [
                             {
@@ -69,7 +103,29 @@
                         "content": {
                             "path": "class/index.html"
                         },
+                        "ids": [
+                            "atributy",
+                            "hodnoty_a_objekty",
+                            "metoda_code__init__code",
+                            "metoda_code__str__code",
+                            "parametr_codeselfcode",
+                            "tridy",
+                            "tvoreni_objektu_tridy",
+                            "vlastni_tridy"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#atributy",
+                            "#hodnoty_a_objekty",
+                            "#metoda_code__init__code",
+                            "#metoda_code__str__code",
+                            "#parametr_codeselfcode",
+                            "#tridy",
+                            "#tvoreni_objektu_tridy",
+                            "#vlastni_tridy",
+                            "naucse:page?lesson=beginners/functions",
+                            "naucse:page?lesson=beginners/inheritance"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/class/index.md",
@@ -93,7 +149,43 @@
                         "content": {
                             "path": "cmdline/index.html"
                         },
+                        "ids": [
+                            "aktualni_adresar",
+                            "co_v_tom_adresari_je",
+                            "konec",
+                            "kopirovani_z_prikazove_radky",
+                            "o_uroven_nahoru",
+                            "otevreni_vprohlizeci_souboru",
+                            "pozorovani_zmen",
+                            "prehled",
+                            "prikazova_radka",
+                            "prvni_prikaz",
+                            "vgrafickem_hledatku",
+                            "vkladani_do_prikazove_radky",
+                            "vytvoreni_adresare",
+                            "zmena_aktualniho_adresare"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#aktualni_adresar",
+                            "#co_v_tom_adresari_je",
+                            "#konec",
+                            "#kopirovani_z_prikazove_radky",
+                            "#o_uroven_nahoru",
+                            "#otevreni_vprohlizeci_souboru",
+                            "#pozorovani_zmen",
+                            "#prehled",
+                            "#prikazova_radka",
+                            "#prvni_prikaz",
+                            "#vgrafickem_hledatku",
+                            "#vkladani_do_prikazove_radky",
+                            "#vytvoreni_adresare",
+                            "#zmena_aktualniho_adresare",
+                            "naucse:static?filename=linux-file-browser.png",
+                            "naucse:static?filename=macos-file-browser.png",
+                            "naucse:static?filename=windows-cmd-properties.png",
+                            "naucse:static?filename=windows-file-browser.png"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/cmdline/index.md",
@@ -129,7 +221,22 @@
                         "content": {
                             "path": "comparisons/index.html"
                         },
+                        "ids": [
+                            "dalsi_podminene_prikazy",
+                            "podminky",
+                            "porovnavani",
+                            "solution-0",
+                            "zanorovani"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#dalsi_podminene_prikazy",
+                            "#podminky",
+                            "#porovnavani",
+                            "#zanorovani",
+                            "http://en.wikipedia.org/wiki/George_Boole",
+                            "naucse:solution?solution=0"
+                        ],
                         "slug": "index",
                         "solutions": [
                             {
@@ -156,7 +263,24 @@
                         "content": {
                             "path": "def/index.html"
                         },
+                        "ids": [
+                            "cviceni",
+                            "definice_funkce",
+                            "definice_funkci",
+                            "kcemu_jsou_funkce",
+                            "solution-0",
+                            "vraceni_ukoncuje_funkci"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#cviceni",
+                            "#definice_funkce",
+                            "#definice_funkci",
+                            "#kcemu_jsou_funkce",
+                            "#vraceni_ukoncuje_funkci",
+                            "naucse:page?lesson=beginners/functions",
+                            "naucse:solution?solution=0"
+                        ],
                         "slug": "index",
                         "solutions": [
                             {
@@ -185,7 +309,27 @@
                         "content": {
                             "path": "dict/index.html"
                         },
+                        "ids": [
+                            "a_to_je_zatim_ke_slovnikum_vse",
+                            "iterace",
+                            "jak_udelat_slovnik",
+                            "meneni_slovniku",
+                            "slovniky",
+                            "typy_klicu_a_hodnot",
+                            "zapln_prazdny_slovnik"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#a_to_je_zatim_ke_slovnikum_vse",
+                            "#iterace",
+                            "#jak_udelat_slovnik",
+                            "#meneni_slovniku",
+                            "#slovniky",
+                            "#typy_klicu_a_hodnot",
+                            "#zapln_prazdny_slovnik",
+                            "https://docs.python.org/3.0/library/stdtypes.html#mapping-types-dict",
+                            "https://pyvec.github.io/cheatsheets/dicts/dicts-cs.pdf"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/dict/index.md",
@@ -208,7 +352,13 @@
                         "content": {
                             "path": "dict-with-list-values/index.html"
                         },
+                        "ids": [
+                            "vice_hodnot_vjednom_zaznamu_slovniku"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#vice_hodnot_vjednom_zaznamu_slovniku"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/dict-with-list-values/index.md",
@@ -231,7 +381,24 @@
                         "content": {
                             "path": "exceptions/index.html"
                         },
+                        "ids": [
+                            "dalsi_prilohy_kcodetrycode",
+                            "druhy_chyb",
+                            "nechytej_je_vsechny",
+                            "osetreni_chyby",
+                            "vyjimky",
+                            "vyvolani_chyby"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#dalsi_prilohy_kcodetrycode",
+                            "#druhy_chyb",
+                            "#nechytej_je_vsechny",
+                            "#osetreni_chyby",
+                            "#vyjimky",
+                            "#vyvolani_chyby",
+                            "https://docs.python.org/3/library/exceptions.html#exception-hierarchy"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/exceptions/index.md",
@@ -254,7 +421,13 @@
                         "content": {
                             "path": "expressions/index.html"
                         },
+                        "ids": [
+                            "vyhodnocovani_vyrazu"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#vyhodnocovani_vyrazu"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/expressions/index.md",
@@ -277,7 +450,23 @@
                         "content": {
                             "path": "files/index.html"
                         },
+                        "ids": [
+                            "automaticke_zavirani_souboru",
+                            "iterace_nad_soubory",
+                            "psani_souboru",
+                            "solution-0",
+                            "soubory"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#automaticke_zavirani_souboru",
+                            "#iterace_nad_soubory",
+                            "#psani_souboru",
+                            "#soubory",
+                            "https://en.wikipedia.org/wiki/UTF-8",
+                            "naucse:page?lesson=beginners/str",
+                            "naucse:solution?solution=0"
+                        ],
                         "slug": "index",
                         "solutions": [
                             {
@@ -307,7 +496,17 @@
                         "content": {
                             "path": "first-steps/index.html"
                         },
+                        "ids": [
+                            "interaktivni_rezim_pythonu",
+                            "prvni_prikaz",
+                            "ukonceni"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#interaktivni_rezim_pythonu",
+                            "#prvni_prikaz",
+                            "#ukonceni"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/first-steps/index.md",
@@ -330,8 +529,17 @@
                         "content": {
                             "path": "fstring/index.html"
                         },
+                        "ids": [
+                            "metoda_format",
+                            "sablony_formatovaci_retezce"
+                        ],
                         "license": "cc-by-sa-40",
                         "license_code": "cc0",
+                        "links": [
+                            "#metoda_format",
+                            "#sablony_formatovaci_retezce",
+                            "https://docs.python.org/3.6/reference/lexical_analysis.html#formatted-string-literals"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/fstring/index.md",
@@ -354,7 +562,31 @@
                         "content": {
                             "path": "functions/index.html"
                         },
+                        "ids": [
+                            "argumenty",
+                            "delka_retezce",
+                            "funkce",
+                            "funkce_je_potreba_volat",
+                            "pojmenovane_argumenty",
+                            "prehled_funkci",
+                            "procedury",
+                            "solution-0",
+                            "volani_funkce_jako_vyraz"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#argumenty",
+                            "#delka_retezce",
+                            "#funkce",
+                            "#funkce_je_potreba_volat",
+                            "#pojmenovane_argumenty",
+                            "#prehled_funkci",
+                            "#procedury",
+                            "#volani_funkce_jako_vyraz",
+                            "naucse:page?lesson=beginners/basic-functions",
+                            "naucse:solution?solution=0",
+                            "naucse:static?filename=call-anatomy.svg"
+                        ],
                         "slug": "index",
                         "solutions": [
                             {
@@ -385,7 +617,19 @@
                         "content": {
                             "path": "hello-world/index.html"
                         },
+                        "ids": [
+                            "prvni_program",
+                            "spusteni"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#prvni_program",
+                            "#spusteni",
+                            "naucse:page?lesson=beginners/cmdline",
+                            "naucse:page?lesson=beginners/install",
+                            "naucse:page?lesson=beginners/install-editor",
+                            "naucse:page?lesson=beginners/venv-setup"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/hello-world/index.md",
@@ -408,7 +652,20 @@
                         "content": {
                             "path": "inheritance/index.html"
                         },
+                        "ids": [
+                            "dedicnost",
+                            "generalizace",
+                            "polymorfismus",
+                            "prepisovani_metod_a_codesupercode"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#dedicnost",
+                            "#generalizace",
+                            "#polymorfismus",
+                            "#prepisovani_metod_a_codesupercode",
+                            "https://en.wikipedia.org/wiki/Liskov_substitution_principle"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/inheritance/index.md",
@@ -431,7 +688,16 @@
                         "content": {
                             "path": "install/index.html"
                         },
+                        "ids": [
+                            "instalace_pythonu"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#instalace_pythonu",
+                            "naucse:page?lesson=beginners/install&page=linux",
+                            "naucse:page?lesson=beginners/install&page=macos",
+                            "naucse:page?lesson=beginners/install&page=windows"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/install/index.md",
@@ -447,7 +713,24 @@
                         "content": {
                             "path": "install/linux.html"
                         },
+                        "ids": [
+                            "check-tkinter",
+                            "doinstalovani_virtualenv",
+                            "instalace_pythonu_3",
+                            "instalace_pythonu_na_linux",
+                            "install-virtualenv",
+                            "kontrola_tkinter"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#check-tkinter",
+                            "#doinstalovani_virtualenv",
+                            "#instalace_pythonu_3",
+                            "#instalace_pythonu_na_linux",
+                            "#install-virtualenv",
+                            "#kontrola_tkinter",
+                            "naucse:page?lesson=beginners/cmdline"
+                        ],
                         "slug": "linux",
                         "solutions": [],
                         "source_file": "lessons/beginners/install/linux.md",
@@ -464,7 +747,15 @@
                         "content": {
                             "path": "install/macos.html"
                         },
+                        "ids": [
+                            "instalace_pythonu_pro_macos"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#instalace_pythonu_pro_macos",
+                            "http://brew.sh",
+                            "naucse:page?lesson=beginners/cmdline"
+                        ],
                         "slug": "macos",
                         "solutions": [],
                         "source_file": "lessons/beginners/install/macos.md",
@@ -481,7 +772,26 @@
                         "content": {
                             "path": "install/windows.html"
                         },
+                        "ids": [
+                            "download",
+                            "instalace",
+                            "instalace_pythonu_pro_windows",
+                            "stazeni",
+                            "zjisti_jestli_uz_mas_python_nainstalovany"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#download",
+                            "#instalace",
+                            "#instalace_pythonu_pro_windows",
+                            "#stazeni",
+                            "#zjisti_jestli_uz_mas_python_nainstalovany",
+                            "https://www.python.org/downloads/windows/",
+                            "naucse:page?lesson=beginners/cmdline",
+                            "naucse:page?lesson=beginners/venv-setup",
+                            "naucse:static?filename=windows_32v64-bit.png",
+                            "naucse:static?filename=windows_add_python_to_path.png"
+                        ],
                         "slug": "windows",
                         "solutions": [],
                         "source_file": "lessons/beginners/install/windows.md",
@@ -512,7 +822,21 @@
                         "content": {
                             "path": "install-editor/atom.html"
                         },
+                        "ids": [
+                            "instalace_atomu",
+                            "kontrola_stylu_zdrojoveho_kodu",
+                            "nacvik_odsazovani",
+                            "nastaveni"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#instalace_atomu",
+                            "#kontrola_stylu_zdrojoveho_kodu",
+                            "#nacvik_odsazovani",
+                            "#nastaveni",
+                            "https://atom.io",
+                            "https://www.python.org/dev/peps/pep-0008/"
+                        ],
                         "slug": "atom",
                         "solutions": [],
                         "source_file": "lessons/beginners/install-editor/atom.md",
@@ -529,7 +853,21 @@
                         "content": {
                             "path": "install-editor/gedit.html"
                         },
+                        "ids": [
+                            "instalace_geditu",
+                            "nacvik_odsazovani",
+                            "nastaveni"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#instalace_geditu",
+                            "#nacvik_odsazovani",
+                            "#nastaveni",
+                            "https://wiki.gnome.org/Apps/Gedit",
+                            "naucse:static?filename=gedit_indent.png",
+                            "naucse:static?filename=gedit_linenums.png",
+                            "naucse:static?filename=gedit_prefs.png"
+                        ],
                         "slug": "gedit",
                         "solutions": [],
                         "source_file": "lessons/beginners/install-editor/gedit.md",
@@ -546,7 +884,28 @@
                         "content": {
                             "path": "install-editor/index.html"
                         },
+                        "ids": [
+                            "co_programatorsky_editor_umi",
+                            "ide",
+                            "instalace_editoru",
+                            "volba_a_nastaveni_editoru"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#co_programatorsky_editor_umi",
+                            "#ide",
+                            "#instalace_editoru",
+                            "#volba_a_nastaveni_editoru",
+                            "https://eclipse.org/",
+                            "https://www.jetbrains.com/pycharm/",
+                            "https://www.kdevelop.org/",
+                            "naucse:page?lesson=beginners/install-editor&page=atom",
+                            "naucse:page?lesson=beginners/install-editor&page=gedit",
+                            "naucse:page?lesson=beginners/install-editor&page=kate",
+                            "naucse:page?lesson=beginners/install-editor&page=notepad-plus-plus",
+                            "naucse:page?lesson=beginners/install-editor&page=others",
+                            "naucse:page?lesson=beginners/install-editor&page=vscode"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/install-editor/index.md",
@@ -562,7 +921,18 @@
                         "content": {
                             "path": "install-editor/kate.html"
                         },
+                        "ids": [
+                            "instalace_kate",
+                            "nacvik_odsazovani",
+                            "nastaveni"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#instalace_kate",
+                            "#nacvik_odsazovani",
+                            "#nastaveni",
+                            "https://kate-editor.org/get-it/"
+                        ],
                         "slug": "kate",
                         "solutions": [],
                         "source_file": "lessons/beginners/install-editor/kate.md",
@@ -579,7 +949,18 @@
                         "content": {
                             "path": "install-editor/notepad-plus-plus.html"
                         },
+                        "ids": [
+                            "instalace_notepadu",
+                            "nacvik_odsazovani",
+                            "nastaveni"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#instalace_notepadu",
+                            "#nacvik_odsazovani",
+                            "#nastaveni",
+                            "https://notepad-plus-plus.org/"
+                        ],
                         "slug": "notepad-plus-plus",
                         "solutions": [],
                         "source_file": "lessons/beginners/install-editor/notepad-plus-plus.md",
@@ -596,7 +977,26 @@
                         "content": {
                             "path": "install-editor/others.html"
                         },
+                        "ids": [
+                            "cislovani_radku",
+                            "instalace_editoru",
+                            "kontrola_stylu_zdrojoveho_kodu",
+                            "nacvik_odsazovani",
+                            "nastaveni",
+                            "obarvovani",
+                            "odsazovani"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#cislovani_radku",
+                            "#instalace_editoru",
+                            "#kontrola_stylu_zdrojoveho_kodu",
+                            "#nacvik_odsazovani",
+                            "#nastaveni",
+                            "#obarvovani",
+                            "#odsazovani",
+                            "https://www.python.org/dev/peps/pep-0008/"
+                        ],
                         "slug": "others",
                         "solutions": [],
                         "source_file": "lessons/beginners/install-editor/others.md",
@@ -613,7 +1013,24 @@
                         "content": {
                             "path": "install-editor/vscode.html"
                         },
+                        "ids": [
+                            "instalace_visual_studio_code",
+                            "nacvik_odsazovani",
+                            "nastaveni",
+                            "odesilani_telemetrickych_dat",
+                            "stazeni_a_instalace"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#instalace_visual_studio_code",
+                            "#nacvik_odsazovani",
+                            "#nastaveni",
+                            "#odesilani_telemetrickych_dat",
+                            "#stazeni_a_instalace",
+                            "https://code.visualstudio.com/",
+                            "https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting",
+                            "https://privacy.microsoft.com/en-us/privacystatement"
+                        ],
                         "slug": "vscode",
                         "solutions": [],
                         "source_file": "lessons/beginners/install-editor/vscode.md",
@@ -647,7 +1064,19 @@
                         "content": {
                             "path": "interfaces/index.html"
                         },
+                        "ids": [
+                            "rozhrani",
+                            "rozhrani_funkce",
+                            "vyzkousej_si_to"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#rozhrani",
+                            "#rozhrani_funkce",
+                            "#vyzkousej_si_to",
+                            "naucse:static?filename=tkui.py",
+                            "naucse:static?filename=yn.png"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/interfaces/index.md",
@@ -677,7 +1106,40 @@
                         "content": {
                             "path": "list/index.html"
                         },
+                        "ids": [
+                            "dalsi_zpusoby_jak_menit_seznamy",
+                            "mazani_prvku",
+                            "meneni_prvku",
+                            "meneni_seznamu",
+                            "nemenitelne_hodnoty",
+                            "razeni",
+                            "seznam_jako_podminka",
+                            "seznamy",
+                            "seznamy_a_nahoda",
+                            "seznamy_a_retezce",
+                            "tvoreni_seznamu",
+                            "vybirani_ze_seznamu",
+                            "zname_operace_se_seznamy"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#dalsi_zpusoby_jak_menit_seznamy",
+                            "#mazani_prvku",
+                            "#meneni_prvku",
+                            "#meneni_seznamu",
+                            "#nemenitelne_hodnoty",
+                            "#razeni",
+                            "#seznam_jako_podminka",
+                            "#seznamy",
+                            "#seznamy_a_nahoda",
+                            "#seznamy_a_retezce",
+                            "#tvoreni_seznamu",
+                            "#vybirani_ze_seznamu",
+                            "#zname_operace_se_seznamy",
+                            "https://github.com/pyvec/cheatsheets/blob/master/lists/lists-cs.pdf",
+                            "naucse:page?lesson=beginners/str-index-slice#slicing-diagram",
+                            "naucse:static?filename=methods.svg"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/list/index.md",
@@ -704,7 +1166,25 @@
                         "content": {
                             "path": "local-variables/index.html"
                         },
+                        "ids": [
+                            "lokalni_nebo_globalni",
+                            "lokalni_promenne",
+                            "prirazeni",
+                            "rada_na_zaver",
+                            "skryvani_detailu",
+                            "solution-0",
+                            "zakryvani_jmena"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#lokalni_nebo_globalni",
+                            "#lokalni_promenne",
+                            "#prirazeni",
+                            "#rada_na_zaver",
+                            "#skryvani_detailu",
+                            "#zakryvani_jmena",
+                            "naucse:solution?solution=0"
+                        ],
                         "slug": "index",
                         "solutions": [
                             {
@@ -731,7 +1211,15 @@
                         "content": {
                             "path": "main-module/index.html"
                         },
+                        "ids": [
+                            "negativni_testy",
+                            "spousteci_moduly"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#negativni_testy",
+                            "#spousteci_moduly"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/main-module/index.md",
@@ -754,7 +1242,19 @@
                         "content": {
                             "path": "modules/index.html"
                         },
+                        "ids": [
+                            "adresar_pro_kazdy_projekt",
+                            "moduly",
+                            "vedlejsi_efekty",
+                            "vlastni_moduly"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#adresar_pro_kazdy_projekt",
+                            "#moduly",
+                            "#vedlejsi_efekty",
+                            "#vlastni_moduly"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/modules/index.md",
@@ -777,7 +1277,13 @@
                         "content": {
                             "path": "nested-list/index.html"
                         },
+                        "ids": [
+                            "vnorene_seznamy"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#vnorene_seznamy"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/nested-list/index.md",
@@ -800,7 +1306,13 @@
                         "content": {
                             "path": "nested-traceback/index.html"
                         },
+                        "ids": [
+                            "vypisy_chyb_ze_zanorenych_funkci"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#vypisy_chyb_ze_zanorenych_funkci"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/nested-traceback/index.md",
@@ -823,7 +1335,15 @@
                         "content": {
                             "path": "prefer-return/index.html"
                         },
+                        "ids": [
+                            "none",
+                            "vratit_nebo_vypsat"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#none",
+                            "#vratit_nebo_vypsat"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/prefer-return/index.md",
@@ -847,7 +1367,22 @@
                             "path": "print/index.html"
                         },
                         "css": ".err-lineno {\n    display: inline-block;\n    background-color: #FCC;\n}\n.err-exctype {\n    display: inline-block;\n    background-color: #CFC;\n}\n",
+                        "ids": [
+                            "dalsi_prikazy",
+                            "jak_cist_chyby",
+                            "jak_funguje_program",
+                            "print_a_chybove_hlasky",
+                            "print_a_vyrazy"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#dalsi_prikazy",
+                            "#jak_cist_chyby",
+                            "#jak_funguje_program",
+                            "#print_a_chybove_hlasky",
+                            "#print_a_vyrazy",
+                            "naucse:page?lesson=beginners/variables"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/print/index.md",
@@ -870,7 +1405,13 @@
                         "content": {
                             "path": "range/index.html"
                         },
+                        "ids": [
+                            "range_sekvence_cisel"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#range_sekvence_cisel"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/range/index.md",
@@ -893,7 +1434,17 @@
                         "content": {
                             "path": "reassignment/index.html"
                         },
+                        "ids": [
+                            "prepisovani_promennych",
+                            "prepisovani_vcyklu",
+                            "solution-0"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#prepisovani_promennych",
+                            "#prepisovani_vcyklu",
+                            "naucse:solution?solution=0"
+                        ],
                         "slug": "index",
                         "solutions": [
                             {
@@ -921,7 +1472,32 @@
                         "content": {
                             "path": "str/index.html"
                         },
+                        "ids": [
+                            "cviceni",
+                            "novy_radek",
+                            "sekvence_se_zpetnym_lomitkem",
+                            "solution-0",
+                            "trojite_uvozovky",
+                            "uvozovky",
+                            "uvozovky_vuvozovkach",
+                            "zapis_retezcu",
+                            "znaky",
+                            "zpetne_lomitko"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#cviceni",
+                            "#novy_radek",
+                            "#sekvence_se_zpetnym_lomitkem",
+                            "#trojite_uvozovky",
+                            "#uvozovky",
+                            "#uvozovky_vuvozovkach",
+                            "#zapis_retezcu",
+                            "#znaky",
+                            "#zpetne_lomitko",
+                            "naucse:solution?solution=0",
+                            "naucse:static?filename=quote-comic.svg"
+                        ],
                         "slug": "index",
                         "solutions": [
                             {
@@ -952,7 +1528,30 @@
                         "content": {
                             "path": "str-index-slice/index.html"
                         },
+                        "ids": [
+                            "cviceni",
+                            "sekani_retezcu",
+                            "slicing-diagram",
+                            "solution-0",
+                            "solution-1",
+                            "solution-2",
+                            "solution-3",
+                            "solution-4",
+                            "vyber_znaku",
+                            "vyber_zretezcu"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#cviceni",
+                            "#sekani_retezcu",
+                            "#vyber_znaku",
+                            "#vyber_zretezcu",
+                            "naucse:solution?solution=0",
+                            "naucse:solution?solution=1",
+                            "naucse:solution?solution=2",
+                            "naucse:solution?solution=3",
+                            "naucse:solution?solution=4"
+                        ],
                         "slug": "index",
                         "solutions": [
                             {
@@ -991,7 +1590,23 @@
                         "content": {
                             "path": "str-methods/index.html"
                         },
+                        "ids": [
+                            "a_dalsi",
+                            "inicialy",
+                            "metody",
+                            "retezcove_funkce_a_metody",
+                            "solution-0"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#a_dalsi",
+                            "#inicialy",
+                            "#metody",
+                            "#retezcove_funkce_a_metody",
+                            "https://docs.python.org/3/library/stdtypes.html#string-methods",
+                            "https://pyvec.github.io/cheatsheets/strings/strings-cs.pdf",
+                            "naucse:solution?solution=0"
+                        ],
                         "slug": "index",
                         "solutions": [
                             {
@@ -1018,7 +1633,22 @@
                         "content": {
                             "path": "testing/index.html"
                         },
+                        "ids": [
+                            "instalace_knihovny_pytest",
+                            "psani_testu",
+                            "spousteni_testu",
+                            "testovaci_moduly",
+                            "testovani"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#instalace_knihovny_pytest",
+                            "#psani_testu",
+                            "#spousteni_testu",
+                            "#testovaci_moduly",
+                            "#testovani",
+                            "naucse:page?lesson=beginners/install"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/testing/index.md",
@@ -1041,7 +1671,17 @@
                         "content": {
                             "path": "tuple/index.html"
                         },
+                        "ids": [
+                            "kdy_pouzit_seznam_a_kdy_varnvar-tici",
+                            "male_varnvar-tice",
+                            "varnvar-tice"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#kdy_pouzit_seznam_a_kdy_varnvar-tici",
+                            "#male_varnvar-tice",
+                            "#varnvar-tice"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/tuple/index.md",
@@ -1064,7 +1704,28 @@
                         "content": {
                             "path": "variables/index.html"
                         },
+                        "ids": [
+                            "ctverec",
+                            "komentare",
+                            "kruhy",
+                            "mensi_ctverec",
+                            "nacitani_vstupu",
+                            "promenne",
+                            "solution-0",
+                            "solution-1"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#ctverec",
+                            "#komentare",
+                            "#kruhy",
+                            "#mensi_ctverec",
+                            "#nacitani_vstupu",
+                            "#promenne",
+                            "naucse:page?lesson=beginners/print",
+                            "naucse:solution?solution=0",
+                            "naucse:solution?solution=1"
+                        ],
                         "slug": "index",
                         "solutions": [
                             {
@@ -1094,7 +1755,24 @@
                         "content": {
                             "path": "venv-setup/index.html"
                         },
+                        "ids": [
+                            "adresar_pro_kazdou_lekci",
+                            "aktivace_virtualniho_prostredi",
+                            "nastaveni_prostredi",
+                            "prepnuti",
+                            "priprava_adresare",
+                            "virtualni_prostredi"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#adresar_pro_kazdou_lekci",
+                            "#aktivace_virtualniho_prostredi",
+                            "#nastaveni_prostredi",
+                            "#prepnuti",
+                            "#priprava_adresare",
+                            "#virtualni_prostredi",
+                            "naucse:static?filename=dirs-00.png"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/venv-setup/index.md",
@@ -1121,7 +1799,17 @@
                         "content": {
                             "path": "while/index.html"
                         },
+                        "ids": [
+                            "oko_bere",
+                            "solution-0",
+                            "while"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#oko_bere",
+                            "#while",
+                            "naucse:solution?solution=0"
+                        ],
                         "slug": "index",
                         "solutions": [
                             {
@@ -1148,7 +1836,15 @@
                         "content": {
                             "path": "with/index.html"
                         },
+                        "ids": [
+                            "kontext_codewithcode_a_codefinallycode",
+                            "kontrola_vyjimek"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#kontext_codewithcode_a_codefinallycode",
+                            "#kontrola_vyjimek"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/beginners/with/index.md",
@@ -1171,7 +1867,25 @@
                         "content": {
                             "path": "zip-enumerate/index.html"
                         },
+                        "ids": [
+                            "enumerate_ocislovani_sekvence",
+                            "iteratory_n-tic",
+                            "rozbalovani_v_cyklu_for",
+                            "solution-0",
+                            "solution-1",
+                            "zip_longest_pro_ty_co_chteji_vsechno",
+                            "zip_vic_iteraci_najednou"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#enumerate_ocislovani_sekvence",
+                            "#iteratory_n-tic",
+                            "#rozbalovani_v_cyklu_for",
+                            "#zip_longest_pro_ty_co_chteji_vsechno",
+                            "#zip_vic_iteraci_najednou",
+                            "naucse:solution?solution=0",
+                            "naucse:solution?solution=1"
+                        ],
                         "slug": "index",
                         "solutions": [
                             {
@@ -1202,7 +1916,34 @@
                             "path": "basics/index.html"
                         },
                         "css": ".green  {   color:  #0a0;    }\n.red    {   color:  #a00;    }\n.yellow {   color:  #a50;    }\n.strong {   font-weight:  bold;    }\n.blue   {   color:  #0aa;    }\n",
+                        "ids": [
+                            "diagram",
+                            "druha_revize",
+                            "git",
+                            "gitk",
+                            "instalace",
+                            "log",
+                            "prvni_revize",
+                            "repozitar",
+                            "zaver"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#diagram",
+                            "#druha_revize",
+                            "#git",
+                            "#gitk",
+                            "#instalace",
+                            "#log",
+                            "#prvni_revize",
+                            "#repozitar",
+                            "#zaver",
+                            "naucse:page?lesson=beginners/cmdline",
+                            "naucse:page?lesson=git/install",
+                            "naucse:static?filename=diagram.svg",
+                            "naucse:static?filename=dropbox.png",
+                            "naucse:static?filename=gitk.png"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/git/basics/index.md",
@@ -1235,7 +1976,18 @@
                         "content": {
                             "path": "branching/index.html"
                         },
+                        "ids": [
+                            "slouceni",
+                            "vetveni_v_gitu"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#slouceni",
+                            "#vetveni_v_gitu",
+                            "naucse:static?filename=branch1.png",
+                            "naucse:static?filename=branches.png",
+                            "naucse:static?filename=merge.png"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/git/branching/index.md",
@@ -1268,7 +2020,67 @@
                         "content": {
                             "path": "collaboration/index.html"
                         },
+                        "ids": [
+                            "aktualizace_smallcodegit_pullcodesmall",
+                            "github",
+                            "hlaseni_chyb_smallemissuesemsmall",
+                            "licence",
+                            "naklonovani_repozitare_smallcodegit_clonecodesmall",
+                            "open_source",
+                            "posilani_zmen_smallcodegit_pushcodesmall",
+                            "readme_informace_pro_ostatni",
+                            "spoluprace",
+                            "vytvoreni_vetve",
+                            "zadost_o_zacleneni_smallempull_requestemsmall"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#aktualizace_smallcodegit_pullcodesmall",
+                            "#github",
+                            "#hlaseni_chyb_smallemissuesemsmall",
+                            "#licence",
+                            "#naklonovani_repozitare_smallcodegit_clonecodesmall",
+                            "#open_source",
+                            "#posilani_zmen_smallcodegit_pushcodesmall",
+                            "#readme_informace_pro_ostatni",
+                            "#spoluprace",
+                            "#vytvoreni_vetve",
+                            "#zadost_o_zacleneni_smallempull_requestemsmall",
+                            "http://choosealicense.com/",
+                            "http://creativecommons.org/choose/",
+                            "https://bitbucket.org",
+                            "https://choosealicense.com/licenses/agpl-3.0/",
+                            "https://choosealicense.com/licenses/cc-by-sa-4.0/",
+                            "https://choosealicense.com/licenses/mit/",
+                            "https://chromium.googlesource.com/chromium/src.git",
+                            "https://cs.wikipedia.org/wiki/Markdown",
+                            "https://cs.wikipedia.org/wiki/Svobodn%C3%BD_software",
+                            "https://en.wikipedia.org/wiki/Richard_Stallman",
+                            "https://github.com",
+                            "https://github.com/",
+                            "https://github.com/GNOME/gedit",
+                            "https://github.com/Microsoft/vscode",
+                            "https://github.com/aosp-mirror",
+                            "https://github.com/atom/atom",
+                            "https://github.com/django/django",
+                            "https://github.com/jupyter/notebook",
+                            "https://github.com/kennethreitz/requests",
+                            "https://github.com/matplotlib/matplotlib",
+                            "https://github.com/mitsuhiko/flask",
+                            "https://github.com/mozilla/gecko-dev",
+                            "https://github.com/naucse/prezencka",
+                            "https://github.com/numpy/numpy",
+                            "https://github.com/pytest-dev/pytest/",
+                            "https://github.com/python/cpython",
+                            "https://github.com/pyvec/naucse.python.cz",
+                            "https://github.com/torvalds/linux",
+                            "https://gitlab.com/",
+                            "https://launchpad.net/",
+                            "https://opensource.org/licenses",
+                            "https://pagure.io/",
+                            "https://www.gnu.org/gnu/manifesto.en.html",
+                            "naucse:static?filename=gh-workflow-diagram.svg"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/git/collaboration/index.md",
@@ -1295,7 +2107,27 @@
                         "content": {
                             "path": "ignoring/index.html"
                         },
+                        "ids": [
+                            "automaticke_pridavani",
+                            "dalsi_haraburdi",
+                            "format_ignorovaciho_souboru",
+                            "ignorovani_souboru",
+                            "osobni_poznamky",
+                            "priprava",
+                            "vystupy_programu_a_pomocne_soubory_spolecnych_nastroju"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#automaticke_pridavani",
+                            "#dalsi_haraburdi",
+                            "#format_ignorovaciho_souboru",
+                            "#ignorovani_souboru",
+                            "#osobni_poznamky",
+                            "#priprava",
+                            "#vystupy_programu_a_pomocne_soubory_spolecnych_nastroju",
+                            "https://git-scm.com/docs/gitignore",
+                            "https://inkscape.org/"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/git/ignoring/index.md",
@@ -1318,7 +2150,24 @@
                         "content": {
                             "path": "install/index.1.html"
                         },
+                        "ids": [
+                            "config",
+                            "git",
+                            "linux",
+                            "macos",
+                            "nastaveni",
+                            "windows"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#config",
+                            "#git",
+                            "#linux",
+                            "#macos",
+                            "#nastaveni",
+                            "#windows",
+                            "https://git-scm.org"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/git/install/index.md",
@@ -1341,7 +2190,34 @@
                         "content": {
                             "path": "json/index.html"
                         },
+                        "ids": [
+                            "hezky_vystup",
+                            "jina_kodovani",
+                            "json",
+                            "kodovani",
+                            "kodovani_dat",
+                            "toml",
+                            "typy",
+                            "yaml"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#hezky_vystup",
+                            "#jina_kodovani",
+                            "#json",
+                            "#kodovani",
+                            "#kodovani_dat",
+                            "#toml",
+                            "#typy",
+                            "#yaml",
+                            "http://en.wikipedia.org/wiki/Bencode",
+                            "http://json.org/",
+                            "http://www.yaml.org/",
+                            "https://docs.python.org/3/library/json.html",
+                            "https://docs.python.org/3/library/pickle.html",
+                            "https://github.com/toml-lang/toml",
+                            "https://yaml.org/"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/intro/json/index.md",
@@ -1365,7 +2241,40 @@
                         "content": {
                             "path": "pyglet/index.html"
                         },
+                        "ids": [
+                            "animace",
+                            "cas_",
+                            "grafika",
+                            "interaktivni_programy",
+                            "klik_",
+                            "pokracovani_priste",
+                            "pyglet_",
+                            "text",
+                            "vykreslovani_",
+                            "zavolej_pozdeji"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#animace",
+                            "#cas_",
+                            "#grafika",
+                            "#interaktivni_programy",
+                            "#klik_",
+                            "#pokracovani_priste",
+                            "#pyglet_",
+                            "#text",
+                            "#vykreslovani_",
+                            "#zavolej_pozdeji",
+                            "http://pyglet.readthedocs.org/en/latest/index.html",
+                            "https://cs.wikipedia.org/wiki/Sprite_%28po%C4%8D%C3%ADta%C4%8Dov%C3%A1_grafika%29",
+                            "https://pyvec.github.io/cheatsheets/pyglet/pyglet-basics-cs.pdf",
+                            "https://www.google.cz/search?tbs=ift:png&tbm=isch&q=snake+icon",
+                            "naucse:page?lesson=beginners/functions",
+                            "naucse:page?lesson=projects/pong",
+                            "naucse:static?filename=had.png",
+                            "naucse:static?filename=had2.png",
+                            "naucse:static?filename=pong.py"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/intro/pyglet/index.md",
@@ -1401,7 +2310,62 @@
                         "content": {
                             "path": "turtle/index.html"
                         },
+                        "ids": [
+                            "_",
+                            "a_kde_je_ta_zelva",
+                            "ctverec",
+                            "ctverec_ii",
+                            "dlouha_prerusovana_cara",
+                            "jak_opakovat_a_neopakovat_emseem",
+                            "obdelnik",
+                            "otaceni",
+                            "prerusovana_cara",
+                            "range",
+                            "solution-0",
+                            "solution-1",
+                            "solution-2",
+                            "solution-3",
+                            "solution-4",
+                            "solution-5",
+                            "solution-6",
+                            "solution-7",
+                            "tri_ctverce",
+                            "ukol_navic",
+                            "vycet",
+                            "zelvi_program"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#_",
+                            "#a_kde_je_ta_zelva",
+                            "#ctverec",
+                            "#ctverec_ii",
+                            "#dlouha_prerusovana_cara",
+                            "#jak_opakovat_a_neopakovat_emseem",
+                            "#obdelnik",
+                            "#otaceni",
+                            "#prerusovana_cara",
+                            "#range",
+                            "#tri_ctverce",
+                            "#ukol_navic",
+                            "#vycet",
+                            "#zelvi_program",
+                            "naucse:solution?solution=0",
+                            "naucse:solution?solution=1",
+                            "naucse:solution?solution=2",
+                            "naucse:solution?solution=3",
+                            "naucse:solution?solution=4",
+                            "naucse:solution?solution=5",
+                            "naucse:solution?solution=6",
+                            "naucse:solution?solution=7",
+                            "naucse:static?filename=turtle-dashed.png",
+                            "naucse:static?filename=turtle-dashed2.png",
+                            "naucse:static?filename=turtle-hexagons.png",
+                            "naucse:static?filename=turtle-rect.png",
+                            "naucse:static?filename=turtle-square.png",
+                            "naucse:static?filename=turtle-squares.png",
+                            "naucse:static?filename=turtle-stairs.png"
+                        ],
                         "slug": "index",
                         "solutions": [
                             {
@@ -1471,7 +2435,38 @@
                         "content": {
                             "path": "asteroids/index.html"
                         },
+                        "ids": [
+                            "asteroidy",
+                            "dokonceni_a_rozsireni",
+                            "hra_typu_asteroids",
+                            "kolize",
+                            "utok",
+                            "vesmirna_lod"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#asteroidy",
+                            "#dokonceni_a_rozsireni",
+                            "#hra_typu_asteroids",
+                            "#kolize",
+                            "#utok",
+                            "#vesmirna_lod",
+                            "http://kenney.nl",
+                            "http://opengameart.org/content/smoke-particle-assets",
+                            "http://opengameart.org/content/space-shooter-redux",
+                            "http://pyglet.readthedocs.org/en/latest/programming_guide/text.html",
+                            "https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset",
+                            "https://docs.python.org/3/tutorial/datastructures.html#sets",
+                            "https://en.wikipedia.org/wiki/Asteroids_%28video_game%29",
+                            "https://en.wikipedia.org/wiki/Wraparound_%28video_games%29",
+                            "https://github.com/pyvec/cheatsheets/blob/master/sets/sets-cs.pdf",
+                            "https://pyglet.readthedocs.io/en/latest/modules/math.html#pyglet.math.Mat4",
+                            "https://pyglet.readthedocs.io/en/latest/programming_guide/migration.html?highlight=matrix#window-projection-and-cameras",
+                            "https://pyglet.readthedocs.io/en/latest/programming_guide/shapes.html",
+                            "https://pythonhosted.org/pyglet/api/pyglet.graphics.Batch-class.html",
+                            "naucse:page?lesson=beginners/inheritance",
+                            "naucse:static?filename=screenshot.png"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/projects/asteroids/index.md",
@@ -1498,7 +2493,31 @@
                         "content": {
                             "path": "github-api/index.html"
                         },
+                        "ids": [
+                            "api_githubu",
+                            "autorizace",
+                            "interakce",
+                            "requests",
+                            "uzivatelsky_ucet",
+                            "webove_api"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#api_githubu",
+                            "#autorizace",
+                            "#interakce",
+                            "#requests",
+                            "#uzivatelsky_ucet",
+                            "#webove_api",
+                            "https://api.github.com/emojis",
+                            "https://developer.github.com/v3/",
+                            "https://docs.github.com/en/rest/reference/activity#star-a-repository-for-the-authenticated-user",
+                            "https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods",
+                            "https://github.com",
+                            "https://github.com/pyvec/naucse.python.cz/stargazers",
+                            "https://github.com/settings/tokens",
+                            "naucse:page?lesson=intro/json"
+                        ],
                         "slug": "index",
                         "solutions": [],
                         "source_file": "lessons/projects/github-api/index.md",
@@ -1521,7 +2540,47 @@
                         "content": {
                             "path": "pong/index.html"
                         },
+                        "ids": [
+                            "dynamika_hry",
+                            "konstanty_a_stav_hry",
+                            "odrazeni_micku",
+                            "pohyb_palek",
+                            "pong",
+                            "rozehrani",
+                            "solution-0",
+                            "solution-1",
+                            "solution-2",
+                            "solution-3",
+                            "solution-4",
+                            "solution-5",
+                            "vstup_od_uzivatele",
+                            "vykresleni_hraci_plochy",
+                            "zaver"
+                        ],
                         "license": "cc-by-sa-40",
+                        "links": [
+                            "#dynamika_hry",
+                            "#konstanty_a_stav_hry",
+                            "#odrazeni_micku",
+                            "#pohyb_palek",
+                            "#pong",
+                            "#rozehrani",
+                            "#vstup_od_uzivatele",
+                            "#vykresleni_hraci_plochy",
+                            "#zaver",
+                            "https://en.wikipedia.org/wiki/Atari,_Inc.",
+                            "https://en.wikipedia.org/wiki/Pong",
+                            "https://www.youtube.com/watch?v=fiShX2pTz9A",
+                            "naucse:page?lesson=intro/pyglet",
+                            "naucse:solution?solution=0",
+                            "naucse:solution?solution=1",
+                            "naucse:solution?solution=2",
+                            "naucse:solution?solution=3",
+                            "naucse:solution?solution=4",
+                            "naucse:solution?solution=5",
+                            "naucse:static?filename=pong.png",
+                            "naucse:static?filename=pong.py"
+                        ],
                         "slug": "index",
                         "solutions": [
                             {

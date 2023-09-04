@@ -3,8 +3,8 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Na dnešní lekci si do virtuálního prostředí nainstalujte následující balíčky.
 Můžete použít prostředí z lekce o NumPy.</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install --upgrade pip
-<span class="gp">$ </span>python -m pip install notebook pandas matplotlib
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+<span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>notebook<span class="w"> </span>pandas<span class="w"> </span>matplotlib
 </pre></div><p>Pro případ, že by vaše verze <code>pip</code>-u neuměla <em>wheels</em> nebo na PyPI nebyly příslušné <em>wheel</em> balíčky, je dobré mít na systému nainstalovaný překladač C a Fortranu (např. <code>gcc</code>, <code>gcc-gfortran</code>) a hlavičkové soubory Pythonu (např. <code>python3-devel</code>). Jestli je ale nemáte, zkuste instalaci přímo – <em>wheels</em> pro většinu operačních systémů existují – a až kdyby to nefungovalo, instalujte překladače a hlavičky.</p>
 <p>Mezitím co se instaluje, stáhněte si do adresáře <code>static</code> potřebné soubory:
 <a href="naucse:static?filename=actors.csv">actors.csv</a> a
@@ -18,14 +18,14 @@ Můžete použít prostředí z lekce o NumPy.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="analyza_dat_v_pythonu">Analýza dat v Pythonu
-<a href="#header-analyza_dat_v_pythonu" class="header-link">#</a>
+<a href="#analyza_dat_v_pythonu" class="header-link">#</a>
 </h1>
 <p>Jedna z oblastí, kde popularita Pythonu neustále roste, je analýza dat. Co tenhle termín znamená?</p>
 <p>Máme nějaká data; je jich moc a jsou nepřehledná. Datový analytik je zpracuje, přeskládá, najde v nich smysl, vytvoří shrnutí toho nejdůležitějšího nebo barevnou infografiku.</p>
 <p>Ze statistických údajů o obyvatelstvu zjistíme, jak souvisí příjmy s dostupností škol. Zpracováním měření z fyzikálního experimentu ověříme, jestli platí hypotéza. Z log přístupů na webovou službu určíme, co uživatelé čtou a kde stránky opouštějí.</p>
 <p>Na podobné úkoly je možné použít jazyky vyvinuté přímo pro analýzu dat, jako R, které takovým úkolům svojí syntaxí a filozofií odpovídají víc. Python jako obecný programovací jazyk sice místy vyžaduje krkolomnější zápis, ale zato nabízí možnost data spojit s jinými oblastmi – od získávání informací z webových stránek po tvoření webových či desktopových rozhraní.</p>
 <h2 id="proces_analyzy_dat">Proces analýzy dat
-<a href="#header-proces_analyzy_dat" class="header-link">#</a>
+<a href="#proces_analyzy_dat" class="header-link">#</a>
 </h2>
 <p>Práce datového analytika se většinou drží následujícího postupu:</p>
 <ul>
@@ -46,7 +46,7 @@ Můžete použít prostředí z lekce o NumPy.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="pandas">Pandas
-<a href="#header-pandas" class="header-link">#</a>
+<a href="#pandas" class="header-link">#</a>
 </h1>
 <p>Pandas slouží pro analýzu dat, které lze reprezentovat 2D tabulkou. Tento „tvar” dat najdeme v SQL databázích, souborech CSV nebo tabulkových procesorech. Stručně řečeno, co jde dělat v Excelu, jde dělat i v Pandas. (Pandas má samozřejmě funkce navíc, a hlavně umožňuje analýzu automatizovat.)</p>
 </div>
@@ -76,7 +76,7 @@ Můžete použít prostředí z lekce o NumPy.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="tabulky">Tabulky
-<a href="#header-tabulky" class="header-link">#</a>
+<a href="#tabulky" class="header-link">#</a>
 </h2>
 </div>
 </div>
@@ -101,7 +101,7 @@ Můžete použít prostředí z lekce o NumPy.</p>
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;static/actors.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'static/actors.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">actors</span>
 </pre></div>
 
@@ -202,8 +202,8 @@ Můžete použít prostředí z lekce o NumPy.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">items</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
-    <span class="p">[</span><span class="s2">&quot;Book&quot;</span><span class="p">,</span> <span class="mi">123</span><span class="p">],</span>
-    <span class="p">[</span><span class="s2">&quot;Computer&quot;</span><span class="p">,</span> <span class="mi">2185</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"Book"</span><span class="p">,</span> <span class="mi">123</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"Computer"</span><span class="p">,</span> <span class="mi">2185</span><span class="p">],</span>
 <span class="p">])</span>
 <span class="n">items</span>
 </pre></div>
@@ -278,8 +278,8 @@ Můžete použít prostředí z lekce o NumPy.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">items</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
-    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Book&quot;</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Computer&quot;</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mi">2185</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Book"</span><span class="p">,</span> <span class="s2">"price"</span><span class="p">:</span> <span class="mi">123</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Computer"</span><span class="p">,</span> <span class="s2">"price"</span><span class="p">:</span> <span class="mi">2185</span><span class="p">},</span>
 <span class="p">])</span>
 <span class="n">items</span>
 </pre></div>
@@ -452,7 +452,7 @@ Některé automatické převody ovšem nemusí být úplně intuitivní, např. 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="sloupce">Sloupce
-<a href="#header-sloupce" class="header-link">#</a>
+<a href="#sloupce" class="header-link">#</a>
 </h2>
 </div>
 </div>
@@ -469,7 +469,7 @@ Některé automatické převody ovšem nemusí být úplně intuitivní, např. 
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">birth_years</span> <span class="o">=</span> <span class="n">actors</span><span class="p">[</span><span class="s1">&#39;birth&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">birth_years</span> <span class="o">=</span> <span class="n">actors</span><span class="p">[</span><span class="s1">'birth'</span><span class="p">]</span>
 <span class="n">birth_years</span>
 </pre></div>
 
@@ -821,7 +821,7 @@ Name: birth, dtype: bool</pre>
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39; (1)&#39;</span><span class="p">,</span> <span class="s1">&#39; (2)&#39;</span><span class="p">,</span> <span class="s1">&#39; (3)&#39;</span><span class="p">,</span> <span class="s1">&#39; (4)&#39;</span><span class="p">,</span> <span class="s1">&#39; (5)&#39;</span><span class="p">,</span> <span class="s1">&#39; (6)&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">' (1)'</span><span class="p">,</span> <span class="s1">' (2)'</span><span class="p">,</span> <span class="s1">' (3)'</span><span class="p">,</span> <span class="s1">' (4)'</span><span class="p">,</span> <span class="s1">' (5)'</span><span class="p">,</span> <span class="s1">' (6)'</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -867,7 +867,7 @@ Name: name, dtype: object</pre>
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -1083,11 +1083,11 @@ Name: birth, dtype: int64</pre>
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Součet: &#39;</span><span class="p">,</span> <span class="n">birth_years</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Průměr: &#39;</span><span class="p">,</span> <span class="n">birth_years</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Medián: &#39;</span><span class="p">,</span> <span class="n">birth_years</span><span class="o">.</span><span class="n">median</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Počet unikátních hodnot: &#39;</span><span class="p">,</span> <span class="n">birth_years</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Koeficient špičatosti: &#39;</span><span class="p">,</span> <span class="n">birth_years</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">())</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Součet: '</span><span class="p">,</span> <span class="n">birth_years</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Průměr: '</span><span class="p">,</span> <span class="n">birth_years</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Medián: '</span><span class="p">,</span> <span class="n">birth_years</span><span class="o">.</span><span class="n">median</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Počet unikátních hodnot: '</span><span class="p">,</span> <span class="n">birth_years</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Koeficient špičatosti: '</span><span class="p">,</span> <span class="n">birth_years</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -1129,7 +1129,7 @@ Koeficient špičatosti:  -1.48125
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
 </pre></div>
 
     </div>
@@ -1168,7 +1168,7 @@ Name: name, dtype: object</pre>
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="p">[</span><span class="s1">&#39;alive&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">({</span><span class="kc">True</span><span class="p">:</span> <span class="s1">&#39;alive&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">:</span> <span class="s1">&#39;deceased&#39;</span><span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="p">[</span><span class="s1">'alive'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">({</span><span class="kc">True</span><span class="p">:</span> <span class="s1">'alive'</span><span class="p">,</span> <span class="kc">False</span><span class="p">:</span> <span class="s1">'deceased'</span><span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1206,7 +1206,7 @@ Name: alive, dtype: object</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="tabulky_a_vybirani_prvku">Tabulky a vybírání prvků
-<a href="#header-tabulky_a_vybirani_prvku" class="header-link">#</a>
+<a href="#tabulky_a_vybirani_prvku" class="header-link">#</a>
 </h2>
 </div>
 </div>
@@ -1223,7 +1223,7 @@ Name: alive, dtype: object</pre>
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>  <span class="c1"># Jméno sloupce</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span>  <span class="c1"># Jméno sloupce</span>
 </pre></div>
 
     </div>
@@ -1342,7 +1342,7 @@ Name: name, dtype: object</pre>
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="p">[[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;alive&#39;</span><span class="p">]]</span>  <span class="c1"># Seznam sloupců</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="p">[[</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'alive'</span><span class="p">]]</span>  <span class="c1"># Seznam sloupců</span>
 </pre></div>
 
     </div>
@@ -1435,7 +1435,7 @@ Pro ostatní přístup použijeme tzv. <em>indexery</em>, jako <code>loc</code> 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="indexer_codeloccode">Indexer <code>loc</code>
-<a href="#header-indexer_codeloccode" class="header-link">#</a>
+<a href="#indexer_codeloccode" class="header-link">#</a>
 </h3>
 </div>
 </div>
@@ -1594,7 +1594,7 @@ Name: 2, dtype: object</pre>
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;birth&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'birth'</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -1634,7 +1634,7 @@ Name: 2, dtype: object</pre>
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;birth&#39;</span><span class="p">:</span><span class="s1">&#39;alive&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'birth'</span><span class="p">:</span><span class="s1">'alive'</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -1711,7 +1711,7 @@ Name: 2, dtype: object</pre>
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -1747,7 +1747,7 @@ Name: name, dtype: object</pre>
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">:</span><span class="s1">'name'</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -1820,7 +1820,7 @@ Name: name, dtype: object</pre>
 <div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;alive&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">'alive'</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -1866,7 +1866,7 @@ Name: alive, dtype: bool</pre>
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;alive&#39;</span><span class="p">]]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'alive'</span><span class="p">]]</span>
 </pre></div>
 
     </div>
@@ -2030,7 +2030,7 @@ Name: alive, dtype: bool</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="indexer_codeiloccode">Indexer <code>iloc</code>
-<a href="#header-indexer_codeiloccode" class="header-link">#</a>
+<a href="#indexer_codeiloccode" class="header-link">#</a>
 </h3>
 </div>
 </div>
@@ -2378,7 +2378,7 @@ Name: alive, dtype: bool</pre>
 <div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -2410,7 +2410,7 @@ Name: alive, dtype: bool</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="indexy">Indexy
-<a href="#header-indexy" class="header-link">#</a>
+<a href="#indexy" class="header-link">#</a>
 </h2>
 </div>
 </div>
@@ -2428,7 +2428,7 @@ Načtěte si znovu stejnou tabulku:</p>
 <div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;static/actors.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'static/actors.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">actors</span>
 </pre></div>
 
@@ -2601,7 +2601,7 @@ Načtěte si znovu stejnou tabulku:</p>
 <div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">actors</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">actors</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span>
 <span class="n">actors</span>
 </pre></div>
 
@@ -2839,7 +2839,7 @@ Načtěte si znovu stejnou tabulku:</p>
 <div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;Eric&#39;</span><span class="p">,</span> <span class="s1">&#39;Graham&#39;</span><span class="p">]]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">'Eric'</span><span class="p">,</span> <span class="s1">'Graham'</span><span class="p">]]</span>
 </pre></div>
 
     </div>
@@ -2920,7 +2920,7 @@ Načtěte si znovu stejnou tabulku:</p>
 <div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Terry&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'Terry'</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -3002,7 +3002,7 @@ Přesuňte teď do klíče dva sloupce najednou:</p>
 <div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed_actors</span> <span class="o">=</span> <span class="n">actors</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;birth&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed_actors</span> <span class="o">=</span> <span class="n">actors</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'birth'</span><span class="p">])</span>
 <span class="n">indexed_actors</span>
 </pre></div>
 
@@ -3141,7 +3141,7 @@ Přesuňte teď do klíče dva sloupce najednou:</p>
 <div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed_actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Terry&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed_actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'Terry'</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -3207,7 +3207,7 @@ Přesuňte teď do klíče dva sloupce najednou:</p>
 <div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed_actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Terry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1940</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed_actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'Terry'</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1940</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -3241,7 +3241,7 @@ Name: 1940, dtype: bool</pre>
 <div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed_actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s1">&#39;Terry&#39;</span><span class="p">,</span> <span class="mi">1942</span><span class="p">)]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed_actors</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s1">'Terry'</span><span class="p">,</span> <span class="mi">1942</span><span class="p">)]</span>
 </pre></div>
 
     </div>
@@ -3371,8 +3371,8 @@ Name: (Terry, 1942), dtype: bool</pre>
 <div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">last_names</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;Gilliam&#39;</span><span class="p">,</span> <span class="s1">&#39;Jones&#39;</span><span class="p">,</span> <span class="s1">&#39;Cleveland&#39;</span><span class="p">],</span>
-                           <span class="n">index</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;Terry&#39;</span><span class="p">,</span> <span class="mi">1940</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Terry&#39;</span><span class="p">,</span> <span class="mi">1942</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Carol&#39;</span><span class="p">,</span> <span class="mi">1942</span><span class="p">)])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">last_names</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'Gilliam'</span><span class="p">,</span> <span class="s1">'Jones'</span><span class="p">,</span> <span class="s1">'Cleveland'</span><span class="p">],</span>
+                           <span class="n">index</span><span class="o">=</span><span class="p">[(</span><span class="s1">'Terry'</span><span class="p">,</span> <span class="mi">1940</span><span class="p">),</span> <span class="p">(</span><span class="s1">'Terry'</span><span class="p">,</span> <span class="mi">1942</span><span class="p">),</span> <span class="p">(</span><span class="s1">'Carol'</span><span class="p">,</span> <span class="mi">1942</span><span class="p">)])</span>
 <span class="n">last_names</span>
 </pre></div>
 
@@ -3409,7 +3409,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed_actors</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_names</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed_actors</span><span class="p">[</span><span class="s1">'last_name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_names</span>
 <span class="n">indexed_actors</span>
 </pre></div>
 
@@ -3506,7 +3506,7 @@ dtype: object</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="nan_neboli_null_ci_na">NaN neboli NULL či N/A
-<a href="#header-nan_neboli_null_ci_na" class="header-link">#</a>
+<a href="#nan_neboli_null_ci_na" class="header-link">#</a>
 </h2>
 </div>
 </div>
@@ -3523,7 +3523,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;(&#39;</span> <span class="o">+</span> <span class="n">indexed_actors</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">'('</span> <span class="o">+</span> <span class="n">indexed_actors</span><span class="p">[</span><span class="s1">'last_name'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">')'</span>
 </pre></div>
 
     </div>
@@ -3570,7 +3570,7 @@ Name: last_name, dtype: object</pre>
 <div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed_actors</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed_actors</span><span class="p">[</span><span class="s1">'last_name'</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -3617,7 +3617,7 @@ Name: last_name, dtype: bool</pre>
 <div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed_actors</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed_actors</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -3800,7 +3800,7 @@ Name: last_name, dtype: bool</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="merge">Merge
-<a href="#header-merge" class="header-link">#</a>
+<a href="#merge" class="header-link">#</a>
 </h2>
 <p>Někdy se stane, že máme více souvisejících tabulek, které je potřeba spojit dohromady. Na to mají <code>DataFrame</code> metodu <code>merge()</code>, která umí podobné operace jako <code>JOIN</code> v SQL.</p>
 </div>
@@ -3811,7 +3811,7 @@ Name: last_name, dtype: bool</pre>
 <div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;static/actors.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actors</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'static/actors.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">actors</span>
 </pre></div>
 
@@ -3904,7 +3904,7 @@ Name: last_name, dtype: bool</pre>
 <div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">spouses</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;static/spouses.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">spouses</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'static/spouses.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">spouses</span>
 </pre></div>
 
@@ -4168,7 +4168,7 @@ Name: last_name, dtype: bool</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="presypani_dat">Přesýpání dat
-<a href="#header-presypani_dat" class="header-link">#</a>
+<a href="#presypani_dat" class="header-link">#</a>
 </h2>
 </div>
 </div>
@@ -4190,9 +4190,9 @@ Name: last_name, dtype: bool</pre>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="n">months</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2015-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2016-12&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
-<span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Electronics&#39;</span><span class="p">,</span> <span class="s1">&#39;Power Tools&#39;</span><span class="p">,</span> <span class="s1">&#39;Clothing&#39;</span><span class="p">]</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([{</span><span class="s1">&#39;month&#39;</span><span class="p">:</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;sales&#39;</span><span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)}</span>
+<span class="n">months</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'2015-01'</span><span class="p">,</span> <span class="s1">'2016-12'</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'M'</span><span class="p">)</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Electronics'</span><span class="p">,</span> <span class="s1">'Power Tools'</span><span class="p">,</span> <span class="s1">'Clothing'</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([{</span><span class="s1">'month'</span><span class="p">:</span> <span class="n">a</span><span class="p">,</span> <span class="s1">'category'</span><span class="p">:</span> <span class="n">b</span><span class="p">,</span> <span class="s1">'sales'</span><span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)}</span>
                           <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">months</span><span class="p">,</span> <span class="n">categories</span><span class="p">)</span>
                           <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>
 </pre></div>
@@ -4335,7 +4335,7 @@ Name: last_name, dtype: bool</pre>
 <div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">'sales'</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -4383,7 +4383,7 @@ Name: sales, dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">indexed</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">'category'</span><span class="p">,</span> <span class="s1">'month'</span><span class="p">])</span>
 <span class="n">indexed</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -4477,7 +4477,7 @@ Name: sales, dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unstacked</span> <span class="o">=</span> <span class="n">indexed</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unstacked</span> <span class="o">=</span> <span class="n">indexed</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="s1">'month'</span><span class="p">)</span>
 <span class="n">unstacked</span>
 </pre></div>
 
@@ -4839,7 +4839,7 @@ Name: sales, dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unstacked</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Electronics&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unstacked</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'Electronics'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -4879,7 +4879,7 @@ Name: sales, dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unstacked</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;Electronics&#39;</span><span class="p">,</span> <span class="s1">&#39;Power Tools&#39;</span><span class="p">],</span> <span class="s1">&#39;2016-03&#39;</span><span class="p">:</span><span class="s1">&#39;2016-05&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unstacked</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">'Electronics'</span><span class="p">,</span> <span class="s1">'Power Tools'</span><span class="p">],</span> <span class="s1">'2016-03'</span><span class="p">:</span><span class="s1">'2016-05'</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -4960,7 +4960,7 @@ Name: sales, dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unstacked</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Clothing&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unstacked</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'Clothing'</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -5023,7 +5023,7 @@ Name: Clothing, dtype: float64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="grafy">Grafy
-<a href="#header-grafy" class="header-link">#</a>
+<a href="#grafy" class="header-link">#</a>
 </h2>
 </div>
 </div>
@@ -5064,7 +5064,7 @@ Name: Clothing, dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unstacked</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Clothing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unstacked</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'Clothing'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -5888,7 +5888,7 @@ NIwxxnjMkoYxxhiPWdIwxhjjMUsaxhhjPGZJwxhjjMf+H0VCpa8qrD5ZAAAAAElFTkSuQmCC
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Jak si proti sobě stály jednotlivé kategorie v březnu, dubnu a květnu 2016?</span>
-<span class="n">unstacked</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;2016-03&#39;</span><span class="p">:</span><span class="s1">&#39;2016-05&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">unstacked</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">'2016-03'</span><span class="p">:</span><span class="s1">'2016-05'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -6048,7 +6048,7 @@ Lyf5JnAq3Tf+jyf5CvCDke6fAV624SQwcCKwvD+BfDXdSWKAPwGOSHIZ3W2GbwPuqqrL6M4BfJ3u
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="groupby">Groupby
-<a href="#header-groupby" class="header-link">#</a>
+<a href="#groupby" class="header-link">#</a>
 </h2>
 <p>Často používaná operace pro zjednodušení tabulky je <code>groupby</code>, která sloučí dohromady řádky se stejnou hodnotou v některém sloupci a sloučená data nějak agreguje.</p>
 </div>
@@ -6152,7 +6152,7 @@ Lyf5JnAq3Tf+jyf5CvCDke6fAV624SQwcCKwvD+BfDXdSWKAPwGOSHIZ3W2GbwPuqqrL6M4BfJ3u
 <div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'category'</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -6192,7 +6192,7 @@ Lyf5JnAq3Tf+jyf5CvCDke6fAV624SQwcCKwvD+BfDXdSWKAPwGOSHIZ3W2GbwPuqqrL6M4BfJ3u
 <div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'category'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -6269,7 +6269,7 @@ Lyf5JnAq3Tf+jyf5CvCDke6fAV624SQwcCKwvD+BfDXdSWKAPwGOSHIZ3W2GbwPuqqrL6M4BfJ3u
 <div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'category'</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -6351,7 +6351,7 @@ Lyf5JnAq3Tf+jyf5CvCDke6fAV624SQwcCKwvD+BfDXdSWKAPwGOSHIZ3W2GbwPuqqrL6M4BfJ3u
 <div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'category'</span><span class="p">,</span> <span class="s1">'month'</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -6439,7 +6439,7 @@ Lyf5JnAq3Tf+jyf5CvCDke6fAV624SQwcCKwvD+BfDXdSWKAPwGOSHIZ3W2GbwPuqqrL6M4BfJ3u
 <div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;median&#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">,</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'category'</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">'mean'</span><span class="p">,</span> <span class="s1">'median'</span><span class="p">,</span> <span class="nb">sum</span><span class="p">,</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -6535,7 +6535,7 @@ Lyf5JnAq3Tf+jyf5CvCDke6fAV624SQwcCKwvD+BfDXdSWKAPwGOSHIZ3W2GbwPuqqrL6M4BfJ3u
 <div class="prompt input_prompt">In&nbsp;[86]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'month'</span><span class="p">)</span>
 <span class="n">g</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
@@ -6873,8 +6873,8 @@ Lyf5JnAq3Tf+jyf5CvCDke6fAV624SQwcCKwvD+BfDXdSWKAPwGOSHIZ3W2GbwPuqqrL6M4BfJ3u
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bin_size</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">by_month</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="n">by_thousands</span> <span class="o">=</span> <span class="n">by_month</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by_month</span><span class="p">[</span><span class="s1">&#39;sales&#39;</span><span class="p">]</span> <span class="o">//</span> <span class="n">bin_size</span> <span class="o">*</span> <span class="n">bin_size</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">])</span>
+<span class="n">by_month</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'month'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">by_thousands</span> <span class="o">=</span> <span class="n">by_month</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by_month</span><span class="p">[</span><span class="s1">'sales'</span><span class="p">]</span> <span class="o">//</span> <span class="n">bin_size</span> <span class="o">*</span> <span class="n">bin_size</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">'count'</span><span class="p">,</span> <span class="s1">'sum'</span><span class="p">])</span>
 <span class="n">by_thousands</span>
 </pre></div>
 
@@ -6954,7 +6954,7 @@ Lyf5JnAq3Tf+jyf5CvCDke6fAV624SQwcCKwvD+BfDXdSWKAPwGOSHIZ3W2GbwPuqqrL6M4BfJ3u
 <div class="prompt input_prompt">In&nbsp;[88]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">by_thousands</span><span class="p">[(</span><span class="s1">&#39;sales&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">by_thousands</span><span class="p">[(</span><span class="s1">'sales'</span><span class="p">,</span> <span class="s1">'sum'</span><span class="p">)]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -7238,5 +7238,5 @@ YwLm/wFs+GhAV4F94AAAAABJRU5ErkJggg==
 </div>
 
 </div>
- 
+
 

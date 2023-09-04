@@ -1,30 +1,30 @@
 <h1 id="o_formatu_yaml">O formátu YAML
-<a href="#header-o_formatu_yaml" class="header-link">#</a>
+<a href="#o_formatu_yaml" class="header-link">#</a>
 </h1>
 <p>Formát se skládá z několika stavebních bloků, které se dají poté skládat dohromady.
 Prvním je seznam hodnot (podobně jako v Pythonu).
 Seznam se ve formátu YAML zapisuje následovně:</p>
-<div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">První položka</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Druhá položka</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Položka může být i něco jiného než text!</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">První položka</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Druhá položka</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Položka může být i něco jiného než text!</span>
 </pre></div><p>Druhým stavebním blokem je slovník (zase podobně jako v Pythonu), který se skládá z klíčů a hodnot, nezáleží v ní tedy na pořadí, protože se k informaci vždy člověk dostance pomocí klíče.
 Slovník se ve formátu YAML zapisuje následovně:</p>
-<div class="highlight"><pre><span></span><span class="nt">klic1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hodnota klíče klic1.</span><span class="w"></span>
-<span class="nt">klic2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
-<span class="nt">klic3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">I hodnoty ve slovníku mohou být něco jiného než text.</span><span class="w"></span>
-<span class="nt">klic4</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">    </span><span class="no">Pokud potřebuješ zapsat nějaký delší text, uděláš to takhle.</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nt">klic1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hodnota klíče klic1.</span>
+<span class="nt">klic2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="nt">klic3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">I hodnoty ve slovníku mohou být něco jiného než text.</span>
+<span class="nt">klic4</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">Pokud potřebuješ zapsat nějaký delší text, uděláš to takhle.</span>
 
-<span class="w">    </span><span class="no">Tento text budou dva separátní odstavce v rámci jednoho klíče.</span><span class="w"></span>
-<span class="nt">klic5</span><span class="p">:</span><span class="w"></span>
-<span class="nt">klic6</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Jak vidíš v klíči klic5, hodnota může být i prázdá.</span><span class="w"></span>
+<span class="w">    </span><span class="no">Tento text budou dva separátní odstavce v rámci jednoho klíče.</span>
+<span class="nt">klic5</span><span class="p">:</span>
+<span class="nt">klic6</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Jak vidíš v klíči klic5, hodnota může být i prázdá.</span>
 </pre></div><p>Seznamy a slovníky jde samozřejmě i skládat dohromady:</p>
-<div class="highlight"><pre><span></span><span class="nt">klic1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hodnota klíče</span><span class="w"></span>
-<span class="nt">klic2</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tohle je seznam, které patří pod klíč klic2</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">vnorenyklic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Můžeme skládat jednotlivé typy skoro do nekonečna.</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">vnorenyklic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Klíče musí být unikátní jen v rámci jednoho slovníku, takže to může být takto.</span><span class="w"></span>
-<span class="nt">klic3</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">vnorenyklic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Slovník může obsahovat další slovník i takto.</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="nt">klic1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hodnota klíče</span>
+<span class="nt">klic2</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tohle je seznam, které patří pod klíč klic2</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">vnorenyklic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Můžeme skládat jednotlivé typy skoro do nekonečna.</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">vnorenyklic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Klíče musí být unikátní jen v rámci jednoho slovníku, takže to může být takto.</span>
+<span class="nt">klic3</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">vnorenyklic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Slovník může obsahovat další slovník i takto.</span>
 </pre></div>

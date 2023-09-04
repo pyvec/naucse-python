@@ -1,5 +1,5 @@
 <h1 id="pong">Pong
-<a href="#header-pong" class="header-link">#</a>
+<a href="#pong" class="header-link">#</a>
 </h1>
 <div style="text-align:center;">
     <img src="naucse:static?filename=pong.png" alt="">
@@ -13,7 +13,7 @@ jako svůj první titul v roce 1972 a odstartovala tak boom herního průmyslu.<
 <p>Na Youtube se můžeš podívat na
 <a href="https://www.youtube.com/watch?v=fiShX2pTz9A">video, které ukazuje jak se Pong hraje</a>.</p>
 <h2 id="konstanty_a_stav_hry">Konstanty a stav hry
-<a href="#header-konstanty_a_stav_hry" class="header-link">#</a>
+<a href="#konstanty_a_stav_hry" class="header-link">#</a>
 </h2>
 <p>Hra Pong má jednoduchá pravidla. Musíme je ale umět
 vyjádřit v Pythonu a to není úplně jednoduché.
@@ -78,7 +78,7 @@ práci.</p>
 <span class="n">stisknute_klavesy</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>  <span class="c1"># sada stisknutych klaves</span>
 <span class="n">skore</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># skore dvou hracu</span>
 </pre></div><h2 id="vykresleni_hraci_plochy">Vykreslení hrací plochy
-<a href="#header-vykresleni_hraci_plochy" class="header-link">#</a>
+<a href="#vykresleni_hraci_plochy" class="header-link">#</a>
 </h2>
 <p>Nejprve si v Pygletu otevřeme okno velikosti hrací plochy.</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyglet</span>
@@ -99,7 +99,7 @@ která se používá následovně:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyglet</span> <span class="kn">import</span> <span class="n">gl</span>
 <span class="o">...</span>
 <span class="k">def</span> <span class="nf">nakresli_obdelnik</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sirka</span><span class="p">,</span> <span class="n">vyska</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Nakresli obdelnik na danych souradnicich</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Nakresli obdelnik na danych souradnicich</span>
 
 <span class="sd">    Nazorny diagram::</span>
 
@@ -127,7 +127,7 @@ Analogicky jsme to dělali s hadem, tady máme jen víc
 grafických prvků.</p>
 <div class="highlight"><pre><span></span><span class="o">...</span>
 <span class="k">def</span> <span class="nf">vykresli</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Vykresli stav hry&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Vykresli stav hry&quot;&quot;&quot;</span>
     <span class="n">window</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>  <span class="c1"># smaz obsah okna (vybarvi na cerno)</span>
 
 <span class="n">window</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Window</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">SIRKA</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">VYSKA</span><span class="p">)</span>
@@ -220,7 +220,7 @@ kulatými závorkami za jménem objektu, jako bychom
 volali funkci, a uložíme si ho do proměnné:
 <code>napis = Label()</code>.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nakresli_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">pozice_x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Nakresli dany text na danou pozici</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Nakresli dany text na danou pozici</span>
 
 <span class="sd">    Argument ``pozice_x`` muze byt &quot;left&quot; nebo &quot;right&quot;, udava na kterou stranu</span>
 <span class="sd">    bude text zarovnany</span>
@@ -260,12 +260,12 @@ konstanty SIRKA, VYSKA, ODSAZENI_TEXTU a VELIKOST_FONTU.</p>
     </div>
 </div><p>Hurá, teď už máme vykreslené hrací pole. Pojďme ho rozhýbat.</p>
 <h2 id="dynamika_hry">Dynamika hry
-<a href="#header-dynamika_hry" class="header-link">#</a>
+<a href="#dynamika_hry" class="header-link">#</a>
 </h2>
 <p>Teď to začne být zajímavé. Nejdřív rozhýbeme pálky,
 protože je to jednodušší, pak míček.</p>
 <h3 id="vstup_od_uzivatele">Vstup od uživatele
-<a href="#header-vstup_od_uzivatele" class="header-link">#</a>
+<a href="#vstup_od_uzivatele" class="header-link">#</a>
 </h3>
 <p>Potřebujeme pohybovat s pálkami podle vstupu od uživatele.
 Dokud bude uživatel držet např. klávesu <kbd>S</kbd>, levá pálka
@@ -349,7 +349,7 @@ pustil.</p>
 <span class="p">)</span>
 <span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div><h3 id="pohyb_palek">Pohyb pálek
-<a href="#header-pohyb_palek" class="header-link">#</a>
+<a href="#pohyb_palek" class="header-link">#</a>
 </h3>
 <p>Když už jsme dokázali zpracovat vstup od uživatele,
 můžeme podle něj pohnout s pálkami.
@@ -393,7 +393,7 @@ Analogicky to provedeme, když se blíží hornímu okraji.</p>
 <span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div><p>a podívej se na výsledek.</p>
 <h3 id="rozehrani">Rozehrání
-<a href="#header-rozehrani" class="header-link">#</a>
+<a href="#rozehrani" class="header-link">#</a>
 </h3>
 <p>Než začneme míček odrážet od stěn, musíme ho nejprve
 uvést do pohybu. Vystřelíme ho ze středu hrací plochy
@@ -452,7 +452,7 @@ funkce <code>obnov_stav(dt)</code> následující kód:</p>
 </pre></div><p>Zkus, co se teď stane při spuštění hry.
 Míček by měl vyletět pokaždé do jiného směru.</p>
 <h3 id="odrazeni_micku">Odrážení míčku
-<a href="#header-odrazeni_micku" class="header-link">#</a>
+<a href="#odrazeni_micku" class="header-link">#</a>
 </h3>
 <p>Míček nám teď nekontrolovaně vyletí z hřiště.
 Musíme tedy zařídit, aby se odrážel od stěn.
@@ -504,7 +504,7 @@ prohrál kolo a my máme přičíst jeho soupeři bod a
             <span class="n">skore</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="n">reset</span><span class="p">()</span>
 </pre></div><h2 id="zaver">Závěr
-<a href="#header-zaver" class="header-link">#</a>
+<a href="#zaver" class="header-link">#</a>
 </h2>
 <p>Hurá, prokousali jsme se k zdárnému konci Pongu!
 Máš teď plně funkční interaktivní grafickou

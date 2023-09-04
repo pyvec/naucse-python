@@ -1,5 +1,5 @@
 <h1 id="requests">Requests
-<a href="#header-requests" class="header-link">#</a>
+<a href="#requests" class="header-link">#</a>
 </h1>
 <p>Knihoven pro HTTP klienty (tedy “programy, které stahují webové stránky“)
 je celá řada.
@@ -16,7 +16,7 @@ které s Requests zvládnete i bez detailních znalostí protokolu HTTP.</p>
 client interface.</em>
 Zaměříme se tedy na Requests hned od začátku.</p>
 <p>Knihovna Requests se instaluje standardním způsobem:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install requests
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>requests
 </pre></div><p>Budeme předpokládat, že znáte alespoň základy HTTP protokolu,
 a vrhneme se rovnou na příklad.</p>
 <div class="admonition note"><p>Pokud základy neznáte, můžete se podívat na
@@ -44,7 +44,7 @@ To se většinou nedělá a webové API to často ani nepodporují.
 Pokud na GitHub používáte dvoufaktorovou autentizaci, příklad nebude fungovat.</p>
 </div><p>Příklady použití pro další HTTP metody najdete v <a href="http://docs.python-requests.org/en/master/user/quickstart/">dokumentaci</a>.</p>
 <h2 id="pouziti_session">Použití session
-<a href="#header-pouziti_session" class="header-link">#</a>
+<a href="#pouziti_session" class="header-link">#</a>
 </h2>
 <p>Hlavně v budoucnu se nám bude hodit použití tzv.
 <a href="http://docs.python-requests.org/en/master/user/advanced/#session-objects"><em>session</em></a>.</p>
@@ -66,7 +66,7 @@ k testování HTTP dotazů:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="go">{&#39;headers&#39;: {&#39;Accept&#39;: &#39;*/*&#39;, &#39;Accept-Encoding&#39;: &#39;gzip, deflate&#39;, &#39;Connection&#39;: &#39;close&#39;, &#39;Cookie&#39;: &#39;mipyt=best&#39;, &#39;Host&#39;: &#39;httpbin.org&#39;, &#39;User-Agent&#39;: &#39;python-requests/2.19.1&#39;, &#39;X-Test&#39;: &#39;true&#39;, &#39;X-Test2&#39;: &#39;true&#39;}}</span>
 </pre></div><h2 id="github_api">GitHub API
-<a href="#header-github_api" class="header-link">#</a>
+<a href="#github_api" class="header-link">#</a>
 </h2>
 <p>Podíváme se teď, podobně jako v úvodním příkladu, na <a href="https://developer.github.com/v3">GitHub API</a>,
 které má poměrně jednoduchou autentizaci (od GitHubu přímo
@@ -131,13 +131,13 @@ Můžete ale zkontrolovat návratový stav:</p>
 My ale věříme, že ji odebrat nechcete :)</p>
 <p><a href="https://developer.github.com/v3/">Dokumentace</a> ke GitHub API.</p>
 <h2 id="chrante_sve_tokeny">Chraňte své tokeny
-<a href="#header-chrante_sve_tokeny" class="header-link">#</a>
+<a href="#chrante_sve_tokeny" class="header-link">#</a>
 </h2>
 <p>Když ukládáte skript do gitu, mějte na paměti, že tokeny a klíče do něj nikdy
 nepatří. Můžete je uložit do konfiguračního souboru, který bude gitem ignorován,
 například takhle:</p>
-<div class="highlight"><pre><span></span><span class="k">[github]</span><span class="w"></span>
-<span class="na">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">d7313dab254b7fd0d0f3ec3cbf754b3abce462d5</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">[github]</span>
+<span class="na">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">d7313dab254b7fd0d0f3ec3cbf754b3abce462d5</span>
 </pre></div><p>A následně konfiguraci načtete pomocí modulu
 <a href="https://docs.python.org/3/library/configparser.html">configparser</a>:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">configparser</span>

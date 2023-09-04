@@ -1,5 +1,5 @@
 <h1 id="spousteci_moduly">Spouštěcí moduly
-<a href="#header-spousteci_moduly" class="header-link">#</a>
+<a href="#spousteci_moduly" class="header-link">#</a>
 </h1>
 <p>Automatické testy musí projít „bez dozoru“.
 V praxi se často automaticky spouští, případné chyby se automaticky
@@ -99,7 +99,7 @@ Musíš ji testovat ručně.
 Protože ale hlavní část programu (<code>vyhodnot</code>) jde pokrýt automatickými testy,
 ruční testování nemusí být tak důkladné.</p>
 <h2 id="negativni_testy">Negativní testy
-<a href="#header-negativni_testy" class="header-link">#</a>
+<a href="#negativni_testy" class="header-link">#</a>
 </h2>
 <p>Test <code>test_vyhry</code>, ukázaný výše, není úplný.
 Splnila by ho i funkce jako:</p>
@@ -118,7 +118,7 @@ Jak příkaz <code>with</code> přesně funguje, to se dozvíš později;
 teď stačí říct, že <code>with pytest.raises</code> ověří, že odsazený blok kódu
 pod ním vyvolá danou výjimku:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_spatneho_tahu</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;🤘 vs. 🖖 není správný vstup&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;🤘 vs. 🖖 není správný vstup&quot;&quot;&quot;</span>
     <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
         <span class="n">vyhodnot</span><span class="p">(</span><span class="s1">&#39;metal&#39;</span><span class="p">,</span> <span class="s1">&#39;spock&#39;</span><span class="p">)</span>
 </pre></div>

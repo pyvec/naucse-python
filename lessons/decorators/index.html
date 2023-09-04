@@ -1,5 +1,5 @@
 <h1 id="dekoratory">Dekorátory
-<a href="#header-dekoratory" class="header-link">#</a>
+<a href="#dekoratory" class="header-link">#</a>
 </h1>
 <p>V této lekci se nebudeme věnovat žádné externí knihovně. Místo toho se seznámíme
 s jednou vlastností Pythonu, kterou knihovny často využívají, a která obvykle
@@ -8,7 +8,7 @@ vypadá trochu magicky.</p>
 <p><em>Dekorátory</em> se hodí tehdy, když potřebujeme upravit chování nějaké funkce, ale
 nechceme ji přímo upravovat.</p>
 <h2 id="teorie_do_zacatku">Teorie do začátku
-<a href="#header-teorie_do_zacatku" class="header-link">#</a>
+<a href="#teorie_do_zacatku" class="header-link">#</a>
 </h2>
 <p>Co je to vlastně dekorátor? Dekorátor je vlastně jenom funkce, která dostane
 jeden argument a vrátí jednu hodnotu. Je ale trochu speciální v tom, že jak
@@ -27,7 +27,7 @@ chová se přesně stejně jako následující kód, na kterém je lépe vidět,
 </pre></div><p>Na řádku za zavináčem může být libovolný výraz, který po vyhodnocení vrátí
 funkci, která má požadované rozhraní.</p>
 <h2 id="priklad_0_registrace_funkci">Přiklad 0 – registrace funkcí
-<a href="#header-priklad_0_registrace_funkci" class="header-link">#</a>
+<a href="#priklad_0_registrace_funkci" class="header-link">#</a>
 </h2>
 <p>Jak už při programování bývá zvykem, náš první dekorátor nás pozdraví.</p>
 <p>Začneme s jednoduchým programem, který definuje funkci pro pozdrav a zavolá ji.</p>
@@ -92,14 +92,14 @@ praktický způsob, jak řešit registraci funkcí. Stejné řešení používá
 například knihovna <code>flask</code> pro definování webových služeb nebo <code>click</code> pro
 vytváření příkazů pro terminál.</p>
 </div><h2 id="priklad_1_trasovani_volani_funkci">Příklad 1 – trasování volání funkcí
-<a href="#header-priklad_1_trasovani_volani_funkci" class="header-link">#</a>
+<a href="#priklad_1_trasovani_volani_funkci" class="header-link">#</a>
 </h2>
 <p>Podívejme se třeba na tuto na pohled nevinnou funkci. Počítá, jak vypadá <em>n</em>-té
 číslo ve Fibonacciho posloupnosti. Funguje docela pěkně, pokud jí nezadáme jako
 argument příliš velké číslo. Na autorově počítači příliš velká čísla začínají
 kolem 35.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Spočítá x-té číslo ve Fibonacciho posloupnosti.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Spočítá x-té číslo ve Fibonacciho posloupnosti.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">x</span>
     <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
@@ -112,7 +112,7 @@ se ve funkci děje.</p>
 
 <span class="nd">@co_se_deje</span>
 <span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Spočítá x-té číslo ve Fibonacciho posloupnosti.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Spočítá x-té číslo ve Fibonacciho posloupnosti.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">x</span>
     <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
@@ -162,7 +162,7 @@ v tom logu nikdo nevyzná. Myšlenka jako taková ovšem není úplně špatná.
 třeba dekorátor počítal, kolikrát se funkce spustí, a jak dlouho obvykle
 trvá, mohl by nám pomoct najít místa pro optimalizaci.</p>
 </div><h3 id="napoveda_pro_funkce">Nápověda pro funkce
-<a href="#header-napoveda_pro_funkce" class="header-link">#</a>
+<a href="#napoveda_pro_funkce" class="header-link">#</a>
 </h3>
 <p>Zkuste si v interaktivní konzoli Pythonu spustit následující příklad:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
@@ -186,8 +186,8 @@ dostat pěknou nápovědu třeba i pro naši známou funkci <code>fib</code>.</p
 
 <span class="go">nahradni_funkce(x)</span>
 
-<span class="go">&gt;&gt;&gt;</span>
-</pre></div><p>Něco je špatně. Protože jsme původní implementaci funkce <code>fib</code> pomocí
+<span class="gp">&gt;&gt;&gt;
+</span></pre></div><p>Něco je špatně. Protože jsme původní implementaci funkce <code>fib</code> pomocí
 dekorátoru nahradili naší pomocnou funkcí, komentář se cestou ztratil. Mohli
 bychom přidat dokumentační komentář k náhradní funkci, ale přece nebudeme
 stejný kód kopírovat dvakrát.</p>
@@ -208,9 +208,9 @@ komentář a jméno z jedné funkce do druhé.</p>
 <span class="go">fib(x)</span>
 <span class="go">    Spočítá x-té číslo ve Fibonacciho posloupnosti.</span>
 
-<span class="go">&gt;&gt;&gt;</span>
-</pre></div><h3 id="predavani_vsech_argumentu">Předávání všech argumentů.
-<a href="#header-predavani_vsech_argumentu" class="header-link">#</a>
+<span class="gp">&gt;&gt;&gt;
+</span></pre></div><h3 id="predavani_vsech_argumentu">Předávání všech argumentů.
+<a href="#predavani_vsech_argumentu" class="header-link">#</a>
 </h3>
 <p>Při psaní dekorátorů je dobré myslet na to, jak moc univerzální by měly být.
 Například náš <code>co_se_deje</code> momentálně funguje pouze pro funkce, které mají
@@ -235,7 +235,7 @@ předáme dál.</p>
 <p>Ve výstupu teď používáme pouze poziční argumenty. Přidání těch pojmenovaných je
 cvičení pro čtenáře.</p>
 <h2 id="priklad_2_opakovani_http_pozadavku">Příklad 2 – opakování HTTP požadavků
-<a href="#header-priklad_2_opakovani_http_pozadavku" class="header-link">#</a>
+<a href="#priklad_2_opakovani_http_pozadavku" class="header-link">#</a>
 </h2>
 <p>Pokud náš program musí pracovat s nějakou externí službou nebo systémem, může
 se stát, že komunikace mezi nimi nebude vždy bezproblémová. Pěkný příklad je
@@ -249,7 +249,7 @@ ve virtuálním prostředí ještě nemáte.</p>
 </div><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="k">def</span> <span class="nf">stahni</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Stáhne stránku a něco s ní udělá.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Stáhne stránku a něco s ní udělá.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stahuju stránku&quot;</span><span class="p">)</span>
     <span class="n">odpoved</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/status/200,400,500&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dostali jsme </span><span class="si">{</span><span class="n">odpoved</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -264,7 +264,7 @@ třetinách případů bychom měli dostat chybu. Pokud požadavek zkusíme zopa
 máme dobrou šanci, že to projde.</p>
 <p>Začneme s jednoduchým dekorátorem, který jenom zavolá funkci.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">opakuj_pri_neuspechu</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Pokud volání funkce vyhodí výjimku, budeme ji ignorovat a zkusíme funkci</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pokud volání funkce vyhodí výjimku, budeme ji ignorovat a zkusíme funkci</span>
 <span class="sd">    zavolat znovu.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
@@ -276,7 +276,7 @@ máme dobrou šanci, že to projde.</p>
 
 <span class="nd">@opakuj_pri_neuspechu</span>
 <span class="k">def</span> <span class="nf">stahni</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Stáhne stránku a něco s ní udělá.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Stáhne stránku a něco s ní udělá.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stahuju stránku&quot;</span><span class="p">)</span>
     <span class="n">odpoved</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/status/200,400,500&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dostali jsme </span><span class="si">{</span><span class="n">odpoved</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -293,7 +293,7 @@ pokus.</p>
 
 
 <span class="k">def</span> <span class="nf">opakuj_pri_neuspechu</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Pokud volání funkce vyhodí výjimku, budeme ji ignorovat a zkusíme funkci</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pokud volání funkce vyhodí výjimku, budeme ji ignorovat a zkusíme funkci</span>
 <span class="sd">    zavolat znovu.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -311,7 +311,7 @@ pokus.</p>
 
 <span class="nd">@opakuj_pri_neuspechu</span>
 <span class="k">def</span> <span class="nf">stahni</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Stáhne stránku a něco s ní udělá.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Stáhne stránku a něco s ní udělá.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stahuju stránku&quot;</span><span class="p">)</span>
     <span class="n">odpoved</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/status/200,400,500&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dostali jsme </span><span class="si">{</span><span class="n">odpoved</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -356,7 +356,7 @@ dekorátor.</p>
 
 <span class="nd">@opakuj_pri_neuspechu</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">stahni</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Stáhne stránku a něco s ní udělá.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Stáhne stránku a něco s ní udělá.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stahuju stránku&quot;</span><span class="p">)</span>
     <span class="n">odpoved</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/status/200,400,500&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dostali jsme </span><span class="si">{</span><span class="n">odpoved</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>

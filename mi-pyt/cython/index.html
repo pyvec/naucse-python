@@ -1,6 +1,6 @@
 <p>Dnes budeme potřebovat do virtuálního prostředí nainstalovat tyto knihovny:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install --upgrade pip
-<span class="gp">$ </span>python -m pip install notebook numpy cython pytest pytest-profiling
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+<span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>notebook<span class="w"> </span>numpy<span class="w"> </span>cython<span class="w"> </span>pytest<span class="w"> </span>pytest-profiling
 </pre></div><p>Také je potřeba nainstalovat překladač jazyka C
 a hlavičkové soubory Pythonu:</p>
 <ul>
@@ -11,7 +11,7 @@ na <a href="https://wiki.python.org/moin/WindowsCompilers">Python wiki</a>.</li>
 </ul>
 <hr>
 <h1 id="c_api">C API
-<a href="#header-c_api" class="header-link">#</a>
+<a href="#c_api" class="header-link">#</a>
 </h1>
 <p>Mluvíme-li o „Pythonu“, máme často na mysli jak jazyk samotný, tak i interpret,
 program, který programy v tomto jazyce umí spouštět.
@@ -33,7 +33,7 @@ není k nekompatibilitě mezi interprety dobrý důvod.</p>
 <p>Někdy to ale je potřeba, a dnešní přednáška bude specifická pro CPython
 a přímé využití jeho API pro jazyk C.</p>
 <h2 id="rychlost">Rychlost
-<a href="#header-rychlost" class="header-link">#</a>
+<a href="#rychlost" class="header-link">#</a>
 </h2>
 <p>Častý důvod proč sáhnout k C API je rychlost: CPython je celkem pomalý.
 Tradiční metoda optimalizace je zjistit, které části jsou kritické, a přepsat
@@ -44,16 +44,16 @@ prototypování a přehlednost kódu, a C pro rychlost.</p>
 První krok k tomu je vždy zkontrolovat, co zabírá více času, než by mělo.
 K tomu se dá použít nástroj <code>profile</code> ze standardní knihovny, který vypíše
 tabulku počtu volání jednotlivých funkcí a času v nich stráveného:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python -m profile -s cumtime program.py
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>profile<span class="w"> </span>-s<span class="w"> </span>cumtime<span class="w"> </span>program.py
 </pre></div><p>Profilovat běh pytest testů se dá jednoduše pomocí modulu <a href="https://pypi.python.org/pypi/pytest-profiling">pytest-profiling</a>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install pytest-profiling
-<span class="gp">$ </span>python -m pytest --profile
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pytest-profiling
+<span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>--profile
 </pre></div><p>Když máme představu o tom, co nás brzdí, můžeme začít přepisovat do C způsoby
 popsanými níže.</p>
 <p>Jiná možnost, jak program zrychlit, je ho pustit, tak jak je, pod interpretem
 PyPy, který obsahuje optimalizovaný překladač. To je ale jiná kapitola.</p>
 <h2 id="externi_knihovny">Externí knihovny
-<a href="#header-externi_knihovny" class="header-link">#</a>
+<a href="#externi_knihovny" class="header-link">#</a>
 </h2>
 <p>Druhý důvod, proč programátoři používají C API, je použití knihoven, které mají
 rozhraní pro C.
@@ -63,14 +63,14 @@ Takových knihoven existuje mnoho – pokud není něco specifické pro určitý
 <a href="https://docs.python.org/3/library/ctypes.html">ctypes</a>, ale v dnešní době je dobré místo toho použít <a href="http://cffi.readthedocs.io/en/latest/">CFFI</a>, knihovnu
 která funguje i s PyPy (a teoreticky jinými implementacemi).</p>
 <h2 id="cpython">CPython
-<a href="#header-cpython" class="header-link">#</a>
+<a href="#cpython" class="header-link">#</a>
 </h2>
 <p>Třetí důvod, proč použít C API, je práce s CPythonem samotným.
 Když člověk zabředne do složitého problému, může na CPython pustit C debugger
 jako <a href="https://en.wikipedia.org/wiki/GNU_Debugger">gdb</a> nebo <a href="http://valgrind.org/">Valgrind</a>, prozkoumat potíže na nižší úrovni
 a zjistit, kde přesně se chyba nachází.</p>
 <h2 id="modul_v_c">Modul v C
-<a href="#header-modul_v_c" class="header-link">#</a>
+<a href="#modul_v_c" class="header-link">#</a>
 </h2>
 <p>Pojďme začít příkladem.
 Vytvořte si následující soubor, který implementuje rozšíření
@@ -78,52 +78,52 @@ Vytvořte si následující soubor, který implementuje rozšíření
 <p>(Nebudeme chtít, abyste podobný kód uměli napsat, ale měli byste být schopní
 porozumět tomu, co dělá.)</p>
 <p>demo.c:</p>
-<div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Python.h&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Python.h&gt;</span>
 
-<span class="n">PyDoc_STRVAR</span><span class="p">(</span><span class="w"></span>
+<span class="n">PyDoc_STRVAR</span><span class="p">(</span>
 <span class="w">    </span><span class="n">mod_docstring</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="s">&quot;Demo extension module with a Python wrapper for the system(3) function&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;Demo extension module with a Python wrapper for the system(3) function&quot;</span><span class="p">);</span>
 
-<span class="k">static</span><span class="w"> </span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="nf">demo_system</span><span class="p">(</span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="n">args</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">command</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">retval</span><span class="p">;</span><span class="w"></span>
+<span class="k">static</span><span class="w"> </span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="nf">demo_system</span><span class="p">(</span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">PyObject</span><span class="w"> </span><span class="o">*</span><span class="n">args</span><span class="p">){</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">command</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">retval</span><span class="p">;</span>
 
-<span class="w">    </span><span class="cm">/* Parse the given arguments: expect one string, convert to char* */</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">PyArg_ParseTuple</span><span class="p">(</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;s&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">command</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="cm">/* Error handling: if PyArg_ParseTuple returns zero, return NULL */</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/* Parse the given arguments: expect one string, convert to char* */</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">PyArg_ParseTuple</span><span class="p">(</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;s&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">command</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="cm">/* Error handling: if PyArg_ParseTuple returns zero, return NULL */</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="cm">/* Call the C function */</span><span class="w"></span>
-<span class="w">    </span><span class="n">retval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">system</span><span class="p">(</span><span class="n">command</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/* Call the C function */</span>
+<span class="w">    </span><span class="n">retval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">system</span><span class="p">(</span><span class="n">command</span><span class="p">);</span>
 
-<span class="w">    </span><span class="cm">/* Return result as Python int (error handling built in) */</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">PyLong_FromLong</span><span class="p">(</span><span class="n">retval</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/* Return result as Python int (error handling built in) */</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">PyLong_FromLong</span><span class="p">(</span><span class="n">retval</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="cm">/* List of all methods in the module */</span><span class="w"></span>
-<span class="k">static</span><span class="w"> </span><span class="n">PyMethodDef</span><span class="w"> </span><span class="n">DemoMethods</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="s">&quot;system&quot;</span><span class="p">,</span><span class="w">  </span><span class="n">demo_system</span><span class="p">,</span><span class="w"> </span><span class="n">METH_VARARGS</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="n">PyDoc_STR</span><span class="p">(</span><span class="s">&quot;Execute a shell command.&quot;</span><span class="p">)},</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">}</span><span class="w">        </span><span class="cm">/* Sentinel */</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="cm">/* List of all methods in the module */</span>
+<span class="k">static</span><span class="w"> </span><span class="n">PyMethodDef</span><span class="w"> </span><span class="n">DemoMethods</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">{</span><span class="s">&quot;system&quot;</span><span class="p">,</span><span class="w">  </span><span class="n">demo_system</span><span class="p">,</span><span class="w"> </span><span class="n">METH_VARARGS</span><span class="p">,</span>
+<span class="w">            </span><span class="n">PyDoc_STR</span><span class="p">(</span><span class="s">&quot;Execute a shell command.&quot;</span><span class="p">)},</span>
+<span class="w">    </span><span class="p">{</span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">}</span><span class="w">        </span><span class="cm">/* Sentinel */</span>
+<span class="p">};</span>
 
-<span class="cm">/* Module specification */</span><span class="w"></span>
-<span class="k">static</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">PyModuleDef</span><span class="w"> </span><span class="n">demo_module</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">   </span><span class="n">PyModuleDef_HEAD_INIT</span><span class="p">,</span><span class="w"></span>
-<span class="w">   </span><span class="s">&quot;demo&quot;</span><span class="p">,</span><span class="w">          </span><span class="cm">/* name of module */</span><span class="w"></span>
-<span class="w">   </span><span class="n">mod_docstring</span><span class="p">,</span><span class="w">   </span><span class="cm">/* dosctring (may be NULL) */</span><span class="w"></span>
-<span class="w">   </span><span class="mi">0</span><span class="p">,</span><span class="w">               </span><span class="cm">/* size of per-interpreter state of the module */</span><span class="w"></span>
-<span class="w">   </span><span class="n">DemoMethods</span><span class="p">,</span><span class="w">     </span><span class="cm">/* list of methods */</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="cm">/* Module specification */</span>
+<span class="k">static</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">PyModuleDef</span><span class="w"> </span><span class="n">demo_module</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">PyModuleDef_HEAD_INIT</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;demo&quot;</span><span class="p">,</span><span class="w">          </span><span class="cm">/* name of module */</span>
+<span class="w">   </span><span class="n">mod_docstring</span><span class="p">,</span><span class="w">   </span><span class="cm">/* dosctring (may be NULL) */</span>
+<span class="w">   </span><span class="mi">0</span><span class="p">,</span><span class="w">               </span><span class="cm">/* size of per-interpreter state of the module */</span>
+<span class="w">   </span><span class="n">DemoMethods</span><span class="p">,</span><span class="w">     </span><span class="cm">/* list of methods */</span>
+<span class="p">};</span>
 
 
-<span class="cm">/* Module entrypoint */</span><span class="w"></span>
-<span class="n">PyMODINIT_FUNC</span><span class="w"></span>
-<span class="nf">PyInit_demo</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">PyModuleDef_Init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">demo_module</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="cm">/* Module entrypoint */</span>
+<span class="n">PyMODINIT_FUNC</span>
+<span class="nf">PyInit_demo</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">PyModuleDef_Init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">demo_module</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div><p>Z tohoto souboru by měla být patrná struktura podobných rozšíření:
 máme funkci (<code>demo_system</code>), která převádí objekty Pythonu
 na datové typy C, volá samotnou funkci a výsledek převádí zpět na pythonní
@@ -142,7 +142,7 @@ takže jediná, která je exportována jako API knihovny, kterou vytváříme.
 Až bude Python tento modul importovat, najde tuto funkci podle jména, spustí ji
 a podle vrácené struktury typu <code>PyModuleDef</code> vytvoří pythonní objekt s modulem.</p>
 <h2 id="preklad">Překlad
-<a href="#header-preklad" class="header-link">#</a>
+<a href="#preklad" class="header-link">#</a>
 </h2>
 <p>Abychom mohli takovýto modul naimportovat, musíme ho nejdřív přeložit a sestavit
 z něj sdílenou knihovnu – soubor .so (nebo .dll) – s názvem modulu:
@@ -194,17 +194,17 @@ Pozor na to, že po každé změně zdrojového kódu je potřeba rozšíření 
 <p>Příkaz <code>python setup.py develop</code> bude fungovat jako dřív (používá <code>build_ext --inplace</code>),
 jen je opět potřeba příkaz po každé změně znovu spustit.</p>
 <h2 id="pyobject">PyObject
-<a href="#header-pyobject" class="header-link">#</a>
+<a href="#pyobject" class="header-link">#</a>
 </h2>
 <p>Podívejme se teď na základní mechanismy interpretu CPython.</p>
 <p>Základní datová struktura, která reprezentuje jakýkoli objekt Pythonu, je PyObject
 (<a href="https://docs.python.org/3/c-api/structures.html#c.PyObject">dokumentace</a>, 
 <a href="https://github.com/python/cpython/blob/3.5/Include/object.h#L106">definice</a>).
 Skládá se ze dvou prvků:</p>
-<div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">_object</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">Py_ssize_t</span><span class="w"> </span><span class="n">ob_refcnt</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">_typeobject</span><span class="w"> </span><span class="o">*</span><span class="n">ob_type</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="n">PyObject</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">_object</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Py_ssize_t</span><span class="w"> </span><span class="n">ob_refcnt</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">_typeobject</span><span class="w"> </span><span class="o">*</span><span class="n">ob_type</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">PyObject</span><span class="p">;</span>
 </pre></div><p>První je počet referencí (<em>reference count</em>), který se dá popsat jako počet míst,
 ze kterých je možné k tomuto objektu přistoupit.
 Když objekt uložíme do proměnné nebo do seznamu, zvýší se počet referencí o 1.
@@ -218,10 +218,10 @@ atributy a metody, které ten objekt má.</p>
 <p>Struktura PyObject slouží jako hlavička, za kterou pak následují data interpretovaná podle
 typu daného objektu.
 Například pythonní <a href="https://github.com/python/cpython/blob/3.5/Include/floatobject.h#L15">objekt typu float</a> vypadá následovně:</p>
-<div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">PyObject</span><span class="w"> </span><span class="n">ob_base</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ob_fval</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="n">PyFloatObject</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">PyObject</span><span class="w"> </span><span class="n">ob_base</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ob_fval</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">PyFloatObject</span><span class="p">;</span>
 </pre></div><p>...tedy struktura PyObject, za kterou je v paměti číselná hodnota.</p>
 <p><a href="https://github.com/python/cpython/blob/3.5/Include/listobject.h#L23">Seznamy</a> obsahují za hlavičkou např. velikost a (ukazatel na) pole ukazatelů na jednotlivé
 prvky.
@@ -231,7 +231,7 @@ NumPy matice mají metadata (velikost, typ, popis rozložení v paměti) a ukaza
 <p>To základní, co potřebujeme vědět, je, že na úrovni C je každý pythonní objekt reprezentován
 jako struktura počtu referencí, ukazatele na typ a dat specifických pro daný typ.</p>
 <h2 id="reference_counting">Reference counting
-<a href="#header-reference_counting" class="header-link">#</a>
+<a href="#reference_counting" class="header-link">#</a>
 </h2>
 <p>Tak jako v C je důležité správně alokovat a dealokovat paměť, při tvorbě rozšíření do CPythonu
 je třeba správně pracovat s referencemi: ke každému <a href="https://docs.python.org/3/c-api/refcounting.html#c.Py_INCREF">Py_INCREF</a> (přičtení 1 k počtu referencí)
@@ -251,7 +251,7 @@ Za vzniklou referenci naše funkce přebírá zodpovědnost, je tedy na nás, ab
 o zavolání Py_DECREF.
 Vrácením výsledku tuto zodpovědnost ale předáváme na funkci, která volá tu naši.</p>
 <h2 id="hodnoty_a_vyjimky">Hodnoty a výjimky
-<a href="#header-hodnoty_a_vyjimky" class="header-link">#</a>
+<a href="#hodnoty_a_vyjimky" class="header-link">#</a>
 </h2>
 <p>Další konvence, kterou většina funkcí v C API dodržuje, je způsob vracení výjimek.</p>
 <p>Funkce, které vrací pythonní objekty, na úrovni C vrací <code>PyObject*</code>.
@@ -265,7 +265,7 @@ Naší funkci <code>system</code> už stačí vrátit NULL, protože víme, že 
 Vzhledem k tomu, že její výsledek rovnou vracíme, není potřeba úspěch kontrolovat – vrátíme
 buď správnou hodnotu nebo NULL se zaznamenanou výjimkou.</p>
 <h2 id="gil">GIL
-<a href="#header-gil" class="header-link">#</a>
+<a href="#gil" class="header-link">#</a>
 </h2>
 <p>Poslední omezení, kterého si autor rozšíření musí být vědom, je <em>Global Interpreter Lock</em>.
 Stručně řečeno, s objekty <code>PyObject*</code> může pracovat pouze jedno vlákno.
@@ -278,7 +278,7 @@ Na druhou stranu tento zámek ale omezuje paralelismus, a tedy i rychlost progra
 Například čtení ze souboru nebo sítě ostatní vlákna neblokuje.
 Stejně tak maticové operace v NumPy typicky nedrží GIL zatímco počítají na úrovni C nebo Fortranu.</p>
 <h1 id="cython">Cython
-<a href="#header-cython" class="header-link">#</a>
+<a href="#cython" class="header-link">#</a>
 </h1>
 <p>Teď, když víme jak to všechno funguje, se můžeme podívat na způsob, jak rozšíření psát
 jednoduše.
@@ -288,9 +288,9 @@ Další způsob, jak použít C API ale nepsat C, je použít překladač z př�
 <p>Jeden takový jazyk je Cython (neplést s CPython).</p>
 <p>Cython je jazyk podobný Pythonu, který ale lze přeložit na C a dále optimalizovat.</p>
 <p>Cython si nainstalujte pomocí příkazu:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install cython
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>cython
 </pre></div><h2 id="kompilace_pythonu">Kompilace Pythonu
-<a href="#header-kompilace_pythonu" class="header-link">#</a>
+<a href="#kompilace_pythonu" class="header-link">#</a>
 </h2>
 <p>Když chceme převést modul z Pythonu do Cythonu, nejjednodušší začátek je přejmenovat soubor <code>.py</code>
 na <code>.pyx</code>, aby bylo jasné, že jde o jiný jazyk, který nepůjde naimportovat přímo.</p>
@@ -358,7 +358,7 @@ Instalace z archivu <code>sdist</code> se tedy nemusí povést – je potřeba u
 Tento problém aktuálně řeší PyPA (správci <code>pip</code> a <code>setuptools</code>).</p>
 <p>Instalace z archivů <code>wheel</code> by měla být bezproblémová.</p>
 <h2 id="anotace">Anotace
-<a href="#header-anotace" class="header-link">#</a>
+<a href="#anotace" class="header-link">#</a>
 </h2>
 <p>Kód, který takto vznikne, není o moc rychlejší než původní Python.
 Je to tím, že sekvence příkazů ve funkci je sice převedená do C a přeložená do strojového kódu,
@@ -366,7 +366,7 @@ ale každá operace pracuje s generickými pythonními objekty, takže musí pro
 číslo z matice zkonstruovat pythonní objekt, vyhledat implementaci sčítání pro dvě celá čísla,
 a výsledek převést zpět na <code>int64</code> a uložit do matice.</p>
 <p>Na situaci se můžeme podívat pomocí přepínače <code>--annotate</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>cython -3 --annotate matmul.pyx
+<div class="highlight"><pre><span></span><span class="gp">$ </span>cython<span class="w"> </span>-3<span class="w"> </span>--annotate<span class="w"> </span>matmul.pyx
 </pre></div><p>To vygeneruje soubor <code>matmul.html</code>, kde jsou potencionálně pomalé operace vysvíceny žlutě.
 Ke každému řádku se navíc dá kliknutím ukázat odpovídající kód v C (který bývá docela složitý,
 protože řeší věci jako zpětnou kompatibilitu a ošetřování chyb, a navíc používá hodně pomocných
@@ -376,7 +376,7 @@ Ale v cyklech, zvláště těch třikrát zanořených, se autor rozšíření t
 vyhnout.
 Nejjednodušší způsob, jak toho docílit, je doplnění statických informací o typech.</p>
 <h2 id="doplneni_typu">Doplnění typů
-<a href="#header-doplneni_typu" class="header-link">#</a>
+<a href="#doplneni_typu" class="header-link">#</a>
 </h2>
 <p>Začneme u funkce <code>intmul</code>, kde doplníme informaci o tom, že parametry <code>a</code> a <code>b</code> a proměnná
 <code>result</code> jsou typu <code>int</code>.
@@ -400,7 +400,7 @@ hodnoty:</p>
 Bohužel ale toto zrychlení pocítíme, jen když takovou funkci zavoláme
 z jiné funkce napsané v Cythonu.</p>
 <h2 id="tri_typy_funkci">Tři typy funkcí
-<a href="#header-tri_typy_funkci" class="header-link">#</a>
+<a href="#tri_typy_funkci" class="header-link">#</a>
 </h2>
 <p>Funkce jdou deklarovat třemi způsoby:</p>
 <ul>
@@ -409,7 +409,7 @@ z jiné funkce napsané v Cythonu.</p>
 <li><code>cpdef &lt;type&gt; func(...):</code> je funkce, která se z Cythonu volá rychle, ale jde volat i z Pythonu (ve skutečnosti Cython vytvoří dva druhy této funkce).</li>
 </ul>
 <h2 id="tridy">Třídy
-<a href="#header-tridy" class="header-link">#</a>
+<a href="#tridy" class="header-link">#</a>
 </h2>
 <p>Cython umožňuje vytvářet tzv. <em>built-in</em> třídy: stejný druh tříd jako je
 např. <code>str</code> nebo <code>int</code>.
@@ -441,7 +441,7 @@ Ani jim ani jejich instancím nelze z Pythonu nastavovat nové atributy:</p>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">foo</span>
 </pre></div><p>Více o definici tříd najdete v <a href="http://cython.readthedocs.io/en/latest/src/tutorial/cdef_classes.html">dokumentaci Cythonu</a>.</p>
 <h2 id="pouzivani_numpy">Používání NumPy
-<a href="#header-pouzivani_numpy" class="header-link">#</a>
+<a href="#pouzivani_numpy" class="header-link">#</a>
 </h2>
 <p>Pro funkci <code>matmul</code> můžeme nadefinovat číselné proměnné (<code>n</code>, <code>m</code>, <code>p</code>, <code>i</code>, <code>j</code>, <code>k</code>, <code>x</code>, <code>y</code>)
 jako <code>int</code>, ale tím si moc nepomůžeme: většinu času program stráví vybíráním a ukládáním hodnot
@@ -475,7 +475,7 @@ jazyka C. Při použití <code>matrix[a][b]</code> se ale dějí operace dvě, n
 tohoto řádku. Obě operace probíhají na úrovni Pythonu a proto budou pomalejší
 a při použití <code>--annotate</code> bude řádek s takovou operací označen žlutě.</p>
 </div><h2 id="direktivy">Direktivy
-<a href="#header-direktivy" class="header-link">#</a>
+<a href="#direktivy" class="header-link">#</a>
 </h2>
 <p>Anotací typů matic se naše demo maticového násobení dostalo skoro na úroveň
 C, ale ne úplně: řádky, které pracují s maticemi, jsou ve výstupu <code>--annotate</code>
@@ -509,7 +509,7 @@ operujeme jen na obsahu už existujících maticí.
 Opak je <code>with cython.gil:</code>, kterým zámek zase zamkneme – například když
 potřebujeme vyhodit výjimku.</p>
 <h2 id="struktury_ukazatele_a_dynamicka_alokace">Struktury, ukazatele a dynamická alokace
-<a href="#header-struktury_ukazatele_a_dynamicka_alokace" class="header-link">#</a>
+<a href="#struktury_ukazatele_a_dynamicka_alokace" class="header-link">#</a>
 </h2>
 <p>Přestože v Cythonu můžete používat pythonní <em>n</em>-tice, slovníky, seznamy a další
 podobné nehomogenní typy, jejich použití je pomalé, protože vždy pracují
@@ -577,7 +577,7 @@ přes alokaci paměti a ukazatele.</p>
                 <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span>
                 <span class="s1">&#39;z&#39;</span><span class="p">:</span><span class="o">-</span><span class="mf">0.75</span><span class="p">}</span>
 </pre></div><h2 id="pouziti_knihoven_z_c">Použití knihoven z C
-<a href="#header-pouziti_knihoven_z_c" class="header-link">#</a>
+<a href="#pouziti_knihoven_z_c" class="header-link">#</a>
 </h2>
 <p>Pro použití C knihoven z Pythonu je lepší použít <a href="http://cffi.readthedocs.io/en/latest/">CFFI</a>.
 Ale když už píšete kód v Cythonu
@@ -602,7 +602,7 @@ předpřipravené, můžete tedy použít <code>cimport</code> rovnou:</p>
 <span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="n">NULL</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rand</span><span class="p">())</span>
 </pre></div><h2 id="zkratky_codepyximportcode_a_codecythoncode">Zkratky: <code>pyximport</code> a <code>%%cython</code>
-<a href="#header-zkratky_codepyximportcode_a_codecythoncode" class="header-link">#</a>
+<a href="#zkratky_codepyximportcode_a_codecythoncode" class="header-link">#</a>
 </h2>
 <p>Pro interaktivní práci v Jupyter Notebook má Cython vlastní „magii“.
 Na začátku Notebooku můžeme zadat:</p>
@@ -623,7 +623,7 @@ Zapíná se to následovně:</p>
 
 <span class="kn">import</span> <span class="nn">matmul</span>
 </pre></div><h2 id="video">Video
-<a href="#header-video" class="header-link">#</a>
+<a href="#video" class="header-link">#</a>
 </h2>
 <p>Před nedávnem měl <a href="https://github.com/hroncok/">Miro</a> na Středisku unixových technologií nahrávanou ukázku přepsání
 úlohy ruksaku z předmětu MI-PAA z Pythonu do Cythonu (včetně nepříjemného záseku a live

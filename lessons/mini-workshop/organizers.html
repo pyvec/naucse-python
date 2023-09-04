@@ -1,10 +1,10 @@
 <h1 id="pokyny_pro_organizatory">Pokyny pro organizátory
-<a href="#header-pokyny_pro_organizatory" class="header-link">#</a>
+<a href="#pokyny_pro_organizatory" class="header-link">#</a>
 </h1>
 <p>Tento motivační wokshop s MicroPythonem potřebuje speciální hardware.
 Tady je popsáno, jak jsme všechno připravili.</p>
 <h2 id="nakupni_seznam">Nákupní seznam
-<a href="#header-nakupni_seznam" class="header-link">#</a>
+<a href="#nakupni_seznam" class="header-link">#</a>
 </h2>
 <dl>
 <dt></dt><dt>NodeMCU Devkit v2</dt><dd><p>Dá se koupit z Číny, např.
@@ -32,7 +32,7 @@ v zásobě, kdyby si přinesli nedatový kabel od nabíječky.</p>
 </dd><dt></dt><dt>Počítač</dt><dd><p>Je potřeba i „velký“ počítač – hlavně kvůli obrazovce a klávesnici.
 Viz nastavení níže.</p>
 </dd></dl><h2 id="priprava_hardwaru">Příprava hardwaru
-<a href="#header-priprava_hardwaru" class="header-link">#</a>
+<a href="#priprava_hardwaru" class="header-link">#</a>
 </h2>
 <p>NodeMCU zasuň do nepájivého pole, aby na každé delší straně zbyla řada dírek.
 Do nich zapoj komponenty:</p>
@@ -94,19 +94,19 @@ zbylý Data.</p>
 <p><span class="figure"><a href="naucse:static?filename=module_full.jpg"><img src="naucse:static?filename=module_full.jpg" alt="Fotografie modulu s veškerým příslušenstvím"></a></span></p>
 <p><span class="figure"><a href="naucse:static?filename=module_detail.jpg"><img src="naucse:static?filename=module_detail.jpg" alt="Detailní záběr na osazené nepájivé pole"></a></span></p>
 <h2 id="priprava_pocitace">Příprava počítače
-<a href="#header-priprava_pocitace" class="header-link">#</a>
+<a href="#priprava_pocitace" class="header-link">#</a>
 </h2>
 <p>Na workshop doporučujeme použít počítače s <a href="https://getfedora.org/">Fedorou</a> Workstation 25.
 Pár věcí je potřeba nastavit:</p>
 <ul>
 <li><p>Uživatel musí být členem skupiny <code>dialout</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo usermod -a -G dialout <span class="k">$(</span>whoami<span class="k">)</span>
-<span class="gp">$ </span>su - <span class="k">$(</span>whoami<span class="k">)</span>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>usermod<span class="w"> </span>-a<span class="w"> </span>-G<span class="w"> </span>dialout<span class="w"> </span><span class="k">$(</span>whoami<span class="k">)</span>
+<span class="gp">$ </span>su<span class="w"> </span>-<span class="w"> </span><span class="k">$(</span>whoami<span class="k">)</span>
 </pre></div><p>(Po tomto nastavení je potřeba se přihlásit a znovu odhlásit,
 případně v každém terminálu zadat <code>su - $(whoami)</code>.)</p>
 </li>
 <li><p>Musí být nainstalované balíčky <code>picocom</code> a <code>ampy</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo dnf install picocom ampy
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>picocom<span class="w"> </span>ampy
 </pre></div><p>(Na jiných systémech nemusí být <code>ampy</code> v systémových repozitářích.
 V takovém případě se dá nainstalovat pomocí
 <code>python3 -m pip install --user adafruit-ampy</code>.)</p>
@@ -126,26 +126,26 @@ Regional Settings)</p>
 </li>
 </ul>
 <h2 id="firmware">Firmware
-<a href="#header-firmware" class="header-link">#</a>
+<a href="#firmware" class="header-link">#</a>
 </h2>
 <p>K flashování je potřeba stáhnout
 binární obraz <a href="https://micropython.org/download#esp8266">MicroPythonu pro ESP8266</a> a
 náš předpřipravený začátečnický soubor <a href="naucse:static?filename=boot.py">boot.py</a>.</p>
 <p>Potřebné nástroje, <a href="https://github.com/espressif/esptool">esptool</a> a <a href="https://github.com/adafruit/ampy">ampy</a>, můžeme na Fedoře nainstalovat z balíčků:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo dnf install esptool ampy
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>esptool<span class="w"> </span>ampy
 </pre></div><div class="admonition note"><p>Na systémech, kde tyto nástroje v systémových balíčcích nejsou,
 se dají nainstalovat do virtuálního prostředí:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python3 -m venv venv
-<span class="gp">$ </span>. venv/bin/activate
-<span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>python -m pip install esptool adafruit-ampy
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="gp">$ </span>.<span class="w"> </span>venv/bin/activate
+<span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>esptool<span class="w"> </span>adafruit-ampy
 </pre></div></div><p>Připojíme NodeMCU přes USB a pomocí <code>esptool</code> ho naflashujeme:</p>
-<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>esptool.py --port /dev/ttyUSB0 erase_flash
-<span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>esptool.py --port /dev/ttyUSB0 --baud <span class="m">460800</span> write_flash <span class="m">0</span> esp8266-20161110-v1.8.6.bin
+<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>esptool.py<span class="w"> </span>--port<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span>erase_flash
+<span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>esptool.py<span class="w"> </span>--port<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span>--baud<span class="w"> </span><span class="m">460800</span><span class="w"> </span>write_flash<span class="w"> </span><span class="m">0</span><span class="w"> </span>esp8266-20161110-v1.8.6.bin
 </pre></div><p>(Kdyby neexistovalo zařízení <code>/dev/ttyUSB0</code>, ve výstupu <code>dmesg | tail</code> se dá
 dohledat, kam se NodeMCU připojilo. V takovém případě ale bude potřeba změnit
 instrukce k workshopu.)</p>
 <p>Nakonec na NodeMCU stiskneme tlačítko RST, pustíme a pak nahrajeme <code>boot.py</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>ampy -p /dev/ttyUSB0 put boot.py
+<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>ampy<span class="w"> </span>-p<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span>put<span class="w"> </span>boot.py
 </pre></div><p>Soubor <code>boot.py</code> obsahuje testovací režim pro kontrolu, že je vše nahráno
 správně.
 Podržíme-li tlačítko na modulu stisknuté, po resetu (tlačítkem RST nebo

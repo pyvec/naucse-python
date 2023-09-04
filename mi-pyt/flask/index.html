@@ -1,5 +1,5 @@
 <h1 id="webove_aplikace_flask">Webové aplikace: Flask
-<a href="#header-webove_aplikace_flask" class="header-link">#</a>
+<a href="#webove_aplikace_flask" class="header-link">#</a>
 </h1>
 <p>Python je víceúčelový jazyk.
 Na minulém cvičení jsme tvořili aplikace pro příkazovou řádku,
@@ -9,13 +9,13 @@ nyní se podíváme na aplikace webové.</p>
 <p>Pro naše účely použijeme <a href="https://flask.palletsprojects.com">Flask</a>, protože je nejrychlejší na pochopení a
 nevyžaduje striktně použití <a href="https://cs.wikipedia.org/wiki/Model-view-controller">MVC</a> paradigmatu.</p>
 <h2 id="flask">Flask
-<a href="#header-flask" class="header-link">#</a>
+<a href="#flask" class="header-link">#</a>
 </h2>
 <p>Flask opět můžete nainstalovat do virtualenvu, nejlépe použít projekt
 z minulého cvičení:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> project
-<span class="gp">$ </span>. __venv__/bin/activate 
-<span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>python -m pip install Flask
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>project
+<span class="gp">$ </span>.<span class="w"> </span>__venv__/bin/activate<span class="w"> </span>
+<span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>Flask
 </pre></div><p>Základní použití Flasku je poměrně primitivní.
 Do souboru <code>hello.py</code> napište:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
@@ -26,9 +26,9 @@ Do souboru <code>hello.py</code> napište:</p>
     <span class="k">return</span> <span class="s1">&#39;MI-PYT je nejlepší předmět na FITu!&#39;</span>
 </pre></div><p>Pak aplikaci spusťte pomocí následujících příkazů.
 (Na Windows použijte místo <code>export</code> příkaz <code>set</code>.)</p>
-<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span><span class="nb">export</span> <span class="nv">FLASK_APP</span><span class="o">=</span>hello.py
-<span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span><span class="nb">export</span> <span class="nv">FLASK_DEBUG</span><span class="o">=</span><span class="m">1</span>
-<span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>flask run
+<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span><span class="nb">export</span><span class="w"> </span><span class="nv">FLASK_APP</span><span class="o">=</span>hello.py
+<span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span><span class="nb">export</span><span class="w"> </span><span class="nv">FLASK_DEBUG</span><span class="o">=</span><span class="m">1</span>
+<span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>flask<span class="w"> </span>run
 <span class="go"> * Serving Flask app &quot;hello&quot;</span>
 <span class="go"> * Forcing debug mode on</span>
 <span class="go"> * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)</span>
@@ -58,7 +58,7 @@ k dispozici obsah, který vrátí funkce <code>index</code>.</p>
     <span class="k">return</span> <span class="s1">&#39;Hello, World&#39;</span>
 </pre></div><p>Na adrese <a href="http://127.0.0.1:5000/hello/"><code>http://127.0.0.1:5000/hello/</code></a> pak uvidíte druhou stránku.</p>
 <h3 id="ladici_rezim">Ladící režim
-<a href="#header-ladici_rezim" class="header-link">#</a>
+<a href="#ladici_rezim" class="header-link">#</a>
 </h3>
 <p>Proměnná <code>FLASK_DEBUG</code> říká, že se aplikace má spustit v ladícím režimu:
 je zapnutý příjemnější výpis chyb a aplikace se automaticky restartuje
@@ -73,7 +73,7 @@ Bezpečnostní PIN k této konzoli najdete v terminálu, kde server běží.</
 Navíc aplikaci zpomaluje.
 Používejte ho proto <em>pouze</em> na svém počítači.</p>
 <h3 id="dynamicke_routy">Dynamické routy
-<a href="#header-dynamicke_routy" class="header-link">#</a>
+<a href="#dynamicke_routy" class="header-link">#</a>
 </h3>
 <p>Když vytváříte dynamický web, ne vždy můžete všechna URL znát dopředu.
 Budete například chtít zobrazit informace o uživatelích na adresách
@@ -102,7 +102,7 @@ takto:</p>
 <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;world&#39;</span><span class="p">):</span>
     <span class="k">return</span> <span class="s1">&#39;Hello, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </pre></div><h3 id="ziskani_url">Získání URL
-<a href="#header-ziskani_url" class="header-link">#</a>
+<a href="#ziskani_url" class="header-link">#</a>
 </h3>
 <p>Opačným způsobem jak k routám přistupovat je, když potřebujete získat URL
 nějaké stránky, například protože potřebujete zobrazit odkaz.
@@ -129,7 +129,7 @@ změníte – což se může stát např. i když web nasadíte na jiný server.
 Generování URL vám také může zjednodušit nasazení statické verze stránek.</p>
 <p>Pro URL v rámci vašich stránek proto doporučujeme <code>url_for</code> používat důsledně.</p>
 <h3 id="sablony">Šablony
-<a href="#header-sablony" class="header-link">#</a>
+<a href="#sablony" class="header-link">#</a>
 </h3>
 <p>Zatím jsou naše webové stránky poměrně nudné: obsahují jen prostý text,
 nepoužívají HTML.</p>
@@ -182,7 +182,7 @@ Navíc můžete použít vybrané funkce, např. <code>url_for()</code>.
 (Jiné funkce známé z Pythonu ale použít nejdou – ač jsou podobné, je Jinja2
 jiný jazyk než Python.)</p>
 <h4 id="filtry">Filtry
-<a href="#header-filtry" class="header-link">#</a>
+<a href="#filtry" class="header-link">#</a>
 </h4>
 <p>Není úplně elegantní vzít nějaká data (např. tweety z Twitter API) a ještě před
 předáním šabloně do nich cpát svoje úpravy (např. převod na HTML).
@@ -194,7 +194,7 @@ a převede ho do jiného:</p>
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">template_filter</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">convert_time</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Convert the time format to a different one&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert the time format to a different one&quot;&quot;&quot;</span>
     <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %b </span><span class="si">%d</span><span class="s1"> %H:%M:%S %z %Y&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%c</span><span class="s1">&#39;</span><span class="p">)</span>
 
@@ -208,7 +208,7 @@ a převede ho do jiného:</p>
 <div class="highlight"><pre><span></span><span class="cp">{{</span> <span class="nv">created_at</span><span class="o">|</span><span class="nf">time</span> <span class="cp">}}</span>
 </pre></div><p>Pokud potřebujete velmi obecný filtr, je vhodné se podívat do <a href="https://jinja.palletsprojects.com/en/2.10.x/templates/#builtin-filters">seznamu těch vestavěných</a>.</p>
 <h4 id="escaping">Escaping
-<a href="#header-escaping" class="header-link">#</a>
+<a href="#escaping" class="header-link">#</a>
 </h4>
 <p>V textu, který se vkládá do šablon, jsou automaticky nahrazeny znaky, které
 mají v HTML speciální význam.
@@ -233,7 +233,7 @@ To se dá zajistit dvěma způsoby. Nejjednodušší je vestavěný filtr <code>
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">template_filter</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">convert_time</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Convert the time format to a different one&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert the time format to a different one&quot;&quot;&quot;</span>
     <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %b </span><span class="si">%d</span><span class="s1"> %H:%M:%S %z %Y&#39;</span><span class="p">)</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;&lt;strong&gt;</span><span class="si">%c</span><span class="s1">&lt;/strong&gt;&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">jinja2</span><span class="o">.</span><span class="n">Markup</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -241,7 +241,7 @@ To se dá zajistit dvěma způsoby. Nejjednodušší je vestavěný filtr <code>
 (ani nikdo mnohem chytřejší než vy) nemohl na vaší stránce provést něco
 nekalého.</p>
 <h3 id="staticke_soubory">Statické soubory
-<a href="#header-staticke_soubory" class="header-link">#</a>
+<a href="#staticke_soubory" class="header-link">#</a>
 </h3>
 <p>Pokud budete potřebovat nějaké statické soubory (např. styly CSS nebo
 obrázky), dejte je do adresáře <code>static</code> vedle souboru s kódem
@@ -250,7 +250,7 @@ a přistupujte k nim pomocí routy <code>static</code>:</p>
 </pre></div><p>V šabloně pak například:</p>
 <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">url_for</span><span class="o">(</span><span class="s1">&#39;static&#39;</span><span class="o">,</span> <span class="nv">filename</span><span class="o">=</span><span class="s1">&#39;style.css&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
 </pre></div><h3 id="logovani">Logování
-<a href="#header-logovani" class="header-link">#</a>
+<a href="#logovani" class="header-link">#</a>
 </h3>
 <p>Při vytváření webové aplikace chcete často komunikovat nejen prostřednictvím 
 HTTP odpovědí na dotazy (ať už ve formě webové stránky, JSON odpovědi či jiného
@@ -280,7 +280,7 @@ stačí použít předpřipravený <code>app.logger</code>.</p>
 (navíc i <code>debug</code> a <code>info</code>). Aktuální úroveň je možné také změnit pomocí metody
 <code>setLevel</code>, viz dokumentace modulu <a href="https://docs.python.org/3/library/logging.html#module-logging">logging</a>.</p>
 <h3 id="vetsi_flask_aplikace">Větší Flask aplikace
-<a href="#header-vetsi_flask_aplikace" class="header-link">#</a>
+<a href="#vetsi_flask_aplikace" class="header-link">#</a>
 </h3>
 <p>Flask je sice označován jako mikroframework, to ale neznamená, že jej nelze 
 použít na větší a složitější webové aplikace. Pokud chcete vytvářet vytvářet 
@@ -292,7 +292,7 @@ paradigmatem mají tyto vlastnosti již zabudovány v sobě (například <a href
 <p>Následující sekce popisují některé zajímavé techniky, které se mohou u větších 
 a složitějších aplikací hodit.</p>
 <h4 id="create_app_factory">create_app factory
-<a href="#header-create_app_factory" class="header-link">#</a>
+<a href="#create_app_factory" class="header-link">#</a>
 </h4>
 <p>Mimo vytváření Flask aplikace přímo v modulu, je možné aplikaci tvořit pomocí
 funkce, tzv. <a href="https://flask.palletsprojects.com/en/1.1.x/patterns/appfactories/"><code>application_factory</code></a>, 
@@ -310,7 +310,7 @@ pro testování nebo dokonce vytvářet více Flask aplikací v rámci jednoho P
 
     <span class="k">return</span> <span class="n">app</span>
 </pre></div><h4 id="blueprint_moduly">Blueprint moduly
-<a href="#header-blueprint_moduly" class="header-link">#</a>
+<a href="#blueprint_moduly" class="header-link">#</a>
 </h4>
 <p>Ve velkých webových aplikacích je již vhodné seskupovat jednotlivé pohledy do
 samostatných celků. K tomuto účelu slouží ve Flasku <a href="https://flask.palletsprojects.com/en/1.1.x/blueprints/">blueprinty</a> (hezky česky 
@@ -347,7 +347,7 @@ jiné přidat i prefix pro všechny cesty v blueprintu.</p>
 </pre></div><p>V případě použití <code>url_for</code> je třeba cesty z blueprintu namespacovat, např.:</p>
 <div class="highlight"><pre><span></span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;auth.login&#39;</span><span class="p">)</span>
 </pre></div><h4 id="vlastni_podtrida_flask">Vlastní podtřída Flask
-<a href="#header-vlastni_podtrida_flask" class="header-link">#</a>
+<a href="#vlastni_podtrida_flask" class="header-link">#</a>
 </h4>
 <p>Třída <code>Flask</code> je uzpůsobena k tomu, aby bylo možné snadno rozšiřovat a přepisovat 
 výchozí chování. Mimo přidávání vlastních metod lze například měnit třídy, které 
@@ -385,7 +385,7 @@ spoustu dalšího. Nezapomeňte volat konstruktor nadtřídy.</p>
 <span class="k">def</span> <span class="nf">greetings_number</span><span class="p">():</span>
     <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">current_app</span><span class="o">.</span><span class="n">greetings</span><span class="p">)</span>
 </pre></div><h3 id="a_dalsi">A další
-<a href="#header-a_dalsi" class="header-link">#</a>
+<a href="#a_dalsi" class="header-link">#</a>
 </h3>
 <p>Flask umí i další věci – například zpracování formulářů, chybové stránky nebo
 přesměrování. Také existuje i řada <a href="https://flask.palletsprojects.com/en/1.1.x/extensions/?highlight=extensions">rozšíření</a>,

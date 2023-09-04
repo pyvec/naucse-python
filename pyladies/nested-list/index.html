@@ -1,5 +1,5 @@
 <h1 id="vnorene_seznamy">Vnořené seznamy
-<a href="#header-vnorene_seznamy" class="header-link">#</a>
+<a href="#vnorene_seznamy" class="header-link">#</a>
 </h1>
 <p>Seznam může obsahovat jakýkoli typ hodnot: čísla, řetězce a tak dále:</p>
 <div class="highlight"><pre><span></span><span class="n">prvocisla</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">41</span><span class="p">]</span>
@@ -26,14 +26,14 @@ označuje seznam, můžeš brát prvky přímo z něj:</p>
 Stejně jako vnořené cykly <code>for</code> ti umožnily vypsat tabulku, vnořené seznamy
 ti umožní si tabulku „zapamatovat”.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vytvor_radek_tabulky</span><span class="p">(</span><span class="n">cislo_radku</span><span class="p">,</span> <span class="n">velikost</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Vrátí seznam – daný řádek tabulky s násobilkou&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Vrátí seznam – daný řádek tabulky s násobilkou&quot;&quot;&quot;</span>
     <span class="n">radek</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">cislo_sloupce</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">velikost</span><span class="p">):</span>
         <span class="n">radek</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cislo_radku</span> <span class="o">*</span> <span class="n">cislo_sloupce</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">radek</span>
 
 <span class="k">def</span> <span class="nf">vytvor_tabulku</span><span class="p">(</span><span class="n">velikost</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Vrátí seznam seznamů – tabulku s násobilkou&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Vrátí seznam seznamů – tabulku s násobilkou&quot;&quot;&quot;</span>
     <span class="n">seznam_radku</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">cislo_radku</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">velikost</span><span class="p">):</span>
         <span class="n">radek</span> <span class="o">=</span> <span class="n">vytvor_radek_tabulky</span><span class="p">(</span><span class="n">cislo_radku</span><span class="p">,</span> <span class="n">velikost</span><span class="p">)</span>

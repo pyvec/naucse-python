@@ -1,12 +1,12 @@
 <h1 id="definice_funkci">Definice funkcí
-<a href="#header-definice_funkci" class="header-link">#</a>
+<a href="#definice_funkci" class="header-link">#</a>
 </h1>
 <p><a href="naucse:page?lesson=beginners/functions">Dříve</a> jsme
 volali funkce, které napsal někdo jiný:</p>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ahoj světe!&#39;</span><span class="p">)</span>
 </pre></div><p>Dnes si ukážeme, jak psát funkce vlastní.</p>
 <h2 id="kcemu_jsou_funkce">K čemu jsou funkce?
-<a href="#header-kcemu_jsou_funkce" class="header-link">#</a>
+<a href="#kcemu_jsou_funkce" class="header-link">#</a>
 </h2>
 <p>Často se stává, že kód, který dělá nějakou jednoduchou věc, není úplně
 jednoduchý.
@@ -37,12 +37,12 @@ svůj aktuální úhel natočení nebo jak se vlastně kreslí čára.</p>
 <p>Funkce umožňuje <em>pojmenovat</em> nějaký kousek programu, který se pak dá
 použít pomocí jména bez detailních znalostí toho, jak to vevnitř funguje.</p>
 <h2 id="definice_funkce">Definice funkce
-<a href="#header-definice_funkce" class="header-link">#</a>
+<a href="#definice_funkce" class="header-link">#</a>
 </h2>
 <p>Protože už znáš <code>if</code> a <code>for</code>, které mají jednořádkovou hlavičku a odsazené tělo
 příkazu, neměl by ti zápis funkce připadat příliš zvláštní:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zamen</span><span class="p">(</span><span class="n">slovo</span><span class="p">,</span> <span class="n">pozice</span><span class="p">,</span> <span class="n">novy_znak</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;V daném slově zamění znak na dané pozici za daný nový znak.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;V daném slově zamění znak na dané pozici za daný nový znak.&quot;&quot;&quot;</span>
     <span class="n">zacatek</span> <span class="o">=</span> <span class="n">slovo</span><span class="p">[:</span><span class="n">pozice</span><span class="p">]</span>
     <span class="n">konec</span> <span class="o">=</span> <span class="n">slovo</span><span class="p">[</span><span class="n">pozice</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
     <span class="n">nove_slovo</span> <span class="o">=</span> <span class="n">zacatek</span> <span class="o">+</span> <span class="n">novy_znak</span> <span class="o">+</span> <span class="n">konec</span>
@@ -79,7 +79,7 @@ návratovou hodnotu – tedy to, co následuje po <code>return</code>.</p>
 <p>Tělo funkce může mít více příkazů – včetně podmínek, cyklů a podobně.
 Následující procedura třeba vypíše skóre daného hráče a k tomu hlášku:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">napis_hlasku</span><span class="p">(</span><span class="n">nazev</span><span class="p">,</span> <span class="n">skore</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Popíše skóre. Název má být přivlastňovací přídavné jméno.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Popíše skóre. Název má být přivlastňovací přídavné jméno.&quot;&quot;&quot;</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="n">nazev</span><span class="p">,</span> <span class="s1">&#39;skóre je&#39;</span><span class="p">,</span> <span class="n">skore</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">skore</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
@@ -96,7 +96,7 @@ Následující procedura třeba vypíše skóre daného hráče a k tomu hláš
 <span class="n">napis_hlasku</span><span class="p">(</span><span class="s1">&#39;Tvoje&#39;</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>
 <span class="n">napis_hlasku</span><span class="p">(</span><span class="s1">&#39;Protivníkovo&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div><h2 id="cviceni">Cvičení
-<a href="#header-cviceni" class="header-link">#</a>
+<a href="#cviceni" class="header-link">#</a>
 </h2>
 <p>Zkus napsat funkci, která vrátí obsah obdélníka daných rozměrů.
 Příslušný vzoreček je <var>S</var> = <var>a</var>×<var>b</var>,
@@ -115,7 +115,7 @@ kde <var>a</var> a <var>b</var> jsou délky stran.</p>
 </pre></div>
     </div>
 </div><h2 id="vraceni_ukoncuje_funkci">Vracení ukončuje funkci
-<a href="#header-vraceni_ukoncuje_funkci" class="header-link">#</a>
+<a href="#vraceni_ukoncuje_funkci" class="header-link">#</a>
 </h2>
 <p>Speciální příkaz <code>return</code>, který jde použít jenom ve funkcích, vrátí danou
 návratovou hodnotu ven z funkce a zároveň <em>ukončí</em> provádění funkce.</p>
@@ -144,7 +144,7 @@ Třeba, chceš-li odpověď „ano“ nebo „ne“:</p>
 </li>
 </ul>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ano_nebo_ne</span><span class="p">(</span><span class="n">otazka</span><span class="p">):</span>
-     <span class="sd">&quot;&quot;&quot;Vrátí True nebo False podle odpovědi uživatele&quot;&quot;&quot;</span>
+<span class="w">     </span><span class="sd">&quot;&quot;&quot;Vrátí True nebo False podle odpovědi uživatele&quot;&quot;&quot;</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">otazka</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">odpoved</span> <span class="o">==</span> <span class="s1">&#39;ano&#39;</span><span class="p">:</span>

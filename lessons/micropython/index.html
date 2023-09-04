@@ -1,5 +1,5 @@
 <h1 id="micropython_na_malem_zarizeni">MicroPython na malém zařízení
-<a href="#header-micropython_na_malem_zarizeni" class="header-link">#</a>
+<a href="#micropython_na_malem_zarizeni" class="header-link">#</a>
 </h1>
 <div class="admonition note"><p class="admonition-title">Tahle sekce bohužel nejde jednoduše projít z domu.</p>
 <p>Využíváme speciální vybavení, které je potřeba nejdřív
@@ -63,13 +63,13 @@ kdyby byla některá ohnutá, tak ji (nejlépe s pomocí
 kouče) narovnej nebo si vezmi jinou destičku.</p>
 <p><br style='clear: both;'></p>
 <h2 id="instalace">Instalace
-<a href="#header-instalace" class="header-link">#</a>
+<a href="#instalace" class="header-link">#</a>
 </h2>
 <p>Bohužel se dnes neobejdeme bez instalace. Musíš naučit
 svůj počítač, aby si s destičkou povídal.</p>
 <p>Nejdřív si do virtuálního prostředí nainstaluj program Ampy od Adafruitu.
 Ten budeme později používat na nahrávání kódu:</p>
-<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(env)</span><span class="gp">$ </span>python -m pip install adafruit-ampy
+<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(env)</span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>adafruit-ampy
 </pre></div><p>Pak propoj modul s počítačem přes USB kabel,
 jako kdybys připojoval/a třeba mobil.</p>
 <div class="admonition note"><p>Je potřeba použít kvalitní datový kabel.
@@ -80,10 +80,10 @@ Kdyby něco nefungovalo, poraď se s koučem.
 Původní (anglický) návod k této části je na
 <a href="http://docs.micropython.org/en/latest/pyboard/pyboard/tutorial/repl.html">stránkách MicroPythonu</a>.</p>
 <h3 id="linux">Linux
-<a href="#header-linux" class="header-link">#</a>
+<a href="#linux" class="header-link">#</a>
 </h3>
 <p>Na správně nastaveném počítači stačí zadat:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>picocom -b <span class="m">115200</span> --flow n /dev/ttyUSB0
+<div class="highlight"><pre><span></span><span class="gp">$ </span>picocom<span class="w"> </span>-b<span class="w"> </span><span class="m">115200</span><span class="w"> </span>--flow<span class="w"> </span>n<span class="w"> </span>/dev/ttyUSB0
 </pre></div><p>Pokud příkaz neskončí s chybou, stiskni tlačítko <code>RST</code> na modulu.
 Měly by se nakonec objevit tři zobáčky, <code>&gt;&gt;&gt;</code>.</p>
 <p>Většina počítačů ale na komunikaci s malými zařízeními nastavená není.
@@ -100,7 +100,7 @@ je potřeba ho nainstalovat (např.
 je potřeba k zařízení přistupovat přes jiný soubor.
 Použij příkaz <code>dmesg | tail</code>, který vypíše něco jako:</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="gp">  $ </span>dmesg <span class="p">|</span> tail
+<div class="highlight"><pre><span></span><span class="gp">  $ </span>dmesg<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail
 <span class="go">  [703169.886296] ch341 1-1.1:1.0: device disconnected</span>
 <span class="go">  [703176.972781] usb 1-1.1: new full-speed USB device number 45 using ehci-pci</span>
 <span class="go">  [703177.059448] usb 1-1.1: New USB device found, idVendor=1a86, idProduct=7523</span>
@@ -114,9 +114,9 @@ Použij příkaz <code>dmesg | tail</code>, který vypíše něco jako:</li>
 <li><p>Pokud <code>picocom</code> skončil s chybou <code>Permission denied</code>, potřebuješ získat
 přístup k souboru zařízení.
 To znamená přidat se do příslušné skupiny:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo usermod -a -G dialout <span class="k">$(</span>whoami<span class="k">)</span>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>usermod<span class="w"> </span>-a<span class="w"> </span>-G<span class="w"> </span>dialout<span class="w"> </span><span class="k">$(</span>whoami<span class="k">)</span>
 </pre></div><p>Poté je potřeba se znovu přihlásit, třeba příkazem:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>su - <span class="k">$(</span>whoami<span class="k">)</span>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>su<span class="w"> </span>-<span class="w"> </span><span class="k">$(</span>whoami<span class="k">)</span>
 </pre></div><p>Pro ověření spusť příkaz <code>groups</code>; v jeho výstupu by mělo být <code>dialout</code>.
 Například:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>groups
@@ -128,7 +128,7 @@ se ti přidat do skupiny, dá se to obejít tak,
 </li>
 </ul>
 <h3 id="windows">Windows
-<a href="#header-windows" class="header-link">#</a>
+<a href="#windows" class="header-link">#</a>
 </h3>
 <p>MicroPython se přihlásí jako COM port. Otevři
 správce zařízení a zjisti, který COM port to je (kouč s tím pomůže).</p>
@@ -150,17 +150,17 @@ do políčka <em>Saved Sessions</em> zadej <em>MicroPython</em> a klikni OK.</p>
 okýnko podobné konzoli, kde se, když zmáčkneš
 na modulu <code>RST</code>, objeví nakonec tři zobáčky: <code>&gt;&gt;&gt;</code>.</p>
 <h3 id="macos">macOS
-<a href="#header-macos" class="header-link">#</a>
+<a href="#macos" class="header-link">#</a>
 </h3>
 <p>V příkazové řádce zadej:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>screen /dev/tty.usbmodem* <span class="m">115200</span>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>screen<span class="w"> </span>/dev/tty.usbmodem*<span class="w"> </span><span class="m">115200</span>
 </pre></div><p>a stiskni Enter.
 Pak na modulu zmáčkni <code>RST</code>.
 Měly by se nakonec objevit tři zobáčky, <code>&gt;&gt;&gt;</code>.</p>
 <p>Nejde-li to, je možná potřeba nainstalovat driver. Ten se dá stáhnout
 z <a href="https://tzapu.com/ch340-ch341-serial-adapters-macos-sierra/">tohoto blogu</a>.</p>
 <h2 id="micropython_taky_python">MicroPython – taky Python
-<a href="#header-micropython_taky_python" class="header-link">#</a>
+<a href="#micropython_taky_python" class="header-link">#</a>
 </h2>
 <p>Tak jako máš na počítači nainstalovaný operační
 systém, na vývojové desce je takzvaný <em>firmware</em>,
@@ -200,7 +200,7 @@ náhodné číslo od 0 do 255 se dá získat pomocí:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">urandom</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="go">61</span>
 </pre></div><h2 id="vstup">Vstup
-<a href="#header-vstup" class="header-link">#</a>
+<a href="#vstup" class="header-link">#</a>
 </h2>
 <p>MicroPython na malé destičce obsahuje některé
 moduly, které jinde nenajdeš. Ten hlavní se jmenuje
@@ -227,7 +227,7 @@ Informace o tom, která nožička je kam připojená,
 máš na <a href="https://pyvec.github.io/cheatsheets/micropython/nodemcu-cs.pdf">taháku</a> –
 můžeš si zkontrolovat, že Pin(0) u sebe má poznámku FLASH.</p>
 <h2 id="obvod">Obvod
-<a href="#header-obvod" class="header-link">#</a>
+<a href="#obvod" class="header-link">#</a>
 </h2>
 <p>Teď na chvíli necháme programování a postavíme si elektrický obvod.
 Vezmi si modrou svítivou diodu (LED, „světýlko”) a
@@ -285,7 +285,7 @@ na nožičce <code>G</code>. Stanovíme si, že tam je
 0 voltů a ostatní napětí počítáme vzhledem k ní.
 Na nožičce <code>3V</code> je tedy napětí 3,3 V vzhledem k zemi.</p>
 </div><h2 id="vystup">Výstup
-<a href="#header-vystup" class="header-link">#</a>
+<a href="#vystup" class="header-link">#</a>
 </h2>
 <p>Proč jsme diodu na to, aby se rozsvítila,
 připojili k modulu a ne jen k baterce?
@@ -326,7 +326,7 @@ a nastavovat podle něj stav LED.</p>
 </pre></div>
     </div>
 </div><h2 id="pousteni_kodu_ze_souboru">Pouštění kódu ze souboru
-<a href="#header-pousteni_kodu_ze_souboru" class="header-link">#</a>
+<a href="#pousteni_kodu_ze_souboru" class="header-link">#</a>
 </h2>
 <p>Jak začneš psát trochu složitější programy,
 mohlo by se stát, že tě konzole MicroPythonu začne trochu štvát.
@@ -353,12 +353,12 @@ Ke spuštění budeš potřebovat znát port:</p>
 <li>macOS: port používáš v příkazu <code>screen</code>, např. <code>/dev/tty.usbmodem*</code></li>
 </ul>
 <p><code>ampy</code> spusť následujícím příkazem, jen za <code>PORT</code> doplň svůj port:</p>
-<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>ampy -p PORT run led_podle_tlacitka.py
+<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>ampy<span class="w"> </span>-p<span class="w"> </span>PORT<span class="w"> </span>run<span class="w"> </span>led_podle_tlacitka.py
 </pre></div><p>Program by měl blikat diodou.
 Využívá k tomu funkci <code>time.sleep()</code>, která počká daný počet vteřin –
 tedy <code>time.sleep(1/2)</code> zastaví program na půl sekundy.</p>
 <h2 id="velice_rychle_blikat">Velice rychle blikat
-<a href="#header-velice_rychle_blikat" class="header-link">#</a>
+<a href="#velice_rychle_blikat" class="header-link">#</a>
 </h2>
 <p>Jedna z nevýhod „našeho” čipu ESP8266 je, že na svých
 nožičkách umí nastavovat jen dvě hodnoty – 3,3 V a zem, jedničku a nulu.
@@ -420,7 +420,7 @@ setinu vteřiny zhasne.</p>
 Jako s otvíráním souborů, je dobré po sobě uklidit –
 i když zatím můžeš jednoduše restartovat celé zařízení.</p>
 <h2 id="tony_a_melodie">Tóny a melodie
-<a href="#header-tony_a_melodie" class="header-link">#</a>
+<a href="#tony_a_melodie" class="header-link">#</a>
 </h2>
 <p>Vezmi si další součástku – piezobudič, neboli „bzučítko”.</p>
 <p>Tahle malá věc obsahuje speciální materiál, který se,
@@ -479,7 +479,7 @@ Hz – <a href="https://en.wikipedia.org/wiki/Hertz">Hertz</a> – je jednotka f
 <p>Naprogramuj písničku! Potřebuješ-li víc not, pusť si <a href="naucse:static?filename=noty.py">program</a>,
 který vypočítá další frekvence.</p>
 <h2 id="dalsi_ovladani">Další ovládání
-<a href="#header-dalsi_ovladani" class="header-link">#</a>
+<a href="#dalsi_ovladani" class="header-link">#</a>
 </h2>
 <p>Teď si vezmi dvě tlačítka a připoj je k modulu:
 <code>GND</code> vždycky na <code>G</code>, <code>VCC</code> vždycky na <code>3V</code> a
@@ -493,7 +493,7 @@ Mělo by to být podobné jako u příkladu s tlačítkem FLASH.</p>
 a přitom se jedním tlačítkem bude dát zvyšovat tón a druhým snižovat?</p>
 <p>Program si (na svém počítači) ulož, ať se k němu můžeš vrátit.</p>
 <h2 id="rotace">Rotace
-<a href="#header-rotace" class="header-link">#</a>
+<a href="#rotace" class="header-link">#</a>
 </h2>
 <p>Čas na další součástku! Tentokrát to bude <em>servomotor</em>.</p>
 <p>Servomotor je součástka, která má v sobě zabudovaný
@@ -536,7 +536,7 @@ připojit. Kdyby to nepomohlo, motorek ti dneska
 nebude fungovat. Za chvíli si řekneme proč; zatím (jsi-li na kurzu)
 se přidej do dvojice k někomu, komu to funguje.</p>
 <h2 id="poznamka_o_napajeni_a_napeti">Poznámka o napájení a napětí
-<a href="#header-poznamka_o_napajeni_a_napeti" class="header-link">#</a>
+<a href="#poznamka_o_napajeni_a_napeti" class="header-link">#</a>
 </h2>
 <p>K tomu, aby se otočil motor, je potřeba mnohem víc
 energie, než k rozsvícení světýlka.
@@ -571,7 +571,7 @@ nejčastěji takhle:</p>
 </ul>
 <p>Pozor, 5V nepřipojuj jinam než na <code>VIN</code>!</p>
 <h2 id="napeti">Napětí
-<a href="#header-napeti" class="header-link">#</a>
+<a href="#napeti" class="header-link">#</a>
 </h2>
 <p>Další důvod, proč ti servomotor někdy nefunguje dobře,
 je to, že je stavěný na 5 voltů, ne na 3,3 které
@@ -603,7 +603,7 @@ který převede třívoltový signál na pětivoltový.</li>
 workshopu ti určitě rádi poradí nebo ti aspoň řeknou
 koho se zeptat!</p>
 <h2 id="barevna_svetylka">Barevná světýlka
-<a href="#header-barevna_svetylka" class="header-link">#</a>
+<a href="#barevna_svetylka" class="header-link">#</a>
 </h2>
 <p>Tak, dost teorie; vezmi si novou hračku!
 Tentokrát to bude LED pásek.</p>

@@ -2,16 +2,16 @@
 Máte-li ještě virtualenv s nainstalovaným PyQt, použijte ho, případně ho
 podle <a href="naucse:page?lesson=intro/pyqt">lekce o PyQt</a> nainstalujte znovu.</p>
 <p>K PyQt si přiinstalujte knihovnu <code>asyncqt</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install asyncqt
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>asyncqt
 </pre></div><p>Nejde-li to, nevadí – nezbytné dnes PyQt nebude.</p>
 <p>Navíc si nainstalujte knihovnu <code>aiohttp</code>:</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>python -m pip install aiohttp
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>aiohttp
 </pre></div><hr>
 <div class="admonition note"><p>V minulosti byly na této stránce popsány i <a href="naucse:page?lesson=advanced/generators">generátory</a>.
 Neovládáte-li je ještě, přečtěte si o nich.</p>
 </div><hr>
 <h1 id="asyncio">AsyncIO
-<a href="#header-asyncio" class="header-link">#</a>
+<a href="#asyncio" class="header-link">#</a>
 </h1>
 <p>Pojďme si povídat o souběžnosti – možnostech, jak nechat počítač dělat víc
 úloh věcí najednou.</p>
@@ -46,7 +46,7 @@ Na druhou stranu je ale potřeba dostatečně často kontrolu předávat, aby se
 Tuto techniku tak nemůže používat operační systém, pod kterým můžou běžet i špatně
 napsané programy. V rámci jednoho procesu se to ale dá s úspěchem využít.</p>
 <h2 id="soubeznost_v_pythonu">Souběžnost v Pythonu
-<a href="#header-soubeznost_v_pythonu" class="header-link">#</a>
+<a href="#soubeznost_v_pythonu" class="header-link">#</a>
 </h2>
 <p>V Pythonu existovala a existuje řada knihoven, které nám umožňují „dělat více
 věcí zároveň“.
@@ -72,7 +72,7 @@ server napsaný pro Tornado se nedal použít pod Twisted a aplikace
 využívající Twisted nemohla využít knihovnu pro Tornado.</p>
 <p>Jak to vyřešit?</p>
 <h2 id="jeden_standard">Jeden standard
-<a href="#header-jeden_standard" class="header-link">#</a>
+<a href="#jeden_standard" class="header-link">#</a>
 </h2>
 <p><img src="https://imgs.xkcd.com/comics/standards.png" alt="xkcd 927"></p>
 <p><em>Komiks <a href="https://xkcd.com/927/">xkcd</a>, © Randall Munroe, <a href="https://creativecommons.org/licenses/by-nc/2.5/">CC-BY-NC</a></em></p>
@@ -98,7 +98,7 @@ Definuje se pomocí <code>async def</code> místo <code>def</code>, a může pou
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
 
 <span class="k">async</span> <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Prints numbers from 0 in regular intervals&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Prints numbers from 0 in regular intervals&quot;&quot;&quot;</span>
     <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;counts&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
@@ -149,7 +149,7 @@ Ve starších verzích Pythonu bylo potřeba místo:</p>
 objeví i v dokumentaci.
 Od Pythonu 3.8 je ale <em>deprecated</em>.</p>
 </div><h2 id="event_loop">Event Loop
-<a href="#header-event_loop" class="header-link">#</a>
+<a href="#event_loop" class="header-link">#</a>
 </h2>
 <p>Knihovna <code>asyncio</code> nám dává k dispozici <em>smyčku událostí</em>, která se, podobně jako
 <code>app.exec</code> v Qt, stará o plánování jednotlivých úloh.
@@ -173,7 +173,7 @@ Chcete-li ji použít (a tedy psát kód jen pro Python 3.7+), používejte pak 
 místo <code>ensure_future</code> funkci <code>create_task</code>, která vás lépe ochrání před
 těžko nalezitelnými chybami.</p>
 <h2 id="async_funkce_a_task">Async funkce a Task
-<a href="#header-async_funkce_a_task" class="header-link">#</a>
+<a href="#async_funkce_a_task" class="header-link">#</a>
 </h2>
 <p>Smyčka událostí provádí úlohy a asynchronní funkce.</p>
 <p>Asynchronní funkce se definují pomocí <code>async def</code> a umožňují použít příkaz
@@ -258,7 +258,7 @@ Task se chová stejně jako <em>coroutine</em> – lze použít v <code>await</
 <span class="n">result</span> <span class="o">=</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">demo_task</span><span class="p">())</span>
 <span class="n">loop</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div><h2 id="fan-out_a_fan-in">Fan-Out a Fan-In
-<a href="#header-fan-out_a_fan-in" class="header-link">#</a>
+<a href="#fan-out_a_fan-in" class="header-link">#</a>
 </h2>
 <p>S pomocí asynchronních funkcí můžeme nad našimi programy přemýšlet tak,
 jako by to byly „normální“ procedurálně zapsané algoritmy: máme jedno
@@ -289,7 +289,7 @@ Neuděláte-li to, bude <code>asyncio</code> vypisovat varovné hlášky:</p>
 </pre></div><p>Toto varování nikdy neignorujte. Kdyby váš program nedělal co má, spolu s
 varováním byste ignorovali výjimky v této <em>coroutine</em>.</p>
 <h2 id="asynchronni_cykly_a_kontexty">Asynchronní cykly a kontexty
-<a href="#header-asynchronni_cykly_a_kontexty" class="header-link">#</a>
+<a href="#asynchronni_cykly_a_kontexty" class="header-link">#</a>
 </h2>
 <p>Až budete používat některé „asynchronní“ knihovny, setkáte se pravděpodobně se dvěma
 novými konstrukcemi: <code>async for</code> a <code>async with</code>.</p>
@@ -303,7 +303,7 @@ knihovna by se mohla používat nějak takto:</p>
     <span class="k">async</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="p">(</span><span class="k">await</span> <span class="n">database</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT ...&#39;</span><span class="p">)):</span>
         <span class="n">handle</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
 </pre></div><h2 id="a_dalsi">A další
-<a href="#header-a_dalsi" class="header-link">#</a>
+<a href="#a_dalsi" class="header-link">#</a>
 </h2>
 <p>Nakonec několik tipů, o kterých je dobré vědět.</p>
 <p>V <code>asyncio</code> najdeme synchronizační mechanismy známé z vláknového programování, např.
@@ -319,7 +319,7 @@ V tomto režimu <code>asyncio</code> upozorňuje na časté chyby, do některýc
 kde aktuální <code>Task</code> vznikl, apod.
 Více informací je zase v <a href="https://docs.python.org/3/library/asyncio-dev.html#asyncio-dev">dokumentaci</a>.</p>
 <h2 id="alternativni_smycky_udalosti">Alternativní smyčky událostí
-<a href="#header-alternativni_smycky_udalosti" class="header-link">#</a>
+<a href="#alternativni_smycky_udalosti" class="header-link">#</a>
 </h2>
 <p>Jak bylo zmíněno na začátku, hlavní cíl <code>asyncio</code> je definovat společné rozhraní
 pro různé asynchronní knihovny, aby bylo možné např. kombinovat knihovny pro
@@ -361,7 +361,7 @@ pomocí <code>asyncio.ensure_future</code>, <code>await</code>, atd.</p>
 
 <span class="n">loop</span><span class="o">.</span><span class="n">run_forever</span><span class="p">()</span>
 </pre></div><h2 id="komunikace">Komunikace
-<a href="#header-komunikace" class="header-link">#</a>
+<a href="#komunikace" class="header-link">#</a>
 </h2>
 <p>Ono <code>io</code> v <code>asyncio</code> naznačuje, že je tato knihovna dělaná především na
 vstup a výstup – konkrétně na komunikaci přes síť (případně s jinými procesy).</p>

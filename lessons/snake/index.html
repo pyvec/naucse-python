@@ -1,5 +1,5 @@
 <h1 id="hra_typu_had">Hra typu Had
-<a href="#header-hra_typu_had" class="header-link">#</a>
+<a href="#hra_typu_had" class="header-link">#</a>
 </h1>
 <p>Dnes to všechno — třídy, grafiku, seznamy a tak dále –
 spojíme dohromady do závěrečného projektu.
@@ -20,7 +20,7 @@ něco s čím si nebudeš vědět rady.
 Kdyby se to stalo, prosím, ozvi se nám!
 Rádi ti s projektem pomůžeme.</p>
 </div><h2 id="logika_hry_afaze_projektu">Logika hry a fáze projektu
-<a href="#header-logika_hry_afaze_projektu" class="header-link">#</a>
+<a href="#logika_hry_afaze_projektu" class="header-link">#</a>
 </h2>
 <p>Základní princip hry máš v malíčku, pokud jsi dokončil/a domácí projekt
 po <a href="naucse:page?lesson=beginners/list">lekci o seznamech</a>. Pokud jej nemáš, doporučuji
@@ -52,7 +52,7 @@ do kterých nesmí had narazit, otrávené jídlo, které hada zkrátí atp.</li
 na druhé straně.</li>
 </ol>
 <h2 id="zprikazove_radky_do_graficke_aplikace">Z příkazové řádky do grafické aplikace
-<a href="#header-zprikazove_radky_do_graficke_aplikace" class="header-link">#</a>
+<a href="#zprikazove_radky_do_graficke_aplikace" class="header-link">#</a>
 </h2>
 <p>V příkazové řádce měl had souřadnice označující řádek a sloupec. V grafické
 aplikaci to bude podobné, ale protože pixelů na obrazovce je mnohem více, budeme
@@ -66,7 +66,7 @@ a velikosti okna aplikace můžeme vypočítat, kolik se nám do okna takových
 čtverců vejde na šířku a na výšku a tím i zjistit, kolik pomyslných
 sloupců a řádků bude naše hrací plocha mít.</p>
 <h2 id="vykresleni_hada">Vykreslení hada
-<a href="#header-vykresleni_hada" class="header-link">#</a>
+<a href="#vykresleni_hada" class="header-link">#</a>
 </h2>
 <p>Abychom mohli hada vykreslit, potřebujeme si pro začátek uložit jeho souřadnice.
 K tomu můžeš použít seznam dvojic – stejně jako v domácím projektu. Podobných
@@ -86,7 +86,7 @@ vytvoření můžeme zadat obrázek pro vykreslení a vypočtené souřadnice.
 Pro jednoduchost stačí <code>Sprite</code> vytvořit, vykreslit a „zapomenout“. Není to ale
 optimální přístup a tak tohle může být jedním z adeptů pro pozdější vylepšení.</p>
 <h2 id="rozpohybovani_hada">Rozpohybování hada
-<a href="#header-rozpohybovani_hada" class="header-link">#</a>
+<a href="#rozpohybovani_hada" class="header-link">#</a>
 </h2>
 <p>Aby se mohl had hýbat, potřebuje znát směr pohybu. V příkazové řádce jsme
 vždy počkali, až nám směr zadá uživatel, ale v opravdové hře se bude had
@@ -104,7 +104,7 @@ kde by měla být „nová hlava“ a umažeme poslední kousek hada.</p>
 automaticky v pravidelných intervalech. <code>pyglet.clock.schedule_interval</code> je
 zde jasná volba.</p>
 <h2 id="ovladani_pomoci_klavesnice">Ovládání pomocí klávesnice
-<a href="#header-ovladani_pomoci_klavesnice" class="header-link">#</a>
+<a href="#ovladani_pomoci_klavesnice" class="header-link">#</a>
 </h2>
 <p>Reagovat na stisknuté klávesy jsme se už taky učili. Teď to tedy využijeme,
 abychom dokázali změnit nastavený směr pohybu z předchozího bodu. Bude pro to
@@ -120,7 +120,7 @@ na jeho změnu.</p>
 </ul>
 <p>Vida, máme hotový základ!</p>
 <h2 id="nenechme_ho_utect">Nenechme ho utéct
-<a href="#header-nenechme_ho_utect" class="header-link">#</a>
+<a href="#nenechme_ho_utect" class="header-link">#</a>
 </h2>
 <p>Had už se nám hýbe podle našich představ, ale stačí ho nechat chvíli bez dozoru
 a uteče nám z hrací plochy. Tomu není těžké zabránit, když víme, že žádná
@@ -133,7 +133,7 @@ o pohyb hada.</p>
 <p>Stejným způsobem a na stejném místě v programu bude třeba vyřešit i situaci,
 kdy had narazí sám do sebe.</p>
 <h2 id="jen_at_ji_hlavne_ze_mu_chutna">Jen ať jí, hlavně že mu chutná
-<a href="#header-jen_at_ji_hlavne_ze_mu_chutna" class="header-link">#</a>
+<a href="#jen_at_ji_hlavne_ze_mu_chutna" class="header-link">#</a>
 </h2>
 <p>Jezdit s hadem po hrací ploše může být chvíli zábava, ale protože had neroste,
 není to žádná výzva. A aby mohl růst, potřebuje jíst.</p>
@@ -147,7 +147,7 @@ z existujících sní, nebo automaticky v pravidelných intervalech.</p>
 obrázek použijeme třeba <a href="naucse:static?filename=apple.png">jablko</a>.</p>
 <p>První závan grafiky :-)</p>
 <h2 id="ctverecky_ven_grafiku_sem">Čtverečky ven, grafiku sem
-<a href="#header-ctverecky_ven_grafiku_sem" class="header-link">#</a>
+<a href="#ctverecky_ven_grafiku_sem" class="header-link">#</a>
 </h2>
 <p>Čtverečky jsou fajn, ale hra by měla lahodit oku a had by měl vypadat jako had.
 K tomu máme připravenou sadu obrázků - <a href="naucse:static?filename=snake-tiles.zip">ke stažení zde</a>.
@@ -155,7 +155,7 @@ Archiv si rozbal do adresáře s hrou tak, aby adresář <code>snake-tiles</cod
 úrovni jako soubor s programem.</p>
 <p><span class="figure"><a href="naucse:static?filename=snake-tiles.png"><img src="naucse:static?filename=snake-tiles.png" alt="Kousky hada"></a></span></p>
 <h3 id="nacteni_vsech_obrazku_ze_slozky">Načtení všech obrázků ze složky
-<a href="#header-nacteni_vsech_obrazku_ze_slozky" class="header-link">#</a>
+<a href="#nacteni_vsech_obrazku_ze_slozky" class="header-link">#</a>
 </h3>
 <p>Nejdříve si načteme všechny obrázky do hry, abychom je pak mohli bez potíží
 použít. Protože se nechceme opakovat (DRY), bude potřeba to udělat nějak
@@ -204,7 +204,7 @@ vyřešit, zkus to ještě jednou a pak se můžeš podívat na řešení.</p>
 </pre></div>
     </div>
 </div><h3 id="housenka">Housenka
-<a href="#header-housenka" class="header-link">#</a>
+<a href="#housenka" class="header-link">#</a>
 </h3>
 <p>Než se začneme zabývat různými obrázky, uděláme pokus k ověření, že nám vše stále funguje.
 Jako mezistupeň od hranatého hada k jeho věrné grafické podobě vytvoř housenku.
@@ -214,7 +214,7 @@ obrázek <code>tail-head.png</code>, který máš ve slovníku načten jako pod 
 Začne to být náročnější.</p>
 <p><span class="figure"><a href="naucse:static?filename=screenshot-cat.png"><img src="naucse:static?filename=screenshot-cat.png" alt="Housenka"></a></span></p>
 <h3 id="vyber_spravnych_obrazku">Výběr správných obrázků
-<a href="#header-vyber_spravnych_obrazku" class="header-link">#</a>
+<a href="#vyber_spravnych_obrazku" class="header-link">#</a>
 </h3>
 <p>Jistě sis všiml/a, že některé obrázky v naší sadě jsou téměř identické a liší
 se jen v otočení. V tuhle chvíli máme totiž dvě možnosti, jak vykreslit
@@ -238,7 +238,7 @@ nalevo, napravo, nahoře, nebo dole.</p>
 <p><span class="figure"><a href="naucse:static?filename=screenshot-final.png"><img src="naucse:static?filename=screenshot-final.png" alt="Finální had"></a></span></p>
 <p>Odměnou za vyřešení ti bude kompletní grafická hra Had. Gratuluji!</p>
 <h2 id="optimalizace_uklid">Optimalizace, úklid
-<a href="#header-optimalizace_uklid" class="header-link">#</a>
+<a href="#optimalizace_uklid" class="header-link">#</a>
 </h2>
 <p>Než se po dokončení základní hry vrhneš na její rozšiřování, měl by se celý kód
 uklidit a zpřehlednit, aby se v něm další úpravy dělaly snáze a s menším
