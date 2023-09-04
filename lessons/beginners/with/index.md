@@ -9,7 +9,7 @@ Příkaz `with` pracuje s tzv. *kontextem* (tady s kontextem *otevřeného
 souboru*), který má začátek a konec a při ukončení je potřeba něco udělat
 (tady zavřít soubor).
 
-Kontext je v podstatě zkratka pro `try`/`finally`. Pamatuješ si na `finally`?
+Kontext je v podstatě zkratka pro `try`/`finally`. Pamatuješ si na `finally`?
 
 Toto:
 
@@ -33,7 +33,7 @@ finally:
 
 Jak `with` tak `finally` zaručí, že se soubor vždy uzavře:
 když se zpracování povede, ale i když v něm nastane výjimka,
-nebo když z něj vyskočíš pomocí `return` nebo `break`:
+nebo když z něj vyskočíš pomocí `return` nebo `break`:
 
 ```python
 def nacti_cele_cislo(jmeno_souboru):
@@ -52,11 +52,11 @@ print(nacti_cele_cislo('cislo.txt') * 11)
 
 Chování příkazu `with` závisí na objektu, se kterým jej použiješ.
 Pro soubor – výsledek funkce `open` – se soubor na konci bloku zavře.
-Podobných „samozavíracích“ objektů které se dají použít s `with` existuje
-v různých knihovnách víc.
-Typické jsou objekty, které se starají o připojení např. k jinému počítači
-nebo k databázi, kdy je po práci dobré spojení ukončit a „uklidit po sobě“.
+Podobných „samozavíracích“ objektů které se dají použít s `with` existuje
+v různých knihovnách víc.
+Typické jsou objekty, které se starají o připojení např. k jinému počítači
+nebo k databázi, kdy je po práci dobré spojení ukončit a „uklidit po sobě“.
 
-Z lekce o testování si možná pamatuješ `with pytest.raises(...):`.
-Výsledek `pytest.raises` na konci bloku `with` kontroluje, že v rámci bloku
+Z lekce o testování si možná pamatuješ `with pytest.raises(...):`.
+Výsledek `pytest.raises` na konci bloku `with` kontroluje, že v rámci bloku
 nastala správná výjimka.
