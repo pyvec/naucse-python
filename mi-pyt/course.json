@@ -14,7 +14,8 @@
             "beginners/cmdline",
             "beginners/testing",
             "fast-track/http",
-            "git/git-collaboration-2in1"
+            "git/git-collaboration-2in1",
+            "beginners/venv-setup"
         ],
         "lessons": {
             "advanced/generators": {
@@ -187,6 +188,34 @@
                 "source_file": "lessons/beginners/testing/info.yml",
                 "static_files": {},
                 "title": "Testování"
+            },
+            "beginners/venv-setup": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2018."
+                        ],
+                        "content": {
+                            "path": "venv-setup/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/venv-setup/index.md",
+                        "title": "Nastavení prostředí",
+                        "vars": {
+                            "coach-present": false,
+                            "mi-pyt": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/venv-setup/info.yml",
+                "static_files": {
+                    "dirs-00.png": {
+                        "path": "venv-setup/dirs-00.png"
+                    }
+                },
+                "title": "Nastavení prostředí"
             },
             "fast-track/http": {
                 "pages": {
