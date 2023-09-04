@@ -86,3 +86,4 @@ extra_lessons:
 - beginners/testing
 - fast-track/http
 - git/git-collaboration-2in1
+- beginners/venv-setup
