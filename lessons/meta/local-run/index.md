@@ -155,6 +155,13 @@ Tyhle instrukce můžou být pro každou sadu kurzů jiné.
 Až budeš kurz přidávat na naucse.python.cz, měly by se zkontrolovat,
 ale do té doby se s tímto souborem netrap.
 
+Pravděpodobně je tvůj kurz _forkem_ jiného kurzu, a proto je potřeba _GitHub
+Actions_ explicitně povolit (v záložce _Actions_). Potom se musí v _Settings ->
+Actions -> General -> Workflow permissions_ nastavit _Read and write
+permissions - Workflows have read and write permissions in the repository for
+all scopes_. Pouze tak se ti po ručním spuštění _GitHub Action_ úspěšně vytvoří
+nová větev s prefixem `compliled/` s obsahem pro publikaci na web.
+
 ### `licenses/`
 
 Tenhle adresář obsahuje licence, pod kterými obsah může být.
