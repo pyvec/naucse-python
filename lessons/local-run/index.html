@@ -135,6 +135,12 @@ kurz publikuje. Obsahuje kromě instalace a <em>cache</em> tři hlavní kroky
 <p>Tyhle instrukce můžou být pro každou sadu kurzů jiné.
 Až budeš kurz přidávat na naucse.python.cz, měly by se zkontrolovat,
 ale do té doby se s tímto souborem netrap.</p>
+<p>Pravděpodobně je tvůj kurz <em>forkem</em> jiného kurzu, a proto je potřeba <em>GitHub
+Actions</em> explicitně povolit (v záložce <em>Actions</em>). Potom se musí v <em>Settings -&gt;
+Actions -&gt; General -&gt; Workflow permissions</em> nastavit <em>Read and write
+permissions - Workflows have read and write permissions in the repository for
+all scopes</em>. Pouze tak se ti po ručním spuštění <em>GitHub Action</em> úspěšně vytvoří
+nová větev s prefixem <code>compliled/</code> s obsahem pro publikaci na web.</p>
 <h3 id="codelicensescode"><code>licenses/</code>
 <a href="#codelicensescode" class="header-link">#</a>
 </h3>
