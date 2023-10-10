@@ -36,35 +36,41 @@ Anglické pojmy v závorce jsou převzaty z oficiálního [glosáře](https://pa
   co se dá importovat z Pythonu, v tomto textu tedy především Python soubor nebo adresář s nimi;
 * **balíček** (_Distribution Package_) je instalovatelný archiv obsahují
   _importovatelné moduly_ pro Python a další potřebné soubory, může být i rozbalený;
-* **zdrojový balíček** (_Source Distribution_, `sdsit`) je varianta zabaleného _balíčku_ ve zdrojové formě;
-* **binární balíček** (_Binary Distribution_, `bdsit`) je varianta zabaleného _balíčku_ v nezdrojové (např. zkompilované) formě;
+* **zdrojový balíček** (_Source Distribution_, `sdist`) je varianta zabaleného _balíčku_ ve zdrojové formě;
+* **binární balíček** (_Binary Distribution_, `bdist`, `wheel`) je varianta zabaleného _balíčku_ v nezdrojové (např. zkompilované) formě;
 * **projekt** (_Project_) je knihovna, framework, skript, plugin, aplikace apod. (či jejich kombinace), které balíme do _balíčků_.
 
 
 
-setup.py
---------
+pyproject.toml
+--------------
 
-Základním stavebním kamenem Python balíčku je soubor `setup.py`, který
-obsahuje všechna potřebná metadata ve volání funkce `setup()` z modulu
-`setuptools`.
+Základním stavebním kamenem Python balíčku je soubor `pyproject.toml`, který
+obsahuje všechna potřebná metadata pro vytvoření zdrojového a binárního balíčku.
+TOML je datový formát, který se dobře píše člověkem a čte počítačem.
+Jehož plnou specifikaci můžete najít v oficiální [dokumentaci](https://toml.io/en/).
 
-Pojďme vytvořit jeho minimální variantu:
+Pojďme vytvořit jeho minimální variantu. Použijeme balíček `setuptools` jako tzv. _build backend_,
+tedy program, který náš balíček vytvoří. Existují také jiné _build backendy_ s jinými vlastnostmi -
+jaké to jsou a jak je použít, se dozvíte z oficiálního [tutoriálu, jak tvořit Python balíčky](https://packaging.python.org/en/latest/tutorials/packaging-projects/).
 
-```python
-from setuptools import setup
 
+```toml
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
 
-setup(
-    name='isholiday',
-    version='0.1',
-    description='Finds Czech holiday for given year',
-    author='Ondřej Caletka',
-    author_email='ondrej@caletka.cz',
-    license='Public Domain',
-    url='https://gist.github.com/oskar456/e91ef3ff77476b0dbc4ac19875d0555e',
-    py_modules=['isholiday'],
-)
+[project]
+name = "isholiday"
+version = "0.1.0"
+authors = [
+  { name="Ondřej Caletka", email="ondrej@caletka.cz" },
+]
+description = "Finds Czech holiday for given year"
+license = {text = "Public Domain"}
+
+[project.urls]
+"Homepage" = "https://gist.github.com/oskar456/e91ef3ff77476b0dbc4ac19875d0555e"
 ```
 
 Všimněte si, že jsme balíček pojmenovali stejně jako soubor se zdrojovým kódem
@@ -74,43 +80,65 @@ Je to dobrá konvence, ale není to technicky nutné.
 Balíček můžeme zkusit nainstalovat do virtuálního prostředí:
 
 ```console
-$ python3.7 -m venv __venv__     # (nebo jinak -- podle vašeho OS)
+$ python3.11 -m venv __venv__     # (nebo jinak -- podle vašeho OS)
 $ . __venv__/bin/activate        # (nebo jinak -- podle vašeho OS)
-(__venv__)$ python setup.py install
+(__venv__)$ python -m pip install .
 ...
 (__venv__)$ python
 >>> import isholiday
 >>> 
 (__venv__)$ python -m pip freeze
-isholiday==0.1
+isholiday @ file:///tmp/isholiday  # cesta k modulu bude u vás vypadat jinak
 ```
 
-Souboru `setup.py` rozumí i nástroj pip, takže můžete použít ten:
-
-```console
-(__venv__)$ python -m pip install .
-```
-
-Mezi výše uvedenými příkazy existují rozdíly, ale pro základní použití se výsledek neliší.
-
-Alternativně můžete použít příkaz `develop` (nebo `pip install --editable`),
+Alternativně můžete použít příkaz `pip install --editable`,
 který balíček nainstaluje tak, že změny v souborech se projeví rovnou
 (není třeba po každé změněně instalovat znovu).
 
-Přes `setup.py` můžeme dělat i jiné věci, než jen instalovat, například vytvořit archiv, zdrojový balíček:
+```console
+(__venv__)$ python -m pip install --editable .
+...
+(__venv__)$ pip freeze
+# Editable install with no version control (isholiday==0.1.0)
+-e /tmp/isholiday
+```
+
+Vytvoření zdrojového a binárního balíčku
+----------------------------------------
+
+Pomocí nástroje `pip` můžeme sice nainstalovat náš balíček do vlastního virtuálního prostředí,
+ale neřešíme tím základní otázku: distribuci pro širokou veřejnost.
+
+Použijeme nástroj `build`, který přečte _recept na balíček_, obsažen v souboru `pyproject.toml`,
+a vytvoří zdrojovou a binární distribuci.
 
 ```console
-(__venv__)$ python setup.py sdist
+(__venv__)$ python -m pip install build
 ...
-warning: sdist: standard file not found: should have one of README, README.rst, README.txt
+(__venv__)$ python -m build
+* Creating venv isolated environment...
+* Installing packages in isolated environment... (setuptools>=61.0)
+* Getting build dependencies for sdist...
 ...
+Successfully built isholiday-0.1.0.tar.gz and isholiday-0.1.0-py3-none-any.whl
 ```
+
+Všimněte si nového adresáře v projektu: `dist`, v němž jsou dva archivy:
+- `isholiday-0.1.0.tar.gz` - zdrojový balíček
+- `isholiday-0.1.0-py3-none-any.whl` - binární balíček (tzv. _wheel_). 
+
+Můžete je rozbalit pomocí systémových nástrojů a podívat se dovnitř.
+
+TIP: `whl` je ve skutečnosti stejný formát jako `zip`, takže pokud vaše systémové nástroje ho neumí detekovat,
+stačí přejmenovat rozšíření souboru na `.zip`.
+
+Můžete také vytvořit pouze zdrojový nebo pouze binární balíček pomocí přepínačů `--sdist`, resp. `--wheel`.
+
 
 Extra soubory do zdrojového balíčku
 -----------------------------------
 
-Jak vidíte, `setuptools` si stěžuje, že náš projekt nemá `README` – soubor,
-do kterého se tradičně píšou základní informace o projektu.
+Náš projekt nemá `README` – soubor, do kterého se tradičně píšou základní informace o projektu.
 Můžeme jej vytvořit a uložit jako `README` přímo v kořenovém adresáři projektu,
 tedy tam, kde byste jej nejspíš čekali.
 
@@ -118,23 +146,25 @@ tedy tam, kde byste jej nejspíš čekali.
 Czech public holiday checker...
 ```
 
-Poté spustíme `setup.py sdist` znovu:
-
-```console
-(__venv__)$ python setup.py sdist
-```
-
-V adresáři `dist` najdete archiv, jeho obsah můžete zkontrolovat. Měl by tam
-být i soubor `README`.
-
-Skvělé, pojďme vytvořit i další speciální soubor, `LICENSE`, který bude
+Pojďme vytvořit i další speciální soubor, `LICENSE`, který bude
 obsahovat text licence, v tomto případě Public Domain.
 Obsah najdete třeba na [CC0].
 
 [CC0]: https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt
 
-Pokud ale se souborem `LICENSE` vytvoříte zdrojový balíček, soubor v archivu
-nebude. Je to proto, že se standardně do archivu přidávají jen některé soubory.
+Poté vytvoříme balíčky znovu:
+
+```console
+(__venv__)$ python -m build
+```
+
+Zkontrolujte obsah archivu, který najdete v adresáři `dist`
+Měly by tam být oba soubory.
+
+Standardně se do archivu přidávají jen některé soubory.
+Můžete si do balíčku např. přídat záznam důležitých změn ve vašem projektu -- `CHANGELOG`.
+Když opět vytvoříte balíček, zjistíte, že `CHANGELOG` v něm není.
+
 Další soubory lze přidat pomocí souboru `MANIFEST.in`, dle [dokumentace].
 
 [dokumentace]: https://docs.python.org/3/distutils/sourcedist.html#specifying-the-files-to-distribute
@@ -142,18 +172,20 @@ Další soubory lze přidat pomocí souboru `MANIFEST.in`, dle [dokumentace].
 V našem případě bude `MANIFEST.in` vypadat takto:
 
 ```
-include LICENSE
+include CHANGELOG
 ```
 
-Při dalším spuštění už `setup.py` přidá i soubor `LICENSE`.
+Při dalším spuštění už `setup.py` přidá i soubor `CHANGELOG`.
 To můžete zkontrolovat i ve výsledném archivu.
 
 ```console
-(__venv__)$ python setup.py sdist
+(__venv__)$ python -m build
 ...
-hard linking LICENSE -> isholiday-0.1
-hard linking MANIFEST.in -> isholiday-0.1
-hard linking README -> isholiday-0.1
+copying files to isholiday-0.1.0...
+copying CHANGELOG -> isholiday-0.1.0
+copying LICENSE -> isholiday-0.1.0
+copying MANIFEST.in -> isholiday-0.1.0
+copying isholiday.py -> isholiday-0.1.0...
 ...
 ```
 
@@ -165,68 +197,59 @@ nainstalovaný.
 # v jiné konzoli, v jiném adresáři
 $ python3 -m venv __venv2__
 $ . __venv2__/bin/activate
-(__venv2__)$ python -m pip install cesta/k/projektu/dist/isholiday-0.1.tar.gz
-Processing cesta/k/projektu/dist/isholiday-0.1.tar.gz
+(__venv2__)$ python -m pip install cesta/k/projektu/dist/isholiday-0.1.0.tar.gz
+Processing cesta/k/projektu/dist/isholiday-0.1.0.tar.gz
 Installing collected packages: isholiday
   Running setup.py install for isholiday ... done
-Successfully installed isholiday-0.1
+Successfully installed isholiday-0.1.0
 ```
 
+Více metadat v pyproject.toml
+-----------------------------
 
-Více argumentů pro setup()
---------------------------
-
-Na chvíli se vrátíme k volání funkce `setup()` a přidáme co nejvíc dalších
+Na chvíli se vrátíme k `pyproject.toml` a přidáme co nejvíc dalších
 položek.
-Jejich vysvětlení najdete [v dokumentaci](https://packaging.python.org/distributing/#setup-args).
+Jejich vysvětlení najdete [v dokumentaci](https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#declaring-project-metadata).
 
-```python
-from setuptools import setup
+```toml
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
 
+[project]
+name = "isholiday"
+version = "0.1.0"
+authors = [
+  { name="Ondřej Caletka", email="ondrej@caletka.cz" },
+]
+description = "Finds Czech holiday for given year"
+license = {file = "LICENSE"}
+readme = {"README"}
+requires-python = ">=3.6"
+keywords = ['holiday', 'dates', 'Czech']
+classifiers = [
+    'Intended Audience :: Developers',
+    'License :: Public Domain',
+    'Operating System :: POSIX :: Linux',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: Implementation :: CPython',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
+    'Topic :: Software Development :: Libraries',
+]
 
-with open('README') as f:
-    long_description = ''.join(f.readlines())
+[project.urls]
+"Homepage" = "https://gist.github.com/oskar456/e91ef3ff77476b0dbc4ac19875d0555e"
 
-
-setup(
-    name='isholiday',
-    version='0.1',
-    description='Finds Czech holiday for given year',
-    long_description=long_description,
-    author='Ondřej Caletka',
-    author_email='ondrej@caletka.cz',
-    keywords='holiday,dates',
-    license='Public Domain',
-    url='https://gist.github.com/oskar456/e91ef3ff77476b0dbc4ac19875d0555e',
-    py_modules=['isholiday'],
-    classifiers=[
-        'Intended Audience :: Developers',
-        'License :: Public Domain',
-        'Operating System :: POSIX :: Linux',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: Implementation :: CPython',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Topic :: Software Development :: Libraries',
-        ],
-    zip_safe=False,
-)
 ```
 
-Všimněte si několika věcí. V první řadě v `long_description` vidíte, že jsme
-pořád ještě v Pythonu a můžeme si ušetřit duplikaci nějakých informací pomocí
-malého kousku kódu. Dalším zajímavým argumentem je `classifiers`. Jsou to
+Všimněte si argumentu `classifiers`. Jsou to
 v podstatě takové tagy nebo strukturované informace o balíčku.
 Zásadně si je nevymýšlíme sami, ale hledáme je v
 [seznamu](https://pypi.org/pypi?%3Aaction=list_classifiers).
 Tyto informace budou později vidět na [PyPI](https://pypi.org) a
 půjde podle nich hledat.
-
-Argument `zip_safe=False` zajistí, že se moduly z balíčku nainstalují do adresáře.
-Setuptools totiž mají nepříjemný zlozvyk instalovat moduly jako `zip`,
-což komplikuje práci s datovými soubory (např. *templates* pro Flask).
-Je proto lepší `zip_safe=False` uvést.
 
 
 Více souborů s Python kódem
@@ -234,68 +257,25 @@ Více souborů s Python kódem
 
 Doteď jsme vytvářeli balíček jen s modulem ve formě jednoho zdrojového souboru `isholiday.py`.
 Co ale dělat, pokud je náš projekt větší a obsahuje souborů více?
-Teoreticky je možné je přidat všechny do `py_modules`, ale není to dobrý nápad.
 
-> [note]
-> Proč to vlastně není dobrý nápad? Jednotlivé moduly ze všech nainstalovaných
-> balíčků by byly rozesety bez ladu a skladu mezi ostatními.
-> Mohl by snadno nastat konflikt v názvech, například pokud by více balíčků
-> mělo modul `utils`.
-> Slušně vychovaný Pythonista dá do každého balíčku právě jeden hlavní modul,
-> pojmenovaný stejně jako balíček a všechny ostatní moduly zanoří do něj.
-
-Raději uděláme modul ve formě složky. V našem případě soubor
+Vytvoříme modul ve formě složky. V našem případě soubor
 `isholiday.py` zatím přesuneme do `isholiday/__init__.py`:
 
 ```console
 (__venv__)$ tree
 .
-├── isholiday
-│   └── __init__.py
+├── CHANGELOG
 ├── LICENSE
 ├── MANIFEST.in
-├── README
-└── setup.py
-
-1 directory, 5 files
+├── pyproject.toml
+└── isholiday
+    └── __init__.py
 ```
 
 Soubor `__init__.py` jednak značí, že adresář `isholiday` je importovatelný modul,
 a také obsahuje kód, který se spustí při importu modulu `isholiday`.
 
-Musíme ještě mírně upravit `setup.py` – místo `py_modules` použijeme `packages`:
-
-```diff
-diff --git a/setup.py b/setup.py
-index 3a69792..6b453ab 100644
---- a/setup.py
-+++ b/setup.py
-@@ -11,7 +11,7 @@ setup(
-     keywords='holiday,dates',
-     license='Public Domain',
-     url='https://gist.github.com/oskar456/e91ef3ff77476b0dbc4ac19875d0555e',
--    py_modules=['isholiday'],
-+    packages=['isholiday'],
-     classifiers=[
-         'Intended Audience :: Developers',
-         'License :: Public Domain',
-```
-
-Případně, což je ještě lepší, můžeme použít `find_packages()`:
-
-```python
-from setuptools import setup, find_packages
-
-setup(
-    ...
-    packages=find_packages(),
-    ...
-)
-```
-
-> [note]
-> A jaký je tedy vlastně rozdíl mezi `py_modules` a `packages`?
-> Zjednodušeně: Ten první je na moduly sestávající z jednoho souboru, ten druhý na moduly v adresáři.
+`build` bude této změně automaticky rozumět, což si můžete vyzkoušet vytvořením a prozkoumáním balíčku.
 
 Momentálně máme všechen kód přímo v `__init__.py`, což sice funguje,
 ale ideální to není. Dobré je mít kód v samostatných souborech a v `__init__.py`
@@ -357,7 +337,7 @@ main()
 a v `holidays.py` zaměňte `if __name__ == '__main__':` za `def main():`.
 
 Modul teď bude možné (opět) spustit pomocí `python -m isholiday`.
-Bude to fungovat i tehdy, když vytvoříte balíček (`python setup.py sdist`)
+Bude to fungovat i tehdy, když vytvoříte balíček (`python -m build`)
 a nainstalujete ho v jiném virtuálním prostředí.
 
 
@@ -365,20 +345,14 @@ Programy pro příkazovou řádku
 -----------------------------
 
 Pokud chcete, aby váš modul umožňoval spouštění přímo z příkazové řádky,
-bez `python -m`, měli byste použít [entrypoints].
-K tomu je potřeba přidat do volání `setup` v `setup.py` příslušný argument:
+bez `python -m`, měli byste použít [entry-points].
+K tomu je potřeba přidat do `pyproject.toml` příslušný argument:
 
-[entrypoints]: https://setuptools.readthedocs.io/en/latest/setuptools.html#dynamic-discovery-of-services-and-plugins
+[entry-points]: https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#entry-points
 
-```python
-setup(
-    ...
-    entry_points={
-        'console_scripts': [
-            'isholiday_demo = isholiday.holidays:main',
-        ],
-    },
-)
+```toml
+[project.scripts]
+isholiday_demo = "isholiday.holidays:main"
 ```
 
 `isholiday_demo` je jméno *entrypointu*, tedy příkazu pro příkazovou řádku.
@@ -389,12 +363,12 @@ Skript bude možné použít, je-li aktivní prostředí, kde je nainstalován, 
 zadáním jména *entrypointu*:
 
 ```console
-(__venv__)$ python setup.py sdist
+(__venv__)$ python -m build
 ```
 
 ```console
 # v jiné konzoli, v jiném virtuálním prostředí
-(__venv2__)$ python -m pip install --upgrade cesta/k/projektu/dist/isholiday-0.1.tar.gz
+(__venv2__)$ python -m pip install --upgrade cesta/k/projektu/dist/isholiday-0.1.0.tar.gz
 (__venv2__)$ isholiday_demo
 ...
 Mon Mar 28 00:00:00 2016 True
@@ -410,20 +384,20 @@ Balíčky na PyPI mohou záviset na dalších balíčkách. V případě `isholi
 potřeba není, ale v úlohách z minulých cvičení ano.
 
 Existuje několik úrovní závislostí, ve většině případů si
-vystačíte s argumentem `install_requires`.
+vystačíte s klíčem `dependencies`.
 Balíček, který závisí na balíčkách `Flask` (jakékoli verze) a
-`click` (verze 6 a vyšší) by v `setup.py` měl mít:
+`click` (verze 6 a vyšší) by v `pyproject.toml` měl mít:
 
-```python
-setup(
-    ...
-    install_requires=['Flask', 'click>=6'],
-)
+```toml
+dependencies = [
+    "Flask",
+    "click>=6",
+]
 ```
 
 ### Soubor requirements.txt
 
-Kromě závislostí v `setup.py` se u pythonních projektů často setkáme se souborem
+Kromě závislostí v `pyproject.toml` se u pythonních projektů často setkáme se souborem
 `requirements.txt`, který obsahuje přesné verze všech závislostí, včetně
 tranzitivních – t.j. závisí-li náš balíček na `Flask` a `Flask` na `Jinja2`,
 najdeme v `requirements.txt` mimo jiné například řádky:
@@ -440,16 +414,14 @@ Tento soubor se dá vygenerovat z aktuálního prostředí zadáním
 `python -m pip freeze > requirements.txt` a balíčky v něm se dají nainstalovat
 pomocí `python -m pip install -r requirements.txt`.
 My ho používat nebudeme, vystačíme si s volnější specifikací závislostí
-v `setup.py`.
+v `pyproject.toml`.
 
 
 Nahrání na PyPI
 ---------------
 
-Balíček jde zaregistrovat a nahrát na PyPI. Původně k tomu sloužily příkazy
-`setup.py` `register` a `upload`, ale tyto příkazy používaly HTTP, což není
-bezpečné. Prototo je lepší použít program `twine` (instalovatelný přes pip),
-který používá HTTPS.
+Balíček jde zaregistrovat a nahrát na PyPI. Použijeme pro to program `twine`
+(instalovatelný přes pip).
 
 Budete si potřebovat zařídit
 [účet na PyPI](https://pypi.org/account/register/),
@@ -482,12 +454,12 @@ se souborem `.pypirc`, např:
 ```
 
 Registrace projektu a nahrání na testovací PyPI se provádí pomocí příkazu
-`upload`: ten projekt zaregistrueje (pokud to jde) a nahraje samotný balíček:
+`upload`: ten projekt zaregistruje (pokud to jde) a nahraje samotný balíček:
 
 ```console
-(__venv__)$ twine upload -r testpypi dist/isholiday-0.1.tar.gz
+(__venv__)$ twine upload -r testpypi dist/isholiday-0.1.0.tar.gz
 Uploading distributions to https://test.pypi.org/legacy/
-Uploading isholiday-0.1.tar.gz
+Uploading isholiday-0.1.0.tar.gz
 [================================] 8379/8379 - 00:00:02
 ```
 
@@ -557,46 +529,34 @@ Datové soubory
 
 Některé moduly kromě samotného kódu potřebují i datové soubory.
 Například aplikace ve Flasku potřebují *templates*.
-Taková data se dají do balíčku přidat parametrem `package_data`:
 
-```python
-setup(...,
-    packages=['hello_flask'],
-    ...
-    package_data={'hello_flask': ['templates/*.html']},
-)
-```
-
-
-Další informace jsou odkázané v [dokumentaci](https://packaging.python.org/distributing/#package-data).
+Patříčnou konfiguraci k přidání těchto souborů najdete v dokumentaci příslušného build backendu.
+[Dokumentace k setuptools](https://setuptools.pypa.io/en/latest/userguide/datafiles.html#data-files-support).
 
 
 Wheel: Binární balíčky
 ----------------------
 
 Zatím jsme se zabývali jen zdrojovými balíčky (`sdist`).
-Existují ale i balíčky „zkompilované” – binární (`bdist`).
+Existují ale i balíčky „zkompilované” – binární (`wheel`).
 Když se instaluje zdrojový balíček, vykonává se kód ze souboru `setup.py`.
 Binární balíček se místo toho jen rozbalí na patřičné místo.
 
 Z historických důvodů existuje několik různých druhů binárních distribucí,
-v současné době je ale důležitá pouze možnost `bdist_wheel`:
+v současné době je ale důležitý pouze `wheel`:
 
 ```console
-(__venv__)$ python setup.py bdist_wheel
+(__venv__)$ python -m build
 ```
 
 Výsledek je v souboru `dist/*.whl`.
-
-> [note]
-> Pokud vám příkaz nefunguje, nainstalujte balík `wheel`.
 
 Obsah binárního balíčku typu wheel můžete prozkoumat, je to obyčejný ZIP.
 
 Naše programy jsou zatím platformně nezávislé a ve wheelu,
 i když se jmenuje binární, žádné binární soubory nejsou.
 To se ale změní, až se budeme zabývat tvorbou modulů v jazyce C:
-`sdist` pak obsahuje zdrojové soubory a `bdist_wheel` zkompilované moduly.
+`sdist` pak obsahuje zdrojové soubory a `wheel` zkompilované moduly.
 
 Potom je dobré distribuovat oba dva – každý má své výhody:
 
@@ -611,7 +571,7 @@ Proces vydání složitějšího softwaru pak může vypadat takto:
 
 ```console
 (__venv__)$ rm dist/*
-(__venv__)$ python setup.py sdist bdist_wheel
+(__venv__)$ python -m build
 [... kontrola vytvořených balíčků v „čistém“ virtualenvu ...]
 (__venv__)$ python -m twine upload dist/*
 ```
