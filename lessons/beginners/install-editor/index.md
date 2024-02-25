@@ -26,7 +26,7 @@ pro někoho, kdo se jimi má řídit:
 * Nakresli mi beránka!
 * <font color="green">Nakresli <big><big>mi</big> <u>beránka</u>!</big></font>
 
-To, že neumí formátování, neznamená že jsou naše editory úplně „hloupé“
+I když neumí formátování, neznamená to, že jsou naše editory úplně „hloupé“
 nástroje.
 Aby se nám programy upravovaly pohodlněji, mají několik vychytávek:
 
@@ -36,7 +36,7 @@ Podpora více souborů
 
 Číslování řádků
 :   Před každým řádkem se ukazuje číslo.
-    To se bude velice hodit, až Python bude nadávat, že chyba je na řádku 183. 
+    To se bude velice hodit, až Python bude nadávat, že chyba je na řádku 183.
 
 Odsazování
 :   V Pythonu je důležité, kolika mezerami řádek začíná.
@@ -122,4 +122,3 @@ takže nemusí být schopní s pokročilým IDE rychle pomoct.
 [PyCharm]: https://www.jetbrains.com/pycharm/
 [Eclipse]: https://eclipse.org/
 [KDevelop]: https://www.kdevelop.org/
-
