@@ -111,7 +111,7 @@ C:\Users\Helena\{{rootname}}
 
 Teď si vytvoříš *virtuální prostředí* pro Python.
 
-Virtuální prostředí je něco, co zajistí že se všechny počítače budou
+Virtuální prostředí je něco, co zajistí, že se všechny počítače budou
 chovat zhruba stejně.
 Až ho zprovozníme, nebudu už potřebovat instrukce zvlášť pro Linux,
 zvlášť pro Windows a zvlášť pro macOS.
@@ -128,9 +128,9 @@ Na každém systému jinak!
 
 * **Linux**:
 
-   Podle toho jak máš Python nainstalovaný bude fungovat jeden z následujících
+   Podle toho, jak máš Python nainstalovaný, bude fungovat jeden z následujících
    příkazů.
-   Bude je rychlejší vyzkoušet než popsat kdy je který správný,
+   Bude je rychlejší vyzkoušet než popsat, kdy je který správný,
    takže nejdřív zkus:
 
    ```console
@@ -151,9 +151,9 @@ Na každém systému jinak!
 
 * **Windows**:
 
-   Podle toho jak máš Python nainstalovaný bude fungovat jeden z následujících
+   Podle toho, jak máš Python nainstalovaný, bude fungovat jeden z následujících
    příkazů.
-   Bude je rychlejší vyzkoušet než popsat kdy je který správný,
+   Bude je rychlejší vyzkoušet než popsat, kdy je který správný,
    takže nejdřív zkus:
 
    ```doscon
@@ -217,6 +217,6 @@ Tak poznáš, že je virtuální prostředí *aktivní*.
 
 Aktivační příkaz si zapiš.
 
-Vždycky, když pustíš příkazovou řádku ve které budeš zkoušet své programy,
+Vždycky, když pustíš příkazovou řádku, ve které budeš zkoušet své programy,
 budeš muset pomocí `cd` přepnout do `{{rootname}}` a zadat tento
 aktivační příkaz.

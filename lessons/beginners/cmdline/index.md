@@ -19,7 +19,7 @@
 V této lekci se seznámíme s *příkazovou řádkou* – černým okýnkem,
 které programátoři používají na zadávání textových příkazů.
 
-Na většinu z toho co příkazová řádka umí můžeš použít i něco jiného – ikonku
+Na většinu z toho, co příkazová řádka umí, můžeš použít i něco jiného – ikonku
 na ploše, speciální program nebo editor, webovou aplikaci – ale tyhle
 vychytávky mají dvě nevýhody:
 * často se liší mezi různými počítači, takže s „tvojí“ variantou ti bude moci
@@ -137,7 +137,7 @@ Příkazová řádka umí soubory ukazovat taky – ale musíš si o to říct.
 ## Co v tom adresáři je?
 
 Příkaz `ls` nebo `dir` (z angl. *list* – vyjmenovat, resp. *directory* – adresář)
-ti vypíše co aktuální adresář obsahuje: všechny soubory,
+ti vypíše, co aktuální adresář obsahuje: všechny soubory,
 včetně podadresářů, které se v aktuálním adresáři nacházejí.
 
 {% call sidebyside() %}
@@ -247,7 +247,7 @@ Tenhle program je na každém systému jiný:
     </div>
 </div>
 
-Možná umíš v tomhle programu klikáním „donavigovat“ do adresáře který je
+Možná umíš v tomhle programu klikáním „donavigovat“ do adresáře, který je
 aktivní v příkazové řádce.
 V budoucnu to ale bude složitější, takže bude dobré si vyzkoušet kopírovat text
 z příkazové řádky a vložit ho do prohlížeče souborů.
@@ -255,7 +255,7 @@ z příkazové řádky a vložit ho do prohlížeče souborů.
 Bohužel se to dělá na každém systému jinak.
 A protože známé zkratky <kbd>Ctrl</kbd>+<kbd>C</kbd> a
 <kbd>Ctrl</kbd>+<kbd>V</kbd> dělají v příkazové řádce něco jiného než
-kopírování, nejspíš se to dělá jinak než jsi zvykl{{gnd('ý', 'á')}}.
+kopírování, nejspíš se to dělá jinak, než jsi zvykl{{gnd('ý', 'á')}}.
 
 Nejdřív si pomocí příkazu `cd` nebo `pwd` nech vypsat celé jméno adresáře
 `zkouska`:
@@ -329,7 +329,7 @@ je ale občas jiné než v ostatních pogramech:
 Vyzkoušej si, že se v řádce projeví i změny, které na počítači
 uděláš jiným způsobem.
 
-V grafickém prohlížeči, který se „dívá“ na stejný adresář který máš aktivní
+V grafickém prohlížeči, který se „dívá“ na stejný adresář, jako máš aktivní
 v příkazové řádce, vytvoř nový soubor nebo adresář.
 Pak se pomocí příkazu `ls` nebo `dir` podívej, že se opravdu vytvořil.
 Potom ho v grafickém programu smaž – a v příkazové řádce se ujisti,

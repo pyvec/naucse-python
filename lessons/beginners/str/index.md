@@ -229,7 +229,7 @@ je zápis pro jedno zpětné lomítko.
 Někdy potřebuješ řetězce, které obsahují více řádků.
 Pythonní řetězce ale můžeš normálně napsat jen na *jeden* řádek.
 (Python se tak snaží ulehčit hledání chyby, kdybys koncovou uvozovku
-zapoměl{{a}}.)
+zapomněl{{a}}.)
 
 Můžeš ale do řetězce znak pro nový řádek vložit pomocí sekvence `\n`:
 

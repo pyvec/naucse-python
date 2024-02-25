@@ -61,7 +61,7 @@ míst:
 Python (a asi ani ty) nemůže vědět, co tím programem programátor myslel,
 a kdy by tedy bylo nejlepší chybu opravit.
 Ukáže tedy v programu všechna místa, která k chybě vedla.
-Je na tobě abys z nich vybral{{a}} to nejvhodnější a zaměřil{{a}} se na něj.
+Je na tobě, abys z nich vybral{{a}} to nejvhodnější a zaměřil{{a}} se na něj.
 
 Tahle ukázka je samozřejmě jen teoretická, ale v reálných programech vypadá
 hlášení chyb stejně.

@@ -61,9 +61,9 @@ print(zamen('kačka', 2, 'p'))
 print(zacatek)  # NameError
 ```
 
-Funkce `zamen` jsi napsal{{a}} proto, abys nemusel{{a}} pořád opakovat detaily
+Funkci `zamen` jsi napsal{{a}} proto, abys nemusel{{a}} pořád opakovat detaily
 záměny písmenka.
-Jakmile je jednu nadefinovaná, stačí ji zavolat. Důležité jsou jen jméno
+Jakmile je jednou nadefinovaná, stačí ji zavolat. Důležité jsou jen jméno
 funkce, parametry a návratová hodnota; na detaily kódu uvnitř můžeš zapomenout.
 A to i díky lokálním proměnným, které detaily ve vnitřku funkce trochu líp
 izolují od zbytku programu.
@@ -123,7 +123,7 @@ Jmenují se stejně, ale jsou to dvě různé proměnné.
 ## Lokální nebo globální?
 
 Pojďme si to ukázat.
-Než spustíš tenhle program, zkus předpovědět co bude dělat.
+Než spustíš tenhle program, zkus předpovědět, co bude dělat.
 Pak ho pusť, a pokud dělal něco jiného, zkus vysvětlit proč.
 Pozor na chytáky!
 
