@@ -73,20 +73,16 @@ Vybereš-li editor, klikni na jeho jméno a dostaneš se na instrukce ke stažen
 a nastavení.
 (Na tuhle stránku se pak už nemusíš vracet.)
 
-* [Visual Studio Code]({{ subpage_url('vscode') }}) – doporučený editor pro
-  Windows a macOS (a vhodný i pro Linux).
-  V poslední době je to asi nejpopulárnější editor kódu.
-  Nabízí mnoho funkcí a má velkou základnu uživatelů a vývojářů,
-  takže se neustále vylepšuje.
-
 Na Linuxu budeš mít pravděpodobně už nainstalovaný Gedit nebo Kate.
 Zkus se podívat do systémové nabídky, jestli jeden z nich máš (případně je
 spusť z příkazové řádky jako `gedit`, resp. `kate`).
 Pokud ano, klikni na odkaz níže a editor si nastav.
-Nemáš-li ani jeden, vyber Visual Studio Code (viz výše).
+Nemáš-li ani jeden, vyber Kate (viz výše).
 
 * [Gedit]({{ subpage_url('gedit') }}) – bývá na systémech s prostředím GNOME.
 * [Kate]({{ subpage_url('kate') }}) – bývá na systémech s prostředím KDE.
+
+Na Windows také doporučujeme [Kate]({{ subpage_url('kate') }}).
 
 Existují i jiné editory, na které máme návody
 nebo jsme je doporučovali ve starších verzích těchto materiálů.
@@ -102,17 +98,27 @@ Máš-li už svůj oblíbený editor – Vim, Emacs, Geany, apod., použij ten:
   si že je správně nastaven.
 
 
+
 ### IDE
 
 Existují i složitější a mocnější editory, takzvané *IDE* (angl. *Integrated
 Development Environment*, integrované vývojové prostředí),
 třeba [PyCharm], [Eclipse] nebo [KDevelop].
-Umí spoustu pokročilých funkcí, které programátorům pomáhají:
+
+[Visual Studio Code]({{ subpage_url('vscode') }})
+je v poslední době asi nejpopulárnější editor kódu.
+Nabízí mnoho funkcí a má velkou základnu uživatelů a vývojářů,
+takže se neustále vylepšuje.
+
+IDE umí spoustu pokročilých funkcí, které programátorům pomáhají:
 našeptávání, přejmenovávání, spouštění programů, správu virtuálních prostředí
 a podobně.
 Na začátek ale nejsou moc vhodné.
+Jejich velká spousta funkcí je pro začátečníky spíše překážkou než pomocí.
+Protože se chceme věnovat učení Pythonu a ne editoru, doporučujeme používat
+jednodušší editor.
 
-Chceš-li takový editor přesto použít, měl{{a}} bys ho už poměrně dobře znát:
+Chceš-li takový mocný editor přesto použít, měl{{a}} bys ho už poměrně dobře znát:
 vědět, co za tebe dělá editor a jak to spravit, až něco udělá špatně.
 {% if var('coach-present') -%}
 Koučové většinou znají jen jeden editor – ten, který používají –
