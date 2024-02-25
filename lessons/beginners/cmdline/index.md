@@ -201,7 +201,10 @@ $ mkdir zkouska
 > mkdir zkouska
 {% endcall %}
 
-Když je adresář vytvořený, můžeš do něj přejít podobně jako jsi před chvílí
+Vypiš si teď obsah aktuálního adresáře pomocí `ls` nebo `dir`.
+Jeden z vypsaných adresářů bude `zkouska`.
+
+Když je adresář vytvořený, můžeš do něj přejít, podobně jako jsi před chvílí
 {{gnd('přešel', 'přešla')}} na `Desktop` nebo `Plocha`:
 
 {% call sidebyside() %}
@@ -209,9 +212,6 @@ $ cd zkouska
 ---
 > cd zkouska
 {% endcall %}
-
-Vypiš si teď obsah aktuálního adresáře pomocí `ls` nebo `dir`.
-Jeden z vypsaných adresářů bude `zkouska`.
 
 
 ## V grafickém hledátku
