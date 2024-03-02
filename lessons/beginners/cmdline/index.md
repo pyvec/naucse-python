@@ -204,7 +204,7 @@ $ mkdir zkouska
 Vypiš si teď obsah aktuálního adresáře pomocí `ls` nebo `dir`.
 Jeden z vypsaných adresářů bude `zkouska`.
 
-Když je adresář vytvořený, můžeš do něj přejít, podobně jako jsi před chvílí
+Když je adresář vytvořený, můžeš do něj přejít podobně jako jsi před chvílí
 {{gnd('přešel', 'přešla')}} na `Desktop` nebo `Plocha`:
 
 {% call sidebyside() %}

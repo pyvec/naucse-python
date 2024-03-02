@@ -99,8 +99,7 @@ Pokud se jeden z nich rozhodneš použít, neuděláš chybu:
 Máš-li už svůj oblíbený editor – Vim, Emacs, Geany, apod., použij ten:
 
 * [Ostatní]({{ subpage_url('others') }}) – máš-li jiný editor, zkontroluj
-  si že je správně nastaven.
-
+  si, že je správně nastaven.
 
 ### IDE
 
