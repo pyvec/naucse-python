@@ -108,7 +108,7 @@ Na to má Python operátory `//` (podíl) a `%` (zbytek):
 
 Pokud ses dostal{{a}} až sem, gratuluji!
 Python máš nejen nainstalovaný, ale taky ti funguje.
-Stačí ho už jen zavřít a pak opustit i samotnou příkazovou řádku.
+Stačí ho už jen zavřít.
 V Pythonu se to dělá pomocí `quit()`, s prázdnými závorkami na konci.
 
 <div class="highlight"><pre>

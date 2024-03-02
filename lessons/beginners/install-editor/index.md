@@ -26,7 +26,7 @@ pro někoho, kdo se jimi má řídit:
 * Nakresli mi beránka!
 * <font color="green">Nakresli <big><big>mi</big> <u>beránka</u>!</big></font>
 
-To, že neumí formátování, neznamená že jsou naše editory úplně „hloupé“
+I když neumí formátování, neznamená to, že jsou naše editory úplně „hloupé“
 nástroje.
 Aby se nám programy upravovaly pohodlněji, mají několik vychytávek:
 
@@ -36,7 +36,7 @@ Podpora více souborů
 
 Číslování řádků
 :   Před každým řádkem se ukazuje číslo.
-    To se bude velice hodit, až Python bude nadávat, že chyba je na řádku 183. 
+    To se bude velice hodit, až Python bude nadávat, že chyba je na řádku 183.
 
 Odsazování
 :   V Pythonu je důležité, kolika mezerami řádek začíná.
@@ -73,20 +73,16 @@ Vybereš-li editor, klikni na jeho jméno a dostaneš se na instrukce ke stažen
 a nastavení.
 (Na tuhle stránku se pak už nemusíš vracet.)
 
-* [Visual Studio Code]({{ subpage_url('vscode') }}) – doporučený editor pro
-  Windows a macOS (a vhodný i pro Linux).
-  V poslední době je to asi nejpopulárnější editor kódu.
-  Nabízí mnoho funkcí a má velkou základnu uživatelů a vývojářů,
-  takže se neustále vylepšuje.
-
 Na Linuxu budeš mít pravděpodobně už nainstalovaný Gedit nebo Kate.
 Zkus se podívat do systémové nabídky, jestli jeden z nich máš (případně je
 spusť z příkazové řádky jako `gedit`, resp. `kate`).
 Pokud ano, klikni na odkaz níže a editor si nastav.
-Nemáš-li ani jeden, vyber Visual Studio Code (viz výše).
+Nemáš-li ani jeden, vyber [Kate]({{ subpage_url('kate') }}).
 
 * [Gedit]({{ subpage_url('gedit') }}) – bývá na systémech s prostředím GNOME.
 * [Kate]({{ subpage_url('kate') }}) – bývá na systémech s prostředím KDE.
+
+Na Windows také doporučujeme [Kate]({{ subpage_url('kate') }}).
 
 Existují i jiné editory, na které máme návody
 nebo jsme je doporučovali ve starších verzích těchto materiálů.
@@ -99,7 +95,7 @@ Pokud se jeden z nich rozhodneš použít, neuděláš chybu:
 Máš-li už svůj oblíbený editor – Vim, Emacs, Geany, apod., použij ten:
 
 * [Ostatní]({{ subpage_url('others') }}) – máš-li jiný editor, zkontroluj
-  si že je správně nastaven.
+  si, že je správně nastaven.
 
 
 ### IDE
@@ -107,12 +103,21 @@ Máš-li už svůj oblíbený editor – Vim, Emacs, Geany, apod., použij ten:
 Existují i složitější a mocnější editory, takzvané *IDE* (angl. *Integrated
 Development Environment*, integrované vývojové prostředí),
 třeba [PyCharm], [Eclipse] nebo [KDevelop].
-Umí spoustu pokročilých funkcí, které programátorům pomáhají:
+
+[Visual Studio Code]({{ subpage_url('vscode') }})
+je v poslední době asi nejpopulárnější editor kódu.
+Nabízí mnoho funkcí a má velkou základnu uživatelů a vývojářů,
+takže se neustále vylepšuje.
+
+IDE umí spoustu pokročilých funkcí, které programátorům pomáhají:
 našeptávání, přejmenovávání, spouštění programů, správu virtuálních prostředí
 a podobně.
 Na začátek ale nejsou moc vhodné.
+Jejich velká spousta funkcí je pro začátečníky spíše překážkou než pomocí.
+Protože se chceme věnovat učení Pythonu a ne editoru, doporučujeme používat
+jednodušší editor.
 
-Chceš-li takový editor přesto použít, měl{{a}} bys ho už poměrně dobře znát:
+Chceš-li takový mocný editor přesto použít, měl{{a}} bys ho už poměrně dobře znát:
 vědět, co za tebe dělá editor a jak to spravit, až něco udělá špatně.
 {% if var('coach-present') -%}
 Koučové většinou znají jen jeden editor – ten, který používají –
@@ -122,4 +127,3 @@ takže nemusí být schopní s pokročilým IDE rychle pomoct.
 [PyCharm]: https://www.jetbrains.com/pycharm/
 [Eclipse]: https://eclipse.org/
 [KDevelop]: https://www.kdevelop.org/
-

@@ -1,0 +1,1 @@
+Pokračuj s projekty, které jsi dostala na srazu a/nebo máš rozdělané v odevzdávátku.

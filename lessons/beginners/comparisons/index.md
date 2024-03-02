@@ -62,7 +62,7 @@ nebo pusť `python` z příkazové řádky.)
     </tr>
 </table>
 
-Hodnoty provnání jsou takzvané *booleovské* hodnoty
+Hodnoty porovnání jsou takzvané *booleovské* hodnoty
 (angl. *boolean*, podle [G. Boolea](http://en.wikipedia.org/wiki/George_Boole)).
 V Pythonu je můžeš použít vždycky, když potřebuješ vědět, jestli něco platí
 nebo neplatí.

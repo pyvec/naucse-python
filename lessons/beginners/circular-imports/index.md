@@ -8,7 +8,7 @@ Po rozdělení bude projekt vypadat třeba nějak takhle:
 (Šipky mezi moduly znázorňují importování.)
 
 ```plain
-┌──────────────────╮  ┌───────────────╮  ┌──────────────────╮ 
+┌──────────────────╮  ┌───────────────╮  ┌──────────────────╮
 │      ai.py       │  │ piskvorky.py  │  │    hra.py        │
 ├──────────────────┤  ├───────────────┤  ├──────────────────┤
 │                  │◀-│ import ai     │◀-│ import piskvorky │
@@ -37,7 +37,7 @@ Můžeš importovat `ai` z `piskvorky` a zároveň
 │                  │  │ def tah       │
 └──────────────────┘  │ def tah_hrace │
                       │               │
-                      └───────────────┘  
+                      └───────────────┘
 ```
 
 Můžeš se na to podívat z pohledu Pythonu,
@@ -75,7 +75,7 @@ Jak na to? Máš dvě možnosti.
 
 ## Organizace modulů podle závislostí
 
-První možnost je importovat funkci `tah` v modulu `ai`
+První možnost je definovat funkci `tah` v modulu `ai`
 a používat ji odtamtud.
 To je jednoduché, ale nerespektuje účel modulu
 `ai`, který má obsahovat jenom logiku
@@ -99,7 +99,7 @@ můžou být potřeba i jinde.
 Druhá možnost je definovat nový, sdílený modul,
 který se použije jak v `piskvorky.py` tak v `ai.py`.
 
-Takový modul se často se pojmenovává
+Takový modul se často pojmenovává
 `util.py` (z angl. *utility*, pomůcka, nástroj).
 
 ```plain

@@ -28,10 +28,10 @@ Co s tím má chudák funkce `int` dělat?
 Není žádná rozumná hodnota, kterou by mohla vrátit.
 Převádění tohoto textu na celé číslo nedává smysl.
 
-Až funkce `nacti_cislo` nejlíp „ví“, co se má stát když uživatel nezadá
+Až funkce `nacti_cislo` nejlíp „ví“, co se má stát, když uživatel nezadá
 číslice.
 Stačí se uživatele zeptat znovu!
-Kdybys měl{{a}} funkci, která zjistí jestli jsou v řetězci jen číslice,
+Kdybys měl{{a}} funkci, která zjistí, jestli jsou v řetězci jen číslice,
 mohlo by to fungovat nějak takhle:
 
 ```python
@@ -141,8 +141,8 @@ připraví, může hodně ulehčit hledání chyby.
 Zachytávej tedy jenom ty chyby, které *očekáváš* – víš přesně, která chyba může
 nastat a proč; máš možnost správně zareagovat.
 
-V našem příkladu to platí pro `ValueError` z funkce `int`: víš že uživatel
-nemusí vždy zadat číslo ve správném formátu a víš že správná
+V našem příkladu to platí pro `ValueError` z funkce `int`: víš, že uživatel
+nemusí vždy zadat číslo ve správném formátu, a víš, že správná
 reakce na tuhle situaci je problém vysvětlit a zeptat se znovu.
 
 Co ale dělat, když uživatel chce ukončit program a zmáčkne

@@ -25,7 +25,7 @@ nove_slovo = zacatek + novy_znak + konec
 Z takového kódu není na první pohled jasné, co přesně dělá.
 Zvlášť když kód použiješ ve složitějším programu.
 
-Dá se to vyřešit komentářem: ten, kdo bude program číst, si může přečíst
+Dá se to vyřešit komentářem: ten, kdo bude program číst, si může přečíst,
 co to má dělat. Samotný složitější kód pak může ignorovat.
 
 ```python
@@ -79,7 +79,7 @@ pak do závorky seznam *parametrů*, které funkce bere, a pak dvojtečku.
 
 Potom následuje odsazené *tělo funkce* – příkazy, které funkce provádí.
 
-Tělo může začít *dokumentačním řetězcem* (angl. *docstring*), který popisuje
+Tělo může začít *dokumentačním řetězcem* (angl. *docstring*), který popisuje,
 co funkce dělá.
 To může být jakýkoli řetězec, ale tradičně se uvozuje třemi uvozovkami
 (i v případě, že je jen jednořádkový).
