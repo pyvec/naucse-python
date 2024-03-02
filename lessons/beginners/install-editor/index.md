@@ -77,7 +77,7 @@ Na Linuxu budeš mít pravděpodobně už nainstalovaný Gedit nebo Kate.
 Zkus se podívat do systémové nabídky, jestli jeden z nich máš (případně je
 spusť z příkazové řádky jako `gedit`, resp. `kate`).
 Pokud ano, klikni na odkaz níže a editor si nastav.
-Nemáš-li ani jeden, vyber Kate (viz výše).
+Nemáš-li ani jeden, vyber [Kate]({{ subpage_url('kate') }}).
 
 * [Gedit]({{ subpage_url('gedit') }}) – bývá na systémech s prostředím GNOME.
 * [Kate]({{ subpage_url('kate') }}) – bývá na systémech s prostředím KDE.
@@ -95,8 +95,7 @@ Pokud se jeden z nich rozhodneš použít, neuděláš chybu:
 Máš-li už svůj oblíbený editor – Vim, Emacs, Geany, apod., použij ten:
 
 * [Ostatní]({{ subpage_url('others') }}) – máš-li jiný editor, zkontroluj
-  si že je správně nastaven.
-
+  si, že je správně nastaven.
 
 
 ### IDE

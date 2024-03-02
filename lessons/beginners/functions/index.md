@@ -289,7 +289,7 @@ Pozor na to, že když nenapíšeš závorky, funkce se nezavolá!
 Výraz `len(s)` je *volání funkce*, ale `len` bez závorek označuje
 *funkci samotnou*.
 
-Výsledek `len(s)` je číslo; výsledek `len` je funkce.
+Výsledek výrazu `len(s)` je číslo; výsledek výrazu `len` je samotná funkce `len`.
 
 Čísla můžeš sčítat, můžeš tedy napsat `len(s) + 1`.
 Funkce ale sčítat nejde – `len + 1` nedává smysl.
