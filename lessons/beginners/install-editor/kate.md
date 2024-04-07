@@ -34,4 +34,14 @@ Obarvování
     Proto, jakmile v tomhle editoru vytvoříš nový soubor, měl{{a}} bys ho co
     nejdřív uložit pod správným jménem.
 
+Psaní < ve Windows
+:   Pokud používáš českou klávesnici, je možné, že ti ve výchozím nastavení
+    nepůjde v Kate napsat znak `<`. Při stisknutí kláves
+    <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>,</kbd> nebo
+    <kbd>AltGr</kbd>+<kbd>,</kbd> se místo napsání `<` zobrazí okno Nastavit
+    klávesové zkratky<span class="en">/Configure keybord shortcuts</span>. V
+    tom případě v tomto okně najdi klávesovou zkratku pro Nastavit klávesové
+    zkratky<span class="en">/Configure keybord shortcuts</span> a změn ji na
+    Žádná<span class="en">/None</span>.
+
 {% endblock %}
