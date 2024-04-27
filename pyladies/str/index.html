@@ -48,7 +48,7 @@ Je to taky znak. V řetězci se tedy chová stejně jako písmenko:</p>
 <p>K uvození řetězce můžeš použít jednoduché nebo dvojité rovné uvozovky.
 Není mezi nimi rozdíl.
 Podobně <code>4.0</code> a <code>4.000</code> jsou dva zápisy téhož čísla,
-tak <code>'slovo'</code> a <code>"slovo"</code> pro Python označuje stejnou
+tak <code>'slovo'</code> a <code>&quot;slovo&quot;</code> pro Python označuje stejnou
 hodnotu, skládající se ze stejných pěti písmen.</p>
 <p>Použité uvozovky nejsou součástí hodnoty – python si „nepamatuje“, jakým
 způsobem byl řetězec uvozen.
@@ -86,12 +86,12 @@ máš řetězce zvýrazněné.
 <a href="#sekvence_se_zpetnym_lomitkem" class="header-link">#</a>
 </h2>
 <p>Co dělat, když v řetězci potřebuješ <em>oba</em> druhy uvozovek,
-jako ve větě <code>Vtom vnuk křik': "Hleď!"</code>?</p>
+jako ve větě <code>Vtom vnuk křik': &quot;Hleď!&quot;</code>?</p>
 <p>Můžeš si pomoci tím, že spojíš dva řetězce:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vtom vnuk křik&#39;: &quot;</span> <span class="o">+</span> <span class="s1">&#39;&quot;Hleď!&quot;&#39;</span><span class="p">)</span>
 <span class="go">Vtom vnuk křik&#39;: &quot;Hleď!&quot;</span>
 </pre></div><p>Ale lepší způsob je použít speciální zápis se <em>zpětným lomítkem</em>.
-Kdykoli se v řetězci objeví sekvence <code>\'</code> nebo <code>\"</code>, Python dá do řetězce danou
+Kdykoli se v řetězci objeví sekvence <code>\'</code> nebo <code>\&quot;</code>, Python dá do řetězce danou
 uvozovku.</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vtom vnuk křik&#39;: </span><span class="se">\&quot;</span><span class="s2">Hleď!</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="go">Vtom vnuk křik&#39;: &quot;Hleď!&quot;</span>
@@ -111,14 +111,16 @@ Zkus si, jestli zvládneš předpovědět výsledek těchto výrazů:</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;.</span><span class="se">\&quot;</span><span class="s2">.&quot;</span><span class="p">)</span>
-<span class="go">.&quot;.</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;.</span><span class="se">\&quot;</span><span class="s2">.&quot;</span><span class="p">)</span>
-<span class="go">3</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;.</span><span class="se">\&quot;</span><span class="s2">.&quot;</span>
-<span class="go">&#39;.&quot;.&#39;</span>
-</pre></div>
+<span></span><span class="go">.&quot;.</span>
+<span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;.</span><span class="se">\&quot;</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span></span><span class="go">3</span>
+<span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;.</span><span class="se">\&quot;</span><span class="s2">.&quot;</span>
+<span></span><span class="go">&#39;.&quot;.&#39;</span>
+<span></span></pre></div>
     </div>
-</div><p>Znaků, které se zadávají sekvencí se zpětným lomítkem, je více.
+</div>
+
+<p>Znaků, které se zadávají sekvencí se zpětným lomítkem, je více.
 Jedna ze zajímavějších je <code>\t</code>, představující tabulátor – jediný znak, který
 se, když ho vypíšeš, „roztáhne“ na víc mezer.</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a</span><span class="se">\t</span><span class="s2">b&quot;</span><span class="p">)</span>   <span class="c1"># Výpis &quot;pro lidi&quot;</span>
@@ -155,7 +157,7 @@ součást řetězce zpětné lomítko (třeba ve jménech souborů na Windows),
 nemůžeš použít přímo <code>\</code>.
 Musíš použít speciální sekvenci <code>\\</code> – tedy lomítko zdvojit:</p>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">PyLadies</span><span class="se">\\</span><span class="s1">Nový adresář&#39;</span><span class="p">)</span>
-</pre></div><p>Podobně jako <code>\"</code> je zápis pro uvozovku a <code>\'</code> pro apostrof, sekvence <code>\\</code>
+</pre></div><p>Podobně jako <code>\&quot;</code> je zápis pro uvozovku a <code>\'</code> pro apostrof, sekvence <code>\\</code>
 je zápis pro jedno zpětné lomítko.</p>
 <h3 id="novy_radek">Nový řádek
 <a href="#novy_radek" class="header-link">#</a>
@@ -204,24 +206,25 @@ několika mezerami.
 <p>Jaká je délka těchto řetězců?</p>
 <p>Výsledek zjistíš snadno, zkus se ale zamyslet a Python použít jen pro ověření.</p>
 <div class="highlight"><pre><code>print(len('ahoj'))
-print(len("""Ahoj!"""))
+print(len(&quot;&quot;&quot;Ahoj!&quot;&quot;&quot;))
 print(len('a b'))
 print(len( ' a b ' ))
 print(len('\N{SNOWMAN}ové'))
 print(len('a\nb'))
 print(len('a\tb'))
-print(len('"\'"'))
+print(len('&quot;\'&quot;'))
 
 
-print(len("""
-abc"""))
+print(len(&quot;&quot;&quot;
+abc&quot;&quot;&quot;))
 
 
 if True:
-    print(len("""a
-    b"""))
+    print(len(&quot;&quot;&quot;a
+    b&quot;&quot;&quot;))
 
 
 print(len('C:\new_dir'))
 
-print(len(f'{print}'))</code></pre></div>
+print(len(f'{print}'))
+</code></pre></div>

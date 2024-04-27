@@ -96,26 +96,29 @@ rozbalit přímo v hlavičce <code>for</code> cyklu.</p>
 4. Čt
 5. Pá
 6. So
-7. Ne</code></pre></div><div class="solution" id="solution-0">
+7. Ne
+</code></pre></div><div class="solution" id="solution-0">
     <h3>Řešení</h3>
     <div class="solution-cover">
         <a href="naucse:solution?solution=0"><span class="link-text">Ukázat řešení</span></a>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="n">dny</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Po&#39;</span><span class="p">,</span> <span class="s1">&#39;Út&#39;</span><span class="p">,</span> <span class="s1">&#39;St&#39;</span><span class="p">,</span> <span class="s1">&#39;Čt&#39;</span><span class="p">,</span> <span class="s1">&#39;Pá&#39;</span><span class="p">,</span> <span class="s1">&#39;So&#39;</span><span class="p">,</span> <span class="s1">&#39;Ne&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">den</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dny</span><span class="p">):</span>
-    <span class="n">cislo</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">cislo</span><span class="si">}</span><span class="s1">. </span><span class="si">{</span><span class="n">den</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div><p>To je trošku kostrbaté, ale dá se to zjednodušit: buď jako
-<code>f'{index + 1}. {den}'</code>, nebo můžeš funkci <code>enumerate</code> předat
-pojmenovaný argument <code>start</code>, pomocí kterého umí sama
-počítat od jiného začátku než od nuly:</p>
-<div class="highlight"><pre><span></span><span class="n">dny</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Po&#39;</span><span class="p">,</span> <span class="s1">&#39;Út&#39;</span><span class="p">,</span> <span class="s1">&#39;St&#39;</span><span class="p">,</span> <span class="s1">&#39;Čt&#39;</span><span class="p">,</span> <span class="s1">&#39;Pá&#39;</span><span class="p">,</span> <span class="s1">&#39;So&#39;</span><span class="p">,</span> <span class="s1">&#39;Ne&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">den</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dny</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">. </span><span class="si">{</span><span class="n">den</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
+<span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">den</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dny</span><span class="p">):</span>
+<span></span>    <span class="n">cislo</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+<span></span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">cislo</span><span class="si">}</span><span class="s1">. </span><span class="si">{</span><span class="n">den</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span></span></pre></div><p>To je trošku kostrbaté, ale dá se to zjednodušit: buď jako
+<span></span><code>f'{index + 1}. {den}'</code>, nebo můžeš funkci <code>enumerate</code> předat
+<span></span>pojmenovaný argument <code>start</code>, pomocí kterého umí sama
+<span></span>počítat od jiného začátku než od nuly:</p>
+<span></span><div class="highlight"><pre><span></span><span class="n">dny</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Po&#39;</span><span class="p">,</span> <span class="s1">&#39;Út&#39;</span><span class="p">,</span> <span class="s1">&#39;St&#39;</span><span class="p">,</span> <span class="s1">&#39;Čt&#39;</span><span class="p">,</span> <span class="s1">&#39;Pá&#39;</span><span class="p">,</span> <span class="s1">&#39;So&#39;</span><span class="p">,</span> <span class="s1">&#39;Ne&#39;</span><span class="p">]</span>
+<span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">den</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dny</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span></span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">. </span><span class="si">{</span><span class="n">den</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span></span></pre></div>
     </div>
-</div><h2 id="zip_vic_iteraci_najednou">Zip: Víc iterací najednou
+</div>
+
+<h2 id="zip_vic_iteraci_najednou">Zip: Víc iterací najednou
 <a href="#zip_vic_iteraci_najednou" class="header-link">#</a>
 </h2>
 <p>Další iterátor <var>n</var>-tic je funkce <code>zip</code>, která umí projít dvě sekvence
@@ -165,7 +168,9 @@ místo, číslo):</p>
     <div class="solution-body" aria-hidden="true">
         <p>Iterátor <code>zip</code> skončí hned když dojdou prvky nejkratší sekvence.</p>
     </div>
-</div><p>Občas je potřeba projít všechny záznamy.
+</div>
+
+<p>Občas je potřeba projít všechny záznamy.
 Na to slouží funkce <code>zip_longest</code> z modulu <code>itertools</code>:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">zip_longest</span>
 <span class="k">for</span> <span class="n">vec</span><span class="p">,</span> <span class="n">barva</span> <span class="ow">in</span> <span class="n">zip_longest</span><span class="p">(</span><span class="n">veci</span><span class="p">,</span> <span class="n">barvy</span><span class="p">,</span> <span class="n">fillvalue</span><span class="o">=</span><span class="s1">&#39;(nevím)&#39;</span><span class="p">):</span>

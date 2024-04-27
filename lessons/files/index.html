@@ -93,16 +93,18 @@ aby se vyjímala v textu:</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <p>Každý řádek končí znakem nového řádku, <code>'\n'</code>,
-který možná znáš ze <a href="naucse:page?lesson=beginners/str">sekce o řetězcích</a>.
-Při procházení souboru Python tento znak nechává na konci řetězce <code>radek</code> ¹.
-Funkce <code>print</code> pak přidá další nový řádek, protože ta na konci
-výpisu vždycky odřádkovává – pokud nedostane argument <code>end=''</code>.</p>
-<hr>
-<p>¹ Proč to dělá? Kdyby <code>'\n'</code> na konci řádků nebylo,
-nedalo by se např. dobře rozlišit, jestli poslední řádek
-končí na <code>'\n'</code></p>
+<span></span>který možná znáš ze <a href="naucse:page?lesson=beginners/str">sekce o řetězcích</a>.
+<span></span>Při procházení souboru Python tento znak nechává na konci řetězce <code>radek</code> ¹.
+<span></span>Funkce <code>print</code> pak přidá další nový řádek, protože ta na konci
+<span></span>výpisu vždycky odřádkovává – pokud nedostane argument <code>end=''</code>.</p>
+<span></span><hr />
+<span></span><p>¹ Proč to dělá? Kdyby <code>'\n'</code> na konci řádků nebylo,
+<span></span>nedalo by se např. dobře rozlišit, jestli poslední řádek
+<span></span>končí na <code>'\n'</code></p>
     </div>
-</div><p>Ideální způsob, jak odřádkování spravit, je odstranit z konce řetězce
+</div>
+
+<p>Ideální způsob, jak odřádkování spravit, je odstranit z konce řetězce
 bílé znaky (mezery a nové řádky) pomocí metody <code>rstrip</code>:</p>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Slyšela jsem tuto básničku:&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>

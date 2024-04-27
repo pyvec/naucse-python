@@ -30,7 +30,7 @@ se k němu vrátit.</p>
 dohromady. Doporučuji začít s čistým souborem v prázdné složce a do hotových
 programů se koukat jen v případě potřeby.</p>
 <p>Jak postupovat, aby se projekt nezdál nedosažitelný už na začátku? Třeba takto:</p>
-<ol>
+<ol start="0">
 <li>Promysli si, jak bude hra fungovat a jak přeneseme mřížku s hadem
 z příkazové řádky do grafického okna.</li>
 <li>Vykresli hada do grafického okna (ve formě barevných čtverců)</li>
@@ -182,7 +182,8 @@ bez přípony a názvu složky – ten je uložen v atributu <code>stem</code>
  'right-top': &lt;ImageData 64x64&gt;, 'left-bottom': &lt;ImageData 64x64&gt;,
  'tail-left': &lt;ImageData 64x64&gt;, 'bottom-tongue': &lt;ImageData 64x64&gt;,
  'left-top': &lt;ImageData 64x64&gt;, 'bottom-bottom': &lt;ImageData 64x64&gt;,
- ...</code></pre></div><p>Pokud je tohle pro tebe příliš mnoho nových věcí najednou a nedaří se ti to
+ ...
+</code></pre></div><p>Pokud je tohle pro tebe příliš mnoho nových věcí najednou a nedaří se ti to
 vyřešit, zkus to ještě jednou a pak se můžeš podívat na řešení.</p>
 <div class="solution" id="solution-0">
     <h3>Řešení</h3>
@@ -191,19 +192,21 @@ vyřešit, zkus to ještě jednou a pak se můžeš podívat na řešení.</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-
-<span class="kn">import</span> <span class="nn">pyglet</span>
-
-<span class="n">TILES_DIRECTORY</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;snake-tiles&#39;</span><span class="p">)</span>
-
-<span class="n">snake_tiles</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">TILES_DIRECTORY</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.png&#39;</span><span class="p">):</span>
-    <span class="n">snake_tiles</span><span class="p">[</span><span class="n">path</span><span class="o">.</span><span class="n">stem</span><span class="p">]</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">snake_tiles</span><span class="p">)</span>
-</pre></div>
+<span></span>
+<span></span><span class="kn">import</span> <span class="nn">pyglet</span>
+<span></span>
+<span></span><span class="n">TILES_DIRECTORY</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;snake-tiles&#39;</span><span class="p">)</span>
+<span></span>
+<span></span><span class="n">snake_tiles</span> <span class="o">=</span> <span class="p">{}</span>
+<span></span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">TILES_DIRECTORY</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.png&#39;</span><span class="p">):</span>
+<span></span>    <span class="n">snake_tiles</span><span class="p">[</span><span class="n">path</span><span class="o">.</span><span class="n">stem</span><span class="p">]</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span></span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">snake_tiles</span><span class="p">)</span>
+<span></span></pre></div>
     </div>
-</div><h3 id="housenka">Housenka
+</div>
+
+<h3 id="housenka">Housenka
 <a href="#housenka" class="header-link">#</a>
 </h3>
 <p>Než se začneme zabývat různými obrázky, uděláme pokus k ověření, že nám vše stále funguje.

@@ -15,7 +15,8 @@ abys věděl/a o čem tu je řeč.</p>
 │                  │  │ def tah       │  │                  │
 └──────────────────┘  │ def tah_hrace │  └──────────────────┘
                       │               │
-                      └───────────────┘</code></pre></div><p>Jenže funkce <code>tah_pocitace</code>
+                      └───────────────┘
+</code></pre></div><p>Jenže funkce <code>tah_pocitace</code>
 většinou potřebuje volat funkci <code>tah</code>.
 Co s tím?
 Můžeš importovat <code>ai</code> z <code>piskvorky</code> a zároveň
@@ -30,7 +31,8 @@ Můžeš importovat <code>ai</code> z <code>piskvorky</code> a zároveň
 │                  │  │ def tah       │
 └──────────────────┘  │ def tah_hrace │
                       │               │
-                      └───────────────┘</code></pre></div><p>Můžeš se na to podívat z pohledu Pythonu,
+                      └───────────────┘
+</code></pre></div><p>Můžeš se na to podívat z pohledu Pythonu,
 který příkazy v souborech vykonává.
 Když má importovat soubor <code>piskvorky.py</code>, začne ho
 zpracovávat řádek po řádku,
@@ -74,7 +76,8 @@ můžou být potřeba i jinde.</p>
 │ def tah_pocitace │  │ def vyhodnot  │
 │ def tah          │  │ def tah_hrace │
 │                  │  │               │
-└──────────────────┘  └───────────────┘</code></pre></div><h2 id="pomocny_modul">Pomocný modul
+└──────────────────┘  └───────────────┘
+</code></pre></div><h2 id="pomocny_modul">Pomocný modul
 <a href="#pomocny_modul" class="header-link">#</a>
 </h2>
 <p>Druhá možnost je definovat nový, sdílený modul,
@@ -97,7 +100,8 @@ který se použije jak v <code>piskvorky.py</code> tak v <code>ai.py</code>.</
 │ def tah_pocitace │        │ def vyhodnot  │
 │                  │        │ def tah_hrace │
 │                  │        │               │
-└──────────────────┘        └───────────────┘</code></pre></div><p>Nevýhoda pomocného modulu je ta,
+└──────────────────┘        └───────────────┘
+</code></pre></div><p>Nevýhoda pomocného modulu je ta,
 že se z něj může stát neudržované „odkladiště“
 všeho kódu, který byl jednou potřeba na dvou
 nebo více místech.</p>

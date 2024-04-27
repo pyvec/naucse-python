@@ -43,7 +43,8 @@ Vytvoř si tedy nový adresář a přepni se do něj (pomocí <code>cd</code>).
 Pak vytvoř gitový <em>repozitář</em> (angl. repository)
 pomocí příkazu <code>git init</code>:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git init
-Initialized empty Git repository in .../.git/</code></pre></div><p>Na první pohled to vypadá, že se nic nestalo.
+Initialized empty Git repository in .../.git/
+</code></pre></div><p>Na první pohled to vypadá, že se nic nestalo.
 Tenhle příkaz totiž vytvořil <em>skrytý</em> adresář
 <code>.git</code>, do kterého uložil nějaké informace.
 Přesvědč se příkazem <code>ls -a</code> (Linux) nebo <code>dir /a</code> (Windows).
@@ -57,7 +58,8 @@ On branch master
 
 No commits yet
 
-nothing to commit (create/copy files and use "git add" to track)</code></pre></div><p><em>„On branch master”</em> říká něco o větvích, k tomu se vrátíme později.
+nothing to commit (create/copy files and use "git add" to track)
+</code></pre></div><p><em>„On branch master”</em> říká něco o větvích, k tomu se vrátíme později.
 <em>„No commits yet”</em> říká, že zatím nemáš uloženou žádnou revizi.
 A <em>„nothing to commit”</em> říká, že je adresář
 prázdný – nejsou tu žádné soubory k verzování.</p>
@@ -79,12 +81,14 @@ No commits yet
 
 Untracked files:
   (use "git add &lt;file&gt;..." to include in what will be committed)
-    <span style="color: #aa0000">basnicka.txt</span>
+	<span style="color: #aa0000">basnicka.txt</span>
 
-nothing added to commit but untracked files present (use "git add" to track)</code></pre></div><p>U každého nového souboru musíme Gitu říct, že
+nothing added to commit but untracked files present (use "git add" to track)
+</code></pre></div><p>U každého nového souboru musíme Gitu říct, že
 chceme jeho obsah sledovat.
 Proveď to se svojí básničkou:</p>
-<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git add basnicka.txt</code></pre></div><p>a znovu zkontroluj stav repozitáře:</p>
+<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git add basnicka.txt
+</code></pre></div><p>a znovu zkontroluj stav repozitáře:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
 On branch master
 
@@ -92,14 +96,17 @@ No commits yet
 
 Changes to be committed:
   (use "git rm --cached &lt;file&gt;..." to unstage)
-    <span style="color: #00aa00">new file:   basnicka.txt</span></code></pre></div><p>To, co je zelené („changes to be committed“),
+	<span style="color: #00aa00">new file:   basnicka.txt</span>
+
+</code></pre></div><p>To, co je zelené („changes to be committed“),
 se přidá do další <em>revize</em> (angl. <em>commit</em>),
 kterou vytvoříš.
 Pojď tedy vytvořit revizi:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git commit
 [master (root-commit) eb0fcd9] První revize
  1 file changed, 6 insertions(+)
- create mode 100644 basnicka.txt</code></pre></div><p>Po zadání tohoto příkazu se otevře editor,
+ create mode 100644 basnicka.txt
+</code></pre></div><p>Po zadání tohoto příkazu se otevře editor,
 do kterého musíš napsat nějaký popisek,
 abys věděl/a, co tahle revize obsahuje za změny.
 Pro začátek napiš jen <code>První revize</code>.
@@ -129,7 +136,8 @@ Pak si nastav Git a zkus <code>git commit</code> znovu.</p>
 </div><p>Znovu zkus vypsat stav repozitáře:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
 On branch master
-nothing to commit, working tree clean</code></pre></div><p>Tenhle krátký výstup znamená, že od poslední revize
+nothing to commit, working tree clean
+</code></pre></div><p>Tenhle krátký výstup znamená, že od poslední revize
 se nic nezměnilo.
 Což dává smysl – poslední revizi jsi právě vytvořil/a!</p>
 <p>A co všechno je v téhle první/poslední revizi?
@@ -152,7 +160,8 @@ Date:   Mon May 18 16:18:40 2020 +0200
 <span style="color: #00aa00">+</span>
 <span style="color: #00aa00">+</span><span style="color: #00aa00">V potoce je hastrmánek</span>
 <span style="color: #00aa00">+</span><span style="color: #00aa00">Zatahá tě za copánek</span>
-<span style="color: #00aa00">+</span><span style="color: #00aa00">Holka modrooká, nesedávej tam</span></code></pre></div><p>Vidíš unikátní
+<span style="color: #00aa00">+</span><span style="color: #00aa00">Holka modrooká, nesedávej tam</span>
+</code></pre></div><p>Vidíš unikátní
 <span class="yellow">označení revize</span>,
 pomocí kterého se vždy bude dát dostat k této konkrétní
 verzi projektu.
@@ -179,9 +188,10 @@ On branch master
 Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
   (use "git restore &lt;file&gt;..." to discard changes in working directory)
-    <span style="color: #aa0000">modified:   basnicka.txt</span>
+	<span style="color: #aa0000">modified:   basnicka.txt</span>
 
-no changes added to commit (use "git add" and/or "git commit -a")</code></pre></div><p>Soubor je opět červený! Něco se v něm změnilo!
+no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre></div><p>Soubor je opět červený! Něco se v něm změnilo!
 Ale co?
 Na to nám odpoví příkaz <code>git diff</code>.</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git diff
@@ -201,7 +211,8 @@ Na to nám odpoví příkaz <code>git diff</code>.</p>
  Zatahá tě za copánek
 <span style="color: #aa0000">-Holka modrooká, nesedávej tam</span>
 <span style="color: #00aa00">+</span><span style="color: #00aa00">Holka modrooká</span>
-<span style="color: #00aa00">+</span><span style="color: #00aa00">Nesedávej tam</span></code></pre></div><p>Změny se ukazují po řádcích.
+<span style="color: #00aa00">+</span><span style="color: #00aa00">Nesedávej tam</span>
+</code></pre></div><p>Změny se ukazují po řádcích.
 Červeně, s <tt class="red">-</tt>, jsou ukázány
 odebrané řádky; zeleně s <tt class="green">+</tt>
 řádky přidané.</p>
@@ -219,13 +230,16 @@ souboru řádkem 1 a měl 6 řádků; v nové verzi je
 opět od 1. řádku, ale narostl na 9).</p>
 </div><p>Jsi-li se změnami spokojen/a, řekni Gitu, ať je
 použije v další revizi:</p>
-<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git add basnicka.txt</code></pre></div><p>A pro úplnost se znovu koukni, co říká
+<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git add basnicka.txt
+</code></pre></div><p>A pro úplnost se znovu koukni, co říká
 <code>status</code> – co je zelené, přidá se do další
 revize.</p>
 <div class="highlight"><pre><code>On branch master
 Changes to be committed:
   (use "git restore --staged &lt;file&gt;..." to unstage)
-    <span style="color: #00aa00">modified:   basnicka.txt</span></code></pre></div><p>Než uděláš druhou revizi, ještě řeknu něco o tom,
+	<span style="color: #00aa00">modified:   basnicka.txt</span>
+
+</code></pre></div><p>Než uděláš druhou revizi, ještě řeknu něco o tom,
 jak správně psát k revizím popisky.
 Na to je totiž úzus, který téměř všichni programátoři
 respektují: na prvním řádku je krátké shrnutí změn,
@@ -242,10 +256,11 @@ Cokoli, co může přijít vhod, až se změny bude snažit někdo pochopit.
 
 Verše básně se většinou píšou na jednotlivé řádky. Myslím, že
 takhle se to líp čte. (Ale, co si budeme povídat, hlavní
-důvod je ukázat co dělá git diff.)</code></pre></div><div class="admonition note"><p>Nebude-li se ti někdy dařit shrnout změnu
+důvod je ukázat co dělá git diff.)
+</code></pre></div><div class="admonition note"><p>Nebude-li se ti někdy dařit shrnout změnu
 v 70 znacích, zamysli se, jestli neděláš moc velkou
-změnu najednou – např. "změna řetězce X
-a dopsání nového cyklu Y" by bylo lepší uložit
+změnu najednou – např. &quot;změna řetězce X
+a dopsání nového cyklu Y&quot; by bylo lepší uložit
 jako dvě různé revize.</p>
 </div><p>Pomocí <code>git commit</code> vytvoř druhou revizi.
 Pak ji zkontroluj:</p>
@@ -276,7 +291,8 @@ Date:   Mon May 18 16:18:40 2020 +0200
  Zatahá tě za copánek
 <span style="color: #aa0000">-Holka modrooká, nesedávej tam</span>
 <span style="color: #00aa00">+</span><span style="color: #00aa00">Holka modrooká</span>
-<span style="color: #00aa00">+</span><span style="color: #00aa00">Nesedávej tam</span></code></pre></div><h2 id="diagram">Diagram
+<span style="color: #00aa00">+</span><span style="color: #00aa00">Nesedávej tam</span>
+</code></pre></div><h2 id="diagram">Diagram
 <a href="#diagram" class="header-link">#</a>
 </h2>
 <p>Pro lepší pochopení, co dělají jednotlivé příkazy a v jakém
@@ -304,7 +320,8 @@ Date:   Mon May 18 16:18:40 2020 +0200
 Author: Adéla Novotná &lt;adela.novotna@example.cz&gt;
 Date:   Mon May 18 16:18:40 2020 +0200
 
-    První revize</code></pre></div><p>Git log vypíše všechny revize od té nejnovější až po
+    První revize
+</code></pre></div><p>Git log vypíše všechny revize od té nejnovější až po
 úplný začátek projektu.</p>
 <p>Až budeš mít verzí tolik, že se nevejdou najednou
 na obrazovku, můžeš se v logu pohybovat pomocí šipek a

@@ -87,7 +87,8 @@ který balíček nainstaluje tak, že změny v souborech se projeví rovnou
 do kterého se tradičně píšou základní informace o projektu.
 Můžeme jej vytvořit a uložit jako <code>README</code> přímo v kořenovém adresáři projektu,
 tedy tam, kde byste jej nejspíš čekali.</p>
-<div class="highlight"><pre><code>Czech public holiday checker...</code></pre></div><p>Poté spustíme <code>setup.py sdist</code> znovu:</p>
+<div class="highlight"><pre><code>Czech public holiday checker...
+</code></pre></div><p>Poté spustíme <code>setup.py sdist</code> znovu:</p>
 <div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(__venv__)</span><span class="gp">$ </span>python<span class="w"> </span>setup.py<span class="w"> </span>sdist
 </pre></div><p>V adresáři <code>dist</code> najdete archiv, jeho obsah můžete zkontrolovat. Měl by tam
 být i soubor <code>README</code>.</p>
@@ -98,7 +99,8 @@ Obsah najdete třeba na <a href="https://creativecommons.org/publicdomain/zero/1
 nebude. Je to proto, že se standardně do archivu přidávají jen některé soubory.
 Další soubory lze přidat pomocí souboru <code>MANIFEST.in</code>, dle <a href="https://docs.python.org/3/distutils/sourcedist.html#specifying-the-files-to-distribute">dokumentace</a>.</p>
 <p>V našem případě bude <code>MANIFEST.in</code> vypadat takto:</p>
-<div class="highlight"><pre><code>include LICENSE</code></pre></div><p>Při dalším spuštění už <code>setup.py</code> přidá i soubor <code>LICENSE</code>.
+<div class="highlight"><pre><code>include LICENSE
+</code></pre></div><p>Při dalším spuštění už <code>setup.py</code> přidá i soubor <code>LICENSE</code>.
 To můžete zkontrolovat i ve výsledném archivu.</p>
 <div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(__venv__)</span><span class="gp">$ </span>python<span class="w"> </span>setup.py<span class="w"> </span>sdist
 <span class="go">...</span>
@@ -306,7 +308,8 @@ Balíček, který závisí na balíčkách <code>Flask</code> (jakékoli verze) 
 tranzitivních – t.j. závisí-li náš balíček na <code>Flask</code> a <code>Flask</code> na <code>Jinja2</code>,
 najdeme v <code>requirements.txt</code> mimo jiné například řádky:</p>
 <div class="highlight"><pre><code>Flask==0.11.1
-Jinja2==2.8</code></pre></div><p>Tento soubor se používá, když je potřeba přesně replikovat prostředí, kde
+Jinja2==2.8
+</code></pre></div><p>Tento soubor se používá, když je potřeba přesně replikovat prostředí, kde
 program běží, například mezi testovacím strojem a produkčním nasazením
 webové aplikace.
 Tento soubor se dá vygenerovat z aktuálního prostředí zadáním

@@ -82,9 +82,10 @@ Budeme ji dál rozvíjet.</p>
     <span class="n">window</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 
 <span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div><p><img src="naucse:static?filename=green.png" alt="" style="display:block; float:right; margin: 2px; border: 1px solid #ccc; border-radius: 1px;">
-Stáhni si soubor <a href="naucse:static?filename=green.png">green.png</a> – zelený čtvereček –
-a dej ho do adresáře, kam píšeš kód.</p>
+</pre></div><img src="naucse:static?filename=green.png" alt="" style="display:block; float:right; margin: 2px; border: 1px solid #ccc; border-radius: 1px;">
+Stáhni si soubor [green.png](naucse:static?filename=green.png) – zelený čtvereček –
+a dej ho do adresáře, kam píšeš kód.
+
 <p>Pod <code>import pyglet</code> přidej řádek, který tento obrázek načte.</p>
 <div class="highlight"><pre><span></span><span class="n">green_image</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;green.png&#39;</span><span class="p">)</span>
 </pre></div><p>Potom zkus dovnitř do funkce <code>on_draw</code> přidat vykreslení obrázku na souřadnice
@@ -116,22 +117,24 @@ se naučíš).</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyglet</span>
-
-<span class="n">TILE_SIZE</span> <span class="o">=</span> <span class="mi">64</span>
-<span class="n">green_image</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;green.png&#39;</span><span class="p">)</span>
-
-<span class="n">window</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
-
-<span class="nd">@window</span><span class="o">.</span><span class="n">event</span>
-<span class="k">def</span> <span class="nf">on_draw</span><span class="p">():</span>
-    <span class="n">window</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-    <span class="n">green_image</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span>
-                     <span class="n">width</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">)</span>
-
-<span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
+<span></span>
+<span></span><span class="n">TILE_SIZE</span> <span class="o">=</span> <span class="mi">64</span>
+<span></span><span class="n">green_image</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;green.png&#39;</span><span class="p">)</span>
+<span></span>
+<span></span><span class="n">window</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
+<span></span>
+<span></span><span class="nd">@window</span><span class="o">.</span><span class="n">event</span>
+<span></span><span class="k">def</span> <span class="nf">on_draw</span><span class="p">():</span>
+<span></span>    <span class="n">window</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span></span>    <span class="n">green_image</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span>
+<span></span>                     <span class="n">width</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">)</span>
+<span></span>
+<span></span><span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span></span></pre></div>
     </div>
-</div><h2 id="sazeni_hada">Sázení hada
+</div>
+
+<h2 id="sazeni_hada">Sázení hada
 <a href="#sazeni_hada" class="header-link">#</a>
 </h2>
 <p>Zkus teď na začátek programu – těsně pod <code>import</code> a konstantu – přidat
@@ -155,34 +158,37 @@ správného řešení.</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyglet</span>
-
-<span class="n">TILE_SIZE</span> <span class="o">=</span> <span class="mi">64</span>
-
-<span class="n">snake</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
-
-<span class="n">green_image</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;green.png&#39;</span><span class="p">)</span>
-
-<span class="n">window</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
-
-<span class="nd">@window</span><span class="o">.</span><span class="n">event</span>
-<span class="k">def</span> <span class="nf">on_draw</span><span class="p">():</span>
-    <span class="n">window</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">snake</span><span class="p">:</span>
-        <span class="n">green_image</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span>
-                        <span class="n">width</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">)</span>
-
-<span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
+<span></span>
+<span></span><span class="n">TILE_SIZE</span> <span class="o">=</span> <span class="mi">64</span>
+<span></span>
+<span></span><span class="n">snake</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+<span></span>
+<span></span><span class="n">green_image</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;green.png&#39;</span><span class="p">)</span>
+<span></span>
+<span></span><span class="n">window</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
+<span></span>
+<span></span><span class="nd">@window</span><span class="o">.</span><span class="n">event</span>
+<span></span><span class="k">def</span> <span class="nf">on_draw</span><span class="p">():</span>
+<span></span>    <span class="n">window</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span></span>    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">snake</span><span class="p">:</span>
+<span></span>        <span class="n">green_image</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span>
+<span></span>                        <span class="n">width</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">)</span>
+<span></span>
+<span></span><span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span></span></pre></div>
     </div>
-</div><h2 id="krmeni">Krmení
+</div>
+
+<h2 id="krmeni">Krmení
 <a href="#krmeni" class="header-link">#</a>
 </h2>
-<p><img src="naucse:static?filename=red.png" alt="" style="display:block; float:right; margin: 2px; border: 1px solid #ccc; border-radius: 1px;">
+<img src="naucse:static?filename=red.png" alt="" style="display:block; float:right; margin: 2px; border: 1px solid #ccc; border-radius: 1px;">
 <img src="naucse:static?filename=apple.png" alt="" style="display:block; float:right; margin: 2px; border: 1px solid #ccc; border-radius: 1px;">
 Aby bylo ve hře co dělat, budeme potřebovat pro hada krmení.
-Stáhni si do adresáře s projektem obrázek <code>apple.png</code> (ať už jednoduchý
+Stáhni si do adresáře s projektem obrázek `apple.png` (ať už jednoduchý
 čtvereček nebo detailnější obrázek), a zkus vykreslit jídlo třeba
-na následující souřadnice:</p>
+na následující souřadnice:
+
 <div class="highlight"><pre><span></span><span class="n">food</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
 </pre></div><div class="solution" id="solution-2">
     <h3>Řešení</h3>
@@ -191,31 +197,33 @@ na následující souřadnice:</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyglet</span>
-
-<span class="n">TILE_SIZE</span> <span class="o">=</span> <span class="mi">64</span>
-
-<span class="n">snake</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
-<span class="n">food</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
-
-<span class="n">red_image</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;apple.png&#39;</span><span class="p">)</span>
-<span class="n">green_image</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;green.png&#39;</span><span class="p">)</span>
-
-<span class="n">window</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
-
-<span class="nd">@window</span><span class="o">.</span><span class="n">event</span>
-<span class="k">def</span> <span class="nf">on_draw</span><span class="p">():</span>
-    <span class="n">window</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">snake</span><span class="p">:</span>
-        <span class="n">green_image</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span>
-                        <span class="n">width</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">food</span><span class="p">:</span>
-        <span class="n">red_image</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span>
-                        <span class="n">width</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">)</span>
-
-<span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
+<span></span>
+<span></span><span class="n">TILE_SIZE</span> <span class="o">=</span> <span class="mi">64</span>
+<span></span>
+<span></span><span class="n">snake</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+<span></span><span class="n">food</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
+<span></span>
+<span></span><span class="n">red_image</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;apple.png&#39;</span><span class="p">)</span>
+<span></span><span class="n">green_image</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;green.png&#39;</span><span class="p">)</span>
+<span></span>
+<span></span><span class="n">window</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
+<span></span>
+<span></span><span class="nd">@window</span><span class="o">.</span><span class="n">event</span>
+<span></span><span class="k">def</span> <span class="nf">on_draw</span><span class="p">():</span>
+<span></span>    <span class="n">window</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span></span>    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">snake</span><span class="p">:</span>
+<span></span>        <span class="n">green_image</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span>
+<span></span>                        <span class="n">width</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">)</span>
+<span></span>    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">food</span><span class="p">:</span>
+<span></span>        <span class="n">red_image</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span>
+<span></span>                        <span class="n">width</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">)</span>
+<span></span>
+<span></span><span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span></span></pre></div>
     </div>
-</div><p>Používáš-li detailnější obrázek, možná si všimneš, že má trošičku „zubaté“ hrany.
+</div>
+
+<p>Používáš-li detailnější obrázek, možná si všimneš, že má trošičku „zubaté“ hrany.
 To je dáno způsobem, jakým v Pygletu obrázek vykreslujeme.
 Úplné vysvětlení by zabralo příliš času, proto ukážu jen řešení.
 Až se naučíš grafiku víc do hloubky, pochopíš co se tu děje :)</p>
@@ -283,26 +291,29 @@ Pak slovník vypiš.</p>
  'right-top': &lt;ImageData 64x64&gt;, 'left-bottom': &lt;ImageData 64x64&gt;,
  'tail-left': &lt;ImageData 64x64&gt;, 'bottom-tongue': &lt;ImageData 64x64&gt;,
  'left-top': &lt;ImageData 64x64&gt;, 'bottom-bottom': &lt;ImageData 64x64&gt;,
- ...</code></pre></div><div class="solution" id="solution-3">
+ ...
+</code></pre></div><div class="solution" id="solution-3">
     <h3>Řešení</h3>
     <div class="solution-cover">
         <a href="naucse:solution?solution=3"><span class="link-text">Ukázat řešení</span></a>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-
-<span class="kn">import</span> <span class="nn">pyglet</span>
-
-<span class="n">TILES_DIRECTORY</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;snake-tiles&#39;</span><span class="p">)</span>
-
-<span class="n">snake_tiles</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">TILES_DIRECTORY</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.png&#39;</span><span class="p">):</span>
-    <span class="n">snake_tiles</span><span class="p">[</span><span class="n">path</span><span class="o">.</span><span class="n">stem</span><span class="p">]</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">snake_tiles</span><span class="p">)</span>
-</pre></div>
+<span></span>
+<span></span><span class="kn">import</span> <span class="nn">pyglet</span>
+<span></span>
+<span></span><span class="n">TILES_DIRECTORY</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;snake-tiles&#39;</span><span class="p">)</span>
+<span></span>
+<span></span><span class="n">snake_tiles</span> <span class="o">=</span> <span class="p">{}</span>
+<span></span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">TILES_DIRECTORY</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.png&#39;</span><span class="p">):</span>
+<span></span>    <span class="n">snake_tiles</span><span class="p">[</span><span class="n">path</span><span class="o">.</span><span class="n">stem</span><span class="p">]</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span></span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">snake_tiles</span><span class="p">)</span>
+<span></span></pre></div>
     </div>
-</div><h2 id="housenka">Housenka
+</div>
+
+<h2 id="housenka">Housenka
 <a href="#housenka" class="header-link">#</a>
 </h2>
 <p>A teď zkus načtení obrázků začlenit do programu s hadem!</p>
@@ -318,38 +329,40 @@ pak ve vykreslovací funkci použij třeba <code>snake_tiles['tail-head']</code>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-
-<span class="kn">import</span> <span class="nn">pyglet</span>
-
-<span class="n">TILE_SIZE</span> <span class="o">=</span> <span class="mi">64</span>
-<span class="n">TILES_DIRECTORY</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;snake-tiles&#39;</span><span class="p">)</span>
-
-<span class="n">snake</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
-<span class="n">food</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
-
-<span class="n">red_image</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;apple.png&#39;</span><span class="p">)</span>
-<span class="n">snake_tiles</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">TILES_DIRECTORY</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.png&#39;</span><span class="p">):</span>
-    <span class="n">snake_tiles</span><span class="p">[</span><span class="n">path</span><span class="o">.</span><span class="n">stem</span><span class="p">]</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-
-<span class="n">window</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
-
-<span class="nd">@window</span><span class="o">.</span><span class="n">event</span>
-<span class="k">def</span> <span class="nf">on_draw</span><span class="p">():</span>
-    <span class="n">window</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-    <span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span><span class="o">.</span><span class="n">glEnable</span><span class="p">(</span><span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_BLEND</span><span class="p">)</span>
-    <span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span><span class="o">.</span><span class="n">glBlendFunc</span><span class="p">(</span><span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_SRC_ALPHA</span><span class="p">,</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_ONE_MINUS_SRC_ALPHA</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">snake</span><span class="p">:</span>
-        <span class="n">snake_tiles</span><span class="p">[</span><span class="s1">&#39;tail-head&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span>
-            <span class="n">x</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">food</span><span class="p">:</span>
-        <span class="n">red_image</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span>
-            <span class="n">x</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">)</span>
-
-<span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
+<span></span>
+<span></span><span class="kn">import</span> <span class="nn">pyglet</span>
+<span></span>
+<span></span><span class="n">TILE_SIZE</span> <span class="o">=</span> <span class="mi">64</span>
+<span></span><span class="n">TILES_DIRECTORY</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;snake-tiles&#39;</span><span class="p">)</span>
+<span></span>
+<span></span><span class="n">snake</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+<span></span><span class="n">food</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
+<span></span>
+<span></span><span class="n">red_image</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;apple.png&#39;</span><span class="p">)</span>
+<span></span><span class="n">snake_tiles</span> <span class="o">=</span> <span class="p">{}</span>
+<span></span><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">TILES_DIRECTORY</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.png&#39;</span><span class="p">):</span>
+<span></span>    <span class="n">snake_tiles</span><span class="p">[</span><span class="n">path</span><span class="o">.</span><span class="n">stem</span><span class="p">]</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span></span>
+<span></span><span class="n">window</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
+<span></span>
+<span></span><span class="nd">@window</span><span class="o">.</span><span class="n">event</span>
+<span></span><span class="k">def</span> <span class="nf">on_draw</span><span class="p">():</span>
+<span></span>    <span class="n">window</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span></span>    <span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span><span class="o">.</span><span class="n">glEnable</span><span class="p">(</span><span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_BLEND</span><span class="p">)</span>
+<span></span>    <span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span><span class="o">.</span><span class="n">glBlendFunc</span><span class="p">(</span><span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_SRC_ALPHA</span><span class="p">,</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span><span class="o">.</span><span class="n">GL_ONE_MINUS_SRC_ALPHA</span><span class="p">)</span>
+<span></span>    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">snake</span><span class="p">:</span>
+<span></span>        <span class="n">snake_tiles</span><span class="p">[</span><span class="s1">&#39;tail-head&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span>
+<span></span>            <span class="n">x</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">)</span>
+<span></span>    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">food</span><span class="p">:</span>
+<span></span>        <span class="n">red_image</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span>
+<span></span>            <span class="n">x</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">TILE_SIZE</span><span class="p">)</span>
+<span></span>
+<span></span><span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span></span></pre></div>
     </div>
-</div><h2 id="jak_vybrat_ctverecky">Jak vybrat čtverečky?
+</div>
+
+<h2 id="jak_vybrat_ctverecky">Jak vybrat čtverečky?
 <a href="#jak_vybrat_ctverecky" class="header-link">#</a>
 </h2>
 <p>Místo toho, aby byl všude stejný kousek hada,
@@ -368,7 +381,8 @@ ale budeme chtít vybrat vždycky ten správný.</p>
 3 3
 3 4
 3 5
-4 5</code></pre></div><p>Zkus vymyslet, jak by se tenhle kód dal změnit, aby vypisoval ke každé
+4 5
+</code></pre></div><p>Zkus vymyslet, jak by se tenhle kód dal změnit, aby vypisoval ke každé
 souřadnici <em>směr</em> k předchozímu a následujícímu políčku – tedy odkud a kam
 každý kousek hada „vede“.
 Takhle:</p>
@@ -378,7 +392,8 @@ Takhle:</p>
 3 3 bottom top
 3 4 bottom top
 3 5 bottom right
-4 5 left head</code></pre></div><p>Toto je <strong>těžký úkol</strong>.
+4 5 left head
+</code></pre></div><p>Toto je <strong>těžký úkol</strong>.
 Nepředpokládám, že ho zvládneš vyřešit hned, i když všechny potřebné informace
 a nástroje k tomu znáš.
 Zkus nad tím ale přemýšlet, nech si to rozležet v hlavě třeba přes noc,

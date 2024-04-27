@@ -9,7 +9,8 @@ Zkus do něj napsat program, který spočítá a vypíše obvod a obsah čtverce
 se stranou 356 cm.</p>
 <p>Po spuštění by se mělo vypsat něco jako:</p>
 <div class="highlight"><pre><code>Obvod čtverce se stranou 356 cm je 1424 cm
-Obsah čtverce se stranou 356 cm je 126736 cm2</code></pre></div><p>Pro připomenutí, obvod čtverce se stranou <var>a</var>
+Obsah čtverce se stranou 356 cm je 126736 cm2
+</code></pre></div><p>Pro připomenutí, obvod čtverce se stranou <var>a</var>
 se dá vypočítat jako <var>O</var> = 4<var>a</var>
 a obsah jako <var>S</var> = <var>a</var>².</p>
 <div class="admonition note"><p class="admonition-title">Matematika!</p>
@@ -41,11 +42,13 @@ pomocí šipky nahoru, <kbd>↑</kbd>.</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <p>Program, který vypíše správný výsledek, může vypadat třeba takhle:</p>
-<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obvod čtverce se stranou 356 cm je&#39;</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">356</span><span class="p">,</span> <span class="s1">&#39;cm&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obsah čtverce se stranou 356 cm je&#39;</span><span class="p">,</span> <span class="mi">356</span> <span class="o">*</span> <span class="mi">356</span><span class="p">,</span> <span class="s1">&#39;cm2&#39;</span><span class="p">)</span>
-</pre></div>
+<span></span><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obvod čtverce se stranou 356 cm je&#39;</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">356</span><span class="p">,</span> <span class="s1">&#39;cm&#39;</span><span class="p">)</span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obsah čtverce se stranou 356 cm je&#39;</span><span class="p">,</span> <span class="mi">356</span> <span class="o">*</span> <span class="mi">356</span><span class="p">,</span> <span class="s1">&#39;cm2&#39;</span><span class="p">)</span>
+<span></span></pre></div>
     </div>
-</div><h2 id="mensi_ctverec">Menší čtverec
+</div>
+
+<h2 id="mensi_ctverec">Menší čtverec
 <a href="#mensi_ctverec" class="header-link">#</a>
 </h2>
 <p>Jestli všechno funguje, zkus změnit program tak,
@@ -57,10 +60,12 @@ aby počítal obsah a obvod čtverce o straně 123 cm.</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obvod čtverce se stranou 123 cm je&#39;</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">&#39;cm&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obsah čtverce se stranou 123 cm je&#39;</span><span class="p">,</span> <span class="mi">123</span> <span class="o">*</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">&#39;cm2&#39;</span><span class="p">)</span>
-</pre></div>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obsah čtverce se stranou 123 cm je&#39;</span><span class="p">,</span> <span class="mi">123</span> <span class="o">*</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">&#39;cm2&#39;</span><span class="p">)</span>
+<span></span></pre></div>
     </div>
-</div><h2 id="promenne">Proměnné
+</div>
+
+<h2 id="promenne">Proměnné
 <a href="#promenne" class="header-link">#</a>
 </h2>
 <p>Zvládneš to i pro stranu 3945 cm, 832 cm, 956 cm?
@@ -152,7 +157,7 @@ Vybírej pečlivě!</p>
 <div class="highlight"><pre><span></span><span class="n">promenna</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej číslo: &#39;</span><span class="p">))</span>
 </pre></div></li>
 </ul>
-<p>Místo textu <code>'Zadej …'</code> se dá napsat i jiná výzva. 
+<p>Místo textu <code>'Zadej …'</code> se dá napsat i jiná výzva.
 A výsledek se samozřejmě dá uložit i do jiné proměnné než <code>promenna</code>.</p>
 <p>Hotový program může vypadat takto:</p>
 <div class="highlight"><pre><span></span><span class="c1"># Tento program počítá obvod a obsah čtverce.</span>

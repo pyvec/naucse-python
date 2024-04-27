@@ -77,26 +77,26 @@ a zeptá se tě, jestli chceš pokračovat.</li>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span>
-
-<span class="n">soucet</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">soucet</span> <span class="o">&lt;</span> <span class="mi">21</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Máš&#39;</span><span class="p">,</span> <span class="n">soucet</span><span class="p">,</span> <span class="s1">&#39;bodů&#39;</span><span class="p">)</span>
-    <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Otočit kartu? &#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">odpoved</span> <span class="o">==</span> <span class="s1">&#39;ano&#39;</span><span class="p">:</span>
-        <span class="n">karta</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Otočil/a jsi&#39;</span><span class="p">,</span> <span class="n">karta</span><span class="p">)</span>
-        <span class="n">soucet</span> <span class="o">=</span> <span class="n">soucet</span> <span class="o">+</span> <span class="n">karta</span>
-    <span class="k">elif</span> <span class="n">odpoved</span> <span class="o">==</span> <span class="s1">&#39;ne&#39;</span><span class="p">:</span>
-        <span class="k">break</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nerozumím! Odpovídej &quot;ano&quot;, nebo &quot;ne&quot;&#39;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">soucet</span> <span class="o">==</span> <span class="mi">21</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gratuluji! Vyhrál/a jsi!&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">soucet</span> <span class="o">&gt;</span> <span class="mi">21</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Smůla!&#39;</span><span class="p">,</span> <span class="n">soucet</span><span class="p">,</span> <span class="s1">&#39;bodů je moc!&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Chybělo jen&#39;</span><span class="p">,</span> <span class="mi">21</span> <span class="o">-</span> <span class="n">soucet</span><span class="p">,</span> <span class="s1">&#39;bodů!&#39;</span><span class="p">)</span>
-</pre></div>
+<span></span>
+<span></span><span class="n">soucet</span> <span class="o">=</span> <span class="mi">0</span>
+<span></span><span class="k">while</span> <span class="n">soucet</span> <span class="o">&lt;</span> <span class="mi">21</span><span class="p">:</span>
+<span></span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Máš&#39;</span><span class="p">,</span> <span class="n">soucet</span><span class="p">,</span> <span class="s1">&#39;bodů&#39;</span><span class="p">)</span>
+<span></span>    <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Otočit kartu? &#39;</span><span class="p">)</span>
+<span></span>    <span class="k">if</span> <span class="n">odpoved</span> <span class="o">==</span> <span class="s1">&#39;ano&#39;</span><span class="p">:</span>
+<span></span>        <span class="n">karta</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span></span>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Otočil/a jsi&#39;</span><span class="p">,</span> <span class="n">karta</span><span class="p">)</span>
+<span></span>        <span class="n">soucet</span> <span class="o">=</span> <span class="n">soucet</span> <span class="o">+</span> <span class="n">karta</span>
+<span></span>    <span class="k">elif</span> <span class="n">odpoved</span> <span class="o">==</span> <span class="s1">&#39;ne&#39;</span><span class="p">:</span>
+<span></span>        <span class="k">break</span>
+<span></span>    <span class="k">else</span><span class="p">:</span>
+<span></span>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nerozumím! Odpovídej &quot;ano&quot;, nebo &quot;ne&quot;&#39;</span><span class="p">)</span>
+<span></span>
+<span></span><span class="k">if</span> <span class="n">soucet</span> <span class="o">==</span> <span class="mi">21</span><span class="p">:</span>
+<span></span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gratuluji! Vyhrál/a jsi!&#39;</span><span class="p">)</span>
+<span></span><span class="k">elif</span> <span class="n">soucet</span> <span class="o">&gt;</span> <span class="mi">21</span><span class="p">:</span>
+<span></span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Smůla!&#39;</span><span class="p">,</span> <span class="n">soucet</span><span class="p">,</span> <span class="s1">&#39;bodů je moc!&#39;</span><span class="p">)</span>
+<span></span><span class="k">else</span><span class="p">:</span>
+<span></span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Chybělo jen&#39;</span><span class="p">,</span> <span class="mi">21</span> <span class="o">-</span> <span class="n">soucet</span><span class="p">,</span> <span class="s1">&#39;bodů!&#39;</span><span class="p">)</span>
+<span></span></pre></div>
     </div>
 </div>

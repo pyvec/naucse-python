@@ -148,16 +148,18 @@ těle dekorátoru ale můžeme nadefinovat novou funkci a vrátit ji.</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">co_se_deje</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">nahradni_funkce</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Voláme </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-        <span class="n">vysledek</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Výsledek </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">) = </span><span class="si">{</span><span class="n">vysledek</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">vysledek</span>
-
-    <span class="k">return</span> <span class="n">nahradni_funkce</span>
-</pre></div>
+<span></span>    <span class="k">def</span> <span class="nf">nahradni_funkce</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span></span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Voláme </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span></span>        <span class="n">vysledek</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span></span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Výsledek </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">) = </span><span class="si">{</span><span class="n">vysledek</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span></span>        <span class="k">return</span> <span class="n">vysledek</span>
+<span></span>
+<span></span>    <span class="k">return</span> <span class="n">nahradni_funkce</span>
+<span></span></pre></div>
     </div>
-</div><div class="admonition note"><p>Tento dekorátor není úplně praktický. Pokud toho vypíše trochu víc, tak už se
+</div>
+
+<div class="admonition note"><p>Tento dekorátor není úplně praktický. Pokud toho vypíše trochu víc, tak už se
 v tom logu nikdo nevyzná. Myšlenka jako taková ovšem není úplně špatná. Kdyby
 třeba dekorátor počítal, kolikrát se funkce spustí, a jak dlouho obvykle
 trvá, mohl by nám pomoct najít místa pro optimalizaci.</p>

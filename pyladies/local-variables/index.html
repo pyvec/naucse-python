@@ -128,29 +128,31 @@ Pozor na chytáky!</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <ul>
-<li><code>pi</code> je globální – nepřiřazuje se do ní ve funkci;
-je „vidět“ v celém programu.</li>
-<li>Proměnné <code>obsah</code> jsou v programu dvě – jedna globální,
-a jedna je lokální pro funkci <code>obsah_elipsy</code>,
-protože do ní tahle funkce přiřazuje.</li>
-<li>Proměnné <code>a</code> jsou taky dvě, podobně jako <code>obsah</code>.
-Tady byl chyták: příkaz <code>a = a + 3</code> nemá žádný smysl;
-do <code>a</code> se sice uloží větší číslo, ale vzápětí funkce <code>obsah_elipsy</code> skončí
-a její lokální proměnná <code>a</code> přestane existovat.</li>
-<li>Proměnná <code>b</code> je jenom lokální – jako parametr funkce <code>obsah_elipsy</code>.</li>
-<li>Proměnná <code>obsah_elipsy</code> je globální (a je v ní funkce).</li>
-</ul>
-<div class="admonition note"><p class="admonition-title">A pro úplnost</p>
-<ul>
-<li>Klíčová slova <code>from</code>, <code>import</code>, <code>def</code>, <code>return</code> neoznačují proměnné.</li>
-<li>Jméno modulu <code>math</code> taky neoznačuje proměnnou.</li>
-<li>Proměnná <code>print</code> se dá považovat za globální.
-(Ve skutečnosti existuje zvláštní kategorie <em>zabudovaných</em> (angl. <em>builtin</em>)
-proměnných – ty jsou „ještě globálnější“.)</li>
-</ul>
-</div>
+<span></span><li><code>pi</code> je globální – nepřiřazuje se do ní ve funkci;
+<span></span>je „vidět“ v celém programu.</li>
+<span></span><li>Proměnné <code>obsah</code> jsou v programu dvě – jedna globální,
+<span></span>a jedna je lokální pro funkci <code>obsah_elipsy</code>,
+<span></span>protože do ní tahle funkce přiřazuje.</li>
+<span></span><li>Proměnné <code>a</code> jsou taky dvě, podobně jako <code>obsah</code>.
+<span></span>Tady byl chyták: příkaz <code>a = a + 3</code> nemá žádný smysl;
+<span></span>do <code>a</code> se sice uloží větší číslo, ale vzápětí funkce <code>obsah_elipsy</code> skončí
+<span></span>a její lokální proměnná <code>a</code> přestane existovat.</li>
+<span></span><li>Proměnná <code>b</code> je jenom lokální – jako parametr funkce <code>obsah_elipsy</code>.</li>
+<span></span><li>Proměnná <code>obsah_elipsy</code> je globální (a je v ní funkce).</li>
+<span></span></ul>
+<span></span><div class="admonition note"><p class="admonition-title">A pro úplnost</p>
+<span></span><ul>
+<span></span><li>Klíčová slova <code>from</code>, <code>import</code>, <code>def</code>, <code>return</code> neoznačují proměnné.</li>
+<span></span><li>Jméno modulu <code>math</code> taky neoznačuje proměnnou.</li>
+<span></span><li>Proměnná <code>print</code> se dá považovat za globální.
+<span></span>(Ve skutečnosti existuje zvláštní kategorie <em>zabudovaných</em> (angl. <em>builtin</em>)
+<span></span>proměnných – ty jsou „ještě globálnější“.)</li>
+<span></span></ul>
+<span></span></div>
     </div>
-</div><h2 id="rada_na_zaver">Rada na závěr
+</div>
+
+<h2 id="rada_na_zaver">Rada na závěr
 <a href="#rada_na_zaver" class="header-link">#</a>
 </h2>
 <p>Pravidla pro lokální proměnné jsou pro začátečníky jednou z nejzvláštnějších

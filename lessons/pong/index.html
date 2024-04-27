@@ -3,7 +3,9 @@
 </h1>
 <div style="text-align:center;">
     <img src="naucse:static?filename=pong.png" alt="">
-</div><p>Dnes si prohloubíme znalosti programování grafických aplikací,
+</div>
+
+<p>Dnes si prohloubíme znalosti programování grafických aplikací,
 které jsme získali na <a href="naucse:page?lesson=intro/pyglet">lekci o Pygletu</a>,
 na reálném problému.</p>
 <p>Naprogramujeme si s pomocí knihovny Pyglet
@@ -150,15 +152,17 @@ Pozor na to, že <code>pozice_mice</code> určuje <em>střed</em> míčku, ne ro
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vykresli</span><span class="p">():</span>
-    <span class="o">...</span>
-    <span class="n">nakresli_obdelnik</span><span class="p">(</span>
-        <span class="n">pozice_mice</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">VELIKOST_MICE</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="n">pozice_mice</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">VELIKOST_MICE</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="n">VELIKOST_MICE</span><span class="p">,</span>
-        <span class="n">VELIKOST_MICE</span><span class="p">)</span>
-</pre></div>
+<span></span>    <span class="o">...</span>
+<span></span>    <span class="n">nakresli_obdelnik</span><span class="p">(</span>
+<span></span>        <span class="n">pozice_mice</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">VELIKOST_MICE</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
+<span></span>        <span class="n">pozice_mice</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">VELIKOST_MICE</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
+<span></span>        <span class="n">VELIKOST_MICE</span><span class="p">,</span>
+<span></span>        <span class="n">VELIKOST_MICE</span><span class="p">)</span>
+<span></span></pre></div>
     </div>
-</div><p>Po míčku zkus vykreslit obě <em>pálky</em>.
+</div>
+
+<p>Po míčku zkus vykreslit obě <em>pálky</em>.
 V proměnné <code>pozice_palek</code> máme vertikální
 polohu první a druhé pálky, ale horizontální poloha je
 konstantní. Jaké souřadnice musíš předat funkci
@@ -172,21 +176,23 @@ je podobný jako u vykreslení míčku.</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <p>Existuje víc řešení.
-Třeba se vykreslit obdélník dvojnásobnou šířkou, ale na hraně okna takže
-ho bude vidět jen půl:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vykresli</span><span class="p">():</span>
-    <span class="o">...</span>
-    <span class="c1"># palky - udelame si seznam souradnic palek, a pro kazdou dvojici souradnic</span>
-    <span class="c1"># v tom seznamu palku vykreslime</span>
-    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pozice_palek</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="n">SIRKA</span><span class="p">,</span> <span class="n">pozice_palek</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span> <span class="p">:</span>
-        <span class="n">nakresli_obdelnik</span><span class="p">(</span>
-            <span class="n">x</span> <span class="o">-</span> <span class="n">TLOUSTKA_PALKY</span><span class="p">,</span>
-            <span class="n">y</span> <span class="o">-</span> <span class="n">DELKA_PALKY</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
-            <span class="n">TLOUSTKA_PALKY</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
-            <span class="n">DELKA_PALKY</span><span class="p">)</span>
-</pre></div>
+<span></span>Třeba se vykreslit obdélník dvojnásobnou šířkou, ale na hraně okna takže
+<span></span>ho bude vidět jen půl:</p>
+<span></span><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vykresli</span><span class="p">():</span>
+<span></span>    <span class="o">...</span>
+<span></span>    <span class="c1"># palky - udelame si seznam souradnic palek, a pro kazdou dvojici souradnic</span>
+<span></span>    <span class="c1"># v tom seznamu palku vykreslime</span>
+<span></span>    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pozice_palek</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="n">SIRKA</span><span class="p">,</span> <span class="n">pozice_palek</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span> <span class="p">:</span>
+<span></span>        <span class="n">nakresli_obdelnik</span><span class="p">(</span>
+<span></span>            <span class="n">x</span> <span class="o">-</span> <span class="n">TLOUSTKA_PALKY</span><span class="p">,</span>
+<span></span>            <span class="n">y</span> <span class="o">-</span> <span class="n">DELKA_PALKY</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span>
+<span></span>            <span class="n">TLOUSTKA_PALKY</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
+<span></span>            <span class="n">DELKA_PALKY</span><span class="p">)</span>
+<span></span></pre></div>
     </div>
-</div><p>Přehlednosti hry pomůže <em>půlící čára</em>
+</div>
+
+<p>Přehlednosti hry pomůže <em>půlící čára</em>
 uprostřed. Jak ji ale namalovat?
 Nebudeme vymýšlet zbytečné složitosti.
 Namalujme ji jako sérii obdélníčků táhnoucích se odshora
@@ -201,17 +207,19 @@ bys použil/a na získání tohoto seznamu souřadnic?</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vykresli</span><span class="p">():</span>
-    <span class="o">...</span>
-    <span class="c1"># prerusovana pulici cara - slozena ze spousty malych obdelnicku</span>
-    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">DELKA_PULICI_CARKY</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">VYSKA</span><span class="p">,</span> <span class="n">DELKA_PULICI_CARKY</span> <span class="o">*</span> <span class="mi">2</span><span class="p">):</span>
-        <span class="n">nakresli_obdelnik</span><span class="p">(</span>
-            <span class="n">SIRKA</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
-            <span class="n">y</span><span class="p">,</span>
-            <span class="mi">2</span><span class="p">,</span>
-            <span class="n">DELKA_PULICI_CARKY</span><span class="p">)</span>
-</pre></div>
+<span></span>    <span class="o">...</span>
+<span></span>    <span class="c1"># prerusovana pulici cara - slozena ze spousty malych obdelnicku</span>
+<span></span>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">DELKA_PULICI_CARKY</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">VYSKA</span><span class="p">,</span> <span class="n">DELKA_PULICI_CARKY</span> <span class="o">*</span> <span class="mi">2</span><span class="p">):</span>
+<span></span>        <span class="n">nakresli_obdelnik</span><span class="p">(</span>
+<span></span>            <span class="n">SIRKA</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+<span></span>            <span class="n">y</span><span class="p">,</span>
+<span></span>            <span class="mi">2</span><span class="p">,</span>
+<span></span>            <span class="n">DELKA_PULICI_CARKY</span><span class="p">)</span>
+<span></span></pre></div>
     </div>
-</div><p>Co nám ještě chybí? <em>Počítadlo skóre</em> pro oba hráče.
+</div>
+
+<p>Co nám ještě chybí? <em>Počítadlo skóre</em> pro oba hráče.
 K tomu se musíme naučit vykreslovat v Pygletu text.
 V Pygletu je modul <code>text</code>, který obsahuje
 objekt <code>Label</code> (Nápis). Ten se hodí k vykreslení hodnoty
@@ -241,24 +249,26 @@ konstanty SIRKA, VYSKA, ODSAZENI_TEXTU a VELIKOST_FONTU.</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vykresli</span><span class="p">():</span>
-    <span class="o">...</span>
-    <span class="c1"># A nakonec vypiseme skore obou hracu</span>
-    <span class="n">nakresli_text</span><span class="p">(</span>
-        <span class="nb">str</span><span class="p">(</span><span class="n">skore</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">ODSAZENI_TEXTU</span><span class="p">,</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">VYSKA</span> <span class="o">-</span> <span class="n">ODSAZENI_TEXTU</span> <span class="o">-</span> <span class="n">VELIKOST_FONTU</span><span class="p">,</span>
-        <span class="n">pozice_x</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="n">nakresli_text</span><span class="p">(</span>
-        <span class="nb">str</span><span class="p">(</span><span class="n">skore</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">SIRKA</span> <span class="o">-</span> <span class="n">ODSAZENI_TEXTU</span><span class="p">,</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">VYSKA</span> <span class="o">-</span> <span class="n">ODSAZENI_TEXTU</span> <span class="o">-</span> <span class="n">VELIKOST_FONTU</span><span class="p">,</span>
-        <span class="n">pozice_x</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span>
-    <span class="p">)</span>
-</pre></div>
+<span></span>    <span class="o">...</span>
+<span></span>    <span class="c1"># A nakonec vypiseme skore obou hracu</span>
+<span></span>    <span class="n">nakresli_text</span><span class="p">(</span>
+<span></span>        <span class="nb">str</span><span class="p">(</span><span class="n">skore</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+<span></span>        <span class="n">x</span><span class="o">=</span><span class="n">ODSAZENI_TEXTU</span><span class="p">,</span>
+<span></span>        <span class="n">y</span><span class="o">=</span><span class="n">VYSKA</span> <span class="o">-</span> <span class="n">ODSAZENI_TEXTU</span> <span class="o">-</span> <span class="n">VELIKOST_FONTU</span><span class="p">,</span>
+<span></span>        <span class="n">pozice_x</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span>
+<span></span>    <span class="p">)</span>
+<span></span>
+<span></span>    <span class="n">nakresli_text</span><span class="p">(</span>
+<span></span>        <span class="nb">str</span><span class="p">(</span><span class="n">skore</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+<span></span>        <span class="n">x</span><span class="o">=</span><span class="n">SIRKA</span> <span class="o">-</span> <span class="n">ODSAZENI_TEXTU</span><span class="p">,</span>
+<span></span>        <span class="n">y</span><span class="o">=</span><span class="n">VYSKA</span> <span class="o">-</span> <span class="n">ODSAZENI_TEXTU</span> <span class="o">-</span> <span class="n">VELIKOST_FONTU</span><span class="p">,</span>
+<span></span>        <span class="n">pozice_x</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span>
+<span></span>    <span class="p">)</span>
+<span></span></pre></div>
     </div>
-</div><p>Hurá, teď už máme vykreslené hrací pole. Pojďme ho rozhýbat.</p>
+</div>
+
+<p>Hurá, teď už máme vykreslené hrací pole. Pojďme ho rozhýbat.</p>
 <h2 id="dynamika_hry">Dynamika hry
 <a href="#dynamika_hry" class="header-link">#</a>
 </h2>
@@ -307,31 +317,33 @@ klávese <kbd>↑</kbd> jako <code>symbol == key.UP</code>.</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyglet.window</span> <span class="kn">import</span> <span class="n">key</span>
-<span class="o">...</span>
-<span class="k">def</span> <span class="nf">stisk_klavesy</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">modifikatory</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="n">key</span><span class="o">.</span><span class="n">W</span><span class="p">:</span>
-        <span class="n">stisknute_klavesy</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="s1">&#39;nahoru&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="n">key</span><span class="o">.</span><span class="n">S</span><span class="p">:</span>
-        <span class="n">stisknute_klavesy</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="s1">&#39;dolu&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="n">key</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
-        <span class="n">stisknute_klavesy</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="s1">&#39;nahoru&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="n">key</span><span class="o">.</span><span class="n">DOWN</span><span class="p">:</span>
-        <span class="n">stisknute_klavesy</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="s1">&#39;dolu&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-
-
-<span class="k">def</span> <span class="nf">pusteni_klavesy</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">modifikatory</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="n">key</span><span class="o">.</span><span class="n">W</span><span class="p">:</span>
-        <span class="n">stisknute_klavesy</span><span class="o">.</span><span class="n">discard</span><span class="p">((</span><span class="s1">&#39;nahoru&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="n">key</span><span class="o">.</span><span class="n">S</span><span class="p">:</span>
-        <span class="n">stisknute_klavesy</span><span class="o">.</span><span class="n">discard</span><span class="p">((</span><span class="s1">&#39;dolu&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="n">key</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
-        <span class="n">stisknute_klavesy</span><span class="o">.</span><span class="n">discard</span><span class="p">((</span><span class="s1">&#39;nahoru&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="n">key</span><span class="o">.</span><span class="n">DOWN</span><span class="p">:</span>
-        <span class="n">stisknute_klavesy</span><span class="o">.</span><span class="n">discard</span><span class="p">((</span><span class="s1">&#39;dolu&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="o">...</span>
-</pre></div>
+<span></span><span class="o">...</span>
+<span></span><span class="k">def</span> <span class="nf">stisk_klavesy</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">modifikatory</span><span class="p">):</span>
+<span></span>    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="n">key</span><span class="o">.</span><span class="n">W</span><span class="p">:</span>
+<span></span>        <span class="n">stisknute_klavesy</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="s1">&#39;nahoru&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span></span>    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="n">key</span><span class="o">.</span><span class="n">S</span><span class="p">:</span>
+<span></span>        <span class="n">stisknute_klavesy</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="s1">&#39;dolu&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span></span>    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="n">key</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
+<span></span>        <span class="n">stisknute_klavesy</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="s1">&#39;nahoru&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span></span>    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="n">key</span><span class="o">.</span><span class="n">DOWN</span><span class="p">:</span>
+<span></span>        <span class="n">stisknute_klavesy</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="s1">&#39;dolu&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span></span>
+<span></span>
+<span></span><span class="k">def</span> <span class="nf">pusteni_klavesy</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">modifikatory</span><span class="p">):</span>
+<span></span>    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="n">key</span><span class="o">.</span><span class="n">W</span><span class="p">:</span>
+<span></span>        <span class="n">stisknute_klavesy</span><span class="o">.</span><span class="n">discard</span><span class="p">((</span><span class="s1">&#39;nahoru&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span></span>    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="n">key</span><span class="o">.</span><span class="n">S</span><span class="p">:</span>
+<span></span>        <span class="n">stisknute_klavesy</span><span class="o">.</span><span class="n">discard</span><span class="p">((</span><span class="s1">&#39;dolu&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span></span>    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="n">key</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
+<span></span>        <span class="n">stisknute_klavesy</span><span class="o">.</span><span class="n">discard</span><span class="p">((</span><span class="s1">&#39;nahoru&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span></span>    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="n">key</span><span class="o">.</span><span class="n">DOWN</span><span class="p">:</span>
+<span></span>        <span class="n">stisknute_klavesy</span><span class="o">.</span><span class="n">discard</span><span class="p">((</span><span class="s1">&#39;dolu&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span></span><span class="o">...</span>
+<span></span></pre></div>
     </div>
-</div><div class="admonition note"><p>Proč vlastně používáme k odebrání <var>n</var>-tice metodu
+</div>
+
+<div class="admonition note"><p>Proč vlastně používáme k odebrání <var>n</var>-tice metodu
 <code>discard()</code> místo metody <code>remove()</code>,
 kterou známe ze seznamů a množiny ji také mají?
 Nezpůsobí totiž chybu, když se pokusíme odebrat
@@ -419,24 +431,26 @@ náhodné rychlosti.</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="o">...</span>
-<span class="k">def</span> <span class="nf">reset</span><span class="p">():</span>
-    <span class="n">pozice_mice</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">SIRKA</span> <span class="o">//</span> <span class="mi">2</span>
-    <span class="n">pozice_mice</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">VYSKA</span> <span class="o">//</span> <span class="mi">2</span>
-
-    <span class="c1"># x-ova rychlost - bud vpravo, nebo vlevo</span>
-    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="n">rychlost_mice</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">RYCHLOST</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">rychlost_mice</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">RYCHLOST</span>
-    <span class="c1"># y-ova rychlost - uplne nahodna</span>
-    <span class="n">rychlost_mice</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">RYCHLOST</span>
-
-<span class="c1"># nastavit vychozi stav pro start hry</span>
-<span class="n">reset</span><span class="p">()</span>
-</pre></div>
+<span></span><span class="o">...</span>
+<span></span><span class="k">def</span> <span class="nf">reset</span><span class="p">():</span>
+<span></span>    <span class="n">pozice_mice</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">SIRKA</span> <span class="o">//</span> <span class="mi">2</span>
+<span></span>    <span class="n">pozice_mice</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">VYSKA</span> <span class="o">//</span> <span class="mi">2</span>
+<span></span>
+<span></span>    <span class="c1"># x-ova rychlost - bud vpravo, nebo vlevo</span>
+<span></span>    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+<span></span>        <span class="n">rychlost_mice</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">RYCHLOST</span>
+<span></span>    <span class="k">else</span><span class="p">:</span>
+<span></span>        <span class="n">rychlost_mice</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">RYCHLOST</span>
+<span></span>    <span class="c1"># y-ova rychlost - uplne nahodna</span>
+<span></span>    <span class="n">rychlost_mice</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">RYCHLOST</span>
+<span></span>
+<span></span><span class="c1"># nastavit vychozi stav pro start hry</span>
+<span></span><span class="n">reset</span><span class="p">()</span>
+<span></span></pre></div>
     </div>
-</div><p>Nic se zatím ale nestane, protože funkce
+</div>
+
+<p>Nic se zatím ale nestane, protože funkce
 <code>obnov_stav(dt)</code> zatím nepracuje
 se změnou rychlosti. Musíme v ní tedy nastavit proměnnou
 <code>poloha_micku</code> podle současné rychlosti míčku

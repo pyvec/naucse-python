@@ -7,88 +7,58 @@ Tady je popsáno, jak jsme všechno připravili.</p>
 <a href="#nakupni_seznam" class="header-link">#</a>
 </h2>
 <dl>
-<dt></dt><dt>NodeMCU Devkit v2</dt><dd><p>Dá se koupit z Číny, např.
-z <a href="https://www.aliexpress.com/wholesale?SearchText=nodemcu+v2+esp8266+ch340">Aliexpressu</a>.</p>
-</dd><dt></dt><dt>Malé nepájivé pole (Mini Breadboard)</dt><dd><p>Dá se koupit z Číny, např.
-z <a href="https://www.aliexpress.com/wholesale?SearchText=mini+breadboard+170">Aliexpressu</a>.</p>
-</dd><dt></dt><dt>Modul s tlačítkem</dt><dd><p>Dá se koupit z Číny, např.
-z <a href="https://www.aliexpress.com/wholesale?SearchText=impact+switch+module+dupont">Aliexpressu</a>.</p>
-</dd><dt></dt><dt>Modrá LED (<var>U<sub>f</sub></var>=3,3V)</dt><dd><p>Dá se koupit z Číny, nebo např.
-v <a href="https://www.gme.cz/led-kulate-pouzdro?tech_par[103][]=18997&amp;showFilter=103">GME</a>.</p>
-</dd><dt></dt><dt>Pásek s 8 LED moduly WS2812 s konektorem</dt><dd><p>Dá se koupit po metrech z Číny, např.
+<dt>NodeMCU Devkit v2</dt>
+<dd>Dá se koupit z Číny, např.
+z <a href="https://www.aliexpress.com/wholesale?SearchText=nodemcu+v2+esp8266+ch340">Aliexpressu</a>.</dd>
+<dt>Malé nepájivé pole (Mini Breadboard)</dt>
+<dd>Dá se koupit z Číny, např.
+z <a href="https://www.aliexpress.com/wholesale?SearchText=mini+breadboard+170">Aliexpressu</a>.</dd>
+<dt>Modul s tlačítkem</dt>
+<dd>Dá se koupit z Číny, např.
+z <a href="https://www.aliexpress.com/wholesale?SearchText=impact+switch+module+dupont">Aliexpressu</a>.</dd>
+<dt>Modrá LED (<var>U<sub>f</sub></var>=3,3V)</dt>
+<dd>Dá se koupit z Číny, nebo např.
+v <a href="https://www.gme.cz/led-kulate-pouzdro?tech_par%5B103%5D%5B%5D=18997&amp;showFilter=103">GME</a>.</dd>
+<dt>Pásek s 8 LED moduly WS2812 s konektorem</dt>
+<dd>Dá se koupit po metrech z Číny, např.
 v <a href="https://www.aliexpress.com/wholesale?SearchText=ws2812+strip">Aliexpressu</a>,
 rozstříhat, a napájet na konektory – opět např.
-z <a href="https://www.aliexpress.com/wholesale?SearchText=3+pin+WS2812+connector">Aliexpressu</a>.</p>
-</dd><dt></dt><dt>Malý servomotor, např. TowerPro SG92R</dt><dd><p>Dá se koupit z Číny, např.
-v <a href="https://www.aliexpress.com/wholesale?SearchText=sg92r">Aliexpressu</a>.</p>
-</dd><dt></dt><dt>Spojovací drátky</dt><dd><p>Opět se dají koupit z Číny, např.
+z <a href="https://www.aliexpress.com/wholesale?SearchText=3+pin+WS2812+connector">Aliexpressu</a>.</dd>
+<dt>Malý servomotor, např. TowerPro SG92R</dt>
+<dd>Dá se koupit z Číny, např.
+v <a href="https://www.aliexpress.com/wholesale?SearchText=sg92r">Aliexpressu</a>.</dd>
+<dt>Spojovací drátky</dt>
+<dd>Opět se dají koupit z Číny, např.
 v <a href="https://www.aliexpress.com/wholesale?SearchText=dupont+jumper+cable+m-m">Aliexpressu</a>.
 <br>
 Jsou potřeba takové, aby se jimi dal připojit LED pásek a motorek
-k nepájivému poli.</p>
-</dd><dt></dt><dt>MicroUSB kabel</dt><dd><p>Jak pro mobil. Doporučuji koupit kvalitní datový kabel.
+k nepájivému poli.</dd>
+<dt>MicroUSB kabel</dt>
+<dd>Jak pro mobil. Doporučuji koupit kvalitní datový kabel.
 Případně si můžou účastníci donést vlastní, je ale dobré jich mít pár
-v zásobě, kdyby si přinesli nedatový kabel od nabíječky.</p>
-</dd><dt></dt><dt>Počítač</dt><dd><p>Je potřeba i „velký“ počítač – hlavně kvůli obrazovce a klávesnici.
-Viz nastavení níže.</p>
-</dd></dl><h2 id="priprava_hardwaru">Příprava hardwaru
+v zásobě, kdyby si přinesli nedatový kabel od nabíječky.</dd>
+<dt>Počítač</dt>
+<dd>Je potřeba i „velký“ počítač – hlavně kvůli obrazovce a klávesnici.
+Viz nastavení níže.</dd>
+</dl>
+<h2 id="priprava_hardwaru">Příprava hardwaru
 <a href="#priprava_hardwaru" class="header-link">#</a>
 </h2>
 <p>NodeMCU zasuň do nepájivého pole, aby na každé delší straně zbyla řada dírek.
 Do nich zapoj komponenty:</p>
-<table>
-<thead><tr>
-<th style="text-align:right">Pin</th>
-<th style="text-align:left">– Součástka</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right">D1</td>
-<td style="text-align:left">– Anoda LED (delší nožička)</td>
-</tr>
-<tr>
-<td style="text-align:right">D2</td>
-<td style="text-align:left">– Katoda LED (kratší nožička)</td>
-</tr>
-<tr>
-<td style="text-align:right">3V3</td>
-<td style="text-align:left">– <code>VCC</code> tlačítka</td>
-</tr>
-<tr>
-<td style="text-align:right">GND</td>
-<td style="text-align:left">– <code>GND</code> tlačítka</td>
-</tr>
-<tr>
-<td style="text-align:right">D5</td>
-<td style="text-align:left">– <code>OUT</code> tlačítka</td>
-</tr>
-<tr>
-<td style="text-align:right">D6</td>
-<td style="text-align:left">– <code>DI</code> LED pásku</td>
-</tr>
-<tr>
-<td style="text-align:right">D8</td>
-<td style="text-align:left">– <code>Data</code> servomotoru</td>
-</tr>
-<tr>
-<td style="text-align:right">GND</td>
-<td style="text-align:left">– <code>GND</code> servomotoru</td>
-</tr>
-<tr>
-<td style="text-align:right">3V3</td>
-<td style="text-align:left">– <code>VCC</code> servomotoru</td>
-</tr>
-<tr>
-<td style="text-align:right">GND</td>
-<td style="text-align:left">– <code>GND</code> LED pásku</td>
-</tr>
-<tr>
-<td style="text-align:right">Vin</td>
-<td style="text-align:left">– <code>+5V</code> LED pásku</td>
-</tr>
-</tbody>
-</table>
+<p>| Pin | – Součástka                   |
+| --: | :---------------------------- |
+|  D1 | – Anoda LED (delší nožička)   |
+|  D2 | – Katoda LED (kratší nožička) |
+| 3V3 | – <code>VCC</code> tlačítka              |
+| GND | – <code>GND</code> tlačítka              |
+|  D5 | – <code>OUT</code> tlačítka              |
+|  D6 | – <code>DI</code> LED pásku              |
+|  D8 | – <code>Data</code> servomotoru          |
+| GND | – <code>GND</code> servomotoru           |
+| 3V3 | – <code>VCC</code> servomotoru           |
+| GND | – <code>GND</code> LED pásku             |
+| Vin | – <code>+5V</code> LED pásku             |</p>
 <p>Nejsou-li vstupy servomotorku označené, bývá červený VCC, hnědý GND,
 zbylý Data.</p>
 <p><span class="figure"><a href="naucse:static?filename=module_full.jpg"><img src="naucse:static?filename=module_full.jpg" alt="Fotografie modulu s veškerým příslušenstvím"></a></span></p>

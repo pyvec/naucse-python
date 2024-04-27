@@ -7,7 +7,7 @@ Nejprve proto uložte celý projekt do Gitu a nahrajte na GitHub.</p>
 <p>Potom se zaregistrujte na
 <a href="https://www.pythonanywhere.com/">www.pythonanywhere.com</a> a vyberte
 <em>Beginner Account</em>.
-Po přihlášení se ukáže záložka <em>Consoles</em>, kde vytvořte "Bash" konzoli.
+Po přihlášení se ukáže záložka <em>Consoles</em>, kde vytvořte &quot;Bash&quot; konzoli.
 V té vytvořte a aktivujte virtuální prostředí a nainstalujte Flask (plus
 případně další závislosti nebo jiný webový framework).</p>
 <p>PythonAnywhere používá specificky nastavený Linux,
@@ -29,7 +29,7 @@ Pokud ale používáme privátní repozitář, bude potřeba si vygenerovat SSH 
 <div class="highlight"><pre><span></span><span class="gp">$ </span>ssh-keygen<span class="w">  </span><span class="c1"># (zeptá se na hesla ke klíči)</span>
 <span class="gp">$ </span>cat<span class="w"> </span>~/.ssh/id_rsa.pub
 </pre></div><p>Obsah souboru <code>~/.ssh/id_rsa.pub</code> je pak potřeba přidat na GitHub v osobním
-nastavení v sekci "SSH and GPG Keys".
+nastavení v sekci &quot;SSH and GPG Keys&quot;.
 Pak můžete klonovat přes SSH:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:&lt;github-username&gt;/&lt;github-repo&gt;.git
 </pre></div><p>Zbývá nastavit, aby PythonAnywhere tento kód spustil jako webovou aplikaci.</p>
@@ -39,7 +39,7 @@ V nastavení zvolte <em>Manual Configuration</em> a <em>Python 3.7</em>.
 (Volby jiné než <em>Manual Configuration</em> automaticky vytvoří kostru aplikace.
 Vy ale už aplikaci máte hotovou, takže je nepotřebujete.)</p>
 <p>V konfiguraci vzniklé webové aplikace je potřeba nastavit <em>Virtualenv</em>
-na cestu k virtuálnímu prostředí (<code>/home/<var>&lt;uživatelské-jméno&gt;</var>/__venv__</code>),
+na cestu k virtuálnímu prostředí (<code>/home/<var>&lt;uživatelské-jméno&gt;</var>/<strong>venv</strong></code>),
 a obsah <em>WSGI Configuration File</em> přepsat.
 To jde buď kliknutím na odkaz v konfiguraci (otevře se webový editor)
 nebo zpět v bashové konzoli pomocí editoru jako <code>vi</code> nebo <code>nano</code>.</p>

@@ -9,7 +9,7 @@ a <code>python3-devel</code> (Fedora) nebo <code>python3-dev</code> (Ubuntu/Debi
 <li>Na Windows se řiďte instrukcemi pro vaši verzi Pythonu
 na <a href="https://wiki.python.org/moin/WindowsCompilers">Python wiki</a>.</li>
 </ul>
-<hr>
+<hr />
 <h1 id="c_api">C API
 <a href="#c_api" class="header-link">#</a>
 </h1>
@@ -198,7 +198,7 @@ jen je opět potřeba příkaz po každé změně znovu spustit.</p>
 </h2>
 <p>Podívejme se teď na základní mechanismy interpretu CPython.</p>
 <p>Základní datová struktura, která reprezentuje jakýkoli objekt Pythonu, je PyObject
-(<a href="https://docs.python.org/3/c-api/structures.html#c.PyObject">dokumentace</a>, 
+(<a href="https://docs.python.org/3/c-api/structures.html#c.PyObject">dokumentace</a>,
 <a href="https://github.com/python/cpython/blob/3.5/Include/object.h#L106">definice</a>).
 Skládá se ze dvou prvků:</p>
 <div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">_object</span><span class="w"> </span><span class="p">{</span>
@@ -490,13 +490,9 @@ Kontrola se vypíná direktivou <code>boundscheck</code>, která se dá zadat dv
 způsoby: dekorátorem:</p>
 <div class="highlight"><pre><code>@cython.boundscheck(False)
 cpdef funkce():
-    ...
-
-</code></pre></div><p>... nebo příkazem <code>with</code>:</p>
+    ...</code></pre></div><p>... nebo příkazem <code>with</code>:</p>
 <div class="highlight"><pre><code>with cython.boundscheck(False):
-    ...
-
-</code></pre></div><p>... případně i pro celý soubor, viz <a href="https://cython.readthedocs.io/src/userguide/source_files_and_compilation.html#how-to-set-directives">dokumentace</a>.</p>
+    ...</code></pre></div><p>... případně i pro celý soubor, viz <a href="https://cython.readthedocs.io/src/userguide/source_files_and_compilation.html#how-to-set-directives">dokumentace</a>.</p>
 <p>Další zajímavá direktiva je <code>cython.wraparound(False)</code>, která podobným způsobem
 vypíná pythonní způsob indexování zápornými čísly: místo indexování od konce
 s ní dostaneme nedefinované chování.</p>

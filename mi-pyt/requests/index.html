@@ -96,7 +96,7 @@ která nějakým způsobem modifikuje HTTP požadavek za účelem autentizace,
 většinou přidává specifické hlavičky (jak je tomu i zde).
 Lze ji nastavit buďto na celé session nebo předat argumentem <code>auth</code> s každým
 požadavkem.</p>
-<p>Existují předpřipravené funkce v modulu <code>requests.auth</code>, například 
+<p>Existují předpřipravené funkce v modulu <code>requests.auth</code>, například
 <code>requests.auth.HTTPBasicAuth</code> provádí základní HTTP přihlášení.
 Dle specifikace zakóduje jméno a heslo pomocí
 algoritmu base64 a přidá hlavičku <code>Authorization</code>.</p>
@@ -147,9 +147,7 @@ například takhle:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;github&#39;</span><span class="p">][</span><span class="s1">&#39;token&#39;</span><span class="p">]</span>
 <span class="go">&#39;d7313dab254b7fd0d0f3ec3cbf754b3abce462d5&#39;</span>
 </pre></div><p>Do souboru <code>.gitignore</code> pak musíte přidat název ignorovaného souboru, např.:</p>
-<div class="highlight"><pre><code>auth.cfg
-
-</code></pre></div><p>Ověřte si, že git soubor <code>auth.cfg</code> opravdu ignoruje, t.j. soubor se neukáže
+<div class="highlight"><pre><code>auth.cfg</code></pre></div><p>Ověřte si, že git soubor <code>auth.cfg</code> opravdu ignoruje, t.j. soubor se neukáže
 ve výstupu <code>git status</code>.</p>
 <p>Jelikož ostatní tento konfigurační soubor neuvidí,
 je vhodné jim vysvětlit, jak takový soubor (s jejich údaji) vytvořit.

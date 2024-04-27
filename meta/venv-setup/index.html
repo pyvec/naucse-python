@@ -60,16 +60,16 @@ Například:</p>
                 <h4>Unix (Linux, macOS)</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">pwd</span>
 <span class="go">/home/helena/naucse-python</span>
 
-<span class="gp">$ </span>ls
+<p><span class="gp">$ </span>ls
 <span class="go">00</span>
 </pre></div></div><div class="col">
-                <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd
-<span class="go">C:\Users\Helena\naucse-python</span>
-
-<span class="gp">&gt; </span>dir
+<h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd
+<span class="go">C:\Users\Helena\naucse-python</span></p>
+<p><span class="gp">&gt; </span>dir
 <span class="go"> Directory of C:\Users\Helena\naucse-python</span>
 <span class="go">05/08/2014 07:28 PM &lt;DIR&gt;  00</span>
-</pre></div></div></div><h2 id="virtualni_prostredi">Virtuální prostředí
+</pre></div></div></div></p>
+<h2 id="virtualni_prostredi">Virtuální prostředí
 <a href="#virtualni_prostredi" class="header-link">#</a>
 </h2>
 <p>Teď si vytvoříš <em>virtuální prostředí</em> pro Python.</p>
@@ -87,24 +87,24 @@ Na každém systému jinak!</p>
 <ul>
 <li><p><strong>Linux</strong>:</p>
 <p>Podle toho, jak máš Python nainstalovaný, bude fungovat jeden z následujících
- příkazů.
- Bude je rychlejší vyzkoušet než popsat, kdy je který správný,
- takže nejdřív zkus:</p>
-<div class="highlight"><pre><span></span><span class="gp"> $ </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+příkazů.
+Bude je rychlejší vyzkoušet než popsat, kdy je který správný,
+takže nejdřív zkus:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
 </pre></div><p>A jestli dostaneš chybu <code>No module named venv</code>, zkus místo toho:</p>
-<div class="highlight"><pre><span></span><span class="gp"> $ </span>virtualenv<span class="w"> </span>-p<span class="w"> </span>python3<span class="w"> </span>venv
+<div class="highlight"><pre><span></span><span class="gp">$ </span>virtualenv<span class="w"> </span>-p<span class="w"> </span>python3<span class="w"> </span>venv
 </pre></div></li>
 <li><p><strong>macOS</strong>:</p>
-<div class="highlight"><pre><span></span><span class="gp"> $ </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
 </pre></div></li>
 <li><p><strong>Windows</strong>:</p>
 <p>Podle toho, jak máš Python nainstalovaný, bude fungovat jeden z následujících
- příkazů.
- Bude je rychlejší vyzkoušet než popsat, kdy je který správný,
- takže nejdřív zkus:</p>
-<div class="highlight"><pre><span></span><span class="gp"> &gt; </span>py -3 -m venv venv
+příkazů.
+Bude je rychlejší vyzkoušet než popsat, kdy je který správný,
+takže nejdřív zkus:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt; </span>py -3 -m venv venv
 </pre></div><p>A jestli dostaneš chybu <code>'py' is not recognized</code>, zkus místo toho:</p>
-<div class="highlight"><pre><span></span><span class="gp"> &gt; </span>python3 -m venv venv
+<div class="highlight"><pre><span></span><span class="gp">&gt; </span>python3 -m venv venv
 </pre></div></li>
 </ul>
 <p>Tím se ti vytvořil adresář <code>venv</code>, který virtuální prostředí obsahuje.
@@ -119,7 +119,9 @@ Můžeš se podívat dovnitř, ale neukládej tam své soubory a nikdy tam nic n
 <span class="go"> Directory of C:\Users\Helena\naucse-python</span>
 <span class="go">05/08/2014 07:28 PM &lt;DIR&gt;  00</span>
 <span class="go">05/08/2014 07:38 PM &lt;DIR&gt;  venv</span>
-</pre></div></div></div><p>V grafickém prohlížeči souborů to vypadá např. takto:</p>
+</pre></div></div></div>
+
+<p>V grafickém prohlížeči souborů to vypadá např. takto:</p>
 <p><span class="figure"><a href="naucse:static?filename=dirs-00.png"><img src="naucse:static?filename=dirs-00.png" alt="(adresáře &#39;00&#39; a &#39;venv&#39; vedle sebe)"></a></span></p>
 <h3 id="aktivace_virtualniho_prostredi">Aktivace virtuálního prostředí
 <a href="#aktivace_virtualniho_prostredi" class="header-link">#</a>
@@ -133,7 +135,9 @@ Můžeš se podívat dovnitř, ale neukládej tam své soubory a nikdy tam nic n
 je příkaz pro Windows složitější:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt; </span><span class="p">&amp;</span>powershell -ExecutionPolicy bypass
 <span class="gp">&gt; </span>venv/Scripts/Activate.ps1
-</pre></div></div></div><p>Po spuštění tohoto příkazu by se mělo na začátku příkazové řádky
+</pre></div></div></div>
+
+<p>Po spuštění tohoto příkazu by se mělo na začátku příkazové řádky
 (před <code>$</code> nebo <code>&gt;</code>) objevit slovo <code>(venv)</code>.
 Tak poznáš, že je virtuální prostředí <em>aktivní</em>.</p>
 <p>Aktivační příkaz si zapiš.</p>

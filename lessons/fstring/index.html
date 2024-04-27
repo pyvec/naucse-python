@@ -12,19 +12,23 @@ Je potřeba <code>soucet</code> převést na řetězec a ten pak připojit k �
 </pre></div><p>To ale není tak přehledné, jak by mohlo.
 Lze to zpřehlednit použitím šablony.</p>
 <p>Takovou šablonu si představ jako formulář s vynechanými místy:</p>
-<div class="highlight"><pre><code>Součet je __________.</code></pre></div><p>Složitější šablona by byla třeba tahle:</p>
+<div class="highlight"><pre><code>Součet je __________.
+</code></pre></div><p>Složitější šablona by byla třeba tahle:</p>
 <div class="highlight"><pre><code>Mil[ý/á] _______,
 Váš výsledek je __________.
 
 S pozdravem,
-_________</code></pre></div><p>Aby Python věděl, do kterého vynechaného místa co doplnit, je potřeba
+_________
+</code></pre></div><p>Aby Python věděl, do kterého vynechaného místa co doplnit, je potřeba
 jednotlivá vynechaná místa ve formuláři nějak jednoznačně označit.
 Použijme jména v „kudrnatých“ závorkách:</p>
-<div class="highlight"><pre><code>Součet je {soucet}.</code></pre></div><div class="highlight"><pre><code>Mil{y_a} {osloveni},
+<div class="highlight"><pre><code>Součet je {soucet}.
+</code></pre></div><div class="highlight"><pre><code>Mil{y_a} {osloveni},
 Váš výsledek je {soucet}.
 
 S pozdravem,
-{podpis}.</code></pre></div><p>Takovou šablonu můžeš použít jako <em>formátovací řetězec</em>
+{podpis}.
+</code></pre></div><p>Takovou šablonu můžeš použít jako <em>formátovací řetězec</em>
 (angl. <a href="https://docs.python.org/3.6/reference/lexical_analysis.html#formatted-string-literals"><em>formatted string literal</em></a>,
 zkráceně <em>f-string</em>).
 Jako jakýkoli jiný řetězec ji vlož do uvozovek.

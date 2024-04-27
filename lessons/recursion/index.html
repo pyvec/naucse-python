@@ -23,12 +23,10 @@ Když zadáš tento program:</p>
 <li>Zavolá funkci <code>rekurzivni_funkce</code>:<ul>
 <li>Vypočítá výsledek</li>
 <li>Zavolá funkci <code>rekurzivni_funkce</code>:<ul>
-<li>...<ul>
-<li><em> ...
-   </em> po stovkách opakování si Python všimne, že tohle asi
-     nikam nevede, a skončí s chybou.</li>
-</ul>
-</li>
+<li>...
+* ...
+* po stovkách opakování si Python všimne, že tohle asi
+nikam nevede, a skončí s chybou.</li>
 </ul>
 </li>
 </ul>
@@ -42,16 +40,17 @@ Když zadáš tento program:</p>
 </ul>
 <p>Tomu odpovídá chybová hláška:</p>
 <div class="highlight"><pre><code>Traceback (most recent call last):
-  File "/tmp/ukazka.py", line 4, in &lt;module&gt;
+  File &quot;/tmp/ukazka.py&quot;, line 4, in &lt;module&gt;
     rekurzivni_funkce()
-  File "/tmp/ukazka.py", line 2, in rekurzivni_funkce
+  File &quot;/tmp/ukazka.py&quot;, line 2, in rekurzivni_funkce
     return rekurzivni_funkce()
-  File "/tmp/ukazka.py", line 2, in rekurzivni_funkce
+  File &quot;/tmp/ukazka.py&quot;, line 2, in rekurzivni_funkce
     return rekurzivni_funkce()
-  File "/tmp/ukazka.py", line 2, in rekurzivni_funkce
+  File &quot;/tmp/ukazka.py&quot;, line 2, in rekurzivni_funkce
     return rekurzivni_funkce()
   [Previous line repeated 996 more times]
-RecursionError: maximum recursion depth exceeded</code></pre></div><p>Hláška je zkrácená – dva řádky by se správně měly opakovat 999×, ale novější
+RecursionError: maximum recursion depth exceeded
+</code></pre></div><p>Hláška je zkrácená – dva řádky by se správně měly opakovat 999×, ale novější
 verze Pythonu je vypíšou jen třikrát.</p>
 <h1 id="kontrolovane_zanoreni">Kontrolované zanoření
 <a href="#kontrolovane_zanoreni" class="header-link">#</a>
@@ -100,10 +99,9 @@ Jeden způsob je si počítat, kolikrát se ještě „zanořit“.</p>
 <li>Zkontroluje, že <code>20 ≥ 30</code> (což neplatí)</li>
 <li>Vypíše <code>Zanořuju se (z 20 m)</code><ul>
 <li>Zavolá funkci <code>pruzkum</code> s hloubkou 30 m:<ul>
-<li>Zkontroluje, že <code>30 ≥ 30</code> (což platí! konečně!)<ul>
-<li><em> Vypíše <code>Už toho bylo dost!</code></em> a skončí</li>
-</ul>
-</li>
+<li>Zkontroluje, že <code>30 ≥ 30</code> (což platí! konečně!)
+* Vypíše <code>Už toho bylo dost!</code>
+* a skončí</li>
 </ul>
 </li>
 </ul>

@@ -230,7 +230,8 @@ Tady se zaměříme hlavně na nejmagičtější z nich, čtení.</p>
 </ul>
 <p>To je trochu zjednodušený, ale užitečný model.</p>
 <p>Speciální metody, které se nevolají pomocí tečky, přeskakují první krok: metoda <code>__add__</code> tedy musí být definována na <em>třídě</em>, aby se zavolala pro <code>a + b</code>.</p>
-<blockquote><p><em>(Poznámka navíc pro ty, kdo čtou tento text podruhé: na metatřídě se atribut nehledá; např. existuje-li <code>type.mro</code>, najde se <code>str.mro</code>, ale už ne <code>"".mro</code>)</em></p>
+<blockquote>
+<p><em>(Poznámka navíc pro ty, kdo čtou tento text podruhé: na metatřídě se atribut nehledá; např. existuje-li <code>type.mro</code>, najde se <code>str.mro</code>, ale už ne <code>&quot;&quot;.mro</code>)</em></p>
 </blockquote>
 <p>Podívejme se teď na získávání atributu trošku podrobněji. Je to poměrně komplikovaný proces a existuje několik způsobů, jak ho přizpůsobit. Nejjednodušší je dvojice speciálních metod:</p>
 <ul>
@@ -253,7 +254,7 @@ Příklad druhé:</p>
 
 <span class="n">palette</span> <span class="o">=</span> <span class="n">Palette</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">palette</span><span class="o">.</span><span class="n">dark_red</span><span class="p">)</span>
-</pre></div><p>(Předpokládám že znáte funkci <code>getattr</code>; kdyby ne: <code>getattr(foo, "bar")</code> dělá totéž co <code>foo.bar</code> – jen je jméno atributu předáno jako řetězec, takže může být např. v proměnné. Podobně existují <code>setattr(instance, attr_name, new_value)</code> a <code>delattr(instance, attr_name)</code>.)</p>
+</pre></div><p>(Předpokládám že znáte funkci <code>getattr</code>; kdyby ne: <code>getattr(foo, &quot;bar&quot;)</code> dělá totéž co <code>foo.bar</code> – jen je jméno atributu předáno jako řetězec, takže může být např. v proměnné. Podobně existují <code>setattr(instance, attr_name, new_value)</code> a <code>delattr(instance, attr_name)</code>.)</p>
 <p>Metoda <code>__getattr__</code> je většinou tak trochu kanón na vrabce: ve většině případů nepotřebujeme nastavit chování <em>všech</em> neexistujících atributů, ale jenom jednoho nebo několika konkrétních.
 Například máme třídu pro 2D bod s atributy <code>x</code> a <code>y</code> a potřebujeme i atribut pro dvojici <code>(x, y)</code>.
 Toto se často dělá pomocí dekorátoru <code>property</code>:</p>
@@ -585,7 +586,8 @@ builtins.ANSWER = 42
 ...
 
 # Třeba v jiném modulu
-print(ANSWER)</code></pre></div><p>Tímto způsobem se dají i předefinovat vestavěné funkce, což může být někdy
+print(ANSWER)
+</code></pre></div><p>Tímto způsobem se dají i předefinovat vestavěné funkce, což může být někdy
 užitečné pro ladění. V produkčním kódu to ale, prosím, nedělejte.</p>
 <h2 id="ukol">Úkol
 <a href="#ukol" class="header-link">#</a>

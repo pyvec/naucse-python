@@ -175,7 +175,7 @@ Kompletní popis jazyka najdete v <a href="https://jinja.palletsprojects.com/en
 pro většinu stránek se obejdete s doplněním hodnoty (<code>{{ promenna }}</code>)
 a podmíněným obsahem (<code>{% if %}</code>) jako výše,
 případně s <a href="https://jinja.palletsprojects.com/en/2.10.x/templates/#for">cyklem</a>: <code>{% for %}</code>/<code>{% endfor %}</code>. Ve větších
-aplikacích se pak hodí použití <code>{% include ... %}</code>, <code>{% extends ... %}</code> 
+aplikacích se pak hodí použití <code>{% include ... %}</code>, <code>{% extends ... %}</code>
 a případně také tvorba maker <code>{% macro ... %}</code>/<code>{% endmacro %}</code>.</p>
 <p>Veškerý kontext (proměnné) do šablony musí přijít z volání <code>render_template()</code>.
 Navíc můžete použít vybrané funkce, např. <code>url_for()</code>.
@@ -214,7 +214,7 @@ a převede ho do jiného:</p>
 mají v HTML speciální význam.
 Zabraňuje se tak bezpečnostním rizikům, kdy se vstup od uživatele interpretuje
 jako HTML.</p>
-<p>Například když v aplikaci výše navštívíme URL <code>/hello/&lt;script&gt;alert("Foo")/</code>,
+<p>Například když v aplikaci výše navštívíme URL <code>/hello/&lt;script&gt;alert(&quot;Foo&quot;)/</code>,
 bude výsledné HTML vypadat takto:</p>
 <div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
 <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Hello from Flask<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
@@ -252,17 +252,17 @@ a přistupujte k nim pomocí routy <code>static</code>:</p>
 </pre></div><h3 id="logovani">Logování
 <a href="#logovani" class="header-link">#</a>
 </h3>
-<p>Při vytváření webové aplikace chcete často komunikovat nejen prostřednictvím 
+<p>Při vytváření webové aplikace chcete často komunikovat nejen prostřednictvím
 HTTP odpovědí na dotazy (ať už ve formě webové stránky, JSON odpovědi či jiného
 formatu), ale také vypisovat různé chybové, informační či ladící hlášky na
-straně serveru. Možností je použít například funkci <code>print</code>, ale ta není 
-dostatečně flexibilní. Brzy narazíte na problémy, jako že výstup není konzistentní 
-s jinými hláškami z Flasku, že pro různé typy výpisů, časová razítka, přesměrování 
-logu do souboru a další potřebujete vytvářet spoustu logiky kolem namísto vytváření 
+straně serveru. Možností je použít například funkci <code>print</code>, ale ta není
+dostatečně flexibilní. Brzy narazíte na problémy, jako že výstup není konzistentní
+s jinými hláškami z Flasku, že pro různé typy výpisů, časová razítka, přesměrování
+logu do souboru a další potřebujete vytvářet spoustu logiky kolem namísto vytváření
 samotné webové aplikace.</p>
-<p>Řešením je použít standardní logovací modul <a href="https://docs.python.org/3/library/logging.html#module-logging">logging</a>, který řeší vše potřebné 
+<p>Řešením je použít standardní logovací modul <a href="https://docs.python.org/3/library/logging.html#module-logging">logging</a>, který řeší vše potřebné
 (úrovně zpráv, filtry, formátování časového razítka a dalších meta-informací o
-běhu programu) a výstup bude konzistentní s jinými aplikacemi (jiní správci 
+běhu programu) a výstup bude konzistentní s jinými aplikacemi (jiní správci
 vaší webové aplikace pak nebudou z formátu výstupů zmatení). Protože používáme
 Flask a ten také <a href="https://flask.palletsprojects.com/en/1.1.x/logging/">loguje tímto modulem</a>,
 stačí použít předpřipravený <code>app.logger</code>.</p>
@@ -275,30 +275,30 @@ stačí použít předpřipravený <code>app.logger</code>.</p>
 <span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
     <span class="n">app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Someone is accessing the index page!&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="s1">&#39;Index Page&#39;</span>
-</pre></div><p>Ve výchozím nastavení se loguje pouze od úrovně upozornění výše (<code>warning</code>, 
+</pre></div><p>Ve výchozím nastavení se loguje pouze od úrovně upozornění výše (<code>warning</code>,
 <code>error</code>, <code>critical</code>). Při spuštění aplikace v ladícím režimu se loguje vše
 (navíc i <code>debug</code> a <code>info</code>). Aktuální úroveň je možné také změnit pomocí metody
 <code>setLevel</code>, viz dokumentace modulu <a href="https://docs.python.org/3/library/logging.html#module-logging">logging</a>.</p>
 <h3 id="vetsi_flask_aplikace">Větší Flask aplikace
 <a href="#vetsi_flask_aplikace" class="header-link">#</a>
 </h3>
-<p>Flask je sice označován jako mikroframework, to ale neznamená, že jej nelze 
-použít na větší a složitější webové aplikace. Pokud chcete vytvářet vytvářet 
+<p>Flask je sice označován jako mikroframework, to ale neznamená, že jej nelze
+použít na větší a složitější webové aplikace. Pokud chcete vytvářet vytvářet
 aplikaci s databází a ORM modely, je nutné propojit Flask s dalšími knihovnami
-(například <a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/">flask-sqlalchemy</a>, 
+(například <a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/">flask-sqlalchemy</a>,
 nebo <a href="https://flask-pymongo.readthedocs.io/en/latest/">flask-pymongo</a>).</p>
 <p>Jiné frameworky postavené nad <a href="https://cs.wikipedia.org/wiki/Model-view-controller">Model-View-Controller</a>
 paradigmatem mají tyto vlastnosti již zabudovány v sobě (například <a href="https://www.djangoproject.com/">Django</a>).</p>
-<p>Následující sekce popisují některé zajímavé techniky, které se mohou u větších 
+<p>Následující sekce popisují některé zajímavé techniky, které se mohou u větších
 a složitějších aplikací hodit.</p>
 <h4 id="create_app_factory">create_app factory
 <a href="#create_app_factory" class="header-link">#</a>
 </h4>
 <p>Mimo vytváření Flask aplikace přímo v modulu, je možné aplikaci tvořit pomocí
-funkce, tzv. <a href="https://flask.palletsprojects.com/en/1.1.x/patterns/appfactories/"><code>application_factory</code></a>, 
-standardně pojmenované <code>create_app</code>. Takový přístup má výhodu, že aplikace se 
+funkce, tzv. <a href="https://flask.palletsprojects.com/en/1.1.x/patterns/appfactories/"><code>application_factory</code></a>,
+standardně pojmenované <code>create_app</code>. Takový přístup má výhodu, že aplikace se
 neinicializuje hned při importu modulu, ale až při zavolání funkce. Voláním funkce
-můžete navíc předat i konfigurační parametry (typicky cesta ke konfiguračnímu 
+můžete navíc předat i konfigurační parametry (typicky cesta ke konfiguračnímu
 souboru). Díky tomu lze snadněji vytvářet Flask aplikace s různými konfiguracemi
 pro testování nebo dokonce vytvářet více Flask aplikací v rámci jednoho Python skriptu.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_app</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -313,11 +313,11 @@ pro testování nebo dokonce vytvářet více Flask aplikací v rámci jednoho P
 <a href="#blueprint_moduly" class="header-link">#</a>
 </h4>
 <p>Ve velkých webových aplikacích je již vhodné seskupovat jednotlivé pohledy do
-samostatných celků. K tomuto účelu slouží ve Flasku <a href="https://flask.palletsprojects.com/en/1.1.x/blueprints/">blueprinty</a> (hezky česky 
+samostatných celků. K tomuto účelu slouží ve Flasku <a href="https://flask.palletsprojects.com/en/1.1.x/blueprints/">blueprinty</a> (hezky česky
 „modrotisk” nebo také <a href="https://cs.wikipedia.org/wiki/Diazotypie">„modrák”</a>).
 Výhodou je, že můžete vytvořit blueprint (instanci
-třídy <a href="https://flask.palletsprojects.com/en/1.1.x/api/#flask.Blueprint">Blueprint</a>) s několika views, vlastní <code>templates</code> složkou a dalším 
-nastavením nezávisle na tom, v jaké Flask aplikaci pak bude použitý. Takový 
+třídy <a href="https://flask.palletsprojects.com/en/1.1.x/api/#flask.Blueprint">Blueprint</a>) s několika views, vlastní <code>templates</code> složkou a dalším
+nastavením nezávisle na tom, v jaké Flask aplikaci pak bude použitý. Takový
 blueprint pak můžete využívat i v několika různých aplikacích a snadno tak
 dosáhnout znovupouželnosti.</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Blueprint</span>
@@ -336,7 +336,7 @@ dosáhnout znovupouželnosti.</p>
 <span class="k">def</span> <span class="nf">user_link</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
     <span class="o">...</span>
 </pre></div><p>Blueprint pak stačí ve Flask aplikaci <a href="https://flask.palletsprojects.com/en/1.1.x/api/#flask.Flask.register_blueprint">registrovat</a>
-a je jedno, zda ji vytváříte pomocí <code>create_app</code> nebo napřímo. Navíc můžete mimo 
+a je jedno, zda ji vytváříte pomocí <code>create_app</code> nebo napřímo. Navíc můžete mimo
 jiné přidat i prefix pro všechny cesty v blueprintu.</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
 <span class="kn">from</span> <span class="nn">auth.views</span> <span class="kn">import</span> <span class="n">auth</span>
@@ -349,8 +349,8 @@ jiné přidat i prefix pro všechny cesty v blueprintu.</p>
 </pre></div><h4 id="vlastni_podtrida_flask">Vlastní podtřída Flask
 <a href="#vlastni_podtrida_flask" class="header-link">#</a>
 </h4>
-<p>Třída <code>Flask</code> je uzpůsobena k tomu, aby bylo možné snadno rozšiřovat a přepisovat 
-výchozí chování. Mimo přidávání vlastních metod lze například měnit třídy, které 
+<p>Třída <code>Flask</code> je uzpůsobena k tomu, aby bylo možné snadno rozšiřovat a přepisovat
+výchozí chování. Mimo přidávání vlastních metod lze například měnit třídy, které
 budou použity pro HTTP požadavky a odpovědi, měnit výchozí konfiguraci <code>flask</code> a
 spoustu dalšího. Nezapomeňte volat konstruktor nadtřídy.</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">current_app</span><span class="p">,</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">Response</span>
@@ -390,6 +390,6 @@ spoustu dalšího. Nezapomeňte volat konstruktor nadtřídy.</p>
 <p>Flask umí i další věci – například zpracování formulářů, chybové stránky nebo
 přesměrování. Také existuje i řada <a href="https://flask.palletsprojects.com/en/1.1.x/extensions/?highlight=extensions">rozšíření</a>,
 které mohou ušetřit práci s běžnými úkony jako například správa uživatelů,
- tvorba REST API nebo integrace s různými službami.</p>
+tvorba REST API nebo integrace s různými službami.</p>
 <p>Všechno to najdete
 <a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">v dokumentaci</a>.</p>

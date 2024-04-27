@@ -63,7 +63,7 @@
                     "index": {
                         "attribution": [
                             "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017.",
-                            "Založeno na tutoriálu <a href=\"https://tutorial.djangogirls.org/en/intro_to_command_line/\">Django Girls</a>."
+                            "Založeno na tutoriálu [Django Girls].\n[Django Girls]: https://tutorial.djangogirls.org/en/intro_to_command_line/"
                         ],
                         "content": {
                             "path": "cmdline/index.html"

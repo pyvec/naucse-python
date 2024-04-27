@@ -143,20 +143,20 @@ funkci <a href="https://docs.python.org/3/library/functions.html#open"><code>ope
     <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div><p>Existuje i varianta <a href="https://click.palletsprojects.com/en/7.x/api/#click.Path"><code>click.Path()</code></a>,
-která soubor neotvírá. Pomocí ní jde např. zadat jméno adresáře. Click takto 
+která soubor neotvírá. Pomocí ní jde např. zadat jméno adresáře. Click takto
 poskytuje i jiné <a href="https://click.palletsprojects.com/en/7.x/api/#types">další typy</a>.</p>
 <h2 id="validace_vstupu">Validace vstupů
 <a href="#validace_vstupu" class="header-link">#</a>
 </h2>
-<p>Vstupy získané z přepínačů i argumentů lze ověřit pomocí 
+<p>Vstupy získané z přepínačů i argumentů lze ověřit pomocí
 vlastních podmínek a podle toho naprogramovat chování včetně
-chybových hlášek. Click však opět nabízí pohodlnější způsob, 
+chybových hlášek. Click však opět nabízí pohodlnější způsob,
 a to pomocí <a href="https://click.palletsprojects.com/en/7.x/options/#callbacks-for-validation"><code>callback</code></a>.
 V rámci callback funkce můžete ověřit libovolně hodnotu a/nebo
-ji vhodně transformovat. Pokud hodnota neodpovídá požadavkům, 
+ji vhodně transformovat. Pokud hodnota neodpovídá požadavkům,
 můžete použít vyjímku <a href="https://click.palletsprojects.com/en/7.x/api/#click.UsageError"><code>click.UsageError</code></a>
 nebo <a href="https://click.palletsprojects.com/en/7.x/api/#click.BadParameter"><code>click.BadParameter</code></a>
-(vztahuje-li se přímo ke konkrétnímu parametru). Click se pak 
+(vztahuje-li se přímo ke konkrétnímu parametru). Click se pak
 sám postará o případné ukončení programu s odpovídající chybovou
 hláškou a kódem.</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">validate_username</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>

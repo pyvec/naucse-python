@@ -29,10 +29,11 @@ na destičku před začátkem kurzu nainstalovali
 MicroPython.</p>
 </div><p>Teď, když destičku držíš v ruce, si
 pojďme projít její základní součásti.</p>
-<p><br style='clear: both;'></p>
+<br style='clear: both;'>
+
 <p><span class="figure float-left"><a href="naucse:static?filename=nodemcu-popisky.svg"><img src="naucse:static?filename=nodemcu-popisky.svg" alt="Obrázek desky NodeMCU DevKit"></a></span></p>
 <p>Nejdůležitější část vývojové desky je v oplechované
-krabičce s logem "Wi-Fi" a "FCC":
+krabičce s logem &quot;Wi-Fi&quot; a &quot;FCC&quot;:
 <span class="part-green">mikroprocesor ESP8266</span>.
 To je „mozek” celého zařízení, který – když je
 správně naprogramován – umí provádět pythonní
@@ -61,7 +62,8 @@ se dá napojit celá řada nejrůznějších hraček.
 Zkontroluj si, jestli jsou všechny nožičky rovné;
 kdyby byla některá ohnutá, tak ji (nejlépe s pomocí
 kouče) narovnej nebo si vezmi jinou destičku.</p>
-<p><br style='clear: both;'></p>
+<br style='clear: both;'>
+
 <h2 id="instalace">Instalace
 <a href="#instalace" class="header-link">#</a>
 </h2>
@@ -91,26 +93,26 @@ Skončí-li příkaz <code>picocom</code> s chybou,
 oprav ji podle následujícího návodu a zkus to znova.
 (Možná bude potřeba vyřešit víc než jednu chybu.)</p>
 <ul>
-<li>Nemáš-li příkaz <code>picocom</code> nainstalovaný,
+<li><p>Nemáš-li příkaz <code>picocom</code> nainstalovaný,
 je potřeba ho nainstalovat (např.
 <code>sudo dnf install picocom</code> nebo
-<code>sudo apt-get install picocom</code>).</li>
-<li>Pokud <code>picocom</code> skončil s chybou
+<code>sudo apt-get install picocom</code>).</p>
+</li>
+<li><p>Pokud <code>picocom</code> skončil s chybou
 <code>No such file or directory</code>, pravděpodobně
 je potřeba k zařízení přistupovat přes jiný soubor.
-Použij příkaz <code>dmesg | tail</code>, který vypíše něco jako:</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="gp">  $ </span>dmesg<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail
-<span class="go">  [703169.886296] ch341 1-1.1:1.0: device disconnected</span>
-<span class="go">  [703176.972781] usb 1-1.1: new full-speed USB device number 45 using ehci-pci</span>
-<span class="go">  [703177.059448] usb 1-1.1: New USB device found, idVendor=1a86, idProduct=7523</span>
-<span class="go">  [703177.059454] usb 1-1.1: New USB device strings: Mfr=0, Product=2, SerialNumber=0</span>
-<span class="go">  [703177.059457] usb 1-1.1: Product: USB2.0-Serial</span>
-<span class="go">  [703177.060474] ch341 1-1.1:1.0: ch341-uart converter detected</span>
-<span class="go">  [703177.062781] usb 1-1.1: ch341-uart converter now attached to ttyUSB0</span>
+Použij příkaz <code>dmesg | tail</code>, který vypíše něco jako:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>dmesg<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail
+<span class="go">[703169.886296] ch341 1-1.1:1.0: device disconnected</span>
+<span class="go">[703176.972781] usb 1-1.1: new full-speed USB device number 45 using ehci-pci</span>
+<span class="go">[703177.059448] usb 1-1.1: New USB device found, idVendor=1a86, idProduct=7523</span>
+<span class="go">[703177.059454] usb 1-1.1: New USB device strings: Mfr=0, Product=2, SerialNumber=0</span>
+<span class="go">[703177.059457] usb 1-1.1: Product: USB2.0-Serial</span>
+<span class="go">[703177.060474] ch341 1-1.1:1.0: ch341-uart converter detected</span>
+<span class="go">[703177.062781] usb 1-1.1: ch341-uart converter now attached to ttyUSB0</span>
 </pre></div><p>Máš-li místo <code>ttyUSB0</code> něco jiného, v příkazu <code>picocom</code> to použij místo
-  <code>ttyUSB0</code>.</p>
-<ul>
+<code>ttyUSB0</code>.</p>
+</li>
 <li><p>Pokud <code>picocom</code> skončil s chybou <code>Permission denied</code>, potřebuješ získat
 přístup k souboru zařízení.
 To znamená přidat se do příslušné skupiny:</p>
@@ -319,13 +321,15 @@ a nastavovat podle něj stav LED.</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
-<span class="n">pin_diody</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
-<span class="n">pin_tlacitka</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">pin_diody</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">pin_tlacitka</span><span class="o">.</span><span class="n">value</span><span class="p">())</span>
-</pre></div>
+<span></span><span class="n">pin_diody</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span></span><span class="n">pin_tlacitka</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span></span>    <span class="n">pin_diody</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">pin_tlacitka</span><span class="o">.</span><span class="n">value</span><span class="p">())</span>
+<span></span></pre></div>
     </div>
-</div><h2 id="pousteni_kodu_ze_souboru">Pouštění kódu ze souboru
+</div>
+
+<h2 id="pousteni_kodu_ze_souboru">Pouštění kódu ze souboru
 <a href="#pousteni_kodu_ze_souboru" class="header-link">#</a>
 </h2>
 <p>Jak začneš psát trochu složitější programy,
@@ -435,47 +439,16 @@ A podobné lupnutí uslyšíš když součástku zase odpojíš.</p>
 <p>Nebo některou z těchto frekvencí?
 Hz – <a href="https://en.wikipedia.org/wiki/Hertz">Hertz</a> – je jednotka frekvence;
 „49 Hz“ znamená „49× za sekundu“.</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Nota </th>
-<th style="text-align:right">Frekvence</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">C1</td>
-<td style="text-align:right">32,70 Hz</td>
-</tr>
-<tr>
-<td style="text-align:left">D</td>
-<td style="text-align:right">36,71 Hz</td>
-</tr>
-<tr>
-<td style="text-align:left">E</td>
-<td style="text-align:right">41,20 Hz</td>
-</tr>
-<tr>
-<td style="text-align:left">F</td>
-<td style="text-align:right">43,65 Hz</td>
-</tr>
-<tr>
-<td style="text-align:left">G</td>
-<td style="text-align:right">49,00 Hz</td>
-</tr>
-<tr>
-<td style="text-align:left">A</td>
-<td style="text-align:right">55,00 Hz</td>
-</tr>
-<tr>
-<td style="text-align:left">H</td>
-<td style="text-align:right">61,74 Hz</td>
-</tr>
-<tr>
-<td style="text-align:left">C2</td>
-<td style="text-align:right">65,41 Hz</td>
-</tr>
-</tbody>
-</table>
+<p>| Nota | Frekvence |
+|:-----|----------:|
+| C1   | 32,70 Hz  |
+| D    | 36,71 Hz  |
+| E    | 41,20 Hz  |
+| F    | 43,65 Hz  |
+| G    | 49,00 Hz  |
+| A    | 55,00 Hz  |
+| H    | 61,74 Hz  |
+| C2   | 65,41 Hz  |</p>
 <p>Naprogramuj písničku! Potřebuješ-li víc not, pusť si <a href="naucse:static?filename=noty.py">program</a>,
 který vypočítá další frekvence.</p>
 <h2 id="dalsi_ovladani">Další ovládání
@@ -511,8 +484,9 @@ se ozve lupnutí – a LED, kde o intenzitě rozhodovala
 střída (<code>duty</code>) – poměr mezi dobou kdy
 dioda svítí a kdy nesvítí, u servomotoru rozhoduje
 tzv. <em>šířka pulzu</em>: jak dlouho se napětí udrží
-na 3,3 V, než se přepne zpátky na 0 V.
-<!-- XXX: Actual typical pulse widths --></p>
+na 3,3 V, než se přepne zpátky na 0 V.</p>
+<!-- XXX: Actual typical pulse widths -->
+
 <p>V praxi to znamená, že můžeš nastavit <code>freq</code>
 na 50 Hz, a <code>duty</code> měnit cca od 35
 (úplně vlevo) přes 77 (uprostřed) po 120 (úplně vpravo).</p>
@@ -561,7 +535,8 @@ koupíš pod názvem <em>USB-TTL adapter</em> a vypadá
 nejčastěji takhle:</p>
 <p><span class="figure"><a href="naucse:static?filename=usb-ttl.png"><img src="naucse:static?filename=usb-ttl.png" alt="USB-TTL adapter"></a></span></p>
 <p>K modulu pak tento převodník a zdroj napětí připojíš takto:</p>
-<p><!-- XXX: obrázek --></p>
+<!-- XXX: obrázek -->
+
 <ul>
 <li><code>GND</code> na převodníku – <code>G</code> na desce</li>
 <li><code>RX</code> na převodníku – <code>TX</code> (!) na desce</li>
@@ -647,7 +622,9 @@ pin = Pin(2, Pin.OUT)
 np = NeoPixel(pin, POCET_LED)
 np<span class="highlight-nocolor">[0]</span> = (<span class="highlight-red">255</span>, <span class="highlight-green">255</span>, <span class="highlight-blue">255</span>)
 np.write()
-</pre><p>Co znamenají ta čísla (<code>0</code> a <code>255</code>), na to už jistě přijdeš sama.
+</pre>
+
+<p>Co znamenají ta čísla (<code>0</code> a <code>255</code>), na to už jistě přijdeš sama.
 Jen při experimentování nezapomeň zavolat
 <code>np.write()</code>, tím se informace pošlou do LED pásku.</p>
 <p>Zvládneš naprogramovat semafor?</p>

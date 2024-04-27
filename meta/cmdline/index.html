@@ -40,12 +40,15 @@ Na každém počítači totiž můžou být trochu jiné.</p>
                 <h4>Unix (Linux, macOS)</h4><div class="highlight"><pre><span></span><span class="gp">$
 </span></pre></div></div><div class="col">
                 <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt;
-</span></pre></div></div></div><p>Podle systému se potom liší i samotné příkazy, které budeš zadávat:
+</span></pre></div></div></div>
+
+<p>Podle systému se potom liší i samotné příkazy, které budeš zadávat:
 Unixové systémy (Linux a macOS) rozumí jiným příkazům než Windows.</p>
 <div class="admonition note"><p class="admonition-title">Velikost písma</p>
 <p>Je-li ve Windows moc malé písmo, klikni na ikonku okna a vyber Možnosti.
-V záložce Písmo si pak můžeš vybrat větší font.
-<!-- XXX: are the Czech names correct? --></p>
+V záložce Písmo si pak můžeš vybrat větší font.</p>
+<!-- XXX: are the Czech names correct? -->
+
 <p><span class="figure"><a href="naucse:static?filename=windows-cmd-properties.png"><img src="naucse:static?filename=windows-cmd-properties.png" alt="Screenshot menu příkazové řádky"></a></span></p>
 <p>Na ostatních systémech hledej v nastavení, nebo zkus
 <kbd>Ctrl</kbd>+<kbd>+</kbd> a
@@ -63,7 +66,9 @@ Objeví se přihlašovací jméno. Třeba u Heleny by to vypadalo takhle:</p>
 </pre></div></div><div class="col">
                 <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>whoami
 <span class="go">pocitac\Helena</span>
-</pre></div></div></div><div class="admonition note"><p>Znak <code>$</code> nebo <code>&gt;</code> je v ukázce jen proto, aby bylo jasné že zadáváš
+</pre></div></div></div>
+
+<div class="admonition note"><p>Znak <code>$</code> nebo <code>&gt;</code> je v ukázce jen proto, aby bylo jasné že zadáváš
 příkaz do příkazové řádky.
 Vypíše ho počítač, většinou ještě s něčím před ním,
 takže ho nepiš sám/sama! Zadej jen <code>whoami</code> a <kbd>Enter</kbd>.</p>
@@ -83,7 +88,9 @@ adresář, resp. <em>current directory</em> – aktuální adresář).</p>
 </pre></div></div><div class="col">
                 <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd
 <span class="go">C:\Users\helena</span>
-</pre></div></div></div><p>Aktuální adresář se většinou ukazuje i ve výzvě příkazové řádky, před znakem
+</pre></div></div></div>
+
+<p>Aktuální adresář se většinou ukazuje i ve výzvě příkazové řádky, před znakem
 <code>$</code> nebo <code>&gt;</code>.
 Ale je dobré <code>pwd</code>/<code>cd</code> znát, kdyby ses náhodou ztratil/a.
 Občas totiž bývá vypsaný zkráceně.
@@ -114,7 +121,9 @@ včetně podadresářů, které se v aktuálním adresáři nacházejí.</p>
 <span class="go">05/08/2014 07:28 PM &lt;DIR&gt;  Downloads</span>
 <span class="go">05/08/2014 07:28 PM &lt;DIR&gt;  Music</span>
 <span class="go">…</span>
-</pre></div></div></div><h2 id="zmena_aktualniho_adresare">Změna aktuálního adresáře
+</pre></div></div></div>
+
+<h2 id="zmena_aktualniho_adresare">Změna aktuálního adresáře
 <a href="#zmena_aktualniho_adresare" class="header-link">#</a>
 </h2>
 <p>Aktuální adresář se dá změnit pomocí příkazu <code>cd</code>
@@ -134,7 +143,9 @@ podle toho, jestli něco napíšeš za něj nebo ne.</p>
                 <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd Desktop
 <span class="gp">&gt; </span>cd
 <span class="go">C:\Users\helena\Desktop</span>
-</pre></div></div></div><div class="admonition note"><p class="admonition-title">Poznámka pro Windows</p>
+</pre></div></div></div>
+
+<div class="admonition note"><p class="admonition-title">Poznámka pro Windows</p>
 <p>Pokud přecházíš do adresáře na jiném disku,
 například <code>D:</code> místo <code>C:</code>, je potřeba kromě <code>cd</code>
 zadat jméno disku s dvojtečkou jako zvláštní příkaz (např. <code>D:</code>).</p>
@@ -149,7 +160,9 @@ Za tento příkaz napiš jméno adresáře, který chceš vytvořit – v našem
                 <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>zkouska
 </pre></div></div><div class="col">
                 <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>mkdir zkouska
-</pre></div></div></div><p>Vypiš si teď obsah aktuálního adresáře pomocí <code>ls</code> nebo <code>dir</code>.
+</pre></div></div></div>
+
+<p>Vypiš si teď obsah aktuálního adresáře pomocí <code>ls</code> nebo <code>dir</code>.
 Jeden z vypsaných adresářů bude <code>zkouska</code>.</p>
 <p>Když je adresář vytvořený, můžeš do něj přejít podobně jako jsi před chvílí
 přešel/přešla na <code>Desktop</code> nebo <code>Plocha</code>:</p>
@@ -157,7 +170,9 @@ přešel/přešla na <code>Desktop</code> nebo <code>Plocha</code>:</p>
                 <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>zkouska
 </pre></div></div><div class="col">
                 <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd zkouska
-</pre></div></div></div><h2 id="vgrafickem_hledatku">V grafickém hledátku
+</pre></div></div></div>
+
+<h2 id="vgrafickem_hledatku">V grafickém hledátku
 <a href="#vgrafickem_hledatku" class="header-link">#</a>
 </h2>
 <p>Často nebudeš pracovat <em>jenom</em> s příkazovou řádkou.
@@ -178,7 +193,9 @@ Tenhle program je na každém systému jiný:</p>
         <h4>Windows</h4>
         <span class="figure"><a href="naucse:static?filename=windows-file-browser.png"><img src="naucse:static?filename=windows-file-browser.png" alt="Screenshot průzkumníka na Windows"></a></span>
     </div>
-</div><p>Možná umíš v tomhle programu klikáním „donavigovat“ do adresáře, který je
+</div>
+
+<p>Možná umíš v tomhle programu klikáním „donavigovat“ do adresáře, který je
 aktivní v příkazové řádce.
 V budoucnu to ale bude složitější, takže bude dobré si vyzkoušet kopírovat text
 z příkazové řádky a vložit ho do prohlížeče souborů.</p>
@@ -194,7 +211,9 @@ kopírování, nejspíš se to dělá jinak, než jsi zvyklý/á.</p>
 </pre></div></div><div class="col">
                 <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd
 <span class="go">C:\Users\helena\Desktop\zkouska</span>
-</pre></div></div></div><h3 id="kopirovani_z_prikazove_radky">Kopírování z příkazové řádky
+</pre></div></div></div>
+
+<h3 id="kopirovani_z_prikazove_radky">Kopírování z příkazové řádky
 <a href="#kopirovani_z_prikazove_radky" class="header-link">#</a>
 </h3>
 <p>Na <strong>Linuxu</strong> vyber text myší a pak buď:</p>
@@ -237,9 +256,9 @@ je ale občas jiné než v ostatních pogramech:</p>
 <li>macOS: <kbd>⌘ Command</kbd>+<kbd>V</kbd></li>
 <li>Windows: Menu <em>Edit</em> → <em>Paste</em></li>
 </ul>
-<div class="admonition note"><p>Pokud jsou ve jménu mezery nebo jiné speciální znaky jako <code>*#$%^()&gt;&lt;;"?</code>,
+<div class="admonition note"><p>Pokud jsou ve jménu mezery nebo jiné speciální znaky jako <code>*#$%^()&gt;&lt;;&quot;?</code>,
 musíš ho v příkazové řádce ještě uzavřít do uvozovek: před a za jméno napiš
-<code>"</code>, např:</p>
+<code>&quot;</code>, např:</p>
 <div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;můj super adresář&quot;</span>
 </pre></div><p>Lepší je ale mezery a zvláštní znaky ve jménech souborů nepoužívat.</p>
 </div><h2 id="pozorovani_zmen">Pozorování změn
@@ -274,7 +293,9 @@ Přejdi do něj zadáním <code>cd ..</code> a pak se ujisti, že jsi opravdu v�
                 <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd ..
 <span class="gp">&gt; </span>cd
 <span class="go">C:\Users\helena\Desktop</span>
-</pre></div></div></div><p>Další <code>cd ..</code> by tě přesunulo do dalšího nadřazeného adresáře – v našem
+</pre></div></div></div>
+
+<p>Další <code>cd ..</code> by tě přesunulo do dalšího nadřazeného adresáře – v našem
 příkladu <code>helena</code>.</p>
 <h2 id="konec">Konec
 <a href="#konec" class="header-link">#</a>
@@ -332,5 +353,7 @@ Používáš-li Windows, je dobré si na <code>$</code> zvyknout i když ve své
         <td>ukončení</td>
         <td><code>exit</code></td>
     </tr>
-</table><p>Další příkazy jako <code>python</code> nebo <code>git</code> si vysvětlíme až budou potřeba,
+</table>
+
+<p>Další příkazy jako <code>python</code> nebo <code>git</code> si vysvětlíme až budou potřeba,
 po tom, co si je nainstaluješ.</p>

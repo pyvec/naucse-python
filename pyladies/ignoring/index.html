@@ -4,24 +4,27 @@
 <p>Často se stává, že některé soubory v repozitáři nechceš.
 Takových souborů jsou tři hlavní druhy:</p>
 <dl>
-<dt></dt><dt>Pomocné soubory nástrojů</dt><dd><p>Python občas „sám od sebe“ vytváří adresář <code>__pycache__</code> s pomocnými
+<dt>Pomocné soubory nástrojů</dt>
+<dd>Python občas „sám od sebe“ vytváří adresář <code>__pycache__</code> s pomocnými
 soubory, aby zrychlil importování modulů.
 Některé počítače vytváří skryté soubory s názvy jako
 <code>.Thumbnails</code>, <code>.DS_Store</code> nebo <code>Thumbs.db</code>.
 Takové věci v repozitáři nemají co dělat – je
-dobrým zvykem do Gitu nedávat nic, co jde vytvořit automaticky.</p>
-</dd><dt></dt><dt>Výstup programu a nastavení</dt><dd><p>Píšeš-li program, který kreslí obrázky, většinou chceš v repozitáři
+dobrým zvykem do Gitu nedávat nic, co jde vytvořit automaticky.</dd>
+<dt>Výstup programu a nastavení</dt>
+<dd>Píšeš-li program, který kreslí obrázky, většinou chceš v repozitáři
 jen samotný program.
-Obrázky si může pomocí programu každý vytvořit sám.</p>
-</dd></dl><p>:   Podobně fungují soubory s heslem: pokud program potřebuje heslo
-    např. k nějaké webové službě, ale svoje heslo nechceš dávat veřejně
-    k dispozici, musí si každý vytvořit soubor s heslem sám.</p>
-<dl>
-<dt></dt><dt>Osobní soubory</dt><dd><p>Občas se stane, že v adresáři s repozitářem máš soubor s osobními
+Obrázky si může pomocí programu každý vytvořit sám.</dd>
+<dd>Podobně fungují soubory s heslem: pokud program potřebuje heslo
+např. k nějaké webové službě, ale svoje heslo nechceš dávat veřejně
+k dispozici, musí si každý vytvořit soubor s heslem sám.</dd>
+<dt>Osobní soubory</dt>
+<dd>Občas se stane, že v adresáři s repozitářem máš soubor s osobními
 poznámkami.
 Zbytek repozitáře plánuješ zveřejnit, ale tyto soubory by měly zůstat
-jen ve tvé kopii. A to včetně informace o tom, že takové soubory máš.</p>
-</dd><dt></dt><dt>Adresář s virtuálním prostředím</dt><dd><p>Jistě už sis zvykl/a na virtuální prostředí.
+jen ve tvé kopii. A to včetně informace o tom, že takové soubory máš.</dd>
+<dt>Adresář s virtuálním prostředím</dt>
+<dd>Jistě už sis zvykl/a na virtuální prostředí.
 Adresář s ním se může jmenovat různě, v začátečnickém kurzu používáme název <code>venv</code>.
 Není dobré tento adresář dávat do Gitu,
 protože je jednoduché jej vždy vytvořit znovu
@@ -30,8 +33,9 @@ a pokud na projektu spolupracuje více lidí
 prostředí nebylo vždy na úplně stejném místě.
 Virtuální prostředí z adresáře <code>/home/helena/projektABC/venv</code>
 nebude fungovat z adresáře <code>C:\Users\Helena\projektABC\venv</code>,
-ale ani z <code>/home/mirka/projektABC/venv</code>.</p>
-</dd></dl><p>My budeme chtít Git nastavit tak, aby tyto soubory ignoroval: aby
+ale ani z <code>/home/mirka/projektABC/venv</code>.</dd>
+</dl>
+<p>My budeme chtít Git nastavit tak, aby tyto soubory ignoroval: aby
 <code>git status</code> neukazoval červeně, že ještě nejsou v repozitáři.</p>
 <h2 id="priprava">Příprava
 <a href="#priprava" class="header-link">#</a>
@@ -51,7 +55,8 @@ Založ si nový repozitář a vytvoř v něm tři soubory s tímto obsahem:</p
 <span class="n">getcanvas</span><span class="p">()</span><span class="o">.</span><span class="n">postscript</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;obrazek.ps&#39;</span><span class="p">)</span>
 </pre></div></li>
 <li><p><code>poznamky.txt</code></p>
-<div class="highlight"><pre><code>Tohle je tajné!</code></pre></div></li>
+<div class="highlight"><pre><code>Tohle je tajné!
+</code></pre></div></li>
 <li><p><code>Autofile.tmp</code></p>
 <p>Do tohohle souboru napiš cokoliv.
 Různé operační systémy a (jiné programy) vytváří různé soubory
@@ -72,12 +77,13 @@ No commits yet
 
 Untracked files:
   (use "git add &lt;file&gt;..." to include in what will be committed)
-    <span style="color: #aa0000">Autofile.tmp</span>
-    <span style="color: #aa0000">obrazek.ps</span>
-    <span style="color: #aa0000">obrazek.py</span>
-    <span style="color: #aa0000">poznamky.txt</span>
+	<span style="color: #aa0000">Autofile.tmp</span>
+	<span style="color: #aa0000">obrazek.ps</span>
+	<span style="color: #aa0000">obrazek.py</span>
+	<span style="color: #aa0000">poznamky.txt</span>
 
-nothing added to commit but untracked files present (use "git add" to track)</code></pre></div><p>Spousta souborů, ale jen jeden z nich chceš v repozitáři.
+nothing added to commit but untracked files present (use "git add" to track)
+</code></pre></div><p>Spousta souborů, ale jen jeden z nich chceš v repozitáři.
 Co s těmi ostatními?</p>
 <h2 id="vystupy_programu_a_pomocne_soubory_spolecnych_nastroju">Výstupy programu a pomocné soubory společných nástrojů
 <a href="#vystupy_programu_a_pomocne_soubory_spolecnych_nastroju" class="header-link">#</a>
@@ -94,7 +100,8 @@ To se dělá záznamem ve speciálním souboru v repozitáři.</p>
 (Pozor na tečku ve jménu souboru; na některých systémech se špatně zadává –
 doporučuji soubor vytvořit v programátorském editoru.)
 Do něj napiš:</p>
-<div class="highlight"><pre><code>obrazek.ps</code></pre></div><p>Pak se podívej na <code>git status</code>. Obrázek už by ve výpisu neměl být!</p>
+<div class="highlight"><pre><code>obrazek.ps
+</code></pre></div><p>Pak se podívej na <code>git status</code>. Obrázek už by ve výpisu neměl být!</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
 On branch master
 
@@ -102,12 +109,13 @@ No commits yet
 
 Untracked files:
   (use "git add &lt;file&gt;..." to include in what will be committed)
-    <span style="color: #aa0000">.gitignore</span>
-    <span style="color: #aa0000">Autofile.tmp</span>
-    <span style="color: #aa0000">obrazek.py</span>
-    <span style="color: #aa0000">poznamky.txt</span>
+	<span style="color: #aa0000">.gitignore</span>
+	<span style="color: #aa0000">Autofile.tmp</span>
+	<span style="color: #aa0000">obrazek.py</span>
+	<span style="color: #aa0000">poznamky.txt</span>
 
-nothing added to commit but untracked files present (use "git add" to track)</code></pre></div><p>Nový soubor <code>.gitignore</code> přidej do repozitáře společně se samotným programem:</p>
+nothing added to commit but untracked files present (use "git add" to track)
+</code></pre></div><p>Nový soubor <code>.gitignore</code> přidej do repozitáře společně se samotným programem:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git add .gitignore obrazek.py
 <span style="color: #00aaaa">$</span> git status
 On branch master
@@ -116,13 +124,14 @@ No commits yet
 
 Changes to be committed:
   (use "git rm --cached &lt;file&gt;..." to unstage)
-    <span style="color: #00aa00">new file:   .gitignore</span>
-    <span style="color: #00aa00">new file:   obrazek.py</span>
+	<span style="color: #00aa00">new file:   .gitignore</span>
+	<span style="color: #00aa00">new file:   obrazek.py</span>
 
 Untracked files:
   (use "git add &lt;file&gt;..." to include in what will be committed)
-    <span style="color: #aa0000">Autofile.tmp</span>
-    <span style="color: #aa0000">poznamky.txt</span></code></pre></div><p>Když uděláš <code>git commit</code> a repozitář nasdílíš s ostatními, všichni dostanou
+	<span style="color: #aa0000">Autofile.tmp</span>
+	<span style="color: #aa0000">poznamky.txt</span>
+</code></pre></div><p>Když uděláš <code>git commit</code> a repozitář nasdílíš s ostatními, všichni dostanou
 <code>.gitignore</code> s instrukcí, že <code>obrazek.ps</code> do repozitáře nepatří.</p>
 <p>Jak ignorovat zbylé dva soubory?</p>
 <h2 id="osobni_poznamky">Osobní poznámky
@@ -133,13 +142,14 @@ Existuje jen u tebe; není důvod předpokládat, že si někdo jiný vytvoří
 soubor se stejným jménem.</p>
 <p>Dej ho tedy do souboru, který se nebude šířit s repozitářem.
 Tento soubor je <code>.git/info/exclude</code>.
-(Může být trochu složité ho najít, protože adresář <code>.git</code> je skrytý. 
+(Může být trochu složité ho najít, protože adresář <code>.git</code> je skrytý.
 Nevidíš–li ho, napiš v editoru do okýnka pro otevření souboru <code>.git</code> a dostaneš
 se do něj.)</p>
 <p>Soubory v adresáři <code>.git</code> bys neměl/a měnit, protože se tak dá přijít
 o historii projektu.
 Ale <code>exclude</code> je výjimka. Napiš na konec tohoto souboru:</p>
-<div class="highlight"><pre><code>poznamky.txt</code></pre></div><p>A po uložení budou poznámky ignorovány!</p>
+<div class="highlight"><pre><code>poznamky.txt
+</code></pre></div><p>A po uložení budou poznámky ignorovány!</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
 On branch master
 
@@ -147,12 +157,13 @@ No commits yet
 
 Changes to be committed:
   (use "git rm --cached &lt;file&gt;..." to unstage)
-    <span style="color: #00aa00">new file:   .gitignore</span>
-    <span style="color: #00aa00">new file:   obrazek.py</span>
+	<span style="color: #00aa00">new file:   .gitignore</span>
+	<span style="color: #00aa00">new file:   obrazek.py</span>
 
 Untracked files:
   (use "git add &lt;file&gt;..." to include in what will be committed)
-    <span style="color: #aa0000">Autofile.tmp</span></code></pre></div><h2 id="dalsi_haraburdi">Další haraburdí
+	<span style="color: #aa0000">Autofile.tmp</span>
+</code></pre></div><h2 id="dalsi_haraburdi">Další haraburdí
 <a href="#dalsi_haraburdi" class="header-link">#</a>
 </h2>
 <p>Některé programy automaticky vytvářejí pomocné soubory.
@@ -171,8 +182,10 @@ kde budeš chtít.
 Já doporučuji ho pojmenovat <code>.gitignore_global</code> a dát ho do tvého domovského
 adresáře.</p>
 <p>Do souboru zase napiš jméno ignorovaného souboru:</p>
-<div class="highlight"><pre><code>Autofile.tmp</code></pre></div><p>Potom řekni Gitu, kde tento soubor najít:</p>
-<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git config --global core.excludesfile /tmp/tmp.1spGPvBL5W/.gitignore_global</code></pre></div><p>A měl by být ignorován:</p>
+<div class="highlight"><pre><code>Autofile.tmp
+</code></pre></div><p>Potom řekni Gitu, kde tento soubor najít:</p>
+<div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git config --global core.excludesfile /tmp/tmp.1spGPvBL5W/.gitignore_global
+</code></pre></div><p>A měl by být ignorován:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
 On branch master
 
@@ -180,8 +193,9 @@ No commits yet
 
 Changes to be committed:
   (use "git rm --cached &lt;file&gt;..." to unstage)
-    <span style="color: #00aa00">new file:   .gitignore</span>
-    <span style="color: #00aa00">new file:   obrazek.py</span></code></pre></div><h2 id="format_ignorovaciho_souboru">Formát ignorovacího souboru
+	<span style="color: #00aa00">new file:   .gitignore</span>
+	<span style="color: #00aa00">new file:   obrazek.py</span>
+</code></pre></div><h2 id="format_ignorovaciho_souboru">Formát ignorovacího souboru
 <a href="#format_ignorovaciho_souboru" class="header-link">#</a>
 </h2>
 <p>Ve všech třech „ignorovacích“ souborech lze samozřejmě uvést víc souborů:
@@ -190,10 +204,12 @@ Kromě toho je možné použít několik vychytávek:</p>
 <ul>
 <li><p><code>*</code> ve jméně souboru nahradí část jména souboru.
 Takže pokud chceš ignorovat všechny soubory s příponou <code>.tmp</code>, můžeš napsat:</p>
-<div class="highlight"><pre><code>*.tmp</code></pre></div></li>
+<div class="highlight"><pre><code>*.tmp
+</code></pre></div></li>
 <li><p><code>/</code> na konci jména značí adresář. Chceš-li tedy ignorovat adresáře
 <code>__pycache__</code> (což v Pythonním projektu chceš), napiš do <code>.gitignore</code>:</p>
-<div class="highlight"><pre><code>__pycache__/</code></pre></div></li>
+<div class="highlight"><pre><code>__pycache__/
+</code></pre></div></li>
 </ul>
 <p>Další detaily je možné najít v <a href="https://git-scm.com/docs/gitignore">dokumentaci</a>.</p>
 <h2 id="automaticke_pridavani">Automatické přidávání

@@ -25,7 +25,9 @@ operátorem <code>in</code> pak jestli v sobě obsahuje daný podřetězec.</p>
         <td>Opak <code>x in r</code></td>
         <td><code>'dub' not in 'čokoláda</code></td>
     </tr>
-</table><p>Řetězce vždy berou v potaz velikost písmen,
+</table>
+
+<p>Řetězce vždy berou v potaz velikost písmen,
 takže např. <code>'ČOKO' in 'čokoláda'</code> je <code>False</code>.
 Kdybys chtěl/a porovnávat bez ohledu na velikost písmen,
 musel/a bys oba řetězce převést třeba na malá písmena
@@ -67,20 +69,22 @@ a pak vypíše iniciály – první písmena zadaných jmen.</p>
     </div>
     <div class="solution-body" aria-hidden="true">
         <div class="highlight"><pre><span></span><span class="n">jmeno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej jméno: &#39;</span><span class="p">)</span>
-<span class="n">prijmeni</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej příjmení &#39;</span><span class="p">)</span>
-<span class="n">inicialy</span> <span class="o">=</span> <span class="n">jmeno</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">prijmeni</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Iniciály:&#39;</span><span class="p">,</span> <span class="n">inicialy</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-</pre></div><p>Způsobů, jak takový program napsat, je více.
-Lze například zavolat <code>upper()</code> dvakrát – zvlášť na jméno a zvlášť na příjmení.</p>
-<p>Nebo to jde zapsat i takto –
-metoda se dá volat na výsledku jakéhokoli výrazu:</p>
-<div class="highlight"><pre><span></span><span class="n">jmeno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej jméno: &#39;</span><span class="p">)</span>
-<span class="n">prijmeni</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej příjmení &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Iniciály:&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">jmeno</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">prijmeni</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-</pre></div><p>Doporučuji spíš první způsob, ten se smysluplnými názvy proměnných.
-Je sice delší, ale mnohem přehlednější.</p>
+<span></span><span class="n">prijmeni</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej příjmení &#39;</span><span class="p">)</span>
+<span></span><span class="n">inicialy</span> <span class="o">=</span> <span class="n">jmeno</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">prijmeni</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Iniciály:&#39;</span><span class="p">,</span> <span class="n">inicialy</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span></span></pre></div><p>Způsobů, jak takový program napsat, je více.
+<span></span>Lze například zavolat <code>upper()</code> dvakrát – zvlášť na jméno a zvlášť na příjmení.</p>
+<span></span><p>Nebo to jde zapsat i takto –
+<span></span>metoda se dá volat na výsledku jakéhokoli výrazu:</p>
+<span></span><div class="highlight"><pre><span></span><span class="n">jmeno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej jméno: &#39;</span><span class="p">)</span>
+<span></span><span class="n">prijmeni</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej příjmení &#39;</span><span class="p">)</span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Iniciály:&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">jmeno</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">prijmeni</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span></span></pre></div><p>Doporučuji spíš první způsob, ten se smysluplnými názvy proměnných.
+<span></span>Je sice delší, ale mnohem přehlednější.</p>
     </div>
-</div><h3 id="a_dalsi">A další
+</div>
+
+<h3 id="a_dalsi">A další
 <a href="#a_dalsi" class="header-link">#</a>
 </h3>
 <p>Řetězcových metod je celá řada.

@@ -442,14 +442,15 @@ nenachází žádný citlivý údaj, a pokud tam je, přepsat kód tak, aby se t
 <h4 id="komprimovane_citlive_udaje">Komprimované citlivé údaje
 <a href="#komprimovane_citlive_udaje" class="header-link">#</a>
 </h4>
-<p>Problém může nastat, pokud je token či jiná citlivá informace uložena jako část v těle 
+<p>Problém může nastat, pokud je token či jiná citlivá informace uložena jako část v těle
 odpovědi (případně i požadavku) a zároveň je toto tělo zprávy zkomprimováno (defaultní
-chování, viz <a href="http://betamax.readthedocs.io/en/latest/implementation_details.html#gzip-content-encoding">dokumentace</a>). 
-V takovém případě je potřeba k tomu, aby šlo v kazetě nahradit citlivé údaje, upravit 
-hlavičku <code>Accept-Encoding</code> v <code>betamax_session</code> tak, aby neobsahovala <code>*</code>, <code>gzip</code>, 
+chování, viz <a href="http://betamax.readthedocs.io/en/latest/implementation_details.html#gzip-content-encoding">dokumentace</a>).
+V takovém případě je potřeba k tomu, aby šlo v kazetě nahradit citlivé údaje, upravit
+hlavičku <code>Accept-Encoding</code> v <code>betamax_session</code> tak, aby neobsahovala <code>*</code>, <code>gzip</code>,
 <code>compress</code> ani <code>deflate</code>:</p>
-<div class="highlight"><pre><code>betamax_session.headers.update({'Accept-Encoding': 'identity'})</code></pre></div><div class="admonition note"><p>Kódování <code>'identity'</code> má shodné chování jako <code>''</code> a to, že data ve zprávě nejsou 
-nijak transformována, více viz <a href="https://en.wikipedia.org/wiki/HTTP_compression#Content-Encoding_tokens">Wikipedia</a> 
+<div class="highlight"><pre><code>betamax_session.headers.update({'Accept-Encoding': 'identity'})
+</code></pre></div><div class="admonition note"><p>Kódování <code>'identity'</code> má shodné chování jako <code>''</code> a to, že data ve zprávě nejsou
+nijak transformována, více viz <a href="https://en.wikipedia.org/wiki/HTTP_compression#Content-Encoding_tokens">Wikipedia</a>
 a <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.3">specifikace HTTP</a>)</p>
 </div><h3 id="ktere_http_pozadavky_jsou_stejne">Které HTTP požadavky jsou stejné?
 <a href="#ktere_http_pozadavky_jsou_stejne" class="header-link">#</a>
@@ -506,7 +507,8 @@ mypkg/
     appmodule.py
 tests/
     test_app.py
-    ...</code></pre></div><p>nebo do něj:</p>
+    ...
+</code></pre></div><p>nebo do něj:</p>
 <div class="highlight"><pre><code>setup.py
 mypkg/
     __init__.py
@@ -514,7 +516,8 @@ mypkg/
     ...
     test/
         test_app.py
-        ...</code></pre></div><p>První způsob je preferovaný, protože pomáhá udržovat kód a testy oddělené.
+        ...
+</code></pre></div><p>První způsob je preferovaný, protože pomáhá udržovat kód a testy oddělené.
 Pokud ho použijete, nedávejte do něj <code>__init__.py</code> – není to importovatelný
 Pythonní modul, ale jen sada souborů s testy.</p>
 <p>Ve druhém případě mějte na paměti, že pytest pouští testy jako samostatné
@@ -544,7 +547,8 @@ Pokud pytest používáme, je proto dobré <code>setup.py</code> naučit spoušt
 <span class="p">)</span>
 </pre></div><p>a přidat následující sekci do <code>setup.cfg</code>:</p>
 <div class="highlight"><pre><code>[aliases]
-test=pytest</code></pre></div><p>Příkaz <code>python setup.py test</code> by měl fungovat, ale neočekává se, že bude
+test=pytest
+</code></pre></div><p>Příkaz <code>python setup.py test</code> by měl fungovat, ale neočekává se, že bude
 podporovat další argumenty pytestu (jako <code>-v</code>).
 Na to uživatel spustí pytest samotný.</p>
 <p>Další informace jsou v <a href="http://doc.pytest.org/en/latest/goodpractices.html#integrating-with-setuptools-python-setup-py-test-pytest-runner">dokumentaci pytestu</a>.</p>

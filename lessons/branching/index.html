@@ -24,7 +24,8 @@ tak se různé změny sloučí dohromady.</p>
 <p>Podívej se, jaké máš větve ve svém repozitáři.
 K tomu slouží příkaz <code>git branch</code>:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git branch
-* <span style="color: #00aa00">master</span></code></pre></div><p>Je tam jenom jedna a jmenuje se <code>master</code>
+* <span style="color: #00aa00">master</span>
+</code></pre></div><p>Je tam jenom jedna a jmenuje se <code>master</code>
 – to je tradičně jméno „hlavní” větve.</p>
 <p>K vytvoření nové větve znovu použiješ
 <code>git branch</code>, jen tomu příkazu dáš navíc
@@ -34,7 +35,8 @@ tak větev pojmenuješ <code>doplneni-autora</code>.</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git branch doplneni-autora
 <span style="color: #00aaaa">$</span> git branch
   doplneni-autora
-* <span style="color: #00aa00">master</span></code></pre></div><p>Tenhle příkaz sice udělal novou větev,
+* <span style="color: #00aa00">master</span>
+</code></pre></div><p>Tenhle příkaz sice udělal novou větev,
 ale nepřepnul do ní.
 Hvězdička ve výstupu z <code>git branch</code> ukazuje,
 že stále pracuješ v <code>master</code>.
@@ -43,7 +45,8 @@ Na přepnutí budeš potřebovat další příkaz:</p>
 Switched to branch 'doplneni-autora'
 <span style="color: #00aaaa">$</span> git branch
 * <span style="color: #00aa00">doplneni-autora</span>
-  master</code></pre></div><p>Tak. Teď jsi „ve” větvi <code>doplneni-autora</code>.
+  master
+</code></pre></div><p>Tak. Teď jsi „ve” větvi <code>doplneni-autora</code>.
 Doplň nějaké jméno na začátek souboru <code>basnicka.txt</code>,
 a pomocí <code>git add</code> a <code>git commit</code> udělej novou revizi.
 Pak koukni na <code>gitk --all</code>, jak to vypadá:</p>
@@ -63,7 +66,8 @@ Switched to branch 'doplneni-jmena'
 <span style="color: #00aaaa">$</span> git branch
   doplneni-autora
 * <span style="color: #00aa00">doplneni-jmena</span>
-  master</code></pre></div><p>Doplň jméno básně na začátek souboru (tedy na stejné místo,
+  master
+</code></pre></div><p>Doplň jméno básně na začátek souboru (tedy na stejné místo,
 jako je v druhé větvi název) a pomocí
 <code>git add</code>, <code>git commit</code> ulož revizi.
 Všechno zkontroluj přes <code>gitk --all</code>.</p>
@@ -98,7 +102,8 @@ Switched to branch 'master'
 Updating 1fcd654..5c9bf93
 Fast-forward
  basnicka.txt | 3 <span style="color: #00aa00">+++</span>
- 1 file changed, 3 insertions(+)</code></pre></div><p>Sloučeno! Ono „<code>Fast-forward</code>” znamená, že
+ 1 file changed, 3 insertions(+)
+</code></pre></div><p>Sloučeno! Ono „<code>Fast-forward</code>” znamená, že
 vlastně nebylo co slučovat – jen se do větve
 <code>master</code> přidaly nové změny.
 Zkontroluj v <code>gitk --all</code>, jak to vypadá.</p>
@@ -109,7 +114,8 @@ automaticky sloučit a ve výstupu se objeví hláška
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git merge doplneni-autora
 Auto-merging basnicka.txt
 CONFLICT (content): Merge conflict in basnicka.txt
-Automatic merge failed; fix conflicts and then commit the result.</code></pre></div><div class="admonition note"><p class="admonition-title">A když ne?</p>
+Automatic merge failed; fix conflicts and then commit the result.
+</code></pre></div><div class="admonition note"><p class="admonition-title">A když ne?</p>
 <p>Jestli se konflikt neobjevil, Git změny sloučil sám.
 Gratuluji! Zbytek téhle sekce bude jen teoretický; vrať se sem, až se ti
 někdy „podaří“ konflikt udělat.</p>
@@ -123,9 +129,10 @@ You have unmerged paths.
 
 Unmerged paths:
   (use "git add &lt;file&gt;..." to mark resolution)
-    <span style="color: #aa0000">both modified:   basnicka.txt</span>
+	<span style="color: #aa0000">both modified:   basnicka.txt</span>
 
-no changes added to commit (use "git add" and/or "git commit -a")</code></pre></div><p>V tom případě se na soubor podívej v editoru: objeví
+no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre></div><p>V tom případě se na soubor podívej v editoru: objeví
 se v něm obsah z obou konfliktních verzí,
 společně se značkami <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code> a <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>, které upozorňují na
 místo kde konflikt nastal.</p>
@@ -143,7 +150,8 @@ místo kde konflikt nastal.</p>
 <span style="color: #00aa00">++&gt;&gt;&gt;&gt;&gt;&gt;&gt; doplneni-autora</span>
   
   Holka modrooká
-  Nesedávej u potoka</code></pre></div><p>Konflikty a značky, které můžou být nepřehledné, ukazuje Git ze stejného důvodu
+  Nesedávej u potoka
+</code></pre></div><p>Konflikty a značky, které můžou být nepřehledné, ukazuje Git ze stejného důvodu
 jako Python chybové hlášky: tedy aby ti co nejvíce pomohl.
 Git je jen „hloupý“ nástroj a s konfliktem si neporadí sám, ale snaží se
 ti řešení konfliktu co nejvíc usnadnit.</p>
@@ -157,7 +165,8 @@ Značky jako <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> smaž; řádky poskládej
 Tentokrát je popisek už předvyplněný; chceš-li nějaký jiný, nahraď ho.</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git add basnicka.txt
 <span style="color: #00aaaa">$</span> git commit
-[master 884b30a] Merge branch 'doplneni-autora'</code></pre></div><p>Povedlo se?</p>
+[master 884b30a] Merge branch 'doplneni-autora'
+</code></pre></div><p>Povedlo se?</p>
 <p><span class="figure"><a href="naucse:static?filename=merge.png"><img src="naucse:static?filename=merge.png" alt="Výstup programu `gitk` s větvemi doplneni-autora a doplneni-nazvu sloučenými do master"></a></span></p>
 <p>Pokud ano, můžeš staré větve vymazat – všechny jejich
 změny jsou v <code>master</code> a nemá na nich cenu
@@ -167,4 +176,5 @@ Deleted branch doplneni-autora (was f1cd9be).
 <span style="color: #00aaaa">$</span> git branch --delete doplneni-jmena
 Deleted branch doplneni-jmena (was 5c9bf93).
 <span style="color: #00aaaa">$</span> git branch
-* <span style="color: #00aa00">master</span></code></pre></div><p>Gratuluji, už umíš větvení a slučování!</p>
+* <span style="color: #00aa00">master</span>
+</code></pre></div><p>Gratuluji, už umíš větvení a slučování!</p>
