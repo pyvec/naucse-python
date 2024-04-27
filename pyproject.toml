@@ -9,7 +9,7 @@ license = "CC-BY-SA-4.0"
 python = "^3.9"
 pygments-pytest = "^2.2.0"
 naucse = "^0.5.2"
-naucse-render = "^1.8"
+naucse-render = "^2.0"
 
 [tool.poetry.extras]
 ghp-compiled = ["ghp-import"]
