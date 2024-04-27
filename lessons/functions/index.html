@@ -35,7 +35,7 @@ Třeba program v jazyce APL laik jednoduše ani nenapíše, ani nepřečte:</p>
 <div class="highlight"><pre><code>⍎’⎕’,∈Nρ⊂S←’←⎕←(3=T)∨M∧2=T←⊃+/(V⌽”⊂M),(V⊖”⊂M),(V,⌽V)⌽”(V,V←1¯1)⊖”⊂M’</code></pre></div><p>Expert v APL může být vysoce produktivní, ale Python se zaměřuje spíš na to,
 aby se dal snadno naučit.
 A tak používá symboly jen pro ty nejčastější operace.
-Operátorů které využívají symboly je tak málo, že už jich zhruba půlku znáš!</p>
+Operátorů, které využívají symboly, je tak málo, že už jich zhruba půlku znáš!</p>
 <div class="admonition note"><p>Pro zajímavost, tady jsou všechny – i ty co ještě neznáš:</p>
 <!--
 “Operátor” není přesně definovaný termín.
@@ -144,7 +144,7 @@ Liší se ale návratovou hodnotou.</p>
 <p>Funkce <code>print</code> sice něco <em>udělá</em> – vypíše text
 na obrazovku – ale nevrátí žádný smysluplný výsledek, který by zbytek programu
 mohl dál zpracovat.</p>
-<p>Funkcím, které nic nevrací (jen něco udělají) se občas říká <em>procedury</em>.
+<p>Funkcím, které nic nevrací (jen něco udělají), se občas říká <em>procedury</em>.
 V Pythonu není hranice mezi „normální“ funkcí a procedurou příliš ostrá,
 ale přesto se hodí tento koncept znát.
 Pár příkladů:</p>
@@ -154,7 +154,7 @@ Svůj výsledek vrátí; program s ním může dál pracovat.</li>
 <li>Funkce, která vykreslí na obrazovku kolečko, je <em>procedura</em>.
 Žádnou zajímavou hodnotu programu nevrací.</li>
 <li>Funkce, která spočítá průměrný věk obyvatelstva podle informací ze sčítání
-lidu je „normální“. Svůj výsledek vrátí a program s ním může dál pracovat.</li>
+lidu, je „normální“. Svůj výsledek vrátí a program s ním může dál pracovat.</li>
 <li>Funkce, která přehraje písničku reproduktorem, je <em>procedura</em>.
 Nic zajímavého programu nevrací.</li>
 </ul>
@@ -167,8 +167,8 @@ odkaž ho prosím na tyto materiály.</p>
 <a href="#argumenty" class="header-link">#</a>
 </h2>
 <p>Argument je to, co funkci dáš k dispozici. Hodnota, se kterou funkce pracuje.
-Chceš-li délku řetězce <code>Ahoj!</code>, použiješ funkci <code>len</code> která umí vypočítat
-délku <em>jakéhokoli</em> řetězce a jako argument, v závorkách, jí dáš tu svoji
+Chceš-li délku řetězce <code>Ahoj!</code>, použiješ funkci <code>len</code>, která umí vypočítat
+délku <em>jakéhokoli</em> řetězce, a jako argument, v závorkách, jí dáš tu svoji
 konkrétní hodnotu: <code>len('Ahoj!')</code>.</p>
 <p>Podobně funkce <code>print</code> umí vypsat jakoukoli hodnotu.
 Tu, kterou má vypsat ve tvém konkrétním případě, jí předáš jako argument.</p>
@@ -200,7 +200,7 @@ s rovnítkem, ale uvnitř závorek.</p>
 ale pomocí argumentu <code>sep</code> se dá použít i něco jiného.</p>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>     <span class="c1"># Místo mezery odděluj čárkou</span>
 </pre></div><p>Dá se změnit i to, co <code>print</code> udělá na konci výpisu.
-Normálně přejde na nový řádek, ale argumentem <code>end</code> můžeš říct, co se má vypsat 
+Normálně přejde na nový řádek, ale argumentem <code>end</code> můžeš říct, co se má vypsat
 <em>místo toho</em>.</p>
 <div class="admonition note"><p>Tenhle příklad je potřeba napsat do souboru; v interaktivní konzoli
 nebude výstup vypadat tak, jak má.</p>
@@ -214,9 +214,9 @@ nebude výstup vypadat tak, jak má.</p>
 <p>Pozor na to, že když nenapíšeš závorky, funkce se nezavolá!
 Výraz <code>len(s)</code> je <em>volání funkce</em>, ale <code>len</code> bez závorek označuje
 <em>funkci samotnou</em>.</p>
-<p>Výsledek <code>len(s)</code> je číslo; <code>len</code> je funkce.</p>
-<p>Čísla můžeš sečítat, můžeš tedy napsat <code>len(s) + 1</code>.
-Funkce ale sečítat nejde – <code>len + 1</code> nedává smysl.</p>
+<p>Výsledek výrazu <code>len(s)</code> je číslo; výsledek výrazu <code>len</code> je samotná funkce <code>len</code>.</p>
+<p>Čísla můžeš sčítat, můžeš tedy napsat <code>len(s) + 1</code>.
+Funkce ale sčítat nejde – <code>len + 1</code> nedává smysl.</p>
 <p>Často se ale stane, že závorky prostě zapomeneš.
 Zkus si, co dělají následující příklady, a pozorně si přečti výsledky
 a chybové hlášky, abys pak podobné chyby poznal/a:</p>

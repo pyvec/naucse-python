@@ -19,10 +19,10 @@ odpovídající chybovou hlášku:</p>
 Co s tím má chudák funkce <code>int</code> dělat?
 Není žádná rozumná hodnota, kterou by mohla vrátit.
 Převádění tohoto textu na celé číslo nedává smysl.</p>
-<p>Až funkce <code>nacti_cislo</code> nejlíp „ví“, co se má stát když uživatel nezadá
+<p>Až funkce <code>nacti_cislo</code> nejlíp „ví“, co se má stát, když uživatel nezadá
 číslice.
 Stačí se uživatele zeptat znovu!
-Kdybys měl/a funkci, která zjistí jestli jsou v řetězci jen číslice,
+Kdybys měl/a funkci, která zjistí, jestli jsou v řetězci jen číslice,
 mohlo by to fungovat nějak takhle:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nacti_cislo</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Získá od uživatele celé číslo a vrátí ho&quot;&quot;&quot;</span>
@@ -111,8 +111,8 @@ Navíc chybový výstup, který Python standardně
 připraví, může hodně ulehčit hledání chyby.</p>
 <p>Zachytávej tedy jenom ty chyby, které <em>očekáváš</em> – víš přesně, která chyba může
 nastat a proč; máš možnost správně zareagovat.</p>
-<p>V našem příkladu to platí pro <code>ValueError</code> z funkce <code>int</code>: víš že uživatel
-nemusí vždy zadat číslo ve správném formátu a víš že správná
+<p>V našem příkladu to platí pro <code>ValueError</code> z funkce <code>int</code>: víš, že uživatel
+nemusí vždy zadat číslo ve správném formátu, a víš, že správná
 reakce na tuhle situaci je problém vysvětlit a zeptat se znovu.</p>
 <p>Co ale dělat, když uživatel chce ukončit program a zmáčkne
 <kbd>Ctrl</kbd>+<kbd>C</kbd>?

@@ -6,7 +6,7 @@ Tento text si doporučuju číst až když narazíš na příslušný úkol,
 abys věděl/a o čem tu je řeč.</p>
 <p>Po rozdělení bude projekt vypadat třeba nějak takhle:
 (Šipky mezi moduly znázorňují importování.)</p>
-<div class="highlight"><pre><code>┌──────────────────╮  ┌───────────────╮  ┌──────────────────╮ 
+<div class="highlight"><pre><code>┌──────────────────╮  ┌───────────────╮  ┌──────────────────╮
 │      ai.py       │  │ piskvorky.py  │  │    hra.py        │
 ├──────────────────┤  ├───────────────┤  ├──────────────────┤
 │                  │◀-│ import ai     │◀-│ import piskvorky │
@@ -60,7 +60,7 @@ nemusí to fungovat podle očekávání.</p>
 <h2 id="organizace_modulu_podle_zavislosti">Organizace modulů podle závislostí
 <a href="#organizace_modulu_podle_zavislosti" class="header-link">#</a>
 </h2>
-<p>První možnost je importovat funkci <code>tah</code> v modulu <code>ai</code>
+<p>První možnost je definovat funkci <code>tah</code> v modulu <code>ai</code>
 a používat ji odtamtud.
 To je jednoduché, ale nerespektuje účel modulu
 <code>ai</code>, který má obsahovat jenom logiku
@@ -79,7 +79,7 @@ můžou být potřeba i jinde.</p>
 </h2>
 <p>Druhá možnost je definovat nový, sdílený modul,
 který se použije jak v <code>piskvorky.py</code> tak v <code>ai.py</code>.</p>
-<p>Takový modul se často se pojmenovává
+<p>Takový modul se často pojmenovává
 <code>util.py</code> (z angl. <em>utility</em>, pomůcka, nástroj).</p>
 <div class="highlight"><pre><code>              ┌──────────────────╮
               │ util.py          │
