@@ -97,7 +97,6 @@ Máš-li už svůj oblíbený editor – Vim, Emacs, Geany, apod., použij ten:
 * [Ostatní]({{ subpage_url('others') }}) – máš-li jiný editor, zkontroluj
   si, že je správně nastaven.
 
-
 ### IDE
 
 Existují i složitější a mocnější editory, takzvané *IDE* (angl. *Integrated
