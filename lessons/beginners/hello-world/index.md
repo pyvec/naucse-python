@@ -48,7 +48,7 @@ Aktivuj si virtuální prostředí.
 > [návodu na tvorbu virtuálního prostředí](../venv-setup/); končí `activate`.
 
 
-Pak a zadej tento příkaz:
+Pak zadej tento příkaz:
 
 ```console
 (venv)$ python ahoj.py
@@ -71,7 +71,7 @@ Jestli to nefunguje, zkontroluj, že:
   Jestli ne, ulož ho znovu pod správným jménem.
 * Soubor `ahoj.py` obsahuje správný příkaz, včetně všech uvozovek a závorek.
 * Slovo `(venv)` ani znak `$` nezadáváš – v materiálech jsou proto, aby bylo
-  poznat že jde o příkaz příkazové řádky.
+  poznat, že jde o příkaz příkazové řádky.
   Na `$` (nebo, na Windows, `>`) končí dotaz, který vypíše sám počítač.
   Příkaz, který zadáváš ty, je jen `python ahoj.py`.
 

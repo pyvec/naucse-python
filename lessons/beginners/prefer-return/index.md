@@ -40,7 +40,7 @@ print(objem_eliptickeho_valce(3, 5, 3))
 Proto je dobré psát funkce, které spočítané hodnoty vrací,
 a zpracování výsledku (např. vypsání) nechat na kód mimo funkci.
 
-Další důvod, proč hodnoty spíš vracet než vypisovat je ten, že jedna funkce se
+Další důvod, proč hodnoty spíš vracet než vypisovat, je ten, že jedna funkce se
 dá použít v různých situacích.
 Proceduru s `print` by nešlo rozumně použít tehdy, když nás příkazová
 řádka vůbec nezajímá – třeba v grafické hře, webové aplikaci nebo pro ovládání

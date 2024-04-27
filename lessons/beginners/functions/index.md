@@ -40,11 +40,11 @@ Třeba program v jazyce APL laik jednoduše ani nenapíše, ani nepřečte:
 Expert v APL může být vysoce produktivní, ale Python se zaměřuje spíš na to,
 aby se dal snadno naučit.
 A tak používá symboly jen pro ty nejčastější operace.
-Operátorů které využívají symboly je tak málo, že už jich zhruba půlku znáš!
+Operátorů, které využívají symboly, je tak málo, že už jich zhruba půlku znáš!
 
 > [note]
 > Pro zajímavost, tady jsou všechny – i ty co ještě neznáš:
-> 
+>
 > <!--
 > “Operátor” není přesně definovaný termín.
 > Tenhle seznam by měl odpovídat https://docs.python.org/3/reference/expressions.html#operator-precedence
@@ -196,7 +196,7 @@ Funkce `print` sice něco *udělá* – vypíše text
 na obrazovku – ale nevrátí žádný smysluplný výsledek, který by zbytek programu
 mohl dál zpracovat.
 
-Funkcím, které nic nevrací (jen něco udělají) se občas říká *procedury*.
+Funkcím, které nic nevrací (jen něco udělají), se občas říká *procedury*.
 V Pythonu není hranice mezi „normální“ funkcí a procedurou příliš ostrá,
 ale přesto se hodí tento koncept znát.
 Pár příkladů:
@@ -206,7 +206,7 @@ Pár příkladů:
 * Funkce, která vykreslí na obrazovku kolečko, je *procedura*.
   Žádnou zajímavou hodnotu programu nevrací.
 * Funkce, která spočítá průměrný věk obyvatelstva podle informací ze sčítání
-  lidu je „normální“. Svůj výsledek vrátí a program s ním může dál pracovat.
+  lidu, je „normální“. Svůj výsledek vrátí a program s ním může dál pracovat.
 * Funkce, která přehraje písničku reproduktorem, je *procedura*.
   Nic zajímavého programu nevrací.
 
@@ -221,8 +221,8 @@ Pár příkladů:
 ## Argumenty
 
 Argument je to, co funkci dáš k dispozici. Hodnota, se kterou funkce pracuje.
-Chceš-li délku řetězce `Ahoj!`, použiješ funkci `len` která umí vypočítat
-délku *jakéhokoli* řetězce a jako argument, v závorkách, jí dáš tu svoji
+Chceš-li délku řetězce `Ahoj!`, použiješ funkci `len`, která umí vypočítat
+délku *jakéhokoli* řetězce, a jako argument, v závorkách, jí dáš tu svoji
 konkrétní hodnotu: `len('Ahoj!')`.
 
 Podobně funkce `print` umí vypsat jakoukoli hodnotu.
@@ -268,7 +268,7 @@ print(1, 2, 3, 4, sep=', ')     # Místo mezery odděluj čárkou
 ```
 
 Dá se změnit i to, co `print` udělá na konci výpisu.
-Normálně přejde na nový řádek, ale argumentem `end` můžeš říct, co se má vypsat 
+Normálně přejde na nový řádek, ale argumentem `end` můžeš říct, co se má vypsat
 *místo toho*.
 
 > [note]
@@ -289,10 +289,10 @@ Pozor na to, že když nenapíšeš závorky, funkce se nezavolá!
 Výraz `len(s)` je *volání funkce*, ale `len` bez závorek označuje
 *funkci samotnou*.
 
-Výsledek `len(s)` je číslo; `len` je funkce.
+Výsledek výrazu `len(s)` je číslo; výsledek výrazu `len` je samotná funkce `len`.
 
-Čísla můžeš sečítat, můžeš tedy napsat `len(s) + 1`.
-Funkce ale sečítat nejde – `len + 1` nedává smysl.
+Čísla můžeš sčítat, můžeš tedy napsat `len(s) + 1`.
+Funkce ale sčítat nejde – `len + 1` nedává smysl.
 
 Často se ale stane, že závorky prostě zapomeneš.
 Zkus si, co dělají následující příklady, a pozorně si přečti výsledky

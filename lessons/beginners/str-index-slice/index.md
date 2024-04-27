@@ -122,7 +122,7 @@ print(retezec[:])
 
 {% filter solution %}
 Zápis `retezec[od:do]` vybere *podřetězec* od pozice `od` do pozice `do`.
-Když jednu z hodnot vynecháš, vybírá se od začádku, resp. do konce.
+Když jednu z hodnot vynecháš, vybírá se od začátku, resp. do konce.
 
 ```python
 retezec = 'čokoláda'
