@@ -3,7 +3,7 @@
 Když už známe seznam, podívejme se na jeho sestřičku: takzvanou
 <var>n</var>-tici (angl. *tuple*).
 
-<var>N</var>-tice může, podobně jako seznam, obsahovat <var>n</var> prvků. 
+<var>N</var>-tice může, podobně jako seznam, obsahovat <var>n</var> prvků.
 <var>N</var>-tice se dvěma prvky je *dvojice*
 neboli *pár* (angl. *pair*); se třemi
 prvky *trojice* (angl. *3-tuple*),
@@ -143,7 +143,7 @@ seznam lidí aktuálně sledujících video může být občas prázdný.
 
 Seznamy i n-tice mají i technické limity:
 <var>n</var>-tice nejdou měnit a až se naučíš pracovat se slovníky,
-zjistíš že seznamy tam nepůjdou použít jako klíče.
+zjistíš, že seznamy tam nepůjdou použít jako klíče.
 V takových případech je potřeba použít ten druhý typ sekvence.
 
 Často není úplně jasné, který typ použít.

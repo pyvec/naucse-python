@@ -401,7 +401,7 @@ for cislo in range(10):
 print(mocniny_dvou)
 ```
 
-Podobným způsobem získáš seznam seznam `matka`, `babička`, `prababička`,
+Podobným způsobem získáš seznam `matka`, `babička`, `prababička`,
 `praprababička`, atd.:
 
 ```python
