@@ -212,7 +212,7 @@ print(popisy_funkci['len'])
 
 ### Zaplň prázdný slovník
 
-Nejobecnější způsob vytváření slovníků je podobný tomu co znáš u seznamů:
+Nejobecnější způsob vytváření slovníků je podobný tomu, co znáš u seznamů:
 vytvoř prázdný slovník a postupně do něj přidávej záznamy, jeden za druhým.
 
 Řekněme, že máš slovník, který přiřazuje ovoci jeho barvu:
@@ -257,7 +257,7 @@ jmena_cisel = {2: 'dva', 3: 'tři'}
 ```
 
 Ale seznamy nebo jiné slovníky ne.
-Typy které se dají použít jako klíč ve slovníku se technicky označují jako
+Typy, které se dají použít jako klíč ve slovníku, se technicky označují jako
 „*hashovatelné*“ (angl. *hashable*).
 Tento termín se objevuje v chybových hláškách:
 
@@ -291,5 +291,5 @@ pěkně pohromadě, můžeš si stáhnout
 [Slovníkový tahák](https://pyvec.github.io/cheatsheets/dicts/dicts-cs.pdf).
 
 Kompletní popis slovníků najdeš
-v [dokumentaci](https://docs.python.org/3.0/library/stdtypes.html#mapping-types-dict)
+v [dokumentaci](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
 Pythonu.

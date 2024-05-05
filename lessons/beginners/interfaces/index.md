@@ -1,11 +1,11 @@
 # Rozhraní
 
-Už víš že funkce ti umožňují kousek kódu:
+Už víš, že funkce ti umožňují kousek kódu:
 
 * použít (zavolat) na více místech v programu, i když definice je jen jedna,
 * vyčlenit, aby detail (jako načtení čísla od uživatele) „nezavazel“ ve větším
   programu, který tak může být přehlednější, a
-* pojmenovat, aby bylo jasné co kód dělá i bez toho, abys musel{{a}} číst
+* pojmenovat, aby bylo jasné, co kód dělá, i bez toho, abys musel{{a}} číst
   samotné tělo funkce.
 
 Další výhoda funkce je, že ji můžeš jednoduše vyměnit za jinou,
@@ -16,10 +16,10 @@ zásuvku ve zdi.
 Do takové zásuvky můžeš zapojit počítač, lampu, nabíječku na mobil, vysavač,
 nebo rádio.
 Zásuvka poskytuje elektrický proud; je jedno, jak ho použiješ.
-Stejně tak je jedno jestli je „druhý konec“ zásuvky připojený k solárnímu
+Stejně tak je jedno, jestli je „druhý konec“ zásuvky připojený k solárnímu
 panelu nebo k atomové elektrárně.
 Zásuvka poskytuje elektrický proud, a jsou u ní důležité určité parametry
-(tvar, napětí, frekvence, maximální proud) na kterých se obě strany,
+(tvar, napětí, frekvence, maximální proud), na kterých se obě strany,
 poskytovatel proudu i spotřebič, shodly.
 Tyhle parametry tvoří *rozhraní*, které umožňuje připojit jakýkoli spotřebič
 k jakékoli elektrárně.
@@ -39,7 +39,7 @@ def ano_nebo_ne(otazka):
 Podobnou funkci už jsi napsal{{a}}.
 Když zavoláš `ano_nebo_ne('Chutná ti čokoláda?')`, otázka se objeví
 na příkazové řádce.
-Když uživatel odpoví, funkce vrátí True nebo False.
+Když uživatel odpoví, funkce vrátí `True` nebo `False`.
 
 Co kdybys ale měl{{a}} následující funkci?
 
@@ -54,9 +54,9 @@ def ano_nebo_ne(otazka):
 
 Když zavoláš tuhle funkci, `ano_nebo_ne('Chutná ti čokoláda?')`, ukáže se
 okýnko se dvěma tlačítky.
-Když uživatel jedno zmáčkne, funkce vrátí True nebo False.
+Když uživatel jedno zmáčkne, funkce vrátí `True` nebo `False`.
 
-Z hlediska programu se nic nemění: jediné co se změní je *definice funkce*;
+Z hlediska programu se nic nemění: jediné, co se změní, je *definice funkce*;
 volání a práce s návratovou hodnotou je pak stejné jako dřív.
 
 
@@ -87,7 +87,7 @@ vyndej, aby se použily ty naimportované.
 Program by měl fungovat stejně jako dřív!
 
 Je to tím, že tyto funkce mají stejné *rozhraní* jako jejich dřívější protějšky.
-Rozhraní funkce tvoří všechno, co potřebuje kód který funkce volá:
+Rozhraní funkce tvoří všechno, co potřebuje kód, který funkce volá:
 
 * jméno, kterým se funkce volá,
 * argumenty, které bere (např. `input` bere otázku jako řetězec; `print`
@@ -103,5 +103,5 @@ použít, věděl jak na to.
 > [note]
 > Modul `tkui` je jen ilustrační. Je udělaný tak, aby se dobře “instaloval”
 > spíš než aby ti pomohl psát reálné programy.
-> V tomto kurzu se vrátíme zpět k příkazové řádce, která je dělaná tak
+> V tomto kurzu se vrátíme zpět k příkazové řádce, která je dělaná tak,
 > aby byla užitečná pro programátory.
