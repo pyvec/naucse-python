@@ -1,8 +1,8 @@
 # Testování
 
-Programátorská práce nespočívá jen v tom, program napsat.
+Programátorská práce nespočívá jen v tom program napsat.
 Důležité je si i ověřit, že opravdu funguje, a případně ho pak opravit.
-Tomu ověřování že program funguje se říká *testování* (angl. *testing*).
+Tomu ověřování, že program funguje, se říká *testování* (angl. *testing*).
 
 Zatím jsi asi svoje programy testoval{{a}} tak, že jsi
 je zkusil{{a}} spustit, něco zadal{{a}} a podíval{{a}} se,
@@ -18,14 +18,14 @@ Píšou jiné programy, které jejich výtvory testují za ně.
 zkontrolují, že program funguje správně.
 Spuštěním testů můžeš kdykoli ověřit, že kód funguje.
 Když v otestovaném kódu v budoucnu uděláš nějakou změnu,
-testy ověří, že jsi nerozbil{{a}} nic co dříve fungovalo.
+testy ověří, že jsi nerozbil{{a}} nic, co dříve fungovalo.
 
 
 ## Instalace knihovny pytest
 
 Zatím jsme v kurzu pracovali s tím, co se instaluje
 se samotným Pythonem – s moduly jako `math` a `turtle`.
-Kromě takových modulů ale existuje ale velká spousta
+Kromě takových modulů ale existuje velká spousta
 dalších *knihoven*, které nejsou přímo v Pythonu, ale dají se doinstalovat
 a používat.
 
@@ -54,8 +54,8 @@ Potom zadej následující příkaz.
 > už při instalaci můžou něco pokazit.
 > Dej si proto pozor a ve jménu `pytest` neudělej překlep!
 >
-> Nainstaluješ-li přesto omylem něco cos nechtěl{{a}}, dej co nejdřív vědět
-> zkušenějšímu programátorovi, aby zkontroloval jaký to mohlo mít efekt.
+> Nainstaluješ-li přesto omylem něco, cos nechtěl{{a}}, dej co nejdřív vědět
+> zkušenějšímu programátorovi, aby zkontroloval, jaký to mohlo mít efekt.
 
 ```console
 (venv)$ python -m pip install pytest
@@ -86,7 +86,7 @@ Potom zadej následující příkaz.
 
 Nejdříve si testování ukážeme na jednoduchém příkladu.
 Tady je funkce `secti`, která umí sečíst
-dvě čísla, a další funkce, která testuje jestli se
+dvě čísla, a další funkce, která testuje, jestli se
 `secti` pro určité hodnoty chová správně.
 
 Kód si opiš do souboru `test_secteni.py` v novém prázdném adresáři.
@@ -159,7 +159,7 @@ usnadnit nalezení a opravu chyby.
 > lze též uvést adresář: `pytest` vyhledá testy v něm.
 
 Zkus si změnit funkci `secti` (nebo její test) a podívat se,
-jak to vypadá když test „neprojde“.
+jak to vypadá, když test „neprojde“.
 
 
 ## Testovací moduly
@@ -170,7 +170,7 @@ Je to tak přehlednější a taky to pak zjednodušuje
 *distribuci* – předání kódu někomu, kdo ho chce
 jen spustit a testy nepotřebuje.
 
-Rozděl soubor s testem sečítání: funkci `secti` přesuň do modulu `secteni.py`,
+Rozděl soubor s testem sečítání: funkci `secti` přesuň do modulu `secteni.py`
 a v `test_secteni.py` nech jenom test.
 Do `test_secteni.py` pak na začátek přidej `from secteni import secti`,
 aby byla funkce testu k dispozici.

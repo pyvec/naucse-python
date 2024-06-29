@@ -26,7 +26,7 @@ Oba jsou sekvence vytvořené z jiných, jednodušších sekvencí.
 Funkce `enumerate` vezme nějakou existující sekvenci a *očísluje ji*:
 ve vrácené sekvenci budou dvojice (index, původní hodnota).
 
-Řekněme že máš tento seznam:
+Řekněme, že máš tento seznam:
 
 ```python
 trpaslici = ['Prófa', 'Stydlín', 'Dřímal', 'Kejchal', 'Štístko',
@@ -170,7 +170,7 @@ for index, den in enumerate(dny, start=1):
 Další iterátor <var>n</var>-tic je funkce `zip`, která umí projít dvě sekvence
 naráz.
 
-Řekněme že máš seznam věcí a druhý seznam, ve kterém jsou barvy těch věcí:
+Řekněme, že máš seznam věcí a druhý seznam, ve kterém jsou barvy těch věcí:
 
 ```python
 veci = ['tráva', 'slunce', 'mrkev', 'list']
@@ -231,7 +231,7 @@ for vec, barva in zip(veci, barvy):
 ```
 
 {% filter solution %}
-Iterátor `zip` skončí hned když dojdou prvky nejkratší sekvence.
+Iterátor `zip` skončí hned, když dojdou prvky nejkratší sekvence.
 {% endfilter %}
 
 Občas je potřeba projít všechny záznamy.

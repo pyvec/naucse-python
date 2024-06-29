@@ -61,7 +61,7 @@ Python vyhodí výjimku  `MemoryError`.
 > U trochu menšího čísla (např. `1000000000`, ale na každém počítači je to
 > jinak) se může stát, že se Python pokusí seznam začít tvořit, zaplní přitom
 > většinu dostupné paměti a počítač „zamrzne“.
-> V závislosti na systému se pak třeba může stát že reakce na
+> V závislosti na systému se pak třeba může stát, že reakce na
 > <kbd>Ctrl</kbd>+<kbd>C</kbd> bude trvat hodně dlouho.
 
 Se samotným `range(1000000000000000)` ale není problém.

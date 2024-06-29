@@ -235,9 +235,9 @@ se často používají formáty [TOML] nebo [YAML].
 
 ### TOML
 
-Knihovnu pro TOML potřeba si nainstalovat.
+Knihovnu pro TOML je potřeba si nainstalovat.
 Dělá se to příkazem, který znáš z instalace knihovny Pytest.
-Pozor ve jméně `toml` neudělej překlep, jinak nainstaluješ něco jiného
+Pozor, ve jméně `toml` neudělej překlep, jinak nainstaluješ něco jiného
 (a možná nebezpečného!):
 
 ```console

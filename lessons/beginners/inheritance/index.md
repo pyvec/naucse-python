@@ -1,7 +1,7 @@
 # Dědičnost
 
-Minule jsme probrali třídy.
-Jako příklad jsme si ukázali třídu pro koťátka:
+Minule jsme probral{{gnd('i', 'y', both='i')}} třídy.
+Jako příklad jsme si ukázal{{gnd('i', 'y', both='i')}} třídu pro koťátka:
 
 ```python
 class Kotatko:
@@ -196,7 +196,7 @@ kdekoliv kde program očekává `Zviratko`,
 protože každé koťátko *je* zvířátko.
 
 > [note]
-> Tohle je docela dobrá pomůcka pro případy, kdy nebudeš vědět
+> Tohle je docela dobrá pomůcka pro případy, kdy nebudeš vědět,
 > kterou třídu podědit z které.
 > Každé *koťátko* nebo *štěňátko*
 > je *zvířátko*, každá *chata*
@@ -260,7 +260,7 @@ for zviratko in zviratka:
     zviratko.snez('flákota')
 ```
 
-Jak tenhle příklad naznačuje, psát nadtřídy ze kterých se dobře dědí
+Jak tenhle příklad naznačuje, psát nadtřídy, ze kterých se dobře dědí,
 není jednoduché. Zvlášť to platí, kdyby se z nich mělo dědit v jiném
 programu, než kde je nadtřída.
 I z toho důvodu je dobré dědičnost používat hlavně v rámci svého kódu:

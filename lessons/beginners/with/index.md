@@ -52,7 +52,7 @@ print(nacti_cele_cislo('cislo.txt') * 11)
 
 Chování příkazu `with` závisí na objektu, se kterým jej použiješ.
 Pro soubor – výsledek funkce `open` – se soubor na konci bloku zavře.
-Podobných „samozavíracích“ objektů které se dají použít s `with` existuje
+Podobných „samozavíracích“ objektů, které se dají použít s `with`, existuje
 v různých knihovnách víc.
 Typické jsou objekty, které se starají o připojení např. k jinému počítači
 nebo k databázi, kdy je po práci dobré spojení ukončit a „uklidit po sobě“.
