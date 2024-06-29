@@ -306,7 +306,7 @@ prohlížení adresářů: zjistíš, že se adresář opravdu vytvořil.
 Občas si otevřeš soubor v prohlížeči souborů a budeš do něj chtít přejít
 v příkazové řádce.
 Zkopírování jména adresáře doufám nebude problém; vkládání do příkazové řádky
-je ale občas jiné než v ostatních pogramech:
+je ale občas jiné než v ostatních programech:
 
 * Linux: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>
 * macOS: <kbd>⌘ Command</kbd>+<kbd>V</kbd>
