@@ -1,9 +1,9 @@
 <h1 id="testovani">Testování
 <a href="#testovani" class="header-link">#</a>
 </h1>
-<p>Programátorská práce nespočívá jen v tom, program napsat.
+<p>Programátorská práce nespočívá jen v tom program napsat.
 Důležité je si i ověřit, že opravdu funguje, a případně ho pak opravit.
-Tomu ověřování že program funguje se říká <em>testování</em> (angl. <em>testing</em>).</p>
+Tomu ověřování, že program funguje, se říká <em>testování</em> (angl. <em>testing</em>).</p>
 <p>Zatím jsi asi svoje programy testoval/a tak, že jsi
 je zkusil/a spustit, něco zadal/a a podíval/a se,
 jestli jsou výsledky v pořádku.
@@ -16,13 +16,13 @@ Píšou jiné programy, které jejich výtvory testují za ně.</p>
 zkontrolují, že program funguje správně.
 Spuštěním testů můžeš kdykoli ověřit, že kód funguje.
 Když v otestovaném kódu v budoucnu uděláš nějakou změnu,
-testy ověří, že jsi nerozbil/a nic co dříve fungovalo.</p>
+testy ověří, že jsi nerozbil/a nic, co dříve fungovalo.</p>
 <h2 id="instalace_knihovny_pytest">Instalace knihovny pytest
 <a href="#instalace_knihovny_pytest" class="header-link">#</a>
 </h2>
 <p>Zatím jsme v kurzu pracovali s tím, co se instaluje
 se samotným Pythonem – s moduly jako <code>math</code> a <code>turtle</code>.
-Kromě takových modulů ale existuje ale velká spousta
+Kromě takových modulů ale existuje velká spousta
 dalších <em>knihoven</em>, které nejsou přímo v Pythonu, ale dají se doinstalovat
 a používat.</p>
 <p>Na testy je v samotném Pythonu zabudovaná knihovna <code>unittest</code>.
@@ -46,8 +46,8 @@ Za knihovnu <code>pytest</code> autoři tohoto kurzu ručí.
 Jiné knihovny ale můžou dělat neplechu nebo být dokonce „zavirované“;
 už při instalaci můžou něco pokazit.
 Dej si proto pozor a ve jménu <code>pytest</code> neudělej překlep!</p>
-<p>Nainstaluješ-li přesto omylem něco cos nechtěl/a, dej co nejdřív vědět
-zkušenějšímu programátorovi, aby zkontroloval jaký to mohlo mít efekt.</p>
+<p>Nainstaluješ-li přesto omylem něco, cos nechtěl/a, dej co nejdřív vědět
+zkušenějšímu programátorovi, aby zkontroloval, jaký to mohlo mít efekt.</p>
 </div><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv)</span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pytest
 </pre></div><div class="admonition note"><p class="admonition-title">Co ten příkaz znamená?</p>
 <p><code>python -m pip</code> zavolá Python s tím, že má pustit modul
@@ -71,7 +71,7 @@ než v tom z virtuálního prostředí – a tam <code>pytest</code> nebude k�
 </h2>
 <p>Nejdříve si testování ukážeme na jednoduchém příkladu.
 Tady je funkce <code>secti</code>, která umí sečíst
-dvě čísla, a další funkce, která testuje jestli se
+dvě čísla, a další funkce, která testuje, jestli se
 <code>secti</code> pro určité hodnoty chová správně.</p>
 <p>Kód si opiš do souboru <code>test_secteni.py</code> v novém prázdném adresáři.
 Jméno je důležité: <code>pytest</code> ve výchozím nastavení předpokládá,
@@ -122,7 +122,7 @@ V takovém případě <code>pytest</code> projde aktuální adresář a spustí
 ze všech souborů, jejichž jméno začíná na <code>test_</code>. Místo souboru
 lze též uvést adresář: <code>pytest</code> vyhledá testy v něm.</p>
 </div><p>Zkus si změnit funkci <code>secti</code> (nebo její test) a podívat se,
-jak to vypadá když test „neprojde“.</p>
+jak to vypadá, když test „neprojde“.</p>
 <h2 id="testovaci_moduly">Testovací moduly
 <a href="#testovaci_moduly" class="header-link">#</a>
 </h2>
@@ -131,7 +131,7 @@ ale do souboru vedle.
 Je to tak přehlednější a taky to pak zjednodušuje
 <em>distribuci</em> – předání kódu někomu, kdo ho chce
 jen spustit a testy nepotřebuje.</p>
-<p>Rozděl soubor s testem sečítání: funkci <code>secti</code> přesuň do modulu <code>secteni.py</code>,
+<p>Rozděl soubor s testem sečítání: funkci <code>secti</code> přesuň do modulu <code>secteni.py</code>
 a v <code>test_secteni.py</code> nech jenom test.
 Do <code>test_secteni.py</code> pak na začátek přidej <code>from secteni import secti</code>,
 aby byla funkce testu k dispozici.</p>
