@@ -1,0 +1,105 @@
+<h2 id="varnvar-tice"><var>N</var>-tice
+<a href="#varnvar-tice" class="header-link">#</a>
+</h2>
+<p>Když už známe seznam, podívejme se na jeho sestřičku: takzvanou
+<var>n</var>-tici (angl. <em>tuple</em>).</p>
+<p><var>N</var>-tice může, podobně jako seznam, obsahovat <var>n</var> prvků.
+<var>N</var>-tice se dvěma prvky je <em>dvojice</em>
+neboli <em>pár</em> (angl. <em>pair</em>); se třemi
+prvky <em>trojice</em> (angl. <em>3-tuple</em>),
+se čtyřmi <em>čtveřice</em> (angl. <em>4-tuple</em>), atd.</p>
+<div class="admonition note"><p>Pro úplnost: existují i <var>n</var>-tice s jedním prvkem (hmm… „jednice”?)
+a s nula prvky (prázdné <var>n</var>-tice, angl. <em>empty tuple</em>),
+ale ty se v praxi tolik nepoužívají.</p>
+</div><p><var>N</var>-tice se tvoří jako seznamy, jen kolem sebe nemají hranaté závorky.
+Stačí čárky mezi prvky:</p>
+<div class="highlight"><pre><span></span><span class="n">dvojice</span> <span class="o">=</span> <span class="s1">&#39;Pat&#39;</span><span class="p">,</span> <span class="s1">&#39;Mat&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dvojice</span><span class="p">)</span>
+</pre></div><p>Chovají se skoro stejně jako seznamy, jen nejdou měnit.
+Nemají tedy metody jako <code>append</code> a <code>pop</code> a nedá se jim přiřazovat do prvků
+(např. <code>ntice[1] = 2</code>).
+Dají se ale použít v cyklu <code>for</code> a dají se z nich číst jednotlivé prvky
+(např. <code>print(ntice[1])</code>).</p>
+<div class="highlight"><pre><span></span><span class="n">osoby</span> <span class="o">=</span> <span class="s1">&#39;máma&#39;</span><span class="p">,</span> <span class="s1">&#39;teta&#39;</span><span class="p">,</span> <span class="s1">&#39;babička&#39;</span>
+<span class="k">for</span> <span class="n">osoba</span> <span class="ow">in</span> <span class="n">osoby</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">osoba</span><span class="p">)</span>
+
+<span class="n">prvni</span> <span class="o">=</span> <span class="n">osoby</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;První je </span><span class="si">{</span><span class="n">prvni</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div><div class="admonition note"><p>Vypadá to povědomě? Aby ne!
+<var>N</var>-tice jsme už použili dříve:
+<code>for pozdrav in 'Ahoj', 'Hello', 'Ciao':</code>
+ve skutečnosti používá <var>n</var>-tici.</p>
+</div><p>Když chceš <var>n</var>-tici předat do funkce,
+narazíš na problém, že čárka odděluje jednotlivé
+argumenty funkce.
+V podobných případech musíš <var>n</var>-tici
+uzavřít do závorek, aby bylo jasné, že jde o jednu
+hodnotu (byť složenou).</p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;osoby:&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;máma&#39;</span><span class="p">,</span> <span class="s1">&#39;teta&#39;</span><span class="p">,</span> <span class="s1">&#39;babička&#39;</span><span class="p">))</span>
+</pre></div><div class="highlight"><pre><span></span><span class="n">seznam_dvojic</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="c1"># `append` bere jen jeden argument; dáme mu jednu dvojici</span>
+    <span class="n">seznam_dvojic</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">seznam_dvojic</span><span class="p">)</span>
+</pre></div><p><var>N</var>-tice se hodí, pokud chceš z funkce vrátit
+víc než jednu hodnotu.
+Když u příkazu <code>return</code> použiješ několik hodnot oddělených čárkou,
+vypadá to, že vracíš několik hodnot, ale
+ve skutečnosti se vrací jen jedna <var>n</var>-tice.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">podil_a_zbytek</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">//</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+</pre></div><div class="admonition note"><p>Funkce „podíl a zbytek“ je mimochodem k dispozici přímo v Pythonu
+pod jménem <code>divmod</code>.</p>
+</div><p>Python umí ještě jeden trik, takzvané „rozbalení“ (angl. <em>unpacking</em>).
+Když chceš přiřadit do několika proměnných najednou, stačí je na levé
+straně rovnítka oddělit čárkou a na pravou stranu
+dát nějakou „složenou” hodnotu – třeba právě <var>n</var>-tici.</p>
+<div class="highlight"><pre><span></span><span class="n">podil</span><span class="p">,</span> <span class="n">zbytek</span> <span class="o">=</span> <span class="n">podil_a_zbytek</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div><div class="admonition note"><p><var>N</var>-tice se k „rozbalování“ hodí nejvíc, protože mají
+daný počet prvků.
+Jde to ale použít se všemi hodnotami, které jdou použít ve <code>for</code>:</p>
+<div class="highlight"><pre><span></span><span class="n">ix</span><span class="p">,</span> <span class="n">ocko</span> <span class="o">=</span> <span class="s1">&#39;xo&#39;</span>
+<span class="n">jedna</span><span class="p">,</span> <span class="n">dva</span><span class="p">,</span> <span class="n">tri</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div></div><h2 id="male_varnvar-tice">Malé <var>n</var>-tice
+<a href="#male_varnvar-tice" class="header-link">#</a>
+</h2>
+<p>Jak vytvořit <var>n</var>-tici s žádným nebo jedním prvkem? Takhle:</p>
+<div class="highlight"><pre><span></span><span class="n">prazdna_ntice</span> <span class="o">=</span> <span class="p">()</span>
+<span class="n">jednoprvkova_ntice</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">)</span>
+</pre></div><p>Druhý příklad jde i bez závorek –
+<code>jednoprvkova_ntice = 'a',</code> –
+ale to vypadá jako zapomenutá čárka.
+Když budeš <em>opravdu</em> potřebovat jednoprvkovou
+<var>n</var>-tici, radši ji pro přehlednost ozávorkuj.</p>
+<h2 id="kdy_pouzit_seznam_a_kdy_varnvar-tici">Kdy použít seznam a kdy <var>n</var>-tici?
+<a href="#kdy_pouzit_seznam_a_kdy_varnvar-tici" class="header-link">#</a>
+</h2>
+<p>Seznamy se používají, když předem nevíš,
+kolik v nich přesně bude hodnot,
+nebo když je hodnot mnoho.
+Například seznam slov ve větě,
+seznam účastníků soutěže, seznam tahů ve hře
+nebo seznam karet v balíčku.
+Oproti tomu <code>for pozdrav in 'Ahoj', 'Hello', 'Hola', 'Hei', 'SYN':</code>
+používá <var>n</var>-tici.</p>
+<p>Když se počet prvků může v průběhu programu měnit, určitě sáhni po seznamu.
+Příklad budiž seznam přihlášených uživatelů, nevyřešených požadavků,
+karet v ruce nebo položek v inventáři.</p>
+<p><var>N</var>-tice se často používají na hodnoty
+různých typů, kdy má každá „pozice”
+v <var>n</var>-tici úplně jiný význam.
+Například seznam můžeš použít na písmena abecedy,
+ale dvojice „podíl a zbytek“ je <var>n</var>-tice.</p>
+<p>Prázdné <var>n</var>-tice a <var>n</var>-tice s jedním
+prvkem se zapisují trochu divně a má to své důvody:
+může-li nastat situace, kdy takovou sekvenci budeš
+potřebovat, většinou je lepší sáhnout po seznamu.
+Například seznam hracích karet v ruce nebo
+seznam lidí aktuálně sledujících video může být občas prázdný.</p>
+<p>Seznamy i n-tice mají i technické limity:
+<var>n</var>-tice nejdou měnit a až se naučíš pracovat se slovníky,
+zjistíš, že seznamy tam nepůjdou použít jako klíče.
+V takových případech je potřeba použít ten druhý typ sekvence.</p>
+<p>Často není úplně jasné, který typ použít.
+V takovém případě je to pravděpodobně jedno.</p>

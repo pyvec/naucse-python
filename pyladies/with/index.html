@@ -1,0 +1,45 @@
+<h1 id="kontext_codewithcode_a_codefinallycode">Kontext: <code>with</code> a <code>finally</code>
+<a href="#kontext_codewithcode_a_codefinallycode" class="header-link">#</a>
+</h1>
+<div class="admonition note"><p>Čteš-li tyto materiály poprvé, tuto sekci můžeš s klidným svědomím přeskočit.
+Pokročilejším ale doporučuju vsadit věci do širšího kontextu.</p>
+</div><p>Příkaz <code>with</code> pracuje s tzv. <em>kontextem</em> (tady s kontextem <em>otevřeného
+souboru</em>), který má začátek a konec a při ukončení je potřeba něco udělat
+(tady zavřít soubor).</p>
+<p>Kontext je v podstatě zkratka pro <code>try</code>/<code>finally</code>. Pamatuješ si na <code>finally</code>?</p>
+<p>Toto:</p>
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;basnicka.txt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">soubor</span><span class="p">:</span>
+    <span class="c1"># Zpracování souboru</span>
+    <span class="n">obsah</span> <span class="o">=</span> <span class="n">soubor</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div><p>je zkratka pro:</p>
+<div class="highlight"><pre><span></span><span class="n">soubor</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;basnicka.txt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Zpracování souboru</span>
+    <span class="n">obsah</span> <span class="o">=</span> <span class="n">soubor</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="c1"># Ukončení kontextu</span>
+    <span class="n">soubor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div><p>Jak <code>with</code> tak <code>finally</code> zaručí, že se soubor vždy uzavře:
+když se zpracování povede, ale i když v něm nastane výjimka,
+nebo když z něj vyskočíš pomocí <code>return</code> nebo <code>break</code>:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nacti_cele_cislo</span><span class="p">(</span><span class="n">jmeno_souboru</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">jmeno_souboru</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">soubor</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">soubor</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+        <span class="c1"># I když &quot;return&quot; vyskočí z funkce (nebo int() zbůsobí ValueError),</span>
+        <span class="c1"># soubor se zavře.</span>
+
+
+<span class="c1"># Pro vyzkoušení napiš do souboru &#39;cislo.txt&#39; nějaké číslo.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nacti_cele_cislo</span><span class="p">(</span><span class="s1">&#39;cislo.txt&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">11</span><span class="p">)</span>
+</pre></div><h2 id="kontrola_vyjimek">Kontrola výjimek
+<a href="#kontrola_vyjimek" class="header-link">#</a>
+</h2>
+<p>Chování příkazu <code>with</code> závisí na objektu, se kterým jej použiješ.
+Pro soubor – výsledek funkce <code>open</code> – se soubor na konci bloku zavře.
+Podobných „samozavíracích“ objektů, které se dají použít s <code>with</code>, existuje
+v různých knihovnách víc.
+Typické jsou objekty, které se starají o připojení např. k jinému počítači
+nebo k databázi, kdy je po práci dobré spojení ukončit a „uklidit po sobě“.</p>
+<p>Z lekce o testování si možná pamatuješ <code>with pytest.raises(...):</code>.
+Výsledek <code>pytest.raises</code> na konci bloku <code>with</code> kontroluje, že v rámci bloku
+nastala správná výjimka.</p>

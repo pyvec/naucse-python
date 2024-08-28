@@ -1,0 +1,159 @@
+<h1 id="requests">Requests
+<a href="#requests" class="header-link">#</a>
+</h1>
+<p>Knihoven pro HTTP klienty (tedy “programy, které stahují webové stránky“)
+je celá řada.
+Jedna z nich, <a href="https://docs.python.org/3/library/urllib.request.html#module-urllib.request"><code>urllib.request</code></a>, je dokonce součástí standardní knihovny Pythonu.
+Pokud tedy budete chtít HTTP používat a seznam závislostí
+svého projektu nemůžete rozšířit o další knihovnu, jde to.</p>
+<p>Mnohem snáze se vám ale bude pracovat s knihovnou <a href="https://requests.readthedocs.io/en/master/">Requests</a>,
+která má mnohem “lidštější” rozhraní a používá se mnohem jednodušeji.
+Rozdíl je největší u pokročilejších vlastností
+jako <em>cookies</em>, autentizace nebo sdílení spojení (<em>Keep-alive</em>),
+které s Requests zvládnete i bez detailních znalostí protokolu HTTP.</p>
+<p>Dokonce i v dokumentaci modulu <code>urllib</code> se píše:
+<em>The <a href="https://requests.readthedocs.io/en/master/">Requests package</a> is recommended for a higher-level HTTP
+client interface.</em>
+Zaměříme se tedy na Requests hned od začátku.</p>
+<p>Knihovna Requests se instaluje standardním způsobem:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>requests
+</pre></div><p>Budeme předpokládat, že znáte alespoň základy HTTP protokolu,
+a vrhneme se rovnou na příklad.</p>
+<div class="admonition note"><p>Pokud základy neznáte, můžete se podívat na
+<a href="naucse:page?lesson=fast-track/http">shrnutí pro začátečníky</a>,
+které vysvětluje vše potřebné.</p>
+</div><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">getpass</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">username</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Username: &#39;</span><span class="p">)</span>
+<span class="go">Username: hroncok</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">password</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">()</span>
+<span class="go">Password: </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.github.com/user&#39;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">status_code</span>
+<span class="go">200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;content-type&#39;</span><span class="p">]</span>
+<span class="go">&#39;application/json; charset=utf8&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">encoding</span>
+<span class="go">&#39;utf-8&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">text</span>
+<span class="go">&#39;{&quot;login&quot;:&quot;hroncok&quot;...&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="go">{&#39;avatar_url&#39;: &#39;https://avatars.githubusercontent.com/u/2401856?v=3&#39;, ...}</span>
+</pre></div><div class="admonition note"><p>Tento příklad pracuje přímo se jménem a heslem.
+To se většinou nedělá a webové API to často ani nepodporují.
+Pokud na GitHub používáte dvoufaktorovou autentizaci, příklad nebude fungovat.</p>
+</div><p>Příklady použití pro další HTTP metody najdete v <a href="http://docs.python-requests.org/en/master/user/quickstart/">dokumentaci</a>.</p>
+<h2 id="pouziti_session">Použití session
+<a href="#pouziti_session" class="header-link">#</a>
+</h2>
+<p>Hlavně v budoucnu se nám bude hodit použití tzv.
+<a href="http://docs.python-requests.org/en/master/user/advanced/#session-objects"><em>session</em></a>.</p>
+<p>Session má několik výhod.
+První je, že využívá na pozadí jedno otevřené HTTP spojení a poskytuje tak
+při více sousledných požadavcích výrazné zrychlení.</p>
+<p>Dále pak session automaticky ukládá <em>cookies</em> a je možné u ní nastavit výchozí
+hlavičky.</p>
+<p>Zkuste si <em>cookies</em> vyzkoušet s <a href="http://httpbin.org">httpbin.org</a> – službou
+k testování HTTP dotazů:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/cookies/set/mipyt/best&#39;</span><span class="p">)</span>
+<span class="go">&lt;Response [200]&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/cookies&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="go">{&#39;cookies&#39;: {&#39;mipyt&#39;: &#39;best&#39;}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;x-test&#39;</span><span class="p">:</span> <span class="s1">&#39;true&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/headers&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x-test2&#39;</span><span class="p">:</span> <span class="s1">&#39;true&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="go">{&#39;headers&#39;: {&#39;Accept&#39;: &#39;*/*&#39;, &#39;Accept-Encoding&#39;: &#39;gzip, deflate&#39;, &#39;Connection&#39;: &#39;close&#39;, &#39;Cookie&#39;: &#39;mipyt=best&#39;, &#39;Host&#39;: &#39;httpbin.org&#39;, &#39;User-Agent&#39;: &#39;python-requests/2.19.1&#39;, &#39;X-Test&#39;: &#39;true&#39;, &#39;X-Test2&#39;: &#39;true&#39;}}</span>
+</pre></div><h2 id="github_api">GitHub API
+<a href="#github_api" class="header-link">#</a>
+</h2>
+<p>Podíváme se teď, podobně jako v úvodním příkladu, na <a href="https://developer.github.com/v3">GitHub API</a>,
+které má poměrně jednoduchou autentizaci (od GitHubu přímo
+získáte token). Stačí jít do <a href="https://github.com/settings/tokens">nastavení</a> a vyrobit nový token
+(zatím není třeba zaškrtávat žádná oprávnění).</p>
+<div class="admonition warning"><p class="admonition-title">Ochrana přihlašovacích tokenů</p>
+<p>Váš token je něco jako vaše heslo.
+Nikomu je nesmíte ukazovat a nesmíte jej dát do Gitu.
+Stane-li se přesto, že se k němu dostane někdo nepovolaný,
+můžete jej v <a href="https://github.com/settings/tokens">nastavení</a> opět smazat.</p>
+</div><p>Pomocí tokenu můžete z GitHubu získávat informace.
+Prozatím token nastavte do proměnné, později jej schováme například do
+konfiguračního souboru.</p>
+<p>Tímto kódem lze například získat popis přihlášeného uživatele, tedy sebe sama.</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;d7313dab254b7fd0d0f3ec3cbf754b3abce462d5&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Python&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">token_auth</span><span class="p">(</span><span class="n">req</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Authorization&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;token </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">req</span>
+<span class="gp">... </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">auth</span> <span class="o">=</span> <span class="n">token_auth</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.github.com/user&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</pre></div><p>Funkce <code>session.auth</code> v příkladu výše je autentizační funkce,
+která nějakým způsobem modifikuje HTTP požadavek za účelem autentizace,
+většinou přidává specifické hlavičky (jak je tomu i zde).
+Lze ji nastavit buďto na celé session nebo předat argumentem <code>auth</code> s každým
+požadavkem.</p>
+<p>Existují předpřipravené funkce v modulu <code>requests.auth</code>, například
+<code>requests.auth.HTTPBasicAuth</code> provádí základní HTTP přihlášení.
+Dle specifikace zakóduje jméno a heslo pomocí
+algoritmu base64 a přidá hlavičku <code>Authorization</code>.</p>
+<p><a href="https://cs.wikipedia.org/wiki/Basic_access_authentication">Základní HTTP přihlášení</a>
+je tak běžné, že pro něj Requests mají zkratku –
+místo <code>HTTPBasicAuth</code> se dá použít i dvojice (jméno, heslo):</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://httpbin.org/basic-auth/AzureDiamond/hunter2&#39;</span><span class="p">,</span>
+<span class="go">                 auth=requests.auth.HTTPBasicAuth(&#39;AzureDiamond&#39;, &#39;hunter2&#39;))</span>
+<span class="gp">&gt;&gt;&gt; </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://httpbin.org/basic-auth/AzureDiamond/hunter2&#39;</span><span class="p">,</span>
+<span class="go">                 auth=(&#39;AzureDiamond&#39;, &#39;hunter2&#39;))</span>
+</pre></div><div class="admonition note"><p>Všimněte si také hlavičky <code>User-Agent</code>.
+Ta je potřeba při komunikaci s GitHub API explicitně nastavit.
+Nastavení na objektu session zajistí, že tato hlavička
+bude ve všech požadavcích.</p>
+</div><p>Pokud budete chtít něco provést, například dát hvězdičku repozitáři s těmito
+materiály, musíte tokenu nastavit patřičné oprávnění
+(u hvězdičky je to <code>public_repo</code>).
+To se dělá přes <a href="https://github.com/settings/tokens">nastavení</a> na GitHubu.</p>
+<p>Hvězdičku pak přidáte takto:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;https://api.github.com/user/starred/pyvec/naucse.python.cz&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">text</span>
+<span class="go">&#39;&#39;</span>
+</pre></div><p>Jak vidíte, API nevrací žádný text (žádné tělo odpovědi).
+Můžete ale zkontrolovat návratový stav:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">status_code</span>
+<span class="go">204</span>
+</pre></div><p>Případně vyhodit výjimku, pokud je stavový kód divný (např <em>404 Nenalezeno</em>,
+<em>401 Chybí oprávnění</em> apod.):</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+</pre></div><p>Pokud hvězdičku chcete odebrat, použijte metodu DELETE.
+My ale věříme, že ji odebrat nechcete :)</p>
+<p><a href="https://developer.github.com/v3/">Dokumentace</a> ke GitHub API.</p>
+<h2 id="chrante_sve_tokeny">Chraňte své tokeny
+<a href="#chrante_sve_tokeny" class="header-link">#</a>
+</h2>
+<p>Když ukládáte skript do gitu, mějte na paměti, že tokeny a klíče do něj nikdy
+nepatří. Můžete je uložit do konfiguračního souboru, který bude gitem ignorován,
+například takhle:</p>
+<div class="highlight"><pre><span></span><span class="k">[github]</span>
+<span class="na">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">d7313dab254b7fd0d0f3ec3cbf754b3abce462d5</span>
+</pre></div><p>A následně konfiguraci načtete pomocí modulu
+<a href="https://docs.python.org/3/library/configparser.html">configparser</a>:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">configparser</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;auth.cfg&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">config</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;github&#39;</span><span class="p">][</span><span class="s1">&#39;token&#39;</span><span class="p">]</span>
+<span class="go">&#39;d7313dab254b7fd0d0f3ec3cbf754b3abce462d5&#39;</span>
+</pre></div><p>Do souboru <code>.gitignore</code> pak musíte přidat název ignorovaného souboru, např.:</p>
+<div class="highlight"><pre><code>auth.cfg</code></pre></div><p>Ověřte si, že git soubor <code>auth.cfg</code> opravdu ignoruje, t.j. soubor se neukáže
+ve výstupu <code>git status</code>.</p>
+<p>Jelikož ostatní tento konfigurační soubor neuvidí,
+je vhodné jim vysvětlit, jak takový soubor (s jejich údaji) vytvořit.
+Můžete například vložit do gitu soubor <code>auth.cfg.sample</code>
+s vymyšlenými údaji, či příklad uvést v README.</p>
+<div class="admonition note"><p>ConfigParser změní velikost písmen klíčů z konfiguračního souboru na malá.
+Pokud potřebujete, aby byly klíče přesně tak, jak jsou v souboru, musíte
+před načtením nastavit <code>config.optionxform = str</code>.</p>
+</div>

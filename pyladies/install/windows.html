@@ -1,0 +1,57 @@
+<h1 id="instalace_pythonu_pro_windows">Instalace Pythonu pro Windows
+<a href="#instalace_pythonu_pro_windows" class="header-link">#</a>
+</h1>
+<h2 id="zjisti_jestli_uz_mas_python_nainstalovany">Zjisti, jestli už máš Python nainstalovaný
+<a href="#zjisti_jestli_uz_mas_python_nainstalovany" class="header-link">#</a>
+</h2>
+<p>Otevři si příkazovou řádku (pokud nevíš o co jde, přečti si o ní <a href="naucse:page?lesson=beginners/cmdline">tady</a>).</p>
+<p>Napiš <code>python</code> a zmáčkni na klávesnici <kbd>Enter</kbd>.
+Teď se může stát několik různých věcí:</p>
+<ol>
+<li>Otevře se ti Microsoft Store → okno zavři a pokračuj v kroku <a href="#download">Stažení</a></li>
+<li>Zobrazí se ti text podobný tomuto níže?</li>
+</ol>
+<div class="highlight"><pre><code>&gt; python
+Python 3.8.1 (...)
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</code></pre></div><p>To je dobrá zpráva! Ještě si zkontroluj, jakou verzi máš nainstalovanou
+(např.<code>Python 3.11.2</code> je <code>3.11</code>, <code>Python 3.8.1</code> je <code>3.8</code> atd.).
+Třetí číslo za tečkou není tady podstatné.</p>
+<ul>
+<li>Je verze <code>3.6</code> nebo novější? Výborně, máš instalaci hotovou!
+Okénko s příkazovou řádkou můžeš zavřít.
+Až ho budeš znovu potřebovat, můžeš otevřít nové.
+Pokračuj dále <a href="naucse:page?lesson=beginners/venv-setup">Nastavením prostředí</a>.
+V opačném případě přejdi na <a href="#download">Stažení</a></li>
+</ul>
+<p><a id="download"></a></p>
+<h2 id="stazeni">Stažení
+<a href="#stazeni" class="header-link">#</a>
+</h2>
+<ul>
+<li>Běž na <a href="https://www.python.org/downloads/windows/">stahovací stránku</a></li>
+<li>klikni na <em>Latest Python 3 Release</em></li>
+<li>v části <em>Files</em>, ve sloupci <em>Version</em>, vyber vhodný <em>Windows installer</em> pro tvou verzi Windows (32 nebo 64bit).</li>
+</ul>
+<div class="admonition note"><p>Kde zjistíš, zda máš 32bitové nebo 64bitové Windows? Otevři nabídku
+<strong>Start</strong>, vyhledat „Systém“ a otevřít <strong>Systémové informace</strong>.
+Pokud máš novější počítač, téměř jistě budeš mít Windows 64bitové.</p>
+<p><span class="figure"><a href="naucse:static?filename=windows_32v64-bit.png"><img src="naucse:static?filename=windows_32v64-bit.png" alt="Screenshot zjišťování verze systému"></a></span></p>
+</div><h2 id="instalace">Instalace
+<a href="#instalace" class="header-link">#</a>
+</h2>
+<p>Stažený instalátor spusť.</p>
+<p>Na začátku instalace zaškrtni:</p>
+<ul>
+<li><strong>Use admin privileges when installing py.exe</strong></li>
+<li>a také <strong>Add python.exe to PATH</strong>.
+Tyto volby ti zjednoduší vytvoření virtuálního prostředí.</li>
+</ul>
+<p>(Jestli nemáš administrátorské oprávnění, volbu
+<em>Use admin privileges when installing py.exe</em> nezaškrtávej.)</p>
+<p><span class="figure"><a href="naucse:static?filename=windows_add_python_to_path.png"><img src="naucse:static?filename=windows_add_python_to_path.png" alt="Screenshot instalace Pythonu"></a></span></p>
+<p>Pak zmáčkni <strong>Install now</strong> a dále se drž instrukcí.</p>
+<p>Máš-li otevřenou příkazovou řádku, po instalaci Pythonu ji zavři a otevři
+novou.
+Instalace mění systémové nastavení, které se musí načíst znovu.</p>

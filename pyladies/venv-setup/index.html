@@ -1,0 +1,146 @@
+<h1 id="nastaveni_prostredi">Nastavení prostředí
+<a href="#nastaveni_prostredi" class="header-link">#</a>
+</h1>
+<p>V této sekci si:</p>
+<ul>
+<li>připravíš adresář, do kterého budeš ukládat soubory k začátečnickým kurzům
+Pythonu a</li>
+<li>aktivuješ virtuální prostředí.</li>
+</ul>
+<h2 id="priprava_adresare">Příprava adresáře
+<a href="#priprava_adresare" class="header-link">#</a>
+</h2>
+<p>Programátoři vytváří spoustu souborů a víc než u mnoha jiných uživatelů
+počítače jim záleží na tom, kde jsou ty soubory uložené.</p>
+<p>Níže uvedený postup zdaleka není jediná možnost, jak si organizovat soubory.
+Když ale použiješ tenhle ozkoušený způsob,
+může to hodně zjednodušit život těm, kteří ti budou pomáhat
+s případnými problémy.</p>
+<p>Nejdřív vytvoř adresář (složku), ve kterém budeš mít soubory ke kurzu Pythonu.
+Může to být třeba <code>naucse-python</code> ve tvém domovském adresáři.
+(Můžeš ho pojmenovat i jinak, ale <code>naucse-python</code> používají příklady níže.)</p>
+<p>Zvolený adresář po vytvoření nesmíš přesouvat jinam.
+Proto ho nedoporučuji vytvářet na Ploše.</p>
+<div class="admonition note"><p>Kdybys někdy adresář přece jen přesunul/a jinam,
+přestane fungovat <em>virtuální prostředí</em>, které za chvíli vytvoříme.
+Musel/a bys ho smazat a vytvořit nové.</p>
+</div><p>Tenhle adresář budeš potřebovat na celý zbytek kurzu i na případné
+navazující kurzy.
+Poznamenej si proto kde přesně je – zkopíruj si celé jeho jméno, které pak
+můžeš vložit do <code>cd</code> v příkazové řádce nebo do grafického prohlížeče souborů.</p>
+<h3 id="adresar_pro_kazdou_lekci">Adresář pro každou lekci
+<a href="#adresar_pro_kazdou_lekci" class="header-link">#</a>
+</h3>
+<p>Nový adresář je zatím prázdný.
+To se ale brzo změní a čím víc věcí v něm bude, tím bude důležitější
+mít obsah zorganizovaný.</p>
+<p>Pro začátek si budeme tvořit nový podadresář pro každou lekci tohoto kurzu.
+Aby byly tyhle adresáře hezky seřazené, budeme je číslovat:
+tahle první lekce bude mít číslo <code>00</code>,
+příště si vytvoříš adresář <code>01</code> a tak dále.</p>
+<p>Všechny budou v tvém novém adresáři, který jsi vytvořil/a před chvilkou.</p>
+<p>Adresář <code>00</code> si vytvoř už teď.
+(Možná do něj dnes nic nedáš, ale hodí se ho mít jako ukázku pro příště.)</p>
+<h3 id="prepnuti">Přepnutí
+<a href="#prepnuti" class="header-link">#</a>
+</h3>
+<p>Pak otevři příkazovou řádku a příkazem <code>cd</code> přepni do adresáře,
+ve kterém jsi právě vytvořil/a <code>00</code> (t.j. ne přímo do <code>00</code>).
+Například:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>naucse-python
+</pre></div><p>Pak zkontroluj, že jsi na správném místě:</p>
+<ul>
+<li>Pomocí příkazu <code>pwd</code> (na Windows <code>cd</code>) zkontroluj,
+že opravdu jsi v nově vytvořeném adresáři.</li>
+<li>Pomocí příkazu <code>ls</code> (na Windows <code>dir</code>) zkontroluj,
+že v něm je podadresář <code>00</code>.</li>
+</ul>
+<p>Například:</p>
+<div class="row side-by-side-commands"><div class="col">
+                <h4>Unix (Linux, macOS)</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">pwd</span>
+<span class="go">/home/helena/naucse-python</span>
+
+<p><span class="gp">$ </span>ls
+<span class="go">00</span>
+</pre></div></div><div class="col">
+<h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>cd
+<span class="go">C:\Users\Helena\naucse-python</span></p>
+<p><span class="gp">&gt; </span>dir
+<span class="go"> Directory of C:\Users\Helena\naucse-python</span>
+<span class="go">05/08/2014 07:28 PM &lt;DIR&gt;  00</span>
+</pre></div></div></div></p>
+<h2 id="virtualni_prostredi">Virtuální prostředí
+<a href="#virtualni_prostredi" class="header-link">#</a>
+</h2>
+<p>Teď si vytvoříš <em>virtuální prostředí</em> pro Python.</p>
+<p>Virtuální prostředí je něco, co zajistí, že se všechny počítače budou
+chovat zhruba stejně.
+Až ho zprovozníme, nebudu už potřebovat instrukce zvlášť pro Linux,
+zvlášť pro Windows a zvlášť pro macOS.</p>
+<div class="admonition note"><p>V budoucnu využiješ i druhou výhodu: každé virtuální prostředí je oddělené od
+ostatních, takže když doinstaluješ nějakou knihovnu (rozšíření pro Python),
+projeví se to jen v jednom virtuálním prostředí.
+Kdyby se pak při práci na projektu něco pokazilo, neohrozí to další
+projekty ve tvém počítači.</p>
+</div><p>Jak na to?
+Na každém systému jinak!</p>
+<ul>
+<li><p><strong>Linux</strong>:</p>
+<p>Podle toho, jak máš Python nainstalovaný, bude fungovat jeden z následujících
+příkazů.
+Bude je rychlejší vyzkoušet než popsat, kdy je který správný,
+takže nejdřív zkus:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</pre></div><p>A jestli dostaneš chybu <code>No module named venv</code>, zkus místo toho:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>virtualenv<span class="w"> </span>-p<span class="w"> </span>python3<span class="w"> </span>venv
+</pre></div></li>
+<li><p><strong>macOS</strong>:</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</pre></div></li>
+<li><p><strong>Windows</strong>:</p>
+<p>Podle toho, jak máš Python nainstalovaný, bude fungovat jeden z následujících
+příkazů.
+Bude je rychlejší vyzkoušet než popsat, kdy je který správný,
+takže nejdřív zkus:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt; </span>py -3 -m venv venv
+</pre></div><p>A jestli dostaneš chybu <code>'py' is not recognized</code>, zkus místo toho:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt; </span>python3 -m venv venv
+</pre></div></li>
+</ul>
+<p>Tím se ti vytvořil adresář <code>venv</code>, který virtuální prostředí obsahuje.
+Můžeš se podívat dovnitř, ale neukládej tam své soubory a nikdy tam nic neměň!</p>
+<p>Zkontroluj si, že <code>00</code> a <code>venv</code> jsou pěkně vedle sebe:</p>
+<div class="row side-by-side-commands"><div class="col">
+                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span>ls
+<span class="go">00</span>
+<span class="go">venv</span>
+</pre></div></div><div class="col">
+                <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>dir
+<span class="go"> Directory of C:\Users\Helena\naucse-python</span>
+<span class="go">05/08/2014 07:28 PM &lt;DIR&gt;  00</span>
+<span class="go">05/08/2014 07:38 PM &lt;DIR&gt;  venv</span>
+</pre></div></div></div>
+
+<p>V grafickém prohlížeči souborů to vypadá např. takto:</p>
+<p><span class="figure"><a href="naucse:static?filename=dirs-00.png"><img src="naucse:static?filename=dirs-00.png" alt="(adresáře &#39;00&#39; a &#39;venv&#39; vedle sebe)"></a></span></p>
+<h3 id="aktivace_virtualniho_prostredi">Aktivace virtuálního prostředí
+<a href="#aktivace_virtualniho_prostredi" class="header-link">#</a>
+</h3>
+<p>Nakonec virtuální prostředí aktivuj:</p>
+<div class="row side-by-side-commands"><div class="col">
+                <h4>Unix</h4><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</pre></div></div><div class="col">
+                <h4>Windows</h4><div class="highlight"><pre><span></span><span class="gp">&gt; </span>venv\Scripts\activate
+</pre></div><p>Jestli používáš  příkazovou řádku ve Visual Studio Code,
+je příkaz pro Windows složitější:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt; </span><span class="p">&amp;</span>powershell -ExecutionPolicy bypass
+<span class="gp">&gt; </span>venv/Scripts/Activate.ps1
+</pre></div></div></div>
+
+<p>Po spuštění tohoto příkazu by se mělo na začátku příkazové řádky
+(před <code>$</code> nebo <code>&gt;</code>) objevit slovo <code>(venv)</code>.
+Tak poznáš, že je virtuální prostředí <em>aktivní</em>.</p>
+<p>Aktivační příkaz si zapiš.</p>
+<p>Vždycky, když pustíš příkazovou řádku, ve které budeš zkoušet své programy,
+budeš muset pomocí <code>cd</code> přepnout do <code>naucse-python</code> a zadat tento
+aktivační příkaz.</p>

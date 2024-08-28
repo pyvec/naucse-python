@@ -1,0 +1,75 @@
+<h1 id="sablony_formatovaci_retezce">Šablony (formátovací řetězce)
+<a href="#sablony_formatovaci_retezce" class="header-link">#</a>
+</h1>
+<p>Řekněme, že chceš uživateli vypsat určitou hodnotu s nějakou „omáčkou“ okolo.
+Dá se na to použít <code>print()</code>, kterému můžeš předat „mix“ řetězců a čísel:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">soucet</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Součet je&#39;</span><span class="p">,</span> <span class="n">soucet</span><span class="p">)</span>
+</pre></div><p>Co ale když chceš celý tento výpis uložit do proměnné – jako jeden řetězec?
+Čárka tu fungovat nebude, ta odděluje argumenty ve volání funkce.
+Je potřeba <code>soucet</code> převést na řetězec a ten pak připojit k „omáčce“:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hlaska</span> <span class="o">=</span> <span class="s1">&#39;Součet je &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">soucet</span><span class="p">)</span>
+</pre></div><p>To ale není tak přehledné, jak by mohlo.
+Lze to zpřehlednit použitím šablony.</p>
+<p>Takovou šablonu si představ jako formulář s vynechanými místy:</p>
+<div class="highlight"><pre><code>Součet je __________.
+</code></pre></div><p>Složitější šablona by byla třeba tahle:</p>
+<div class="highlight"><pre><code>Mil[ý/á] _______,
+Váš výsledek je __________.
+
+S pozdravem,
+_________
+</code></pre></div><p>Aby Python věděl, do kterého vynechaného místa co doplnit, je potřeba
+jednotlivá vynechaná místa ve formuláři nějak jednoznačně označit.
+Použijme jména v „kudrnatých“ závorkách:</p>
+<div class="highlight"><pre><code>Součet je {soucet}.
+</code></pre></div><div class="highlight"><pre><code>Mil{y_a} {osloveni},
+Váš výsledek je {soucet}.
+
+S pozdravem,
+{podpis}.
+</code></pre></div><p>Takovou šablonu můžeš použít jako <em>formátovací řetězec</em>
+(angl. <a href="https://docs.python.org/3.6/reference/lexical_analysis.html#formatted-string-literals"><em>formatted string literal</em></a>,
+zkráceně <em>f-string</em>).
+Jako jakýkoli jiný řetězec ji vlož do uvozovek.
+A aby bylo jasné, že jde o šablonu, před první uvozovky přidej navíc značku <code>f</code>.</p>
+<div class="highlight"><pre><span></span><span class="sa">f</span><span class="s2">&quot;Součet je </span><span class="si">{</span><span class="n">soucet</span><span class="si">}</span><span class="s2">.&quot;</span>
+</pre></div><p>Takový formátovací řetězec jde použít v Pythonu – jako jakýkoli jiný řetězec:</p>
+<div class="highlight"><pre><span></span><span class="n">soucet</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span>
+<span class="n">hlaska</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Součet je </span><span class="si">{</span><span class="n">soucet</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hlaska</span><span class="p">)</span>
+</pre></div><div class="highlight"><pre><span></span><span class="n">y_a</span> <span class="o">=</span> <span class="s1">&#39;á&#39;</span>
+<span class="n">osloveni</span> <span class="o">=</span> <span class="s1">&#39;Anežko&#39;</span>
+<span class="n">soucet</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span>
+<span class="n">podpis</span> <span class="o">=</span> <span class="s1">&#39;Váš Program&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Mil</span><span class="si">{</span><span class="n">y_a</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">osloveni</span><span class="si">}</span><span class="s2">,</span>
+<span class="s2">Váš výsledek je </span><span class="si">{</span><span class="n">soucet</span><span class="si">}</span><span class="s2">.</span>
+
+<span class="s2">S pozdravem,</span>
+<span class="si">{</span><span class="n">podpis</span><span class="si">}</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div><p>A nakonec – v šabloně můžeš použít nejen jména proměnných, ale jakékoli výrazy.</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hlaska</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Součet je </span><span class="si">{</span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">4</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div><p>Ale nepřežeň to!
+Většinou je program přehlednější, když si každou vypisovanou hodnotu zvlášť
+pojmenuješ – tedy uložíš do vhodně pojmenované proměnné.</p>
+<h2 id="metoda_format">Metoda format
+<a href="#metoda_format" class="header-link">#</a>
+</h2>
+<p>Někdy se stane, že jednu šablonu potřebuješ použít vícekrát.
+Pak formátovací řetězec použít nemůžeš, protože se do něj proměnné doplňují
+automaticky a hned.
+V takovém případě můžeš šablonu napsat do normálního řetězce (bez <code>f</code> na
+začátku) a použít metodu <code>format</code>:</p>
+<div class="highlight"><pre><span></span><span class="n">sablona</span> <span class="o">=</span> <span class="s1">&#39;Ahoj </span><span class="si">{jmeno}</span><span class="s1">! Tvoje číslo je </span><span class="si">{cislo}</span><span class="s1">.&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sablona</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cislo</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">jmeno</span><span class="o">=</span><span class="s1">&#39;Hynku&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sablona</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cislo</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">jmeno</span><span class="o">=</span><span class="s1">&#39;Viléme&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sablona</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cislo</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">jmeno</span><span class="o">=</span><span class="s1">&#39;Jarmilo&#39;</span><span class="p">))</span>
+</pre></div><p>Oproti formátovacím řetězcům umí <code>format</code> užitečnou zkratku: nepojmenované
+argumenty dosadí postupně do nepojmenovaných míst v šabloně:</p>
+<div class="highlight"><pre><span></span><span class="n">vypis</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> krát </span><span class="si">{}</span><span class="s1"> je </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vypis</span><span class="p">)</span>
+</pre></div><p>Výrazy jako <code>f'Součet je {3 + 4}'</code> ale <code>format</code> dosadit neumí.
+Složitější dosazované hodnoty si proto vždycky pojmenuj.</p>

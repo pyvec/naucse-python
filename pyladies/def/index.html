@@ -1,0 +1,166 @@
+<h1 id="definice_funkci">Definice funkcí
+<a href="#definice_funkci" class="header-link">#</a>
+</h1>
+<p><a href="naucse:page?lesson=beginners/functions">Dříve</a> jsme
+volali funkce, které napsal někdo jiný:</p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ahoj světe!&#39;</span><span class="p">)</span>
+</pre></div><p>Dnes si ukážeme, jak psát funkce vlastní.</p>
+<h2 id="kcemu_jsou_funkce">K čemu jsou funkce?
+<a href="#kcemu_jsou_funkce" class="header-link">#</a>
+</h2>
+<p>Často se stává, že kód, který dělá nějakou jednoduchou věc, není úplně
+jednoduchý.
+Jako příklad uvedu nám už známý kód, který v určitém řetězci zamění znak
+na dané pozici:</p>
+<div class="highlight"><pre><span></span><span class="n">zacatek</span> <span class="o">=</span> <span class="n">slovo</span><span class="p">[:</span><span class="n">pozice</span><span class="p">]</span>
+<span class="n">konec</span> <span class="o">=</span> <span class="n">slovo</span><span class="p">[</span><span class="n">pozice</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+<span class="n">nove_slovo</span> <span class="o">=</span> <span class="n">zacatek</span> <span class="o">+</span> <span class="n">novy_znak</span> <span class="o">+</span> <span class="n">konec</span>
+</pre></div><p>Z takového kódu není na první pohled jasné, co přesně dělá.
+Zvlášť když kód použiješ ve složitějším programu.</p>
+<p>Dá se to vyřešit komentářem: ten, kdo bude program číst, si může přečíst,
+co to má dělat. Samotný složitější kód pak může ignorovat.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Ve slově `slovo` zaměnit znak na pozici `pozice` za `novy_znak`;</span>
+<span class="c1"># výsledek bude v proměnné `nove_slovo`.</span>
+<span class="n">zacatek</span> <span class="o">=</span> <span class="n">slovo</span><span class="p">[:</span><span class="n">pozice</span><span class="p">]</span>
+<span class="n">konec</span> <span class="o">=</span> <span class="n">slovo</span><span class="p">[</span><span class="n">pozice</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+<span class="n">nove_slovo</span> <span class="o">=</span> <span class="n">zacatek</span> <span class="o">+</span> <span class="n">novy_znak</span> <span class="o">+</span> <span class="n">konec</span>
+</pre></div><p>Ještě lepší ale bude si vytvořit <em>funkci</em>, která tenhle složitější postup
+provede.
+Jakmile takovou funkci vytvoříš, ve složitějším programu pak můžeš místo kódu
+výše psát jen:</p>
+<div class="highlight"><pre><span></span><span class="n">nove_slovo</span> <span class="o">=</span> <span class="n">zamen</span><span class="p">(</span><span class="n">slovo</span><span class="p">,</span> <span class="n">pozice</span><span class="p">,</span> <span class="n">novy_znak</span><span class="p">)</span>
+</pre></div><p>Podobně fungují funkce, které už znáš: můžeš zavolat <code>print(123)</code>, aniž bys
+potřeboval/a znát jakékoli detaily postupu, kterým se číslo převede na
+jednotlivé číslice a ty se pak vykreslí na obrazovce.
+Nebo řekneš želvě <code>forward(100)</code> a nezatěžuješ se tím, jak si želva „pamatuje“
+svůj aktuální úhel natočení nebo jak se vlastně kreslí čára.</p>
+<p>Funkce umožňuje <em>pojmenovat</em> nějaký kousek programu, který se pak dá
+použít pomocí jména bez detailních znalostí toho, jak to vevnitř funguje.</p>
+<h2 id="definice_funkce">Definice funkce
+<a href="#definice_funkce" class="header-link">#</a>
+</h2>
+<p>Protože už znáš <code>if</code> a <code>for</code>, které mají jednořádkovou hlavičku a odsazené tělo
+příkazu, neměl by ti zápis funkce připadat příliš zvláštní:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zamen</span><span class="p">(</span><span class="n">slovo</span><span class="p">,</span> <span class="n">pozice</span><span class="p">,</span> <span class="n">novy_znak</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;V daném slově zamění znak na dané pozici za daný nový znak.&quot;&quot;&quot;</span>
+    <span class="n">zacatek</span> <span class="o">=</span> <span class="n">slovo</span><span class="p">[:</span><span class="n">pozice</span><span class="p">]</span>
+    <span class="n">konec</span> <span class="o">=</span> <span class="n">slovo</span><span class="p">[</span><span class="n">pozice</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+    <span class="n">nove_slovo</span> <span class="o">=</span> <span class="n">zacatek</span> <span class="o">+</span> <span class="n">novy_znak</span> <span class="o">+</span> <span class="n">konec</span>
+    <span class="k">return</span> <span class="n">nove_slovo</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">zamen</span><span class="p">(</span><span class="s1">&#39;kočka&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zamen</span><span class="p">(</span><span class="s1">&#39;kačka&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">))</span>
+</pre></div><p>Jak to funguje?</p>
+<p>Funkce se <em>definuje</em> příkazem <code>def</code>, za nějž napíšeš jméno funkce,
+pak do závorky seznam <em>parametrů</em>, které funkce bere, a pak dvojtečku.</p>
+<p>Potom následuje odsazené <em>tělo funkce</em> – příkazy, které funkce provádí.</p>
+<p>Tělo může začít <em>dokumentačním řetězcem</em> (angl. <em>docstring</em>), který popisuje,
+co funkce dělá.
+To může být jakýkoli řetězec, ale tradičně se uvozuje třemi uvozovkami
+(i v případě, že je jen jednořádkový).</p>
+<p>Příkazem <code>return</code> pak můžeš z funkce <em>vrátit</em> nějakou hodnotu.</p>
+<p>Při volání funkce se hodnoty, se kterými funkci
+zavoláš, přiřadí jednotlivým parametrům.
+Takže když zavoláš třeba <code>zamen('kočka', 1, 'a')</code>,
+můžeš si představit, že se provede toto:</p>
+<div class="highlight"><pre><span></span><span class="c1"># Nastavení proměnných podle zadaných argumentů</span>
+<span class="n">slovo</span> <span class="o">=</span> <span class="s1">&#39;kočka&#39;</span>
+<span class="n">pozice</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">novy_znak</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
+
+<span class="c1"># Samotné tělo funkce</span>
+<span class="n">zacatek</span> <span class="o">=</span> <span class="n">slovo</span><span class="p">[:</span><span class="n">pozice</span><span class="p">]</span>
+<span class="n">konec</span> <span class="o">=</span> <span class="n">slovo</span><span class="p">[</span><span class="n">pozice</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+<span class="n">nove_slovo</span> <span class="o">=</span> <span class="n">zacatek</span> <span class="o">+</span> <span class="n">novy_znak</span> <span class="o">+</span> <span class="n">konec</span>
+<span class="k">return</span> <span class="n">nove_slovo</span>
+</pre></div><p>Už víš, že volání <code>zamen('kočka', 1, 'a')</code> je výraz.
+Aby ho Python vyhodnotil, udělá celý postup výše a jako hodnotu výrazu dosadí
+návratovou hodnotu – tedy to, co následuje po <code>return</code>.</p>
+<p>Tělo funkce může mít více příkazů – včetně podmínek, cyklů a podobně.
+Následující procedura třeba vypíše skóre daného hráče a k tomu hlášku:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">napis_hlasku</span><span class="p">(</span><span class="n">nazev</span><span class="p">,</span> <span class="n">skore</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Popíše skóre. Název má být přivlastňovací přídavné jméno.&quot;&quot;&quot;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">nazev</span><span class="p">,</span> <span class="s1">&#39;skóre je&#39;</span><span class="p">,</span> <span class="n">skore</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">skore</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Světový rekord!&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">skore</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Skvělé!&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">skore</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ucházející.&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">skore</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Aspoň něco&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Snad příště.&#39;</span><span class="p">)</span>
+
+<span class="n">napis_hlasku</span><span class="p">(</span><span class="s1">&#39;Tvoje&#39;</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>
+<span class="n">napis_hlasku</span><span class="p">(</span><span class="s1">&#39;Protivníkovo&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div><h2 id="cviceni">Cvičení
+<a href="#cviceni" class="header-link">#</a>
+</h2>
+<p>Zkus napsat funkci, která vrátí obsah obdélníka daných rozměrů.
+Příslušný vzoreček je <var>S</var> = <var>a</var>×<var>b</var>,
+kde <var>a</var> a <var>b</var> jsou délky stran.</p>
+<p>Funkci zavolej a výsledek vypiš.</p>
+<div class="solution" id="solution-0">
+    <h3>Řešení</h3>
+    <div class="solution-cover">
+        <a href="naucse:solution?solution=0"><span class="link-text">Ukázat řešení</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">obsah_obdelnika</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span></span>    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span></span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obsah obdélníka se stranami 3 cm a 5 cm je&#39;</span><span class="p">,</span> <span class="n">obsah_obdelnika</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="s1">&#39;cm2&#39;</span><span class="p">)</span>
+<span></span></pre></div>
+    </div>
+</div>
+
+<h2 id="vraceni_ukoncuje_funkci">Vracení ukončuje funkci
+<a href="#vraceni_ukoncuje_funkci" class="header-link">#</a>
+</h2>
+<p>Speciální příkaz <code>return</code>, který jde použít jenom ve funkcích, vrátí danou
+návratovou hodnotu ven z funkce a zároveň <em>ukončí</em> provádění funkce.</p>
+<p>Chová se tedy trochu jako <code>break</code>, jen místo cyklu opouští celou funkci.</p>
+<p>Podobně jako <code>break</code> se dá použít v případech, kdy potřebuješ od uživatele
+dostat odpověď – a opakuješ dotaz tak dlouho, dokud požadovanou odpověď
+nedostaneš.
+Třeba, chceš-li odpověď „ano“ nebo „ne“:</p>
+<ul>
+<li>Takhle se zjišťuje odpověď ano (Pravda) nebo ne (Nepravda) na danou <em>otázku</em>:<ul>
+<li>Pořád dokola:<ul>
+<li>Zeptej se na <em>otázku</em>; zapamatuj si <em>odpověď</em>.</li>
+<li>Je-li odpověď „ano“:<ul>
+<li>Výsledek je Pravda. Hotovo; dál nepokračuj.</li>
+</ul>
+</li>
+<li>Jinak, je-li odpověď „ne“:<ul>
+<li>Výsledek je Nepravda. Hotovo; dál nepokračuj.</li>
+</ul>
+</li>
+<li>Pouč uživatele, ať odpoví „ano“ nebo „ne“.
+<br><em>(a zkus to znovu – viz „Pořád dokola“)</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ano_nebo_ne</span><span class="p">(</span><span class="n">otazka</span><span class="p">):</span>
+<span class="w">     </span><span class="sd">&quot;&quot;&quot;Vrátí True nebo False podle odpovědi uživatele&quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">otazka</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">odpoved</span> <span class="o">==</span> <span class="s1">&#39;ano&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">odpoved</span> <span class="o">==</span> <span class="s1">&#39;ne&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nerozumím! Odpověz &quot;ano&quot; nebo &quot;ne&quot;.&#39;</span><span class="p">)</span>
+
+<span class="c1"># Příklad použití</span>
+<span class="k">if</span> <span class="n">ano_nebo_ne</span><span class="p">(</span><span class="s1">&#39;Chceš si zahrát hru? &#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;OK! Ale napřed si ji musíš naprogramovat.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Škoda.&#39;</span><span class="p">)</span>
+</pre></div><div class="admonition note"><p>Stejně jako <code>if</code> nebo <code>break</code> je <code>return</code> <em>příkaz</em>, ne funkce.
+Kolem „své“ hodnoty nepotřebuje závorky.</p>
+</div>

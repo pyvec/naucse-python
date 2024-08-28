@@ -1,0 +1,207 @@
+<h1 id="dedicnost">Dědičnost
+<a href="#dedicnost" class="header-link">#</a>
+</h1>
+<p>Minule jsme probrali třídy.
+Jako příklad jsme si ukázali třídu pro koťátka:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kotatko</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno</span>
+
+    <span class="k">def</span> <span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">jidlo</span><span class="si">}</span><span class="s2"> mi chutná!&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Mňau!&quot;</span><span class="p">)</span>
+</pre></div><p>Zkus si udělat podobnou třídu pro štěňátka:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Stenatko</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno</span>
+
+    <span class="k">def</span> <span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">jidlo</span><span class="si">}</span><span class="s2"> mi chutná!&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">zastekej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Haf!&quot;</span><span class="p">)</span>
+</pre></div><p>Většina kódu je stejná!
+Kdybys měl/a napsat i třídu pro kuřátka, kůzlátka,
+slůňátka a háďátka, bez <kbd>Ctrl</kbd>+<kbd>C</kbd> by to bylo docela nudné.
+A protože jsou programátoři líní psát stejný kód
+několikrát (a hlavně ho potom udržovat), vymysleli
+mechanismus, jak se toho vyvarovat.</p>
+<p>Koťátka i štěňátka jsou zvířátka.
+Můžeš si vytvořit třídu společnou pro všechna
+zvířátka a do ní napsat všechno, co je společné.
+Ve třídách pro jednotlivé druhy zvířat pak zbude jen to, co se liší.
+V Pythonu se to dělá takto:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Zviratko</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno</span>
+
+    <span class="k">def</span> <span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">jidlo</span><span class="si">}</span><span class="s2"> mi chutná!&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Kotatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Mňau!&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Stenatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">zastekej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Haf!&quot;</span><span class="p">)</span>
+
+
+<span class="n">micka</span> <span class="o">=</span> <span class="n">Kotatko</span><span class="p">(</span><span class="s1">&#39;Micka&#39;</span><span class="p">)</span>
+<span class="n">azorek</span> <span class="o">=</span> <span class="n">Stenatko</span><span class="p">(</span><span class="s1">&#39;Azorek&#39;</span><span class="p">)</span>
+<span class="n">micka</span><span class="o">.</span><span class="n">zamnoukej</span><span class="p">()</span>
+<span class="n">azorek</span><span class="o">.</span><span class="n">zastekej</span><span class="p">()</span>
+<span class="n">micka</span><span class="o">.</span><span class="n">snez</span><span class="p">(</span><span class="s1">&#39;myš&#39;</span><span class="p">)</span>
+<span class="n">azorek</span><span class="o">.</span><span class="n">snez</span><span class="p">(</span><span class="s1">&#39;kost&#39;</span><span class="p">)</span>
+</pre></div><p>Jak to funguje?
+Příkazem <code>class Kotatko(Zviratko):</code>
+říkáš Pythonu, že třída <code>Kotatko</code>
+<em>dědí</em> ze třídy <code>Zviratko</code>
+(angl. <em>inherits</em> from <code>Zviratko</code>).
+Případně se můžeš setkat s jinými termíny:
+„je odvozená” ze třídy <code>Zviratko</code>,
+(angl. <em>derived from</em>),
+nebo ji “rozšiřuje” (angl. <em>extends</em>).
+A když už jsme u terminologie, odvozeným třídám se
+říká taky <em>podtřídy</em> (angl. <em>subclasses</em>)
+a <code>Zviratko</code> je tu <em>nadtřída</em>
+(angl. <em>superclass</em>).</p>
+<p>Když potom Python hledá nějakou metodu
+(nebo jiný atribut), třeba <code>micka.snez</code>,
+a nenajde ji přímo ve třídě daného objektu (u nás
+<code>Kotatko</code>), podívá se do nadtřídy.
+Takže všechno, co je definované pro
+<code>Zviratko</code>, platí i pro koťátka – dokud to výslovně nezměníš.</p>
+<h2 id="prepisovani_metod_a_codesupercode">Přepisování metod a <code>super()</code>
+<a href="#prepisovani_metod_a_codesupercode" class="header-link">#</a>
+</h2>
+<p>Když se ti nebude líbit chování některé metody
+v nadtřídě, stačí dát metodu stejného jména do
+podtřídy:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kotatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">jidlo</span><span class="si">}</span><span class="s2"> mi vůbec nechutná!&quot;</span><span class="p">)</span>
+
+
+<span class="n">micka</span> <span class="o">=</span> <span class="n">Kotatko</span><span class="p">(</span><span class="s1">&#39;Micka&#39;</span><span class="p">)</span>
+<span class="n">micka</span><span class="o">.</span><span class="n">snez</span><span class="p">(</span><span class="s1">&#39;granule&#39;</span><span class="p">)</span>
+</pre></div><div class="admonition note"><p>Je to podobné jako když jsme minule přepisovali
+atribut pomocí <code>micka.zamnoukej = 12345</code>.
+Python atributy hledá napřed na samotném objektu,
+potom na třídě toho objektu a pak na nadtřídě
+(a případně dalších nadtřídách té nadtřídy).</p>
+</div><p>Občas se může stát, že v takovéto přepsané metodě budeš
+potřebovat použít původní funkčnost, jen budeš chtít udělat ještě něco navíc.
+To umí zařídit speciální funkce <code>super()</code>,
+která umožňuje volat metody z nadtřídy.
+Třeba takhle:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kotatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2"> na </span><span class="si">{</span><span class="n">jidlo</span><span class="si">}</span><span class="s2"> chvíli fascinovaně kouká)&quot;</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">snez</span><span class="p">(</span><span class="n">jidlo</span><span class="p">)</span>
+
+
+<span class="n">micka</span> <span class="o">=</span> <span class="n">Kotatko</span><span class="p">(</span><span class="s1">&#39;Micka&#39;</span><span class="p">)</span>
+<span class="n">micka</span><span class="o">.</span><span class="n">snez</span><span class="p">(</span><span class="s1">&#39;granule&#39;</span><span class="p">)</span>
+</pre></div><p>Pozor na to, že takhle volané metodě musíš dát všechny
+argumenty, které potřebuje (kromě <code>self</code>,
+který se jako obvykle doplní automaticky).
+Toho se dá i využít – můžeš použít i jiné argumenty
+než dostala původní funkce:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Hadatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
+        <span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sss&#39;</span><span class="p">)</span>
+        <span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;Sss&#39;</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">jmeno</span><span class="p">)</span>
+
+
+<span class="n">standa</span> <span class="o">=</span> <span class="n">Hadatko</span><span class="p">(</span><span class="s1">&#39;Stanislav&#39;</span><span class="p">)</span>
+<span class="n">standa</span><span class="o">.</span><span class="n">snez</span><span class="p">(</span><span class="s1">&#39;myš&#39;</span><span class="p">)</span>
+</pre></div><p>Jak je vidět, <code>super()</code> se dá bez problémů
+kombinovat se speciálními metodami jako <code>__init__</code>.
+Dokonce se to dělá poměrně často!</p>
+<h2 id="polymorfismus">Polymorfismus
+<a href="#polymorfismus" class="header-link">#</a>
+</h2>
+<p>Programátoři nezavedli dědičnost jen proto, že jsou
+líní a nechtějí psát dvakrát stejný kód.
+To je sice dobrý důvod, ale nadtřídy mají jednu
+důležitější vlastnost. Když víš, že každé
+<code>Kotatko</code> nebo <code>Stenatko</code>
+nebo jakákoli jiná podtřída je zvířátko,
+můžeš si udělat seznam zvířátek s tím,
+že pak bude jedno, jaká přesně zvířátka to jsou:</p>
+<div class="highlight"><pre><span></span><span class="n">zviratka</span> <span class="o">=</span> <span class="p">[</span><span class="n">Kotatko</span><span class="p">(</span><span class="s1">&#39;Micka&#39;</span><span class="p">),</span> <span class="n">Stenatko</span><span class="p">(</span><span class="s1">&#39;Azorek&#39;</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">zviratko</span> <span class="ow">in</span> <span class="n">zviratka</span><span class="p">:</span>
+    <span class="n">zviratko</span><span class="o">.</span><span class="n">snez</span><span class="p">(</span><span class="s1">&#39;flákota&#39;</span><span class="p">)</span>
+</pre></div><p>Tohle je docela důležitá vlastnost podtříd:
+když máš nějaké <code>Kotatko</code>, můžeš ho použít
+kdekoliv kde program očekává <code>Zviratko</code>,
+protože každé koťátko <em>je</em> zvířátko.</p>
+<div class="admonition note"><p>Tohle je docela dobrá pomůcka pro případy, kdy nebudeš vědět,
+kterou třídu podědit z které.
+Každé <em>koťátko</em> nebo <em>štěňátko</em>
+je <em>zvířátko</em>, každá <em>chata</em>
+nebo <em>panelák</em> je <em>stavení</em>.
+V takových případech dává dědičnost smysl.</p>
+<p>Někdy se ale stane, že tuhle pomůcku zkusíš použít a vyjde ti
+nesmysl jako „každé auto je volant”.
+V takovém případě dědičnost nepoužívej.
+I když jak auto tak volant se dají „otočit doprava”,
+u každého to znamená něco jiného – a určitě nejde auto
+použít kdekoli, kde bys chtěl/a použít volant.
+Takže v tomto případě je lepší si říct „každé auto
+<em>má</em> volant”, stejně jako „každé kotě
+<em>má</em> jméno”, udělat dvě nezávislé třídy a napsat něco jako:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Auto</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">volant</span> <span class="o">=</span> <span class="n">Volant</span><span class="p">()</span>
+</pre></div><p>(A až bude někdy nějaký vystudovaný informatik nespokojený
+s tím, že porušuješ
+<a href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">Liskovové substituční princip</a>,
+jde o právě tento problém.)</p>
+</div><h2 id="generalizace">Generalizace
+<a href="#generalizace" class="header-link">#</a>
+</h2>
+<p>Když se teď podíváš na funkce <code>zamnoukej</code>
+a <code>zastekej</code>, možná tě napadne, že by se
+daly pojmenovat lépe, aby se daly použít pro všechna
+zvířata, podobně jako <code>snez</code>.
+Bude nejlepší je přejmenovat:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Zviratko</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno</span>
+
+    <span class="k">def</span> <span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">jidlo</span><span class="si">}</span><span class="s2"> mi chutná!&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Kotatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">udelej_zvuk</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Mňau!&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Stenatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">udelej_zvuk</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Haf!&quot;</span><span class="p">)</span>
+
+
+<span class="n">zviratka</span> <span class="o">=</span> <span class="p">[</span><span class="n">Kotatko</span><span class="p">(</span><span class="s1">&#39;Micka&#39;</span><span class="p">),</span> <span class="n">Stenatko</span><span class="p">(</span><span class="s1">&#39;Azorek&#39;</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">zviratko</span> <span class="ow">in</span> <span class="n">zviratka</span><span class="p">:</span>
+    <span class="n">zviratko</span><span class="o">.</span><span class="n">udelej_zvuk</span><span class="p">()</span>
+    <span class="n">zviratko</span><span class="o">.</span><span class="n">snez</span><span class="p">(</span><span class="s1">&#39;flákota&#39;</span><span class="p">)</span>
+</pre></div><p>Jak tenhle příklad naznačuje, psát nadtřídy, ze kterých se dobře dědí,
+není jednoduché. Zvlášť to platí, kdyby se z nich mělo dědit v jiném
+programu, než kde je nadtřída.
+I z toho důvodu je dobré dědičnost používat hlavně v rámci svého kódu:
+nedoporučuji dědit od tříd, které napsali ostatní (jako <code>bool</code> nebo
+<code>pyglet.sprite.Sprite</code>), pokud autor nadtřídy výslovně nezmíní, že (a jak) se
+z ní dědit má.</p>
+<p>A to je zatím o třídách vše. Už toho víš dost na to,
+aby sis napsal/a vlastní zoo :)</p>

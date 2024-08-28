@@ -1,0 +1,27 @@
+<h1 id="deployment_webovych_aplikaci">Deployment webových aplikací
+<a href="#deployment_webovych_aplikaci" class="header-link">#</a>
+</h1>
+<p>Aplikace napsaná v Pythonu běží na našem počítači, ale jak ji dostat do Internetu?
+Existují různé možnosti, jednou z nich je nasadit ji do cloudu.</p>
+<div class="admonition note"><p>Nemáte ještě webovou aplikaci? Můžete vyzkoušet framework
+<a href="naucse:page?lesson=intro/flask">Flask</a>.</p>
+</div><h3 id="wsgi">WSGI
+<a href="#wsgi" class="header-link">#</a>
+</h3>
+<p>Nasazování webových aplikací v Pythnu se opírá o WSGI,
+což je standardní pythonní rozhraní pro komunikaci
+mezi webovou aplikací a webovým serverem definované v <a href="https://www.python.org/dev/peps/pep-0333/">PEPu 333</a>.</p>
+<p>Naprostá většina webových frameworků v Pythonu toto rozhraní implementuje přímo,
+případně k tomuto účelu obsahuje wrapper.</p>
+<p>Je tedy jedno, jestli používáte Flask, Pyramid, Django, Bottle nebo Falcon,
+vždy vaší aplikaci představuje <code>application</code> objekt, který se navenek chová
+stejně. Webové frameworky implementují aplikační část WSGI.</p>
+<p>Stejně tak existují webové servery, které implementují serverovou část WSGI,
+například <a href="http://gunicorn.org/">Gunicorn</a> nebo <code>mod_wsgi</code> pro <code>httpd</code> (Apache). Tyto servery umí
+pracovat s <code>application</code> objektem a nezajímá je, v jakém frameworku je aplikace
+napsaná.</p>
+<p>Většině cloudových providerům stačí nějakým způsobem <code>application</code> objekt předat
+a o zbytek se postarají za vás. Jedním z takových providerů je i
+<a href="https://www.pythonanywhere.com/">PythonAnywhere</a>.</p>
+<p>Deployment webových aplikací na PythonAnywhere je popsaný v lekci
+<a href="naucse:page?lesson=intro/deployment&amp;page=pythonanywhere">PythonAnywhere</a>.</p>

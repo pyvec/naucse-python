@@ -1,0 +1,630 @@
+{
+    "api_version": [
+        0,
+        4
+    ],
+    "course": {
+        "description": "Návod na přidání kurzu na Nauč se Python",
+        "edit_info": {
+            "branch": "main",
+            "url": "https://github.com/pyvec/naucse-python"
+        },
+        "extra_lessons": [
+            "git/install",
+            "git/branching",
+            "git/git-collaboration-2in1",
+            "beginners/install",
+            "beginners/cmdline",
+            "beginners/venv-setup",
+            "intro/notebook",
+            "fast-track/yaml"
+        ],
+        "lessons": {
+            "beginners/cmdline": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017.",
+                            "Založeno na tutoriálu [Django Girls].\n[Django Girls]: https://tutorial.djangogirls.org/en/intro_to_command_line/"
+                        ],
+                        "content": {
+                            "path": "cmdline/index.html"
+                        },
+                        "ids": [
+                            "aktualni_adresar",
+                            "co_v_tom_adresari_je",
+                            "konec",
+                            "kopirovani_z_prikazove_radky",
+                            "o_uroven_nahoru",
+                            "otevreni_vprohlizeci_souboru",
+                            "pozorovani_zmen",
+                            "prehled",
+                            "prikazova_radka",
+                            "prvni_prikaz",
+                            "vgrafickem_hledatku",
+                            "vkladani_do_prikazove_radky",
+                            "vytvoreni_adresare",
+                            "zmena_aktualniho_adresare"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#aktualni_adresar",
+                            "#co_v_tom_adresari_je",
+                            "#konec",
+                            "#kopirovani_z_prikazove_radky",
+                            "#o_uroven_nahoru",
+                            "#otevreni_vprohlizeci_souboru",
+                            "#pozorovani_zmen",
+                            "#prehled",
+                            "#prikazova_radka",
+                            "#prvni_prikaz",
+                            "#vgrafickem_hledatku",
+                            "#vkladani_do_prikazove_radky",
+                            "#vytvoreni_adresare",
+                            "#zmena_aktualniho_adresare",
+                            "naucse:static?filename=linux-file-browser.png",
+                            "naucse:static?filename=macos-file-browser.png",
+                            "naucse:static?filename=windows-cmd-properties.png",
+                            "naucse:static?filename=windows-file-browser.png"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/cmdline/index.md",
+                        "title": "Příkazová řádka",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/beginners/cmdline/info.yml",
+                "static_files": {
+                    "linux-file-browser.png": {
+                        "path": "cmdline/linux-file-browser.png"
+                    },
+                    "macos-file-browser.png": {
+                        "path": "cmdline/macos-file-browser.png"
+                    },
+                    "windows-cmd-properties.png": {
+                        "path": "cmdline/windows-cmd-properties.png"
+                    },
+                    "windows-file-browser.png": {
+                        "path": "cmdline/windows-file-browser.png"
+                    }
+                },
+                "title": "Příkazová řádka"
+            },
+            "beginners/install": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Martin Pavlásek (2023)"
+                        ],
+                        "content": {
+                            "path": "install/index.html"
+                        },
+                        "ids": [
+                            "instalace_pythonu"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#instalace_pythonu",
+                            "naucse:page?lesson=beginners/install&page=linux",
+                            "naucse:page?lesson=beginners/install&page=macos",
+                            "naucse:page?lesson=beginners/install&page=windows"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install/index.md",
+                        "title": "Instalace Pythonu",
+                        "vars": {}
+                    },
+                    "linux": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Martin Pavlásek (2023)"
+                        ],
+                        "content": {
+                            "path": "install/linux.html"
+                        },
+                        "ids": [
+                            "check-tkinter",
+                            "doinstalovani_virtualenv",
+                            "instalace_pythonu_3",
+                            "instalace_pythonu_na_linux",
+                            "install-virtualenv",
+                            "kontrola_tkinter"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#check-tkinter",
+                            "#doinstalovani_virtualenv",
+                            "#instalace_pythonu_3",
+                            "#instalace_pythonu_na_linux",
+                            "#install-virtualenv",
+                            "#kontrola_tkinter",
+                            "naucse:page?lesson=beginners/cmdline"
+                        ],
+                        "slug": "linux",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install/linux.md",
+                        "subtitle": "Linux",
+                        "title": "Instalace Pythonu – Linux",
+                        "vars": {}
+                    },
+                    "macos": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Martin Pavlásek (2023)"
+                        ],
+                        "content": {
+                            "path": "install/macos.html"
+                        },
+                        "ids": [
+                            "instalace_pythonu_pro_macos"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#instalace_pythonu_pro_macos",
+                            "http://brew.sh",
+                            "naucse:page?lesson=beginners/cmdline"
+                        ],
+                        "slug": "macos",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install/macos.md",
+                        "subtitle": "macOS",
+                        "title": "Instalace Pythonu – macOS",
+                        "vars": {}
+                    },
+                    "windows": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Martin Pavlásek (2023)"
+                        ],
+                        "content": {
+                            "path": "install/windows.html"
+                        },
+                        "ids": [
+                            "download",
+                            "instalace",
+                            "instalace_pythonu_pro_windows",
+                            "stazeni",
+                            "zjisti_jestli_uz_mas_python_nainstalovany"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#download",
+                            "#instalace",
+                            "#instalace_pythonu_pro_windows",
+                            "#stazeni",
+                            "#zjisti_jestli_uz_mas_python_nainstalovany",
+                            "https://www.python.org/downloads/windows/",
+                            "naucse:page?lesson=beginners/cmdline",
+                            "naucse:page?lesson=beginners/venv-setup",
+                            "naucse:static?filename=windows_32v64-bit.png",
+                            "naucse:static?filename=windows_add_python_to_path.png"
+                        ],
+                        "slug": "windows",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install/windows.md",
+                        "subtitle": "Windows",
+                        "title": "Instalace Pythonu – Windows",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/beginners/install/info.yml",
+                "static_files": {
+                    "windows_32v64-bit.png": {
+                        "path": "install/windows_32v64-bit.png"
+                    },
+                    "windows_add_python_to_path.png": {
+                        "path": "install/windows_add_python_to_path.png"
+                    }
+                },
+                "title": "Instalace Pythonu"
+            },
+            "beginners/venv-setup": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2018."
+                        ],
+                        "content": {
+                            "path": "venv-setup/index.html"
+                        },
+                        "ids": [
+                            "adresar_pro_kazdou_lekci",
+                            "aktivace_virtualniho_prostredi",
+                            "nastaveni_prostredi",
+                            "prepnuti",
+                            "priprava_adresare",
+                            "virtualni_prostredi"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#adresar_pro_kazdou_lekci",
+                            "#aktivace_virtualniho_prostredi",
+                            "#nastaveni_prostredi",
+                            "#prepnuti",
+                            "#priprava_adresare",
+                            "#virtualni_prostredi",
+                            "naucse:static?filename=dirs-00.png"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/venv-setup/index.md",
+                        "title": "Nastavení prostředí",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/beginners/venv-setup/info.yml",
+                "static_files": {
+                    "dirs-00.png": {
+                        "path": "venv-setup/dirs-00.png"
+                    }
+                },
+                "title": "Nastavení prostředí"
+            },
+            "fast-track/yaml": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Napsal Mikuláš Poul, 2018"
+                        ],
+                        "content": {
+                            "path": "yaml/index.html"
+                        },
+                        "ids": [
+                            "o_formatu_yaml"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "license_code": "cc0",
+                        "links": [
+                            "#o_formatu_yaml"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/fast-track/yaml/index.md",
+                        "title": "O formátu YAML",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/fast-track/yaml/info.yml",
+                "static_files": {},
+                "title": "O formátu YAML"
+            },
+            "git/branching": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "branching/index.html"
+                        },
+                        "ids": [
+                            "slouceni",
+                            "vetveni_v_gitu"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#slouceni",
+                            "#vetveni_v_gitu",
+                            "naucse:static?filename=branch1.png",
+                            "naucse:static?filename=branches.png",
+                            "naucse:static?filename=merge.png"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/branching/index.md",
+                        "title": "Větvení v Gitu",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/git/branching/info.yml",
+                "static_files": {
+                    "branch1.png": {
+                        "path": "branching/branch1.png"
+                    },
+                    "branches.png": {
+                        "path": "branching/branches.png"
+                    },
+                    "merge.png": {
+                        "path": "branching/merge.png"
+                    }
+                },
+                "title": "Větvení v Gitu"
+            },
+            "git/git-collaboration-2in1": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies CZ napsali Petr Viktorin a Oskar Hollman, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "git-collaboration-2in1/index.html"
+                        },
+                        "ids": [
+                            "aktualizace_codegit_pullcode",
+                            "git_a_github",
+                            "log_codegit_logcode",
+                            "open-source_a_free_software",
+                            "posilani_zmen_codegit_pushcode",
+                            "prace_s_lokalnim_repozitarem",
+                            "prvni_revize_codegit_commitcode",
+                            "spoluprace_a_git",
+                            "spoluprace_na_projektu",
+                            "stav_repozitare_codegit_statuscode",
+                            "zadost_o_zacleneni_pull_request"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#aktualizace_codegit_pullcode",
+                            "#git_a_github",
+                            "#log_codegit_logcode",
+                            "#open-source_a_free_software",
+                            "#posilani_zmen_codegit_pushcode",
+                            "#prace_s_lokalnim_repozitarem",
+                            "#prvni_revize_codegit_commitcode",
+                            "#spoluprace_a_git",
+                            "#spoluprace_na_projektu",
+                            "#stav_repozitare_codegit_statuscode",
+                            "#zadost_o_zacleneni_pull_request",
+                            "https://choosealicense.com",
+                            "https://creativecommons.org",
+                            "https://cs.wikipedia.org/wiki/Svobodn%C3%BD_software",
+                            "https://en.wikipedia.org/wiki/Richard_Stallman",
+                            "https://github.com",
+                            "https://github.com/asgeirrr/prezencka",
+                            "https://github.com/asgeirrr/prezencka/",
+                            "https://opensource.org",
+                            "https://www.root.cz/knihy/katedrala-a-trziste/",
+                            "naucse:page?lesson=beginners/cmdline",
+                            "naucse:static?filename=diagram.png",
+                            "naucse:static?filename=gh-workflow-diagram.svg"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/git-collaboration-2in1/index.md",
+                        "title": "Spolupráce a Git",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/git/git-collaboration-2in1/info.yml",
+                "static_files": {
+                    "diagram.png": {
+                        "path": "git-collaboration-2in1/diagram.png"
+                    },
+                    "gh-workflow-diagram.svg": {
+                        "path": "git-collaboration-2in1/gh-workflow-diagram.svg"
+                    }
+                },
+                "title": "Spolupráce a Git"
+            },
+            "git/install": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017"
+                        ],
+                        "content": {
+                            "path": "install/index.1.html"
+                        },
+                        "ids": [
+                            "config",
+                            "git",
+                            "linux",
+                            "macos",
+                            "nastaveni",
+                            "windows"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#config",
+                            "#git",
+                            "#linux",
+                            "#macos",
+                            "#nastaveni",
+                            "#windows",
+                            "https://git-scm.org"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/install/index.md",
+                        "title": "Instalace Gitu",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/git/install/info.yml",
+                "static_files": {},
+                "title": "Instalace Gitu"
+            },
+            "intro/notebook": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro kurz MI-PYT na ČVUT napsali Petr Viktorin, Miro Hrončok a další, 2016-2017."
+                        ],
+                        "content": {
+                            "path": "notebook/index.html"
+                        },
+                        "ids": [
+                            "jak_na_notebook",
+                            "jupyter_notebook"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "license_code": "cc0",
+                        "links": [
+                            "#jak_na_notebook",
+                            "#jupyter_notebook",
+                            "https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages"
+                        ],
+                        "modules": {
+                            "katex": "0.7.1"
+                        },
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/intro/notebook/index.ipynb",
+                        "title": "Notebook",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/intro/notebook/info.yml",
+                "static_files": {},
+                "title": "Notebook"
+            },
+            "meta/local-run": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Napsal Mikuláš Poul, 2018",
+                            "Upravil Petr Viktorin, 2022"
+                        ],
+                        "content": {
+                            "path": "local-run/index.html"
+                        },
+                        "ids": [
+                            "codecourseymlcode_codecoursescode_coderunscode_definice_kurzu",
+                            "codegithubworkflowsmainymlcode_instrukce_pro_github_actions",
+                            "codelessonscode_texty_lekci",
+                            "codelicensescode",
+                            "codepyprojecttomlcode_codepoetrylockcode_codegithubcode_definice_projektu_a_zavislosti",
+                            "definice_kurzu",
+                            "definice_lekce",
+                            "kontrola_nastaveni_projektu",
+                            "lokalni_spusteni",
+                            "misto_a_cas",
+                            "naklonovani_zakladu",
+                            "otestovani_kurzu",
+                            "plan_lekci",
+                            "povinne_informace",
+                            "priprava",
+                            "promenne",
+                            "struktura_repozitare",
+                            "upravovani_a_vytvareni_materialu",
+                            "vytvoreni_lokalniho_kurzu"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "license_code": "cc0",
+                        "links": [
+                            "#codecourseymlcode_codecoursescode_coderunscode_definice_kurzu",
+                            "#codegithubworkflowsmainymlcode_instrukce_pro_github_actions",
+                            "#codelessonscode_texty_lekci",
+                            "#codelicensescode",
+                            "#codepyprojecttomlcode_codepoetrylockcode_codegithubcode_definice_projektu_a_zavislosti",
+                            "#definice_kurzu",
+                            "#definice_lekce",
+                            "#kontrola_nastaveni_projektu",
+                            "#lokalni_spusteni",
+                            "#misto_a_cas",
+                            "#naklonovani_zakladu",
+                            "#otestovani_kurzu",
+                            "#plan_lekci",
+                            "#povinne_informace",
+                            "#priprava",
+                            "#promenne",
+                            "#struktura_repozitare",
+                            "#upravovani_a_vytvareni_materialu",
+                            "#vytvoreni_lokalniho_kurzu",
+                            "https://cs.wikipedia.org/wiki/Markdown",
+                            "https://github.com/pyvec/naucse-python",
+                            "https://github.com/pyvec/naucse-python/blob/main/pyproject.toml",
+                            "https://github.com/pyvec/naucse.python.cz/issues",
+                            "https://python-poetry.org/docs/#installation",
+                            "naucse:page?lesson=beginners/cmdline",
+                            "naucse:page?lesson=beginners/install",
+                            "naucse:page?lesson=beginners/venv-setup",
+                            "naucse:page?lesson=fast-track/yaml",
+                            "naucse:page?lesson=git/git-collaboration-2in1",
+                            "naucse:page?lesson=git/install",
+                            "naucse:page?lesson=intro/notebook",
+                            "naucse:static?filename=info.yml"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/meta/local-run/index.md",
+                        "title": "Vytvoření lokálního kurzu",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/meta/local-run/info.yml",
+                "static_files": {
+                    "info.yml": {
+                        "path": "local-run/info.yml"
+                    }
+                },
+                "title": "Vytvoření lokálního kurzu"
+            },
+            "meta/submitting-a-run": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Napsal Mikuláš Poul, 2018"
+                        ],
+                        "content": {
+                            "path": "submitting-a-run/index.html"
+                        },
+                        "ids": [
+                            "definice_github_actions",
+                            "informace_o_tvem_repozitari",
+                            "nahrani_do_vlastniho_forku",
+                            "pridani_kurzu_na_nauc_se_python",
+                            "pull_request",
+                            "upravovani_kurzu"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "license_code": "cc0",
+                        "links": [
+                            "#definice_github_actions",
+                            "#informace_o_tvem_repozitari",
+                            "#nahrani_do_vlastniho_forku",
+                            "#pridani_kurzu_na_nauc_se_python",
+                            "#pull_request",
+                            "#upravovani_kurzu",
+                            "https://github.com/",
+                            "https://github.com/pyvec/naucse-python",
+                            "https://github.com/pyvec/naucse-python/blob/main/.github/workflows/main.yml",
+                            "https://github.com/pyvec/naucse.python.cz/blob/master/courses.yml",
+                            "https://naucse.python.cz/",
+                            "naucse:page?lesson=git/branching",
+                            "naucse:page?lesson=git/git-collaboration-2in1",
+                            "naucse:static?filename=naucse_fork.png",
+                            "naucse:static?filename=view-all-branches.png"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/meta/submitting-a-run/index.md",
+                        "title": "Přidání kurzu na Nauč se Python",
+                        "vars": {}
+                    }
+                },
+                "source_file": "lessons/meta/submitting-a-run/info.yml",
+                "static_files": {
+                    "naucse_fork.png": {
+                        "path": "submitting-a-run/naucse_fork.png"
+                    },
+                    "view-all-branches.png": {
+                        "path": "submitting-a-run/view-all-branches.png"
+                    }
+                },
+                "title": "Přidání kurzu na Nauč se Python"
+            }
+        },
+        "long_description": "<p>V tomto meta-kurzu je kompletní návod na přidávání kurzů na Nauč se Python.</p>\n<p>Kurz je určený pro organizátory a k přidání kurzu jsou potřeba jen základní znalosti práce\ns gitem a GitHubem.</p>",
+        "sessions": [
+            {
+                "materials": [
+                    {
+                        "lesson_slug": "meta/local-run",
+                        "title": "Vytvoření lokálního kurzu",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "meta/submitting-a-run",
+                        "title": "Přidání kurzu na Nauč se Python",
+                        "type": "lesson"
+                    }
+                ],
+                "slug": "adding-a-run",
+                "source_file": "courses/meta.yml",
+                "title": "Přidání kurzu"
+            }
+        ],
+        "source_file": "courses/meta.yml",
+        "title": "Jak přidat kurz na Nauč se Python"
+    }
+}

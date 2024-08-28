@@ -1,0 +1,93 @@
+<h1 id="instalace_editoru">Instalace  editoru
+<a href="#instalace_editoru" class="header-link">#</a>
+</h1>
+<p>Používáš-li editor, pro který nemáme instrukce, budeš ho muset nastavit
+sám/sama.
+Tady je pár tipů, na co si dát pozor.</p>
+<h2 id="nastaveni">Nastavení
+<a href="#nastaveni" class="header-link">#</a>
+</h2>
+<h2 id="cislovani_radku">Číslování řádků
+<a href="#cislovani_radku" class="header-link">#</a>
+</h2>
+<p>Ujisti se, že ti editor čísluje řádky.
+Pokud ne, podívej se do nastavení a zjisti, jak se to zapíná.</p>
+<h2 id="obarvovani">Obarvování
+<a href="#obarvovani" class="header-link">#</a>
+</h2>
+<p>Ulož soubor s koncovkou <code>.py</code> – například <code>zkouska.py</code> – a zkopíruj do něj
+následující program:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;abc&quot;</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div><p>Jestli se text automaticky obarví (klidně jinými barvami než tady),
+je tvůj editor nastavený správně.
+Jinak se podívej do nastavení a zjisti, jak se to zapíná.</p>
+<h2 id="odsazovani">Odsazování
+<a href="#odsazovani" class="header-link">#</a>
+</h2>
+<p>Stisknutím klávesy <kbd>Tab</kbd> na <em>začatku řádku</em> se vloží 4 mezery.
+Pro psaní a sdílení kódu v Pythonu je důležité,
+aby byly čtyři a aby to byly opravdu mezery.</p>
+<p>Jestli to jsou mezery, se dá zjistit tak, že odsazení na začátku vybereš myší.
+Jde-li vybírat po jednotlivých mezerách, je všechno v pořádku.</p>
+<p>Nejde-li vybírat po jednotlivých mezerách, nebo pokud se jich po stisknutí
+<kbd>Tab</kbd> vloží jiný počet než 4, podívej se do nastavení po možnostech
+jako „velikost odsazení“ nebo „nahrazovat tabulátory za mezery”.</p>
+<h2 id="kontrola_stylu_zdrojoveho_kodu">Kontrola stylu zdrojového kódu
+<a href="#kontrola_stylu_zdrojoveho_kodu" class="header-link">#</a>
+</h2>
+<p>Editory často podporují instalaci pluginů, které mohou psaní kódu usnadnit
+a pomoci s jeho kontrolou.
+Jeden z neužitečnějších je plugin pro kontrolu správného stylu zdrojového kódu.</p>
+<p>Tak jako čeština má Python typografická providla.
+Například za čárkou se píše mezera, ale před ní ne.
+Jsou nepovinná, program bude fungovat i při jejich nedodržení,
+ale pomáhají psát přehledný kód, tak je dobré je dodržovat už od začátku.
+Tato pravidla jsou popsána
+v dokumentu <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a>.</p>
+<p>Zkus takový plugin pro svůj editor najít a nainstalovat.</p>
+<h2 id="nacvik_odsazovani">Nácvik odsazování
+<a href="#nacvik_odsazovani" class="header-link">#</a>
+</h2>
+<p>Jak už bylo zmíňeno, v Pythonu je důležité, kolika mezerami řádek začíná.
+Proto se nám bude hodit vědět, jak rychle odsazovat bloky textu.
+Pojďme si ukázat, jak na to.</p>
+<p>Zkopíruj si do editoru tento text:</p>
+<div class="highlight"><pre><code>Ofelie:
+Ach princi!
+Jak má se Vaše Výsost už tak dlouho?
+Hamlet:
+Děkují poníženě: skvěle, skvěle, skvěle.
+Ofelie:
+Mám od vás, princi, stále ještě dárky,
+Jež dávno toužím vrátit. Prosím vás,
+račte je přijmout teď.
+Hamlet:
+Kdo? Já? Já nikdy
+vám nedal nic.
+Ofelie:
+Dal, Výsosti. A spolu s dárky slova
+tak rozmilá, že každý z nich
+měl jejich vůni. Ta teď vyvanula,
+a tak je vracím. Dary nejbohatší
+se mění v trety, když se dárce mračí.
+Zde, Výsosti.
+</code></pre></div><p><small>(úryvek ze hry Hamlet, napsal W. Shakespeare, překlad E. A. Saudek)</small></p>
+<p>Tenhle text není moc přehledný, tak ho zkusíme poodsazovat, aby vypadal takhle:</p>
+<div class="highlight"><pre><code>Ofelie:
+    Ach princi!
+    Jak má se Vaše Výsost už tak dlouho?
+Hamlet:
+    Děkují poníženě: skvěle, skvěle, skvěle.
+Ofelie:
+    Mám od vás, princi, stále ještě dárky,
+    Jež dávno toužím vrátit. Prosím vás,
+    račte je přijmout teď.
+atd.
+</code></pre></div><p>Abys odsadil/a jeden řádek, nastav kurzor na začátek řádku a stiskni
+klávesu <kbd>Tab</kbd>.
+Každým stisknutím řádek odsadíš o 4 mezery.</p>
+<p>Odsadíš-li moc, pomocí <kbd>Shift</kbd>+<kbd>Tab</kbd> odsazení zmenšíš.</p>
+<p>Chceš-li odsadit víc řádků najednou, všechny je vyber a stiskni <kbd>Tab</kbd>.
+I výběr můžeš „od-odsadit“ pomocí <kbd>Shift</kbd>+<kbd>Tab</kbd>.</p>
+<p>A to je vše! Teď máš nejen nastavený editor, ale umíš ho i používat.</p>
