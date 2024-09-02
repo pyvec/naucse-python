@@ -160,7 +160,7 @@ Poté vytvoříme balíčky znovu:
 (__venv__)$ python -m build
 ```
 
-Zkontrolujte obsah archivu, který najdete v adresáři `dist`
+Zkontrolujte obsah zdrojového archivu (`isholiday-0.1.0.tar.gz`), který najdete v adresáři `dist`.
 Měly by tam být oba soubory.
 
 Hotový balíček pak můžete nainstalovat pomocí nástroje `pip`.
