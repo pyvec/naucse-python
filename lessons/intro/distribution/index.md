@@ -37,7 +37,7 @@ Anglické pojmy v závorce jsou převzaty z oficiálního [glosáře](https://pa
 * **balíček** (_Distribution Package_) je instalovatelný archiv obsahující
   _importovatelné moduly_ pro Python a další potřebné soubory, může být i rozbalený;
 * **zdrojový balíček** (_Source Distribution_, `sdist`) je varianta zabaleného _balíčku_ ve zdrojové formě;
-* **binární balíček** (_Binary Distribution_, `bdist`, `wheel`) je varianta zabaleného _balíčku_ v nezdrojové (např. zkompilované) formě;
+* **binární balíček** (_Binary Distribution_, `bdist`) je varianta zabaleného _balíčku_ v nezdrojové (např. zkompilované) formě, nejčastější podoba toho balíčku se jmenuje `wheel`;
 * **projekt** (_Project_) je knihovna, framework, skript, plugin, aplikace apod. (či jejich kombinace), které balíme do _balíčků_.
 
 
@@ -46,11 +46,12 @@ pyproject.toml
 --------------
 
 Základním stavebním kamenem Python balíčku je soubor `pyproject.toml`, který
-obsahuje všechna potřebná metadata pro vytvoření zdrojového a binárního balíčku.
-TOML je datový formát, který se dobře píše člověkem a čte počítačem.
-Jehož plnou specifikaci můžete najít v oficiální [dokumentaci](https://toml.io/en/).
+obsahuje všechna potřebná metadata pro vytvoření zdrojového i binárního balíčku.
+Soubor používá jazyk TOML, což je datový formát, který se dobře píše člověkem a čte počítačem.
+Plnou specifikaci TOMLu můžete najít v oficiální [dokumentaci tohoto jazyka](https://toml.io/en/).
 
-Pojďme vytvořit jeho minimální variantu. Použijeme balíček `setuptools` jako tzv. _build backend_,
+Pojďme vytvořit minimální variantu souboru `pyproject.toml`.
+Použijeme balíček `setuptools` jako tzv. _build backend_,
 tedy program, který náš balíček vytvoří. Existují také jiné _build backendy_ s jinými vlastnostmi -
 jaké to jsou a jak je použít, se dozvíte z oficiálního [tutoriálu, jak tvořit Python balíčky](https://packaging.python.org/en/latest/tutorials/packaging-projects/).
 
@@ -131,8 +132,8 @@ Můžete je rozbalit pomocí systémových nástrojů a podívat se dovnitř.
 
 > [note]
 > `whl` je ve skutečnosti stejný formát jako `zip`,
-> takže pokud vaše systémové nástroje ho neumí detekovat,
-> stačí přejmenovat rozšíření souboru na `.zip`.
+> takže pokud ho vaše systémové nástroje neumí otevřít,
+> stačí před otevřením změnit příponu souboru na `.zip`.
 
 Můžete také vytvořit pouze zdrojový nebo pouze binární balíček pomocí přepínačů `--sdist`, resp. `--wheel`.
 
@@ -252,7 +253,7 @@ Vytvoříme modul ve formě složky. V našem případě soubor
 Soubor `__init__.py` jednak značí, že adresář `isholiday` je importovatelný modul,
 a také obsahuje kód, který se spustí při importu modulu `isholiday`.
 
-`build` bude této změně automaticky rozumět, což si můžete vyzkoušet vytvořením a prozkoumáním balíčku.
+`setuptools` bude této změně automaticky rozumět, což si můžete vyzkoušet vytvořením a prozkoumáním balíčku.
 
 Momentálně máme všechen kód přímo v `__init__.py`, což sice funguje,
 ale ideální to není. Dobré je mít kód v samostatných souborech a v `__init__.py`
@@ -525,7 +526,7 @@ Wheel: Binární balíčky
 ----------------------
 
 Zatím jsme se zabývali jen zdrojovými balíčky (`sdist`).
-Existují ale i balíčky „zkompilované” – binární (`wheel`).
+Existují ale i balíčky „zkompilované” – binární (`bdist`, nejčastěji `wheel`).
 Když se instaluje zdrojový balíček, pip prvně vytvoří `wheel`, a následně ho rozbalí
 na patříčné místo. Binární balíček se už jen rozbalí.
 
