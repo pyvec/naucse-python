@@ -38,8 +38,9 @@ Anglické pojmy v závorce jsou převzaty z oficiálního [glosáře](https://pa
   _importovatelné moduly_ pro Python a další potřebné soubory, může být i rozbalený;
 * **zdrojový balíček** (_Source Distribution_, `sdist`) je varianta zabaleného _balíčku_ ve zdrojové formě;
 * **binární balíček** (_Binary Distribution_, `bdist`) je varianta zabaleného _balíčku_ v nezdrojové (např. zkompilované) formě, nejčastější podoba toho balíčku se jmenuje `wheel`;
-* **projekt** (_Project_) je knihovna, framework, skript, plugin, aplikace apod. (či jejich kombinace), které balíme do _balíčků_.
-
+* **projekt** (_Project_) je knihovna, framework, skript, plugin, aplikace apod. (či jejich kombinace), které balíme do _balíčků_;
+* **build backend** je program, který vytváří z projektu balíček. Existuje mnoho takových programů, které mají různé vlastnosti a hodí se k různým účelům.
+  Jejich přehled najdete třeba na oficiálním [tutoriálu, jak tvořit Python balíčky](https://packaging.python.org/en/latest/tutorials/packaging-projects/).
 
 
 pyproject.toml
@@ -51,9 +52,7 @@ Soubor používá jazyk TOML, což je datový formát, který se dobře píše �
 Plnou specifikaci TOMLu můžete najít v oficiální [dokumentaci tohoto jazyka](https://toml.io/en/).
 
 Pojďme vytvořit minimální variantu souboru `pyproject.toml`.
-Použijeme balíček `setuptools` jako tzv. _build backend_,
-tedy program, který náš balíček vytvoří. Existují také jiné _build backendy_ s jinými vlastnostmi -
-jaké to jsou a jak je použít, se dozvíte z oficiálního [tutoriálu, jak tvořit Python balíčky](https://packaging.python.org/en/latest/tutorials/packaging-projects/).
+Použijeme balíček `setuptools` jako náš build backend.
 
 
 ```toml
