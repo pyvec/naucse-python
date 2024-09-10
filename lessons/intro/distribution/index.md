@@ -401,27 +401,24 @@ Balíček jde zaregistrovat a nahrát na PyPI. Použijeme pro to program `twine`
 (instalovatelný přes pip).
 
 Budete si potřebovat zařídit
-[účet na PyPI](https://pypi.org/account/register/),
-[účet na testovací PyPI](https://test.pypi.org/account/register/)
-a vytvořit konfigurační soubor `~/.pypirc`:
+[účet na testovací PyPI](https://test.pypi.org/account/register/).
+Od roku 2023 proces registrace zahrnuje nastavení dvoufaktorové autentikace
+pro práci s PyPI.
+Budete pro to potřebovat TOTP aplikaci - pokud jste ji zatím nepoužívali,
+podívejte se na [doporučení od administrátorů PyPI](https://pypi.org/help/#totp).
+Poté, co si nastavíte dvoufaktorový přístup na účet, budete moci vytvořit API
+token pro nahrávání balíčků.
+Vytvořte nový token a vložte jeho hodnotu do konfiguračního souboru `~/.pypirc`:
 
 ```ini
 [distutils]
 index-servers=
-    pypi
     testpypi
 
-[pypi]
-username = <your user name goes here>
-password = <your password goes here>
-
 [testpypi]
-repository = https://test.pypi.org/legacy/
-username = <your user name goes here>
-password = <your password goes here>
+username = __token__
+password = <TestPyPI token>
 ```
-
-Hesla můžete vynechat, pokud je budete chtít pokaždé zadávat.
 
 Používáte-li Windows, je potřeba nastavit proměnnou prostředí `HOME` na adresář
 se souborem `.pypirc`, např:
@@ -448,9 +445,30 @@ než ta, co už na PyPI je. Nejde tedy jednou nahraný balíček přepsat.
 
 Svůj balíček najdete na `https://test.pypi.org/project/<název_balíčku>/`.
 
-Pro nahrání na opravdovou PyPI stačí vynechat `-r testpypi`.
-Zabírat jména na opravdové PyPI jen tak není hezké vůči ostatním Pythonistům;
-registrujte tedy prosím jen balíčky, které budou nějak pro ostatní užitečné.
+> [note]
+> Až budete chtít nahrávat opravdové balíčky na PyPI, vytvořte si
+> [účet na PyPI](https://pypi.org/account/register/).
+> Všechny kroky budou třeba provést znovu, včetně nastavení
+> dvoufaktorové autentikace a vygenerování nového tokenu.
+> Pak aktualizujte konfigurační soubor `~/.pypirc`:
+>
+> ```ini
+> [distutils]
+> index-servers=
+>     pypi
+>     testpypi
+>
+> [pypi]
+> username = __token__
+> password = <PyPI token>
+>
+> [testpypi]
+> username = __token__
+> password = <TestPyPI token>
+> ```
+> Pro nahrání na opravdovou PyPI stačí vynechat `-r testpypi`.
+> Zabírat jména na opravdové PyPI jen tak není hezké vůči ostatním Pythonistům;
+> registrujte tedy prosím jen balíčky, které budou nějak pro ostatní užitečné.
 
 
 Instalace pomocí pip
