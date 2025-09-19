@@ -6,7 +6,7 @@ authors = ["Petr Viktorin <encukou@gmail.com>"]
 license = "CC-BY-SA-4.0"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.13"
 pygments-pytest = "^2.2.0"
 naucse = "^0.5.2"
 naucse-render = "^2.0"
