@@ -1,0 +1,25 @@
+title: Gitworking
+subtitle: Celodenní git workshop pro úplné začátečníky
+description: Git pro začátečnice a začátečníky, základní znalost Pythonu výhodou
+long_description: |
+  Umíš základy Pythonu (například ze začátečnického kurzu PyLadies), ale chceš se přiučit něco o gitu?
+
+  Tento workshop je pro všechny, kteří jsou pokročilejší začátečníci – umí pracovat s příkazovou řádkou zhruba na úrovni absolventek začátečnického kurzu PyLadies, vědí, jak fungují soubory na počítači a že se do nich píše zdrojový kód.
+
+  Budeme používat Python, ale o programování tolik nepůjde.
+plan:
+  - title: Git
+    slug: git
+    materials:
+      - lesson: git/install
+      - lesson: git/basics
+      - lesson: git/branching
+      - lesson: git/collaboration
+      - lesson: git/ignoring
+      - lesson: beginners/cmdline
+        type: link
+      - title: Tahák na git
+        url: https://pyvec.github.io/cheatsheets/basic-git/basic-git-cs.pdf
+vars:
+  coach-present: true
+  use-gender: f
