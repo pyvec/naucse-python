@@ -808,7 +808,8 @@
                 "pages": {
                     "index": {
                         "attribution": [
-                            "Pro kurz MI-PYT na ČVUT napsali Miro Hrončok, Petr Viktorin a další, 2016-2017."
+                            "Pro kurz MI-PYT na ČVUT napsali Miro Hrončok, Petr Viktorin a další, 2016-2017",
+                            "Aktualizaci k novému standardu balíčkování provedla Karolina Surma, 2023-2024"
                         ],
                         "content": {
                             "path": "distribution/index.html"
@@ -821,13 +822,14 @@
                             "moduly",
                             "nahrani_na_pypi",
                             "programy_pro_prikazovou_radku",
-                            "setuppy",
+                            "pyprojecttoml",
                             "slovnicek_pojmu",
                             "soubor_requirementstxt",
                             "specifikace_zavislosti",
                             "spousteni_modulu",
-                            "vice_argumentu_pro_setup",
+                            "vice_metadat_v_pyprojecttoml",
                             "vice_souboru_s_python_kodem",
+                            "vytvoreni_zdrojoveho_a_binarniho_balicku",
                             "wheel_binarni_balicky"
                         ],
                         "license": "cc-by-sa-40",
@@ -840,27 +842,30 @@
                             "#moduly",
                             "#nahrani_na_pypi",
                             "#programy_pro_prikazovou_radku",
-                            "#setuppy",
+                            "#pyprojecttoml",
                             "#slovnicek_pojmu",
                             "#soubor_requirementstxt",
                             "#specifikace_zavislosti",
                             "#spousteni_modulu",
-                            "#vice_argumentu_pro_setup",
+                            "#vice_metadat_v_pyprojecttoml",
                             "#vice_souboru_s_python_kodem",
+                            "#vytvoreni_zdrojoveho_a_binarniho_balicku",
                             "#wheel_binarni_balicky",
                             "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
-                            "https://docs.python.org/3/distutils/sourcedist.html#specifying-the-files-to-distribute",
                             "https://gist.github.com/oskar456/e91ef3ff77476b0dbc4ac19875d0555e",
                             "https://packaging.python.org/",
-                            "https://packaging.python.org/distributing/#package-data",
-                            "https://packaging.python.org/distributing/#setup-args",
+                            "https://packaging.python.org/en/latest/guides/using-testpypi/",
+                            "https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#declaring-project-metadata",
+                            "https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#entry-points",
+                            "https://packaging.python.org/en/latest/tutorials/packaging-projects/",
                             "https://packaging.python.org/glossary",
                             "https://pypi.org",
                             "https://pypi.org/account/register/",
+                            "https://pypi.org/help/#totp",
                             "https://pypi.org/pypi?%3Aaction=list_classifiers",
-                            "https://setuptools.readthedocs.io/en/latest/setuptools.html#dynamic-discovery-of-services-and-plugins",
+                            "https://setuptools.pypa.io/en/latest/userguide/datafiles.html#data-files-support",
                             "https://test.pypi.org/account/register/",
-                            "https://wiki.python.org/moin/TestPyPI"
+                            "https://toml.io/en/"
                         ],
                         "slug": "index",
                         "solutions": [],
