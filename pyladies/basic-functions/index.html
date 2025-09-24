@@ -99,7 +99,7 @@ Ne každý má rád matematiku, a ne ve všech druzích programu jsou takové op
 potřeba.
 Proto musíš předem – typicky na začátku souboru – říct, že je budeš používat.
 To se dělá <em>naimportováním</em> z modulu <code>math</code>:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">floor</span><span class="p">,</span> <span class="n">ceil</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">floor</span><span class="p">,</span> <span class="n">ceil</span>
 </pre></div><p>Naimportované funkce pak můžeš použít:</p>
 <div class="highlight"><pre><span></span><span class="n">sqrt</span><span class="p">(</span><span class="n">cislo</span><span class="p">)</span>                 <span class="c1"># druhá odmocnina</span>
 
@@ -108,7 +108,7 @@ To se dělá <em>naimportováním</em> z modulu <code>math</code>:</p>
 </pre></div><p>Kdybys potřeboval/a goniometrické funkce jako sinus, jsou k dispozici taky.
 Jen pozor na to, že počítají pro úhly v <a href="https://cs.wikipedia.org/wiki/Radi%C3%A1n">radiánech</a>.
 Hodnoty ve stupních je potřeba na radiány převést.</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">tan</span><span class="p">,</span> <span class="n">degrees</span><span class="p">,</span> <span class="n">radians</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">tan</span><span class="p">,</span> <span class="n">degrees</span><span class="p">,</span> <span class="n">radians</span>
 
 <span class="n">sin</span><span class="p">(</span><span class="n">uhel</span><span class="p">)</span>       <span class="c1"># sinus</span>
 <span class="n">cos</span><span class="p">(</span><span class="n">uhel</span><span class="p">)</span>       <span class="c1"># kosinus</span>
@@ -130,7 +130,7 @@ Jsou užitečné třeba pro hry, ve kterých se hází kostkou nebo tahají
 náhodné karty.</p>
 <p>Opět nejsou potřeba tak často a je potřeba je <em>naimportovat</em>.
 Tentokrát z modulu <code>random</code>:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span><span class="p">,</span> <span class="n">uniform</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randrange</span><span class="p">,</span> <span class="n">uniform</span>
 </pre></div><p>Pak už se dají použít:</p>
 <div class="highlight"><pre><span></span><span class="n">randrange</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># náhodné celé číslo od a do b-1</span>
 <span class="n">uniform</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>     <span class="c1"># náhodné reálné číslo od a do b</span>
@@ -140,7 +140,7 @@ Pokud potřebuješ náhodně vybrat ze tří možností,
 použij <code>randrange(0, 3)</code>,
 což vrátí <code>0</code>, <code>1</code>, nebo
 <code>2</code>:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randrange</span>
 
 <span class="n">cislo</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># číslo je 0, 1, nebo 2</span>
 <span class="k">if</span> <span class="n">cislo</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>

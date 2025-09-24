@@ -16,9 +16,9 @@ zápisek Michala Hořejška</a>.</p>
 <p>Rovnou se podíváme na velmi oblíbený balíček <a href="http://pytest.org/">pytest</a>, který oproti standardnímu
 unittestu přináší mnoho výhod. Začneme jednoduchou ukázkou z modulu <code>isholiday</code>
 z <a href="naucse:page?lesson=intro/distribution">cvičení o modulech</a>.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">isholiday</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">isholiday</span>
 
-<span class="k">def</span> <span class="nf">test_xmas_2016</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_xmas_2016</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Test whether there is Christmas in 2016&quot;&quot;&quot;</span>
     <span class="n">holidays</span> <span class="o">=</span> <span class="n">isholiday</span><span class="o">.</span><span class="n">getholidays</span><span class="p">(</span><span class="mi">2016</span><span class="p">)</span>
     <span class="k">assert</span> <span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="ow">in</span> <span class="n">holidays</span>
@@ -79,12 +79,12 @@ tests/test_holidays.py <span class=" -Color -Color-Red">F</span>                
 =========================== 1 failed in 0.02 seconds ===========================
 </pre></div><p>S obyčejným assertem si vystačíte pro většinu testovaných případů kromě
 ověření vyhození výjimky. To se dělá takto:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
 
-<span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">():</span>
     <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">test_mytest</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_mytest</span><span class="p">():</span>
     <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">SystemExit</span><span class="p">):</span>
         <span class="n">f</span><span class="p">()</span>
 </pre></div><p>Více o základním použití pytestu najdete v <a href="http://docs.pytest.org/en/latest/getting-started.html">dokumentaci</a>.</p>
@@ -98,11 +98,11 @@ v roce 2016, ale v jiných letech, nemusíme psát testů více, ani použít cy
 v tom, že celý test selže, i pokud selže jen jeden průběh cyklem. Zároveň se
 průběh testu při selhání ukončí.</p>
 <p>Místo toho tedy použijeme parametrický test:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
-<span class="kn">import</span> <span class="nn">isholiday</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">isholiday</span>
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2033</span><span class="p">,</span> <span class="mi">2048</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">test_xmas</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_xmas</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Test whether there is Christmas&quot;&quot;&quot;</span>
     <span class="n">holidays</span> <span class="o">=</span> <span class="n">isholiday</span><span class="o">.</span><span class="n">getholidays</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
     <span class="k">assert</span> <span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="ow">in</span> <span class="n">holidays</span>
@@ -133,8 +133,8 @@ paralelně nebo distribuovaně. (Což s jedním testem, který více podmínek o
 v cyklu, nejde, tedy alespoň ne jednoduše.)</p>
 <p>Potřebujeme-li parametrizovat více argumentů, můžeme předat seznam jmen
 argumentů a seznam jejich hodnot:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
-<span class="kn">import</span> <span class="nn">isholiday</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">isholiday</span>
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
     <span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">],</span>
@@ -144,7 +144,7 @@ argumentů a seznam jejich hodnot:</p>
      <span class="p">(</span><span class="mi">2033</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
      <span class="p">(</span><span class="mi">2048</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">)],</span>
 <span class="p">)</span>
-<span class="k">def</span> <span class="nf">test_some_holidays</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_some_holidays</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Test a few sample holidays&quot;&quot;&quot;</span>
     <span class="n">holidays</span> <span class="o">=</span> <span class="n">isholiday</span><span class="o">.</span><span class="n">getholidays</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
     <span class="k">assert</span> <span class="p">(</span><span class="n">day</span><span class="p">,</span> <span class="n">month</span><span class="p">)</span> <span class="ow">in</span> <span class="n">holidays</span>
@@ -200,14 +200,14 @@ abyste získali to, co teprve chcete testovat. Příkladem může být napříkl
 inicializace objektu pro komunikaci s nějakým API.</p>
 <p>V pytestu k tomuto účelu nejlépe slouží tz. <a href="http://doc.pytest.org/en/latest/fixture.html">fixtures</a>, které se v samotných
 testech používají jako argumenty funkcí.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
-<span class="k">def</span> <span class="nf">client</span><span class="p">():</span>
-    <span class="kn">import</span> <span class="nn">twitter</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">client</span><span class="p">():</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">twitter</span>
     <span class="k">return</span> <span class="n">twitter</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">test_search_python</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_search_python</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
     <span class="n">tweets</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">tweets</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
     <span class="k">assert</span> <span class="s1">&#39;python&#39;</span> <span class="ow">in</span> <span class="n">tweets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -222,31 +222,31 @@ použít <code>yield</code>.
 Často se to používá u zdrojů, které je po použití potřeba nějak finalizovat či
 zavřít, například u databázových spojení.
 Zde je ilustrační příklad, který si můžete rovnou vyzkoušet:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
 
 
-<span class="k">class</span> <span class="nc">DBConnection</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DBConnection</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Creating connection for &#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
         <span class="o">...</span>
 
-    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">arg</span>
 
-    <span class="k">def</span> <span class="nf">cleanup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cleanup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cleaning up connection&#39;</span><span class="p">)</span>
         <span class="o">...</span>
 
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
-<span class="k">def</span> <span class="nf">connection</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">connection</span><span class="p">():</span>
     <span class="n">d</span> <span class="o">=</span> <span class="n">DBConnection</span><span class="p">(</span><span class="s1">&#39;sqlite&#39;</span><span class="p">)</span>
     <span class="k">yield</span> <span class="n">d</span>
     <span class="n">d</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
 
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s1">&#39;arg&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">test_with_fixture</span><span class="p">(</span><span class="n">connection</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_with_fixture</span><span class="p">(</span><span class="n">connection</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
     <span class="k">assert</span> <span class="n">arg</span> <span class="o">==</span> <span class="n">connection</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
 </pre></div><p>Standardní výstup (<code>stderr</code> a <code>stdout</code>) z testů se normálně zobrazuje,
 jen když test selže.
@@ -255,7 +255,7 @@ Chceme-li výstup vidět u všech testů, je třeba použít přepínač <code>-
 parametry předané dekorátoru <code>pytest.fixture</code> získáme ze speciálního parametru
 <code>request</code>, který obsahuje informace o probíhajícím testu:</p>
 <div class="highlight"><pre><span></span><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;sqlite&#39;</span><span class="p">,</span> <span class="s1">&#39;postgres&#39;</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">connection</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">connection</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="n">d</span> <span class="o">=</span> <span class="n">DBConnection</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">param</span><span class="p">)</span>
     <span class="k">yield</span> <span class="n">d</span>
     <span class="n">d</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
@@ -277,10 +277,10 @@ pro funkcionalitu knihoven, které mají v názvu <em>mock</em> :)</p>
 </h3>
 <p>Při testování často potřebujeme nějaký objekt, který má určité atributy a
 metody. Vytvářet si pro každý takový objekt třídu může být ubíjející:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FakePlane</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">FakePlane</span><span class="p">:</span>
     <span class="n">operational</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="n">model</span> <span class="o">=</span> <span class="s1">&#39;MIG-21&#39;</span>
-    <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">pass</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">pass</span>
 
 <span class="n">plane</span> <span class="o">=</span> <span class="n">FakePlane</span><span class="p">()</span>  <span class="c1"># this is tedious!</span>
 </pre></div><p>Flexmock umožňuje vytvoření objektu rychle a jednoduše:</p>
@@ -292,9 +292,9 @@ metody. Vytvářet si pro každý takový objekt třídu může být ubíjejíc�
 </h3>
 <p>Stejně tak můžete vzít i nějaký existující objekt nebo třídu a upravit jen část
 atributů nebo metod:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">flexmock</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Train</span><span class="p">:</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">get_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">flexmock</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span><span class="w"> </span><span class="nc">Train</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">def</span><span class="w"> </span><span class="nf">get_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="o">...</span>         <span class="k">return</span> <span class="mi">0</span>
 <span class="o">...</span> 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">flexmock</span><span class="p">(</span><span class="n">Train</span><span class="p">,</span> <span class="n">get_speed</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
@@ -303,10 +303,10 @@ atributů nebo metod:</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">train</span><span class="o">.</span><span class="n">get_speed</span><span class="p">()</span>
 <span class="mi">200</span>
 </pre></div><p>Můžete tak zfalšovat i volání <em>builtin</em> funkcí, jako je například <code>open()</code>:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sys</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">flexmock</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">builtins</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">flexmock</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">builtins</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="n">StringIO</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">flexmock</span><span class="p">(</span><span class="n">builtins</span><span class="p">,</span> <span class="nb">open</span><span class="o">=</span><span class="n">StringIO</span><span class="p">(</span><span class="s1">&#39;fake content&#39;</span><span class="p">))</span>
 <span class="o">&lt;</span><span class="n">module</span> <span class="s1">&#39;builtins&#39;</span> <span class="p">(</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span><span class="p">)</span><span class="o">&gt;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/etc/passwd&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -370,14 +370,14 @@ použijí při testech. V zásadě to funguje takto:</p>
 </ul>
 <p>Betamax funguje pouze s knihovnou <a href="naucse:page?lesson=intro/requests">requests</a> při použití session.</p>
 <p>V kombinaci s pytestem můžete použít předpřipravenou fixture:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">betamax</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">betamax</span>
 
 <span class="k">with</span> <span class="n">betamax</span><span class="o">.</span><span class="n">Betamax</span><span class="o">.</span><span class="n">configure</span><span class="p">()</span> <span class="k">as</span> <span class="n">config</span><span class="p">:</span>
     <span class="c1"># tell Betamax where to find the cassettes</span>
     <span class="c1"># make sure to create the directory</span>
     <span class="n">config</span><span class="o">.</span><span class="n">cassette_library_dir</span> <span class="o">=</span> <span class="s1">&#39;tests/fixtures/cassettes&#39;</span>
 
-<span class="k">def</span> <span class="nf">test_get</span><span class="p">(</span><span class="n">betamax_session</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_get</span><span class="p">(</span><span class="n">betamax_session</span><span class="p">):</span>
     <span class="n">betamax_session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://httpbin.org/get&#39;</span><span class="p">)</span>
 </pre></div><p>Před spuštěním testu vytvořte složku <code>tests/fixtures/cassettes</code>.
 Po spuštění testu ji prozkoumejte.
@@ -388,12 +388,12 @@ smažte a pusťte test znovu.</p>
 <p>Celé to ale funguje pouze, pokud kód vykonávaný uvnitř testu použije speciální
 session, kterou máme od betamaxu. Jak to udělat?</p>
 <p>Je třeba, aby implementační část kódu uměla session přejmout, například takto:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Client</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Client</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">session</span> <span class="ow">or</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
         <span class="o">...</span>
 
-<span class="k">def</span> <span class="nf">test_clent_foo</span><span class="p">(</span><span class="n">betamax_session</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_clent_foo</span><span class="p">(</span><span class="n">betamax_session</span><span class="p">):</span>
     <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">betamax_session</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">client</span><span class="o">.</span><span class="n">foo</span><span class="p">()</span> <span class="o">==</span> <span class="mi">42</span>
 </pre></div><p>Pokud budete používat parametrizované testy, použijte
@@ -402,7 +402,7 @@ parametrech.</p>
 <div class="admonition note"><p>Pro tip: Abyste nevytvářeli novou instanci třídy ve všech testech, můžete si
 vytvořit vlastní fixture, která použije fixture <code>betamax_session</code>:</p>
 <div class="highlight"><pre><span></span><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
-<span class="k">def</span> <span class="nf">client</span><span class="p">(</span><span class="n">betamax_session</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">client</span><span class="p">(</span><span class="n">betamax_session</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">betamax_session</span><span class="p">)</span>
 </pre></div></div><h3 id="citlive_udaje">Citlivé údaje
 <a href="#citlive_udaje" class="header-link">#</a>
@@ -431,7 +431,7 @@ vytvořit vlastní fixture, která použije fixture <code>betamax_session</code>
     <span class="o">...</span>
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
-<span class="k">def</span> <span class="nf">client</span><span class="p">(</span><span class="n">betamax_session</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">client</span><span class="p">(</span><span class="n">betamax_session</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">Client</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">TOKEN</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="n">betamax_session</span><span class="p">)</span>
 </pre></div><p>Co když ale nevíme, jak bude vypadat citlivá část požadavku, protože se teprve
 někde spočítá a získá, jako například v případě Twitter API?
@@ -470,15 +470,15 @@ testovat webové API klienty v Pythonu.</p>
 </h2>
 <p>Pro testování aplikací ve Flasku se
 <a href="http://flask.pocoo.org/docs/1.0/testing/">používá</a> <code>app.test_client()</code>:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
-<span class="k">def</span> <span class="nf">testapp</span><span class="p">():</span>
-    <span class="kn">from</span> <span class="nn">hello</span> <span class="kn">import</span> <span class="n">app</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">testapp</span><span class="p">():</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">hello</span><span class="w"> </span><span class="kn">import</span> <span class="n">app</span>
     <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;TESTING&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">return</span> <span class="n">app</span><span class="o">.</span><span class="n">test_client</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">test_hello</span><span class="p">(</span><span class="n">testapp</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_hello</span><span class="p">(</span><span class="n">testapp</span><span class="p">):</span>
     <span class="k">assert</span> <span class="s1">&#39;Hello&#39;</span> <span class="ow">in</span> <span class="n">testapp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">as_text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div><p>Pozor, metody na testovacím klientu vrací <a href="http://flask.pocoo.org/docs/1.0/api/#flask.Response">Response</a>, ale trochu jinou, než tu
 z requests.
@@ -489,9 +489,9 @@ Proto nelze použít přímo <code>response.text</code>; text dostaneme pomocí
 </h2>
 <p>Podobně funguje <a href="http://click.pocoo.org/6/testing/">testování aplikací v clicku</a>.
 Click obsahuje třídu <code>CliRunner</code>, která pomáhá s testováním:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">click.testing</span> <span class="kn">import</span> <span class="n">CliRunner</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">click.testing</span><span class="w"> </span><span class="kn">import</span> <span class="n">CliRunner</span>
 
-<span class="k">def</span> <span class="nf">test_push_force</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_push_force</span><span class="p">():</span>
     <span class="n">runner</span> <span class="o">=</span> <span class="n">CliRunner</span><span class="p">()</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">git_cli_made_in_click</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;push&#39;</span><span class="p">,</span> <span class="s1">&#39;--force&#39;</span><span class="p">])</span>
     <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">exit_code</span> <span class="o">==</span> <span class="mi">0</span>
@@ -537,7 +537,7 @@ Pokud pytest používáme, je proto dobré <code>setup.py</code> naučit spoušt
 <p>K tomu potřebujeme nakonfigurovat závislosti: v <code>setup_requires</code> musí být
 <code>pytest-runner</code> a v <code>tests_require</code> pak <code>pytest</code> a další testovací závislosti
 (<code>flexmock</code>, <code>betamax</code>...).</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">setuptools</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup</span>
 
 <span class="n">setup</span><span class="p">(</span>
     <span class="o">...</span><span class="p">,</span>
@@ -598,11 +598,11 @@ v <a href="https://docs.travis-ci.com/user/languages/python/">dokumentaci</a>.</
 <a href="#kviz" class="header-link">#</a>
 </h2>
 <p>Co je špatně na této testovací sadě k funkci <code>is_even()</code>?</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_even</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
 
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">test_is_even</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_is_even</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">assert</span> <span class="n">is_even</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 </pre></div>

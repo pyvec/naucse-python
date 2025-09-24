@@ -3,24 +3,24 @@
 </h1>
 <p>Minule jsme probrali třídy.
 Jako příklad jsme si ukázali třídu pro koťátka:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kotatko</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Kotatko</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno</span>
 
-    <span class="k">def</span> <span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">jidlo</span><span class="si">}</span><span class="s2"> mi chutná!&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Mňau!&quot;</span><span class="p">)</span>
 </pre></div><p>Zkus si udělat podobnou třídu pro štěňátka:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Stenatko</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Stenatko</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno</span>
 
-    <span class="k">def</span> <span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">jidlo</span><span class="si">}</span><span class="s2"> mi chutná!&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">zastekej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zastekej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Haf!&quot;</span><span class="p">)</span>
 </pre></div><p>Většina kódu je stejná!
 Kdybys měl/a napsat i třídu pro kuřátka, kůzlátka,
@@ -33,21 +33,21 @@ Můžeš si vytvořit třídu společnou pro všechna
 zvířátka a do ní napsat všechno, co je společné.
 Ve třídách pro jednotlivé druhy zvířat pak zbude jen to, co se liší.
 V Pythonu se to dělá takto:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Zviratko</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Zviratko</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno</span>
 
-    <span class="k">def</span> <span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">jidlo</span><span class="si">}</span><span class="s2"> mi chutná!&quot;</span><span class="p">)</span>
 
 
-<span class="k">class</span> <span class="nc">Kotatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Kotatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Mňau!&quot;</span><span class="p">)</span>
 
 
-<span class="k">class</span> <span class="nc">Stenatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">zastekej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Stenatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zastekej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Haf!&quot;</span><span class="p">)</span>
 
 
@@ -82,8 +82,8 @@ Takže všechno, co je definované pro
 <p>Když se ti nebude líbit chování některé metody
 v nadtřídě, stačí dát metodu stejného jména do
 podtřídy:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kotatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Kotatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">jidlo</span><span class="si">}</span><span class="s2"> mi vůbec nechutná!&quot;</span><span class="p">)</span>
 
 
@@ -99,8 +99,8 @@ potřebovat použít původní funkčnost, jen budeš chtít udělat ještě ně
 To umí zařídit speciální funkce <code>super()</code>,
 která umožňuje volat metody z nadtřídy.
 Třeba takhle:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kotatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Kotatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2"> na </span><span class="si">{</span><span class="n">jidlo</span><span class="si">}</span><span class="s2"> chvíli fascinovaně kouká)&quot;</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">snez</span><span class="p">(</span><span class="n">jidlo</span><span class="p">)</span>
 
@@ -112,8 +112,8 @@ argumenty, které potřebuje (kromě <code>self</code>,
 který se jako obvykle doplní automaticky).
 Toho se dá i využít – můžeš použít i jiné argumenty
 než dostala původní funkce:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Hadatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Hadatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
         <span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sss&#39;</span><span class="p">)</span>
         <span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;Sss&#39;</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">jmeno</span><span class="p">)</span>
@@ -158,8 +158,8 @@ použít kdekoli, kde bys chtěl/a použít volant.
 Takže v tomto případě je lepší si říct „každé auto
 <em>má</em> volant”, stejně jako „každé kotě
 <em>má</em> jméno”, udělat dvě nezávislé třídy a napsat něco jako:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Auto</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Auto</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">volant</span> <span class="o">=</span> <span class="n">Volant</span><span class="p">()</span>
 </pre></div><p>(A až bude někdy nějaký vystudovaný informatik nespokojený
 s tím, že porušuješ
@@ -173,21 +173,21 @@ a <code>zastekej</code>, možná tě napadne, že by se
 daly pojmenovat lépe, aby se daly použít pro všechna
 zvířata, podobně jako <code>snez</code>.
 Bude nejlepší je přejmenovat:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Zviratko</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Zviratko</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno</span>
 
-    <span class="k">def</span> <span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">jidlo</span><span class="si">}</span><span class="s2"> mi chutná!&quot;</span><span class="p">)</span>
 
 
-<span class="k">class</span> <span class="nc">Kotatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">udelej_zvuk</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Kotatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">udelej_zvuk</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Mňau!&quot;</span><span class="p">)</span>
 
 
-<span class="k">class</span> <span class="nc">Stenatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">udelej_zvuk</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Stenatko</span><span class="p">(</span><span class="n">Zviratko</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">udelej_zvuk</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Haf!&quot;</span><span class="p">)</span>
 
 

@@ -8,7 +8,7 @@ Následující program přiřadí do proměnné <code>pi</code> a všechny dalš
 mají k <code>pi</code> přístup:</p>
 <div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415926</span>
 
-<span class="k">def</span> <span class="nf">obsah_kruhu</span><span class="p">(</span><span class="n">polomer</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">obsah_kruhu</span><span class="p">(</span><span class="n">polomer</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">polomer</span> <span class="o">**</span> <span class="mi">2</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">obsah_kruhu</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
@@ -20,7 +20,7 @@ společného s tím, co je „venku“ kolem funkce.</p>
 protože existují jen místně, v rámci volání jedné jediné funkce.</p>
 <p>Proměnné, které nejsou lokální, jsou <em>globální</em> – ty existují v celém programu.</p>
 <p>Pro příklad:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nastav_x</span><span class="p">(</span><span class="n">hodnota</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">nastav_x</span><span class="p">(</span><span class="n">hodnota</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">hodnota</span>  <span class="c1"># Přiřazení do lokální proměnné!</span>
 
 <span class="n">nastav_x</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
@@ -33,7 +33,7 @@ Když funkce <code>nastav_x</code> skončí, proměnná <code>x</code> přestane
 <a href="#skryvani_detailu" class="header-link">#</a>
 </h2>
 <p>Podobně skončí s chybou i složitější program:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zamen</span><span class="p">(</span><span class="n">slovo</span><span class="p">,</span> <span class="n">pozice</span><span class="p">,</span> <span class="n">novy_znak</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zamen</span><span class="p">(</span><span class="n">slovo</span><span class="p">,</span> <span class="n">pozice</span><span class="p">,</span> <span class="n">novy_znak</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;V daném slově zamění znak na dané pozici za daný nový znak&quot;&quot;&quot;</span>
     <span class="n">zacatek</span> <span class="o">=</span> <span class="n">slovo</span><span class="p">[:</span><span class="n">pozice</span><span class="p">]</span>
     <span class="n">konec</span> <span class="o">=</span> <span class="n">slovo</span><span class="p">[</span><span class="n">pozice</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
@@ -85,7 +85,7 @@ Jméno označuje lokální proměnnou, a ta globální pak „není vidět“.</
 <p>Tento příklad tedy nebude fungovat tak, jak se zdá:</p>
 <div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="k">def</span> <span class="nf">nastav_x</span><span class="p">(</span><span class="n">hodnota</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">nastav_x</span><span class="p">(</span><span class="n">hodnota</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">hodnota</span>  <span class="c1"># Přiřazení do lokální proměnné!</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ve funkci nastav_x: x =&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 
@@ -101,11 +101,11 @@ Jmenují se stejně, ale jsou to dvě různé proměnné.</p>
 Než spustíš tenhle program, zkus předpovědět, co bude dělat.
 Pak ho pusť, a pokud dělal něco jiného, zkus vysvětlit proč.
 Pozor na chytáky!</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span>
 <span class="n">obsah</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">30</span>
 
-<span class="k">def</span> <span class="nf">obsah_elipsy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">obsah_elipsy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">obsah</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>  <span class="c1"># Přiřazení do `obsah`</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">3</span>  <span class="c1"># Přiřazení do `a`</span>
     <span class="k">return</span> <span class="n">obsah</span>

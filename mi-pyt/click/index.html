@@ -22,14 +22,14 @@ nepodporuje.
 Máte-li existující rozhraní, které chcete jen převést do Pythonu,
 click nejspíš nebude nejlepší volba.</p>
 </div><p>Takto jednoduše se dá vytvořit aplikace s přepínači:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">click</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">click</span>
 
 <span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--count&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>  <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;COUNT&#39;</span><span class="p">,</span>
               <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Number of greetings.&#39;</span><span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Your name&#39;</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span>
               <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The person to greet.&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Simple program that greets NAME for a total of COUNT times.&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
         <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">!&#39;</span><span class="p">)</span>
@@ -64,7 +64,7 @@ Jeden přepínač může mít i víc jmen.</p>
 <p>Speciální případ jsou booleovské přepínače, které mají jedno jméno
 pro <code>True</code> a jiné pro <code>False</code>. Lze samozřejmě také vytvořit bezhodnotový
 přepínač pomocí <code>is_flag</code>.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">click</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">click</span>
 
 <span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;world&#39;</span><span class="p">,</span>
@@ -73,7 +73,7 @@ přepínač pomocí <code>is_flag</code>.</p>
               <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Make the output colorful&#39;</span><span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span> <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
               <span class="n">help</span><span class="o">=</span><span class="s1">&#39;More verbose output&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">verbose</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">verbose</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">color</span><span class="p">:</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">click</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
     <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">!&#39;</span><span class="p">)</span>
@@ -113,7 +113,7 @@ do kterého má přepnout.
 Jeho rozhraní by v clicku vypadalo takto:</p>
 <div class="highlight"><pre><span></span><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">argument</span><span class="p">(</span><span class="s1">&#39;directory&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">cd</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cd</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Change the current directory&quot;&quot;&quot;</span>
     <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Changing to directory </span><span class="si">{</span><span class="n">directory</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div><p>Proměnný počet argumentů se zadává pomocí <code>nargs=-1</code> (0 nebo víc argumentů)
@@ -123,7 +123,7 @@ Takové rozhraní by v clicku vypadalo následovně:</p>
 <div class="highlight"><pre><span></span><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">argument</span><span class="p">(</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">argument</span><span class="p">(</span><span class="s1">&#39;destination&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">mv</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">destination</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mv</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">destination</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Move any number of files to one destination&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">source</span><span class="p">:</span>
         <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Moving </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">destination</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -140,7 +140,7 @@ funkci <a href="https://docs.python.org/3/library/functions.html#open"><code>ope
 <code>'r'</code> pro čtení, <code>'w'</code> pro zápis.</p>
 <div class="highlight"><pre><span></span><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">argument</span><span class="p">(</span><span class="s1">&#39;files&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">click</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">cat</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cat</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Print out the contents of the given files&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
@@ -161,7 +161,7 @@ nebo <a href="https://click.palletsprojects.com/en/7.x/api/#click.BadParameter">
 (vztahuje-li se přímo ke konkrétnímu parametru). Click se pak
 sám postará o případné ukončení programu s odpovídající chybovou
 hláškou a kódem.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">validate_username</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">validate_username</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
     <span class="k">if</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">8</span> <span class="ow">and</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^[a-zA-Z]+[0-9]*$&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
@@ -169,7 +169,7 @@ hláškou a kódem.</p>
 
 <span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-u&#39;</span><span class="p">,</span> <span class="s1">&#39;--username&#39;</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">validate_username</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">email</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">email</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
     <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s1">@fit.cvut.cz&#39;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -183,17 +183,17 @@ a <code>git commit</code>.</p>
 <p>Umí-li váš program více akcí, souhrnný příkaz označte <code>@click.group()</code>
 a jednotlivé podpříkazy pak přidávejte pomocí <code>command()</code>:</p>
 <div class="highlight"><pre><span></span><span class="nd">@click</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
-<span class="k">def</span> <span class="nf">git2</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">git2</span><span class="p">():</span>
     <span class="k">pass</span>
 
 <span class="nd">@git2</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
-<span class="k">def</span> <span class="nf">commit</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">commit</span><span class="p">():</span>
     <span class="n">message</span> <span class="o">=</span> <span class="n">click</span><span class="o">.</span><span class="n">edit</span><span class="p">(</span><span class="s1">&#39;Made some changes&#39;</span><span class="p">)</span>
     <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Making commit with message: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="nd">@git2</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">argument</span><span class="p">(</span><span class="s1">&#39;files&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
         <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Adding </span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div><h2 id="a_dalsi">A další

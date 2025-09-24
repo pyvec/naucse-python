@@ -2,25 +2,25 @@
 <a href="#vratit_nebo_vypsat" class="header-link">#</a>
 </h1>
 <p>Podívejme se teď na následující program, který vypíše obsah elipsy:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span>
 
-<span class="k">def</span> <span class="nf">obsah_elipsy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">obsah_elipsy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obsah elipsy s poloosami 3 a 5 je&#39;</span><span class="p">,</span> <span class="n">obsah_elipsy</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="s1">&#39;cm2&#39;</span><span class="p">)</span>
 </pre></div><p>Takový program se teoreticky dá napsat i s procedurou, tedy funkcí, která nic
 nevrací.
 Procedura může výsledek třeba vypsat na obrazovku:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span>
 
-<span class="k">def</span> <span class="nf">obsah_elipsy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">obsah_elipsy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obsah je&#39;</span><span class="p">,</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Pozor, `print` místo `return`!</span>
 
 <span class="n">obsah_elipsy</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div><p>Program takhle funguje, ale přichází o jednu z hlavních výhod funkcí:
 možnost vrácenou hodnotu použít i jinak než jen v <code>print</code>.</p>
 <p>Funkci, která <em>vrací</em> výsledek, můžeš použít v dalších výpočtech:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">objem_eliptickeho_valce</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">vyska</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">objem_eliptickeho_valce</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">vyska</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">obsah_elipsy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">vyska</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">objem_eliptickeho_valce</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
@@ -38,9 +38,9 @@ moje funkce dát použít jen v situacích, kdy je u počítače klávesnice a z
 Proto je lepší funkcím potřebné informace předávat jako argumenty
 a volání <code>input</code> (nebo čtení textového políčka či měření čidlem robota)
 nemít ve funkci, ale vně, v kódu, který funkci volá:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span>
 
-<span class="k">def</span> <span class="nf">obsah_elipsy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">obsah_elipsy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Vrátí obsah elipsy s poloosami daných délek&quot;&quot;&quot;</span>
     <span class="c1"># Jen samotný výpočet:</span>
     <span class="k">return</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
@@ -61,7 +61,7 @@ je dobré ve funkci <code>print</code> ani <code>input</code> nemít.</p>
 automaticky se vrátí hodnota <code>None</code>.</p>
 <p>Je to hodnota zabudovaná přímo do Pythonu, podobně jako <code>True</code> nebo <code>False</code>,
 a znamená „nic“.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nic</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">nic</span><span class="p">():</span>
 <span class="w">     </span><span class="sd">&quot;&quot;&quot;Tahle funkce nic nedělá &quot;&quot;&quot;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">nic</span><span class="p">())</span>

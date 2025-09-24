@@ -7,17 +7,17 @@ nastane v zanořené funkci.</p>
 <div class="admonition note"><p>Tohle je absurdní ilustrační příklad, ne ukázka jak dobře programovat!</p>
 </div><!-- XXX: automatic line numbers? -->
 
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">podel</span><span class="p">(</span><span class="n">delenec</span><span class="p">,</span> <span class="n">delitel</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">podel</span><span class="p">(</span><span class="n">delenec</span><span class="p">,</span> <span class="n">delitel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Podělí čísla mezi sebou a vrátí výsledek.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">delenec</span> <span class="o">/</span> <span class="n">delitel</span>        <span class="c1"># řádek 3</span>
 
 
-<span class="k">def</span> <span class="nf">podel_nulou</span><span class="p">(</span><span class="n">cislo</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">podel_nulou</span><span class="p">(</span><span class="n">cislo</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Vydělí dané číslo nulou a vrátí výsledek.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">podel</span><span class="p">(</span><span class="n">cislo</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>          <span class="c1"># řádek 8</span>
 
 
-<span class="k">def</span> <span class="nf">ukaz_priklad</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ukaz_priklad</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Spočítá ukázkový příklad a výsledek vypíše (nevrátí!)&quot;&quot;&quot;</span>
     <span class="n">vysledek</span> <span class="o">=</span> <span class="n">podel_nulou</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>       <span class="c1"># řádek 13</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">vysledek</span><span class="p">)</span>

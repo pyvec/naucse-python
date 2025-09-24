@@ -157,7 +157,7 @@ souboru <code>setup.py</code> přidáme argument <code>ext_modules</code> se sez
 Podrobný popis třídy <code>Extension</code> je v <a href="https://docs.python.org/3/distutils/apiref.html#distutils.core.Extension">dokumentaci</a>; nám bude stačit
 jen jméno a seznam zdrojových souborů:</p>
 <p>setup.py:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">Extension</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">setuptools</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">Extension</span>
 
 <span class="n">module1</span> <span class="o">=</span> <span class="n">Extension</span><span class="p">(</span>
     <span class="s1">&#39;demo&#39;</span><span class="p">,</span>
@@ -299,13 +299,13 @@ na <code>.pyx</code>, aby bylo jasné, že jde o jiný jazyk, který nepůjde na
 Vývojáři Cythonu považují každou odchylku od specifikace jazyka za chybu, kterou je nutno opravit.</p>
 <p>Jako příklad můžete použít tuto naivní implementaci celočíselného a maticového násobení.
 Uložte si ji jako <code>matmul.py</code>:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
 
-<span class="k">def</span> <span class="nf">intmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">intmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
     <span class="k">return</span> <span class="n">result</span>
 
-<span class="k">def</span> <span class="nf">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">m</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">m</span><span class="p">:</span>
@@ -325,9 +325,9 @@ Uložte si ji jako <code>matmul.py</code>:</p>
 vznikne <code>matmul.c</code>. Ten můžeme přeložit výše uvedeným způsobem.</p>
 <p>Jednodušší varianta je použít Cython v <code>setup.py</code>.
 Pro naše účely bude <code>setup.py</code> s Cythonem a NumPy vypadat takto:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
-<span class="kn">from</span> <span class="nn">Cython.Build</span> <span class="kn">import</span> <span class="n">cythonize</span>
-<span class="kn">import</span> <span class="nn">numpy</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">setuptools</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Cython.Build</span><span class="w"> </span><span class="kn">import</span> <span class="n">cythonize</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
 
 <span class="n">setup</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s1">&#39;matmul&#39;</span><span class="p">,</span>
@@ -343,7 +343,7 @@ Pro naše účely bude <code>setup.py</code> s Cythonem a NumPy vypadat takto:</
 <span class="p">)</span>
 </pre></div><div class="admonition note"><p>V případě problémech s nefungujícím <code>include_dirs</code> na systému macOS
 použijte komplikovanější variantu:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">distutils.extension</span> <span class="kn">import</span> <span class="n">Extension</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">distutils.extension</span><span class="w"> </span><span class="kn">import</span> <span class="n">Extension</span>
 <span class="o">...</span>
 <span class="n">ext_modules</span> <span class="o">=</span> <span class="n">cythonize</span><span class="p">([</span><span class="n">Extension</span><span class="p">(</span><span class="s1">&#39;matmul&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;matmul.pyx&#39;</span><span class="p">],</span>
                                    <span class="n">include_dirs</span><span class="o">=</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">get_include</span><span class="p">()])],</span>
@@ -382,7 +382,7 @@ Nejjednodušší způsob, jak toho docílit, je doplnění statických informac�
 <code>result</code> jsou typu <code>int</code>.
 Parametrům stačí doplnit typ podobně jako v C, ostatní lokální proměnné potřebují definici pomocí
 příkazu <code>cdef</code>:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">intmul</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">intmul</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">cdef</span> <span class="nb">int</span> <span class="n">result</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
     <span class="k">return</span> <span class="n">result</span>
@@ -420,19 +420,19 @@ Ani jim ani jejich instancím nelze z Pythonu nastavovat nové atributy:</p>
   <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">AttributeError</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;bar&#39;</span>
 </pre></div><p>Příklad definice <em>built-in</em> třídy:</p>
-<div class="highlight"><pre><span></span><span class="n">cdef</span> <span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="n">cdef</span> <span class="k">class</span><span class="w"> </span><span class="nc">Foo</span><span class="p">:</span>
     <span class="c1"># Všechny členské proměnné musí být nadefinované tady</span>
     <span class="n">cdef</span> <span class="nb">int</span> <span class="n">foo</span>
     <span class="o">...</span>
 
-    <span class="k">def</span> <span class="nf">__cinit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">int</span> <span class="n">f</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__cinit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">int</span> <span class="n">f</span><span class="p">):</span>
         <span class="c1"># Inicializace třídy.</span>
         <span class="c1"># Cython zajistí, že se tato funkce zavolá pouze jednou (na rozdíl</span>
         <span class="c1"># od __init__, kterou lze z pythonního kódu zavolat kdykoli)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">foo</span> <span class="o">=</span> <span class="n">f</span>
         <span class="o">...</span>
 
-    <span class="k">def</span> <span class="nf">__dealloc__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__dealloc__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Deinicializace třídy</span>
         <span class="o">...</span>
 
@@ -515,7 +515,7 @@ je pro časově kritické části kódu lepší k problému přistoupit spíše 
 přes alokaci paměti a ukazatele.</p>
 <p>Následující příklad ukazuje, jak naplnit pole heterogenních záznamů:</p>
 <div class="highlight"><pre><span></span><span class="c1"># Import funkcí pro alokaci paměti – chovají se jako malloc() apod.</span>
-<span class="kn">from</span> <span class="nn">cpython.mem</span> <span class="n">cimport</span> <span class="n">PyMem_Malloc</span><span class="p">,</span> <span class="n">PyMem_Realloc</span><span class="p">,</span> <span class="n">PyMem_Free</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cpython.mem</span> <span class="n">cimport</span> <span class="n">PyMem_Malloc</span><span class="p">,</span> <span class="n">PyMem_Realloc</span><span class="p">,</span> <span class="n">PyMem_Free</span>
 
 <span class="c1"># Definice struktury</span>
 <span class="n">cdef</span> <span class="n">struct</span> <span class="n">coords</span><span class="p">:</span>
@@ -525,7 +525,7 @@ přes alokaci paměti a ukazatele.</p>
 
 <span class="n">MAXSIZE</span> <span class="o">=</span> <span class="o">...</span>
 
-<span class="k">def</span> <span class="nf">path</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">path</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
     <span class="c1"># Definice ukazatele, přetypování</span>
     <span class="n">cdef</span> <span class="n">coords</span> <span class="o">*</span> <span class="n">path</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">coords</span> <span class="o">*&gt;</span><span class="n">PyMem_Malloc</span><span class="p">(</span><span class="n">MAXSIZE</span><span class="o">*</span><span class="n">sizeof</span><span class="p">(</span><span class="n">coords</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">path</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">:</span>
@@ -578,11 +578,11 @@ přes alokaci paměti a ukazatele.</p>
 <p>Pro použití C knihoven z Pythonu je lepší použít <a href="http://cffi.readthedocs.io/en/latest/">CFFI</a>.
 Ale když už píšete kód v Cythonu
 a potřebujete zavolat nějakou C funkci, můžete to udělat takto:</p>
-<div class="highlight"><pre><span></span><span class="n">cdef</span> <span class="n">extern</span> <span class="kn">from</span> <span class="s2">&quot;stdlib.h&quot;</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="n">cdef</span> <span class="n">extern</span> <span class="kn">from</span><span class="w"> </span><span class="s2">&quot;stdlib.h&quot;</span><span class="p">:</span>
     <span class="nb">int</span> <span class="n">rand</span><span class="p">()</span>
     <span class="n">void</span> <span class="n">srand</span><span class="p">(</span><span class="n">long</span> <span class="nb">int</span> <span class="n">seedval</span><span class="p">)</span>
 
-<span class="n">cdef</span> <span class="n">extern</span> <span class="kn">from</span> <span class="s2">&quot;time.h&quot;</span><span class="p">:</span>
+<span class="n">cdef</span> <span class="n">extern</span> <span class="kn">from</span><span class="w"> </span><span class="s2">&quot;time.h&quot;</span><span class="p">:</span>
     <span class="n">ctypedef</span> <span class="n">long</span> <span class="n">time_t</span>
     <span class="n">long</span> <span class="nb">int</span> <span class="n">time</span><span class="p">(</span><span class="n">time_t</span> <span class="o">*</span><span class="p">)</span>
 
@@ -592,8 +592,8 @@ a potřebujete zavolat nějakou C funkci, můžete to udělat takto:</p>
 z různých míst, pojmenujte soubor <code>.pxd</code>, to vám umožní na něj použít <code>cimport</code>.</p>
 <p>Pro části standardní knihovny jsou takové deklarace již v Cythonu
 předpřipravené, můžete tedy použít <code>cimport</code> rovnou:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">libc.stdlib</span> <span class="n">cimport</span> <span class="n">rand</span><span class="p">,</span> <span class="n">srand</span>
-<span class="kn">from</span> <span class="nn">libc.time</span> <span class="n">cimport</span> <span class="n">time</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">libc.stdlib</span> <span class="n">cimport</span> <span class="n">rand</span><span class="p">,</span> <span class="n">srand</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">libc.time</span> <span class="n">cimport</span> <span class="n">time</span>
 
 <span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="n">NULL</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rand</span><span class="p">())</span>
@@ -614,10 +614,10 @@ nadefinované dá k dispozici.</p>
 <p>Další zkratka je modul <code>pyximort</code>, který dává možnost importovat moduly <code>.pyx</code>
 přímo: hledají se podobně jako <code>.py</code> nebo <code>.so</code> a před importem se zkompilují.
 Zapíná se to následovně:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyximport</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyximport</span>
 <span class="n">pyximport</span><span class="o">.</span><span class="n">install</span><span class="p">()</span>
 
-<span class="kn">import</span> <span class="nn">matmul</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matmul</span>
 </pre></div><h2 id="video">Video
 <a href="#video" class="header-link">#</a>
 </h2>

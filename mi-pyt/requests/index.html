@@ -22,8 +22,8 @@ a vrhneme se rovnou na příklad.</p>
 <div class="admonition note"><p>Pokud základy neznáte, můžete se podívat na
 <a href="naucse:page?lesson=fast-track/http">shrnutí pro začátečníky</a>,
 které vysvětluje vše potřebné.</p>
-</div><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">getpass</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">requests</span>
+</div><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">getpass</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">username</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Username: &#39;</span><span class="p">)</span>
 <span class="go">Username: hroncok</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">password</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">()</span>
@@ -84,7 +84,7 @@ konfiguračního souboru.</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;d7313dab254b7fd0d0f3ec3cbf754b3abce462d5&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Python&#39;</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">token_auth</span><span class="p">(</span><span class="n">req</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">token_auth</span><span class="p">(</span><span class="n">req</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Authorization&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;token </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s1">&#39;</span>
 <span class="gp">... </span>    <span class="k">return</span> <span class="n">req</span>
 <span class="gp">... </span>
@@ -140,7 +140,7 @@ například takhle:</p>
 <span class="na">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">d7313dab254b7fd0d0f3ec3cbf754b3abce462d5</span>
 </pre></div><p>A následně konfiguraci načtete pomocí modulu
 <a href="https://docs.python.org/3/library/configparser.html">configparser</a>:</p>
-<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">configparser</span>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">configparser</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;auth.cfg&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">config</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>

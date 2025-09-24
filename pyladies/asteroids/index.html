@@ -129,9 +129,9 @@ vykreslíš celou scénu ještě jednou.</p>
 kterými můžeš říct „tady kresli všechno posunuté o
 X pixelů vlevo”. Úplné vysvětlení by bylo na dlouho,
 takže si zatím jen zkopíruj kód:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyglet</span> <span class="kn">import</span> <span class="n">gl</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyglet</span><span class="w"> </span><span class="kn">import</span> <span class="n">gl</span>
 
-<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">():</span>
     <span class="n">window</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 
     <span class="k">for</span> <span class="n">x_offset</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="n">window</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
@@ -197,7 +197,7 @@ Každý objekt bude potřebovat mít poloměr – atribut <code>radius</code>.</
 nakresli si nad každým objektem příslušné kolečko.
 Pyglet na to má třídu <code>Circle</code> v modulu
 <a href="https://pyglet.readthedocs.io/en/latest/programming_guide/shapes.html"><code>pyglet.shapes</code></a>:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_circle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">draw_circle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
     <span class="n">circle</span> <span class="o">=</span> <span class="n">shapes</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">)</span>
     <span class="n">circle</span><span class="o">.</span><span class="n">opacity</span> <span class="o">=</span> <span class="mi">120</span>  <span class="c1"># (ne)průhlednost, od 0 (průhledné) do 255 (plné)</span>
     <span class="n">circle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
@@ -222,14 +222,14 @@ zavolej na objektu metodu <code>hit_by_spaceship</code>.</p>
 <p>Zjišťování vzdálenosti ve hře, kde se
 <a href="https://en.wikipedia.org/wiki/Wraparound_%28video_games%29">objekty které vyletí ven vrací na druhé straně</a>,
 není úplně přímočaré, takže si příslušný kód pro teď jen zkopíruj:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">wrap_size</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">wrap_size</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Distance in one direction (x or y)&quot;&quot;&quot;</span>
     <span class="n">result</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">result</span> <span class="o">&gt;</span> <span class="n">wrap_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">wrap_size</span> <span class="o">-</span> <span class="n">result</span>
     <span class="k">return</span> <span class="n">result</span>
 
-<span class="k">def</span> <span class="nf">overlaps</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">overlaps</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns true iff two space objects overlap&quot;&quot;&quot;</span>
     <span class="n">distance_squared</span> <span class="o">=</span> <span class="p">(</span><span class="n">distance</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">width</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span>
                         <span class="n">distance</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">height</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>

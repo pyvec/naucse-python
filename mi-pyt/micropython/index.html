@@ -42,14 +42,14 @@ Kromě samotného čipu a flash paměti, které se skrývají v oplechované kra
 </h2>
 <p>Implementace MicroPython se chová téměř stejně jako CPython. Vyzkoušejte si ale některé rozdíly (porovnejte výstup MicroPythonu a Pythonu 3 na počítači):</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">math</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">random</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">()</span>
 </pre></div><p>Hlavní omezení MicroPythonu je to, že chybí většina standardní knihovny.
 Některé části (např <code>math</code>) jsou k dispozici, spousta ne.
 Několik funkcí je na nestandardních místech se změněným rozhraním, např. generátor náhodných čísel:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">urandom</span>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="kn">import</span> <span class="n">urandom</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">urandom</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="mi">61</span>
 </pre></div><h2 id="vstup_a_vystup">Vstup a výstup
@@ -57,14 +57,14 @@ Několik funkcí je na nestandardních místech se změněným rozhraním, např
 </h2>
 <p>Co má MicroPython navíc je přístup k hardwaru.
 Zkusme zjistit hodnotu pinu 0, který je na NodeMCU normálně HIGH (3,3 V) a je spojen se zemí přes tlačítko FLASH.</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">machine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pin</span>
 <span class="n">pin</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pin</span><span class="o">.</span><span class="n">value</span><span class="p">())</span>
 </pre></div><p>API MicroPythonu často používá metody tam, kde bychom čekali atributy, proto ne <code>pin.value</code> ale <code>pin.value()</code>.</p>
 <p>Konstanta <code>Pin.IN</code> konfiguruje daný pin pro čtení.
 Zkusme si i zápis: zapojte stranu desky s piny D0-D8 do nepájivého pole a mezi piny <code>D5</code> a <code>G</code> zapojte diodu.
 Následující kód diodu rozsvítí:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">machine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pin</span>
 <span class="n">pin</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
 <span class="n">pin</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div><p>Pro zhasnutí zadejte <code>pin.value(0)</code>. (Opět jde o volání metody, není to <code>pin.value = 0</code>.)</p>
@@ -93,8 +93,8 @@ Pro více informací můžete nepřekvapivě použít příkaz <code>ampy --help
 </h2>
 <p>Na pravidelné blikání, technicky řečeno <em>pulzně-šířkovou modulaci</em> (angl. <em>Pulse Width Modulation</em>)
 má MicroPython třídu <code>PWM</code>, které se dá nastavit frekvence (<code>freq</code>) v Hz a střída (<code>duty</code>) od 0 do 1024:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">PWM</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">machine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">PWM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
 
 <span class="n">led_pin</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
 <span class="n">pwm</span> <span class="o">=</span> <span class="n">PWM</span><span class="p">(</span><span class="n">led_pin</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">duty</span><span class="o">=</span><span class="mi">512</span><span class="p">)</span>
@@ -116,8 +116,8 @@ Používá vlastní protokol, který je v MicroPythonu pro ESP8266 implementov�
 <li><code>+5V</code> - <code>VU</code></li>
 </ul>
 <p>Kód:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
-<span class="kn">from</span> <span class="nn">neopixel</span> <span class="kn">import</span> <span class="n">NeoPixel</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">machine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">neopixel</span><span class="w"> </span><span class="kn">import</span> <span class="n">NeoPixel</span>
 
 <span class="n">NUM_LEDS</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="n">pin</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
@@ -161,7 +161,7 @@ Dokonce se přes WiFi dá i ovládat.</p>
 <span class="n">ESSID</span> <span class="o">=</span> <span class="o">...</span>
 <span class="n">PASSWORD</span> <span class="o">=</span> <span class="o">...</span>
 
-<span class="kn">import</span> <span class="nn">network</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">network</span>
 <span class="n">wlan</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">WLAN</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">STA_IF</span><span class="p">)</span>
 <span class="n">wlan</span><span class="o">.</span><span class="n">active</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">wlan</span><span class="o">.</span><span class="n">isconnected</span><span class="p">():</span>
@@ -177,13 +177,13 @@ Dokonce se přes WiFi dá i ovládat.</p>
 <span class="n">PASSWORD</span> <span class="o">=</span> <span class="o">...</span>
 <span class="n">CHANNEL</span> <span class="o">=</span> <span class="mi">3</span>
 
-<span class="kn">import</span> <span class="nn">network</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">network</span>
 <span class="n">ap_if</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">WLAN</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">AP_IF</span><span class="p">)</span>
 <span class="n">ap_if</span><span class="o">.</span><span class="n">active</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">ap_if</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">essid</span><span class="o">=</span><span class="n">ESSID</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">PASSWORD</span><span class="p">,</span> <span class="n">authmode</span><span class="o">=</span><span class="n">network</span><span class="o">.</span><span class="n">AUTH_WEP</span><span class="p">,</span> <span class="n">channel</span><span class="o">=</span><span class="n">CHANNEL</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;network config:&#39;</span><span class="p">,</span> <span class="n">ap_if</span><span class="o">.</span><span class="n">ifconfig</span><span class="p">())</span>
 </pre></div><p>Nastavení WebREPL spusťte z interaktivní konzole:</p>
-<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">webrepl_setup</span>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">webrepl_setup</span>
 </pre></div><p>S počítačem se připojte na stejnou síť a na stránce webrepl otevřené výše se připojte k IP vypsané z <code>ifconfig()</code>.
 Měli byste dostat konzoli, jako přes USB.
 Pomocí WebREPL lze nejen zadávat interaktivní příkazy, ale i nahrávat soubory.</p>
@@ -198,11 +198,11 @@ Následující kód stáhne data ze stránky
 <a href="http://api.thingspeak.com/channels/1417/field/2/last.txt">api.thingspeak.com/channels/1417/field/2/last.txt</a>,
 kde se objevuje poslední barva tweetnutá s hashtagem <code>#cheerlights</code>.</p>
 <p>Výslednou hodnotu lze použít jako barvu modul v LED pásku.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urequests</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">urequests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://api.thingspeak.com/channels/1417/field/2/last.txt&#39;</span>
 
-<span class="k">def</span> <span class="nf">download_color</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">download_color</span><span class="p">():</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">urequests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="n">text</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
 

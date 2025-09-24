@@ -36,7 +36,7 @@ objekt (<code>&quot;abc&quot;</code> obsahuje jiné znaky než
 společné pro všechny objekty daného typu.
 Třeba řetězcová metoda <code>count()</code> by se dala
 napsat zhruba jako:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">retezec</span><span class="p">,</span> <span class="n">znak</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">count</span><span class="p">(</span><span class="n">retezec</span><span class="p">,</span> <span class="n">znak</span><span class="p">):</span>
     <span class="n">pocet</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">retezec</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="n">znak</span><span class="p">:</span>
@@ -99,8 +99,8 @@ webová aplikace třídu Uživatel,
 tabulkový procesor třídu Řádek.</p>
 <p>My teď potřebujeme napsat program o zvířátkách.
 Začni tím, že napíšeš třídu pro koťátka, která umí mňoukat:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kotatko</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Kotatko</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mňau!&quot;</span><span class="p">)</span>
 </pre></div><p>Tak jako se funkce definují pomocí <code>def</code>,
 třídy mají klíčové slovo <code>class</code>,
@@ -174,8 +174,8 @@ metoda z třídy? Vyzkoušej si to:</p>
 kterém pracuje, právě přes parametr <code>self</code>.
 Teď, když máš koťátka pojmenovaná, můžeš v metodě <code>zamnoukej</code> použít <code>self</code>
 a dostat se tak ke jménu daného koťátka:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kotatko</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Kotatko</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Mňau!&quot;</span><span class="p">)</span>
 
 <span class="n">mourek</span> <span class="o">=</span> <span class="n">Kotatko</span><span class="p">()</span>
@@ -195,11 +195,11 @@ ale když to uděláš, ostatní programátoři se na tebe budou koukat hodně d
 Při volání <code>self</code> vynecháš – doplní se vždy automaticky – ale ostatní
 se předávají jako u normálního volání funkce.
 Třeba v tomto příkladu se jako <code>jidlo</code> předá řetězec <code>'ryba'</code>:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kotatko</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Kotatko</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Mňau!&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Mňau mňau! </span><span class="si">{</span><span class="n">jidlo</span><span class="si">}</span><span class="s2"> mi chutná!&quot;</span><span class="p">)</span>
 
 <span class="n">mourek</span> <span class="o">=</span> <span class="n">Kotatko</span><span class="p">()</span>
@@ -226,14 +226,14 @@ To „opodtržítkování“ znamená, že tohle jméno je nějakým způsobem s
 Metodu <code>__init__</code> totiž Python zavolá
 automaticky, když vytvoří nový objekt.
 Můžeš tedy napsat:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kotatko</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Kotatko</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno</span>
 
-    <span class="k">def</span> <span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Mňau!&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Mňau mňau! </span><span class="si">{</span><span class="n">jidlo</span><span class="si">}</span><span class="s2"> mi chutná!&quot;</span><span class="p">)</span>
 
 <span class="n">mourek</span> <span class="o">=</span> <span class="n">Kotatko</span><span class="p">(</span><span class="s1">&#39;Mourek&#39;</span><span class="p">)</span>
@@ -250,17 +250,17 @@ argument, nebo jako poziční. Obojí funguje stejně:</p>
 <p>Podobných „opodtržítkovaných“ (speciálních) metod je víc.
 Třeba metodu <code>__str__</code> Python zavolá, když je potřeba
 převést objekt na řetězec:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kotatko</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Kotatko</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jmeno</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span> <span class="o">=</span> <span class="n">jmeno</span>
 
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;&lt;Kotatko jmenem </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s1">&gt;&#39;</span>
 
-    <span class="k">def</span> <span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zamnoukej</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Mňau!&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">snez</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jidlo</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jmeno</span><span class="si">}</span><span class="s2">: Mňau mňau! </span><span class="si">{</span><span class="n">jidlo</span><span class="si">}</span><span class="s2"> mi chutná!&quot;</span><span class="p">)</span>
 
 <span class="n">mourek</span> <span class="o">=</span> <span class="n">Kotatko</span><span class="p">(</span><span class="s1">&#39;Mourek&#39;</span><span class="p">)</span>

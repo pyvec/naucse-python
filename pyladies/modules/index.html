@@ -3,7 +3,7 @@
 </h1>
 <p>Modul je v Pythonu něco, z čeho můžeš importovat.
 Třeba z modulu <code>math</code> můžeš importovat funkci <code>sqrt</code>:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 </pre></div><p>Kromě importování jednotlivých proměnných z modulu
@@ -12,13 +12,13 @@ K tomu, co modul nabízí, se pak dostaneš pomocí
 tečky – podobně jako se pomocí <code>'Ahoj'.upper</code> dostaneš k metodě, kterou nabízí
 řetězec.</p>
 <p>Například:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 
 <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
 <span class="n">turtle</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
-</pre></div><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
 </pre></div><div class="admonition note"><p class="admonition-title">Hvězdičky nechceme</p>
@@ -41,10 +41,10 @@ Vytvoř soubor <code>louka.py</code> a do něj napiš:</p>
 <div class="highlight"><pre><span></span><span class="n">barva_travy</span> <span class="o">=</span> <span class="s1">&#39;zelená&#39;</span>
 <span class="n">pocet_kotatek</span> <span class="o">=</span> <span class="mi">28</span>
 
-<span class="k">def</span> <span class="nf">popis_stav</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">popis_stav</span><span class="p">():</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Tráva je </span><span class="si">{</span><span class="n">barva_travy</span><span class="si">}</span><span class="s1">. Prohání se po ní </span><span class="si">{</span><span class="n">pocet_kotatek</span><span class="si">}</span><span class="s1"> koťátek&#39;</span>
 </pre></div><p>A pak do dalšího souboru, třeba <code>vypis.py</code>, napiš:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">louka</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">louka</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">louka</span><span class="o">.</span><span class="n">popis_stav</span><span class="p">())</span>
 </pre></div><p>A pak spusť <code>vypis.py</code>:</p>
@@ -68,9 +68,9 @@ Druhý import jen zpřístupní stejnou sadu proměnných/funkcí jako ten 
 </pre></div><p>Spusť <code>python</code> (máš-li ho už spuštěný, ukonči a spusť znovu)
 a zadej v něm:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;První import:&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">louka</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">louka</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Druhý import:&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">louka</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">louka</span>
 </pre></div><p>Výpis se objeví jen poprvé.
 Co víc, když teď soubor <code>louka.py</code> změníš, změny se do naimportovaného modulu
 nepromítnou.

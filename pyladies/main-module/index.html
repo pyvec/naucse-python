@@ -11,7 +11,7 @@ nemusí nikdo sedět.</p>
 <p>To může někdy „ztěžovat práci“. Ukážeme si to na složitějším projektu:
 na Kámen-Nůžky-Papír.</p>
 <p>Kód pro Kámen-Nůžky-Papír může, velice zjednodušeně, vypadat zhruba takto:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>  <span class="c1"># (příp. import jiných věcí, které budou potřeba)</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>  <span class="c1"># (příp. import jiných věcí, které budou potřeba)</span>
 
 <span class="n">tah_pocitace</span> <span class="o">=</span> <span class="s1">&#39;kámen&#39;</span>
 <span class="n">tah_hrace</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Co chceš hrát (kámen, nůžky, papír)? &#39;</span><span class="p">)</span>
@@ -38,9 +38,9 @@ Importovatelné moduly by měly pouze dát k dispozici nějaké funkce nebo hod
 Dej tedy hru do funkce:</p>
 <div class="highlight"><pre><span></span><span class="c1"># knp.py -- importovatelný modul</span>
 
-<span class="kn">import</span> <span class="nn">random</span>  <span class="c1"># (příp. import jiných věci, které budou potřeba)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>  <span class="c1"># (příp. import jiných věci, které budou potřeba)</span>
 
-<span class="k">def</span> <span class="nf">hrej_hru</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hrej_hru</span><span class="p">():</span>
     <span class="n">tah_pocitace</span> <span class="o">=</span> <span class="s1">&#39;kámen&#39;</span>
     <span class="n">tah_hrace</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Co chceš hrát (kámen, nůžky, papír)? &#39;</span><span class="p">)</span>
 
@@ -54,7 +54,7 @@ už nejde jednoduše spustit hra! Co s tím?</p>
 <p>Můžeš na to vytvořit nový modul, ve kterém bude jenom volání funkce:</p>
 <div class="highlight"><pre><span></span><span class="c1"># hra.py -- spouštěcí modul</span>
 
-<span class="kn">import</span> <span class="nn">knp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">knp</span>
 
 <span class="n">knp</span><span class="o">.</span><span class="n">hrej_hru</span><span class="p">()</span>
 </pre></div><p>Tenhle modul nebudeš moci testovat (protože nepřímo volá funkci <code>input</code>),
@@ -68,9 +68,9 @@ Pořád se ale, kvůli funkcím <code>input</code> a <code>print</code>, špatn�
 Aby se testoval líp, můžeš kousek funkčnosti dát do jiné funkce:</p>
 <div class="highlight"><pre><span></span><span class="c1"># knp.py -- importovatelný modul</span>
 
-<span class="kn">import</span> <span class="nn">random</span>  <span class="c1"># (příp. import jiných věci, které budou potřeba)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>  <span class="c1"># (příp. import jiných věci, které budou potřeba)</span>
 
-<span class="k">def</span> <span class="nf">vyhodnot</span><span class="p">(</span><span class="n">tah_pocitace</span><span class="p">,</span> <span class="n">tah_hrace</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">vyhodnot</span><span class="p">(</span><span class="n">tah_pocitace</span><span class="p">,</span> <span class="n">tah_hrace</span><span class="p">):</span>
     <span class="c1"># (tady reálně bude spousta zanořených ifů)</span>
     <span class="k">if</span> <span class="n">tah_hrace</span> <span class="o">==</span> <span class="s1">&#39;papír&#39;</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;Vyhrál/a jsi!&#39;</span>
@@ -78,7 +78,7 @@ Aby se testoval líp, můžeš kousek funkčnosti dát do jiné funkce:</p>
         <span class="k">return</span> <span class="s1">&#39;Nevyhrál/a jsi...&#39;</span>
 
 
-<span class="k">def</span> <span class="nf">hrej_hru</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hrej_hru</span><span class="p">():</span>
     <span class="n">tah_pocitace</span> <span class="o">=</span> <span class="s1">&#39;kámen&#39;</span>
     <span class="n">tah_hrace</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Kam chceš hrát?&#39;</span><span class="p">)</span>
 
@@ -88,9 +88,9 @@ Aby se testoval líp, můžeš kousek funkčnosti dát do jiné funkce:</p>
 Půjde tedy docela jednoduše otestovat:</p>
 <div class="highlight"><pre><span></span><span class="c1"># test_knp.py -- testy</span>
 
-<span class="kn">import</span> <span class="nn">knp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">knp</span>
 
-<span class="k">def</span> <span class="nf">test_vyhry</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_vyhry</span><span class="p">():</span>
     <span class="k">assert</span> <span class="n">vyhodnot</span><span class="p">(</span><span class="s1">&#39;kámen&#39;</span><span class="p">,</span> <span class="s1">&#39;papír&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Vyhrál/a jsi!&#39;</span>
     <span class="k">assert</span> <span class="n">vyhodnot</span><span class="p">(</span><span class="s1">&#39;papír&#39;</span><span class="p">,</span> <span class="s1">&#39;nůžky&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Vyhrál/a jsi!&#39;</span>
     <span class="k">assert</span> <span class="n">vyhodnot</span><span class="p">(</span><span class="s1">&#39;nůžky&#39;</span><span class="p">,</span> <span class="s1">&#39;kámen&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Vyhrál/a jsi!&#39;</span>
@@ -103,7 +103,7 @@ ruční testování nemusí být tak důkladné.</p>
 </h2>
 <p>Test <code>test_vyhry</code>, ukázaný výše, není úplný.
 Splnila by ho i funkce jako:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vyhodnot</span><span class="p">(</span><span class="n">tah_pocitace</span><span class="p">,</span> <span class="n">tah_hrace</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vyhodnot</span><span class="p">(</span><span class="n">tah_pocitace</span><span class="p">,</span> <span class="n">tah_hrace</span><span class="p">):</span>
     <span class="k">return</span> <span class="s1">&#39;Vyhrál/a jsi!&#39;</span>
 </pre></div><p>Kromě „pozitivních“ výsledků je potřeba kontrolovat i ty „negativní“:
 ať už očekávaný negativní výsledek (jako prohru nebo remízu)
@@ -117,7 +117,7 @@ z modulu <code>pytest</code>.
 Jak příkaz <code>with</code> přesně funguje, to se dozvíš později;
 teď stačí říct, že <code>with pytest.raises</code> ověří, že odsazený blok kódu
 pod ním vyvolá danou výjimku:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_spatneho_tahu</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">test_spatneho_tahu</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;🤘 vs. 🖖 není správný vstup&quot;&quot;&quot;</span>
     <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
         <span class="n">vyhodnot</span><span class="p">(</span><span class="s1">&#39;metal&#39;</span><span class="p">,</span> <span class="s1">&#39;spock&#39;</span><span class="p">)</span>

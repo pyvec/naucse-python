@@ -16,7 +16,7 @@ U mě vypadá instalace nějak takto:</p>
 </pre></div><p>Máš-li nainstalováno, zkus napsat a spustit
 následující program. Mělo by se objevit černé
 okýnko:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyglet</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyglet</span>
 <span class="n">window</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
 <span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hotovo!&#39;</span><span class="p">)</span>
@@ -34,7 +34,7 @@ uklidíme.</p>
 program pro Piškvorky, který jsme napsali
 na projektech.
 V komentářích je napsané, co která část kódu dělá:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">piskvorky1d</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">piskvorky1d</span><span class="p">():</span>
     <span class="n">pole</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">20</span>                 <span class="c1"># Příprava hry</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                     <span class="c1"># Pořád dokola:</span>
         <span class="n">pole</span> <span class="o">=</span> <span class="n">tah_hrace</span><span class="p">(</span><span class="n">pole</span><span class="p">)</span>      <span class="c1"># 1. Zeptej se na tah</span>
@@ -100,7 +100,7 @@ Obsahuje kromě smyčky událostí taky funkce na
 vykreslování 2D grafiky (pomocí jiné knihovny zvané
 OpenGL) nebo třeba načítání událostí z klávesnice a myši.</p>
 <p>Pojďme se vrátit k prográmku, který ukazuje okno:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyglet</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyglet</span>
 <span class="n">window</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
 <span class="n">pyglet</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hotovo!&#39;</span><span class="p">)</span>
@@ -126,10 +126,10 @@ funkci a pak ji <em>zaregistruješ</em> (angl. <em>register</em>) – řekneš
 Pygletu, aby ji vždy v pravý čas zavolal.
 Události, která nastane, když uživatel píše na klávesnici,
 se v Pygletu říká <code>on_text</code> a zpracovává se takto:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyglet</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyglet</span>
 <span class="n">window</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">zpracuj_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">zpracuj_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 
 <span class="n">window</span><span class="o">.</span><span class="n">push_handlers</span><span class="p">(</span><span class="n">on_text</span><span class="o">=</span><span class="n">zpracuj_text</span><span class="p">)</span>
@@ -144,7 +144,7 @@ Tahle funkce pak dostane jako argument text, který uživatel napsal.</p>
 <a href="naucse:page?lesson=beginners/functions">kdysi</a>
 říkali, že funkce se mají volat.
 Vzpomínáš na tenhle příklad? Možná ti tehdy připadal zvláštní.</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sin</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sin</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sin</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
@@ -178,15 +178,15 @@ volat, kdykoli uživatel stiskne klávesu.</p>
 (angl. <em>clock tick</em>).
 To je událost, která nastává pravidelně po nějakém čase.</p>
 <p>Funkce pro tiky se registruje trochu jinak než <code>on_text</code>:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyglet</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyglet</span>
 <span class="n">window</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">tik</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">tik</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 
 <span class="n">pyglet</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">schedule_interval</span><span class="p">(</span><span class="n">tik</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">30</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">zpracuj_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">zpracuj_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 
 <span class="n">window</span><span class="o">.</span><span class="n">push_handlers</span><span class="p">(</span><span class="n">on_text</span><span class="o">=</span><span class="n">zpracuj_text</span><span class="p">)</span>
@@ -226,21 +226,21 @@ nebyl vidět.
 Ulož si ho do adresáře, odkud spouštíš svůj pythonní
 program. Já mám třeba obrázek hada v souboru <code>had.png</code>.</p>
 <p>Pak obrázek vykresli (použij jméno souboru se svým obrázkem):</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyglet</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyglet</span>
 <span class="n">window</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">tik</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">tik</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 
 <span class="n">pyglet</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">schedule_interval</span><span class="p">(</span><span class="n">tik</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">30</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">zpracuj_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">zpracuj_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 
 <span class="n">obrazek</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;had.png&#39;</span><span class="p">)</span>
 <span class="n">had</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">sprite</span><span class="o">.</span><span class="n">Sprite</span><span class="p">(</span><span class="n">obrazek</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">vykresli</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">vykresli</span><span class="p">():</span>
     <span class="n">window</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
     <span class="n">had</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 
@@ -292,7 +292,7 @@ Jinde funkce jako <code>clear</code> a <code>draw</code> nebudou fungovat správ
 </h2>
 <p>Pojď si teď se Spritem trochu pohrát.</p>
 <p>Do funkce <code>zpracuj_text</code> dej místo printu tento příkaz:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zpracuj_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zpracuj_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
     <span class="n">had</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">150</span>
 </pre></div><p>Náš Sprite má <em>atribut</em> (angl. <em>attribute</em>)
 <code>x</code>, který určuje jeho <var>x</var>-ovou souřadnici –
@@ -302,11 +302,11 @@ v reakci na nějakou událost, ale často se nastavuje
 i na začátku programu.</p>
 <p>Zajímavé je zkusit k <code>x</code> něco přičíst při každém tiknutí hodin.
 Dokážeš předpovědět, co udělá tenhle kód?</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tik</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">tik</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">had</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">had</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">20</span>
 </pre></div><p>Nebojíš-li se matematiky, naimportuj <code>math</code>
 a nech obrázek, ať se pohybuje podle nějaké funkce:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tik</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">tik</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">had</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">had</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">20</span>
     <span class="n">had</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">+</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">had</span><span class="o">.</span><span class="n">x</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div><p>Co se stane, když začneš měnit ta čísla?</p>
@@ -324,7 +324,7 @@ hada, tentokrát s trochu natočenou hlavou a ocasem.</p>
 přidej těsně před <code>pyglet.app.run()</code> tenhle kus kódu:</p>
 <div class="highlight"><pre><span></span><span class="n">obrazek2</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;had2.png&#39;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">zmen</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">zmen</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">had</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">obrazek2</span>
 
 <span class="n">pyglet</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">schedule_once</span><span class="p">(</span><span class="n">zmen</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -334,11 +334,11 @@ A funkce změní obrázek – stejně jako se předtím měnily
 souřadnice.</p>
 <p><code>schedule_once</code> se dá volat i v rámci obsluhy jiné události. Zkus funkci <code>zmen</code>
 nahradit tímhle:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zmen</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zmen</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">had</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">obrazek2</span>
     <span class="n">pyglet</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">schedule_once</span><span class="p">(</span><span class="n">zmen_zpatky</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">zmen_zpatky</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">zmen_zpatky</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">had</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">obrazek</span>
     <span class="n">pyglet</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">schedule_once</span><span class="p">(</span><span class="n">zmen</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
 </pre></div><h2 id="klik_">Klik 🐭
@@ -346,7 +346,7 @@ nahradit tímhle:</p>
 </h2>
 <p>Poslední věc, na kterou se tady naučíme reagovat, je klikání.
 Těsně před <code>window.push_handlers</code> napiš funkci:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">klik</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">tlacitko</span><span class="p">,</span> <span class="n">mod</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">tlacitko</span><span class="p">,</span> <span class="n">mod</span><span class="p">):</span>
     <span class="n">had</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
     <span class="n">had</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
 </pre></div><p>… a pak v <code>push_handlers</code> ji zaregistruj
@@ -363,29 +363,29 @@ Kdykoliv budeš chtít zjistit nějakou hodnotu, prostě si ji vypiš.</li>
 <a href="#pokracovani_priste" class="header-link">#</a>
 </h2>
 <p>Koukám že kódu už je dnes tak akorát na ukončení lekce:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
-<span class="kn">import</span> <span class="nn">pyglet</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyglet</span>
 
 <span class="n">window</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">tik</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">tik</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">had</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">had</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">20</span>
 
 <span class="n">pyglet</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">schedule_interval</span><span class="p">(</span><span class="n">tik</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">30</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">zpracuj_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">zpracuj_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
     <span class="n">had</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">150</span>
     <span class="n">had</span><span class="o">.</span><span class="n">rotation</span> <span class="o">=</span> <span class="n">had</span><span class="o">.</span><span class="n">rotation</span> <span class="o">+</span> <span class="mi">10</span>
 
 <span class="n">obrazek</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;had.png&#39;</span><span class="p">)</span>
 <span class="n">had</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">sprite</span><span class="o">.</span><span class="n">Sprite</span><span class="p">(</span><span class="n">obrazek</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">vykresli</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">vykresli</span><span class="p">():</span>
     <span class="n">window</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
     <span class="n">had</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">klik</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">tlacitko</span><span class="p">,</span> <span class="n">mod</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">klik</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">tlacitko</span><span class="p">,</span> <span class="n">mod</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">tlacitko</span><span class="p">,</span> <span class="n">mod</span><span class="p">)</span>
     <span class="n">had</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
     <span class="n">had</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
@@ -398,11 +398,11 @@ Kdykoliv budeš chtít zjistit nějakou hodnotu, prostě si ji vypiš.</li>
 
 <span class="n">obrazek2</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;had2.png&#39;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">zmen</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">zmen</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">had</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">obrazek2</span>
     <span class="n">pyglet</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">schedule_once</span><span class="p">(</span><span class="n">zmen_zpatky</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">zmen_zpatky</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">zmen_zpatky</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">had</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">obrazek</span>
     <span class="n">pyglet</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">schedule_once</span><span class="p">(</span><span class="n">zmen</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
 

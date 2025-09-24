@@ -1,0 +1,421 @@
+{
+    "api_version": [
+        0,
+        4
+    ],
+    "course": {
+        "description": "Git pro začátečnice a začátečníky, základní znalost Pythonu výhodou",
+        "edit_info": {
+            "branch": "main",
+            "url": "https://github.com/pyvec/naucse-python"
+        },
+        "lessons": {
+            "beginners/cmdline": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017.",
+                            "Založeno na tutoriálu [Django Girls].\n[Django Girls]: https://tutorial.djangogirls.org/en/intro_to_command_line/"
+                        ],
+                        "content": {
+                            "path": "cmdline/index.html"
+                        },
+                        "ids": [
+                            "aktualni_adresar",
+                            "co_v_tom_adresari_je",
+                            "konec",
+                            "kopirovani_z_prikazove_radky",
+                            "o_uroven_nahoru",
+                            "otevreni_vprohlizeci_souboru",
+                            "pozorovani_zmen",
+                            "prehled",
+                            "prikazova_radka",
+                            "prvni_prikaz",
+                            "vgrafickem_hledatku",
+                            "vkladani_do_prikazove_radky",
+                            "vytvoreni_adresare",
+                            "zmena_aktualniho_adresare"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#aktualni_adresar",
+                            "#co_v_tom_adresari_je",
+                            "#konec",
+                            "#kopirovani_z_prikazove_radky",
+                            "#o_uroven_nahoru",
+                            "#otevreni_vprohlizeci_souboru",
+                            "#pozorovani_zmen",
+                            "#prehled",
+                            "#prikazova_radka",
+                            "#prvni_prikaz",
+                            "#vgrafickem_hledatku",
+                            "#vkladani_do_prikazove_radky",
+                            "#vytvoreni_adresare",
+                            "#zmena_aktualniho_adresare",
+                            "naucse:static?filename=linux-file-browser.png",
+                            "naucse:static?filename=macos-file-browser.png",
+                            "naucse:static?filename=windows-cmd-properties.png",
+                            "naucse:static?filename=windows-file-browser.png"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/cmdline/index.md",
+                        "title": "Příkazová řádka",
+                        "vars": {
+                            "coach-present": true,
+                            "use-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/cmdline/info.yml",
+                "static_files": {
+                    "linux-file-browser.png": {
+                        "path": "cmdline/linux-file-browser.png"
+                    },
+                    "macos-file-browser.png": {
+                        "path": "cmdline/macos-file-browser.png"
+                    },
+                    "windows-cmd-properties.png": {
+                        "path": "cmdline/windows-cmd-properties.png"
+                    },
+                    "windows-file-browser.png": {
+                        "path": "cmdline/windows-file-browser.png"
+                    }
+                },
+                "title": "Příkazová řádka"
+            },
+            "git/basics": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "basics/index.html"
+                        },
+                        "css": ".green  {   color:  #0a0;    }\n.red    {   color:  #a00;    }\n.yellow {   color:  #a50;    }\n.strong {   font-weight:  bold;    }\n.blue   {   color:  #0aa;    }\n",
+                        "ids": [
+                            "diagram",
+                            "druha_revize",
+                            "git",
+                            "gitk",
+                            "instalace",
+                            "log",
+                            "prvni_revize",
+                            "repozitar",
+                            "zaver"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#diagram",
+                            "#druha_revize",
+                            "#git",
+                            "#gitk",
+                            "#instalace",
+                            "#log",
+                            "#prvni_revize",
+                            "#repozitar",
+                            "#zaver",
+                            "naucse:page?lesson=beginners/cmdline",
+                            "naucse:page?lesson=git/install",
+                            "naucse:static?filename=diagram.svg",
+                            "naucse:static?filename=dropbox.png",
+                            "naucse:static?filename=gitk.png"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/basics/index.md",
+                        "title": "Git",
+                        "vars": {
+                            "coach-present": true,
+                            "use-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/git/basics/info.yml",
+                "static_files": {
+                    "diagram.svg": {
+                        "path": "basics/diagram.svg"
+                    },
+                    "dropbox.png": {
+                        "path": "basics/dropbox.png"
+                    },
+                    "gitk.png": {
+                        "path": "basics/gitk.png"
+                    }
+                },
+                "title": "Git"
+            },
+            "git/branching": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "branching/index.html"
+                        },
+                        "ids": [
+                            "slouceni",
+                            "vetveni_v_gitu"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#slouceni",
+                            "#vetveni_v_gitu",
+                            "naucse:static?filename=branch1.png",
+                            "naucse:static?filename=branches.png",
+                            "naucse:static?filename=merge.png"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/branching/index.md",
+                        "title": "Větvení v Gitu",
+                        "vars": {
+                            "coach-present": true,
+                            "use-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/git/branching/info.yml",
+                "static_files": {
+                    "branch1.png": {
+                        "path": "branching/branch1.png"
+                    },
+                    "branches.png": {
+                        "path": "branching/branches.png"
+                    },
+                    "merge.png": {
+                        "path": "branching/merge.png"
+                    }
+                },
+                "title": "Větvení v Gitu"
+            },
+            "git/collaboration": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies CZ napsali Petr Viktorin a Oskar Hollman, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "collaboration/index.html"
+                        },
+                        "ids": [
+                            "aktualizace_smallcodegit_pullcodesmall",
+                            "github",
+                            "hlaseni_chyb_smallemissuesemsmall",
+                            "licence",
+                            "naklonovani_repozitare_smallcodegit_clonecodesmall",
+                            "open_source",
+                            "posilani_zmen_smallcodegit_pushcodesmall",
+                            "readme_informace_pro_ostatni",
+                            "spoluprace",
+                            "vytvoreni_vetve",
+                            "zadost_o_zacleneni_smallempull_requestemsmall"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#aktualizace_smallcodegit_pullcodesmall",
+                            "#github",
+                            "#hlaseni_chyb_smallemissuesemsmall",
+                            "#licence",
+                            "#naklonovani_repozitare_smallcodegit_clonecodesmall",
+                            "#open_source",
+                            "#posilani_zmen_smallcodegit_pushcodesmall",
+                            "#readme_informace_pro_ostatni",
+                            "#spoluprace",
+                            "#vytvoreni_vetve",
+                            "#zadost_o_zacleneni_smallempull_requestemsmall",
+                            "http://choosealicense.com/",
+                            "http://creativecommons.org/choose/",
+                            "https://bitbucket.org",
+                            "https://choosealicense.com/licenses/agpl-3.0/",
+                            "https://choosealicense.com/licenses/cc-by-sa-4.0/",
+                            "https://choosealicense.com/licenses/mit/",
+                            "https://chromium.googlesource.com/chromium/src.git",
+                            "https://cs.wikipedia.org/wiki/Markdown",
+                            "https://cs.wikipedia.org/wiki/Svobodn%C3%BD_software",
+                            "https://en.wikipedia.org/wiki/Richard_Stallman",
+                            "https://github.com",
+                            "https://github.com/",
+                            "https://github.com/GNOME/gedit",
+                            "https://github.com/Microsoft/vscode",
+                            "https://github.com/aosp-mirror",
+                            "https://github.com/atom/atom",
+                            "https://github.com/django/django",
+                            "https://github.com/jupyter/notebook",
+                            "https://github.com/kennethreitz/requests",
+                            "https://github.com/matplotlib/matplotlib",
+                            "https://github.com/mitsuhiko/flask",
+                            "https://github.com/mozilla/gecko-dev",
+                            "https://github.com/naucse/prezencka",
+                            "https://github.com/numpy/numpy",
+                            "https://github.com/pytest-dev/pytest/",
+                            "https://github.com/python/cpython",
+                            "https://github.com/pyvec/naucse.python.cz",
+                            "https://github.com/torvalds/linux",
+                            "https://gitlab.com/",
+                            "https://launchpad.net/",
+                            "https://opensource.org/licenses",
+                            "https://pagure.io/",
+                            "https://www.gnu.org/gnu/manifesto.en.html",
+                            "naucse:static?filename=gh-workflow-diagram.svg"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/collaboration/index.md",
+                        "title": "Spolupráce a Open source",
+                        "vars": {
+                            "coach-present": true,
+                            "use-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/git/collaboration/info.yml",
+                "static_files": {
+                    "gh-workflow-diagram.svg": {
+                        "path": "collaboration/gh-workflow-diagram.svg"
+                    }
+                },
+                "title": "Spolupráce a Open source"
+            },
+            "git/ignoring": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies CZ napsal Petr Viktorin, 2017."
+                        ],
+                        "content": {
+                            "path": "ignoring/index.html"
+                        },
+                        "ids": [
+                            "automaticke_pridavani",
+                            "dalsi_haraburdi",
+                            "format_ignorovaciho_souboru",
+                            "ignorovani_souboru",
+                            "osobni_poznamky",
+                            "priprava",
+                            "vystupy_programu_a_pomocne_soubory_spolecnych_nastroju"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#automaticke_pridavani",
+                            "#dalsi_haraburdi",
+                            "#format_ignorovaciho_souboru",
+                            "#ignorovani_souboru",
+                            "#osobni_poznamky",
+                            "#priprava",
+                            "#vystupy_programu_a_pomocne_soubory_spolecnych_nastroju",
+                            "https://git-scm.com/docs/gitignore",
+                            "https://inkscape.org/"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/ignoring/index.md",
+                        "title": "Ignorování souborů",
+                        "vars": {
+                            "coach-present": true,
+                            "use-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/git/ignoring/info.yml",
+                "static_files": {},
+                "title": "Ignorování souborů"
+            },
+            "git/install": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017"
+                        ],
+                        "content": {
+                            "path": "install/index.html"
+                        },
+                        "ids": [
+                            "config",
+                            "git",
+                            "linux",
+                            "macos",
+                            "nastaveni",
+                            "windows"
+                        ],
+                        "license": "cc-by-sa-40",
+                        "links": [
+                            "#config",
+                            "#git",
+                            "#linux",
+                            "#macos",
+                            "#nastaveni",
+                            "#windows",
+                            "https://git-scm.org"
+                        ],
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/install/index.md",
+                        "title": "Instalace Gitu",
+                        "vars": {
+                            "coach-present": true,
+                            "use-gender": "f"
+                        }
+                    }
+                },
+                "source_file": "lessons/git/install/info.yml",
+                "static_files": {},
+                "title": "Instalace Gitu"
+            }
+        },
+        "long_description": "<p>Umíš základy Pythonu (například ze začátečnického kurzu PyLadies), ale chceš se přiučit něco o gitu?</p>\n<p>Tento workshop je pro všechny, kteří jsou pokročilejší začátečníci – umí pracovat s příkazovou řádkou zhruba na úrovni absolventek začátečnického kurzu PyLadies, vědí, jak fungují soubory na počítači a že se do nich píše zdrojový kód.</p>\n<p>Budeme používat Python, ale o programování tolik nepůjde.</p>",
+        "sessions": [
+            {
+                "materials": [
+                    {
+                        "lesson_slug": "git/install",
+                        "title": "Instalace Gitu",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "git/basics",
+                        "title": "Git",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "git/branching",
+                        "title": "Větvení v Gitu",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "git/collaboration",
+                        "title": "Spolupráce a Open source",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "git/ignoring",
+                        "title": "Ignorování souborů",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "beginners/cmdline",
+                        "title": "Příkazová řádka",
+                        "type": "link"
+                    },
+                    {
+                        "external_url": "https://pyvec.github.io/cheatsheets/basic-git/basic-git-cs.pdf",
+                        "title": "Tahák na git",
+                        "type": "none-link"
+                    }
+                ],
+                "slug": "git",
+                "source_file": "courses/gitworking.yml",
+                "title": "Git"
+            }
+        ],
+        "source_file": "courses/gitworking.yml",
+        "subtitle": "Celodenní git workshop pro úplné začátečníky",
+        "title": "Gitworking",
+        "vars": {
+            "coach-present": true,
+            "use-gender": "f"
+        }
+    }
+}

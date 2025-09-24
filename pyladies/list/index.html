@@ -364,7 +364,7 @@ třeba nám už známou <code>random.randrange</code>.
 Podívejme se na dvě další, které se hodí k seznamům.</p>
 <p>Funkce <code>shuffle</code> seznam „zamíchá” – všechny prvky náhodně popřehází.
 Seznam změní „na místě“ a nic nevrací, podobně jako metoda <code>sort</code>.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 
 <span class="n">ciselne_hodnoty</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
 <span class="n">pismenne_hodnoty</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;JQKA&#39;</span><span class="p">)</span>
@@ -380,7 +380,7 @@ Seznam změní „na místě“ a nic nevrací, podobně jako metoda <code>sort<
 </pre></div><p>A funkce <code>choice</code> ze seznamu vybere jeden náhodný prvek.
 S použitím seznamu tak můžeš třeba jednoduše vybrat tah pro hru
 kámen/nůžky/papír:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="n">mozne_tahy</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;kámen&#39;</span><span class="p">,</span> <span class="s1">&#39;nůžky&#39;</span><span class="p">,</span> <span class="s1">&#39;papír&#39;</span><span class="p">]</span>
 <span class="n">tah_pocitace</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">mozne_tahy</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tah_pocitace</span><span class="p">)</span>

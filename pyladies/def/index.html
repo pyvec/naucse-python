@@ -41,7 +41,7 @@ použít pomocí jména bez detailních znalostí toho, jak to vevnitř funguje.
 </h2>
 <p>Protože už znáš <code>if</code> a <code>for</code>, které mají jednořádkovou hlavičku a odsazené tělo
 příkazu, neměl by ti zápis funkce připadat příliš zvláštní:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zamen</span><span class="p">(</span><span class="n">slovo</span><span class="p">,</span> <span class="n">pozice</span><span class="p">,</span> <span class="n">novy_znak</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zamen</span><span class="p">(</span><span class="n">slovo</span><span class="p">,</span> <span class="n">pozice</span><span class="p">,</span> <span class="n">novy_znak</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;V daném slově zamění znak na dané pozici za daný nový znak.&quot;&quot;&quot;</span>
     <span class="n">zacatek</span> <span class="o">=</span> <span class="n">slovo</span><span class="p">[:</span><span class="n">pozice</span><span class="p">]</span>
     <span class="n">konec</span> <span class="o">=</span> <span class="n">slovo</span><span class="p">[</span><span class="n">pozice</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
@@ -78,7 +78,7 @@ Aby ho Python vyhodnotil, udělá celý postup výše a jako hodnotu výrazu dos
 návratovou hodnotu – tedy to, co následuje po <code>return</code>.</p>
 <p>Tělo funkce může mít více příkazů – včetně podmínek, cyklů a podobně.
 Následující procedura třeba vypíše skóre daného hráče a k tomu hlášku:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">napis_hlasku</span><span class="p">(</span><span class="n">nazev</span><span class="p">,</span> <span class="n">skore</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">napis_hlasku</span><span class="p">(</span><span class="n">nazev</span><span class="p">,</span> <span class="n">skore</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Popíše skóre. Název má být přivlastňovací přídavné jméno.&quot;&quot;&quot;</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="n">nazev</span><span class="p">,</span> <span class="s1">&#39;skóre je&#39;</span><span class="p">,</span> <span class="n">skore</span><span class="p">)</span>
@@ -108,7 +108,7 @@ kde <var>a</var> a <var>b</var> jsou délky stran.</p>
         <a href="naucse:solution?solution=0"><span class="link-text">Ukázat řešení</span></a>
     </div>
     <div class="solution-body" aria-hidden="true">
-        <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">obsah_obdelnika</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">obsah_obdelnika</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span></span>    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 <span></span>
 <span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Obsah obdélníka se stranami 3 cm a 5 cm je&#39;</span><span class="p">,</span> <span class="n">obsah_obdelnika</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="s1">&#39;cm2&#39;</span><span class="p">)</span>
@@ -145,7 +145,7 @@ Třeba, chceš-li odpověď „ano“ nebo „ne“:</p>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ano_nebo_ne</span><span class="p">(</span><span class="n">otazka</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ano_nebo_ne</span><span class="p">(</span><span class="n">otazka</span><span class="p">):</span>
 <span class="w">     </span><span class="sd">&quot;&quot;&quot;Vrátí True nebo False podle odpovědi uživatele&quot;&quot;&quot;</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">otazka</span><span class="p">)</span>

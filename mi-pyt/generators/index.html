@@ -59,7 +59,7 @@ načítá jednotlivé řádky.</p>
 dávat k dispozici hodnoty.
 Definuje se pomocí klíčového slova <code>yield</code>: každá funkce, která obsahuje <code>yield</code>,
 je <em>generátorová funkce</em> (angl. <em>generator function</em>).</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate2</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generate2</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;generates 2 numbers&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
     <span class="k">yield</span> <span class="mi">0</span>
@@ -92,10 +92,10 @@ zastavena.</p>
 sekvencí, ale má celou řadu dalších užití.
 Existuje třeba dekorátor, který generátorovou funkci s jedním <code>yield</code> převede na <em>context manager</em>,
 tedy objekt použitelný s příkazem <code>with</code>:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">contextlib</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">contextlib</span>
 
 <span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
-<span class="k">def</span> <span class="nf">ctx_manager</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ctx_manager</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Entering&#39;</span><span class="p">)</span>
     <span class="k">yield</span> <span class="mi">123</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Exiting&#39;</span><span class="p">)</span>
@@ -114,7 +114,7 @@ Funkce se tam na chvíli zastaví a může se tedy provádět něco jiného.</p>
 Vrácená hodnota se však při normální iteraci (např. ve <code>for</code>) nepoužije.
 Objeví se pouze jako hodnota výjimky <code>StopIteration</code>, která signalizuje konec
 iterace:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generator</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generator</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Yield two numbers and return their sum&quot;&quot;&quot;</span>
     <span class="k">yield</span> <span class="n">a</span>
     <span class="k">yield</span> <span class="n">b</span>
@@ -135,7 +135,7 @@ iterace:</p>
 <code>send()</code>, kterou je možné posílat hodnoty <em>do</em> běžícího generátoru.
 Klíčové slovo <code>yield</code> totiž může fungovat jako výraz a tento výraz nabývá poslanou
 hodnotu (nebo <code>None</code>, byl-li použit normální <code>next()</code>).</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">running_sum</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">running_sum</span><span class="p">():</span>
     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">num</span> <span class="o">=</span> <span class="p">(</span><span class="k">yield</span> <span class="n">total</span><span class="p">)</span>
@@ -155,7 +155,7 @@ Existuje ale příbuzná metoda, která už je užitečnější: <code>throw()</
 Ta do generátoru „vhodí“ výjimku.
 Z pohledu generátorové funkce to vypadá, jako by výjimka nastala na příkazu
 <code>yield</code>.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">report_exception</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">report_exception</span><span class="p">():</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">yield</span>
     <span class="k">except</span> <span class="ne">BaseException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -173,7 +173,7 @@ Ta dědí z <code>BaseException</code>, ale ne <code>Exception</code>, takže kl
 ji nechytí (ale např. <code>finally</code> funguje jak má).
 Pokud generátor tuto výjimku chytá, měl by se co nejdřív ukončit.
 (Když to neudělá a provede další <code>yield</code>, Python ho ukončí „násilně“.)</p>
-<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">gc</span>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">gc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">it</span> <span class="o">=</span> <span class="n">report_exception</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">it</span><span class="p">;</span> <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>  <span class="c1"># zbavíme se objektu &quot;it&quot;</span>
@@ -185,7 +185,7 @@ Pokud generátor tuto výjimku chytá, měl by se co nejdřív ukončit.
 <a href="#delegace_na_podgenerator_codeyield_fromcode" class="header-link">#</a>
 </h2>
 <p>Máme následující generátor:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dance</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">dance</span><span class="p">():</span>
     <span class="k">yield</span> <span class="s1">&#39;putting hands forward&#39;</span>
     <span class="k">yield</span> <span class="s1">&#39;putting hands down&#39;</span>
     <span class="k">yield</span> <span class="s1">&#39;turning around&#39;</span>
@@ -198,11 +198,11 @@ Pokud generátor tuto výjimku chytá, měl by se co nejdřív ukončit.
 </pre></div><p>Opakuje se v něm jistá sekvence, kterou bychom jako správní programátoři chtěli
 vyčlenit do samostatné funkce.
 Pomocí samotného <code>yield</code> to ale jde celkem těžko:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dance_hands</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">dance_hands</span><span class="p">():</span>
     <span class="k">yield</span> <span class="s1">&#39;putting hands forward&#39;</span>
     <span class="k">yield</span> <span class="s1">&#39;putting hands down&#39;</span>
 
-<span class="k">def</span> <span class="nf">dance</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dance</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">action</span> <span class="ow">in</span> <span class="n">dance_hands</span><span class="p">():</span>
         <span class="k">yield</span> <span class="n">action</span>
     <span class="k">yield</span> <span class="s1">&#39;turning around&#39;</span>
@@ -214,11 +214,11 @@ Pomocí samotného <code>yield</code> to ale jde celkem těžko:</p>
     <span class="nb">print</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div><p>Tohle počtu řádků příliš nepomohlo. Existuje lepší způsob – místo cyklu
 můžeme použít <code>yield from</code>:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dance_hands</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">dance_hands</span><span class="p">():</span>
     <span class="k">yield</span> <span class="s1">&#39;putting hands forward&#39;</span>
     <span class="k">yield</span> <span class="s1">&#39;putting hands down&#39;</span>
 
-<span class="k">def</span> <span class="nf">dance</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dance</span><span class="p">():</span>
     <span class="k">yield from</span> <span class="n">dance_hands</span><span class="p">()</span>
     <span class="k">yield</span> <span class="s1">&#39;turning around&#39;</span>
     <span class="k">yield</span> <span class="s1">&#39;jumping&#39;</span>
@@ -228,7 +228,7 @@ můžeme použít <code>yield from</code>:</p>
     <span class="nb">print</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div><p>Navíc lze <code>yield from</code> použít jako výraz, který nabývá hodnoty
 kterou podgenerátor vrátil (t.j. hodnota výjimky <code>StopIteration</code>).</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span>
     <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
@@ -238,7 +238,7 @@ kterou podgenerátor vrátil (t.j. hodnota výjimky <code>StopIteration</code>).
         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
     <span class="k">return</span> <span class="n">count</span>
 
-<span class="k">def</span> <span class="nf">fib_annotated</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fib_annotated</span><span class="p">():</span>
     <span class="n">count</span> <span class="o">=</span> <span class="p">(</span><span class="k">yield from</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;LOG: Generated </span><span class="si">{}</span><span class="s1"> numbers&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
 

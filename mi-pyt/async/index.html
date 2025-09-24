@@ -95,9 +95,9 @@ Tuto syntaxi použijeme i tady; máte-li starší Python, podívejte se na potř
 <p>Jak vypadá taková asynchronní funkce?
 Definuje se pomocí <code>async def</code> místo <code>def</code>, a může používat příkaz <code>await</code>.</p>
 <p>Ukažme si to na příkladu:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">count</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Prints numbers from 0 in regular intervals&quot;&quot;&quot;</span>
     <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
@@ -118,12 +118,12 @@ po jeho uplynutí pozastavenou funkci „probudí“ a její algoritmus pokraču
 <p>Když žádné jiné úlohy neexistují, je pomalé počítání trochu nudné.
 Zkuste proto spustit počítadla dvě.
 (Detaily funkce <code>ensure_future</code> a příkazu <code>await task</code> vysvětlíme níže.)</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">count</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
     <span class="o">...</span>
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">run_two_counters</span><span class="p">():</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run_two_counters</span><span class="p">():</span>
     <span class="n">fast_task</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;Fast&#39;</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">))</span>
     <span class="n">slow_task</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;Slow&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
     <span class="k">await</span> <span class="n">fast_task</span>
@@ -139,11 +139,11 @@ ale typicky to v každém programu potřebujete napsat jen jednou.</p>
 </pre></div></div><div class="admonition note"><p>V Pythonu verze 3.4 a nižší ještě neexistovala klíčová slova <code>async</code> a
 <code>await</code>; asynchronní funkce byly implementovány jako generátory.
 Ve starších verzích Pythonu bylo potřeba místo:</p>
-<div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="o">...</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="o">...</span><span class="p">:</span>
     <span class="k">await</span> <span class="o">...</span>
 </pre></div><p>psát:</p>
 <div class="highlight"><pre><span></span><span class="nd">@asyncio</span><span class="o">.</span><span class="n">coroutine</span>
-<span class="k">def</span> <span class="o">...</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="o">...</span><span class="p">:</span>
     <span class="k">yield from</span> <span class="o">...</span>
 </pre></div><p>Starý způsob zatím funguje i v novějším Pythonu a dokonce se ještě někdy
 objeví i v dokumentaci.
@@ -183,7 +183,7 @@ intervaluj, jsou dostupná nová data ze socketu…).</p>
 <p>Pozastavení funguje podobně jako <code>yield</code> u generátoru.</p>
 <p>Zavoláním asynchronní funkce dostaneme <em>coroutine</em> pozastavenou na začátku
 těla funkce:</p>
-<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">def</span> <span class="nf">demo</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">demo</span><span class="p">():</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Demo&#39;</span><span class="p">)</span>
 <span class="gp">...
 </span><span class="gp">&gt;&gt;&gt; </span><span class="n">coroutine</span> <span class="o">=</span> <span class="n">demo</span><span class="p">()</span>
@@ -198,13 +198,13 @@ těla funkce:</p>
 a počkat na jejich skončení pomocí <code>await</code>.
 Jak <code>run_until_complete</code> tak <code>await</code> nám dají k dispozici návratovou hodnotu
 příslušné asynchronní funkce.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># schedule a &quot;sleep&quot; and wait for it to finish</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">demo</span><span class="p">():</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">demo</span><span class="p">():</span>
     <span class="n">coroutine</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
     <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">coroutine</span>  <span class="c1"># schedule &quot;add&quot; and wait for it to finish</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The result is:&#39;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
@@ -230,21 +230,21 @@ Task se chová stejně jako <em>coroutine</em> – lze použít v <code>await</
 <li>úloha se naplánuje hned po zavolání <code>ensure_future</code>.</li>
 </ul>
 <p>Druhou vlastnost je lepší ukázat na příkladu:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">print_and_wait</span><span class="p">():</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">print_and_wait</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Async function starting&#39;</span><span class="p">)</span>
     <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Async function done&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="s1">&#39;result&#39;</span>
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">demo_coro</span><span class="p">():</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">demo_coro</span><span class="p">():</span>
     <span class="n">coroutine</span> <span class="o">=</span> <span class="n">print_and_wait</span><span class="p">()</span>
     <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Awaiting coroutine&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">coroutine</span><span class="p">)</span>     <span class="c1"># schedule coroutine and wait for it to finish</span>
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">demo_task</span><span class="p">():</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">demo_task</span><span class="p">():</span>
     <span class="n">task</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">print_and_wait</span><span class="p">())</span>  <span class="c1"># schedule the task</span>
     <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Awaiting task&#39;</span><span class="p">)</span>
@@ -282,7 +282,7 @@ Poté může pokračovat zpracováním získaných dat.</p>
 získáte její návratovou hodnotu.
 Ale na všechny úlohy, i na ty, které nic zajímavého nevrací, je důležité počkat.
 Neuděláte-li to, bude <code>asyncio</code> vypisovat varovné hlášky:</p>
-<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">asyncio</span>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># no await</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">exit</span><span class="p">()</span>
 <span class="go">sys:1: RuntimeWarning: coroutine &#39;sleep&#39; was never awaited</span>
@@ -336,10 +336,10 @@ jako hlavní smyčku událostí, a poté ji, místo Qt-ovského <code>app.exec()
 Jednotlivé asynchronní funkce se pak používají jako v čistém <code>asyncio</code>:
 pomocí <code>asyncio.ensure_future</code>, <code>await</code>, atd.</p>
 <p>Ukázka:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
 
-<span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtWidgets</span>
-<span class="kn">from</span> <span class="nn">asyncqt</span> <span class="kn">import</span> <span class="n">QEventLoop</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PyQt5</span><span class="w"> </span><span class="kn">import</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtWidgets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">asyncqt</span><span class="w"> </span><span class="kn">import</span> <span class="n">QEventLoop</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QApplication</span><span class="p">([])</span>
 <span class="n">loop</span> <span class="o">=</span> <span class="n">QEventLoop</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
@@ -350,7 +350,7 @@ pomocí <code>asyncio.ensure_future</code>, <code>await</code>, atd.</p>
 
 <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">update_time</span><span class="p">():</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">update_time</span><span class="p">():</span>
     <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">display</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
@@ -386,10 +386,10 @@ se uloží do bufferu a pošlou se, až to bude možné.</p>
 <p>Typicky ale místo čistého <code>asyncio</code> použijeme existující knihovnu.
 Tady je příklad z knihovny <code>aiohttp</code>, která implementuje server a klienta
 pro HTTP:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">import</span> <span class="nn">aiohttp</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">aiohttp</span>
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
     <span class="c1"># Use a a session</span>
     <span class="n">session</span> <span class="o">=</span> <span class="n">aiohttp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">()</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">session</span><span class="p">:</span>

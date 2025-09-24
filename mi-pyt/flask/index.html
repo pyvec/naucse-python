@@ -18,11 +18,11 @@ z minulého cvičení:</p>
 <span class="gp gp-VirtualEnv">(__venv__)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>Flask
 </pre></div><p>Základní použití Flasku je poměrně primitivní.
 Do souboru <code>hello.py</code> napište:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flask</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">index</span><span class="p">():</span>
     <span class="k">return</span> <span class="s1">&#39;MI-PYT je nejlepší předmět na FITu!&#39;</span>
 </pre></div><p>Pak aplikaci spusťte pomocí následujících příkazů.
 (Na Windows použijte místo <code>export</code> příkaz <code>set</code>.)</p>
@@ -50,11 +50,11 @@ My konkrétně říkáme, že na cestě <code>/</code> (tedy na „domovské str
 k dispozici obsah, který vrátí funkce <code>index</code>.</p>
 <p>Více různých adres lze obsloužit jednoduše přidáním dalších funkcí:</p>
 <div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">index</span><span class="p">():</span>
     <span class="k">return</span> <span class="s1">&#39;Index Page&#39;</span>
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hello/&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">():</span>
     <span class="k">return</span> <span class="s1">&#39;Hello, World&#39;</span>
 </pre></div><p>Na adrese <a href="http://127.0.0.1:5000/hello/"><code>http://127.0.0.1:5000/hello/</code></a> pak uvidíte druhou stránku.</p>
 <h3 id="ladici_rezim">Ladící režim
@@ -81,7 +81,7 @@ jako <code>/user/hroncok/</code>, ale nemůžete při každé registraci nového
 přidávat novou funkci do kódu.
 Musíte použít <a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/#variable-rules">dynamické routy</a>:</p>
 <div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/user/&lt;username&gt;/&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">profile</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">profile</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
     <span class="k">return</span> <span class="s1">&#39;User </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
 </pre></div><p>Proměnnou část cesty ohraničíte lomenými závorkami a použijte jako parametr
 funkce. Pokud chcete, můžete specifikovat, na jaký obsah se pravidlo vztahuje.
@@ -99,7 +99,7 @@ takto:</p>
 Často se to používá s výchozí hodnotou argumentu:</p>
 <div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hello/&#39;</span><span class="p">)</span>
 <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hello/&lt;name&gt;/&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;world&#39;</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;world&#39;</span><span class="p">):</span>
     <span class="k">return</span> <span class="s1">&#39;Hello, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </pre></div><h3 id="ziskani_url">Získání URL
 <a href="#ziskani_url" class="header-link">#</a>
@@ -109,12 +109,12 @@ nějaké stránky, například protože potřebujete zobrazit odkaz.
 K tomu se používá funkce <a href="https://flask.palletsprojects.com/en/1.1.x/api/#flask.url_for"><code>url_for()</code></a>, která jako první parametr bere jméno
 routy (neboli jméno funkce, která routu obsluhuje), a pak pojmenované argumenty
 pro pravidla v dynamické routě:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">url_for</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">url_for</span>
 
 <span class="o">...</span>
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/url/&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">show_url</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">show_url</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;profile&#39;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s1">&#39;hroncok&#39;</span><span class="p">)</span>
 </pre></div><p>Tuto funkci jde použít jen uvnitř pohledové funkce,
 Pokud ji chcete vyzkoušet například v interaktivní konzoli,
@@ -138,18 +138,18 @@ Jestli ne, doporučujeme si projít základy těchto webových technologií
 např. na stránkách <a href="https://developer.mozilla.org/en-US/docs/Web">MDN</a>.</p>
 </div><p>Klidně byste mohli udělat něco jako:</p>
 <div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">():</span>
     <span class="k">return</span> <span class="s1">&#39;&lt;html&gt;&lt;head&gt;&lt;title&gt;...&#39;</span>
 </pre></div><p>...ale asi by to nebylo příliš příjemné.
 Python je jazyk dělaný na popis algoritmů, procesů a logiky spíš než obsahu.
 Lepší je HTML dát do zvláštního souboru a použít ho jako <em>šablonu</em>
 (angl. <em>template</em>).
 Z Flasku vypadá použití šablony takto:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">render_template</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">render_template</span>
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hello/&#39;</span><span class="p">)</span>
 <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hello/&lt;name&gt;/&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;hello.html&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
 </pre></div><p>Funkce <code>render_template</code> nejen vrátí HTML z daného souboru, ale umí do něj
 i doplnit informace, které dostane v pojmenovaných argumentech.</p>
@@ -190,16 +190,16 @@ Od toho jsou tu filtry. Filtr transformuje hodnotu na řetězec,
 který pak ukážeme uživateli.</p>
 <p>Zde je například filtr <code>time</code>, který načte čas v určitém formátu
 a převede ho do jiného:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">template_filter</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">convert_time</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">convert_time</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert the time format to a different one&quot;&quot;&quot;</span>
     <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %b </span><span class="si">%d</span><span class="s1"> %H:%M:%S %z %Y&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%c</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/date_example&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">date_example</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">date_example</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span>
         <span class="s1">&#39;date_example.html&#39;</span><span class="p">,</span>
         <span class="n">created_at</span><span class="o">=</span><span class="s1">&#39;Tue Mar 21 15:50:59 +0000 2017&#39;</span><span class="p">,</span>
@@ -229,10 +229,10 @@ To se dá zajistit dvěma způsoby. Nejjednodušší je vestavěný filtr <code>
 <div class="highlight"><pre><span></span><span class="cp">{{</span> <span class="s2">&quot;&lt;em&gt;Text&lt;/em&gt;&quot;</span> <span class="o">|</span> <span class="nf">safe</span> <span class="cp">}}</span>
 </pre></div><p>V Pythonu pak lze použít <a href="https://jinja.palletsprojects.com/en/2.10.x/api/#jinja2.Markup">jinja2.Markup</a>,
 čímž se daný text označí jako „bezpečný”.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">jinja2</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">jinja2</span>
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">template_filter</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">convert_time</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">convert_time</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert the time format to a different one&quot;&quot;&quot;</span>
     <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %b </span><span class="si">%d</span><span class="s1"> %H:%M:%S %z %Y&#39;</span><span class="p">)</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;&lt;strong&gt;</span><span class="si">%c</span><span class="s1">&lt;/strong&gt;&#39;</span><span class="p">)</span>
@@ -266,13 +266,13 @@ běhu programu) a výstup bude konzistentní s jinými aplikacemi (jiní správc
 vaší webové aplikace pak nebudou z formátu výstupů zmatení). Protože používáme
 Flask a ten také <a href="https://flask.palletsprojects.com/en/1.1.x/logging/">loguje tímto modulem</a>,
 stačí použít předpřipravený <code>app.logger</code>.</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flask</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="n">app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;I&#39;ve just initialized the Flask app&quot;</span><span class="p">)</span>
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">index</span><span class="p">():</span>
     <span class="n">app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Someone is accessing the index page!&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="s1">&#39;Index Page&#39;</span>
 </pre></div><p>Ve výchozím nastavení se loguje pouze od úrovně upozornění výše (<code>warning</code>,
@@ -301,7 +301,7 @@ neinicializuje hned při importu modulu, ale až při zavolání funkce. Volán�
 můžete navíc předat i konfigurační parametry (typicky cesta ke konfiguračnímu
 souboru). Díky tomu lze snadněji vytvářet Flask aplikace s různými konfiguracemi
 pro testování nebo dokonce vytvářet více Flask aplikací v rámci jednoho Python skriptu.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_app</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">create_app</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
     <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">from_pyfile</span><span class="p">(</span><span class="n">config</span> <span class="ow">or</span> <span class="s1">&#39;config.py&#39;</span><span class="p">)</span>
@@ -320,26 +320,26 @@ třídy <a href="https://flask.palletsprojects.com/en/1.1.x/api/#flask.Blueprint
 nastavením nezávisle na tom, v jaké Flask aplikaci pak bude použitý. Takový
 blueprint pak můžete využívat i v několika různých aplikacích a snadno tak
 dosáhnout znovupouželnosti.</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Blueprint</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Blueprint</span>
 
 <span class="n">auth</span> <span class="o">=</span> <span class="n">Blueprint</span><span class="p">(</span><span class="s1">&#39;auth&#39;</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">,</span> <span class="n">template_folder</span><span class="o">=</span><span class="s1">&#39;templates&#39;</span><span class="p">)</span>
 
 <span class="nd">@auth</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">login</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">login</span><span class="p">():</span>
     <span class="o">...</span>
 
 <span class="nd">@auth</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/logout&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">logout</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">logout</span><span class="p">():</span>
     <span class="o">...</span>
 
 <span class="nd">@auth</span><span class="o">.</span><span class="n">app_template_filter</span><span class="p">(</span><span class="s1">&#39;userlink&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">user_link</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">user_link</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
     <span class="o">...</span>
 </pre></div><p>Blueprint pak stačí ve Flask aplikaci <a href="https://flask.palletsprojects.com/en/1.1.x/api/#flask.Flask.register_blueprint">registrovat</a>
 a je jedno, zda ji vytváříte pomocí <code>create_app</code> nebo napřímo. Navíc můžete mimo
 jiné přidat i prefix pro všechny cesty v blueprintu.</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<span class="kn">from</span> <span class="nn">auth.views</span> <span class="kn">import</span> <span class="n">auth</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">auth.views</span><span class="w"> </span><span class="kn">import</span> <span class="n">auth</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="c1"># this will create the /auth/login and /auth/logout endpoints</span>
@@ -353,22 +353,22 @@ jiné přidat i prefix pro všechny cesty v blueprintu.</p>
 výchozí chování. Mimo přidávání vlastních metod lze například měnit třídy, které
 budou použity pro HTTP požadavky a odpovědi, měnit výchozí konfiguraci <code>flask</code> a
 spoustu dalšího. Nezapomeňte volat konstruktor nadtřídy.</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">current_app</span><span class="p">,</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">Response</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">current_app</span><span class="p">,</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">Response</span>
 
-<span class="k">class</span> <span class="nc">MIPYTResponse</span><span class="p">(</span><span class="n">Response</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MIPYTResponse</span><span class="p">(</span><span class="n">Response</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_cookie</span><span class="p">(</span><span class="s1">&#39;MI-PYT&#39;</span><span class="p">,</span> <span class="s1">&#39;best&#39;</span><span class="p">)</span>
 
 
-<span class="k">class</span> <span class="nc">GreeterApp</span><span class="p">(</span><span class="n">Flask</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">GreeterApp</span><span class="p">(</span><span class="n">Flask</span><span class="p">):</span>
     <span class="n">response_class</span> <span class="o">=</span> <span class="n">MIPYTResponse</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">greetings</span> <span class="o">=</span> <span class="mi">0</span>
 
-    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">greetings</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">return</span> <span class="s1">&#39;Hello!&#39;</span>
 
@@ -377,12 +377,12 @@ spoustu dalšího. Nezapomeňte volat konstruktor nadtřídy.</p>
 
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">greet</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">current_app</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>
 
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/number/&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">greetings_number</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">greetings_number</span><span class="p">():</span>
     <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">current_app</span><span class="o">.</span><span class="n">greetings</span><span class="p">)</span>
 </pre></div><h3 id="a_dalsi">A další
 <a href="#a_dalsi" class="header-link">#</a>

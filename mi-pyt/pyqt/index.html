@@ -44,7 +44,7 @@ Ten je pak potřeba pro spuštění dohledat v nainstalované lokaci.</p>
 </h2>
 <p>Napište si první aplikaci, ať vidíte, jak kód v PyQt vypadá.
 Detaily toho, jak to funguje, si ukážeme později.</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtWidgets</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PyQt5</span><span class="w"> </span><span class="kn">import</span> <span class="n">QtWidgets</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QApplication</span><span class="p">([])</span>
 
@@ -133,7 +133,7 @@ PyQt většinou automaticky vybere variantu signálu podle připojené funkce, a
 <p>Ukažme si to na následujícím kódu, který napojuje funkci <code>print</code> na dvě varianty signálu <a href="http://doc.qt.io/qt-5/qcombobox.html#activated">QComboBox.activated</a>.
 Ten se vyšle při výběru položky ze seznamu buď jako <code>QComboBox.activated[int]</code>, kdy předává index vybrané položky,
 nebo jako <code>QComboBox.activated[str]</code>, kdy předává text položky:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtWidgets</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PyQt5</span><span class="w"> </span><span class="kn">import</span> <span class="n">QtWidgets</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QApplication</span><span class="p">([])</span>
 
@@ -163,7 +163,7 @@ jako součást svého rodiče.
 Navíc může mít každý widget tzv. <em>layout</em>, který určuje pozici a velikost widgetů, které jsou
 do něj přidané.</p>
 <p>Ukažme to v kódu:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtWidgets</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PyQt5</span><span class="w"> </span><span class="kn">import</span> <span class="n">QtWidgets</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QApplication</span><span class="p">([])</span>
 
@@ -185,7 +185,7 @@ do něj přidané.</p>
 <span class="n">layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
 
 <span class="c1"># Funkcionalita</span>
-<span class="k">def</span> <span class="nf">change_label</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">change_label</span><span class="p">():</span>
     <span class="n">label</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s1">&#39;Good job. +100 points.&#39;</span><span class="p">)</span>
 
 <span class="n">button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">change_label</span><span class="p">)</span>
@@ -235,9 +235,9 @@ ho vždy načíst přímo z programu.
 My použijeme druhou variantu, je však dobré o <code>pyuic5</code> vědět, kdybyste někdy potřebovali
 základ pro vytváření UI v kódu (např. na vytvoření sady několika podobných tlačítek v cyklu).</p>
 <p>Načíst <code>.ui</code> soubor z programu do předpřipraveného okna <code>QMainWindow</code> lze pomocí funkce <a href="http://pyqt.sourceforge.net/Docs/PyQt5/designer.html#the-uic-module">uic.loadUi</a>:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtWidgets</span><span class="p">,</span> <span class="n">uic</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PyQt5</span><span class="w"> </span><span class="kn">import</span> <span class="n">QtWidgets</span><span class="p">,</span> <span class="n">uic</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="n">app</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QApplication</span><span class="p">([])</span>
 
     <span class="n">window</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">()</span>
@@ -265,16 +265,16 @@ a důsledně rozlišovat <code>(x, y)</code> vs. <code>(row, column)</code>.</p>
 <div class="highlight"><pre><span></span><span class="n">CELL_SIZE</span> <span class="o">=</span> <span class="mi">32</span>
 
 
-<span class="k">def</span> <span class="nf">pixels_to_logical</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pixels_to_logical</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">y</span> <span class="o">//</span> <span class="n">CELL_SIZE</span><span class="p">,</span> <span class="n">x</span> <span class="o">//</span> <span class="n">CELL_SIZE</span>
 
 
-<span class="k">def</span> <span class="nf">logical_to_pixels</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">column</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">logical_to_pixels</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">column</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">column</span> <span class="o">*</span> <span class="n">CELL_SIZE</span><span class="p">,</span> <span class="n">row</span> <span class="o">*</span> <span class="n">CELL_SIZE</span>
 
 
-<span class="k">class</span> <span class="nc">GridWidget</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QWidget</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">array</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">GridWidget</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QWidget</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">array</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>  <span class="c1"># musíme zavolat konstruktor předka</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">array</span>
         <span class="c1"># nastavíme velikost podle velikosti matice, jinak je náš widget příliš malý</span>
@@ -283,7 +283,7 @@ a důsledně rozlišovat <code>(x, y)</code> vs. <code>(row, column)</code>.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">setMaximumSize</span><span class="p">(</span><span class="o">*</span><span class="n">size</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="o">*</span><span class="n">size</span><span class="p">)</span>
 </pre></div><p><code>GridWidget</code> vložíme do <code>QScrollArea</code>, kterou jsme si vytvořili v Qt Designeru:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
 
     <span class="o">...</span>
 
@@ -314,14 +314,14 @@ Na poslední jmenovanou událost, <code>paintEvent</code>, teď budeme reagovat.
 danou událost.</p>
 <p>V rámci reakce na událost <code>paintEvent</code> můžeme používat <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a>, objekt, který generalizuje kreslení
 na různé „povrchy“ jako widgety, obrázky, nebo i instrukce pro tiskárnu.</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtWidgets</span><span class="p">,</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtCore</span><span class="p">,</span> <span class="n">uic</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PyQt5</span><span class="w"> </span><span class="kn">import</span> <span class="n">QtWidgets</span><span class="p">,</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtCore</span><span class="p">,</span> <span class="n">uic</span>
 
 
-<span class="k">class</span> <span class="nc">GridWidget</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QWidget</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">GridWidget</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QWidget</span><span class="p">):</span>
 
     <span class="o">...</span>
 
-    <span class="k">def</span> <span class="nf">paintEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">paintEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="n">rect</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">rect</span><span class="p">()</span>  <span class="c1"># získáme informace o překreslované oblasti</span>
 
         <span class="c1"># zjistíme, jakou oblast naší matice to představuje</span>
@@ -363,7 +363,7 @@ a je (společně se další volně licencovanou grafikou) ke stažení z <a href
 <li><a href="naucse:static?filename=pics/wall.svg">wall.svg</a></li>
 </ul>
 <p>Nejprve si načteme SVG soubory jako objekty <code>QSvgRenderer</code>:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtWidgets</span><span class="p">,</span> <span class="n">QtCore</span><span class="p">,</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtSvg</span><span class="p">,</span> <span class="n">uic</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PyQt5</span><span class="w"> </span><span class="kn">import</span> <span class="n">QtWidgets</span><span class="p">,</span> <span class="n">QtCore</span><span class="p">,</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtSvg</span><span class="p">,</span> <span class="n">uic</span>
 
 <span class="n">SVG_GRASS</span> <span class="o">=</span> <span class="n">QtSvg</span><span class="o">.</span><span class="n">QSvgRenderer</span><span class="p">(</span><span class="s1">&#39;grass.svg&#39;</span><span class="p">)</span>
 <span class="n">SVG_WALL</span> <span class="o">=</span> <span class="n">QtSvg</span><span class="o">.</span><span class="n">QSvgRenderer</span><span class="p">(</span><span class="s1">&#39;wall.svg&#39;</span><span class="p">)</span>
@@ -406,7 +406,7 @@ nějaký seznam.
 My jsme si v Qt Designeru připravili <code>QListWidget</code> s názvem <code>palette</code>, který použijeme
 jako paletu jednotlivých dílků, které budeme moci vkládat do mapy.
 Položky se do tohoto modelu přidávají následovně:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="o">...</span>
 
     <span class="c1"># získáme paletu vytvořenou v Qt Designeru</span>
@@ -425,10 +425,10 @@ Výběr položky aktivuje signál <code>itemSelectionChanged</code>, na který m
 navázat volání funkce.
 (Pokud bychom měli pod kontrolou třídu widgetu, jako tomu je u třídy <code>Grid</code>,
 mohli bychom místo toho i předefinovat metodu <code>itemSelectionChanged()</code>.)</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="o">...</span>
 
-    <span class="k">def</span> <span class="nf">item_activated</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">item_activated</span><span class="p">():</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Tato funkce se zavolá, když uživatel zvolí položku&quot;&quot;&quot;</span>
 
         <span class="c1"># Položek může obecně být vybráno víc, ale v našem seznamu je to</span>
@@ -448,18 +448,18 @@ V případě potřeby ukládat více dat můžeme dále zvolit <code>QtCore.Qt.U
 Pro případ, že budeme potřebovat rolí víc, je dobré si je vhodně pojmenovat.</p>
 <div class="highlight"><pre><span></span><span class="n">VALUE_ROLE</span> <span class="o">=</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">Qt</span><span class="o">.</span><span class="n">UserRole</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="o">...</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">palette</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>  <span class="c1"># přidáme položku do palety</span>
     <span class="n">item</span><span class="o">.</span><span class="n">setData</span><span class="p">(</span><span class="n">VALUE_ROLE</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># přiřadíme jí data</span>
     <span class="o">...</span>
 
-    <span class="k">def</span> <span class="nf">item_activated</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">item_activated</span><span class="p">():</span>
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">palette</span><span class="o">.</span><span class="n">selectedItems</span><span class="p">():</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">VALUE_ROLE</span><span class="p">))</span>  <span class="c1"># čteme data stejné role z položky</span>
 </pre></div><p>Nyní byste měli mít v paletě trávu a stěnu s patřičnými čísly (<code>0</code> a <code>-1</code>), které se vypisují do konzole při zvolení položky.</p>
 <p>Nakonec si číslo místo vypisování uložíme do gridu, abychom ho mohli později použít.</p>
-<div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">item_activated</span><span class="p">():</span>
+<div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">item_activated</span><span class="p">():</span>
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">palette</span><span class="o">.</span><span class="n">selectedItems</span><span class="p">():</span>
             <span class="n">grid</span><span class="o">.</span><span class="n">selected</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">VALUE_ROLE</span><span class="p">)</span>
 </pre></div><h2 id="klikani_do_gridu">Klikání do gridu
@@ -467,10 +467,10 @@ Pro případ, že budeme potřebovat rolí víc, je dobré si je vhodně pojmeno
 </h2>
 <p>Nyní nezbývá nic jiného, než pomocí klikání nanášet zvolené dílky do mapy.
 K tomu opět použijeme událost, tentokrát událost kliknutí, tedy <code>mousePressEvent</code>.</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GridWidget</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QWidget</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">GridWidget</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QWidget</span><span class="p">):</span>
     <span class="o">...</span>
 
-    <span class="k">def</span> <span class="nf">mousePressEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mousePressEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="c1"># převedeme klik na souřadnice matice</span>
         <span class="n">row</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="n">pixels_to_logical</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">(),</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">())</span>
 
@@ -534,7 +534,7 @@ Ukážeme si, jak vytvořit modální dialog pro volby (šířka a výška nové
 <li>Dialog uložíme jako <code>newmaze.ui</code>.</li>
 </ol>
 <p>Poté připravíme funkci pro zobrazení dialogu a pro jeho vyhodnocení:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">new_dialog</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">grid</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">new_dialog</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">grid</span><span class="p">):</span>
     <span class="c1"># Vytvoříme nový dialog.</span>
     <span class="c1"># V dokumentaci mají dialogy jako argument `this`;</span>
     <span class="c1"># jde o &quot;nadřazené&quot; okno.</span>
@@ -572,7 +572,7 @@ Ukážeme si, jak vytvořit modální dialog pro volby (šířka a výška nové
     <span class="n">grid</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="o">...</span>
 
 

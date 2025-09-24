@@ -44,12 +44,12 @@ a obsah <em>WSGI Configuration File</em> přepsat.
 To jde buď kliknutím na odkaz v konfiguraci (otevře se webový editor)
 nebo zpět v bashové konzoli pomocí editoru jako <code>vi</code> nebo <code>nano</code>.</p>
 <p>Nový obsah souboru by měl být:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/home/&lt;uživatelské-jméno&gt;/&lt;jméno-adresáře&gt;&#39;</span>
 <span class="k">if</span> <span class="n">path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="o">&lt;</span><span class="n">jméno</span><span class="o">-</span><span class="n">souboru</span><span class="o">&gt;</span> <span class="kn">import</span> <span class="nn">app</span> <span class="k">as</span> <span class="nn">application</span>
+<span class="kn">from</span><span class="w"> </span><span class="o">&lt;</span><span class="n">jméno</span><span class="o">-</span><span class="n">souboru</span><span class="o">&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">app</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">application</span>
 </pre></div><p>(Za <code><var>&lt;uživatelské-jméno&gt;</var></code>,
 <code><var>&lt;jméno-adresáře&gt;</var></code> a
 <code><var>&lt;jméno-souboru&gt;</var></code>

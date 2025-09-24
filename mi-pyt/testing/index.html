@@ -77,11 +77,11 @@ dvě čísla, a další funkce, která testuje, jestli se
 Jméno je důležité: <code>pytest</code> ve výchozím nastavení předpokládá,
 že jména jak souborů s testy tak samotných testovacích funkcí začínají na
 <code>test_</code>.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">secti</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">secti</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Vrátí součet dvou čísel&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
-<span class="k">def</span> <span class="nf">test_secti</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_secti</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Otestuje funkci secti&quot;&quot;&quot;</span>
     <span class="k">assert</span> <span class="n">secti</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
 </pre></div><p>Co se v té testovací funkci děje?</p>

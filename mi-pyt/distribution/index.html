@@ -43,7 +43,7 @@ co se dá importovat z Pythonu, v tomto textu tedy především Python soubor ne
 obsahuje všechna potřebná metadata ve volání funkce <code>setup()</code> z modulu
 <code>setuptools</code>.</p>
 <p>Pojďme vytvořit jeho minimální variantu:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">setuptools</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup</span>
 
 
 <span class="n">setup</span><span class="p">(</span>
@@ -125,7 +125,7 @@ nainstalovaný.</p>
 <p>Na chvíli se vrátíme k volání funkce <code>setup()</code> a přidáme co nejvíc dalších
 položek.
 Jejich vysvětlení najdete <a href="https://packaging.python.org/distributing/#setup-args">v dokumentaci</a>.</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">setuptools</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup</span>
 
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;README&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -209,7 +209,7 @@ a také obsahuje kód, který se spustí při importu modulu <code>isholiday</co
 <span class="w"> </span>        &#39;Intended Audience :: Developers&#39;,
 <span class="w"> </span>        &#39;License :: Public Domain&#39;,
 </pre></div><p>Případně, což je ještě lepší, můžeme použít <code>find_packages()</code>:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">setuptools</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
 
 <span class="n">setup</span><span class="p">(</span>
     <span class="o">...</span>
@@ -225,7 +225,7 @@ jeho uživatelé.</p>
 <p>V souboru <code>__init__.py</code> by tak prakticky žádný kód kromě importů být neměl.
 Přesuňte tedy obsah <code>__init__.py</code> do <code>holidays.py</code> a
 do <code>__init__.py</code> místo toho napište:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.holidays</span> <span class="kn">import</span> <span class="n">getholidays</span><span class="p">,</span> <span class="n">isholiday</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">.holidays</span><span class="w"> </span><span class="kn">import</span> <span class="n">getholidays</span><span class="p">,</span> <span class="n">isholiday</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;getholidays&#39;</span><span class="p">,</span> <span class="s1">&#39;isholiday&#39;</span><span class="p">]</span>
 </pre></div><p>Tečka v příkazu <code>import</code> není chyba: je to zkratka pro aktuální modul.
@@ -253,7 +253,7 @@ Python v tomto případě hledá <em>soubor</em> pojmenovaný <code>__main__.py<
 <p>Soubor <code>__main__.py</code> není určený k tomu, aby se z něho importovalo, proto
 by měl obsahovat co nejméně kódu – ideálně jen volání funkce, která je
 definovaná jinde. Vytvořte proto <code>__main__.py</code> s následujícím obsahem:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.holidays</span> <span class="kn">import</span> <span class="n">main</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">.holidays</span><span class="w"> </span><span class="kn">import</span> <span class="n">main</span>
 
 <span class="n">main</span><span class="p">()</span>
 </pre></div><p>a v <code>holidays.py</code> zaměňte <code>if __name__ == '__main__':</code> za <code>def main():</code>.</p>

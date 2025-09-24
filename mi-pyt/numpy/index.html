@@ -65,7 +65,7 @@ Automaticky pouštěné skripty musí být samozřejmě robustní. Nástroje ke 
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
 <span class="n">array</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
 <span class="n">array</span>
 </pre></div>
@@ -2019,8 +2019,8 @@ Dimenzí může být libovolně mnoho, např. trojrozměrnou matici můžeme vyt
 <p>Důvod přidání operátoru <code>@</code> byl prostý – zjednodušení zápisu maticových operací. Jako příklad uvedený v návrhu je uveden tento vzorec pro testování hypotéz v lineárním regresním modelu:</p>
 <p>$ S=(H\beta-r)^T(HVH^T)^{-1} (H\beta-r) $</p>
 <p>V NumPy se dá přepsat jako:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">dot</span>
-<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span><span class="p">,</span> <span class="n">solve</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">dot</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">numpy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">inv</span><span class="p">,</span> <span class="n">solve</span>
 </pre></div><p>Pomocí funkce <code>dot</code>:</p>
 <div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">dot</span><span class="p">((</span><span class="n">dot</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
        <span class="n">dot</span><span class="p">(</span><span class="n">inv</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">V</span><span class="p">),</span> <span class="n">H</span><span class="o">.</span><span class="n">T</span><span class="p">)),</span> <span class="n">dot</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span> <span class="o">-</span> <span class="n">r</span><span class="p">))</span>
@@ -2272,7 +2272,7 @@ Pole obsahuje nějaké prvky
 <div class="prompt input_prompt">In [75]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span>
 
 <span class="c1"># Zapnutí integrace s notebookem – `%` je "magický" příkaz IPythonu, podobně jako `!` pro shell</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
@@ -2367,7 +2367,7 @@ Pole obsahuje nějaké prvky
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Ta samá data můžeme vykreslit i ve 3D</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">pyplot</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">axes</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">'3d'</span><span class="p">)</span>
@@ -2414,7 +2414,7 @@ Pole obsahuje nějaké prvky
 <div class="prompt input_prompt">In [79]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">imageio</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">'static/python.jpg'</span><span class="p">)</span>
 <span class="n">img</span>
 </pre></div>
@@ -2718,7 +2718,7 @@ Třetí rozměr jsou barevné kanály.</p>
 <div class="prompt input_prompt">In [87]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.io.wavfile</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.io.wavfile</span>
 <span class="n">sample_rate</span><span class="p">,</span> <span class="n">sound</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">wavfile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">'static/sample.wav'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sample_rate</span><span class="p">)</span>
 <span class="n">sound</span>
@@ -2798,7 +2798,7 @@ Třetí rozměr jsou barevné kanály.</p>
 <div class="prompt input_prompt">In [89]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Audio</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Audio</span>
 <span class="n">Audio</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">channel</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">sample_rate</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'(Zkuste si to sami; tento print vymažte)'</span><span class="p">)</span>
 </pre></div>
@@ -2858,7 +2858,7 @@ Třetí rozměr jsou barevné kanály.</p>
 <div class="prompt input_prompt">In [91]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Audio</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Audio</span>
 <span class="n">Audio</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">segment</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">sample_rate</span><span class="p">)</span>
 </pre></div>
 </div>

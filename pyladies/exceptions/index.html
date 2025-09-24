@@ -4,7 +4,7 @@
 <p>Pojďme si prohloubit znalosti o chybách, neboli odborně o <em>výjimkách</em>
 (angl. <em>exceptions</em>).</p>
 <p>Podívej se na následující funkci:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nacti_cislo</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">nacti_cislo</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Získá od uživatele celé číslo a vrátí ho&quot;&quot;&quot;</span>
     <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej číslo: &#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">odpoved</span><span class="p">)</span>
@@ -24,7 +24,7 @@ Převádění tohoto textu na celé číslo nedává smysl.</p>
 Stačí se uživatele zeptat znovu!
 Kdybys měl/a funkci, která zjistí, jestli jsou v řetězci jen číslice,
 mohlo by to fungovat nějak takhle:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nacti_cislo</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">nacti_cislo</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Získá od uživatele celé číslo a vrátí ho&quot;&quot;&quot;</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej číslo: &#39;</span><span class="p">)</span>
@@ -57,7 +57,7 @@ nejlepší je použít přímo funkci <code>int</code>.</p>
 <a href="#osetreni_chyby" class="header-link">#</a>
 </h2>
 <p>Pro zachycení chyby má Python příkaz <code>try</code>/<code>except</code>.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nacti_cislo</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">nacti_cislo</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Získá od uživatele celé číslo a vrátí ho&quot;&quot;&quot;</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">odpoved</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej číslo: &#39;</span><span class="p">)</span>
@@ -174,7 +174,7 @@ připravený, sám skončit s chybou a upozornit tak programátora, že je něc
 <p>Jak na to prakticky?
 Chybu můžeš vyvolat pomocí příkazu <code>raise</code>.
 Za příkaz dáš druh výjimky a pak do závorek nějaký popis toho, co je špatně.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">obsah_ctverce</span><span class="p">(</span><span class="n">strana</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">obsah_ctverce</span><span class="p">(</span><span class="n">strana</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Vrátí obsah čtverce s danou délkou strany&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">strana</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">strana</span> <span class="o">**</span> <span class="mi">2</span>
